@@ -1,0 +1,22 @@
+name: Project FAST
+logo: assets/img/logo.svg
+
+excludeDir:
+  - dist
+
+assets:
+  - assets
+  - materials
+
+sidebar:
+  background: "#ef3d3e"
+  textColor: "#fff"
+
+headHtml: |
+  <link rel="stylesheet" href="dist/css/includes.css">
+
+bodyHtml: |
+  <script src="dist/js/app.js"></script>
+
+order:
+  - +Getting Started

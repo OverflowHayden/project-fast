@@ -1,0 +1,16 @@
+{
+  "name": "fast",
+  "version": "1.0.0",
+  "description": "Project FAST",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "toolkit": "stylemark -i src -o dist -c stylemark.yml -w -b",
+    "test": "npm run toolkit && npm run build"
+  },
+  "author": "Hayden Lin",
+  "license": "ISC",
+  "dependencies": {
+    "stylemark": "^0.6.5"
+  }
+}
