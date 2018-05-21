@@ -3,6 +3,7 @@ logo: assets/img/logo.svg
 
 excludeDir:
   - dist
+  - assets/scss
 
 assets:
   - assets
@@ -13,10 +14,11 @@ sidebar:
   textColor: "#fff"
 
 headHtml: |
-  <link rel="stylesheet" href="dist/css/includes.css">
+  <link rel="stylesheet" href="assets/css/style.css">
 
 bodyHtml: |
-  <script src="dist/js/app.js"></script>
+  <script src="assets/js/bundle.js"></script>
+  <script src="assets/js/app.min.js"></script>
 
 order:
   - +Getting Started

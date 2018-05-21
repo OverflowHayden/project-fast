@@ -1,16 +1,50 @@
 {
   "name": "fast",
-  "version": "1.0.0",
+  "version": "0.2.0",
   "description": "Project FAST",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "toolkit": "stylemark -i src -o dist -c stylemark.yml -w -b",
+    "build": "concurrently --kill-others \"stylemark -i src -o dist -c stylemark.yml -b\" \"webpack\"",
+    "dev": "concurrently --kill-others \"stylemark -i src -o dist -c stylemark.yml -w -b\" \"webpack --watch\"",
+    "toolkit": "stylemark -i src -o dist -c stylemark.yml -b",
     "test": "npm run toolkit && npm run build"
   },
   "author": "Hayden Lin",
   "license": "ISC",
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "stylelint": "^9.1.3",
+    "stylelint-selector-bem-pattern": "^2.0.0",
+    "stylelint-webpack-plugin": "^0.10.3",
+    "webpack-cli": "^2.1.3"
+  },
   "dependencies": {
-    "stylemark": "^0.6.5"
+    "autoprefixer": "^8.4.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-runtime": "^6.26.0",
+    "bourbon": "^5.0.0",
+    "concurrently": "^3.5.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "fontawesome": "^4.7.2",
+    "image-webpack-loader": "^4.2.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "node-sass": "^4.8.3",
+    "optimize-css-assets-webpack-plugin": "^4.0.1",
+    "pixrem": "^4.0.1",
+    "postcss-csso": "^3.0.0",
+    "postcss-loader": "^2.1.5",
+    "reboot.css": "^1.0.1",
+    "sag-bourbon-neat": "^2.1.1",
+    "sass-loader": "^6.0.7",
+    "stylemark": "^0.6.5",
+    "svgxuse": "^1.2.4",
+    "tingle.js": "^0.13.2",
+    "tiny-slider": "^2.6.0",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "webfontloader": "^1.6.28",
+    "webpack": "^4.8.1",
+    "webpack-concat-plugin": "^3.0.0-beta.0"
   }
 }
