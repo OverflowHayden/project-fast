@@ -26,14 +26,16 @@ $grid-columns:                    12;
 
 // breakpoints
 $screen-xs:                       480px;
-$screen-sm:                       768px;
-$screen-md:                       1023px;
-$screen-lg-min:                   1024px;
+$screen-sm-min:                   $screen-xs + 1;
+$screen-sm-max:                   767px;
+$screen-md-min:                   $screen-sm-max + 1;
+$screen-md-max:                   1023px;
+$screen-lg-min:                   $screen-md-max + 1;
 $screen-lg-max:                   1170px;
 $screen-xl:                       1171px;
 
-// helper grid
-$visual-grid:                     false;
-$visual-grid-color:               #eee;
-$visual-grid-index:               front; // back / front
-$visual-grid-opacity:             0.4;
+//neat grid override
+$neat-grid: (
+        columns: 12,
+        gutter: 30px,
+);

@@ -1,26 +1,8 @@
-/// Bootstrap Breakpoint Mixins
-/// Easy media queries within Bootstrap's default screensize-variables
-/// @author: vfreriks
-@mixin bp-screen-lg {
-    @media only screen and (min-width: $screen-lg-min) {
-        @content;
-    }
-}
+@mixin twelve-columns() {
 
-@mixin bp-screen-md {
-    @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
-        @content;
-    }
-}
-
-@mixin bp-screen-sm {
-    @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-        @content;
-    }
-}
-
-@mixin bp-screen-xs {
-    @media only screen and (max-width: $screen-xs-max) {
-        @content;
+    @for $i from 1 through 12 {
+        &--#{$i} {
+            @include grid-column($i);
+        }
     }
 }
