@@ -26,6 +26,7 @@
 @import 'vendor/reboot';
 @import 'vendor/bourbon';
 @import 'vendor/neat';
+@import 'vendor/fontawesome';
 @import 'vendor/tiny_slider';
 @import 'vendor/tingle';
 @import 'vendor/slideout';
@@ -41,6 +42,7 @@
 	4. Atoms
 ---------------------------------------------------------------------------- */
 @import 'atoms/typography';
+@import 'atoms/button';
 
 
 /* ----------------------------------------------------------------------------

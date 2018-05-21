@@ -4,7 +4,7 @@
   "description": "Project FAST",
   "main": "index.js",
   "scripts": {
-    "build": "concurrently --kill-others \"stylemark -i src -o dist -c stylemark.yml -b\" \"webpack\"",
+    "build": "webpack && stylemark -i src -o dist -c stylemark.yml",
     "dev": "concurrently --kill-others \"stylemark -i src -o dist -c stylemark.yml -w -b\" \"webpack --watch\"",
     "toolkit": "stylemark -i src -o dist -c stylemark.yml -b",
     "test": "npm run toolkit && npm run build"
@@ -27,7 +27,7 @@
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
-    "fontawesome": "^4.7.2",
+    "font-awesome": "^4.7.0",
     "image-webpack-loader": "^4.2.0",
     "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.8.3",

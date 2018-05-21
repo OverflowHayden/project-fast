@@ -10,11 +10,12 @@ assets:
   - materials
 
 sidebar:
-  background: "#ef3d3e"
+  background: "#F37748"
   textColor: "#fff"
 
 headHtml: |
   <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 bodyHtml: |
   <script src="assets/js/bundle.js"></script>

@@ -1,15 +1,20 @@
 /* ---------------------------------------------- //
  * Colors
 // ---------------------------------------------- */
-$color_brand:                     #1283a8;
+$color-primary:                   #F37748 !default;
+$color-secondary:                 #429EA6 !default;
 
-$color_base_white:                #fff;
-$color_base_light:                #ededed;
-$color_base_black:                #000;
+$color-base-white:                #fff !default;
+$color-base-light:                #ededed !default;
+$color-base-black:                #000 !default;
 
-$color_facebook: 				  #3b5998;
-$color_youtube: 				  #e52d27;
-$color_twitter: 				  #55acee;
+$color-button:                    $color-primary !default;
+$color-button-text:               $color-base-white !default;
+$color-facebook: 				  #3b5998 !default;
+$color-youtube: 				  #e52d27 !default;
+$color-twitter: 				  #55acee !default;
+
+$border-radius:                   3px !default;
 
 
 /* ---------------------------------------------- //
