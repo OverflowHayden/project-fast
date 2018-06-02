@@ -22,6 +22,7 @@ button, .button {
 
     &:hover {
         background: darken($color-button, 4%);
+        color: $color-button-text;
     }
 
     &:active, &:focus {
@@ -72,6 +73,7 @@ button, .button {
 
         &:hover {
             background: darken($color-base-white, 4%);
+            color: $color-button;
         }
     }
 

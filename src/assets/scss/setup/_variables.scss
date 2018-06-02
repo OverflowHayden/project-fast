@@ -8,8 +8,13 @@ $color-base-white:                #fff !default;
 $color-base-light:                #ededed !default;
 $color-base-black:                #000 !default;
 
+$color-link:                      #007bff !default;
 $color-button:                    $color-primary !default;
 $color-button-text:               $color-base-white !default;
+$color-table:                     $color-base-white !default;
+$color-table-border:              #e0e0e0 !default;
+$color-table-text:                $color-base-black !default;
+$color-table-selection:           rgba($color-primary, 0.22) !default;
 $color-facebook: 				  #3b5998 !default;
 $color-youtube: 				  #e52d27 !default;
 $color-twitter: 				  #55acee !default;
