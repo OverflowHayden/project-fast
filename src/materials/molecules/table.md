@@ -70,12 +70,19 @@ category: Molecules
                 <a href="#" class="data-table__action">Add</a>
                 <div class="data-table__selection">
                     <span class="data-table__selected"><span class="data-table__selected-count"></span> selected</span>
-                    <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a>
+                    <div class="data-table__buttons">
+                        <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a>
+                    </div>
                 </div>
             </th>
         </tr>
         <tr>
-            <th><input type="checkbox" /></th>
+            <th>
+                <div class="checkbox">
+                    <input id="cb_0" type="checkbox" />
+                    <label for="cb_0" class="checkbox__input"></label>
+                </div>
+            </th>
             <th><a href="#"><i class="fa fa-arrow-down"></i>ID</a></th>
             <th><a href="#">Name</a></th>
             <th><a href="#">Description</a></th>
@@ -84,7 +91,12 @@ category: Molecules
     </thead>
     <tbody>
         <tr>
-            <td><input type="checkbox" /></td>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_1" type="checkbox" />
+                    <label for="cb_1" class="checkbox__input"></label>
+                </div>
+            </td>
             <td>1</td>
             <td>John Doe</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
@@ -92,7 +104,12 @@ category: Molecules
                 <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" /></td>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_2" type="checkbox" />
+                    <label for="cb_2" class="checkbox__input"></label>
+                </div>
+            </td>
             <td>2</td>
             <td>Jon Stott</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
@@ -100,7 +117,12 @@ category: Molecules
                 <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" /></td>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_3" type="checkbox" />
+                    <label for="cb_3" class="checkbox__input"></label>
+                </div>
+            </td>
             <td>3</td>
             <td>Virginia Robbins</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
@@ -108,7 +130,12 @@ category: Molecules
                 <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" /></td>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_4" type="checkbox" />
+                    <label for="cb_4" class="checkbox__input"></label>
+                </div>
+            </td>
             <td>4</td>
             <td>Elise Heath</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
@@ -116,7 +143,12 @@ category: Molecules
                 <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" /></td>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_5" type="checkbox" />
+                    <label for="cb_5" class="checkbox__input"></label>
+                </div>
+            </td>
             <td>5</td>
             <td>Tahmina Marriott</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
@@ -124,7 +156,12 @@ category: Molecules
                 <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
         </tr>
         <tr>
-            <td><input type="checkbox" /></td>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_6" type="checkbox" />
+                    <label for="cb_6" class="checkbox__input"></label>
+                </div>
+            </td>
             <td>6</td>
             <td>Sommer Gibbons</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>

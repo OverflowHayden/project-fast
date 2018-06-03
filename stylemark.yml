@@ -3,7 +3,7 @@ logo: assets/img/logo.svg
 
 excludeDir:
   - dist
-  - assets/scss
+  - src/assets/scss
 
 assets:
   - assets

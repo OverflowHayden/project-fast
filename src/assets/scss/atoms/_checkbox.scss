@@ -1,0 +1,107 @@
+.checkbox {
+    $self: &;
+
+    &::selection {
+        background: transparent;
+    }
+
+    body > & {
+        margin: 20px;
+    }
+
+    &__input {
+        cursor: pointer;
+        display: inline-block;
+        vertical-align: middle;
+        width: 20px;
+        height: 20px;
+        border: 2px solid $color-checkbox-inactive;
+        border-radius: 2px;
+        text-indent: -999em;
+        position: relative;
+        transition: border 0.2s ease, background 0.2s ease;
+
+        &:after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: radial-gradient(circle, $color-checkbox-inactive 10%, transparent 10.01%);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            transform: scale(20, 20);
+            opacity: 0;
+            transition: transform .5s, opacity 1s;
+            background-color: $color-base-white;
+        }
+
+        &:active:after {
+            transform: scale(0, 0);
+            opacity: .2;
+            transition: 0s;
+        }
+
+        &::selection {
+            background: transparent;
+        }
+    }
+
+    &__label {
+        cursor: pointer;
+        margin-left: 12px;
+
+        &::selection {
+            background: transparent;
+        }
+    }
+
+    input[type="checkbox"] {
+        visibility: hidden;
+        position: absolute;
+
+        &:checked + #{$self}__input {
+            background: $color-checkbox-active;
+            border-color: $color-checkbox-active;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: 1px;
+                border-right: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+                transform: rotate(45deg);
+                transform-origin: 0 100%;
+                animation: checkbox-check 0.125s 0.25s cubic-bezier(.4,.0,.23,1) forwards
+            }
+
+            &:after {
+                background-image: radial-gradient(circle, $color-checkbox-active 10%, transparent 10.01%);
+            }
+        }
+    }
+}
+
+@keyframes checkbox-check{
+    0%{
+        width: 0;
+        height: 0;
+        border-color: $color-checkbox-check;
+        transform: translate3d(0,0,0) rotate(45deg);
+    }
+    33%{
+        width: 7px;
+        height: 0;
+        transform: translate3d(0,0,0) rotate(45deg);
+    }
+    100%{
+        width: 7px;
+        height: 12px;
+        border-color: $color-checkbox-check;
+        transform: translate3d(0,-10px,0) rotate(45deg);
+    }
+}

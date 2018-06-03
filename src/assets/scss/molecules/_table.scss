@@ -49,7 +49,7 @@ table {
         background: $color-table;
         color: $color-primary;
         font-size: 1.6rem;
-        display: none;
+        display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
@@ -59,7 +59,9 @@ table {
         right: 0;
         bottom: 0;
         left: 0;
-        z-index: 3;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.15s ease, z-index 0s ease 0.15s;
 
         &:before {
             background: $color-table-selection;
@@ -73,7 +75,9 @@ table {
         }
 
         #{$self}--checked & {
-            display: flex;
+            opacity: 1;
+            z-index: 3;
+            transition: opacity 0.15s ease;
         }
     }
 
@@ -82,5 +86,14 @@ table {
         font-size: 1.6rem;
         font-weight: 600;
         text-transform: uppercase;
+    }
+
+    &__buttons {
+        .button--icon.button--text {
+            border-radius: 50%;
+            font-size: 2.4rem;
+            color: $color-icon;
+            padding: 6px 10px;
+        }
     }
 }
