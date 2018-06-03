@@ -1,0 +1,503 @@
+<!doctype html>
+<html>
+
+	<head>
+		<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+		<style>
+		</style>
+
+		<style>
+			html, body {
+				min-height: 0 !important;
+				height: auto !important;
+			}
+		</style>
+
+		<script>
+			function findAndHandleStylemarkBlocks(languages, handler) {
+				var blocks = getStylemarkBlocks(languages);
+				handleStylemarkBlocks(blocks, handler);
+			}
+
+			function getStylemarkBlocks(languages) {
+				languages = typeof languages === 'string' ? [languages] : languages;
+
+				var selectors = [];
+
+				for (var i = 0; i < languages.length; i++) {
+					selectors.push('script[data-language="' + languages[i] + '"]');
+				}
+
+				var selector = selectors.join(',');
+				var scripts = document.querySelectorAll(selector);
+				var blocks = [];
+
+				for (var i = 0, length = scripts.length; i < length; i++) {
+					if (scripts[i].innerText) {
+						blocks.push(scripts[i].innerText);
+					}
+				}
+
+				return blocks;
+			}
+
+			function handleStylemarkBlocks(blocks, handler) {
+				for (var i = 0, length = blocks.length; i < length; i++) {
+					handler(blocks[i], i);
+				}
+			}
+		</script>
+	</head>
+
+	<body>				<table class="data-table">
+    <thead>
+        <tr class="data-table__head">
+            <th colspan="5">
+                <a href="#" class="data-table__action">Add</a>
+                <a href="#" class="data-table__filter"><i class="fa fa-filter"></i></a>
+                <div class="data-table__selection">
+                    <span class="data-table__selected"><span class="data-table__selected-count"></span> selected</span>
+                    <div class="data-table__buttons">
+                        <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a>
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="checkbox">
+                    <input id="cb_0" type="checkbox" />
+                    <label for="cb_0" class="checkbox__input"></label>
+                </div>
+            </th>
+            <th><a href="#"><i class="fa fa-arrow-down"></i>ID</a></th>
+            <th><a href="#">Name</a></th>
+            <th><a href="#">Description</a></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_1" type="checkbox" />
+                    <label for="cb_1" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_2" type="checkbox" />
+                    <label for="cb_2" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>2</td>
+            <td>Jon Stott</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_3" type="checkbox" />
+                    <label for="cb_3" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>3</td>
+            <td>Virginia Robbins</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_4" type="checkbox" />
+                    <label for="cb_4" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>4</td>
+            <td>Elise Heath</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_5" type="checkbox" />
+                    <label for="cb_5" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>5</td>
+            <td>Tahmina Marriott</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_6" type="checkbox" />
+                    <label for="cb_6" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>6</td>
+            <td>Sommer Gibbons</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr class="data-table__footer">
+            <td colspan="5">
+                <span class="data-table__results">Showing 1 to 6 of 30 entries</span>
+                <nav class="data-table__pagination">
+                    <a href="#" class="pagination-list__nav pagination-list__nav--disabled">Previous</a>
+                    <ul class="pagination-list">
+                        <li class="pagination-list__item pagination-list__item--active"><a href="#">1</a></li>
+                        <li class="pagination-list__item"><a href="#">2</a></li>
+                        <li class="pagination-list__item"><a href="#">3</a></li>
+                        <li class="pagination-list__item"><a href="#">4</a></li>
+                        <li class="pagination-list__item"><a href="#">5</a></li>
+                    </ul>
+                    <a href="#" class="pagination-list__nav">Next</a>
+                </nav>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+<script src="assets/js/bundle.js"></script>
+<script src="assets/js/app.min.js"></script>
+
+
+			<script type="text/x-stylemark" data-language="html"><table class="data-table">
+    <thead>
+        <tr class="data-table__head">
+            <th colspan="5">
+                <a href="#" class="data-table__action">Add</a>
+                <a href="#" class="data-table__filter"><i class="fa fa-filter"></i></a>
+                <div class="data-table__selection">
+                    <span class="data-table__selected"><span class="data-table__selected-count"></span> selected</span>
+                    <div class="data-table__buttons">
+                        <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a>
+                    </div>
+                </div>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                <div class="checkbox">
+                    <input id="cb_0" type="checkbox" />
+                    <label for="cb_0" class="checkbox__input"></label>
+                </div>
+            </th>
+            <th><a href="#"><i class="fa fa-arrow-down"></i>ID</a></th>
+            <th><a href="#">Name</a></th>
+            <th><a href="#">Description</a></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_1" type="checkbox" />
+                    <label for="cb_1" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_2" type="checkbox" />
+                    <label for="cb_2" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>2</td>
+            <td>Jon Stott</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_3" type="checkbox" />
+                    <label for="cb_3" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>3</td>
+            <td>Virginia Robbins</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_4" type="checkbox" />
+                    <label for="cb_4" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>4</td>
+            <td>Elise Heath</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_5" type="checkbox" />
+                    <label for="cb_5" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>5</td>
+            <td>Tahmina Marriott</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>
+                <div class="checkbox">
+                    <input id="cb_6" type="checkbox" />
+                    <label for="cb_6" class="checkbox__input"></label>
+                </div>
+            </td>
+            <td>6</td>
+            <td>Sommer Gibbons</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr class="data-table__footer">
+            <td colspan="5">
+                <span class="data-table__results">Showing 1 to 6 of 30 entries</span>
+                <nav class="data-table__pagination">
+                    <a href="#" class="pagination-list__nav pagination-list__nav--disabled">Previous</a>
+                    <ul class="pagination-list">
+                        <li class="pagination-list__item pagination-list__item--active"><a href="#">1</a></li>
+                        <li class="pagination-list__item"><a href="#">2</a></li>
+                        <li class="pagination-list__item"><a href="#">3</a></li>
+                        <li class="pagination-list__item"><a href="#">4</a></li>
+                        <li class="pagination-list__item"><a href="#">5</a></li>
+                    </ul>
+                    <a href="#" class="pagination-list__nav">Next</a>
+                </nav>
+            </td>
+        </tr>
+    </tfoot>
+</table></script>
+			<script type="text/x-stylemark" data-language="js">var tableCheckboxes = document.querySelectorAll('.data-table td input[type="checkbox"]');
+var headCheckbox = document.querySelector('.data-table th input[type="checkbox"]');
+
+for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+    if (element !== null) {
+        element.addEventListener('click', countCheckboxes);
+    }
+}
+
+function countCheckboxes() {
+    var count = 0;
+    console.log(tableCheckboxes.length);
+    
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            element.checked ? count++ : null;
+        }
+    }
+    
+    if(count > 0) {
+        document.querySelector('.data-table').classList.add('data-table--checked');
+        document.querySelector('.data-table__selected-count').innerText = count;
+        
+        if(count == tableCheckboxes.length) {
+        headCheckbox.indeterminate = false;
+            headCheckbox.checked = true;
+        }
+        else {
+        headCheckbox.indeterminate = true;
+            headCheckbox.checked = false;
+        }
+    }
+    else {
+        document.querySelector('.data-table').classList.remove('data-table--checked');
+        headCheckbox.indeterminate = false;
+        headCheckbox.checked = false;
+    }
+}
+
+headCheckbox.addEventListener('click', allCheckboxes);
+
+function allCheckboxes() {
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            if(headCheckbox.checked == true) {
+                element.checked = true;
+            }
+            else {
+                element.checked = false;
+            }
+        }
+    }
+}</script>
+
+		<!--
+			Vanilla JS
+		-->
+
+		<script>
+			findAndHandleStylemarkBlocks('js', function(block) {
+				eval(block);
+			});
+		</script>
+
+		<!--
+			AngularJS
+		-->
+
+		<script>
+			(function(angular) {
+
+				if (!angular) {
+					return;
+				}
+
+				findAndHandleStylemarkBlocks('angularjs', function(block, index) {
+					var moduleElem = document.querySelector('[ng-app]');
+					var module;
+
+					if (moduleElem) {
+						// Uses an existing module
+						module = angular.module(moduleElem.getAttribute('ng-app'));
+					}
+					else {
+						// Creates a new module
+						module = angular.module('stylemark-tables-data-tables', []);
+					}
+
+					module.controller('stylemark-tables-data-tables-' + index, function($scope) {
+						$scope.$eval(block);
+					});
+				});
+			})(window.angular);
+		</script>
+
+		<!--
+			React / JSX
+		-->
+
+		<script>
+			(function(ReactDOM) {
+
+				if (!ReactDOM) {
+					return;
+				}
+
+				findAndHandleStylemarkBlocks('jsx', function(block, index) {
+					var rootNode = document.querySelectorAll('.stylemark-react-root')[index];
+					var Component = eval(block);
+					ReactDOM.render(Component, rootNode);
+				});
+			})(window.ReactDOM);
+		</script>
+
+		<!--
+			Ember
+		-->
+
+		<script>
+			(function(Ember) {
+
+				if (!Ember) {
+					return;
+				}
+
+				findAndHandleStylemarkBlocks(['handlebars', 'hbs'], function(block, index) {
+					var render = function() {
+						var app = window.noop
+						var container = app.__container__;
+						var renderer = container.lookup('renderer:-dom');
+						var template = Ember.HTMLBars.compile(block);
+
+						var jsBlocks = getStylemarkBlocks('js');
+						var jsBlock = jsBlocks && jsBlocks[0] ? jsBlocks[0] : '{}';
+						var context;
+						eval('context = ' + jsBlock);
+
+						// Credit:
+						// http://stackoverflow.com/questions/27950413/render-ember-js-hbs-template-to-a-string#answer-35625858
+						var compile = function(container, template, context) {
+							return new Ember.RSVP.Promise(function(resolve) {
+								Ember.Component.extend(Ember.merge({
+									style: 'display:none;',
+									layout: template,
+									container: container,
+									renderer: renderer,
+
+									init: function() {
+										this._super.apply(this, arguments);
+										Ember.setOwner(this, container);
+									},
+
+									didRender: function() {
+										var elem = this.$();
+										resolve(elem);
+										this.destroy();
+									}
+								}, context))
+									.create()
+									.append();
+
+							});
+						};
+
+						compile(container, template, context).then(function(elem) {
+							var node = document.querySelectorAll('.stylemark-ember-root')[index];
+							jQuery(node).append(elem);
+						});
+					};
+
+					var isReady = function() {
+						return window.noop
+							&& window.noop.__container__;
+					};
+
+					var checkReady = function() {
+						if (isReady()) {
+							render();
+						}
+						else {
+							setTimeout(checkReady, 20);
+						}
+					};
+
+					checkReady();
+				});
+
+			})(window.Ember);
+		</script>
+
+		<script src="_stylemark/js/vendor/iframeResizer.contentWindow.min.js"></script>
+	</body>
+</html>

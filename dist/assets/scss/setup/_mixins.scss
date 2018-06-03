@@ -1,0 +1,8 @@
+@mixin twelve-columns() {
+
+    @for $i from 1 through 12 {
+        &--#{$i} {
+            @include grid-column($i);
+        }
+    }
+}

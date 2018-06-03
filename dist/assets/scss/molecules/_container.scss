@@ -1,0 +1,5 @@
+.container {
+    @include grid-container;
+    max-width: $screen-xl;
+    margin: 0 auto;
+}

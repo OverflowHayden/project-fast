@@ -1,0 +1,52 @@
+/* ---------------------------------------------- //
+ * Colors
+// ---------------------------------------------- */
+$color-primary:                   #F37748 !default;
+$color-secondary:                 #429EA6 !default;
+
+$color-base-white:                #fff !default;
+$color-base-light:                #ededed !default;
+$color-base-black:                #000 !default;
+
+$color-link:                      #007bff !default;
+$color-icon:                      #6d6d6d !default;
+$color-button:                    $color-primary !default;
+$color-button-text:               $color-base-white !default;
+$color-table:                     $color-base-white !default;
+$color-table-border:              #e0e0e0 !default;
+$color-table-text:                $color-base-black !default;
+$color-table-selection:           rgba($color-primary, 0.22) !default;
+$color-checkbox-active:           $color-primary !default;
+$color-checkbox-inactive:         #757575 !default;
+$color-checkbox-check:            $color-base-white !default;
+$color-pagination:                $color-primary !default;
+$color-pagination-text:           $color-base-white !default;
+$color-facebook: 				  #3b5998 !default;
+$color-youtube: 				  #e52d27 !default;
+$color-twitter: 				  #55acee !default;
+
+$border-radius:                   3px !default;
+
+
+/* ---------------------------------------------- //
+ * Neat
+/* ---------------------------------------------- */
+// grid setup
+$max-width:                       1200px;
+$grid-columns:                    12;
+
+// breakpoints
+$screen-xs:                       480px;
+$screen-sm-min:                   $screen-xs + 1;
+$screen-sm-max:                   767px;
+$screen-md-min:                   $screen-sm-max + 1;
+$screen-md-max:                   1023px;
+$screen-lg-min:                   $screen-md-max + 1;
+$screen-lg-max:                   1170px;
+$screen-xl:                       1171px;
+
+//neat grid override
+$neat-grid: (
+        columns: 12,
+        gutter: 30px,
+);
