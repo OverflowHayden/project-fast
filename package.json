@@ -1,6 +1,6 @@
 {
   "name": "project-fast",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Project FAST",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
     "test": "npm run toolkit && npm run build"
   },
   "author": "Hayden Lin",
-  "license": "ISC",
+  "license": "GPL-3.0",
   "bin": {
     "project-fast": "./index.js"
   },

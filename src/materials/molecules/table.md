@@ -120,12 +120,16 @@ category: Molecules
 ```
 
 ### Data table
+To use with vue.js.
+Also usable with table--compact
+
 ```data-tables.html
 <table class="data-table">
     <thead>
         <tr class="data-table__head">
             <th colspan="5">
                 <a href="#" class="data-table__action">Add</a>
+                <a href="#" class="data-table__filter"><i class="fa fa-filter"></i></a>
                 <div class="data-table__selection">
                     <span class="data-table__selected"><span class="data-table__selected-count"></span> selected</span>
                     <div class="data-table__buttons">
@@ -227,11 +231,30 @@ category: Molecules
                 <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
         </tr>
     </tbody>
+    <tfoot>
+        <tr class="data-table__footer">
+            <td colspan="5">
+                <span class="data-table__results">Showing 1 to 6 of 30 entries</span>
+                <nav class="data-table__pagination">
+                    <a href="#" class="pagination-list__nav pagination-list__nav--disabled">Previous</a>
+                    <ul class="pagination-list">
+                        <li class="pagination-list__item pagination-list__item--active"><a href="#">1</a></li>
+                        <li class="pagination-list__item"><a href="#">2</a></li>
+                        <li class="pagination-list__item"><a href="#">3</a></li>
+                        <li class="pagination-list__item"><a href="#">4</a></li>
+                        <li class="pagination-list__item"><a href="#">5</a></li>
+                    </ul>
+                    <a href="#" class="pagination-list__nav">Next</a>
+                </nav>
+            </td>
+        </tr>
+    </tfoot>
 </table>
 ```
 
 ```data-tables.js
-var tableCheckboxes = document.querySelectorAll('.data-table input[type="checkbox"]');
+var tableCheckboxes = document.querySelectorAll('.data-table td input[type="checkbox"]');
+var headCheckbox = document.querySelector('.data-table th input[type="checkbox"]');
 
 for (var i = 0, element; element = tableCheckboxes[i]; i++) {
     if (element !== null) {
@@ -241,20 +264,46 @@ for (var i = 0, element; element = tableCheckboxes[i]; i++) {
 
 function countCheckboxes() {
     var count = 0;
-    var tableCheckboxes = document.querySelectorAll('.data-table input[type="checkbox"]');
+    console.log(tableCheckboxes.length);
     
     for (var i = 0, element; element = tableCheckboxes[i]; i++) {
         if (element !== null) {
             element.checked ? count++ : null;
         }
     }
-    console.log(count);
+    
     if(count > 0) {
         document.querySelector('.data-table').classList.add('data-table--checked');
         document.querySelector('.data-table__selected-count').innerText = count;
+        
+        if(count == tableCheckboxes.length) {
+        headCheckbox.indeterminate = false;
+            headCheckbox.checked = true;
+        }
+        else {
+        headCheckbox.indeterminate = true;
+            headCheckbox.checked = false;
+        }
     }
     else {
         document.querySelector('.data-table').classList.remove('data-table--checked');
+        headCheckbox.indeterminate = false;
+        headCheckbox.checked = false;
+    }
+}
+
+headCheckbox.addEventListener('click', allCheckboxes);
+
+function allCheckboxes() {
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            if(headCheckbox.checked == true) {
+                element.checked = true;
+            }
+            else {
+                element.checked = false;
+            }
+        }
     }
 }
 ```
