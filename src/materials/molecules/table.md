@@ -61,6 +61,64 @@ category: Molecules
 </table>
 ```
 
+### Compact
+```tables-compact.html
+<table class="table--compact">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jon Stott</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Virginia Robbins</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Elise Heath</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Tahmina Marriott</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Sommer Gibbons</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+```
+
 ### Data table
 ```data-tables.html
 <table class="data-table">
