@@ -5,7 +5,7 @@ category: Molecules
 
 ### Simple
 ```tables.html
-<table>
+<table style="--cols:4">
     <thead>
         <tr>
             <th>ID</th>
@@ -63,7 +63,7 @@ category: Molecules
 
 ### Compact
 ```tables-compact.html
-<table class="table--compact">
+<table class="table--compact" style="--cols:4">
     <thead>
         <tr>
             <th>ID</th>
@@ -124,7 +124,7 @@ To use with vue.js.
 Also usable with table--compact
 
 ```data-tables.html
-<table class="data-table">
+<table class="data-table" style="--cols:5">
     <thead>
         <tr class="data-table__head">
             <th colspan="5">
@@ -264,7 +264,6 @@ for (var i = 0, element; element = tableCheckboxes[i]; i++) {
 
 function countCheckboxes() {
     var count = 0;
-    console.log(tableCheckboxes.length);
     
     for (var i = 0, element; element = tableCheckboxes[i]; i++) {
         if (element !== null) {
@@ -304,6 +303,14 @@ function allCheckboxes() {
                 element.checked = false;
             }
         }
+    }
+    
+    if(headCheckbox.checked == true) {
+        document.querySelector('.data-table').classList.add('data-table--checked');
+        document.querySelector('.data-table__selected-count').innerText = tableCheckboxes.length;
+    }
+    else {
+        document.querySelector('.data-table').classList.remove('data-table--checked');
     }
 }
 ```

@@ -432,7 +432,7 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot;&gt;
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot; style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;ID&lt;/th&gt;
@@ -486,7 +486,7 @@
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot;&gt;
+		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot; style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;ID&lt;/th&gt;
@@ -567,7 +567,7 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot; class=&quot;table--compact&quot;&gt;
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot; class=&quot;table--compact&quot; style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;ID&lt;/th&gt;
@@ -621,7 +621,7 @@
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot; class=&quot;table--compact&quot;&gt;
+		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot; class=&quot;table--compact&quot; style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;ID&lt;/th&gt;
@@ -704,7 +704,7 @@ Also usable with table--compact</p>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot; class=&quot;data-table&quot;&gt;
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot; class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
     &lt;thead&gt;
         &lt;tr class=&quot;data-table__head&quot;&gt;
             &lt;th colspan=&quot;5&quot;&gt;
@@ -830,7 +830,7 @@ Also usable with table--compact</p>
         &lt;/tr&gt;
     &lt;/tfoot&gt;
 &lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot; class=&quot;data-table&quot;&gt;
+		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot; class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
     &lt;thead&gt;
         &lt;tr class=&quot;data-table__head&quot;&gt;
             &lt;th colspan=&quot;5&quot;&gt;
@@ -972,7 +972,6 @@ for (var i = 0, element; element = tableCheckboxes[i]; i++) {
 
 function countCheckboxes() {
     var count = 0;
-    console.log(tableCheckboxes.length);
 
     for (var i = 0, element; element = tableCheckboxes[i]; i++) {
         if (element !== null) {
@@ -1012,6 +1011,14 @@ function allCheckboxes() {
                 element.checked = false;
             }
         }
+    }
+
+    if(headCheckbox.checked == true) {
+        document.querySelector(&#39;.data-table&#39;).classList.add(&#39;data-table--checked&#39;);
+        document.querySelector(&#39;.data-table__selected-count&#39;).innerText = tableCheckboxes.length;
+    }
+    else {
+        document.querySelector(&#39;.data-table&#39;).classList.remove(&#39;data-table--checked&#39;);
     }
 }" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">var tableCheckboxes = document.querySelectorAll(&#39;.data-table td input[type=&quot;checkbox&quot;]&#39;);
@@ -1025,7 +1032,6 @@ for (var i = 0, element; element = tableCheckboxes[i]; i++) {
 
 function countCheckboxes() {
     var count = 0;
-    console.log(tableCheckboxes.length);
 
     for (var i = 0, element; element = tableCheckboxes[i]; i++) {
         if (element !== null) {
@@ -1065,6 +1071,14 @@ function allCheckboxes() {
                 element.checked = false;
             }
         }
+    }
+
+    if(headCheckbox.checked == true) {
+        document.querySelector(&#39;.data-table&#39;).classList.add(&#39;data-table--checked&#39;);
+        document.querySelector(&#39;.data-table__selected-count&#39;).innerText = tableCheckboxes.length;
+    }
+    else {
+        document.querySelector(&#39;.data-table&#39;).classList.remove(&#39;data-table--checked&#39;);
     }
 }</code></pre>
 	</div>

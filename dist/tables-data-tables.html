@@ -52,7 +52,7 @@
 		</script>
 	</head>
 
-	<body>				<table class="data-table">
+	<body>				<table class="data-table" style="--cols:5">
     <thead>
         <tr class="data-table__head">
             <th colspan="5">
@@ -182,7 +182,7 @@
 <script src="assets/js/app.min.js"></script>
 
 
-			<script type="text/x-stylemark" data-language="html"><table class="data-table">
+			<script type="text/x-stylemark" data-language="html"><table class="data-table" style="--cols:5">
     <thead>
         <tr class="data-table__head">
             <th colspan="5">
@@ -319,7 +319,6 @@ for (var i = 0, element; element = tableCheckboxes[i]; i++) {
 
 function countCheckboxes() {
     var count = 0;
-    console.log(tableCheckboxes.length);
     
     for (var i = 0, element; element = tableCheckboxes[i]; i++) {
         if (element !== null) {
@@ -359,6 +358,14 @@ function allCheckboxes() {
                 element.checked = false;
             }
         }
+    }
+    
+    if(headCheckbox.checked == true) {
+        document.querySelector('.data-table').classList.add('data-table--checked');
+        document.querySelector('.data-table__selected-count').innerText = tableCheckboxes.length;
+    }
+    else {
+        document.querySelector('.data-table').classList.remove('data-table--checked');
     }
 }</script>
 
