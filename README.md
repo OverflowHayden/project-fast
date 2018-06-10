@@ -1,5 +1,7 @@
 # Project FAST
-## "Full Application Stack Toolkit"
+## Project "Full Application Stack Toolkit", a frontend toolkit for building applications
+
+### [Click here to open the toolkit](https://overflowhayden.github.io/project-fast/dist/)
 
 ### Usage (with Yarn): 
 Go to the project-fast folder (node_modules/project-fast)

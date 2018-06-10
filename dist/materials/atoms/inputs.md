@@ -1,12 +1,12 @@
 ---
-name: Inputs
+name: Text field
 category: Atoms
 ---
 
-## Text input
-```radio.html
-<div class="input input--text">
-    <label for="text" class="input-text__label">Input label</label>
-    <input id="text" type="text" name="text" class="input-text__input" />
+## Text field
+```text-field.html
+<div class="text-field">
+    <input id="text" type="text" name="text" class="text-field__input" placeholder="Placeholder" />
+    <label for="text" class="text-field__label">Input label</label>
 </div>
 ```

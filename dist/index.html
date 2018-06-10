@@ -24,9 +24,9 @@
 									<option value="buttons">Buttons</option>
 									<option value="checkbox">Checkbox</option>
 									<option value="headings">Headings</option>
-									<option value="inputs">Inputs</option>
 									<option value="pagination">Pagination</option>
 									<option value="radio-button">Radio button</option>
+									<option value="text-fields">Text fields</option>
 							</optgroup>
 							<optgroup label="Molecules">
 									<option value="grid">Grid</option>
@@ -269,46 +269,6 @@
 </div></div>
 </div>
 
-						<div id="inputs" class="i-library">
-	<h1 class="display-4">Inputs</h1>
-	<div><div id="text-input" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#text-input" class="icon-link i-section__link -heading"></a>Text input</h2></div><div class="i-example">
-                    <h5 class="i-example__heading">
-                        <a
-                            href="inputs-radio.html"
-                            target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
-                            title="Open in a new window"
-                        ></a>
-                        Example
-                    </h5>
-                    <div class="i-example__body">
-                        <div
-                            class="i-example__iframe"
-                            lazyframe
-                            data-src="inputs-radio.html"
-                            data-initinview="true"
-                            data-title="Loading…"
-
-                        ></div>
-                    </div>
-                </div>
-
-
-<div class="i-code-block">
-	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
-	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;input input--text&quot;&gt;
-    &lt;label for=&quot;text&quot; class=&quot;input-text__label&quot;&gt;Input label&lt;/label&gt;
-    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;input-text__input&quot; /&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;input input--text&quot;&gt;
-    &lt;label for=&quot;text&quot; class=&quot;input-text__label&quot;&gt;Input label&lt;/label&gt;
-    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;input-text__input&quot; /&gt;
-&lt;/div&gt;</code></pre>
-	</div>
-</div></div>
-</div>
-
 						<div id="pagination" class="i-library">
 	<h1 class="display-4">Pagination</h1>
 	<div><div class="i-example">
@@ -416,6 +376,206 @@
     &lt;input id=&quot;rb3&quot; type=&quot;radio&quot; name=&quot;radio&quot; disabled checked /&gt;
     &lt;label for=&quot;rb3&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
     &lt;label for=&quot;rb3&quot; class=&quot;radio__label&quot;&gt;Radio button &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
+						<div id="text-fields" class="i-library">
+	<h1 class="display-4">Text fields</h1>
+	<div><h3>Field styles</h3><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="text-fields-field-styles.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="text-fields-field-styles.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;text-field&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Default style&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-field field--fill&quot;&gt;
+    &lt;input id=&quot;text2&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text2&quot; class=&quot;text-field__label&quot;&gt;Fill style&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-field field--outline&quot;&gt;
+    &lt;input id=&quot;text3&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text3&quot; class=&quot;text-field__label&quot;&gt;Outline style&lt;/label&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;text-field&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Default style&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-field field--fill&quot;&gt;
+    &lt;input id=&quot;text2&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text2&quot; class=&quot;text-field__label&quot;&gt;Fill style&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;text-field field--outline&quot;&gt;
+    &lt;input id=&quot;text3&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text3&quot; class=&quot;text-field__label&quot;&gt;Outline style&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h3>Text field</h3><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="text-fields-text-field.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="text-fields-text-field.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;text-field&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text style&lt;/label&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;text-field&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text style&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h3>Number field</h3><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="text-fields-number-field.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="text-fields-number-field.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;number-field&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;number&quot; name=&quot;text&quot; class=&quot;number-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;number-field__label&quot;&gt;Number label&lt;/label&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;number-field&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;number&quot; name=&quot;text&quot; class=&quot;number-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;number-field__label&quot;&gt;Number label&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h3>Password field</h3><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="text-fields-password-field.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="text-fields-password-field.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;password-field&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;password&quot; name=&quot;password&quot; class=&quot;password-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;password-field__label&quot;&gt;Password label&lt;/label&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;password-field&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;password&quot; name=&quot;password&quot; class=&quot;password-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;password-field__label&quot;&gt;Password label&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h3>Textarea field</h3><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="text-fields-textarea-field.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="text-fields-textarea-field.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;textarea-field&quot;&gt;
+    &lt;textarea id=&quot;text&quot; name=&quot;textarea&quot; class=&quot;textarea-field__input&quot; placeholder=&quot;Placeholder&quot;&gt;&lt;/textarea&gt;
+    &lt;label for=&quot;text&quot; class=&quot;textarea-field__label&quot;&gt;Textarea label&lt;/label&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;textarea-field&quot;&gt;
+    &lt;textarea id=&quot;text&quot; name=&quot;textarea&quot; class=&quot;textarea-field__input&quot; placeholder=&quot;Placeholder&quot;&gt;&lt;/textarea&gt;
+    &lt;label for=&quot;text&quot; class=&quot;textarea-field__label&quot;&gt;Textarea label&lt;/label&gt;
 &lt;/div&gt;</code></pre>
 	</div>
 </div></div>
@@ -1226,7 +1386,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Buttons  Checkbox  Headings  Inputs  Pagination  Radio button "
+						data-filter-value=" Buttons  Checkbox  Headings  Pagination  Radio button  Text fields "
 					>
 						<a href="#category-atoms" class="i-sidebar-list-item">
 							<b>Atoms</b>
@@ -1256,13 +1416,6 @@ function allCheckboxes() {
 								<span>Headings</span>
 							</a>
 							<a
-								href="#inputs"
-								class="i-sidebar-list-item"
-								data-filter-value="Inputs"
-							>
-								<span>Inputs</span>
-							</a>
-							<a
 								href="#pagination"
 								class="i-sidebar-list-item"
 								data-filter-value="Pagination"
@@ -1275,6 +1428,13 @@ function allCheckboxes() {
 								data-filter-value="Radio button"
 							>
 								<span>Radio button</span>
+							</a>
+							<a
+								href="#text-fields"
+								class="i-sidebar-list-item"
+								data-filter-value="Text fields"
+							>
+								<span>Text fields</span>
 							</a>
 					</div>
 			

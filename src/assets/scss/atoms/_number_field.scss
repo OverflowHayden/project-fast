@@ -1,0 +1,11 @@
+.number-field {
+    @extend .text-field;
+
+    &__label {
+        @extend .text-field__label;
+    }
+
+    &__input {
+        @extend .text-field__input;
+    }
+}
