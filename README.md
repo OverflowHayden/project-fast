@@ -3,6 +3,16 @@
 
 ### [Click here to open the toolkit](https://overflowhayden.github.io/project-fast/dist/)
 
+### How to install
+**NPM**
+```
+npm install project-fast
+```
+**Yarn**
+```
+yarn add project-fast
+```
+
 ### Usage (with Yarn): 
 Go to the project-fast folder (node_modules/project-fast)
 

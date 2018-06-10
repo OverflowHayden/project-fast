@@ -25,6 +25,8 @@ $color-text-field-label:          rgba($color-base-black, 0.54) !default;
 $color-text-field-inactive:       #8a8a8a !default;
 $color-text-field-active:         $color-primary !default;
 $color-fill-field:                darken($color-base-white, 6%) !default;
+$color-field-helper:              rgba($color-base-black, 0.54) !default;
+$color-field-error:               #f44336 !default;
 $color-pagination:                $color-primary !default;
 $color-pagination-text:           $color-base-white !default;
 $color-facebook: 				  #3b5998 !default;

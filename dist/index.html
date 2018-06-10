@@ -26,6 +26,7 @@
 									<option value="headings">Headings</option>
 									<option value="pagination">Pagination</option>
 									<option value="radio-button">Radio button</option>
+									<option value="select-field">Select field</option>
 									<option value="text-fields">Text fields</option>
 							</optgroup>
 							<optgroup label="Molecules">
@@ -381,6 +382,58 @@
 </div></div>
 </div>
 
+						<div id="select-field" class="i-library">
+	<h1 class="display-4">Select field</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="select-field-select-field.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="select-field-select-field.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;select-field&quot;&gt;
+    &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
+        &lt;option&gt;Nothing selected&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Select label&lt;/label&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;select-field&quot;&gt;
+    &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
+        &lt;option&gt;Nothing selected&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Select label&lt;/label&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
 						<div id="text-fields" class="i-library">
 	<h1 class="display-4">Text fields</h1>
 	<div><h3>Field styles</h3><div class="i-example">
@@ -576,6 +629,80 @@
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;textarea-field&quot;&gt;
     &lt;textarea id=&quot;text&quot; name=&quot;textarea&quot; class=&quot;textarea-field__input&quot; placeholder=&quot;Placeholder&quot;&gt;&lt;/textarea&gt;
     &lt;label for=&quot;text&quot; class=&quot;textarea-field__label&quot;&gt;Textarea label&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h3>Helper text</h3><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="text-fields-field-helper.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="text-fields-field-helper.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;text-field field--fill&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text field&lt;/label&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Helper text&lt;/span&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;text-field field--fill&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text field&lt;/label&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Helper text&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h3>Field error</h3><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="text-fields-field-error.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="text-fields-field-error.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;text-field field--outline field--error&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; value=&quot;Wrong&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text field&lt;/label&gt;
+    &lt;span class=&quot;field__error-text&quot;&gt;Error!&lt;/span&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;text-field field--outline field--error&quot;&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; value=&quot;Wrong&quot; /&gt;
+    &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text field&lt;/label&gt;
+    &lt;span class=&quot;field__error-text&quot;&gt;Error!&lt;/span&gt;
 &lt;/div&gt;</code></pre>
 	</div>
 </div></div>
@@ -1386,7 +1513,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Buttons  Checkbox  Headings  Pagination  Radio button  Text fields "
+						data-filter-value=" Buttons  Checkbox  Headings  Pagination  Radio button  Select field  Text fields "
 					>
 						<a href="#category-atoms" class="i-sidebar-list-item">
 							<b>Atoms</b>
@@ -1428,6 +1555,13 @@ function allCheckboxes() {
 								data-filter-value="Radio button"
 							>
 								<span>Radio button</span>
+							</a>
+							<a
+								href="#select-field"
+								class="i-sidebar-list-item"
+								data-filter-value="Select field"
+							>
+								<span>Select field</span>
 							</a>
 							<a
 								href="#text-fields"

@@ -52,3 +52,21 @@ category: Atoms
     <label for="text" class="textarea-field__label">Textarea label</label>
 </div>
 ```
+
+### Helper text
+```field-helper.html
+<div class="text-field field--fill">
+    <input id="text" type="text" name="text" class="text-field__input" placeholder="Placeholder" />
+    <label for="text" class="text-field__label">Text field</label>
+    <span class="field__helper">Helper text</span>
+</div>
+```
+
+### Field error
+```field-error.html
+<div class="text-field field--outline field--error">
+    <input id="text" type="text" name="text" class="text-field__input" placeholder="Placeholder" value="Wrong" />
+    <label for="text" class="text-field__label">Text field</label>
+    <span class="field__error-text">Error!</span>
+</div>
+```

@@ -1,0 +1,33 @@
+.select-field {
+    @extend .text-field;
+
+    &:after {
+        @extend .fa;
+
+        content: $fa-var-caret-down;
+        font-size: 1.6rem;
+        position: absolute;
+        top: 24px;
+        right: 12px;
+    }
+
+    &__label {
+        @extend .text-field__label;
+
+        transform: translate(0,0) scale(0.75);
+        cursor: pointer;
+    }
+
+    &__input {
+        @extend .text-field__input;
+
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        //appearance: none;
+        cursor: pointer;
+
+        &::-ms-expand {
+            display: none;
+        }
+    }
+}
