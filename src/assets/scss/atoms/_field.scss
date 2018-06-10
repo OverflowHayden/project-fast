@@ -29,6 +29,12 @@
         #{$self}__helper {
             margin-left: 12px;
         }
+
+        #{self}__prefix {
+            + #{$field}__input + #{$field}__label {
+                transform: translate(32px, 24px) scale(1);
+            }
+        }
     }
 
     &--outline {
@@ -65,7 +71,53 @@
         }
     }
 
+    &__prefix {
+        display: inline-block;
+        font-size: 1.6rem;
+        width: 20px;
+        vertical-align: middle;
+
+        + #{$field}__input {
+            display: inline-block;
+            width: calc(100% - 20px);
+            vertical-align: middle;
+
+            + #{$field}__label {
+                transform: translate(20px, 24px) scale(1);
+            }
+
+            &:focus + #{$field}__label, &:not(:placeholder-shown) + #{$field}__label {
+                transform: translate(0,0) scale(0.75);
+            }
+        }
+    }
+
+    &__suffix {
+        display: inline-block;
+        font-size: 1.6rem;
+        float: right;
+        width: 20px;
+        margin-top: 5px;
+        vertical-align: middle;
+        text-align: right;
+
+        + #{$field}__input {
+            display: inline-block;
+            width: calc(100% - 20px);
+            vertical-align: middle;
+
+            + #{$field}__label {
+                transform: translate(0, 24px) scale(1);
+            }
+
+            &:focus + #{$field}__label, &:not(:placeholder-shown) + #{$field}__label {
+                transform: translate(0,0) scale(0.75);
+            }
+        }
+    }
+
     &__helper {
+        display: inline-block;
         margin-top: 6px;
         font-size: 1.2rem;
         line-height: 1.6rem;
@@ -88,6 +140,7 @@
     }
 
     &__error-text {
+        display: inline-block;
         margin-top: 6px;
         font-size: 1.2rem;
         line-height: 1.6rem;

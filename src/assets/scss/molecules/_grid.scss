@@ -12,31 +12,31 @@
 
     .col {
         &__lg {
-            @include grid-column(12);
+            @include grid-column(12, $neat-grid);
 
             @media (min-width: $screen-lg-min) {
-                @include twelve-columns();
+                @include twelve-columns($neat-grid);
             }
         }
         &__md {
-            @include grid-column(12);
+            @include grid-column(12, $neat-grid);
 
             @media (min-width: $screen-md-min) {
-                @include twelve-columns();
+                @include twelve-columns($neat-grid);
             }
         }
         &__sm {
-            @include grid-column(12);
+            @include grid-column(12, $neat-grid);
 
             @media (min-width: $screen-sm-min) {
-                @include twelve-columns();
+                @include twelve-columns($neat-grid);
             }
         }
         &__xs {
-            @include grid-column(12);
+            @include grid-column(12, $neat-grid);
 
             @media (max-width: $screen-xs) {
-                @include twelve-columns();
+                @include twelve-columns($neat-grid);
             }
         }
     }

@@ -13,10 +13,9 @@
 */
 
 /* TODO
-- Forms with input
-- Responsive Tables
 - Default app layout
 - Navigation
+- Utilities
  */
 
 /* ----------------------------------------------------------------------------
@@ -65,6 +64,7 @@
 ---------------------------------------------------------------------------- */
 @import 'molecules/container';
 @import 'molecules/grid';
+@import 'molecules/form';
 @import 'molecules/table';
 
 

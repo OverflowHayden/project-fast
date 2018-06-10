@@ -27,6 +27,7 @@ $color-text-field-active:         $color-primary !default;
 $color-fill-field:                darken($color-base-white, 6%) !default;
 $color-field-helper:              rgba($color-base-black, 0.54) !default;
 $color-field-error:               #f44336 !default;
+$color-form:                      $color-base-white !default;
 $color-pagination:                $color-primary !default;
 $color-pagination-text:           $color-base-white !default;
 $color-facebook: 				  #3b5998 !default;
@@ -55,6 +56,11 @@ $screen-xl:                       1171px;
 
 //neat grid override
 $neat-grid: (
+    columns: 12,
+    gutter: 30px,
+);
+
+$form-grid: (
         columns: 12,
-        gutter: 30px,
+        gutter: 20px,
 );

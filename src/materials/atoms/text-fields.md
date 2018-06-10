@@ -53,6 +53,23 @@ category: Atoms
 </div>
 ```
 
+### Prefix & Suffix
+```prefix-suffix.html
+<div class="number-field">
+    <span class="field__prefix">&euro;</span>
+    <input id="number" type="number" name="number" class="number-field__input" placeholder="0" />
+    <label for="number" class="number-field__label">Price</label>
+    <span class="field__helper">Please enter euro's</span>
+</div>
+
+<div class="number-field">
+    <span class="field__suffix">kg</span>
+    <input id="number" type="number" name="number" class="number-field__input" placeholder="0" />
+    <label for="number" class="number-field__label">Weight</label>
+    <span class="field__helper">Please enter kilograms</span>
+</div>
+```
+
 ### Helper text
 ```field-helper.html
 <div class="text-field field--fill">
