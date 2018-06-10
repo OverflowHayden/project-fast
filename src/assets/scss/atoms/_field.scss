@@ -30,9 +30,42 @@
             margin-left: 12px;
         }
 
-        #{self}__prefix {
+        #{$self}__prefix {
+            position: absolute;
+            left: 12px;
+            top: 20px;
+
+            + #{$field}__input {
+                padding-left: 32px;
+                width: 100%;
+            }
+
             + #{$field}__input + #{$field}__label {
                 transform: translate(32px, 24px) scale(1);
+            }
+
+            + #{$field}__input:focus + #{$field}__label, + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+                transform: translate(32px, 12px) scale(0.75);
+            }
+        }
+
+        #{$self}__suffix {
+            position: absolute;
+            right: 12px;
+            top: 20px;
+            margin-top: 0;
+
+            + #{$field}__input {
+                width: 100%;
+                padding-right: 32px;
+            }
+
+            + #{$field}__input + #{$field}__label {
+                transform: translate(12px, 24px) scale(1);
+            }
+
+            + #{$field}__input:focus + #{$field}__label, + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+                transform: translate(12px, 12px) scale(0.75);
             }
         }
     }
@@ -68,6 +101,45 @@
 
         #{$self}__helper {
             margin-left: 12px;
+        }
+
+        #{$self}__prefix {
+            position: absolute;
+            left: 12px;
+            top: 20px;
+
+            + #{$field}__input {
+                padding-left: 32px;
+                width: 100%;
+            }
+
+            + #{$field}__input + #{$field}__label {
+                transform: translate(32px, 24px) scale(1);
+            }
+
+            + #{$field}__input:focus + #{$field}__label, + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+                transform: translate(12px, -6px) scale(0.75);
+            }
+        }
+
+        #{$self}__suffix {
+            position: absolute;
+            right: 12px;
+            top: 20px;
+            margin-top: 0;
+
+            + #{$field}__input {
+                padding-right: 32px;
+                width: 100%;
+            }
+
+            + #{$field}__input + #{$field}__label {
+                transform: translate(12px, 24px) scale(1);
+            }
+
+            + #{$field}__input:focus + #{$field}__label, + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+                transform: translate(6px, -5px) scale(0.75);
+            }
         }
     }
 
