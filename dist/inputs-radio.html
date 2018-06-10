@@ -52,29 +52,17 @@
 		</script>
 	</head>
 
-	<body>				<div class="checkbox">
-    <input id="cb" type="checkbox" />
-    <label for="cb" class="checkbox__input"></label>
-    <label for="cb" class="checkbox__label">Checkbox</label>
-</div>
-<div class="checkbox">
-    <input id="cb2" type="checkbox" disabled checked />
-    <label for="cb2" class="checkbox__input"></label>
-    <label for="cb2" class="checkbox__label">Checkbox</label>
+	<body>				<div class="input input--text">
+    <label for="text" class="input-text__label">Input label</label>
+    <input id="text" type="text" name="text" class="input-text__input" />
 </div>
 <script src="assets/js/bundle.js"></script>
 <script src="assets/js/app.min.js"></script>
 
 
-			<script type="text/x-stylemark" data-language="html"><div class="checkbox">
-    <input id="cb" type="checkbox" />
-    <label for="cb" class="checkbox__input"></label>
-    <label for="cb" class="checkbox__label">Checkbox</label>
-</div>
-<div class="checkbox">
-    <input id="cb2" type="checkbox" disabled checked />
-    <label for="cb2" class="checkbox__input"></label>
-    <label for="cb2" class="checkbox__label">Checkbox</label>
+			<script type="text/x-stylemark" data-language="html"><div class="input input--text">
+    <label for="text" class="input-text__label">Input label</label>
+    <input id="text" type="text" name="text" class="input-text__input" />
 </div></script>
 
 		<!--
@@ -108,10 +96,10 @@
 					}
 					else {
 						// Creates a new module
-						module = angular.module('stylemark-checkbox-checkbox', []);
+						module = angular.module('stylemark-inputs-radio', []);
 					}
 
-					module.controller('stylemark-checkbox-checkbox-' + index, function($scope) {
+					module.controller('stylemark-inputs-radio-' + index, function($scope) {
 						$scope.$eval(block);
 					});
 				});

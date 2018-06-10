@@ -24,7 +24,9 @@
 									<option value="buttons">Buttons</option>
 									<option value="checkbox">Checkbox</option>
 									<option value="headings">Headings</option>
+									<option value="inputs">Inputs</option>
 									<option value="pagination">Pagination</option>
+									<option value="radio-button">Radio button</option>
 							</optgroup>
 							<optgroup label="Molecules">
 									<option value="grid">Grid</option>
@@ -37,8 +39,7 @@
 				<div id="category-atoms">
 						<div id="buttons" class="i-library">
 	<h1 class="display-4">Buttons</h1>
-	<div><p>Available buttons</p>
-<div class="i-example">
+	<div><h3>Default</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="buttons-buttons.html"
@@ -71,7 +72,7 @@
 &lt;button class=&quot;button button--alt&quot;&gt;Button alt&lt;/button&gt;
 &lt;button class=&quot;button button--text&quot;&gt;Text&lt;/button&gt;</code></pre>
 	</div>
-</div><div class="i-example">
+</div><h3>Icon buttons</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="buttons-iconbuttons.html"
@@ -104,7 +105,7 @@
 &lt;button class=&quot;button button--alt&quot;&gt;&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt;Button alt&lt;/button&gt;
 &lt;button class=&quot;button button--text&quot;&gt;&lt;i class=&quot;fa fa-download&quot;&gt;&lt;/i&gt;Text&lt;/button&gt;</code></pre>
 	</div>
-</div><div class="i-example">
+</div><h3>Compact buttons</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="buttons-compact.html"
@@ -137,7 +138,7 @@
 &lt;button class=&quot;button button--compact button--alt&quot;&gt;Button alt&lt;/button&gt;
 &lt;button class=&quot;button button--compact button--text&quot;&gt;Text&lt;/button&gt;</code></pre>
 	</div>
-</div><div class="i-example">
+</div><h3>Icon</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="buttons-icon.html"
@@ -205,11 +206,21 @@
     &lt;input id=&quot;cb&quot; type=&quot;checkbox&quot; /&gt;
     &lt;label for=&quot;cb&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
     &lt;label for=&quot;cb&quot; class=&quot;checkbox__label&quot;&gt;Checkbox&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox&quot;&gt;
+    &lt;input id=&quot;cb2&quot; type=&quot;checkbox&quot; disabled checked /&gt;
+    &lt;label for=&quot;cb2&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+    &lt;label for=&quot;cb2&quot; class=&quot;checkbox__label&quot;&gt;Checkbox&lt;/label&gt;
 &lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;checkbox&quot;&gt;
     &lt;input id=&quot;cb&quot; type=&quot;checkbox&quot; /&gt;
     &lt;label for=&quot;cb&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
     &lt;label for=&quot;cb&quot; class=&quot;checkbox__label&quot;&gt;Checkbox&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;checkbox&quot;&gt;
+    &lt;input id=&quot;cb2&quot; type=&quot;checkbox&quot; disabled checked /&gt;
+    &lt;label for=&quot;cb2&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+    &lt;label for=&quot;cb2&quot; class=&quot;checkbox__label&quot;&gt;Checkbox&lt;/label&gt;
 &lt;/div&gt;</code></pre>
 	</div>
 </div></div>
@@ -254,6 +265,46 @@
 &lt;h3&gt;Heading 3&lt;/h3&gt;
 &lt;h4&gt;Heading 4&lt;/h4&gt;
 &lt;h5&gt;Heading 5&lt;/h5&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
+						<div id="inputs" class="i-library">
+	<h1 class="display-4">Inputs</h1>
+	<div><div id="text-input" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#text-input" class="icon-link i-section__link -heading"></a>Text input</h2></div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="inputs-radio.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="inputs-radio.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;input input--text&quot;&gt;
+    &lt;label for=&quot;text&quot; class=&quot;input-text__label&quot;&gt;Input label&lt;/label&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;input-text__input&quot; /&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;input input--text&quot;&gt;
+    &lt;label for=&quot;text&quot; class=&quot;input-text__label&quot;&gt;Input label&lt;/label&gt;
+    &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;input-text__input&quot; /&gt;
+&lt;/div&gt;</code></pre>
 	</div>
 </div></div>
 </div>
@@ -308,6 +359,68 @@
 </div></div>
 </div>
 
+						<div id="radio-button" class="i-library">
+	<h1 class="display-4">Radio button</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="radio-button-radio.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="radio-button-radio.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;radio&quot;&gt;
+    &lt;input id=&quot;rb&quot; type=&quot;radio&quot; name=&quot;radio&quot; /&gt;
+    &lt;label for=&quot;rb&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
+    &lt;label for=&quot;rb&quot; class=&quot;radio__label&quot;&gt;Radio button&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot;&gt;
+    &lt;input id=&quot;rb2&quot; type=&quot;radio&quot; name=&quot;radio&quot; /&gt;
+    &lt;label for=&quot;rb2&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
+    &lt;label for=&quot;rb2&quot; class=&quot;radio__label&quot;&gt;Radio button&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot;&gt;
+    &lt;input id=&quot;rb3&quot; type=&quot;radio&quot; name=&quot;radio&quot; disabled checked /&gt;
+    &lt;label for=&quot;rb3&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
+    &lt;label for=&quot;rb3&quot; class=&quot;radio__label&quot;&gt;Radio button &lt;/label&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;radio&quot;&gt;
+    &lt;input id=&quot;rb&quot; type=&quot;radio&quot; name=&quot;radio&quot; /&gt;
+    &lt;label for=&quot;rb&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
+    &lt;label for=&quot;rb&quot; class=&quot;radio__label&quot;&gt;Radio button&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot;&gt;
+    &lt;input id=&quot;rb2&quot; type=&quot;radio&quot; name=&quot;radio&quot; /&gt;
+    &lt;label for=&quot;rb2&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
+    &lt;label for=&quot;rb2&quot; class=&quot;radio__label&quot;&gt;Radio button&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot;&gt;
+    &lt;input id=&quot;rb3&quot; type=&quot;radio&quot; name=&quot;radio&quot; disabled checked /&gt;
+    &lt;label for=&quot;rb3&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
+    &lt;label for=&quot;rb3&quot; class=&quot;radio__label&quot;&gt;Radio button &lt;/label&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
 				</div>
 				<div id="category-molecules">
 						<div id="grid" class="i-library">
@@ -341,64 +454,64 @@
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;grid grid--visual&quot;&gt;
-    &lt;div class=&quot;grid__col col__lg--12&quot;&gt;col__lg--12&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--6&quot;&gt;col__lg--6&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--6&quot;&gt;col__lg--6&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--12&quot;&gt;col__lg--12&lt;/div&gt;
+    &lt;div class=&quot;col__lg--6&quot;&gt;col__lg--6&lt;/div&gt;
+    &lt;div class=&quot;col__lg--6&quot;&gt;col__lg--6&lt;/div&gt;
+    &lt;div class=&quot;col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
+    &lt;div class=&quot;col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
+    &lt;div class=&quot;col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
+    &lt;div class=&quot;col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
+    &lt;div class=&quot;col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
+    &lt;div class=&quot;col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
+    &lt;div class=&quot;col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
 &lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;grid grid--visual&quot;&gt;
-    &lt;div class=&quot;grid__col col__lg--12&quot;&gt;col__lg--12&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--6&quot;&gt;col__lg--6&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--6&quot;&gt;col__lg--6&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
-    &lt;div class=&quot;grid__col col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--12&quot;&gt;col__lg--12&lt;/div&gt;
+    &lt;div class=&quot;col__lg--6&quot;&gt;col__lg--6&lt;/div&gt;
+    &lt;div class=&quot;col__lg--6&quot;&gt;col__lg--6&lt;/div&gt;
+    &lt;div class=&quot;col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
+    &lt;div class=&quot;col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
+    &lt;div class=&quot;col__lg--4&quot;&gt;col__lg--4&lt;/div&gt;
+    &lt;div class=&quot;col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
+    &lt;div class=&quot;col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
+    &lt;div class=&quot;col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
+    &lt;div class=&quot;col__lg--3&quot;&gt;col__lg--3&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--2&quot;&gt;col__lg--2&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
+    &lt;div class=&quot;col__lg--1&quot;&gt;col__lg--1&lt;/div&gt;
 &lt;/div&gt;</code></pre>
 	</div>
 </div></div>
@@ -432,7 +545,7 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot; style=&quot;--cols:4&quot;&gt;
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;ID&lt;/th&gt;
@@ -486,7 +599,7 @@
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot; style=&quot;--cols:4&quot;&gt;
+		<pre class="mb-0"><code class="lang-">&lt;table style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;ID&lt;/th&gt;
@@ -567,7 +680,7 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot; class=&quot;table--compact&quot; style=&quot;--cols:4&quot;&gt;
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table--compact&quot; style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;ID&lt;/th&gt;
@@ -621,7 +734,7 @@
         &lt;/tr&gt;
     &lt;/tbody&gt;
 &lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot; class=&quot;table--compact&quot; style=&quot;--cols:4&quot;&gt;
+		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table--compact&quot; style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
             &lt;th&gt;ID&lt;/th&gt;
@@ -704,7 +817,7 @@ Also usable with table--compact</p>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;table&quot; class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;table class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
     &lt;thead&gt;
         &lt;tr class=&quot;data-table__head&quot;&gt;
             &lt;th colspan=&quot;5&quot;&gt;
@@ -830,7 +943,7 @@ Also usable with table--compact</p>
         &lt;/tr&gt;
     &lt;/tfoot&gt;
 &lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table&quot; class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
+		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
     &lt;thead&gt;
         &lt;tr class=&quot;data-table__head&quot;&gt;
             &lt;th colspan=&quot;5&quot;&gt;
@@ -1113,7 +1226,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Buttons  Checkbox  Headings  Pagination "
+						data-filter-value=" Buttons  Checkbox  Headings  Inputs  Pagination  Radio button "
 					>
 						<a href="#category-atoms" class="i-sidebar-list-item">
 							<b>Atoms</b>
@@ -1143,11 +1256,25 @@ function allCheckboxes() {
 								<span>Headings</span>
 							</a>
 							<a
+								href="#inputs"
+								class="i-sidebar-list-item"
+								data-filter-value="Inputs"
+							>
+								<span>Inputs</span>
+							</a>
+							<a
 								href="#pagination"
 								class="i-sidebar-list-item"
 								data-filter-value="Pagination"
 							>
 								<span>Pagination</span>
+							</a>
+							<a
+								href="#radio-button"
+								class="i-sidebar-list-item"
+								data-filter-value="Radio button"
+							>
+								<span>Radio button</span>
 							</a>
 					</div>
 			

@@ -52,29 +52,39 @@
 		</script>
 	</head>
 
-	<body>				<div class="checkbox">
-    <input id="cb" type="checkbox" />
-    <label for="cb" class="checkbox__input"></label>
-    <label for="cb" class="checkbox__label">Checkbox</label>
+	<body>				<div class="radio">
+    <input id="rb" type="radio" name="radio" />
+    <label for="rb" class="radio__input"></label>
+    <label for="rb" class="radio__label">Radio button</label>
 </div>
-<div class="checkbox">
-    <input id="cb2" type="checkbox" disabled checked />
-    <label for="cb2" class="checkbox__input"></label>
-    <label for="cb2" class="checkbox__label">Checkbox</label>
+<div class="radio">
+    <input id="rb2" type="radio" name="radio" />
+    <label for="rb2" class="radio__input"></label>
+    <label for="rb2" class="radio__label">Radio button</label>
+</div>
+<div class="radio">
+    <input id="rb3" type="radio" name="radio" disabled checked />
+    <label for="rb3" class="radio__input"></label>
+    <label for="rb3" class="radio__label">Radio button </label>
 </div>
 <script src="assets/js/bundle.js"></script>
 <script src="assets/js/app.min.js"></script>
 
 
-			<script type="text/x-stylemark" data-language="html"><div class="checkbox">
-    <input id="cb" type="checkbox" />
-    <label for="cb" class="checkbox__input"></label>
-    <label for="cb" class="checkbox__label">Checkbox</label>
+			<script type="text/x-stylemark" data-language="html"><div class="radio">
+    <input id="rb" type="radio" name="radio" />
+    <label for="rb" class="radio__input"></label>
+    <label for="rb" class="radio__label">Radio button</label>
 </div>
-<div class="checkbox">
-    <input id="cb2" type="checkbox" disabled checked />
-    <label for="cb2" class="checkbox__input"></label>
-    <label for="cb2" class="checkbox__label">Checkbox</label>
+<div class="radio">
+    <input id="rb2" type="radio" name="radio" />
+    <label for="rb2" class="radio__input"></label>
+    <label for="rb2" class="radio__label">Radio button</label>
+</div>
+<div class="radio">
+    <input id="rb3" type="radio" name="radio" disabled checked />
+    <label for="rb3" class="radio__input"></label>
+    <label for="rb3" class="radio__label">Radio button </label>
 </div></script>
 
 		<!--
@@ -108,10 +118,10 @@
 					}
 					else {
 						// Creates a new module
-						module = angular.module('stylemark-checkbox-checkbox', []);
+						module = angular.module('stylemark-radio-button-radio', []);
 					}
 
-					module.controller('stylemark-checkbox-checkbox-' + index, function($scope) {
+					module.controller('stylemark-radio-button-radio-' + index, function($scope) {
 						$scope.$eval(block);
 					});
 				});

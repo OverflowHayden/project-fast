@@ -2,37 +2,41 @@
     @include grid-container;
     //@include grid-collapse;
 
-    &--visual &__col {
+    &--visual [class^="col"] {
         background: #ddd;
         border: 1px solid #eee;
         border-radius: 2px;
         padding: 6px;
         margin-bottom: 10px;
     }
-    
-    &__col {        
-        @include grid-column(12);
-        
-        &.col {
-            &__lg {
-                @media (min-width: $screen-lg-min) {
-                    @include twelve-columns();
-                }
+
+    .col {
+        &__lg {
+            @include grid-column(12);
+
+            @media (min-width: $screen-lg-min) {
+                @include twelve-columns();
             }
-            &__md {
-                @media (min-width: $screen-md-min) {
-                    @include twelve-columns();
-                }
+        }
+        &__md {
+            @include grid-column(12);
+
+            @media (min-width: $screen-md-min) {
+                @include twelve-columns();
             }
-            &__sm {
-                @media (min-width: $screen-sm-min) {
-                    @include twelve-columns();
-                }
+        }
+        &__sm {
+            @include grid-column(12);
+
+            @media (min-width: $screen-sm-min) {
+                @include twelve-columns();
             }
-            &__xs {
-                @media (max-width: $screen-xs) {
-                    @include twelve-columns();
-                }
+        }
+        &__xs {
+            @include grid-column(12);
+
+            @media (max-width: $screen-xs) {
+                @include twelve-columns();
             }
         }
     }
