@@ -1,8 +1,7 @@
 {
   "name": "project-fast",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Project FAST, a frontend toolkit for building applications",
-  "main": "index.js",
   "homepage": "https://github.com/OverflowHayden/project-fast.git#readme",
   "scripts": {
     "build": "webpack && stylemark -i src -o dist -c stylemark.yml",
@@ -11,7 +10,7 @@
     "test": "npm run toolkit && npm run build"
   },
   "author": "Hayden Lin",
-  "license": "GPL-3.0",
+  "license": "LGPL-3.0",
   "bin": {
     "project-fast": "./index.js"
   },
@@ -28,7 +27,6 @@
     "babel-loader": "^7.1.4",
     "babel-runtime": "^6.26.0",
     "bourbon": "^5.0.0",
-    "commander": "^2.15.1",
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
@@ -43,13 +41,13 @@
     "reboot.css": "^1.0.1",
     "sag-bourbon-neat": "^2.1.1",
     "sass-loader": "^6.0.7",
+    "snackbarlightjs": "^1.1.2",
     "stylemark": "^0.6.5",
-    "svgxuse": "^1.2.4",
     "tingle.js": "^0.13.2",
     "tiny-slider": "^2.6.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webfontloader": "^1.6.28",
     "webpack": "^4.8.1",
-    "webpack-concat-plugin": "^3.0.0-beta.0"
+    "webpack-concat-plugin": "^3.0.0"
   }
 }

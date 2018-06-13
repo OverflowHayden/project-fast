@@ -27,6 +27,7 @@
 									<option value="pagination">Pagination</option>
 									<option value="radio-button">Radio button</option>
 									<option value="select-field">Select field</option>
+									<option value="snackbar">Snackbar</option>
 									<option value="text-fields">Text fields</option>
 							</optgroup>
 							<optgroup label="Molecules">
@@ -431,6 +432,83 @@
     &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Select label&lt;/label&gt;
     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
 &lt;/div&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
+						<div id="snackbar" class="i-library">
+	<h1 class="display-4">Snackbar</h1>
+	<div><p>Vanilla JS</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="new Snackbar(&quot;Hey! Im a snackbar&quot;);
+// Snackbar(message, options, callback)" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">new Snackbar(&quot;Hey! Im a snackbar&quot;);
+// Snackbar(message, options, callback)</code></pre>
+	</div>
+</div><p>or HTML</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;span data-toggle=snackbar data-content=&quot;Hey! Im a snackbar&quot;&gt;Click me&lt;/span&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;span data-toggle=snackbar data-content=&quot;Hey! Im a snackbar&quot;&gt;Click me&lt;/span&gt;</code></pre>
+	</div>
+</div><p>or Vuejs</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="this.$snackbar.create(&quot;Vuejs is awsome!&quot;, {}, function(){});" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">this.$snackbar.create(&quot;Vuejs is awsome!&quot;, {}, function(){});</code></pre>
+	</div>
+</div><p>Click <a href="https://github.com/joostLawerman/SnackbarLightjs">here</a> for the full documentation</p>
+<div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="snackbar-snackbar.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="snackbar-snackbar.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button 
+    class=&quot;button button--text&quot; 
+    data-toggle=snackbar 
+    data-content=&quot;Hey! Im a snackbar&quot;
+    data-timeout=3000
+    data-link=&quot;Surprise!&quot;
+    data-url=&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;
+    data-active-class=&quot;active&quot;&gt;
+Click me&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;button 
+    class=&quot;button button--text&quot; 
+    data-toggle=snackbar 
+    data-content=&quot;Hey! Im a snackbar&quot;
+    data-timeout=3000
+    data-link=&quot;Surprise!&quot;
+    data-url=&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;
+    data-active-class=&quot;active&quot;&gt;
+Click me&lt;/button&gt;</code></pre>
 	</div>
 </div></div>
 </div>
@@ -1859,7 +1937,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Buttons  Checkbox  Headings  Pagination  Radio button  Select field  Text fields "
+						data-filter-value=" Buttons  Checkbox  Headings  Pagination  Radio button  Select field  Snackbar  Text fields "
 					>
 						<a href="#category-atoms" class="i-sidebar-list-item">
 							<b>Atoms</b>
@@ -1908,6 +1986,13 @@ function allCheckboxes() {
 								data-filter-value="Select field"
 							>
 								<span>Select field</span>
+							</a>
+							<a
+								href="#snackbar"
+								class="i-sidebar-list-item"
+								data-filter-value="Snackbar"
+							>
+								<span>Snackbar</span>
 							</a>
 							<a
 								href="#text-fields"
