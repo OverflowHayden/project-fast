@@ -16,7 +16,9 @@ module.exports = [
         entry: publicJS,
         output: {
           filename: 'src/assets/js/bundle.js',
-            path: __dirname
+            path: __dirname,
+            hotUpdateChunkFilename: 'hot/hot-update.js',
+            hotUpdateMainFilename: 'hot/hot-update.json'
         },
         
         plugins: [
@@ -36,7 +38,9 @@ module.exports = [
         entry: ['./src/assets/js/app.js', './src/assets/scss/includes.scss'],
         output: {
             filename: 'src/assets/js/app.min.js',
-            path: __dirname
+            path: __dirname,
+            hotUpdateChunkFilename: 'hot/hot-update.js',
+            hotUpdateMainFilename: 'hot/hot-update.json'
         },
         devtool: "source-map",
         optimization: {
@@ -132,7 +136,15 @@ module.exports = [
                 },
                 {// fonts
                     test: /\.(eot|ttf|woff|woff2)$/,
-                    loader: 'file-loader?name=src/assets/fonts/[name].[ext]&emitFile=false'
+                    loaders: [
+                        {
+                            loader: 'file-loader',
+                            options: {
+                                name: 'src/assets/fonts/[name].[ext]',
+                                emitFile: false
+                            }
+                        }
+                    ]
                 }
             ]
         },
