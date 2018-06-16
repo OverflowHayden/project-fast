@@ -35,7 +35,7 @@
         &__xs {
             @include grid-column(12, $neat-grid);
 
-            @media (max-width: $screen-xs) {
+            @media (min-width: $screen-xs) {
                 @include twelve-columns($neat-grid);
             }
         }

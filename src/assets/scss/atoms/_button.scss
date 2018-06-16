@@ -4,6 +4,7 @@ button, .button {
     border-radius: $border-radius;
     box-shadow: 0 2px 5px 0 rgba($color-base-black, .26);
     color: $color-button-text;
+    display: inline-block;
     font-size: 1.6rem;
     font-weight: 600;
     line-height: 1.6rem;

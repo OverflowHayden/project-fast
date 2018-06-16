@@ -30,4 +30,10 @@
             display: none;
         }
     }
+
+    &.field--outline &__label {
+        background: $color-base-white;
+        padding: 0 6px;
+        transform: translate(6px, -5px) scale(0.75);
+    }
 }

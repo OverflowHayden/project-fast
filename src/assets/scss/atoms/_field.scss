@@ -17,7 +17,11 @@
             padding: 16px 12px 0;
             height: 59px;
 
-            &:focus + #{$field}__label, &:not(:placeholder-shown) + #{$field}__label {
+            &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
+                transform: translate(12px, 12px) scale(0.75);
+            }
+
+            &:not(:placeholder-shown) + #{$field}__label {
                 transform: translate(12px, 12px) scale(0.75);
             }
         }
@@ -44,7 +48,11 @@
                 transform: translate(32px, 24px) scale(1);
             }
 
-            + #{$field}__input:focus + #{$field}__label, + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+            + #{$field}__input:focus + #{$field}__label, + #{$field}__input.placeholder-hidden + #{$field}__label {
+                transform: translate(32px, 12px) scale(0.75);
+            }
+
+            + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
                 transform: translate(32px, 12px) scale(0.75);
             }
         }
@@ -64,7 +72,11 @@
                 transform: translate(12px, 24px) scale(1);
             }
 
-            + #{$field}__input:focus + #{$field}__label, + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+            + #{$field}__input:focus + #{$field}__label, + #{$field}__input.placeholder-hidden + #{$field}__label {
+                transform: translate(12px, 12px) scale(0.75);
+            }
+
+            + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
                 transform: translate(12px, 12px) scale(0.75);
             }
         }
@@ -92,7 +104,13 @@
                 box-shadow: inset 0 0 0 1px $color-text-field-active;
             }
 
-            &:focus + #{$field}__label, &:not(:placeholder-shown) + #{$field}__label {
+            &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
+                background: $color-base-white;
+                padding: 0 6px;
+                transform: translate(6px, -5px) scale(0.75);
+            }
+
+            &:not(:placeholder-shown) + #{$field}__label {
                 background: $color-base-white;
                 padding: 0 6px;
                 transform: translate(6px, -5px) scale(0.75);
@@ -117,7 +135,11 @@
                 transform: translate(32px, 24px) scale(1);
             }
 
-            + #{$field}__input:focus + #{$field}__label, + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+            + #{$field}__input:focus + #{$field}__label, + #{$field}__input.placeholder-hidden + #{$field}__label {
+                transform: translate(12px, -6px) scale(0.75);
+            }
+
+            + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
                 transform: translate(12px, -6px) scale(0.75);
             }
         }
@@ -137,7 +159,11 @@
                 transform: translate(12px, 24px) scale(1);
             }
 
-            + #{$field}__input:focus + #{$field}__label, + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+            + #{$field}__input:focus + #{$field}__label, + #{$field}__input.placeholder-hidden + #{$field}__label {
+                transform: translate(6px, -5px) scale(0.75);
+            }
+
+            + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
                 transform: translate(6px, -5px) scale(0.75);
             }
         }
@@ -158,7 +184,11 @@
                 transform: translate(20px, 24px) scale(1);
             }
 
-            &:focus + #{$field}__label, &:not(:placeholder-shown) + #{$field}__label {
+            &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
+                transform: translate(0,0) scale(0.75);
+            }
+
+            &:not(:placeholder-shown) + #{$field}__label {
                 transform: translate(0,0) scale(0.75);
             }
         }
@@ -182,7 +212,11 @@
                 transform: translate(0, 24px) scale(1);
             }
 
-            &:focus + #{$field}__label, &:not(:placeholder-shown) + #{$field}__label {
+            &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
+                transform: translate(0,0) scale(0.75);
+            }
+
+            &:not(:placeholder-shown) + #{$field}__label {
                 transform: translate(0,0) scale(0.75);
             }
         }

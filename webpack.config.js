@@ -51,7 +51,7 @@ module.exports = [
                     sourceMap: true // set to true if you want JS source maps
                 }),
                 new OptimizeCSSAssetsPlugin({})
-            ]
+            ],
         },
         module: {
 
@@ -94,12 +94,13 @@ module.exports = [
                 {// js es6 / babel loader for webpack
                     test: /\.js$/,
                     exclude: /(node_modules|bower_components)/,
-//                    use: {
-//                        loader: 'babel-loader',
-//                        options: {
-//                            plugins: ['transform-runtime']
-//                        }
-//                    }
+                    use: {
+                        loader: 'babel-loader',
+                        options: {
+                            presets: ['@babel/preset-env'],
+                            plugins: ['@babel/plugin-transform-runtime']
+                        }
+                    },
                 },
                 {// image loader
                     test: /\.(gif|png|jpe?g|svg)$/i,
