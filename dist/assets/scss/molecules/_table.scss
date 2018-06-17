@@ -4,7 +4,7 @@ table {
     border-spacing: 0;
     border-collapse: collapse;
     border: 1px solid $color-table-border;
-    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 1px 5px 0 rgba($color-base-black, 0.2), 0 2px 2px 0 rgba($color-base-black, 0.14), 0 3px 1px -2px rgba($color-base-black, 0.12);
     max-width: 100%;
     //white-space: nowrap;
     overflow-x: auto;
@@ -136,6 +136,7 @@ table {
         font-weight: 600;
         text-transform: uppercase;
         vertical-align: middle;
+        margin-top: 10px;
     }
 
     &__buttons {
@@ -214,7 +215,7 @@ table {
         }
 
         thead tr:not(.data-table__head) {
-            --height: calc(39px * var(--cols));
+            --height: calc(42px * var(--cols));
             text-shadow: 0 var(--height),
             0 calc(var(--height) * 2),
             0 calc(var(--height) * 3),

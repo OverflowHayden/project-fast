@@ -45,7 +45,7 @@
     "tiny-slider": "^2.6.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webfontloader": "^1.6.28",
-    "webpack": "^4.12.0",
+    "webpack": "^3.12.0",
     "webpack-concat-plugin": "^3.0.0"
   }
 }
