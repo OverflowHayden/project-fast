@@ -16,7 +16,7 @@ or HTML
 
 or Vuejs
 ```
-this.$snackbar.create("Vuejs is awsome!", {}, function(){});
+this.$snackbar.create("Vuejs is awesome!", {}, function(){});
 ```
 
 Click [here](https://github.com/joostLawerman/SnackbarLightjs) for the full documentation

@@ -31,6 +31,7 @@
 									<option value="text-fields">Text fields</option>
 							</optgroup>
 							<optgroup label="Molecules">
+									<option value="dialog">Dialog</option>
 									<option value="forms">Forms</option>
 									<option value="grid">Grid</option>
 									<option value="tables">Tables</option>
@@ -461,8 +462,8 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="this.$snackbar.create(&quot;Vuejs is awsome!&quot;, {}, function(){});" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
-		<pre class="mb-0"><code class="lang-">this.$snackbar.create(&quot;Vuejs is awsome!&quot;, {}, function(){});</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});</code></pre>
 	</div>
 </div><p>Click <a href="https://github.com/joostLawerman/SnackbarLightjs">here</a> for the full documentation</p>
 <div class="i-example">
@@ -842,6 +843,72 @@ Click me&lt;/button&gt;</code></pre>
 
 				</div>
 				<div id="category-molecules">
+						<div id="dialog" class="i-library">
+	<h1 class="display-4">Dialog</h1>
+	<div><p>Powered by tingle.js. Click <a href="https://robinparisi.github.io/tingle/">here</a> for the full documentation.</p>
+<div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="dialog-dialog.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="dialog-dialog.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot;&gt;Open dialog&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot;&gt;Open dialog&lt;/button&gt;</code></pre>
+	</div>
+</div>
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> js</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="// instanciate new modal
+var modal = new tingle.modal({
+    closeMethods: [&#39;overlay&#39;, &#39;button&#39;, &#39;escape&#39;],
+    closeLabel: &quot;Close&quot;
+});
+
+// set content
+modal.setContent(&#39;&lt;h1&gt;Dialog&lt;/h1&gt;&lt;p&gt;Dialog content&lt;/p&gt;&#39;);
+
+document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, function () {
+     modal.open();
+ });
+" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">// instanciate new modal
+var modal = new tingle.modal({
+    closeMethods: [&#39;overlay&#39;, &#39;button&#39;, &#39;escape&#39;],
+    closeLabel: &quot;Close&quot;
+});
+
+// set content
+modal.setContent(&#39;&lt;h1&gt;Dialog&lt;/h1&gt;&lt;p&gt;Dialog content&lt;/p&gt;&#39;);
+
+document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, function () {
+     modal.open();
+ });
+</code></pre>
+	</div>
+</div></div>
+</div>
+
 						<div id="forms" class="i-library">
 	<h1 class="display-4">Forms</h1>
 	<div><p>Available form sizes: 
@@ -2008,7 +2075,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Forms  Grid  Tables "
+						data-filter-value=" Dialog  Forms  Grid  Tables "
 					>
 						<a href="#category-molecules" class="i-sidebar-list-item">
 							<b>Molecules</b>
@@ -2016,6 +2083,13 @@ function allCheckboxes() {
 					</h5>
 			
 					<div>
+							<a
+								href="#dialog"
+								class="i-sidebar-list-item"
+								data-filter-value="Dialog"
+							>
+								<span>Dialog</span>
+							</a>
 							<a
 								href="#forms"
 								class="i-sidebar-list-item"

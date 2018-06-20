@@ -53,38 +53,25 @@
 		</script>
 	</head>
 
-	<body>				<div class="text-field">
-    <input id="text" type="text" name="text" class="text-field__input" placeholder="Placeholder" />
-    <label for="text" class="text-field__label">Default style</label>
-</div>
-
-<div class="text-field field--fill">
-    <input id="text2" type="text" name="text" class="text-field__input" placeholder="Placeholder" />
-    <label for="text2" class="text-field__label">Fill style</label>
-</div>
-
-<div class="text-field field--outline">
-    <input id="text3" type="text" name="text" class="text-field__input" placeholder="Placeholder" />
-    <label for="text3" class="text-field__label">Outline style</label>
-</div>
+	<body>				<button class="button">Open dialog</button>
 <script src="assets/js/bundle.js"></script>
 <script src="assets/js/app.min.js"></script>
 
 
-			<script type="text/x-stylemark" data-language="html"><div class="text-field">
-    <input id="text" type="text" name="text" class="text-field__input" placeholder="Placeholder" />
-    <label for="text" class="text-field__label">Default style</label>
-</div>
+			<script type="text/x-stylemark" data-language="html"><button class="button">Open dialog</button></script>
+			<script type="text/x-stylemark" data-language="js">// instanciate new modal
+var modal = new tingle.modal({
+    closeMethods: ['overlay', 'button', 'escape'],
+    closeLabel: "Close"
+});
 
-<div class="text-field field--fill">
-    <input id="text2" type="text" name="text" class="text-field__input" placeholder="Placeholder" />
-    <label for="text2" class="text-field__label">Fill style</label>
-</div>
+// set content
+modal.setContent('<h1>Dialog</h1><p>Dialog content</p>');
 
-<div class="text-field field--outline">
-    <input id="text3" type="text" name="text" class="text-field__input" placeholder="Placeholder" />
-    <label for="text3" class="text-field__label">Outline style</label>
-</div></script>
+document.querySelector('.button').addEventListener('click', function () {
+     modal.open();
+ });
+</script>
 
 		<!--
 			Vanilla JS
@@ -117,10 +104,10 @@
 					}
 					else {
 						// Creates a new module
-						module = angular.module('stylemark-text-fields-field-styles', []);
+						module = angular.module('stylemark-dialog-dialog', []);
 					}
 
-					module.controller('stylemark-text-fields-field-styles-' + index, function($scope) {
+					module.controller('stylemark-dialog-dialog-' + index, function($scope) {
 						$scope.$eval(block);
 					});
 				});
