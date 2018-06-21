@@ -142,7 +142,7 @@ module.exports = [
                             options: {
                                 name: 'src/assets/fonts/[name].[ext]',
                                 emitFile: false,
-                                outputPath: 'assets/fonts/',
+                                // outputPath: 'assets/fonts/',
                             }
                         }
                     ]
