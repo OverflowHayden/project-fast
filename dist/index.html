@@ -29,9 +29,11 @@
 									<option value="select-field">Select field</option>
 									<option value="snackbar">Snackbar</option>
 									<option value="text-fields">Text fields</option>
+									<option value="tooltip">Tooltip</option>
 							</optgroup>
 							<optgroup label="Molecules">
 									<option value="dialog">Dialog</option>
+									<option value="floating-action-button-fab">Floating Action Button (FAB)</option>
 									<option value="forms">Forms</option>
 									<option value="grid">Grid</option>
 									<option value="tables">Tables</option>
@@ -841,6 +843,42 @@ Click me&lt;/button&gt;</code></pre>
 </div></div>
 </div>
 
+						<div id="tooltip" class="i-library">
+	<h1 class="display-4">Tooltip</h1>
+	<div><p>Powered by Tippy.js. Click <a href="https://atomiks.github.io/tippyjs/">here</a> for the full documentation</p>
+<p>By default, you can add a title attribute to create a tooltip.</p>
+<div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="tooltip-tooltip.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="tooltip-tooltip.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
 				</div>
 				<div id="category-molecules">
 						<div id="dialog" class="i-library">
@@ -905,6 +943,40 @@ document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, func
      modal.open();
  });
 </code></pre>
+	</div>
+</div></div>
+</div>
+
+						<div id="floating-action-button-fab" class="i-library">
+	<h1 class="display-4">Floating Action Button (FAB)</h1>
+	<div><div id="default" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#default" class="icon-link i-section__link -heading"></a>Default</h2></div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="floating-action-button-fab-fab.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="floating-action-button-fab-fab.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;fab&quot;&gt;&lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;fab&quot;&gt;&lt;i class=&quot;fa fa-plus&quot;&gt;&lt;/i&gt;&lt;/button&gt;</code></pre>
 	</div>
 </div></div>
 </div>
@@ -2004,7 +2076,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Buttons  Checkbox  Headings  Pagination  Radio button  Select field  Snackbar  Text fields "
+						data-filter-value=" Buttons  Checkbox  Headings  Pagination  Radio button  Select field  Snackbar  Text fields  Tooltip "
 					>
 						<a href="#category-atoms" class="i-sidebar-list-item">
 							<b>Atoms</b>
@@ -2068,6 +2140,13 @@ function allCheckboxes() {
 							>
 								<span>Text fields</span>
 							</a>
+							<a
+								href="#tooltip"
+								class="i-sidebar-list-item"
+								data-filter-value="Tooltip"
+							>
+								<span>Tooltip</span>
+							</a>
 					</div>
 			
 				</div>
@@ -2075,7 +2154,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Dialog  Forms  Grid  Tables "
+						data-filter-value=" Dialog  Floating Action Button (FAB)  Forms  Grid  Tables "
 					>
 						<a href="#category-molecules" class="i-sidebar-list-item">
 							<b>Molecules</b>
@@ -2089,6 +2168,13 @@ function allCheckboxes() {
 								data-filter-value="Dialog"
 							>
 								<span>Dialog</span>
+							</a>
+							<a
+								href="#floating-action-button-fab"
+								class="i-sidebar-list-item"
+								data-filter-value="Floating Action Button (FAB)"
+							>
+								<span>Floating Action Button (FAB)</span>
 							</a>
 							<a
 								href="#forms"

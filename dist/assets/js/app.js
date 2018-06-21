@@ -1,3 +1,6 @@
+import tippy from 'tippy.js'
+var Snackbar = require("snackbarlightjs");
+
 function placeholderPolyfill() {
     this.classList[this.value ? 'add' : 'remove']('placeholder-hidden');
 }
@@ -10,4 +13,7 @@ if ((!(document.documentMode) && window.StyleMedia) || ((/*@cc_on!@*/false) || (
     });
 }
 
-var Snackbar = require("snackbarlightjs");
+tippy('[title]', {
+    size: 'large',
+    performance: true
+})
