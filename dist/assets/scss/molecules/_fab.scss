@@ -14,9 +14,13 @@
     width: 56px;
     height: 56px;
     text-align: center;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
     overflow: hidden;
     transform: translate3d(0, 0, 0);
     will-change: transform,opacity;
+    z-index: 9;
 
     &:active, &:focus {
         outline: none;
