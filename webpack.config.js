@@ -141,7 +141,8 @@ module.exports = [
                             loader: 'file-loader',
                             options: {
                                 name: 'src/assets/fonts/[name].[ext]',
-                                emitFile: false
+                                emitFile: false,
+                                outputPath: 'assets/fonts/',
                             }
                         }
                     ]
