@@ -2,8 +2,12 @@
 <html>
 
 	<head>
-		<link rel="stylesheet" href="assets/css/style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700&subset=latin-ext" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+body { padding: 10px; }
+</style>
 
 
 		<style>
@@ -52,12 +56,18 @@
 		</script>
 	</head>
 
-	<body>				<label></label><input type="checkbox" />
+	<body>				<i class="mdi mdi-home mdi-light"></i> 
+<i class="mdi mdi-home mdi-dark"></i> 
+<i class="mdi mdi-home mdi-light mdi-inactive"></i> 
+<i class="mdi mdi-home mdi-dark mdi-inactive"></i> 
 <script src="assets/js/bundle.js"></script>
 <script src="assets/js/app.min.js"></script>
 
 
-			<script type="text/x-stylemark" data-language="html"><label></label><input type="checkbox" /></script>
+			<script type="text/x-stylemark" data-language="html"><i class="mdi mdi-home mdi-light"></i> 
+<i class="mdi mdi-home mdi-dark"></i> 
+<i class="mdi mdi-home mdi-light mdi-inactive"></i> 
+<i class="mdi mdi-home mdi-dark mdi-inactive"></i> </script>
 
 		<!--
 			Vanilla JS
@@ -90,10 +100,10 @@
 					}
 					else {
 						// Creates a new module
-						module = angular.module('stylemark-checkboxes-checkboxes', []);
+						module = angular.module('stylemark-icons-icon-colors', []);
 					}
 
-					module.controller('stylemark-checkboxes-checkboxes-' + index, function($scope) {
+					module.controller('stylemark-icons-icon-colors-' + index, function($scope) {
 						$scope.$eval(block);
 					});
 				});

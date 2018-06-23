@@ -19,43 +19,43 @@ category: Molecules
             <td>1</td>
             <td>John Doe</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>2</td>
             <td>Jon Stott</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>3</td>
             <td>Virginia Robbins</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>4</td>
             <td>Elise Heath</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>5</td>
             <td>Tahmina Marriott</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>6</td>
             <td>Sommer Gibbons</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
     </tbody>
 </table>
@@ -77,43 +77,43 @@ category: Molecules
             <td>1</td>
             <td>John Doe</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>2</td>
             <td>Jon Stott</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>3</td>
             <td>Virginia Robbins</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>4</td>
             <td>Elise Heath</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>5</td>
             <td>Tahmina Marriott</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>6</td>
             <td>Sommer Gibbons</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
     </tbody>
 </table>
@@ -129,11 +129,11 @@ Also usable with table--compact
         <tr class="data-table__head">
             <th colspan="5">
                 <a href="#" class="data-table__action">Add</a>
-                <a href="#" class="data-table__filter"><i class="fa fa-filter"></i></a>
+                <a href="#" class="data-table__filter"><i class="mdi mdi-filter-variant"></i></a>
                 <div class="data-table__selection">
                     <span class="data-table__selected"><span class="data-table__selected-count"></span> selected</span>
                     <div class="data-table__buttons">
-                        <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a>
+                        <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a>
                     </div>
                 </div>
             </th>
@@ -145,7 +145,7 @@ Also usable with table--compact
                     <label for="cb_0" class="checkbox__input"></label>
                 </div>
             </th>
-            <th><a href="#"><i class="fa fa-arrow-down"></i>ID</a></th>
+            <th><a href="#"><i class="mdi mdi-arrow-down"></i>ID</a></th>
             <th><a href="#">Name</a></th>
             <th><a href="#">Description</a></th>
             <th></th>
@@ -162,8 +162,8 @@ Also usable with table--compact
             <td>1</td>
             <td>John Doe</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>
@@ -175,8 +175,8 @@ Also usable with table--compact
             <td>2</td>
             <td>Jon Stott</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>
@@ -188,8 +188,8 @@ Also usable with table--compact
             <td>3</td>
             <td>Virginia Robbins</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>
@@ -201,8 +201,8 @@ Also usable with table--compact
             <td>4</td>
             <td>Elise Heath</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>
@@ -214,8 +214,8 @@ Also usable with table--compact
             <td>5</td>
             <td>Tahmina Marriott</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
         <tr>
             <td>
@@ -227,8 +227,8 @@ Also usable with table--compact
             <td>6</td>
             <td>Sommer Gibbons</td>
             <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
-            <td><a href="#" class="button button--icon button--text"><i class="fa fa-pencil"></i></a>
-                <a href="#" class="button button--icon button--text"><i class="fa fa-trash"></i></a></td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
         </tr>
     </tbody>
     <tfoot>

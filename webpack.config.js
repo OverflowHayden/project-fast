@@ -141,9 +141,10 @@ module.exports = [
                         {
                             loader: 'file-loader',
                             options: {
-                                name: 'src/assets/fonts/[name].[ext]',
-                                emitFile: false,
-                                // outputPath: 'assets/fonts/',
+                                name: '[name].[ext]',
+                                emitFile: true,
+                                publicPath: '../fonts/',
+                                outputPath: 'src/assets/fonts/',
                             }
                         }
                     ]

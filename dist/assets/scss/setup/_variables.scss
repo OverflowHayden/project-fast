@@ -8,6 +8,7 @@ $color-base-white:                #fff !default;
 $color-base-light:                #ededed !default;
 $color-base-black:                #000 !default;
 
+$color-text:                      #333 !default;
 $color-link:                      #007bff !default;
 $color-icon:                      #6d6d6d !default;
 $color-button:                    $color-primary !default;
@@ -30,6 +31,8 @@ $color-field-error:               #f44336 !default;
 $color-form:                      $color-base-white !default;
 $color-pagination:                $color-primary !default;
 $color-pagination-text:           $color-base-white !default;
+$color-fab:                       $color-primary !default;
+$color-fab-text:                  $color-base-white !default;
 $color-facebook: 				  #3b5998 !default;
 $color-youtube: 				  #e52d27 !default;
 $color-twitter: 				  #55acee !default;
