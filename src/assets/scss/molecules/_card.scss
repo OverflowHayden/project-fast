@@ -1,0 +1,36 @@
+.card {
+    @extend .col__md--4;
+    $self: &;
+
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 5px 0 rgba($color-base-black, 0.2), 0 2px 2px 0 rgba($color-base-black, 0.14), 0 3px 1px -2px rgba($color-base-black, 0.12);
+    background: $color-card;
+    color: $color-card-text;
+    margin-bottom: 30px;
+
+    &__image {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    &__content {
+        font-size: 1.4rem;
+        padding: 16px;
+    }
+
+    &__title {
+        color: $color-card-title;
+        font-size: 2rem;
+    }
+}

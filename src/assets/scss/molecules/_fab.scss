@@ -8,6 +8,11 @@
     will-change: transform,opacity;
     z-index: 9;
 
+    &--center {
+        right: 50%;
+        margin-right: -28px;
+    }
+
     &__button {
         @include ripple;
 

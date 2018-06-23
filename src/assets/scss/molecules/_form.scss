@@ -26,35 +26,19 @@
         }
 
         .col__lg {
-            @include grid-column(12, $form-grid);
-
-            @media (min-width: $screen-lg-min) {
-                @include twelve-columns($form-grid);
-            }
+            @include twelve-columns($form-grid, $screen-lg-min);
         }
 
         .col__md {
-            @include grid-column(12, $form-grid);
-
-            @media (min-width: $screen-md-min) {
-                @include twelve-columns($form-grid);
-            }
+            @include twelve-columns($form-grid, $screen-md-min);
         }
 
         .col__sm {
-            @include grid-column(12, $form-grid);
-
-            @media (min-width: $screen-sm-min) {
-                @include twelve-columns($form-grid);
-            }
+            @include twelve-columns($form-grid, $screen-sm-min);
         }
 
         .col__xs {
-            @include grid-column(12, $form-grid);
-
-            @media (max-width: $screen-xs) {
-                @include twelve-columns($form-grid);
-            }
+            @include twelve-columns($form-grid, $screen-xs);
         }
 
         .field--outline {

@@ -1,8 +1,11 @@
-@mixin twelve-columns($grid) {
-
+@mixin twelve-columns($grid, $screen) {
     @for $i from 1 through 12 {
         &--#{$i} {
-            @include grid-column($i, $grid);
+            @include grid-column(12, $grid);
+
+            @media (min-width: $screen) {
+                @include grid-column($i, $grid);
+            }
         }
     }
 }

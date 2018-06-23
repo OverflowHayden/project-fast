@@ -4,9 +4,15 @@ category: Molecules
 ---
 
 ## Default
-
 ```fab.html
 <div class="fab">
+    <button class="fab__button"><i class="mdi mdi-plus"></i></button>
+</div>
+```
+
+### Centered
+```fab-center.html
+<div class="fab fab--center">
     <button class="fab__button"><i class="mdi mdi-plus"></i></button>
 </div>
 ```

@@ -1,0 +1,3 @@
+.row {
+    @include grid-collapse($neat-grid);
+}

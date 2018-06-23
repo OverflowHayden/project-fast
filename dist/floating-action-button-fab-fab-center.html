@@ -56,73 +56,15 @@ body { padding: 10px; }
 		</script>
 	</head>
 
-	<body>				<div class="grid grid--visual">
-    <div class="row">
-        <div class="col__lg--12">col__lg--12</div>
-        <div class="col__lg--6">col__lg--6</div>
-        <div class="col__lg--6">col__lg--6</div>
-        <div class="col__md--4">col__md--4</div>
-        <div class="col__md--4">col__md--4</div>
-        <div class="col__md--4">col__md--4</div>
-        <div class="col__md--3">col__md--3</div>
-        <div class="col__md--3">col__md--3</div>
-        <div class="col__md--3">col__md--3</div>
-        <div class="col__md--3">col__md--3</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-    </div>
+	<body>				<div class="fab fab--center">
+    <button class="fab__button"><i class="mdi mdi-plus"></i></button>
 </div>
 <script src="assets/js/bundle.js"></script>
 <script src="assets/js/app.min.js"></script>
 
 
-			<script type="text/x-stylemark" data-language="html"><div class="grid grid--visual">
-    <div class="row">
-        <div class="col__lg--12">col__lg--12</div>
-        <div class="col__lg--6">col__lg--6</div>
-        <div class="col__lg--6">col__lg--6</div>
-        <div class="col__md--4">col__md--4</div>
-        <div class="col__md--4">col__md--4</div>
-        <div class="col__md--4">col__md--4</div>
-        <div class="col__md--3">col__md--3</div>
-        <div class="col__md--3">col__md--3</div>
-        <div class="col__md--3">col__md--3</div>
-        <div class="col__md--3">col__md--3</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__sm--2">col__sm--2</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-        <div class="col__xs--1">col__xs--1</div>
-    </div>
+			<script type="text/x-stylemark" data-language="html"><div class="fab fab--center">
+    <button class="fab__button"><i class="mdi mdi-plus"></i></button>
 </div></script>
 
 		<!--
@@ -156,10 +98,10 @@ body { padding: 10px; }
 					}
 					else {
 						// Creates a new module
-						module = angular.module('stylemark-grid-grid', []);
+						module = angular.module('stylemark-floating-action-button-fab-fab-center', []);
 					}
 
-					module.controller('stylemark-grid-grid-' + index, function($scope) {
+					module.controller('stylemark-floating-action-button-fab-fab-center-' + index, function($scope) {
 						$scope.$eval(block);
 					});
 				});
