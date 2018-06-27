@@ -1,6 +1,6 @@
 {
   "name": "project-fast",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Project FAST, a frontend toolkit for building applications",
   "homepage": "https://github.com/OverflowHayden/project-fast.git#readme",
   "scripts": {
@@ -36,13 +36,11 @@
     "pixrem": "^4.0.1",
     "postcss-csso": "^3.0.0",
     "postcss-loader": "^2.1.5",
-    "reboot.css": "^1.0.1",
     "sag-bourbon-neat": "^2.1.1",
     "sass-loader": "^7.0.3",
     "snackbarlightjs": "^1.1.2",
     "stylemark": "0.6.8",
     "tingle.js": "^0.13.2",
-    "tiny-slider": "^2.6.0",
     "tippy.js": "^2.5.3",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "^3.12.0",

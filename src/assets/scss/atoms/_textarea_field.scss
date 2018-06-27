@@ -1,13 +1,7 @@
 .textarea-field {
-    @extend .text-field;
-
-    &__label {
-        @extend .text-field__label;
-    }
+    @include text-field;
 
     &__input {
-        @extend .text-field__input;
-
         min-height: 70px;
     }
 }

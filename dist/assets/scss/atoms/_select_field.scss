@@ -1,5 +1,5 @@
 .select-field {
-    @extend .text-field;
+    @include text-field;
 
     &:after {
         font: normal normal normal 2.4rem/1 "Material Design Icons";
@@ -10,15 +10,11 @@
     }
 
     &__label {
-        @extend .text-field__label;
-
         transform: translate(0,0) scale(0.75);
         cursor: pointer;
     }
 
     &__input {
-        @extend .text-field__input;
-
         -webkit-appearance: none;
         -moz-appearance: none;
         //appearance: none;

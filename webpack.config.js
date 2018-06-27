@@ -44,11 +44,6 @@ module.exports = [
         devtool: "source-map",
         optimization: {
             minimizer: [
-                new UglifyJSPlugin({
-                    cache: true,
-                    parallel: true,
-                    sourceMap: true // set to true if you want JS source maps
-                }),
                 new OptimizeCSSAssetsPlugin({})
             ],
         },
@@ -71,7 +66,7 @@ module.exports = [
                         MiniCssExtractPlugin.loader,
                         {
                             loader: 'css-loader', options: {
-                                import: true,
+                                import: false,
                                 minimize: true,
                                 sourceMap: true,
                                 importLoaders: 2
@@ -159,6 +154,10 @@ module.exports = [
                 filename: 'src/assets/css/style.css',
                 allChunks: true,
             }),
+            new UglifyJSPlugin({
+                test: /\.js($|\?)/i,
+                parallel: true
+            })
         ]
     },
 ]
