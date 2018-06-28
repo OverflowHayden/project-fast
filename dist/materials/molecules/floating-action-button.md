@@ -6,21 +6,21 @@ category: Molecules
 ## Default
 ```fab.html
 <div class="fab">
-    <button class="fab__button"><i class="mdi mdi-plus"></i></button>
+    <a href="#" class="fab__button"><i class="mdi mdi-plus"></i></a>
 </div>
 ```
 
 ### Centered
 ```fab-center.html
 <div class="fab fab--center">
-    <button class="fab__button"><i class="mdi mdi-plus"></i></button>
+    <a href="#" class="fab__button"><i class="mdi mdi-plus"></i></a>
 </div>
 ```
 
 ### FAB menu
 ```fab-menu.html
-<div class="fab">
-    <button class="fab__button"><i class="mdi mdi-menu"></i></button>
+<div class="fab fab--menu" title="Add" data-tippy-placement="left" data-tippy-theme="light">
+    <a href="#" class="fab__button"><i class="mdi mdi-plus"></i></a>
     <ul class="fab__list">
         <li class="fab__list-item">
             <a href="#"><span class="fab__text">Action 1</span><i class="fab__icon mdi mdi-pencil"></i></a>

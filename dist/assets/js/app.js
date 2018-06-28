@@ -15,5 +15,5 @@ if ((!(document.documentMode) && window.StyleMedia) || ((/*@cc_on!@*/false) || (
 
 tippy('[title]', {
     size: 'large',
-    performance: true
+    performance: false
 })

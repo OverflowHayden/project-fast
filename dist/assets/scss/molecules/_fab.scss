@@ -13,6 +13,31 @@
         margin-right: -28px;
     }
 
+    &--menu {
+        &:before {
+            background: $color-fab;
+            border-radius: 50%;
+            cursor: pointer;
+            font: normal normal normal 2.4rem/1 "Material Design Icons";
+            content: mdi("menu");
+            color: $color-fab-text;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 11;
+        }
+
+        &:hover:before {
+            opacity: 0;
+            z-index: 9;
+        }
+    }
+
     &__button {
         @include ripple;
 
@@ -25,12 +50,21 @@
         box-shadow: 0 5px 5px -3px rgba($color-base-black,.2), 0 8px 10px 1px rgba($color-base-black,.14), 0 3px 14px 2px rgba($color-base-black,.12);
         cursor: pointer;
         color: $color-fab-text;
-        display: inline-block;
+        display: inline-flex;
         font-size: 2.4rem;
         width: 56px;
         height: 56px;
         text-align: center;
+        justify-content: center;
+        align-items: center;
         z-index: 10;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            background: $color-fab;
+            color: $color-fab-text;
+            opacity: 0.8;
+        }
     }
 
     &__list {
@@ -94,5 +128,10 @@
         position: relative;
         justify-content: center;
         align-items: center;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
     }
 }

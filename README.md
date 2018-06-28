@@ -38,8 +38,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
     })
     .js([
         'node_modules/tingle.js/src/tingle.js',
-        'node_modules/tiny-slider/src/tiny-slider.js',
-        'node_modules/webfontloader/webfontloader.js',
         'node_modules/project-fast/src/assets/js/app.js',
     ], 'public/js/bundle.js');
 ```
