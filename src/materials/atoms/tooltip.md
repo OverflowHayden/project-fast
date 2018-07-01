@@ -3,7 +3,7 @@ name: Tooltip
 category: Atoms
 ---
 
-Powered by Tippy.js. Click [here](https://atomiks.github.io/tippyjs/) for the full documentation
+Powered by Tippy.js. Click <a href="https://atomiks.github.io/tippyjs/" target="_blank">here</a> for the full documentation
 
 By default, you can add a title attribute to create a tooltip.
 

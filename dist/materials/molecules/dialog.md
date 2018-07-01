@@ -3,7 +3,7 @@ name: Dialog
 category: Molecules
 ---
 
-Powered by tingle.js. Click [here](https://robinparisi.github.io/tingle/) for the full documentation.
+Powered by tingle.js. Click <a href="https://robinparisi.github.io/tingle/" target="_blank">here</a> for the full documentation.
 
 ```dialog.html
 <button class="button">Open dialog</button>

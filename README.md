@@ -37,7 +37,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
         ]
     })
     .js([
-        'node_modules/tingle.js/src/tingle.js',
         'node_modules/project-fast/src/assets/js/app.js',
     ], 'public/js/bundle.js');
 ```
@@ -48,5 +47,5 @@ Change the code in ```resources/assets/sass/app.scss``` to:
 @import "variables";
 
 // Project FAST
-@import 'node_modules/project-fast/src/assets/scss/includes.scss';
+@import '~project-fast/src/assets/scss/includes.scss';
 ```

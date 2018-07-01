@@ -39,3 +39,11 @@ h5 {
 h6 {
     font-size: 1rem;
 }
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}

@@ -1,3 +1,5 @@
+$fab-size: 56px !default;
+
 .fab {
     $self: &;
 
@@ -24,6 +26,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            height: $fab-size;
             position: absolute;
             top: 0;
             left: 0;
@@ -52,8 +55,8 @@
         color: $color-fab-text;
         display: inline-flex;
         font-size: 2.4rem;
-        width: 56px;
-        height: 56px;
+        width: $fab-size;
+        height: $fab-size;
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -73,7 +76,7 @@
         padding: 0;
         max-height: 0;
         position: absolute;
-        bottom: 56px;
+        bottom: $fab-size;
         right: 8px;
         min-width: 200px;
         text-align: right;
@@ -110,7 +113,7 @@
         vertical-align: middle;
 
         + #{$self}__icon {
-            margin-left: 20px;
+            margin-left: 18px;
         }
     }
 

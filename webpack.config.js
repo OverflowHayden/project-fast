@@ -6,7 +6,6 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 const publicJS = [
     './node_modules/tingle.js/src/tingle.js',
-    './node_modules/tiny-slider/dist/tiny-slider.js',
 ];
 
 module.exports = [

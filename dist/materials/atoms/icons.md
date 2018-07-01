@@ -3,7 +3,7 @@ name: Icons
 category: Atoms
 ---
 
-Click [here](https://materialdesignicons.com/) to see the full collection
+Click <a href="https://materialdesignicons.com/" target="_blank">here</a> to see the full collection
 ```icons.html
 <i class="mdi mdi-home"></i>
 <i class="mdi mdi-account"></i>

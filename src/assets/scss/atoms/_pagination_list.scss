@@ -28,6 +28,7 @@
             &:hover {
                 background: darken($color-base-white, 4%);
                 color: $color-button;
+                text-decoration: none;
             }
 
             &:after {
@@ -86,6 +87,7 @@
             &:hover {
                 background: none;
                 color: rgba($color-table-text, 0.32);
+                text-decoration: none;
             }
         }
     }
