@@ -121,3 +121,72 @@
         }
     }
 }
+
+@mixin button() {
+    @include ripple;
+
+    background: $color-button;
+    border: 2px solid transparent;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 5px 0 rgba($color-base-black, .26);
+    color: $color-button-text;
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.6rem;
+    padding: 12px 22px 11px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    transition: background 0.2s ease;
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    .fa, .mdi {
+        margin-left: -4px;
+        margin-right: 14px;
+    }
+
+    &:hover {
+        background: darken($color-button, 4%);
+        color: $color-button-text;
+    }
+}
+
+@mixin button--alt() {
+    background: none;
+    border: 2px solid $color-button;
+    box-shadow: none;
+    color: $color-button;
+
+    &:hover {
+        background: darken($color-base-white, 4%);
+        color: $color-button;
+    }
+}
+
+@mixin button--text() {
+    background: none;
+    border: 2px solid transparent;
+    box-shadow: none;
+    color: $color-button;
+
+    &:hover {
+        background: darken($color-base-white, 4%);
+        color: $color-button;
+    }
+}
+
+@mixin button--compact() {
+    padding: 8px 16px 7px;
+    font-size: 80%;
+}
+
+@mixin button--icon() {
+    padding: 8px;
+
+    .fa, .mdi {
+        margin: 0;
+    }
+}

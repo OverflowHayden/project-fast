@@ -1,13 +1,33 @@
 .app-bar {
+    $self: &;
     background: $color-app-bar;
     color: $color-app-bar-text;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     padding: 8px 12px;
 
+    &--prominent {
+        height: 128px;
+        align-items: flex-start;
+
+        #{$self}__title {
+            align-self: flex-end;
+        }
+    }
+
+    &--dense {
+        padding: 2px 4px;
+    }
+
     &__nav-toggle {
-        @extend .button, .button--icon, .button--text;
+        @include button;
+        @include button--text;
+        @include button--icon;
 
         border-radius: 50%;
         font-size: 2.4rem;
@@ -33,7 +53,9 @@
     }
 
     .button {
-        @extend .button, .button--icon, .button--text;
+        @include button;
+        @include button--text;
+        @include button--icon;
 
         border-radius: 50%;
         font-size: 2.4rem;
@@ -44,5 +66,17 @@
             background: darken($color-app-bar, 4%);
             color: $color-app-bar-text;
         }
+    }
+}
+
+.with-app-bar {
+    padding-top: 62px;
+
+    &--prominent {
+        padding-top: 128px;
+    }
+
+    &--dense {
+        padding-top: 54px;
     }
 }
