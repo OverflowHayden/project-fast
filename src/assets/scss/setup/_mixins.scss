@@ -10,6 +10,27 @@
     }
 }
 
+@mixin twelve-push($grid, $screen) {
+    @for $i from 1 through 12 {
+        &--#{$i} {
+            @media (min-width: $screen) {
+                @include grid-push($i, $grid);
+            }
+        }
+    }
+}
+
+@mixin twelve-shift($grid, $screen) {
+    @for $i from 1 through 12 {
+        &--#{$i} {
+            @media (min-width: $screen) {
+                @include grid-shift($i, $grid);
+            }
+        }
+    }
+}
+
+
 @mixin ripple() {
     position: relative;
     overflow: hidden;

@@ -70,9 +70,9 @@
     }
 
     &__nav {
-        @extend .button;
-        @extend .button--compact;
-        @extend .button--text;
+        @include button;
+        @include button--compact;
+        @include button--text;
 
         display: inline-block;
         font-size: 1.4rem;

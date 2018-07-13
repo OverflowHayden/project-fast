@@ -2,7 +2,7 @@
     @include grid-container;
     //@include grid-collapse;
 
-    &--visual [class^="col"] {
+    &--visual [class*="col"] {
         background: #ddd;
         border: 1px solid #eee;
         border-radius: 2px;
@@ -22,6 +22,36 @@
         }
         &__xs {
             @include twelve-columns($neat-grid, $screen-xs);
+        }
+    }
+
+    .push {
+        &__lg {
+            @include twelve-push($neat-grid, $screen-lg-min);
+        }
+        &__md {
+            @include twelve-push($neat-grid, $screen-md-min);
+        }
+        &__sm {
+            @include twelve-push($neat-grid, $screen-sm-min);
+        }
+        &__xs {
+            @include twelve-push($neat-grid, $screen-xs);
+        }
+    }
+
+    .shift {
+        &__lg {
+            @include twelve-shift($neat-grid, $screen-lg-min);
+        }
+        &__md {
+            @include twelve-shift($neat-grid, $screen-md-min);
+        }
+        &__sm {
+            @include twelve-shift($neat-grid, $screen-sm-min);
+        }
+        &__xs {
+            @include twelve-shift($neat-grid, $screen-xs);
         }
     }
 }

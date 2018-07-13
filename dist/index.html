@@ -1663,6 +1663,7 @@ document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, func
 	<h1 class="display-4">Grid</h1>
 	<div><p>Can be used to override the default sizes of molecules.</p>
 <p>Available breakpoints: <strong>xs, sm, md, lg</strong></p>
+<h3>Grid columns</h3><p>Creates a grid column of requested size.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
@@ -1751,6 +1752,114 @@ document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, func
         &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
         &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
         &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h3>Grid push</h3><p>Push or pull a grid column by manipulating its left margin.</p>
+<div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="grid-grid-push.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="grid-grid-push.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;grid grid--visual&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;push__lg--6 col__lg--6&quot;&gt;push__lg--6 col__lg--6&lt;/div&gt;
+        &lt;div class=&quot;push__md--4 col__md--8&quot;&gt;push__md--4 col__md--8&lt;/div&gt;
+        &lt;div class=&quot;push__sm--2 col__sm--2&quot;&gt;push__sm--2 col__sm--2&lt;/div&gt;
+        &lt;div class=&quot;col__sm--2&quot;&gt;col__sm--2&lt;/div&gt;
+        &lt;div class=&quot;push__sm--2 col__sm--2&quot;&gt;push__sm--2 col__sm--2&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;push__xs--1 col__xs--1&quot;&gt;push__xs--1 col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;push__xs--1 col__xs--1&quot;&gt;push__xs--1 col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;push__xs--1 col__xs--1&quot;&gt;push__xs--1 col__xs--1&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;grid grid--visual&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;push__lg--6 col__lg--6&quot;&gt;push__lg--6 col__lg--6&lt;/div&gt;
+        &lt;div class=&quot;push__md--4 col__md--8&quot;&gt;push__md--4 col__md--8&lt;/div&gt;
+        &lt;div class=&quot;push__sm--2 col__sm--2&quot;&gt;push__sm--2 col__sm--2&lt;/div&gt;
+        &lt;div class=&quot;col__sm--2&quot;&gt;col__sm--2&lt;/div&gt;
+        &lt;div class=&quot;push__sm--2 col__sm--2&quot;&gt;push__sm--2 col__sm--2&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;push__xs--1 col__xs--1&quot;&gt;push__xs--1 col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;push__xs--1 col__xs--1&quot;&gt;push__xs--1 col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
+        &lt;div class=&quot;push__xs--1 col__xs--1&quot;&gt;push__xs--1 col__xs--1&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h3>Grid shift</h3><p>Shift columns and reorder them within their container using relative positioning.</p>
+<div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="grid-grid-shift.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="grid-grid-shift.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;grid grid--visual&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;shift__lg--8 col__lg--4&quot;&gt;shift__lg--8 col__lg--4&lt;/div&gt;
+        &lt;div class=&quot;shift__md--6 col__md--6&quot;&gt;shift__md--6 col__md--6&lt;/div&gt;
+        &lt;div class=&quot;shift__sm--4 col__sm--8&quot;&gt;shift__sm--4 col__sm--8&lt;/div&gt;
+        &lt;div class=&quot;shift__xs--2 col__xs--10&quot;&gt;shift__xs--2 col__xs--10&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;grid grid--visual&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;shift__lg--8 col__lg--4&quot;&gt;shift__lg--8 col__lg--4&lt;/div&gt;
+        &lt;div class=&quot;shift__md--6 col__md--6&quot;&gt;shift__md--6 col__md--6&lt;/div&gt;
+        &lt;div class=&quot;shift__sm--4 col__sm--8&quot;&gt;shift__sm--4 col__sm--8&lt;/div&gt;
+        &lt;div class=&quot;shift__xs--2 col__xs--10&quot;&gt;shift__xs--2 col__xs--10&lt;/div&gt;
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 	</div>
