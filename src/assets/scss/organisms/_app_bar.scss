@@ -67,6 +67,12 @@
             color: $color-app-bar-text;
         }
     }
+
+    .menu__list {
+        left: auto;
+        right: 0;
+        transform-origin: top right;
+    }
 }
 
 .with-app-bar {

@@ -5,7 +5,7 @@
   "homepage": "https://github.com/OverflowHayden/project-fast.git#readme",
   "scripts": {
     "build": "webpack --progress && stylemark -i src -o dist -c stylemark.yml",
-    "dev": "concurrently --kill-others \"stylemark -i src -o dist -c stylemark.yml -w 6000 -b\" \"webpack --watch --hot\"",
+    "dev": "concurrently --kill-others \"stylemark -i src -o dist -c stylemark.yml -w 20000 -b\" \"webpack --watch --hot\"",
     "toolkit": "stylemark -i src -o dist -c stylemark.yml -b",
     "test": "npm run toolkit && npm run build"
   },

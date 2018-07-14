@@ -38,6 +38,7 @@
 									<option value="floating-action-button-fab">Floating Action Button (FAB)</option>
 									<option value="forms">Forms</option>
 									<option value="grid">Grid</option>
+									<option value="menu">Menu</option>
 									<option value="tables">Tables</option>
 							</optgroup>
 							<optgroup label="Organisms">
@@ -1866,6 +1867,60 @@ document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, func
 </div></div>
 </div>
 
+						<div id="menu" class="i-library">
+	<h1 class="display-4">Menu</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="menu-menu.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="menu-menu.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;menu&quot;&gt;
+    &lt;button class=&quot;button button--alt menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;Open menu&lt;/button&gt;
+    &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 4&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 5&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;menu&quot;&gt;
+    &lt;button class=&quot;button button--alt menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;Open menu&lt;/button&gt;
+    &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 4&lt;/a&gt;&lt;/li&gt;
+        &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 5&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
 						<div id="tables" class="i-library">
 	<h1 class="display-4">Tables</h1>
 	<div><h3>Simple</h3><div class="i-example">
@@ -2582,7 +2637,18 @@ function allCheckboxes() {
     &lt;span class=&quot;app-bar__title&quot;&gt;App Bar title&lt;/span&gt;
     &lt;div class=&quot;app-bar__actions&quot;&gt;
         &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-printer&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-        &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div class=&quot;menu&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 3&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 4&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 5&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
     &lt;/div&gt;
 &lt;/header&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;header class=&quot;app-bar&quot;&gt;
@@ -2590,7 +2656,18 @@ function allCheckboxes() {
     &lt;span class=&quot;app-bar__title&quot;&gt;App Bar title&lt;/span&gt;
     &lt;div class=&quot;app-bar__actions&quot;&gt;
         &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-printer&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-        &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;div class=&quot;menu&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 1&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 2&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 3&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 4&lt;/a&gt;&lt;/li&gt;
+                &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 5&lt;/a&gt;&lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/div&gt;
+
     &lt;/div&gt;
 &lt;/header&gt;</code></pre>
 	</div>
@@ -2839,7 +2916,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Cards  Dialog  Floating Action Button (FAB)  Forms  Grid  Tables "
+						data-filter-value=" Cards  Dialog  Floating Action Button (FAB)  Forms  Grid  Menu  Tables "
 					>
 						<a href="#category-molecules" class="i-sidebar-list-item">
 							<b>Molecules</b>
@@ -2881,6 +2958,13 @@ function allCheckboxes() {
 								data-filter-value="Grid"
 							>
 								<span>Grid</span>
+							</a>
+							<a
+								href="#menu"
+								class="i-sidebar-list-item"
+								data-filter-value="Menu"
+							>
+								<span>Menu</span>
 							</a>
 							<a
 								href="#tables"

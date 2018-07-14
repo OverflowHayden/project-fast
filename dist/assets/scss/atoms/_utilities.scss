@@ -1,0 +1,7 @@
+.animating-open {
+    display: inline-block;
+    transform: scale(.8);
+    transition: opacity .03s linear,transform .12s cubic-bezier(0,0,.2,1);
+    opacity: 0;
+    overflow-y: hidden;
+}

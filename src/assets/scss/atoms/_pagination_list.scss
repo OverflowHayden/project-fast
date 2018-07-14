@@ -71,13 +71,14 @@
 
     &__nav {
         @include button;
-        @include button--compact;
         @include button--text;
+        @include button--compact;
 
         display: inline-block;
         font-size: 1.4rem;
         color: rgba($color-table-text, 0.54);
         vertical-align: middle;
+        box-shadow: unset;
 
         &--disabled {
             background: none;
