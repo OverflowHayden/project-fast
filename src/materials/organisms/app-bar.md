@@ -33,7 +33,17 @@ category: Organisms
     <span class="app-bar__title">App Bar title</span>
     <div class="app-bar__actions">
         <a href="#" class="button button--icon button--text"><i class="mdi mdi-printer"></i></a>
-        <a href="#" class="button button--icon button--text"><i class="mdi mdi-dots-vertical"></i></a>
+        <div class="menu">
+            <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><i class="mdi mdi-dots-vertical"></i></a>
+            <ul id="menu" class="menu__list">
+                <li class="menu__list-item"><a href="#">Menu option 1</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 2</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 3</a></li>
+                <li class="menu__list-divider"></li>
+                <li class="menu__list-item"><a href="#">Menu option 4</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 5</a></li>
+            </ul>
+        </div>
     </div>
 </header>
 ```
@@ -45,7 +55,17 @@ category: Organisms
     <span class="app-bar__title">App Bar title</span>
     <div class="app-bar__actions">
         <a href="#" class="button button--icon button--text"><i class="mdi mdi-printer"></i></a>
-        <a href="#" class="button button--icon button--text"><i class="mdi mdi-dots-vertical"></i></a>
+        <div class="menu">
+            <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><i class="mdi mdi-dots-vertical"></i></a>
+            <ul id="menu" class="menu__list">
+                <li class="menu__list-item"><a href="#">Menu option 1</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 2</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 3</a></li>
+                <li class="menu__list-divider"></li>
+                <li class="menu__list-item"><a href="#">Menu option 4</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 5</a></li>
+            </ul>
+        </div>
     </div>
 </header>
 ```
@@ -56,7 +76,17 @@ category: Organisms
     <span class="app-bar__title">App Bar title</span>
     <div class="app-bar__actions">
         <a href="#" class="button button--icon button--text"><i class="mdi mdi-printer"></i></a>
-        <a href="#" class="button button--icon button--text"><i class="mdi mdi-dots-vertical"></i></a>
+        <div class="menu">
+            <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><i class="mdi mdi-dots-vertical"></i></a>
+            <ul id="menu" class="menu__list">
+                <li class="menu__list-item"><a href="#">Menu option 1</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 2</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 3</a></li>
+                <li class="menu__list-divider"></li>
+                <li class="menu__list-item"><a href="#">Menu option 4</a></li>
+                <li class="menu__list-item"><a href="#">Menu option 5</a></li>
+            </ul>
+        </div>
     </div>
 </header>
 ```

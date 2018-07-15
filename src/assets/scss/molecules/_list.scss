@@ -1,0 +1,87 @@
+.list {
+    background: $color-base-white;
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 8px 0;
+
+    &--demo {
+        max-width: 600px;
+        border: 1px solid rgba($color-base-black,.1);
+    }
+
+    &__item {
+        font-size: 1.6rem;
+        font-weight: 400;
+        display: flex;
+        color: rgba($color-base-black, .87);
+        min-height: 48px;
+        align-items: center;
+        overflow: hidden;
+        padding: 0;
+        position: relative;
+
+        &-text {
+            @include ripple;
+
+            display: inline-flex;
+            color: inherit;
+            flex-wrap: wrap;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: 15px 16px;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+
+            &:hover {
+                background: rgba($color-base-black, .04);
+                color: inherit;
+            }
+
+            &:active, &:focus {
+                background: rgba($color-base-black, .12);
+            }
+        }
+
+        &-secondary-text {
+            color: rgba($color-base-black, .54);
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: .25px;
+            line-height: 2rem;
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        &-graphic {
+            color: rgba($color-base-black, .38);
+            font-size: 2.4rem;
+            display: inline-flex;
+            flex-shrink: 0;
+            align-items: center;
+            justify-content: center;
+            height: 24px;
+            width: 24px;
+            margin: 0 32px 0 0;
+        }
+
+        &-meta {
+            margin-left: auto;
+            margin-right: 0;
+            color: rgba($color-base-black, .38);
+            font-size: 2.4rem;
+        }
+    }
+
+    &__divider {
+        border: none;
+        border-bottom: 1px solid rgba($color-base-black, .12);
+        height: 0;
+        margin: 0;
+    }
+}
