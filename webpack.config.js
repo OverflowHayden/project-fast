@@ -102,7 +102,10 @@ module.exports = [
                         {
                             loader: 'file-loader',
                             options: {
-                                name: 'src/assets/img/min/[name].[ext]',
+                                name: '[name].[ext]',
+                                emitFile: true,
+                                publicPath: '/assets/img/min/',
+                                outputPath: 'src/assets/img/min/',
                             },
                         },
                         {

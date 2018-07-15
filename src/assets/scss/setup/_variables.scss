@@ -38,10 +38,16 @@ $color-card-title:                $color-base-black !default;
 $color-card-text:                 rgba($color-base-black,.54) !default;
 $color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;
+$color-drawer:                    $color-base-white !default;
+$color-drawer-text:               rgba($color-base-black, .87) !default;
+$color-drawer-header:             $color-primary !default;
+$color-drawer-header-text:        $color-base-white !default;
 $color-facebook: 				  #3b5998 !default;
 $color-youtube: 				  #e52d27 !default;
 $color-twitter: 				  #55acee !default;
 
+$drawer-image:                    "../img/logo.svg" !default;
+$drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
 $border-radius:                   3px !default;
 
 

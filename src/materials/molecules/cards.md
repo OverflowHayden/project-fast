@@ -3,7 +3,7 @@ name: Cards
 category: Molecules
 ---
 
-Add a [grid](#grid) class like `.col__sm--6` to the card to change size. Image is optional.
+Add a [grid column](#grid) class like `.col__sm--6` to the card to change size. Image is optional.
 ```card.html
 <div class="grid">
     <div class="row">

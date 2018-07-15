@@ -1,6 +1,16 @@
 import tippy from 'tippy.js'
 var Snackbar = require("snackbarlightjs");
 
+function hasClass(element, className) {
+    do {
+        if (element.classList && element.classList.contains(className)) {
+            return true;
+        }
+        element = element.parentNode;
+    } while (element);
+    return false;
+}
+
 //----------------------------------------------------------------------------------
 // IE & Edge placeholder-shown fix
 //----------------------------------------------------------------------------------
@@ -122,12 +132,28 @@ if(document.querySelectorAll('.menu__toggle').length > 0) {
     }, true);
 }
 
-function hasClass(element, className) {
-    do {
-        if (element.classList && element.classList.contains(className)) {
-            return true;
+//----------------------------------------------------------------------------------
+// Drawer toggle
+//----------------------------------------------------------------------------------
+if(document.querySelector('.app-bar__nav-toggle')) {
+    var toggle = document.querySelector('.app-bar__nav-toggle');
+    var drawer = document.querySelector('.drawer');
+
+    toggle.addEventListener('click', function(){
+        if(drawer.classList.contains('drawer--open')) {
+            drawer.classList.remove('drawer--open');
+            document.body.classList.remove('drawer-scroll-lock');
         }
-        element = element.parentNode;
-    } while (element);
-    return false;
+        else {
+            drawer.classList.add('drawer--open');
+            document.body.classList.add('drawer-scroll-lock');
+        }
+    });
+
+    drawer.addEventListener('click', function(e){
+        if(hasClass(e.target.parentNode, 'drawer') == false) {
+            drawer.classList.remove('drawer--open');
+            document.body.classList.remove('drawer-scroll-lock');
+        }
+    });
 }

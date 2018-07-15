@@ -1,0 +1,92 @@
+.drawer {
+    $self: &;
+    background: $color-drawer;
+    color: $color-drawer-text;
+    width: 240px;
+    overflow: hidden;
+
+    &-scroll-lock {
+        overflow: hidden;
+    }
+
+    &--temporary {
+        background: transparent;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        contain: strict;
+        opacity: 0;
+        will-change: opacity;
+        transition: opacity 0s linear 0.2s;
+        z-index: 21;
+
+        &:before {
+            background: rgba($color-base-black, .6);
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        #{$self}__drawer {
+            width: calc(100% - 64px);
+            max-width: 320px;
+            box-shadow: 0 8px 10px -5px rgba($color-base-black, .2),0 16px 24px 2px rgba($color-base-black, .14),0 6px 30px 5px rgba($color-base-black, .12);
+            transform: translateX(calc(-100% - 20px));
+            transition: transform 0.2s ease;
+            will-change: transform;
+        }
+
+        &#{$self}--open {
+            opacity: 1;
+            pointer-events: auto;
+            transition: opacity 0s;
+
+            &:before {
+                opacity: 1;
+            }
+
+            #{$self}__drawer {
+                transition: transform 0.25s ease;
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__drawer {
+        background: $color-drawer;
+        height: 100%;
+    }
+
+    &__header {
+        background: $drawer-background;
+        background-color: $color-drawer-header;
+        color: $color-drawer-header-text;
+        display: flex;
+        align-items: flex-end;
+        min-height: 135px;
+        padding: 16px;
+    }
+
+    &__content {
+        max-height: calc(100vh - 135px);
+        overflow-y: auto;
+    }
+
+    .list {
+        padding: 0;
+
+        &__item {
+            font-size: 1.4rem;
+            font-weight: 500;
+        }
+    }
+}

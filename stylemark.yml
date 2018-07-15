@@ -15,7 +15,7 @@ sidebar:
 
 headHtml: |
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700&subset=latin-ext" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700&subset=latin-ext" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
   body { padding: 10px; }
