@@ -83,12 +83,10 @@ function appBarScroll(scrollDirection) {
     var appBarHeight = parseInt(window.getComputedStyle(appBar).height, 10);
     var position = parseInt(window.getComputedStyle(appBar).top, 10);
 
-    console.log(appBarHeight)
-
-    if(position - scrollDirection < -appBarHeight) {
+    if(position - scrollDirection < -appBarHeight || (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         appBar.style.top = '-' + appBarHeight + 'px';
     }
-    else if(position - scrollDirection > 0) {
+    else if(position - scrollDirection > 0 || window.pageYOffset <= 0) {
         appBar.style.top = '0px';
     }
     else {
