@@ -134,6 +134,13 @@ if(document.querySelectorAll('.menu__toggle').length > 0) {
 // Drawer
 // https://codepen.io/RadiationX/pen/YWLqBX
 //----------------------------------------------------------------------------------
+/* Change persistent to temporary on small screens */
+if((document.querySelector('.drawer--persistent') || document.querySelector('.drawer--permanent')) && window.innerWidth < 767) {
+    document.querySelector('.drawer').classList.remove('drawer--persistent');
+    document.querySelector('.drawer').classList.remove('drawer--permanent');
+    document.querySelector('.drawer').classList.add('drawer--temporary');
+}
+
 if(document.querySelector('.app-bar__nav-toggle') && document.querySelector('.drawer--temporary')) {
     var drawer,
         drawerElem,
@@ -147,12 +154,20 @@ if(document.querySelector('.app-bar__nav-toggle') && document.querySelector('.dr
         //Use methods
         drawer.onOpenListener(function () {
             document.body.classList.add('drawer-scroll-lock');
+
+            if(document.querySelector('.drawer--persistent')) {
+                document.body.classList.add('persistent--open');
+            }
         });
         drawer.onCloseListener(function () {
             document.body.classList.remove('drawer-scroll-lock');
+
+            if(document.querySelector('.drawer--persistent')) {
+                document.body.classList.remove('persistent--open');
+            }
         });
-        /*
-        drawer.onMoveListener(function (x, percent, animation, duration) {
+
+        /*drawer.onMoveListener(function (x, percent, animation, duration) {
             console.log(x + " " + percent + " " + animation + " " + duration);
         });
         drawer.openDrawer();
@@ -161,6 +176,31 @@ if(document.querySelector('.app-bar__nav-toggle') && document.querySelector('.dr
         drawer.isOpen();
         drawer.resetIconOnClick();*/
     });
+}
+
+/* Drawer persistent */
+if(document.querySelector('.app-bar__nav-toggle') && document.querySelector('.drawer--persistent')) {
+    var toggle = document.querySelector('.app-bar__nav-toggle');
+    var drawer = document.querySelector('.drawer--persistent');
+
+    toggle.addEventListener('click', function(){
+        if(drawer.classList.contains('drawer--open')) {
+            drawer.classList.remove('drawer--open');
+            document.body.classList.remove('persistent--open');
+        }
+        else {
+            drawer.classList.add('drawer--open');
+            document.body.classList.add('persistent--open');
+        }
+    });
+}
+
+/* Drawer permanent */
+if(document.querySelector('.app-bar__nav-toggle') && document.querySelector('.drawer--permanent')) {
+    var toggle = document.querySelector('.app-bar__nav-toggle');
+    var drawer = document.querySelector('.drawer--permanent');
+
+    document.body.classList.add('permanent--open');
 }
 
 
