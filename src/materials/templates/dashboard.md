@@ -58,7 +58,7 @@ category: Templates
             <div class="row">
                 <div class="col__sm--8">
                     <h2>Chart</h2>
-                    <div class="atlas-chart" data-id="H13grQLQ" data-width="900" data-height="600">
+                    <div class="atlas-chart margin-bottom" data-id="H13grQLQ" data-width="900" data-height="600">
                         <img src="https://www.theatlas.com/i/atlas_H13grQLQ.png" style="max-width: 100%;" alt="chart" />
                     </div>
                 </div>
@@ -108,7 +108,9 @@ category: Templates
             </div>
             <div class="row">
                 <div class="col__sm--4">
-                    <div class="btcwdgt-chart" bw-theme="light"></div>
+                    <div class="margin-bottom">
+                        <div class="btcwdgt-chart" bw-theme="light"></div>
+                    </div>
                 </div>
                 <div class="col__sm--8">
                     <h2>Orders</h2>
