@@ -128,35 +128,35 @@ category: Templates
                                 <td>2 hours ago</td>
                                 <td>Pending</td>
                                 <td align="right">&euro; 78,65</td>
-                                <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-eye"></i></a></td>
+                                <td><a href="#" class="button button--icon"><i class="mdi mdi-eye"></i></a></td>
                             </tr>
                             <tr>
                                 <td>#3004 Jon Scott</td>
                                 <td>10 hours ago</td>
                                 <td>Shipped</td>
                                 <td align="right">&euro; 34,50</td>
-                                <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-eye"></i></a></td>
+                                <td><a href="#" class="button button--icon"><i class="mdi mdi-eye"></i></a></td>
                             </tr>
                             <tr>
                                 <td>#3003 Virginia Robbins</td>
                                 <td>1 day ago</td>
                                 <td>Completed</td>
                                 <td align="right">&euro; 120,10</td>
-                                <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-eye"></i></a></td>
+                                <td><a href="#" class="button button--icon"><i class="mdi mdi-eye"></i></a></td>
                             </tr>
                             <tr>
                                 <td>#3002 Elise Heath</td>
                                 <td>2 days ago</td>
                                 <td>Completed</td>
                                 <td align="right">&euro; 80,90</td>
-                                <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-eye"></i></a></td>
+                                <td><a href="#" class="button button--icon"><i class="mdi mdi-eye"></i></a></td>
                             </tr>
                             <tr>
                                 <td>#3001 Tahmine Marriott</td>
                                 <td>July 2nd, 2018</td>
                                 <td>Completed</td>
                                 <td align="right">&euro; 15,95</td>
-                                <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-eye"></i></a></td>
+                                <td><a href="#" class="button button--icon"><i class="mdi mdi-eye"></i></a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -164,7 +164,7 @@ category: Templates
             </div>
         </div>
     </div>
-    <div class="fab fab--menu" title="Add customer" data-tippy-placement="left" data-tippy-theme="light">
+    <div class="fab fab--menu" title="Add customer" data-tippy-placement="left" data-tippy-theme="light" tabindex="1">
         <a href="#" class="fab__button"><i class="mdi mdi-plus"></i></a>
         <ul class="fab__list">
             <li class="fab__list-item">

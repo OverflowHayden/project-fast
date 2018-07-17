@@ -41,6 +41,10 @@ table {
 
         &[align="right"] {
             text-align: right;
+
+            @media (max-width: $screen-sm-max) {
+                text-align: left;
+            }
         }
     }
 
@@ -189,6 +193,7 @@ table {
 @media (max-width: $screen-sm-max) {
     tr, td, th, tfoot, thead, tbody, table {
         display: block;
+        text-align: left;
     }
 
     .data-table {
