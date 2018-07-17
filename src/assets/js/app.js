@@ -11,6 +11,8 @@ function hasClass(element, className) {
     return false;
 }
 
+document.documentElement.className += (window.self == window.top ? " top" : "framed");
+
 //----------------------------------------------------------------------------------
 // IE & Edge placeholder-shown fix
 //----------------------------------------------------------------------------------

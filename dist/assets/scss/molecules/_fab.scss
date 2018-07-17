@@ -10,6 +10,13 @@ $fab-size: 56px !default;
     will-change: transform,opacity;
     z-index: 9;
 
+    .framed & {
+        display: inline-block;
+        float: right;
+        position: relative;
+        margin-top: 180px;
+    }
+
     &--center {
         right: 50%;
         margin-right: -28px;

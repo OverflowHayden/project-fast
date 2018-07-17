@@ -45,6 +45,7 @@
 							<optgroup label="Organisms">
 									<option value="app-bar">App Bar</option>
 									<option value="drawer">Drawer</option>
+									<option value="login">Login</option>
 							</optgroup>
 							<optgroup label="Templates">
 									<option value="dashboard">Dashboard</option>
@@ -3581,6 +3582,92 @@ function allCheckboxes() {
 </div></div>
 </div>
 
+						<div id="login" class="i-library">
+	<h1 class="display-4">Login</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="login-login.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="login-login.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;login&quot;&gt;
+        &lt;div class=&quot;form form--s&quot;&gt;
+            &lt;h1&gt;Login&lt;/h1&gt;
+            &lt;form method=&quot;POST&quot;&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;text-field&quot;&gt;
+                        &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;username&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your username&quot; /&gt;
+                        &lt;label for=&quot;username&quot; class=&quot;text-field__label&quot;&gt;Username&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;password-field&quot;&gt;
+                        &lt;input id=&quot;password&quot; type=&quot;password&quot; name=&quot;password&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your password&quot; /&gt;
+                        &lt;label for=&quot;password&quot; class=&quot;text-field__label&quot;&gt;Password&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;checkbox&quot;&gt;
+                        &lt;input id=&quot;cb&quot; type=&quot;checkbox&quot; /&gt;
+                        &lt;label for=&quot;cb&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                        &lt;label for=&quot;cb&quot; class=&quot;checkbox__label&quot;&gt;Remember me&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Login&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;login&quot;&gt;
+        &lt;div class=&quot;form form--s&quot;&gt;
+            &lt;h1&gt;Login&lt;/h1&gt;
+            &lt;form method=&quot;POST&quot;&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;text-field&quot;&gt;
+                        &lt;input id=&quot;username&quot; type=&quot;text&quot; name=&quot;username&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your username&quot; /&gt;
+                        &lt;label for=&quot;username&quot; class=&quot;text-field__label&quot;&gt;Username&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;password-field&quot;&gt;
+                        &lt;input id=&quot;password&quot; type=&quot;password&quot; name=&quot;password&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your password&quot; /&gt;
+                        &lt;label for=&quot;password&quot; class=&quot;text-field__label&quot;&gt;Password&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;checkbox&quot;&gt;
+                        &lt;input id=&quot;cb&quot; type=&quot;checkbox&quot; /&gt;
+                        &lt;label for=&quot;cb&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                        &lt;label for=&quot;cb&quot; class=&quot;checkbox__label&quot;&gt;Remember me&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Login&lt;/button&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
 				</div>
 				<div id="category-templates">
 						<div id="dashboard" class="i-library">
@@ -3773,18 +3860,18 @@ function allCheckboxes() {
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;fab fab--menu&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot; tabindex=&quot;1&quot;&gt;
-        &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-        &lt;ul class=&quot;fab__list&quot;&gt;
-            &lt;li class=&quot;fab__list-item&quot;&gt;
-                &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add product&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-package&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;fab__list-item&quot;&gt;
-                &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add order&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-cart&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
 &lt;/main&gt;
+&lt;div class=&quot;fab fab--menu&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot; tabindex=&quot;1&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;ul class=&quot;fab__list&quot;&gt;
+        &lt;li class=&quot;fab__list-item&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add product&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-package&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;fab__list-item&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add order&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-cart&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
 &lt;script src=&quot;https://www.theatlas.com/javascripts/atlas.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
   (function(b,i,t,C,O,I,N) {
@@ -3957,18 +4044,18 @@ function allCheckboxes() {
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class=&quot;fab fab--menu&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot; tabindex=&quot;1&quot;&gt;
-        &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-        &lt;ul class=&quot;fab__list&quot;&gt;
-            &lt;li class=&quot;fab__list-item&quot;&gt;
-                &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add product&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-package&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-            &lt;/li&gt;
-            &lt;li class=&quot;fab__list-item&quot;&gt;
-                &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add order&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-cart&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-            &lt;/li&gt;
-        &lt;/ul&gt;
-    &lt;/div&gt;
 &lt;/main&gt;
+&lt;div class=&quot;fab fab--menu&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot; tabindex=&quot;1&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+    &lt;ul class=&quot;fab__list&quot;&gt;
+        &lt;li class=&quot;fab__list-item&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add product&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-package&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class=&quot;fab__list-item&quot;&gt;
+            &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add order&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-cart&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
 &lt;script src=&quot;https://www.theatlas.com/javascripts/atlas.js&quot;&gt;&lt;/script&gt;
 &lt;script&gt;
   (function(b,i,t,C,O,I,N) {
@@ -4167,7 +4254,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" App Bar  Drawer "
+						data-filter-value=" App Bar  Drawer  Login "
 					>
 						<a href="#category-organisms" class="i-sidebar-list-item">
 							<b>Organisms</b>
@@ -4188,6 +4275,13 @@ function allCheckboxes() {
 								data-filter-value="Drawer"
 							>
 								<span>Drawer</span>
+							</a>
+							<a
+								href="#login"
+								class="i-sidebar-list-item"
+								data-filter-value="Login"
+							>
+								<span>Login</span>
 							</a>
 					</div>
 			
