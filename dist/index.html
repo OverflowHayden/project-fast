@@ -46,6 +46,9 @@
 									<option value="app-bar">App Bar</option>
 									<option value="drawer">Drawer</option>
 							</optgroup>
+							<optgroup label="Templates">
+									<option value="dashboard">Dashboard</option>
+							</optgroup>
 					</select>
 				</form>
 			</div>
@@ -3303,7 +3306,7 @@ function allCheckboxes() {
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
-&lt;main&gt;
+&lt;main class=&quot;main&quot;&gt;
     &lt;header class=&quot;app-bar&quot;&gt;
         &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
         &lt;span class=&quot;app-bar__title&quot;&gt;Temporary drawer&lt;/span&gt;
@@ -3344,7 +3347,7 @@ function allCheckboxes() {
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
-&lt;main&gt;
+&lt;main class=&quot;main&quot;&gt;
     &lt;header class=&quot;app-bar&quot;&gt;
         &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
         &lt;span class=&quot;app-bar__title&quot;&gt;Temporary drawer&lt;/span&gt;
@@ -3579,6 +3582,404 @@ function allCheckboxes() {
 </div>
 
 				</div>
+				<div id="category-templates">
+						<div id="dashboard" class="i-library">
+	<h1 class="display-4">Dashboard</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="dashboard-dashboard.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="dashboard-dashboard.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
+    &lt;div class=&quot;drawer__drawer&quot;&gt;
+        &lt;header class=&quot;drawer__header&quot;&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Project FAST&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+&lt;main class=&quot;main&quot;&gt;
+    &lt;header class=&quot;app-bar&quot;&gt;
+        &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;span class=&quot;app-bar__title&quot;&gt;Dashboard&lt;/span&gt;
+        &lt;div class=&quot;app-bar__actions&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-printer&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;div class=&quot;menu&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;main__content&quot;&gt;
+        &lt;div class=&quot;grid&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col__sm--8&quot;&gt;
+                    &lt;h2&gt;Chart&lt;/h2&gt;
+                    &lt;div class=&quot;atlas-chart&quot; data-id=&quot;H13grQLQ&quot; data-width=&quot;900&quot; data-height=&quot;600&quot;&gt;
+                        &lt;img src=&quot;https://www.theatlas.com/i/atlas_H13grQLQ.png&quot; style=&quot;max-width: 100%;&quot; alt=&quot;chart&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col__sm--4&quot;&gt;
+                    &lt;h2&gt;Activity&lt;/h2&gt;
+                    &lt;ul class=&quot;list list--demo&quot;&gt;
+                        &lt;li class=&quot;list__item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                                Added customer: Sommer Gibbons
+                                &lt;span class=&quot;list__item-secondary-text&quot;&gt;July 2nd, 2018&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list__item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                                Added customer: Tahmina Marriott
+                                &lt;span class=&quot;list__item-secondary-text&quot;&gt;July 2nd, 2018&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list__item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                                Added customer: Elise Heath
+                                &lt;span class=&quot;list__item-secondary-text&quot;&gt;July 2nd, 2018&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list__item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                                Added customer: Virginia Robbins
+                                &lt;span class=&quot;list__item-secondary-text&quot;&gt;July 2nd, 2018&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col__sm--4&quot;&gt;
+                    &lt;h2&gt;Best selling product&lt;/h2&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+                        &lt;div class=&quot;card col__xs--12&quot;&gt;
+                            &lt;figure class=&quot;card__image&quot;&gt;&lt;img src=&quot;https://baconmockup.com/500/335&quot; alt=&quot;Bacon&quot; /&gt;&lt;/figure&gt;
+                            &lt;div class=&quot;card__content&quot;&gt;
+                                &lt;h2 class=&quot;card__title&quot;&gt;Bacon&lt;/h2&gt;
+                                &lt;div class=&quot;card__actions&quot;&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;button button--compact&quot;&gt;Show all products&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col__sm--4&quot;&gt;
+                    &lt;div class=&quot;btcwdgt-chart&quot; bw-theme=&quot;light&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col__sm--8&quot;&gt;
+                    &lt;h2&gt;Orders&lt;/h2&gt;
+                    &lt;table style=&quot;--cols:5&quot;&gt;
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th&gt;Order&lt;/th&gt;
+                                &lt;th&gt;Date&lt;/th&gt;
+                                &lt;th&gt;State&lt;/th&gt;
+                                &lt;th align=&quot;right&quot;&gt;Total&lt;/th&gt;
+                                &lt;th&gt;&lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3005 John Doe&lt;/td&gt;
+                                &lt;td&gt;2 hours ago&lt;/td&gt;
+                                &lt;td&gt;Pending&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 78,65&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3004 Jon Scott&lt;/td&gt;
+                                &lt;td&gt;10 hours ago&lt;/td&gt;
+                                &lt;td&gt;Shipped&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 34,50&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3003 Virginia Robbins&lt;/td&gt;
+                                &lt;td&gt;1 day ago&lt;/td&gt;
+                                &lt;td&gt;Completed&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 120,10&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3002 Elise Heath&lt;/td&gt;
+                                &lt;td&gt;2 days ago&lt;/td&gt;
+                                &lt;td&gt;Completed&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 80,90&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3001 Tahmine Marriott&lt;/td&gt;
+                                &lt;td&gt;July 2nd, 2018&lt;/td&gt;
+                                &lt;td&gt;Completed&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 15,95&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fab fab--menu&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;ul class=&quot;fab__list&quot;&gt;
+            &lt;li class=&quot;fab__list-item&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add product&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-package&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;fab__list-item&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add order&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-cart&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;script src=&quot;https://www.theatlas.com/javascripts/atlas.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  (function(b,i,t,C,O,I,N) {
+    window.addEventListener(&#39;load&#39;,function() {
+      if(b.getElementById(C))return;
+      I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+      I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+    },false)
+  })(document,&#39;script&#39;,&#39;https://widgets.bitcoin.com/widget.js&#39;,&#39;btcwdgt&#39;);
+&lt;/script&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
+    &lt;div class=&quot;drawer__drawer&quot;&gt;
+        &lt;header class=&quot;drawer__header&quot;&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Project FAST&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+&lt;main class=&quot;main&quot;&gt;
+    &lt;header class=&quot;app-bar&quot;&gt;
+        &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;span class=&quot;app-bar__title&quot;&gt;Dashboard&lt;/span&gt;
+        &lt;div class=&quot;app-bar__actions&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-printer&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;div class=&quot;menu&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;main__content&quot;&gt;
+        &lt;div class=&quot;grid&quot;&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col__sm--8&quot;&gt;
+                    &lt;h2&gt;Chart&lt;/h2&gt;
+                    &lt;div class=&quot;atlas-chart&quot; data-id=&quot;H13grQLQ&quot; data-width=&quot;900&quot; data-height=&quot;600&quot;&gt;
+                        &lt;img src=&quot;https://www.theatlas.com/i/atlas_H13grQLQ.png&quot; style=&quot;max-width: 100%;&quot; alt=&quot;chart&quot; /&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col__sm--4&quot;&gt;
+                    &lt;h2&gt;Activity&lt;/h2&gt;
+                    &lt;ul class=&quot;list list--demo&quot;&gt;
+                        &lt;li class=&quot;list__item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                                Added customer: Sommer Gibbons
+                                &lt;span class=&quot;list__item-secondary-text&quot;&gt;July 2nd, 2018&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list__item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                                Added customer: Tahmina Marriott
+                                &lt;span class=&quot;list__item-secondary-text&quot;&gt;July 2nd, 2018&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list__item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                                Added customer: Elise Heath
+                                &lt;span class=&quot;list__item-secondary-text&quot;&gt;July 2nd, 2018&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                        &lt;li class=&quot;list__item&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                                Added customer: Virginia Robbins
+                                &lt;span class=&quot;list__item-secondary-text&quot;&gt;July 2nd, 2018&lt;/span&gt;
+                            &lt;/a&gt;
+                        &lt;/li&gt;
+                    &lt;/ul&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col__sm--4&quot;&gt;
+                    &lt;h2&gt;Best selling product&lt;/h2&gt;
+                    &lt;div class=&quot;row&quot;&gt;
+                        &lt;div class=&quot;card col__xs--12&quot;&gt;
+                            &lt;figure class=&quot;card__image&quot;&gt;&lt;img src=&quot;https://baconmockup.com/500/335&quot; alt=&quot;Bacon&quot; /&gt;&lt;/figure&gt;
+                            &lt;div class=&quot;card__content&quot;&gt;
+                                &lt;h2 class=&quot;card__title&quot;&gt;Bacon&lt;/h2&gt;
+                                &lt;div class=&quot;card__actions&quot;&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;button button--compact&quot;&gt;Show all products&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;col__sm--4&quot;&gt;
+                    &lt;div class=&quot;btcwdgt-chart&quot; bw-theme=&quot;light&quot;&gt;&lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;col__sm--8&quot;&gt;
+                    &lt;h2&gt;Orders&lt;/h2&gt;
+                    &lt;table style=&quot;--cols:5&quot;&gt;
+                        &lt;thead&gt;
+                            &lt;tr&gt;
+                                &lt;th&gt;Order&lt;/th&gt;
+                                &lt;th&gt;Date&lt;/th&gt;
+                                &lt;th&gt;State&lt;/th&gt;
+                                &lt;th align=&quot;right&quot;&gt;Total&lt;/th&gt;
+                                &lt;th&gt;&lt;/th&gt;
+                            &lt;/tr&gt;
+                        &lt;/thead&gt;
+                        &lt;tbody&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3005 John Doe&lt;/td&gt;
+                                &lt;td&gt;2 hours ago&lt;/td&gt;
+                                &lt;td&gt;Pending&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 78,65&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3004 Jon Scott&lt;/td&gt;
+                                &lt;td&gt;10 hours ago&lt;/td&gt;
+                                &lt;td&gt;Shipped&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 34,50&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3003 Virginia Robbins&lt;/td&gt;
+                                &lt;td&gt;1 day ago&lt;/td&gt;
+                                &lt;td&gt;Completed&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 120,10&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3002 Elise Heath&lt;/td&gt;
+                                &lt;td&gt;2 days ago&lt;/td&gt;
+                                &lt;td&gt;Completed&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 80,90&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                            &lt;tr&gt;
+                                &lt;td&gt;#3001 Tahmine Marriott&lt;/td&gt;
+                                &lt;td&gt;July 2nd, 2018&lt;/td&gt;
+                                &lt;td&gt;Completed&lt;/td&gt;
+                                &lt;td align=&quot;right&quot;&gt;&amp;euro; 15,95&lt;/td&gt;
+                                &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                            &lt;/tr&gt;
+                        &lt;/tbody&gt;
+                    &lt;/table&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;fab fab--menu&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot;&gt;
+        &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+        &lt;ul class=&quot;fab__list&quot;&gt;
+            &lt;li class=&quot;fab__list-item&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add product&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-package&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/li&gt;
+            &lt;li class=&quot;fab__list-item&quot;&gt;
+                &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Add order&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-cart&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;script src=&quot;https://www.theatlas.com/javascripts/atlas.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+  (function(b,i,t,C,O,I,N) {
+    window.addEventListener(&#39;load&#39;,function() {
+      if(b.getElementById(C))return;
+      I=b.createElement(i),N=b.getElementsByTagName(i)[0];
+      I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
+    },false)
+  })(document,&#39;script&#39;,&#39;https://widgets.bitcoin.com/widget.js&#39;,&#39;btcwdgt&#39;);
+&lt;/script&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
+				</div>
 		</div>
 		<div
 			class="i-page__sidebar"
@@ -3783,6 +4184,28 @@ function allCheckboxes() {
 								data-filter-value="Drawer"
 							>
 								<span>Drawer</span>
+							</a>
+					</div>
+			
+				</div>
+				<div class="i-sidebar-list-group">
+			
+					<h5
+						class="pt-4 mb-1"
+						data-filter-value=" Dashboard "
+					>
+						<a href="#category-templates" class="i-sidebar-list-item">
+							<b>Templates</b>
+						</a>
+					</h5>
+			
+					<div>
+							<a
+								href="#dashboard"
+								class="i-sidebar-list-item"
+								data-filter-value="Dashboard"
+							>
+								<span>Dashboard</span>
 							</a>
 					</div>
 			

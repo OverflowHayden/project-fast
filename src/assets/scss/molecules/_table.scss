@@ -38,6 +38,10 @@ table {
         i {
             margin-right: 8px;
         }
+
+        &[align="right"] {
+            text-align: right;
+        }
     }
 
     td {

@@ -71,7 +71,7 @@ The header image can be changed with the SASS variable: `$drawer-image`
         </nav>
     </div>
 </aside>
-<main>
+<main class="main">
     <header class="app-bar">
         <button class=app-bar__nav-toggle><i class="mdi mdi-menu"></i></button>
         <span class="app-bar__title">Temporary drawer</span>
