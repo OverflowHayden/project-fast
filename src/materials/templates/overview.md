@@ -1,0 +1,253 @@
+---
+name: Overview
+category: Templates
+---
+
+```overview.html
+<aside class="drawer drawer--permanent">
+    <div class="drawer__drawer">
+        <header class="drawer__header">
+            <span class="drawer__header-text">Project FAST</span>
+        </header>
+        <nav class="drawer__content">
+            <ul class="list">
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <i class="list__item-graphic mdi mdi-home"></i>Dashboard
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <i class="list__item-graphic mdi mdi-account-multiple"></i>Customers
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <i class="list__item-graphic mdi mdi-package"></i>Products
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <i class="list__item-graphic mdi mdi-cart"></i>Orders
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</aside>
+<main class="main">
+    <header class="app-bar">
+        <button class=app-bar__nav-toggle><i class="mdi mdi-menu"></i></button>
+        <span class="app-bar__title">Customers</span>
+        <div class="app-bar__actions">
+            <a href="#" class="button button--icon button--text"><i class="mdi mdi-printer"></i></a>
+            <div class="menu">
+                <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><i class="mdi mdi-dots-vertical"></i></a>
+                <ul id="menu" class="menu__list">
+                    <li class="menu__list-item"><a href="#">Help</a></li>
+                    <li class="menu__list-item"><a href="#">About</a></li>
+                    <li class="menu__list-item"><a href="#">Settings</a></li>
+                    <li class="menu__list-divider"></li>
+                    <li class="menu__list-item"><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="main__content">
+        <div class="grid">
+            <table class="data-table" style="--cols:5">
+                <thead>
+                    <tr class="data-table__head">
+                        <th colspan="5">
+                            <a href="#" class="data-table__action">Add</a>
+                            <a href="#" class="data-table__filter"><i class="mdi mdi-filter-variant"></i></a>
+                            <div class="data-table__selection">
+                                <span class="data-table__selected"><span class="data-table__selected-count"></span> selected</span>
+                                <div class="data-table__buttons">
+                                    <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a>
+                                </div>
+                            </div>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <div class="checkbox">
+                                <input id="cb_0" type="checkbox" />
+                                <label for="cb_0" class="checkbox__input"></label>
+                            </div>
+                        </th>
+                        <th><a href="#"><i class="mdi mdi-arrow-down"></i>ID</a></th>
+                        <th><a href="#">Name</a></th>
+                        <th><a href="#">Description</a></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <input id="cb_1" type="checkbox" />
+                                <label for="cb_1" class="checkbox__input"></label>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+                        <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <input id="cb_2" type="checkbox" />
+                                <label for="cb_2" class="checkbox__input"></label>
+                            </div>
+                        </td>
+                        <td>2</td>
+                        <td>Jon Stott</td>
+                        <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+                        <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <input id="cb_3" type="checkbox" />
+                                <label for="cb_3" class="checkbox__input"></label>
+                            </div>
+                        </td>
+                        <td>3</td>
+                        <td>Virginia Robbins</td>
+                        <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+                        <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <input id="cb_4" type="checkbox" />
+                                <label for="cb_4" class="checkbox__input"></label>
+                            </div>
+                        </td>
+                        <td>4</td>
+                        <td>Elise Heath</td>
+                        <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+                        <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <input id="cb_5" type="checkbox" />
+                                <label for="cb_5" class="checkbox__input"></label>
+                            </div>
+                        </td>
+                        <td>5</td>
+                        <td>Tahmina Marriott</td>
+                        <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+                        <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="checkbox">
+                                <input id="cb_6" type="checkbox" />
+                                <label for="cb_6" class="checkbox__input"></label>
+                            </div>
+                        </td>
+                        <td>6</td>
+                        <td>Sommer Gibbons</td>
+                        <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+                        <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr class="data-table__footer">
+                        <td colspan="5">
+                            <span class="data-table__results">Showing 1 to 6 of 30 entries</span>
+                            <nav class="data-table__pagination">
+                                <a href="#" class="pagination-list__nav pagination-list__nav--disabled">Previous</a>
+                                <ul class="pagination-list">
+                                    <li class="pagination-list__item pagination-list__item--active"><a href="#">1</a></li>
+                                    <li class="pagination-list__item"><a href="#">2</a></li>
+                                    <li class="pagination-list__item"><a href="#">3</a></li>
+                                    <li class="pagination-list__item"><a href="#">4</a></li>
+                                    <li class="pagination-list__item"><a href="#">5</a></li>
+                                </ul>
+                                <a href="#" class="pagination-list__nav">Next</a>
+                            </nav>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</main>
+<div class="fab" title="Add customer" data-tippy-placement="left" data-tippy-theme="light" tabindex="1">
+    <a href="#" class="fab__button"><i class="mdi mdi-plus"></i></a>
+</div>
+```
+
+```data-tables.js
+var tableCheckboxes = document.querySelectorAll('.data-table td input[type="checkbox"]');
+var headCheckbox = document.querySelector('.data-table th input[type="checkbox"]');
+
+for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+    if (element !== null) {
+        element.addEventListener('click', countCheckboxes);
+    }
+}
+
+function countCheckboxes() {
+    var count = 0;
+    
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            element.checked ? count++ : null;
+        }
+    }
+    
+    if(count > 0) {
+        document.querySelector('.data-table').classList.add('data-table--checked');
+        document.querySelector('.data-table__selected-count').innerText = count;
+        
+        if(count == tableCheckboxes.length) {
+        headCheckbox.indeterminate = false;
+            headCheckbox.checked = true;
+        }
+        else {
+        headCheckbox.indeterminate = true;
+            headCheckbox.checked = false;
+        }
+    }
+    else {
+        document.querySelector('.data-table').classList.remove('data-table--checked');
+        headCheckbox.indeterminate = false;
+        headCheckbox.checked = false;
+    }
+}
+
+headCheckbox.addEventListener('click', allCheckboxes);
+
+function allCheckboxes() {
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            if(headCheckbox.checked == true) {
+                element.checked = true;
+            }
+            else {
+                element.checked = false;
+            }
+        }
+    }
+    
+    if(headCheckbox.checked == true) {
+        document.querySelector('.data-table').classList.add('data-table--checked');
+        document.querySelector('.data-table__selected-count').innerText = tableCheckboxes.length;
+    }
+    else {
+        document.querySelector('.data-table').classList.remove('data-table--checked');
+    }
+}
+```

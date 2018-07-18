@@ -49,6 +49,7 @@
 							</optgroup>
 							<optgroup label="Templates">
 									<option value="dashboard">Dashboard</option>
+									<option value="overview">Overview</option>
 							</optgroup>
 					</select>
 				</form>
@@ -4070,6 +4071,529 @@ function allCheckboxes() {
 </div></div>
 </div>
 
+						<div id="overview" class="i-library">
+	<h1 class="display-4">Overview</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="overview-overview.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="overview-overview.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
+    &lt;div class=&quot;drawer__drawer&quot;&gt;
+        &lt;header class=&quot;drawer__header&quot;&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Project FAST&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+&lt;main class=&quot;main&quot;&gt;
+    &lt;header class=&quot;app-bar&quot;&gt;
+        &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;span class=&quot;app-bar__title&quot;&gt;Customers&lt;/span&gt;
+        &lt;div class=&quot;app-bar__actions&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-printer&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;div class=&quot;menu&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;main__content&quot;&gt;
+        &lt;div class=&quot;grid&quot;&gt;
+            &lt;table class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
+                &lt;thead&gt;
+                    &lt;tr class=&quot;data-table__head&quot;&gt;
+                        &lt;th colspan=&quot;5&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;data-table__action&quot;&gt;Add&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;data-table__filter&quot;&gt;&lt;i class=&quot;mdi mdi-filter-variant&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;div class=&quot;data-table__selection&quot;&gt;
+                                &lt;span class=&quot;data-table__selected&quot;&gt;&lt;span class=&quot;data-table__selected-count&quot;&gt;&lt;/span&gt; selected&lt;/span&gt;
+                                &lt;div class=&quot;data-table__buttons&quot;&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_0&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_0&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/th&gt;
+                        &lt;th&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;mdi mdi-arrow-down&quot;&gt;&lt;/i&gt;ID&lt;/a&gt;&lt;/th&gt;
+                        &lt;th&gt;&lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/th&gt;
+                        &lt;th&gt;&lt;a href=&quot;#&quot;&gt;Description&lt;/a&gt;&lt;/th&gt;
+                        &lt;th&gt;&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_1&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_1&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;1&lt;/td&gt;
+                        &lt;td&gt;John Doe&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_2&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_2&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;2&lt;/td&gt;
+                        &lt;td&gt;Jon Stott&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_3&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_3&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;3&lt;/td&gt;
+                        &lt;td&gt;Virginia Robbins&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_4&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_4&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;4&lt;/td&gt;
+                        &lt;td&gt;Elise Heath&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_5&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_5&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;5&lt;/td&gt;
+                        &lt;td&gt;Tahmina Marriott&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_6&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_6&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;6&lt;/td&gt;
+                        &lt;td&gt;Sommer Gibbons&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+                &lt;tfoot&gt;
+                    &lt;tr class=&quot;data-table__footer&quot;&gt;
+                        &lt;td colspan=&quot;5&quot;&gt;
+                            &lt;span class=&quot;data-table__results&quot;&gt;Showing 1 to 6 of 30 entries&lt;/span&gt;
+                            &lt;nav class=&quot;data-table__pagination&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;pagination-list__nav pagination-list__nav--disabled&quot;&gt;Previous&lt;/a&gt;
+                                &lt;ul class=&quot;pagination-list&quot;&gt;
+                                    &lt;li class=&quot;pagination-list__item pagination-list__item--active&quot;&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;pagination-list__nav&quot;&gt;Next&lt;/a&gt;
+                            &lt;/nav&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tfoot&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;div class=&quot;fab&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot; tabindex=&quot;1&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
+    &lt;div class=&quot;drawer__drawer&quot;&gt;
+        &lt;header class=&quot;drawer__header&quot;&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Project FAST&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+&lt;main class=&quot;main&quot;&gt;
+    &lt;header class=&quot;app-bar&quot;&gt;
+        &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;span class=&quot;app-bar__title&quot;&gt;Customers&lt;/span&gt;
+        &lt;div class=&quot;app-bar__actions&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-printer&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+            &lt;div class=&quot;menu&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;main__content&quot;&gt;
+        &lt;div class=&quot;grid&quot;&gt;
+            &lt;table class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
+                &lt;thead&gt;
+                    &lt;tr class=&quot;data-table__head&quot;&gt;
+                        &lt;th colspan=&quot;5&quot;&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;data-table__action&quot;&gt;Add&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;data-table__filter&quot;&gt;&lt;i class=&quot;mdi mdi-filter-variant&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;div class=&quot;data-table__selection&quot;&gt;
+                                &lt;span class=&quot;data-table__selected&quot;&gt;&lt;span class=&quot;data-table__selected-count&quot;&gt;&lt;/span&gt; selected&lt;/span&gt;
+                                &lt;div class=&quot;data-table__buttons&quot;&gt;
+                                    &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/th&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;th&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_0&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_0&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/th&gt;
+                        &lt;th&gt;&lt;a href=&quot;#&quot;&gt;&lt;i class=&quot;mdi mdi-arrow-down&quot;&gt;&lt;/i&gt;ID&lt;/a&gt;&lt;/th&gt;
+                        &lt;th&gt;&lt;a href=&quot;#&quot;&gt;Name&lt;/a&gt;&lt;/th&gt;
+                        &lt;th&gt;&lt;a href=&quot;#&quot;&gt;Description&lt;/a&gt;&lt;/th&gt;
+                        &lt;th&gt;&lt;/th&gt;
+                    &lt;/tr&gt;
+                &lt;/thead&gt;
+                &lt;tbody&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_1&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_1&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;1&lt;/td&gt;
+                        &lt;td&gt;John Doe&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_2&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_2&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;2&lt;/td&gt;
+                        &lt;td&gt;Jon Stott&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_3&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_3&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;3&lt;/td&gt;
+                        &lt;td&gt;Virginia Robbins&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_4&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_4&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;4&lt;/td&gt;
+                        &lt;td&gt;Elise Heath&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_5&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_5&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;5&lt;/td&gt;
+                        &lt;td&gt;Tahmina Marriott&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                    &lt;tr&gt;
+                        &lt;td&gt;
+                            &lt;div class=&quot;checkbox&quot;&gt;
+                                &lt;input id=&quot;cb_6&quot; type=&quot;checkbox&quot; /&gt;
+                                &lt;label for=&quot;cb_6&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
+                            &lt;/div&gt;
+                        &lt;/td&gt;
+                        &lt;td&gt;6&lt;/td&gt;
+                        &lt;td&gt;Sommer Gibbons&lt;/td&gt;
+                        &lt;td&gt;Maecenas pharetra porta leo, quis fermentum nibh efficitur nec&lt;/td&gt;
+                        &lt;td&gt;&lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                            &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tbody&gt;
+                &lt;tfoot&gt;
+                    &lt;tr class=&quot;data-table__footer&quot;&gt;
+                        &lt;td colspan=&quot;5&quot;&gt;
+                            &lt;span class=&quot;data-table__results&quot;&gt;Showing 1 to 6 of 30 entries&lt;/span&gt;
+                            &lt;nav class=&quot;data-table__pagination&quot;&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;pagination-list__nav pagination-list__nav--disabled&quot;&gt;Previous&lt;/a&gt;
+                                &lt;ul class=&quot;pagination-list&quot;&gt;
+                                    &lt;li class=&quot;pagination-list__item pagination-list__item--active&quot;&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;2&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;3&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
+                                    &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
+                                &lt;/ul&gt;
+                                &lt;a href=&quot;#&quot; class=&quot;pagination-list__nav&quot;&gt;Next&lt;/a&gt;
+                            &lt;/nav&gt;
+                        &lt;/td&gt;
+                    &lt;/tr&gt;
+                &lt;/tfoot&gt;
+            &lt;/table&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;
+&lt;div class=&quot;fab&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot; tabindex=&quot;1&quot;&gt;
+    &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div>
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> js</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="var tableCheckboxes = document.querySelectorAll(&#39;.data-table td input[type=&quot;checkbox&quot;]&#39;);
+var headCheckbox = document.querySelector(&#39;.data-table th input[type=&quot;checkbox&quot;]&#39;);
+
+for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+    if (element !== null) {
+        element.addEventListener(&#39;click&#39;, countCheckboxes);
+    }
+}
+
+function countCheckboxes() {
+    var count = 0;
+
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            element.checked ? count++ : null;
+        }
+    }
+
+    if(count &gt; 0) {
+        document.querySelector(&#39;.data-table&#39;).classList.add(&#39;data-table--checked&#39;);
+        document.querySelector(&#39;.data-table__selected-count&#39;).innerText = count;
+
+        if(count == tableCheckboxes.length) {
+        headCheckbox.indeterminate = false;
+            headCheckbox.checked = true;
+        }
+        else {
+        headCheckbox.indeterminate = true;
+            headCheckbox.checked = false;
+        }
+    }
+    else {
+        document.querySelector(&#39;.data-table&#39;).classList.remove(&#39;data-table--checked&#39;);
+        headCheckbox.indeterminate = false;
+        headCheckbox.checked = false;
+    }
+}
+
+headCheckbox.addEventListener(&#39;click&#39;, allCheckboxes);
+
+function allCheckboxes() {
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            if(headCheckbox.checked == true) {
+                element.checked = true;
+            }
+            else {
+                element.checked = false;
+            }
+        }
+    }
+
+    if(headCheckbox.checked == true) {
+        document.querySelector(&#39;.data-table&#39;).classList.add(&#39;data-table--checked&#39;);
+        document.querySelector(&#39;.data-table__selected-count&#39;).innerText = tableCheckboxes.length;
+    }
+    else {
+        document.querySelector(&#39;.data-table&#39;).classList.remove(&#39;data-table--checked&#39;);
+    }
+}" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">var tableCheckboxes = document.querySelectorAll(&#39;.data-table td input[type=&quot;checkbox&quot;]&#39;);
+var headCheckbox = document.querySelector(&#39;.data-table th input[type=&quot;checkbox&quot;]&#39;);
+
+for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+    if (element !== null) {
+        element.addEventListener(&#39;click&#39;, countCheckboxes);
+    }
+}
+
+function countCheckboxes() {
+    var count = 0;
+
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            element.checked ? count++ : null;
+        }
+    }
+
+    if(count &gt; 0) {
+        document.querySelector(&#39;.data-table&#39;).classList.add(&#39;data-table--checked&#39;);
+        document.querySelector(&#39;.data-table__selected-count&#39;).innerText = count;
+
+        if(count == tableCheckboxes.length) {
+        headCheckbox.indeterminate = false;
+            headCheckbox.checked = true;
+        }
+        else {
+        headCheckbox.indeterminate = true;
+            headCheckbox.checked = false;
+        }
+    }
+    else {
+        document.querySelector(&#39;.data-table&#39;).classList.remove(&#39;data-table--checked&#39;);
+        headCheckbox.indeterminate = false;
+        headCheckbox.checked = false;
+    }
+}
+
+headCheckbox.addEventListener(&#39;click&#39;, allCheckboxes);
+
+function allCheckboxes() {
+    for (var i = 0, element; element = tableCheckboxes[i]; i++) {
+        if (element !== null) {
+            if(headCheckbox.checked == true) {
+                element.checked = true;
+            }
+            else {
+                element.checked = false;
+            }
+        }
+    }
+
+    if(headCheckbox.checked == true) {
+        document.querySelector(&#39;.data-table&#39;).classList.add(&#39;data-table--checked&#39;);
+        document.querySelector(&#39;.data-table__selected-count&#39;).innerText = tableCheckboxes.length;
+    }
+    else {
+        document.querySelector(&#39;.data-table&#39;).classList.remove(&#39;data-table--checked&#39;);
+    }
+}</code></pre>
+	</div>
+</div></div>
+</div>
+
 				</div>
 		</div>
 		<div
@@ -4290,7 +4814,7 @@ function allCheckboxes() {
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Dashboard "
+						data-filter-value=" Dashboard  Overview "
 					>
 						<a href="#category-templates" class="i-sidebar-list-item">
 							<b>Templates</b>
@@ -4304,6 +4828,13 @@ function allCheckboxes() {
 								data-filter-value="Dashboard"
 							>
 								<span>Dashboard</span>
+							</a>
+							<a
+								href="#overview"
+								class="i-sidebar-list-item"
+								data-filter-value="Overview"
+							>
+								<span>Overview</span>
 							</a>
 					</div>
 			
