@@ -56,14 +56,17 @@
     }
 
     .button {
-        @include button;
-        @include button--text;
-        @include button--icon;
-
-        border-radius: 50%;
-        font-size: 2.4rem;
         color: $color-app-bar-text;
         padding: 12px 8px;
+
+        &.button--icon {
+            border-radius: 50%;
+        }
+
+        .mdi {
+            font-size: 2.4rem;
+            line-height: 1.6rem;
+        }
 
         &:hover {
             background: darken($color-app-bar, 4%);

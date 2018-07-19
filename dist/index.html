@@ -50,6 +50,7 @@
 							<optgroup label="Templates">
 									<option value="dashboard">Dashboard</option>
 									<option value="overview">Overview</option>
+									<option value="single">Single</option>
 							</optgroup>
 					</select>
 				</form>
@@ -5590,6 +5591,398 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 </div></div>
 </div>
 
+						<div id="single" class="i-library">
+	<h1 class="display-4">Single</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="single-add.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="single-add.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
+    &lt;div class=&quot;drawer__drawer&quot;&gt;
+        &lt;header class=&quot;drawer__header&quot;&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Project FAST&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+&lt;main class=&quot;main&quot;&gt;
+    &lt;header class=&quot;app-bar&quot;&gt;
+        &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;span class=&quot;app-bar__title&quot;&gt;New Customer&lt;/span&gt;
+        &lt;div class=&quot;app-bar__actions&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--text&quot;&gt;&lt;i class=&quot;mdi mdi-check&quot;&gt;&lt;/i&gt;Submit&lt;/a&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--text&quot;&gt;&lt;i class=&quot;mdi mdi-close&quot;&gt;&lt;/i&gt;Cancel&lt;/a&gt;
+            &lt;div class=&quot;menu&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;main__content&quot;&gt;
+        &lt;div class=&quot;form form--m&quot;&gt;
+            &lt;form&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;text-field&quot;&gt;
+                        &lt;input id=&quot;firstname&quot; type=&quot;text&quot; name=&quot;firstname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your firstname&quot; /&gt;
+                        &lt;label for=&quot;firstname&quot; class=&quot;text-field__label&quot;&gt;Firstname *&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;text-field&quot;&gt;
+                        &lt;input id=&quot;lastname&quot; type=&quot;text&quot; name=&quot;lastname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your lastname&quot; /&gt;
+                        &lt;label for=&quot;lastname&quot; class=&quot;text-field__label&quot;&gt;Lastname *&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row grid&quot;&gt;
+                    &lt;div class=&quot;col__sm--4&quot;&gt;
+                        &lt;div class=&quot;select-field field--outline&quot;&gt;
+                            &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
+                                &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+                                &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+                                &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+                                &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+                                &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+                                &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+                                &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+                                &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+                                &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+                                &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+                                &lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+                                &lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+                                &lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;
+                                &lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;
+                                &lt;option value=&quot;15&quot;&gt;15&lt;/option&gt;
+                                &lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;
+                                &lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;
+                                &lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;
+                                &lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;
+                                &lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;
+                                &lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;
+                                &lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;
+                                &lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;
+                                &lt;option value=&quot;24&quot;&gt;24&lt;/option&gt;
+                                &lt;option value=&quot;25&quot;&gt;25&lt;/option&gt;
+                                &lt;option value=&quot;26&quot;&gt;26&lt;/option&gt;
+                                &lt;option value=&quot;27&quot;&gt;27&lt;/option&gt;
+                                &lt;option value=&quot;28&quot;&gt;28&lt;/option&gt;
+                                &lt;option value=&quot;29&quot;&gt;29&lt;/option&gt;
+                                &lt;option value=&quot;30&quot;&gt;30&lt;/option&gt;
+                                &lt;option value=&quot;31&quot;&gt;31&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Day&lt;/label&gt;
+                            &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col__sm--4&quot;&gt;
+                        &lt;div class=&quot;select-field field--outline&quot;&gt;
+                            &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
+                                &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+                                &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+                                &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+                                &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+                                &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+                                &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+                                &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+                                &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+                                &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+                                &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+                                &lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+                                &lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Month&lt;/label&gt;
+                            &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col__sm--4&quot;&gt;
+                        &lt;div class=&quot;select-field field--outline&quot;&gt;
+                            &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
+                                &lt;option value=&quot;2018&quot;&gt;2018&lt;/option&gt;
+                                &lt;option value=&quot;2017&quot;&gt;2017&lt;/option&gt;
+                                &lt;option value=&quot;2016&quot;&gt;2016&lt;/option&gt;
+                                &lt;option value=&quot;2015&quot;&gt;2015&lt;/option&gt;
+                                &lt;option value=&quot;2014&quot;&gt;2014&lt;/option&gt;
+                                &lt;option value=&quot;2013&quot;&gt;2013&lt;/option&gt;
+                                &lt;option value=&quot;2012&quot;&gt;2012&lt;/option&gt;
+                                &lt;option value=&quot;2011&quot;&gt;2011&lt;/option&gt;
+                                &lt;option value=&quot;2010&quot;&gt;2010&lt;/option&gt;
+                                &lt;option value=&quot;2009&quot;&gt;2009&lt;/option&gt;
+                                &lt;option value=&quot;2008&quot;&gt;2008&lt;/option&gt;
+                                &lt;option value=&quot;2007&quot;&gt;2007&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Year&lt;/label&gt;
+                            &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row grid&quot;&gt;
+                    &lt;div class=&quot;col__sm--9&quot;&gt;
+                        &lt;div class=&quot;text-field field--fill&quot;&gt;
+                            &lt;input id=&quot;street&quot; type=&quot;text&quot; name=&quot;street&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your street&quot; /&gt;
+                            &lt;label for=&quot;street&quot; class=&quot;text-field__label&quot;&gt;Street&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col__sm--3&quot;&gt;
+                        &lt;div class=&quot;text-field field--fill&quot;&gt;
+                            &lt;input id=&quot;housenr&quot; type=&quot;housenr&quot; name=&quot;housenr&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your house number&quot; /&gt;
+                            &lt;label for=&quot;housenr&quot; class=&quot;text-field__label&quot;&gt;House number&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row grid&quot;&gt;
+                    &lt;div class=&quot;col__sm--4&quot;&gt;
+                        &lt;div class=&quot;text-field field--fill&quot;&gt;
+                            &lt;input id=&quot;zipcode&quot; type=&quot;text&quot; name=&quot;zipcode&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your zipcode&quot; /&gt;
+                            &lt;label for=&quot;zipcode&quot; class=&quot;text-field__label&quot;&gt;Zipcode&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col__sm--8&quot;&gt;
+                        &lt;div class=&quot;text-field field--fill&quot;&gt;
+                            &lt;input id=&quot;city&quot; type=&quot;text&quot; name=&quot;city&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your city&quot; /&gt;
+                            &lt;label for=&quot;city&quot; class=&quot;text-field__label&quot;&gt;City&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Submit&lt;/button&gt;
+                &lt;a href=&quot;#&quot; class=&quot;button button--text&quot;&gt;Cancel&lt;/a&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
+    &lt;div class=&quot;drawer__drawer&quot;&gt;
+        &lt;header class=&quot;drawer__header&quot;&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Project FAST&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;
+&lt;main class=&quot;main&quot;&gt;
+    &lt;header class=&quot;app-bar&quot;&gt;
+        &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
+        &lt;span class=&quot;app-bar__title&quot;&gt;New Customer&lt;/span&gt;
+        &lt;div class=&quot;app-bar__actions&quot;&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--text&quot;&gt;&lt;i class=&quot;mdi mdi-check&quot;&gt;&lt;/i&gt;Submit&lt;/a&gt;
+            &lt;a href=&quot;#&quot; class=&quot;button button--text&quot;&gt;&lt;i class=&quot;mdi mdi-close&quot;&gt;&lt;/i&gt;Cancel&lt;/a&gt;
+            &lt;div class=&quot;menu&quot;&gt;
+                &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;&lt;i class=&quot;mdi mdi-dots-vertical&quot;&gt;&lt;/i&gt;&lt;/a&gt;
+                &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Settings&lt;/a&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Logout&lt;/a&gt;&lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/header&gt;
+    &lt;div class=&quot;main__content&quot;&gt;
+        &lt;div class=&quot;form form--m&quot;&gt;
+            &lt;form&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;text-field&quot;&gt;
+                        &lt;input id=&quot;firstname&quot; type=&quot;text&quot; name=&quot;firstname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your firstname&quot; /&gt;
+                        &lt;label for=&quot;firstname&quot; class=&quot;text-field__label&quot;&gt;Firstname *&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row&quot;&gt;
+                    &lt;div class=&quot;text-field&quot;&gt;
+                        &lt;input id=&quot;lastname&quot; type=&quot;text&quot; name=&quot;lastname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your lastname&quot; /&gt;
+                        &lt;label for=&quot;lastname&quot; class=&quot;text-field__label&quot;&gt;Lastname *&lt;/label&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row grid&quot;&gt;
+                    &lt;div class=&quot;col__sm--4&quot;&gt;
+                        &lt;div class=&quot;select-field field--outline&quot;&gt;
+                            &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
+                                &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+                                &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+                                &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+                                &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+                                &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+                                &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+                                &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+                                &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+                                &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+                                &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+                                &lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+                                &lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+                                &lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;
+                                &lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;
+                                &lt;option value=&quot;15&quot;&gt;15&lt;/option&gt;
+                                &lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;
+                                &lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;
+                                &lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;
+                                &lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;
+                                &lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;
+                                &lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;
+                                &lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;
+                                &lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;
+                                &lt;option value=&quot;24&quot;&gt;24&lt;/option&gt;
+                                &lt;option value=&quot;25&quot;&gt;25&lt;/option&gt;
+                                &lt;option value=&quot;26&quot;&gt;26&lt;/option&gt;
+                                &lt;option value=&quot;27&quot;&gt;27&lt;/option&gt;
+                                &lt;option value=&quot;28&quot;&gt;28&lt;/option&gt;
+                                &lt;option value=&quot;29&quot;&gt;29&lt;/option&gt;
+                                &lt;option value=&quot;30&quot;&gt;30&lt;/option&gt;
+                                &lt;option value=&quot;31&quot;&gt;31&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Day&lt;/label&gt;
+                            &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col__sm--4&quot;&gt;
+                        &lt;div class=&quot;select-field field--outline&quot;&gt;
+                            &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
+                                &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
+                                &lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;
+                                &lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;
+                                &lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;
+                                &lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;
+                                &lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;
+                                &lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;
+                                &lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;
+                                &lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;
+                                &lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;
+                                &lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;
+                                &lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Month&lt;/label&gt;
+                            &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col__sm--4&quot;&gt;
+                        &lt;div class=&quot;select-field field--outline&quot;&gt;
+                            &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
+                                &lt;option value=&quot;2018&quot;&gt;2018&lt;/option&gt;
+                                &lt;option value=&quot;2017&quot;&gt;2017&lt;/option&gt;
+                                &lt;option value=&quot;2016&quot;&gt;2016&lt;/option&gt;
+                                &lt;option value=&quot;2015&quot;&gt;2015&lt;/option&gt;
+                                &lt;option value=&quot;2014&quot;&gt;2014&lt;/option&gt;
+                                &lt;option value=&quot;2013&quot;&gt;2013&lt;/option&gt;
+                                &lt;option value=&quot;2012&quot;&gt;2012&lt;/option&gt;
+                                &lt;option value=&quot;2011&quot;&gt;2011&lt;/option&gt;
+                                &lt;option value=&quot;2010&quot;&gt;2010&lt;/option&gt;
+                                &lt;option value=&quot;2009&quot;&gt;2009&lt;/option&gt;
+                                &lt;option value=&quot;2008&quot;&gt;2008&lt;/option&gt;
+                                &lt;option value=&quot;2007&quot;&gt;2007&lt;/option&gt;
+                            &lt;/select&gt;
+                            &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Year&lt;/label&gt;
+                            &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row grid&quot;&gt;
+                    &lt;div class=&quot;col__sm--9&quot;&gt;
+                        &lt;div class=&quot;text-field field--fill&quot;&gt;
+                            &lt;input id=&quot;street&quot; type=&quot;text&quot; name=&quot;street&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your street&quot; /&gt;
+                            &lt;label for=&quot;street&quot; class=&quot;text-field__label&quot;&gt;Street&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col__sm--3&quot;&gt;
+                        &lt;div class=&quot;text-field field--fill&quot;&gt;
+                            &lt;input id=&quot;housenr&quot; type=&quot;housenr&quot; name=&quot;housenr&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your house number&quot; /&gt;
+                            &lt;label for=&quot;housenr&quot; class=&quot;text-field__label&quot;&gt;House number&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;form__row grid&quot;&gt;
+                    &lt;div class=&quot;col__sm--4&quot;&gt;
+                        &lt;div class=&quot;text-field field--fill&quot;&gt;
+                            &lt;input id=&quot;zipcode&quot; type=&quot;text&quot; name=&quot;zipcode&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your zipcode&quot; /&gt;
+                            &lt;label for=&quot;zipcode&quot; class=&quot;text-field__label&quot;&gt;Zipcode&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                    &lt;div class=&quot;col__sm--8&quot;&gt;
+                        &lt;div class=&quot;text-field field--fill&quot;&gt;
+                            &lt;input id=&quot;city&quot; type=&quot;text&quot; name=&quot;city&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your city&quot; /&gt;
+                            &lt;label for=&quot;city&quot; class=&quot;text-field__label&quot;&gt;City&lt;/label&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/div&gt;
+                &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Submit&lt;/button&gt;
+                &lt;a href=&quot;#&quot; class=&quot;button button--text&quot;&gt;Cancel&lt;/a&gt;
+            &lt;/form&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/main&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
 				</div>
 		</div>
 		<div
@@ -5810,7 +6203,7 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Dashboard  Overview "
+						data-filter-value=" Dashboard  Overview  Single "
 					>
 						<a href="#category-templates" class="i-sidebar-list-item">
 							<b>Templates</b>
@@ -5831,6 +6224,13 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 								data-filter-value="Overview"
 							>
 								<span>Overview</span>
+							</a>
+							<a
+								href="#single"
+								class="i-sidebar-list-item"
+								data-filter-value="Single"
+							>
+								<span>Single</span>
 							</a>
 					</div>
 			
