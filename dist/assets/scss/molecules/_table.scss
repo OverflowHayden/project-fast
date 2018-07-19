@@ -224,7 +224,7 @@ table {
         }
 
         thead tr:not(.data-table__head) {
-            --height: calc(42px * var(--cols));
+            --height: calc((39px + (15px / var(--cols))) * var(--cols));
             text-shadow: 0 var(--height),
             0 calc(var(--height) * 2),
             0 calc(var(--height) * 3),
@@ -244,7 +244,17 @@ table {
             0 calc(var(--height) * 17),
             0 calc(var(--height) * 18),
             0 calc(var(--height) * 19),
-            0 calc(var(--height) * 20);
+            0 calc(var(--height) * 20),
+            0 calc(var(--height) * 21),
+            0 calc(var(--height) * 22),
+            0 calc(var(--height) * 23),
+            0 calc(var(--height) * 24),
+            0 calc(var(--height) * 25),
+            0 calc(var(--height) * 26),
+            0 calc(var(--height) * 27),
+            0 calc(var(--height) * 28),
+            0 calc(var(--height) * 29),
+            0 calc(var(--height) * 30);
         }
 
         th, td {

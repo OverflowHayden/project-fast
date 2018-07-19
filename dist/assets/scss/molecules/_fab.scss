@@ -10,6 +10,11 @@ $fab-size: 56px !default;
     will-change: transform,opacity;
     z-index: 9;
 
+    @media(max-width: $screen-sm-max) {
+        right: 20px;
+        bottom: 20px;
+    }
+
     .framed & {
         display: inline-block;
         float: right;

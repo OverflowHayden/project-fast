@@ -61,3 +61,35 @@
         }
     }
 }
+
+.margin-bottom--2x {
+    margin-bottom: 60px;
+
+    &--xs {
+        @media (min-width: $screen-xs) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &--sm {
+        @media (min-width: $screen-sm-min) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &--md {
+        @media (min-width: $screen-md-min) {
+            margin-bottom: 60px;
+        }
+    }
+
+    &--lg {
+        @media (min-width: $screen-lg-min) {
+            margin-bottom: 60px;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+}
