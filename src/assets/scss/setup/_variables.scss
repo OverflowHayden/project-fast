@@ -2,7 +2,7 @@
  * Colors
 // ---------------------------------------------- */
 $color-primary:                   #F37748 !default;
-$color-secondary:                 #429EA6 !default;
+$color-secondary:                 #696969 !default;
 
 $color-base-white:                #fff !default;
 $color-base-light:                #ededed !default;
@@ -42,6 +42,7 @@ $color-drawer:                    $color-base-white !default;
 $color-drawer-text:               rgba($color-base-black, .87) !default;
 $color-drawer-header:             $color-primary !default;
 $color-drawer-header-text:        $color-base-white !default;
+$color-drawer-border:             #e0e0e0 !default;
 $color-facebook: 				  #3b5998 !default;
 $color-youtube: 				  #e52d27 !default;
 $color-twitter: 				  #55acee !default;

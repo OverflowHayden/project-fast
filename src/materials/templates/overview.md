@@ -5,19 +5,19 @@ category: Templates
 
 ```overview.html
 <aside class="drawer drawer--permanent">
-    <div class="drawer__drawer">
+    <div class="drawer__drawer drawer--dark">
         <header class="drawer__header">
             <span class="drawer__header-text">Project FAST</span>
         </header>
         <nav class="drawer__content">
             <ul class="list">
                 <li class="list__item">
-                    <a href="#" class="list__item-text">
+                    <a href="dashboard-dashboard.html" class="list__item-text">
                         <i class="list__item-graphic mdi mdi-home"></i>Dashboard
                     </a>
                 </li>
                 <li class="list__item">
-                    <a href="#" class="list__item-text">
+                    <a href="overview-overview.html" class="list__item-text">
                         <i class="list__item-graphic mdi mdi-account-multiple"></i>Customers
                     </a>
                 </li>
@@ -59,7 +59,7 @@ category: Templates
                 <thead>
                     <tr class="data-table__head">
                         <th colspan="9">
-                            <a href="#" class="data-table__action">Add</a>
+                            <a href="single-add.html" class="data-table__action">Add</a>
                             <a href="#" class="data-table__filter"><i class="mdi mdi-filter-variant"></i></a>
                             <div class="data-table__selection">
                                 <span class="data-table__selected"><span class="data-table__selected-count"></span> selected</span>
@@ -670,7 +670,7 @@ category: Templates
     </div>
 </main>
 <div class="fab" title="Add customer" data-tippy-placement="left" data-tippy-theme="light" tabindex="1">
-    <a href="#" class="fab__button"><i class="mdi mdi-plus"></i></a>
+    <a href="single-add.html" class="fab__button"><i class="mdi mdi-plus"></i></a>
 </div>
 ```
 

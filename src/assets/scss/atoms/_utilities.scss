@@ -6,6 +6,16 @@
     overflow-y: hidden;
 }
 
+.bg {
+    &--primary {
+        background: $color-primary;
+    }
+
+    &--secondary {
+        background: $color-secondary;
+    }
+}
+
 .margin-top {
     margin-top: 30px;
 

@@ -5,19 +5,19 @@ category: Templates
 
 ```add.html
 <aside class="drawer drawer--permanent">
-    <div class="drawer__drawer">
+    <div class="drawer__drawer drawer--dark">
         <header class="drawer__header">
             <span class="drawer__header-text">Project FAST</span>
         </header>
         <nav class="drawer__content">
             <ul class="list">
                 <li class="list__item">
-                    <a href="#" class="list__item-text">
+                    <a href="dashboard-dashboard.html" class="list__item-text">
                         <i class="list__item-graphic mdi mdi-home"></i>Dashboard
                     </a>
                 </li>
                 <li class="list__item">
-                    <a href="#" class="list__item-text">
+                    <a href="overview-overview.html" class="list__item-text">
                         <i class="list__item-graphic mdi mdi-account-multiple"></i>Customers
                     </a>
                 </li>
@@ -40,8 +40,8 @@ category: Templates
         <button class=app-bar__nav-toggle><i class="mdi mdi-menu"></i></button>
         <span class="app-bar__title">New Customer</span>
         <div class="app-bar__actions">
-            <a href="#" class="button button--text"><i class="mdi mdi-check"></i>Submit</a>
-            <a href="#" class="button button--text"><i class="mdi mdi-close"></i>Cancel</a>
+            <a href="overview-overview.html" class="button button--text"><i class="mdi mdi-check"></i>Submit</a>
+            <a href="overview-overview.html" class="button button--text"><i class="mdi mdi-close"></i>Cancel</a>
             <div class="menu">
                 <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><i class="mdi mdi-dots-vertical"></i></a>
                 <ul id="menu" class="menu__list">
@@ -179,7 +179,7 @@ category: Templates
                     </div>
                 </div>
                 <button type="submit" class="button">Submit</button>
-                <a href="#" class="button button--text">Cancel</a>
+                <a href="overview-overview.html" class="button button--text">Cancel</a>
             </form>
         </div>
     </div>

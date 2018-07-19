@@ -50,7 +50,7 @@
 
         #{$self}__drawer {
             box-shadow: none;
-            border-right: 1px solid rgba($color-base-black, .12);
+            border-right: 1px solid $color-drawer-border;
         }
 
         &#{$self}--open {
@@ -74,7 +74,7 @@
 
         #{$self}__drawer {
             width: 100%;
-            border-right: 1px solid rgba($color-base-black, .12);
+            border-right: 1px solid $color-drawer-border;
         }
     }
 
@@ -104,6 +104,15 @@
     &__drawer {
         background: $color-drawer;
         height: 100%;
+
+        &#{$self}--dark {
+            background: $color-secondary;
+            color: $color-base-white;
+
+            .list__item, .list__item-graphic, .list__item-meta {
+                color: $color-base-white;
+            }
+        }
     }
 
     &__header {
@@ -122,6 +131,7 @@
     }
 
     .list {
+        background: transparent;
         padding: 0;
 
         &__item {
