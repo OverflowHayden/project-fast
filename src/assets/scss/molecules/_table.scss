@@ -8,7 +8,10 @@ table {
     max-width: 100%;
     //white-space: nowrap;
     overflow-x: auto;
-    display: block;
+
+    @media (max-width: $screen-md-max) {
+        display: block;
+    }
 
     tr {
         height: 56px;
