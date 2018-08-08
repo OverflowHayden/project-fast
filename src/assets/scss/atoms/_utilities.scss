@@ -6,6 +6,26 @@
     overflow-y: hidden;
 }
 
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
 .bg {
     &--primary {
         background: $color-primary;
@@ -14,88 +34,142 @@
     &--secondary {
         background: $color-secondary;
     }
+
+    &--success {
+        background: lighten($color-success, 10%);
+    }
+
+    &--error {
+        background: lighten($color-error, 10%);
+    }
+}
+
+.color {
+    &--primary {
+        color: $color-primary;
+    }
+
+    &--secondary {
+        color: $color-secondary;
+    }
+
+    &--success {
+        color: $color-success;
+    }
+
+    &--error {
+        color: $color-error;
+    }
 }
 
 .margin-top {
-    margin-top: 30px;
+    margin-top: $margin-size;
 
     &--xs {
         @media (min-width: $screen-xs) {
-            margin-top: 30px;
+            margin-top: $margin-size;
         }
     }
 
     &--sm {
         @media (min-width: $screen-sm-min) {
-            margin-top: 30px;
+            margin-top: $margin-size;
         }
     }
 
     &--md {
         @media (min-width: $screen-md-min) {
-            margin-top: 30px;
+            margin-top: $margin-size;
         }
     }
 
     &--lg {
         @media (min-width: $screen-lg-min) {
-            margin-top: 30px;
+            margin-top: $margin-size;
+        }
+    }
+}
+
+.margin-top--2x {
+    margin-top: $margin-size * 2;
+
+    &--xs {
+        @media (min-width: $screen-xs) {
+            margin-top: $margin-size * 2;
+        }
+    }
+
+    &--sm {
+        @media (min-width: $screen-sm-min) {
+            margin-top: $margin-size * 2;
+        }
+    }
+
+    &--md {
+        @media (min-width: $screen-md-min) {
+            margin-top: $margin-size * 2;
+        }
+    }
+
+    &--lg {
+        @media (min-width: $screen-lg-min) {
+            margin-top: $margin-size * 2;
         }
     }
 }
 
 .margin-bottom {
-    margin-bottom: 30px;
+    margin-bottom: $margin-size;
 
     &--xs {
         @media (min-width: $screen-xs) {
-            margin-bottom: 30px;
+            margin-bottom: $margin-size;
         }
     }
 
     &--sm {
         @media (min-width: $screen-sm-min) {
-            margin-bottom: 30px;
+            margin-bottom: $margin-size;
         }
     }
 
     &--md {
         @media (min-width: $screen-md-min) {
-            margin-bottom: 30px;
+            margin-bottom: $margin-size;
         }
     }
 
     &--lg {
         @media (min-width: $screen-lg-min) {
-            margin-bottom: 30px;
+            margin-bottom: $margin-size;
         }
     }
 }
 
 .margin-bottom--2x {
-    margin-bottom: 60px;
+    margin-bottom: $margin-size * 2;
 
     &--xs {
         @media (min-width: $screen-xs) {
-            margin-bottom: 60px;
+            margin-bottom: $margin-size * 2;
         }
     }
 
     &--sm {
         @media (min-width: $screen-sm-min) {
-            margin-bottom: 60px;
+            margin-bottom: $margin-size * 2;
         }
     }
 
     &--md {
         @media (min-width: $screen-md-min) {
-            margin-bottom: 60px;
+            margin-bottom: $margin-size * 2;
         }
     }
 
     &--lg {
         @media (min-width: $screen-lg-min) {
-            margin-bottom: 60px;
+            margin-bottom: $margin-size * 2;
         }
     }
 }

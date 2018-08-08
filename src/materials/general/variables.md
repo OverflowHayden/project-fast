@@ -1,6 +1,9 @@
-/* ---------------------------------------------- //
- * Colors
-// ---------------------------------------------- */
+---
+name: Variables
+category: General
+---
+
+```
 $color-primary:                   #F37748 !default;
 $color-secondary:                 #696969 !default;
 
@@ -47,39 +50,11 @@ $color-facebook: 				  #3b5998 !default;
 $color-youtube: 				  #e52d27 !default;
 $color-twitter: 				  #55acee !default;
 $color-success:                   #28a745 !default;
-$color-error:               #f44336 !default;
+$color-field-error:               #f44336 !default;
 
 $drawer-image:                    "../img/logo.svg" !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
 $border-radius:                   3px !default;
 $login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
 $margin-size:                     30px !default;
-
-
-/* ---------------------------------------------- //
- * Neat
-/* ---------------------------------------------- */
-// grid setup
-$max-width:                       1200px;
-$grid-columns:                    12;
-
-// breakpoints
-$screen-xs:                       480px;
-$screen-sm-min:                   $screen-xs + 1;
-$screen-sm-max:                   767px;
-$screen-md-min:                   $screen-sm-max + 1;
-$screen-md-max:                   1023px;
-$screen-lg-min:                   $screen-md-max + 1;
-$screen-lg-max:                   1170px;
-$screen-xl:                       1171px;
-
-//neat grid override
-$neat-grid: (
-    columns: 12,
-    gutter: 30px,
-);
-
-$form-grid: (
-    columns: 12,
-    gutter: 20px,
-);
+```
