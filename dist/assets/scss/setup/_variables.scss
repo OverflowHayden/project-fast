@@ -47,13 +47,25 @@ $color-facebook: 				  #3b5998 !default;
 $color-youtube: 				  #e52d27 !default;
 $color-twitter: 				  #55acee !default;
 $color-success:                   #28a745 !default;
-$color-error:               #f44336 !default;
+$color-error:                     #f44336 !default;
 
+
+/* ---------------------------------------------- //
+ * Style settings
+// ---------------------------------------------- */
 $drawer-image:                    "../img/logo.svg" !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
 $border-radius:                   3px !default;
 $login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
 $margin-size:                     30px !default;
+
+
+/* ---------------------------------------------- //
+ * Font
+// ---------------------------------------------- */
+$font-primary:                    'Roboto', sans-serif !default;
+$font-size:                       1.6rem !default;
+$line-height:                     1.4em !default;
 
 
 /* ---------------------------------------------- //
