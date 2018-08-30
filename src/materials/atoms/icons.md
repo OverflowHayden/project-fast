@@ -57,3 +57,8 @@ Icons can be rotated by 45 degree increments using the syntax `.mdi-rotate-[angl
   <i class="mdi-star"></i>
 </div>
 ```
+
+#### Variables
+```
+$color-icon:                      #6d6d6d !default;
+```

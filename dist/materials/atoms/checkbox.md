@@ -15,3 +15,10 @@ category: Atoms
     <label for="cb2" class="checkbox__label">Checkbox</label>
 </div>
 ```
+
+#### Variables
+```
+$color-checkbox-active:           $color-primary !default;
+$color-checkbox-inactive:         #757575 !default;
+$color-checkbox-check:            $color-base-white !default;
+```

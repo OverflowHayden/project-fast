@@ -174,3 +174,12 @@ The drawer will change to temporary on mobile
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </main>
 ```
+
+#### Variables
+```
+$color-drawer:                    $color-base-white !default;
+$color-drawer-text:               rgba($color-base-black, .87) !default;
+$color-drawer-header:             $color-primary !default;
+$color-drawer-header-text:        $color-base-white !default;
+$color-drawer-border:             #e0e0e0 !default;
+```

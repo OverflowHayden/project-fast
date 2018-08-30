@@ -90,3 +90,9 @@ category: Organisms
     </div>
 </header>
 ```
+
+#### Variables
+```
+$color-app-bar:                   $color-primary !default;
+$color-app-bar-text:              $color-base-white !default;
+```

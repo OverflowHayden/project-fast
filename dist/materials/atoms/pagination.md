@@ -14,3 +14,9 @@ category: Atoms
 </ul>
 <a href="#" class="pagination-list__nav">Next</a>
 ```
+
+#### Variables
+```
+$color-pagination:                $color-primary !default;
+$color-pagination-text:           $color-base-white !default;
+```

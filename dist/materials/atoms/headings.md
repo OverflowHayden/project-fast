@@ -12,3 +12,8 @@ Available headings
 <h4>Heading 4</h4>
 <h5>Heading 5</h5>
 ```
+
+#### Variables
+```
+$color-text:                      #333 !default;
+```

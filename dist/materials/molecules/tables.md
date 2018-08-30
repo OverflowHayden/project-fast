@@ -314,3 +314,11 @@ function allCheckboxes() {
     }
 }
 ```
+
+#### Variables
+```
+$color-table:                     $color-base-white !default;
+$color-table-border:              #e0e0e0 !default;
+$color-table-text:                $color-base-black !default;
+$color-table-selection:           rgba($color-primary, 0.22) !default;
+```

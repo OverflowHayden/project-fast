@@ -31,3 +31,9 @@ category: Atoms
 <button class="button button--icon button--alt"><i class="mdi mdi-pencil"></i></button>
 <button class="button button--icon button--text"><i class="mdi mdi-delete"></i></button>
 ```
+
+#### Variables
+```
+$color-button:                    $color-primary !default;
+$color-button-text:               $color-base-white !default;
+```

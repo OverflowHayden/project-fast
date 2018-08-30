@@ -39,3 +39,10 @@ Add a [grid column](#grid) class like `.col__sm--6` to the card to change size. 
     </div>
 </div>
 ```
+
+#### Variables
+```
+$color-card:                      $color-base-white !default;
+$color-card-title:                $color-base-black !default;
+$color-card-text:                 rgba($color-base-black,.54) !default;
+```

@@ -20,3 +20,9 @@ category: Atoms
     <label for="rb3" class="radio__label">Radio button </label>
 </div>
 ```
+
+#### Variables
+```
+$color-radio-active:              $color-primary !default;
+$color-radio-inactive:            #757575 !default;
+```

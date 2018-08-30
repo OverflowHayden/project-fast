@@ -87,3 +87,10 @@ category: Atoms
     <span class="field__error-text">Error!</span>
 </div>
 ```
+
+#### Variables
+```
+$color-text-field-label:          rgba($color-base-black, 0.54) !default;
+$color-text-field-inactive:       #8a8a8a !default;
+$color-text-field-active:         $color-primary !default;
+```
