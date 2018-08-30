@@ -282,4 +282,8 @@ table {
             border-bottom: 1px solid $color-table-border;
         }
     }
+
+    table.table--compact thead tr:not(.data-table__head) {
+        --height: calc((37px + (15px / var(--cols))) * var(--cols));
+    }
 }
