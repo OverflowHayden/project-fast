@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const publicJS = [
     './node_modules/tingle.js/src/tingle.js',
@@ -159,6 +160,13 @@ module.exports = [
             new UglifyJSPlugin({
                 test: /\.js($|\?)/i,
                 parallel: true
+            }),
+            new CompressionPlugin({
+                asset: "[path].gz[query]",
+                algorithm: "gzip",
+                test: /\.js$|\.css$/,
+                threshold: 10240,
+                minRatio: 0.8
             })
         ]
     },

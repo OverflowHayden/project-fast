@@ -1,5 +1,23 @@
 # Project FAST
-## Project "Full Application Stack Toolkit", a frontend toolkit for building applications
+## Project "Full Application Stack Toolkit" is a modern frontend framework inspired by Google's Material Design.
+
+
+[![npm](https://img.shields.io/npm/dt/project-fast.svg?style=flat-square)](https://github.com/OverflowHayden/project-fast) 
+[![GitHub issues](https://img.shields.io/github/issues-raw/OverflowHayden/project-fast.svg?style=flat-square)](https://github.com/OverflowHayden/project-fast/issues)
+[![npm](https://img.shields.io/npm/v/project-fast.svg?style=flat-square&colorB=blue)](https://www.npmjs.com/package/project-fast)
+ [![npm](https://img.shields.io/badge/Webpack-v4.x-lightgrey.svg?style=flat-square)](https://www.npmjs.com/package/project-fast) 
+ [![CSS](https://img.shields.io/badge/CSS%20gzip%20size-32.2%20KB-yellow.svg?style=flat-square)](https://raw.githubusercontent.com/OverflowHayden/project-fast/master/dist/assets/css/style.css) 
+ [![JS](https://img.shields.io/badge/JS%20gzip%20size-22.4%20KB-yellow.svg?style=flat-square)](https://raw.githubusercontent.com/OverflowHayden/project-fast/master/dist/assets/js/app.min.js) 
+ [![](https://img.shields.io/badge/Chrome-Latest-green.svg?style=flat-square)](https://www.google.com/chrome/) 
+ [![](https://img.shields.io/badge/Firefox-60%20or%20later-orange.svg?style=flat-square)](https://www.mozilla.org/firefox/new/) 
+ [![](https://img.shields.io/badge/Safari-11.1%20or%20later-yellowgreen.svg?style=flat-square)](https://www.mozilla.org/firefox/new/) 
+ [![](https://img.shields.io/badge/Edge-17%20or%20later-blue.svg?style=flat-square)](https://www.microsoft.com/windows/microsoft-edge) 
+ [![](https://img.shields.io/badge/IE-Not%20supported-blue.svg?style=flat-square)](https://www.microsoft.com/download/internet-explorer.aspx) 
+[![GitHub](https://img.shields.io/github/license/OverflowHayden/project-fast.svg?style=flat-square)](https://github.com/OverflowHayden/project-fast/blob/master/LICENSE)
+
+
+
+
 
 ### [Click here to open the toolkit](https://overflowhayden.github.io/project-fast/dist/)
 
