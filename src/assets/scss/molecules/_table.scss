@@ -284,6 +284,18 @@ table {
     }
 
     table.table--compact thead tr:not(.data-table__head) {
-        --height: calc((37px + (15px / var(--cols))) * var(--cols));
+        --height: calc((37.5px + (15px / var(--cols))) * var(--cols));
+    }
+
+    table.table--compact th .button, table.table--compact td .button {
+        padding: 0 6px;
+    }
+
+    table thead, table.table--compact thead {
+        width: 35%;
+    }
+
+    table tbody, table.table--compact tbody {
+        width: 65%;
     }
 }

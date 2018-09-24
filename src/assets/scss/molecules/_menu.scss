@@ -28,9 +28,9 @@
         will-change: transform,opacity;
         transform-origin: top left;
         transform: scale(.8);
-        transition: opacity .03s linear,transform .12s cubic-bezier(0,0,.2,1), max-height 0s linear .22s;
         overflow-y: hidden;
-        z-index: 4;
+        transition: opacity .03s linear, transform .12s cubic-bezier(0, 0, 0.2, 1), z-index 0s linear .12s, max-height 0s linear .22s;
+        z-index: -1;
 
         &#{$self}--open {
             display: inline-block;
@@ -38,7 +38,8 @@
             transform: scale(1);
             overflow-y: auto;
             max-height: calc(100vh - 32px);
-            transition: opacity .03s linear,transform .12s cubic-bezier(0,0,.2,1);
+            transition: opacity .03s linear, transform .12s cubic-bezier(0, 0, .2, 1);
+            z-index: 4;
         }
 
         &-item {
