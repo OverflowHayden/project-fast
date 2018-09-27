@@ -77,13 +77,27 @@ category: Templates
     <div class="main__content">
         <div class="grid">
             <div class="row">
-                <div class="col__sm--8">
+                <div class="col__xs--12">
                     <h2>Chart</h2>
-                    <div class="atlas-chart margin-bottom" data-id="H13grQLQ" data-width="900" data-height="600">
-                        <img src="https://www.theatlas.com/i/atlas_H13grQLQ.png" style="max-width: 100%;" alt="chart" />
+                    <div id="chart_div"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col__sm--6">
+                    <h2>Best selling product</h2>
+                    <div class="row">
+                        <div class="card col__xs--12">
+                            <figure class="card__image"><img src="https://baconmockup.com/500/335" alt="Bacon" /></figure>
+                            <div class="card__content">
+                                <h2 class="card__title">Bacon</h2>
+                                <div class="card__actions">
+                                    <a href="#" class="button button--compact">Show all products</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col__sm--4">
+                <div class="col__sm--6">
                     <h2>Activity</h2>
                     <ul class="list list--demo">
                         <li class="list__item">
@@ -112,23 +126,7 @@ category: Templates
                         </li>
                     </ul>
                 </div>
-                <div class="col__sm--4">
-                    <h2>Best selling product</h2>
-                    <div class="row">
-                        <div class="card col__xs--12">
-                            <figure class="card__image"><img src="https://baconmockup.com/500/335" alt="Bacon" /></figure>
-                            <div class="card__content">
-                                <h2 class="card__title">Bacon</h2>
-                                <div class="card__actions">
-                                    <a href="#" class="button button--compact">Show all products</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col__sm--12">
+                <div class="col__xs--12">
                     <h2>Orders</h2>
                     <table style="--cols:5">
                         <thead>
@@ -194,5 +192,36 @@ category: Templates
         </li>
     </ul>
 </div>
-<script src="https://www.theatlas.com/javascripts/atlas.js"></script>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+<script>
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+    google.charts.setOnLoadCallback(drawMaterial);
+    
+    function drawMaterial() {
+      var data = google.visualization.arrayToDataTable([
+        ['City', '2010 Population', '2000 Population'],
+        ['New York City, NY', 8175000, 8008000],
+        ['Los Angeles, CA', 3792000, 3694000],
+        ['Chicago, IL', 2695000, 2896000],
+        ['Houston, TX', 2099000, 1953000],
+        ['Philadelphia, PA', 1526000, 1517000]
+      ]);
+    
+      var materialOptions = {
+        chart: {
+          title: 'Population of Largest U.S. Cities'
+        },
+        hAxis: {
+          title: 'Total Population',
+          minValue: 0,
+        },
+        vAxis: {
+          title: 'City'
+        },
+        bars: 'horizontal'
+      };
+      var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
+      materialChart.draw(data, materialOptions);
+    }
+</script>
 ```
