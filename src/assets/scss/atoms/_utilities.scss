@@ -1,3 +1,8 @@
+html.framed {
+    max-height: 2000px;
+    overflow: hidden;
+}
+
 .animating-open {
     display: inline-block;
     transform: scale(.8);

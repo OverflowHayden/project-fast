@@ -31,7 +31,28 @@ category: Templates
                         <i class="list__item-graphic mdi mdi-cart"></i>Orders
                     </a>
                 </li>
-            </ul>
+                <li class="list__divider"></li>
+                    <li class="list__item list__item--header">
+                        <span class="list__item-secondary-text">Help</span>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            <i class="list__item-graphic mdi mdi-help-circle"></i>Help & Feedback
+                        </a>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            <i class="list__item-graphic mdi mdi-information"></i>About
+                        </a>
+                    </li>
+                </ul>
+                <ul class="list list--bottom">
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            <i class="list__item-graphic mdi mdi-settings"></i>Settings
+                        </a>
+                    </li>
+                </ul>
         </nav>
     </div>
 </aside>
@@ -107,12 +128,7 @@ category: Templates
                 </div>
             </div>
             <div class="row">
-                <div class="col__sm--4">
-                    <div class="margin-bottom">
-                        <div class="btcwdgt-chart" bw-theme="light"></div>
-                    </div>
-                </div>
-                <div class="col__sm--8">
+                <div class="col__sm--12">
                     <h2>Orders</h2>
                     <table style="--cols:5">
                         <thead>
@@ -179,13 +195,4 @@ category: Templates
     </ul>
 </div>
 <script src="https://www.theatlas.com/javascripts/atlas.js"></script>
-<script>
-  (function(b,i,t,C,O,I,N) {
-    window.addEventListener('load',function() {
-      if(b.getElementById(C))return;
-      I=b.createElement(i),N=b.getElementsByTagName(i)[0];
-      I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
-    },false)
-  })(document,'script','https://widgets.bitcoin.com/widget.js','btcwdgt');
-</script>
 ```

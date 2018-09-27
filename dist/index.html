@@ -1834,6 +1834,8 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
 <code>.form--s</code> 400px,
 <code>.form--m</code> 800px,
 <code>.form--l</code> 1200px</p>
+<p>To remove card:
+<code>.form--no-card</code></p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
@@ -3666,63 +3668,236 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;aside class=&quot;drawer&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
-                &lt;span class=&quot;drawer__header-text&quot;&gt;Drawer header&lt;/span&gt;
-            &lt;/header&gt;
-            &lt;nav class=&quot;drawer__content&quot;&gt;
-                &lt;ul class=&quot;list&quot;&gt;
-                    &lt;li class=&quot;list__item&quot;&gt;
-                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
-                            &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;list__item&quot;&gt;
-                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
-                            &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;list__item&quot;&gt;
-                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
-                            &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;list__item&quot;&gt;
-                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
-                            &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/nav&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Drawer header&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                    &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul class=&quot;list list--bottom&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
-                &lt;span class=&quot;drawer__header-text&quot;&gt;Drawer header&lt;/span&gt;
-            &lt;/header&gt;
-            &lt;nav class=&quot;drawer__content&quot;&gt;
-                &lt;ul class=&quot;list&quot;&gt;
-                    &lt;li class=&quot;list__item&quot;&gt;
-                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
-                            &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;list__item&quot;&gt;
-                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
-                            &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;list__item&quot;&gt;
-                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
-                            &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li class=&quot;list__item&quot;&gt;
-                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
-                            &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
-                        &lt;/a&gt;
-                    &lt;/li&gt;
-                &lt;/ul&gt;
-            &lt;/nav&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Drawer header&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                    &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul class=&quot;list list--bottom&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;</code></pre>
+	</div>
+</div><h3>Compact</h3><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="drawer-drawer-compact.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="drawer-drawer-compact.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;aside class=&quot;drawer drawer--compact&quot;&gt;
+    &lt;div class=&quot;drawer__drawer&quot;&gt;
+        &lt;header class=&quot;drawer__header&quot;&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Drawer header&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                    &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul class=&quot;list list--bottom&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
+    &lt;/div&gt;
+&lt;/aside&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--compact&quot;&gt;
+    &lt;div class=&quot;drawer__drawer&quot;&gt;
+        &lt;header class=&quot;drawer__header&quot;&gt;
+            &lt;span class=&quot;drawer__header-text&quot;&gt;Drawer header&lt;/span&gt;
+        &lt;/header&gt;
+        &lt;nav class=&quot;drawer__content&quot;&gt;
+            &lt;ul class=&quot;list&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-home&quot;&gt;&lt;/i&gt;Dashboard
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-account-multiple&quot;&gt;&lt;/i&gt;Customers
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-package&quot;&gt;&lt;/i&gt;Products
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                    &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                    &lt;/a&gt;
+                &lt;/li&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;ul class=&quot;list list--bottom&quot;&gt;
+                &lt;li class=&quot;list__item&quot;&gt;
+                    &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                        &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;</code></pre>
 	</div>
@@ -3779,7 +3954,28 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -3820,7 +4016,28 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -3889,7 +4106,28 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -3930,7 +4168,28 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -3999,7 +4258,28 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -4040,7 +4320,28 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -4216,7 +4517,28 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -4292,12 +4614,7 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
                 &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;row&quot;&gt;
-                &lt;div class=&quot;col__sm--4&quot;&gt;
-                    &lt;div class=&quot;margin-bottom&quot;&gt;
-                        &lt;div class=&quot;btcwdgt-chart&quot; bw-theme=&quot;light&quot;&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;col__sm--8&quot;&gt;
+                &lt;div class=&quot;col__sm--12&quot;&gt;
                     &lt;h2&gt;Orders&lt;/h2&gt;
                     &lt;table style=&quot;--cols:5&quot;&gt;
                         &lt;thead&gt;
@@ -4363,16 +4680,7 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
         &lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;
-&lt;script src=&quot;https://www.theatlas.com/javascripts/atlas.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-  (function(b,i,t,C,O,I,N) {
-    window.addEventListener(&#39;load&#39;,function() {
-      if(b.getElementById(C))return;
-      I=b.createElement(i),N=b.getElementsByTagName(i)[0];
-      I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
-    },false)
-  })(document,&#39;script&#39;,&#39;https://widgets.bitcoin.com/widget.js&#39;,&#39;btcwdgt&#39;);
-&lt;/script&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;script src=&quot;https://www.theatlas.com/javascripts/atlas.js&quot;&gt;&lt;/script&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
     &lt;div class=&quot;drawer__drawer drawer--dark&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -4400,7 +4708,28 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -4476,12 +4805,7 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
                 &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;row&quot;&gt;
-                &lt;div class=&quot;col__sm--4&quot;&gt;
-                    &lt;div class=&quot;margin-bottom&quot;&gt;
-                        &lt;div class=&quot;btcwdgt-chart&quot; bw-theme=&quot;light&quot;&gt;&lt;/div&gt;
-                    &lt;/div&gt;
-                &lt;/div&gt;
-                &lt;div class=&quot;col__sm--8&quot;&gt;
+                &lt;div class=&quot;col__sm--12&quot;&gt;
                     &lt;h2&gt;Orders&lt;/h2&gt;
                     &lt;table style=&quot;--cols:5&quot;&gt;
                         &lt;thead&gt;
@@ -4547,16 +4871,7 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
         &lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;
-&lt;script src=&quot;https://www.theatlas.com/javascripts/atlas.js&quot;&gt;&lt;/script&gt;
-&lt;script&gt;
-  (function(b,i,t,C,O,I,N) {
-    window.addEventListener(&#39;load&#39;,function() {
-      if(b.getElementById(C))return;
-      I=b.createElement(i),N=b.getElementsByTagName(i)[0];
-      I.src=t;I.id=C;N.parentNode.insertBefore(I, N);
-    },false)
-  })(document,&#39;script&#39;,&#39;https://widgets.bitcoin.com/widget.js&#39;,&#39;btcwdgt&#39;);
-&lt;/script&gt;</code></pre>
+&lt;script src=&quot;https://www.theatlas.com/javascripts/atlas.js&quot;&gt;&lt;/script&gt;</code></pre>
 	</div>
 </div></div>
 </div>
@@ -4616,7 +4931,28 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -5284,7 +5620,28 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -6135,7 +6492,28 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;
@@ -6315,7 +6693,28 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
                         &lt;i class=&quot;list__item-graphic mdi mdi-cart&quot;&gt;&lt;/i&gt;Orders
                     &lt;/a&gt;
                 &lt;/li&gt;
-            &lt;/ul&gt;
+                &lt;li class=&quot;list__divider&quot;&gt;&lt;/li&gt;
+                    &lt;li class=&quot;list__item list__item--header&quot;&gt;
+                        &lt;span class=&quot;list__item-secondary-text&quot;&gt;Help&lt;/span&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-help-circle&quot;&gt;&lt;/i&gt;Help &amp; Feedback
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-information&quot;&gt;&lt;/i&gt;About
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+                &lt;ul class=&quot;list list--bottom&quot;&gt;
+                    &lt;li class=&quot;list__item&quot;&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
+                            &lt;i class=&quot;list__item-graphic mdi mdi-settings&quot;&gt;&lt;/i&gt;Settings
+                        &lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
 &lt;/aside&gt;

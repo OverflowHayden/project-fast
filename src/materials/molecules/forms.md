@@ -8,6 +8,9 @@ Available form sizes:
 `.form--m` 800px,
 `.form--l` 1200px
 
+To remove card:
+`.form--no-card`
+
 ```forms.html
 <h1>Example form</h1>
 <div class="form form--m">

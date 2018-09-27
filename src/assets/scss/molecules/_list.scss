@@ -45,6 +45,16 @@
             }
         }
 
+        &--active &-text {
+            background: rgba($color-base-black, .04);
+            color: inherit;
+        }
+
+        &--header {
+            padding: 12px 16px 6px;
+            min-height: 38px;
+        }
+
         &-secondary-text {
             color: rgba($color-base-black, .54);
             font-size: 1.4rem;

@@ -6,6 +6,12 @@
     padding: 30px;
     max-width: 100%;
 
+    &--no-card {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
     &--s {
         width: 400px;
     }

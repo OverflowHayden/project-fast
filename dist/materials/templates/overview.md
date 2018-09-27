@@ -31,7 +31,28 @@ category: Templates
                         <i class="list__item-graphic mdi mdi-cart"></i>Orders
                     </a>
                 </li>
-            </ul>
+                <li class="list__divider"></li>
+                    <li class="list__item list__item--header">
+                        <span class="list__item-secondary-text">Help</span>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            <i class="list__item-graphic mdi mdi-help-circle"></i>Help & Feedback
+                        </a>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            <i class="list__item-graphic mdi mdi-information"></i>About
+                        </a>
+                    </li>
+                </ul>
+                <ul class="list list--bottom">
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            <i class="list__item-graphic mdi mdi-settings"></i>Settings
+                        </a>
+                    </li>
+                </ul>
         </nav>
     </div>
 </aside>
