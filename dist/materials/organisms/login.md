@@ -32,3 +32,8 @@ category: Organisms
         </div>
     </div>
 ```
+
+#### Variables
+```
+$login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
+```

@@ -76,6 +76,14 @@
             width: 100%;
             border-right: 1px solid $color-drawer-border;
         }
+
+        + .main {
+            margin-left: 320px;
+
+            .app-bar {
+                left: 320px;
+            }
+        }
     }
 
     &--compact {
@@ -145,6 +153,10 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: flex-start;
+
+        .drawer--compact & {
+            max-height: calc(100vh - 62px);
+        }
     }
 
     .list {
@@ -166,12 +178,12 @@
 .persistent--open, .permanent--open {
     overflow-x: hidden;
 
-    .app-bar {
-        left: 320px;
-    }
+    .drawer--compact + .main {
+        margin-left: 240px;
 
-    .main {
-        margin-left: 320px;
+        .app-bar {
+            left: 240px;
+        }
     }
 }
 

@@ -3,7 +3,7 @@ name: Drawer
 category: Organisms
 ---
 
-The header image can be changed with the SASS variable: `$drawer-image`
+The header image can be changed with the SASS variable: `$drawer-image`. If you want a dark drawer add the class `drawer--dark` to the `drawer__drawer` element.
 ```drawer.html
 <aside class="drawer">
     <div class="drawer__drawer">
@@ -317,6 +317,9 @@ The drawer will change to temporary on mobile
 
 #### Variables
 ```
+$drawer-image:                    "../img/logo.svg" !default;
+$drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
+
 $color-drawer:                    $color-base-white !default;
 $color-drawer-text:               rgba($color-base-black, .87) !default;
 $color-drawer-header:             $color-primary !default;
