@@ -58,6 +58,11 @@ table {
         font-weight: 400;
     }
 
+    tfoot {
+        background: $color-table;
+        position: relative;
+    }
+
     &.table--compact {
         tr {
             height: 44px;
@@ -199,7 +204,7 @@ table {
 }
 
 @media (max-width: $screen-sm-max) {
-    tr, td, th, tfoot, thead, tbody, table {
+    tr, tbody td, th, tfoot, thead, tbody, table {
         display: block;
         text-align: left;
     }
