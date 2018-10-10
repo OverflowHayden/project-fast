@@ -181,4 +181,64 @@ html.framed {
 
 .hidden {
     display: none;
+
+    &--xs {
+        @media (min-width: $screen-xs) {
+            display: none;
+        }
+    }
+
+    &--sm {
+        @media (min-width: $screen-sm-min) {
+            display: none;
+        }
+    }
+
+    &--md {
+        @media (min-width: $screen-md-min) {
+            display: none;
+        }
+    }
+
+    &--lg {
+        @media (min-width: $screen-lg-min) {
+            display: none;
+        }
+    }
+}
+
+.visible {
+    display: block;
+
+    &--xs {
+        display: none;
+
+        @media (max-width: $screen-xs) {
+            display: block;
+        }
+    }
+
+    &--sm {
+        display: none;
+
+        @media (max-width: $screen-sm-max) {
+            display: block;
+        }
+    }
+
+    &--md {
+        display: none;
+
+        @media (max-width: $screen-md-max) {
+            display: block;
+        }
+    }
+
+    &--lg {
+        display: none;
+
+        @media (max-width: $screen-lg-max) {
+            display: block;
+        }
+    }
 }
