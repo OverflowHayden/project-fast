@@ -144,6 +144,51 @@
 // Project FAST
 @import &#39;~project-fast/src/assets/scss/includes.scss&#39;;</code></pre>
 	</div>
+</div><h3>Laravel 5.7+</h3><p>Starting from Laravel 5.7, the scripts and styles has been flattened in the resource folder.
+The code should now look like this in webpack.mix.js:</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="mix.js(&#39;resources/js/app.js&#39;, &#39;public/js&#39;)
+    .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;)
+    .options({
+        postCss: [
+            require(&#39;pixrem&#39;)()
+        ]
+    })
+    .scripts([
+        &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
+        &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
+    ], &#39;public/backend/js/bundle.js&#39;);" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">mix.js(&#39;resources/js/app.js&#39;, &#39;public/js&#39;)
+    .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;)
+    .options({
+        postCss: [
+            require(&#39;pixrem&#39;)()
+        ]
+    })
+    .scripts([
+        &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
+        &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
+    ], &#39;public/backend/js/bundle.js&#39;);</code></pre>
+	</div>
+</div><p>And <code>resources/sass/app.scss</code>:</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="// Variables
+@import &quot;variables&quot;;
+
+// Project FAST
+@import &#39;~project-fast/src/assets/scss/includes.scss&#39;;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">// Variables
+@import &quot;variables&quot;;
+
+// Project FAST
+@import &#39;~project-fast/src/assets/scss/includes.scss&#39;;</code></pre>
+	</div>
 </div></div>
 </div>
 
@@ -396,7 +441,7 @@
 &lt;div class=&quot;margin-bottom&quot;&gt;Margin bottom&lt;/div&gt;
 &lt;div class=&quot;margin-bottom--2x&quot;&gt;Margin bottom 2x&lt;/div&gt;</code></pre>
 	</div>
-</div><h3>Hidden</h3><p>To hide an element, use the class <code>hidden</code>. Add a modifier <code>--xs</code> <code>--sm</code> <code>--md</code> <code>--lg</code> to activate it at a specific breakpoint.</p>
+</div><h3>Hidden</h3><p>To hide an element, use the class <code>hidden</code>. Add a modifier <code>--xs</code> <code>--sm</code> <code>--md</code> <code>--lg</code> to activate it until a specific breakpoint.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
@@ -424,15 +469,15 @@
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;hidden&quot;&gt;Always hidden&lt;/div&gt;
-&lt;div class=&quot;hidden--xs&quot;&gt;Hidden at xs breakpoint&lt;/div&gt;
-&lt;div class=&quot;hidden--sm&quot;&gt;Hidden at sm breakpoint&lt;/div&gt;
-&lt;div class=&quot;hidden--md&quot;&gt;Hidden at md breakpoint&lt;/div&gt;
-&lt;div class=&quot;hidden--lg&quot;&gt;Hidden at lg breakpoint&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;div class=&quot;hidden--xs&quot;&gt;Hidden until xs breakpoint&lt;/div&gt;
+&lt;div class=&quot;hidden--sm&quot;&gt;Hidden until sm breakpoint&lt;/div&gt;
+&lt;div class=&quot;hidden--md&quot;&gt;Hidden until md breakpoint&lt;/div&gt;
+&lt;div class=&quot;hidden--lg&quot;&gt;Hidden until lg breakpoint&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;hidden&quot;&gt;Always hidden&lt;/div&gt;
-&lt;div class=&quot;hidden--xs&quot;&gt;Hidden at xs breakpoint&lt;/div&gt;
-&lt;div class=&quot;hidden--sm&quot;&gt;Hidden at sm breakpoint&lt;/div&gt;
-&lt;div class=&quot;hidden--md&quot;&gt;Hidden at md breakpoint&lt;/div&gt;
-&lt;div class=&quot;hidden--lg&quot;&gt;Hidden at lg breakpoint&lt;/div&gt;</code></pre>
+&lt;div class=&quot;hidden--xs&quot;&gt;Hidden until xs breakpoint&lt;/div&gt;
+&lt;div class=&quot;hidden--sm&quot;&gt;Hidden until sm breakpoint&lt;/div&gt;
+&lt;div class=&quot;hidden--md&quot;&gt;Hidden until md breakpoint&lt;/div&gt;
+&lt;div class=&quot;hidden--lg&quot;&gt;Hidden until lg breakpoint&lt;/div&gt;</code></pre>
 	</div>
 </div><h3>Visible</h3><p>To make an element visible, use the class <code>visible</code>. Add a modifier <code>--xs</code> <code>--sm</code> <code>--md</code> <code>--lg</code> to activate it until a specific breakpoint.</p>
 <div class="i-example">

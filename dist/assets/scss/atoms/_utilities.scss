@@ -183,25 +183,25 @@ html.framed {
     display: none;
 
     &--xs {
-        @media (min-width: $screen-xs) {
+        @media (max-width: $screen-xs) {
             display: none;
         }
     }
 
     &--sm {
-        @media (min-width: $screen-sm-min) {
+        @media (max-width: $screen-sm-max) {
             display: none;
         }
     }
 
     &--md {
-        @media (min-width: $screen-md-min) {
+        @media (max-width: $screen-md-max) {
             display: none;
         }
     }
 
     &--lg {
-        @media (min-width: $screen-lg-min) {
+        @media (max-width: $screen-lg-max) {
             display: none;
         }
     }

@@ -49,3 +49,29 @@ Change the code in ```resources/assets/sass/app.scss``` to:
 // Project FAST
 @import '~project-fast/src/assets/scss/includes.scss';
 ```
+
+### Laravel 5.7+
+Starting from Laravel 5.7, the scripts and styles has been flattened in the resource folder.
+The code should now look like this in webpack.mix.js:
+```
+mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .options({
+        postCss: [
+            require('pixrem')()
+        ]
+    })
+    .scripts([
+        'node_modules/project-fast/src/assets/js/bundle.js',
+        'node_modules/project-fast/src/assets/js/app.min.js'
+    ], 'public/backend/js/bundle.js');
+```
+
+And `resources/sass/app.scss`:
+```
+// Variables
+@import "variables";
+
+// Project FAST
+@import '~project-fast/src/assets/scss/includes.scss';
+```

@@ -41,13 +41,13 @@ category: General
 ```
 
 ### Hidden
-To hide an element, use the class `hidden`. Add a modifier `--xs` `--sm` `--md` `--lg` to activate it at a specific breakpoint.
+To hide an element, use the class `hidden`. Add a modifier `--xs` `--sm` `--md` `--lg` to activate it until a specific breakpoint.
 ```hidden.html
 <div class="hidden">Always hidden</div>
-<div class="hidden--xs">Hidden at xs breakpoint</div>
-<div class="hidden--sm">Hidden at sm breakpoint</div>
-<div class="hidden--md">Hidden at md breakpoint</div>
-<div class="hidden--lg">Hidden at lg breakpoint</div>
+<div class="hidden--xs">Hidden until xs breakpoint</div>
+<div class="hidden--sm">Hidden until sm breakpoint</div>
+<div class="hidden--md">Hidden until md breakpoint</div>
+<div class="hidden--lg">Hidden until lg breakpoint</div>
 ```
 
 ### Visible
