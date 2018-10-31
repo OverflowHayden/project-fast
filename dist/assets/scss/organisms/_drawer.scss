@@ -178,6 +178,14 @@
 .persistent--open, .permanent--open {
     overflow-x: hidden;
 
+    .main {
+        margin-left: 320px;
+
+        .app-bar {
+            left: 320px;
+        }
+    }
+
     .drawer--compact + .main {
         margin-left: 240px;
 

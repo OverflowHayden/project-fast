@@ -67,9 +67,21 @@ body { padding: 10px; }
             require('pixrem')()
         ]
     })
-    .js([
-        'node_modules/project-fast/src/assets/js/app.js',
-    ], 'public/js/bundle.js');</script>
+    .scripts([
+        'node_modules/project-fast/src/assets/js/bundle.js',
+        'node_modules/project-fast/src/assets/js/app.min.js'
+    ], 'public/backend/js/bundle.js');</script>
+			<script type="text/x-stylemark" data-language="js">mix.js('resources/js/app.js', 'public/js')
+    .sass('resources/sass/app.scss', 'public/css')
+    .options({
+        postCss: [
+            require('pixrem')()
+        ]
+    })
+    .scripts([
+        'node_modules/project-fast/src/assets/js/bundle.js',
+        'node_modules/project-fast/src/assets/js/app.min.js'
+    ], 'public/backend/js/bundle.js');</script>
 
 		<!--
 			Vanilla JS

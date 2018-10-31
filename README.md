@@ -45,7 +45,7 @@ yarn run build
 ```
 
 ## For the Laravel nerds
-Add the following code to webpack.mix.js:
+Add the following code to `webpack.mix.js`:
 ```
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
@@ -60,7 +60,7 @@ mix.js('resources/assets/js/app.js', 'public/js')
     ], 'public/backend/js/bundle.js');
 ```
 
-Change the code in ```resources/assets/sass/app.scss``` to:
+Change the code in `resources/assets/sass/app.scss` to:
 ```
 // Variables
 @import "variables";
@@ -70,8 +70,8 @@ Change the code in ```resources/assets/sass/app.scss``` to:
 ```
 
 ### Laravel 5.7+
-Starting from Laravel 5.7, the scripts and styles has been flattened in the resource folder.
-The code should now look like this in webpack.mix.js:
+Starting from Laravel 5.7, the scripts and styles has been flattened in the `resource` folder.
+The code should now look like this in `webpack.mix.js`:
 ```
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
