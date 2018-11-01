@@ -44,6 +44,7 @@
 									<option value="cards">Cards</option>
 									<option value="container">Container</option>
 									<option value="dialog">Dialog</option>
+									<option value="expansion-panel">Expansion panel</option>
 									<option value="floating-action-button-fab">Floating Action Button (FAB)</option>
 									<option value="forms">Forms</option>
 									<option value="grid">Grid</option>
@@ -570,6 +571,8 @@ $color-fab-text:                  $color-base-white !default;
 $color-card:                      $color-base-white !default;
 $color-card-title:                $color-base-black !default;
 $color-card-text:                 rgba($color-base-black,.54) !default;
+$color-expansion-panel:           $color-base-white !default;
+$color-expansion-panel-text:      rgba($color-base-black,.54) !default;
 $color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;
 $color-drawer:                    $color-base-white !default;
@@ -581,7 +584,7 @@ $color-facebook:                   #3b5998 !default;
 $color-youtube:                   #e52d27 !default;
 $color-twitter:                   #55acee !default;
 $color-success:                   #28a745 !default;
-$color-field-error:               #f44336 !default;
+$color-error:                     #f44336 !default;
 
 $drawer-image:                    &quot;../img/logo.svg&quot; !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
@@ -623,6 +626,8 @@ $color-fab-text:                  $color-base-white !default;
 $color-card:                      $color-base-white !default;
 $color-card-title:                $color-base-black !default;
 $color-card-text:                 rgba($color-base-black,.54) !default;
+$color-expansion-panel:           $color-base-white !default;
+$color-expansion-panel-text:      rgba($color-base-black,.54) !default;
 $color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;
 $color-drawer:                    $color-base-white !default;
@@ -634,7 +639,7 @@ $color-facebook:                   #3b5998 !default;
 $color-youtube:                   #e52d27 !default;
 $color-twitter:                   #55acee !default;
 $color-success:                   #28a745 !default;
-$color-field-error:               #f44336 !default;
+$color-error:                     #f44336 !default;
 
 $drawer-image:                    &quot;../img/logo.svg&quot; !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
@@ -2000,6 +2005,87 @@ document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, func
      modal.open();
  });
 </code></pre>
+	</div>
+</div></div>
+</div>
+
+						<div id="expansion-panel" class="i-library">
+	<h1 class="display-4">Expansion panel</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="expansion-panel-expansion-panel.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="expansion-panel-expansion-panel.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;expansion-panel&quot;&gt;
+    &lt;div class=&quot;expansion-panel__item&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; class=&quot;expansion-panel__input&quot;&gt;
+        &lt;div class=&quot;expansion-panel__header&quot;&gt;
+            Panel header 1
+        &lt;/div&gt;
+        &lt;div class=&quot;expansion-panel__content&quot;&gt;
+            Panel content 1
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;expansion-panel__item&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; class=&quot;expansion-panel__input&quot;&gt;
+        &lt;div class=&quot;expansion-panel__header&quot;&gt;
+            Panel header 2
+        &lt;/div&gt;
+        &lt;div class=&quot;expansion-panel__content&quot;&gt;
+            Panel content 2
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;expansion-panel&quot;&gt;
+    &lt;div class=&quot;expansion-panel__item&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; class=&quot;expansion-panel__input&quot;&gt;
+        &lt;div class=&quot;expansion-panel__header&quot;&gt;
+            Panel header 1
+        &lt;/div&gt;
+        &lt;div class=&quot;expansion-panel__content&quot;&gt;
+            Panel content 1
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;expansion-panel__item&quot;&gt;
+        &lt;input type=&quot;checkbox&quot; class=&quot;expansion-panel__input&quot;&gt;
+        &lt;div class=&quot;expansion-panel__header&quot;&gt;
+            Panel header 2
+        &lt;/div&gt;
+        &lt;div class=&quot;expansion-panel__content&quot;&gt;
+            Panel content 2
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h4>Variables</h4>
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-expansion-panel:           $color-base-white !default;
+$color-expansion-panel-text:      rgba($color-base-black,.54) !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">$color-expansion-panel:           $color-base-white !default;
+$color-expansion-panel-text:      rgba($color-base-black,.54) !default;</code></pre>
 	</div>
 </div></div>
 </div>
@@ -7467,7 +7553,7 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Cards  Container  Dialog  Floating Action Button (FAB)  Forms  Grid  List  Menu  Tables "
+						data-filter-value=" Cards  Container  Dialog  Expansion panel  Floating Action Button (FAB)  Forms  Grid  List  Menu  Tables "
 					>
 						<a href="#category-molecules" class="i-sidebar-list-item">
 							<b>Molecules</b>
@@ -7495,6 +7581,13 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 								data-filter-value="Dialog"
 							>
 								<span>Dialog</span>
+							</a>
+							<a
+								href="#expansion-panel"
+								class="i-sidebar-list-item"
+								data-filter-value="Expansion panel"
+							>
+								<span>Expansion panel</span>
 							</a>
 							<a
 								href="#floating-action-button-fab"

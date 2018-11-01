@@ -39,6 +39,8 @@ $color-fab-text:                  $color-base-white !default;
 $color-card:                      $color-base-white !default;
 $color-card-title:                $color-base-black !default;
 $color-card-text:                 rgba($color-base-black,.54) !default;
+$color-expansion-panel:           $color-base-white !default;
+$color-expansion-panel-text:      rgba($color-base-black,.54) !default;
 $color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;
 $color-drawer:                    $color-base-white !default;
@@ -50,7 +52,7 @@ $color-facebook: 				  #3b5998 !default;
 $color-youtube: 				  #e52d27 !default;
 $color-twitter: 				  #55acee !default;
 $color-success:                   #28a745 !default;
-$color-field-error:               #f44336 !default;
+$color-error:                     #f44336 !default;
 
 $drawer-image:                    "../img/logo.svg" !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
