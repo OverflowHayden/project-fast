@@ -1,6 +1,6 @@
 .field {
     $self: &;
-    $fields: (".text-field", ".password-field", ".select-field", "textarea-field", ".number-field");
+    $fields: (".text-field", ".password-field", ".select-field", ".textarea-field", ".number-field");
 
     @each $field in $fields {
         &--fill {
