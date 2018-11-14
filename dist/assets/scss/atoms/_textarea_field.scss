@@ -2,6 +2,10 @@
     @include text-field;
 
     &__input {
-        min-height: 70px;
+        min-height: 133px;
+    }
+
+    .field--fill &__input {
+        padding-top: 28px;
     }
 }
