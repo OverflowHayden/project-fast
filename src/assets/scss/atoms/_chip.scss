@@ -12,6 +12,7 @@
     will-change: transform,opacity;
     min-height: 32px;
     text-decoration: none;
+    transition: background .25s ease;
 
     &:hover {
         background: darken($color-chip, 8%);
@@ -24,7 +25,7 @@
             background: darken($color-primary, 8%);
         }
 
-        #{$self}__text {
+        #{$self}__text, #{$self}__icon {
             color: $color-base-white;
         }
     }
@@ -36,7 +37,7 @@
             background: rgba($color-primary, .32);
         }
 
-        #{$self}__text {
+        #{$self}__text, #{$self}__icon {
             color: $color-primary;
         }
     }
@@ -47,5 +48,37 @@
         line-height: 1.4em;
         font-weight: 400;
         letter-spacing: .025rem;
+    }
+
+    &__icon {
+        color: $color-chip-text;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: .4rem;
+        line-height: 1.1;
+
+        .mdi {
+            line-height: 1.4rem;
+        }
+    }
+
+    &__filter {
+        color: $color-chip-text;
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: .4rem;
+        line-height: 1.25;
+        opacity: .44;
+        transition: opacity .25s ease;
+
+        &:hover {
+            color: $color-chip-text;
+            opacity: 1;
+        }
+
+        &:before {
+            font: normal normal normal 1.6rem/1 "Material Design Icons";
+            content: mdi('close-circle');
+        }
     }
 }

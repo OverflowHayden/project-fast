@@ -315,6 +315,13 @@ function allCheckboxes() {
 }
 ```
 
+### Helper classes
+The following classes can be added to the `<table>`:  
+`.table--layout-fixed` for table-layout: fixed.  
+`.table--fullwidth` for 100% width.  
+`.table--scroll-horizontal` for horizontal scrolling if the table is too big.  
+`.table--fit` for making the content fit on one line. (If you have set widths to columns)
+
 #### Variables
 ```
 $color-table:                     $color-base-white !default;
