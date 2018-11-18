@@ -13,6 +13,8 @@ $color-link:                      #007bff !default;
 $color-icon:                      #6d6d6d !default;
 $color-button:                    $color-primary !default;
 $color-button-text:               $color-base-white !default;
+$color-chip:                      #e0e0e0 !default;
+$color-chip-text:                 rgba($color-base-black, .87) !default;
 $color-table:                     $color-base-white !default;
 $color-table-border:              #e0e0e0 !default;
 $color-table-text:                $color-base-black !default;
@@ -58,6 +60,7 @@ $color-error:                     #f44336 !default;
 $drawer-image:                    "../img/logo.svg" !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
 $border-radius:                   3px !default;
+$chips-border-radius:             1.6rem !default;
 $login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
 $margin-size:                     30px !default;
 

@@ -3,8 +3,6 @@ name: Buttons
 category: Atoms
 ---
 
-### Default
-
 ```buttons.html
 <button class="button">Button</button>
 <button class="button button--alt">Button alt</button>

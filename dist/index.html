@@ -31,6 +31,7 @@
 							<optgroup label="Atoms">
 									<option value="buttons">Buttons</option>
 									<option value="checkbox">Checkbox</option>
+									<option value="chips">Chips</option>
 									<option value="headings">Headings</option>
 									<option value="icons">Icons</option>
 									<option value="pagination">Pagination</option>
@@ -654,7 +655,7 @@ $margin-size:                     30px !default;</code></pre>
 				<div id="category-atoms">
 						<div id="buttons" class="i-library">
 	<h1 class="display-4">Buttons</h1>
-	<div><h3>Default</h3><div class="i-example">
+	<div><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="buttons-buttons.html"
@@ -857,6 +858,56 @@ $color-checkbox-check:            $color-base-white !default;" data-toggle="tool
 		<pre class="mb-0"><code class="lang-">$color-checkbox-active:           $color-primary !default;
 $color-checkbox-inactive:         #757575 !default;
 $color-checkbox-check:            $color-base-white !default;</code></pre>
+	</div>
+</div></div>
+</div>
+
+						<div id="chips" class="i-library">
+	<h1 class="display-4">Chips</h1>
+	<div><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="chips-chips.html"
+                            target="_blank"
+                            class="fa fa-external-link-square fa-fw plain-link"
+                            title="Open in a new window"
+                        ></a>
+                        Example
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="chips-chips.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;chip&quot;&gt;
+    &lt;span class=&quot;chip__text&quot;&gt;Chip&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;chip chip--primary&quot;&gt;
+    &lt;span class=&quot;chip__text&quot;&gt;Chip primary&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;chip chip--alt&quot;&gt;
+    &lt;span class=&quot;chip__text&quot;&gt;Chip alt&lt;/span&gt;
+&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;chip&quot;&gt;
+    &lt;span class=&quot;chip__text&quot;&gt;Chip&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;chip chip--primary&quot;&gt;
+    &lt;span class=&quot;chip__text&quot;&gt;Chip primary&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;chip chip--alt&quot;&gt;
+    &lt;span class=&quot;chip__text&quot;&gt;Chip alt&lt;/span&gt;
+&lt;/div&gt;</code></pre>
 	</div>
 </div></div>
 </div>
@@ -7468,7 +7519,7 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 			
 					<h5
 						class="pt-4 mb-1"
-						data-filter-value=" Buttons  Checkbox  Headings  Icons  Pagination  Radio button  Select field  Snackbar  Text fields  Tooltip "
+						data-filter-value=" Buttons  Checkbox  Chips  Headings  Icons  Pagination  Radio button  Select field  Snackbar  Text fields  Tooltip "
 					>
 						<a href="#category-atoms" class="i-sidebar-list-item">
 							<b>Atoms</b>
@@ -7489,6 +7540,13 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 								data-filter-value="Checkbox"
 							>
 								<span>Checkbox</span>
+							</a>
+							<a
+								href="#chips"
+								class="i-sidebar-list-item"
+								data-filter-value="Chips"
+							>
+								<span>Chips</span>
 							</a>
 							<a
 								href="#headings"

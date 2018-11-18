@@ -1,11 +1,11 @@
 {
   "name": "project-fast",
-  "version": "0.9.3-2",
+  "version": "0.9.4",
   "description": "Project \"Full Application Stack Toolkit\" is a modern frontend framework inspired by Google's Material Design.",
   "homepage": "https://github.com/OverflowHayden/project-fast.git#readme",
   "scripts": {
     "build": "webpack --progress && stylemark -i src -o dist -c stylemark.yml",
-    "dev": "concurrently --kill-others \"stylemark -i src -o dist -c stylemark.yml -w 20000 -b\" \"webpack --watch --hot\"",
+    "dev": "concurrently --kill-others \"stylemark -i src -o dist -c stylemark.yml -w 2000 -b\" \"webpack --watch --hot\"",
     "toolkit": "stylemark -i src -o dist -c stylemark.yml -b",
     "test": "npm run toolkit && npm run build"
   },

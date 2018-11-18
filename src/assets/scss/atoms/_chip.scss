@@ -1,0 +1,51 @@
+.chip {
+    @include ripple;
+    $self: &;
+
+    appearance: none;
+    background: $color-chip;
+    border-radius: $chips-border-radius;
+    cursor: pointer;
+    display: inline-flex;
+    margin: 4px;
+    padding: .7rem 1.2rem;
+    will-change: transform,opacity;
+    min-height: 32px;
+    text-decoration: none;
+
+    &:hover {
+        background: darken($color-chip, 8%);
+    }
+
+    &--primary {
+        background: $color-primary;
+
+        &:hover {
+            background: darken($color-primary, 8%);
+        }
+
+        #{$self}__text {
+            color: $color-base-white;
+        }
+    }
+
+    &--alt {
+        background: rgba($color-primary, .21);
+
+        &:hover {
+            background: rgba($color-primary, .32);
+        }
+
+        #{$self}__text {
+            color: $color-primary;
+        }
+    }
+
+    &__text {
+        color: $color-chip-text;
+        font-size: 1.4rem;
+        line-height: 1.4em;
+        font-weight: 400;
+        letter-spacing: .025rem;
+    }
+}
