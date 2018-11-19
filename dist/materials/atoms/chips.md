@@ -46,3 +46,10 @@ category: Atoms
     <a href="#" class="chip__filter"></a>
 </div>
 ```
+
+#### Variables
+```
+$color-chip:                      #e0e0e0 !default;
+$color-chip-text:                 rgba($color-base-black, .87) !default;
+$chips-border-radius:             1.6rem !default;
+```
