@@ -16,6 +16,28 @@ category: Atoms
 </div>
 ```
 
+### Customizeable
+Powered by [Choices.js](https://github.com/jshjohnson/Choices)
+```select-field-customizable.html
+<div class="select-field field--outline">
+    <select id="select" name="select" class="select-field__input">
+        <option value="" placeholder>Nothing selected</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+        <option value="3">Option 4</option>
+        <option value="3">Option 5</option>
+    </select>
+    <label for="select" class="select-field__label">Select label</label>
+    <span class="field__helper">Select an option</span>
+</div>
+```
+
+```select-field-customizable.js
+const choices = new Choices('#select');
+
+```
+
 #### Variables
 ```
 $color-text-field-label:          rgba($color-base-black, 0.54) !default;

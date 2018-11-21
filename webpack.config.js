@@ -7,6 +7,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 const publicJS = [
     './node_modules/tingle.js/src/tingle.js',
+    './node_modules/choices.js/public/assets/scripts/choices.js',
 ];
 
 module.exports = [

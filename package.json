@@ -26,6 +26,7 @@
     "autoprefixer": "^8.4.1",
     "babel-loader": "^8.0.0-beta",
     "bourbon": "^5.0.0",
+    "choices.js": "^4.1.0",
     "compression-webpack-plugin": "^1.1.12",
     "concurrently": "^3.5.1",
     "css-loader": "^0.28.11",

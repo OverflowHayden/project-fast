@@ -22,7 +22,7 @@
                     transform: translate(12px, 12px) scale(0.75);
                 }
 
-                &:not(:placeholder-shown) + #{$field}__label {
+                &:not(:placeholder-shown) + #{$field}__label, &:checked + #{$field}__label {
                     transform: translate(12px, 12px) scale(0.75);
                 }
             }
@@ -93,7 +93,7 @@
             #{$field}__input {
                 border: 1px solid $color-text-field-inactive;
                 border-radius: 4px;
-                padding: 12px 12px 0 12px;
+                padding: 12px 12px 6px;
                 height: 56px;
 
                 &:hover {
