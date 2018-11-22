@@ -16,6 +16,7 @@
         font-size: 1.6rem;
         letter-spacing: .015rem;
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         width: 100%;
         height: 32px;
@@ -74,7 +75,6 @@
     }
 
     &__list {
-        z-index: 3;
 
         #{$self}.is-open &--dropdown {
             border-top: 1px solid $color-text-field-active;
@@ -83,5 +83,37 @@
         &--single {
             padding: 0;
         }
+
+        &--multiple {
+
+            .choices__item {
+                border: none;
+                background-color: $color-primary;
+
+                .field--fill & {
+                    margin-top: 5px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    &__input {
+        background: none;
+        padding: 0;
+
+        .field--fill #{$self}__list--multiple + & {
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+    }
+
+    &[data-type*=select-multiple] &__button, &[data-type*=text] &__button {
+        border-left: 0;
+        margin: 0 0 0 2px;
+    }
+
+    &[data-type*=select-one] &__button {
+        margin-top: -8px;
     }
 }

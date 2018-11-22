@@ -1525,6 +1525,18 @@ $color-radio-inactive:            #757575 !default;</code></pre>
     &lt;/select&gt;
     &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Select label&lt;/label&gt;
     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;select-field field--outline&quot;&gt;
+    &lt;select id=&quot;select2&quot; name=&quot;select&quot; class=&quot;select-field__input&quot; multiple&gt;
+        &lt;option value=&quot;&quot; placeholder&gt;Nothing selected&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 4&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 5&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;label for=&quot;select2&quot; class=&quot;select-field__label&quot;&gt;Select Multiple&lt;/label&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Select multiple options&lt;/span&gt;
 &lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;select-field field--outline&quot;&gt;
     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
@@ -1537,6 +1549,18 @@ $color-radio-inactive:            #757575 !default;</code></pre>
     &lt;/select&gt;
     &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Select label&lt;/label&gt;
     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
+&lt;/div&gt;
+&lt;div class=&quot;select-field field--outline&quot;&gt;
+    &lt;select id=&quot;select2&quot; name=&quot;select&quot; class=&quot;select-field__input&quot; multiple&gt;
+        &lt;option value=&quot;&quot; placeholder&gt;Nothing selected&lt;/option&gt;
+        &lt;option value=&quot;1&quot;&gt;Option 1&lt;/option&gt;
+        &lt;option value=&quot;2&quot;&gt;Option 2&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 3&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 4&lt;/option&gt;
+        &lt;option value=&quot;3&quot;&gt;Option 5&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;label for=&quot;select2&quot; class=&quot;select-field__label&quot;&gt;Select Multiple&lt;/label&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Select multiple options&lt;/span&gt;
 &lt;/div&gt;</code></pre>
 	</div>
 </div>
@@ -1544,8 +1568,14 @@ $color-radio-inactive:            #757575 !default;</code></pre>
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> js</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="const choices = new Choices(&#39;#select&#39;);
+const choicesMultiple = new Choices(&#39;#select2&#39;, {
+    removeItemButton: true,
+});
 " data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
 		<pre class="mb-0"><code class="lang-">const choices = new Choices(&#39;#select&#39;);
+const choicesMultiple = new Choices(&#39;#select2&#39;, {
+    removeItemButton: true,
+});
 </code></pre>
 	</div>
 </div><h4>Variables</h4>
