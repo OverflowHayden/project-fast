@@ -12,13 +12,14 @@
 		<script src="https://use.fontawesome.com/6dd56ad32d.js"></script>
 
 		<title>Project FAST</title>
-	</head>
-	<body class="overflow-x-off i-page">
-		<div class="i-page__content">
 
-			<div class="i-nav-select">
+	</head>
+	<body class="overflow-x-off i-page theme-page">
+		<div class="i-page__content theme-content">
+
+			<div class="i-nav-select theme-mobile-nav">
 				<form class="form">
-					<select class="form-control form-control-lg">
+					<select class="form-control form-control-lg theme-mobile-nav-select">
 						<option disabled selected>Go to…</option>
 							<optgroup label="Getting Started">
 									<option value="getting-started">Getting Started</option>
@@ -68,15 +69,19 @@
 				</form>
 			</div>
 
-				<div id="category-getting started">
-						<div id="getting-started" class="i-library">
-	<h1 class="display-4">Getting Started</h1>
-	<div><h3>How to install</h3><p><strong>NPM</strong></p>
+				<div id="category-getting started" class="theme-content-category">
+						<div id="getting-started" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Getting Started</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\getting-started.md</span>
+	</span>
+	<div class="theme-content-element-description"><h3>How to install</h3><p><strong>NPM</strong></p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="npm install project-fast" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="npm install project-fast">Copy</button>
 		<pre class="mb-0"><code class="lang-">npm install project-fast</code></pre>
 	</div>
 </div><p><strong>Yarn</strong></p>
@@ -84,7 +89,7 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn add project-fast" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn add project-fast">Copy</button>
 		<pre class="mb-0"><code class="lang-">yarn add project-fast</code></pre>
 	</div>
 </div><h3>Usage (with Yarn):</h3><p>Go to the project-fast folder (node_modules/project-fast)</p>
@@ -93,7 +98,7 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn run toolkit" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn run toolkit">Copy</button>
 		<pre class="mb-0"><code class="lang-">yarn run toolkit</code></pre>
 	</div>
 </div><p>Compile the assets with:</p>
@@ -101,7 +106,7 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn run build" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn run build">Copy</button>
 		<pre class="mb-0"><code class="lang-">yarn run build</code></pre>
 	</div>
 </div><div id="for-the-laravel-nerds" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#for-the-laravel-nerds" class="icon-link i-section__link -heading"></a>For the Laravel nerds</h2></div><p>Add the following code to <code>webpack.mix.js</code>:</p>
@@ -119,7 +124,7 @@
     .scripts([
         &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
         &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/backend/js/bundle.js&#39;);" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+    ], &#39;public/backend/js/bundle.js&#39;);">Copy</button>
 		<pre class="mb-0"><code class="lang-">mix.js(&#39;resources/assets/js/app.js&#39;, &#39;public/js&#39;)
     .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;)
     .options({
@@ -141,7 +146,7 @@
 @import &quot;variables&quot;;
 
 // Project FAST
-@import &#39;~project-fast/src/assets/scss/includes.scss&#39;;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+@import &#39;~project-fast/src/assets/scss/includes.scss&#39;;">Copy</button>
 		<pre class="mb-0"><code class="lang-">// Variables
 @import &quot;variables&quot;;
 
@@ -164,7 +169,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
     .scripts([
         &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
         &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/backend/js/bundle.js&#39;);" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+    ], &#39;public/backend/js/bundle.js&#39;);">Copy</button>
 		<pre class="mb-0"><code class="lang-">mix.js(&#39;resources/js/app.js&#39;, &#39;public/js&#39;)
     .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;)
     .options({
@@ -186,7 +191,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 @import &quot;variables&quot;;
 
 // Project FAST
-@import &#39;~project-fast/src/assets/scss/includes.scss&#39;;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+@import &#39;~project-fast/src/assets/scss/includes.scss&#39;;">Copy</button>
 		<pre class="mb-0"><code class="lang-">// Variables
 @import &quot;variables&quot;;
 
@@ -197,18 +202,26 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 </div>
 
 				</div>
-				<div id="category-general">
-						<div id="typography" class="i-library">
-	<h1 class="display-4">Typography</h1>
-	<div><div class="i-example">
+				<div id="category-general" class="theme-content-category">
+						<div id="typography" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Typography</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\general\typography.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="typography-typography.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -247,7 +260,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 &lt;/ol&gt;
 &lt;blockquote&gt;Blockquote&lt;/blockquote&gt;
 &lt;small&gt;Small&lt;/small&gt;
-&lt;pre&gt;Pre&lt;/pre&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;pre&gt;Pre&lt;/pre&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;h1&gt;Heading 1&lt;/h1&gt;
 &lt;h2&gt;Heading 2&lt;/h1&gt;
 &lt;h3&gt;Heading 3&lt;/h1&gt;
@@ -274,17 +287,25 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 </div></div>
 </div>
 
-						<div id="utilities" class="i-library">
-	<h1 class="display-4">Utilities</h1>
-	<div><h3>Text alignment</h3><div class="i-example">
+						<div id="utilities" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Utilities</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\general\utilities.md</span>
+	</span>
+	<div class="theme-content-element-description"><h3>Text alignment</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="utilities-alignment.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -304,7 +325,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;align-left&quot;&gt;Align Left&lt;/div&gt;
 &lt;div class=&quot;align-center&quot;&gt;Align Center&lt;/div&gt;
-&lt;div class=&quot;align-right&quot;&gt;Align Right&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;div class=&quot;align-right&quot;&gt;Align Right&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;align-left&quot;&gt;Align Left&lt;/div&gt;
 &lt;div class=&quot;align-center&quot;&gt;Align Center&lt;/div&gt;
 &lt;div class=&quot;align-right&quot;&gt;Align Right&lt;/div&gt;</code></pre>
@@ -314,10 +335,14 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
                         <a
                             href="utilities-pull.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -336,7 +361,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;pull-left&quot;&gt;Pull Left&lt;/div&gt;
-&lt;div class=&quot;pull-right&quot;&gt;Pull Right&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;div class=&quot;pull-right&quot;&gt;Pull Right&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;pull-left&quot;&gt;Pull Left&lt;/div&gt;
 &lt;div class=&quot;pull-right&quot;&gt;Pull Right&lt;/div&gt;</code></pre>
 	</div>
@@ -345,10 +370,14 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
                         <a
                             href="utilities-background.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -369,7 +398,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;bg--primary&quot;&gt;Background with the primary color&lt;/div&gt;
 &lt;div class=&quot;bg--secondary&quot;&gt;Background with the secondary color&lt;/div&gt;
 &lt;div class=&quot;bg--success&quot;&gt;Background with the success color&lt;/div&gt;
-&lt;div class=&quot;bg--error&quot;&gt;Background with the error color&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;div class=&quot;bg--error&quot;&gt;Background with the error color&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;bg--primary&quot;&gt;Background with the primary color&lt;/div&gt;
 &lt;div class=&quot;bg--secondary&quot;&gt;Background with the secondary color&lt;/div&gt;
 &lt;div class=&quot;bg--success&quot;&gt;Background with the success color&lt;/div&gt;
@@ -380,10 +409,14 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
                         <a
                             href="utilities-color.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -404,7 +437,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;color--primary&quot;&gt;Text with the primary color&lt;/div&gt;
 &lt;div class=&quot;color--secondary&quot;&gt;Text with the secondary color&lt;/div&gt;
 &lt;div class=&quot;color--success&quot;&gt;Text with the success color&lt;/div&gt;
-&lt;div class=&quot;color--error&quot;&gt;Text with the error color&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;div class=&quot;color--error&quot;&gt;Text with the error color&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;color--primary&quot;&gt;Text with the primary color&lt;/div&gt;
 &lt;div class=&quot;color--secondary&quot;&gt;Text with the secondary color&lt;/div&gt;
 &lt;div class=&quot;color--success&quot;&gt;Text with the success color&lt;/div&gt;
@@ -415,10 +448,14 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
                         <a
                             href="utilities-margin.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -439,7 +476,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;margin-top&quot;&gt;Margin top&lt;/div&gt;
 &lt;div class=&quot;margin-top--2x&quot;&gt;Margin top 2x&lt;/div&gt;
 &lt;div class=&quot;margin-bottom&quot;&gt;Margin bottom&lt;/div&gt;
-&lt;div class=&quot;margin-bottom--2x&quot;&gt;Margin bottom 2x&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;div class=&quot;margin-bottom--2x&quot;&gt;Margin bottom 2x&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;margin-top&quot;&gt;Margin top&lt;/div&gt;
 &lt;div class=&quot;margin-top--2x&quot;&gt;Margin top 2x&lt;/div&gt;
 &lt;div class=&quot;margin-bottom&quot;&gt;Margin bottom&lt;/div&gt;
@@ -451,10 +488,14 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
                         <a
                             href="utilities-hidden.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -476,7 +517,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 &lt;div class=&quot;hidden--xs&quot;&gt;Hidden until xs breakpoint&lt;/div&gt;
 &lt;div class=&quot;hidden--sm&quot;&gt;Hidden until sm breakpoint&lt;/div&gt;
 &lt;div class=&quot;hidden--md&quot;&gt;Hidden until md breakpoint&lt;/div&gt;
-&lt;div class=&quot;hidden--lg&quot;&gt;Hidden until lg breakpoint&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;div class=&quot;hidden--lg&quot;&gt;Hidden until lg breakpoint&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;hidden&quot;&gt;Always hidden&lt;/div&gt;
 &lt;div class=&quot;hidden--xs&quot;&gt;Hidden until xs breakpoint&lt;/div&gt;
 &lt;div class=&quot;hidden--sm&quot;&gt;Hidden until sm breakpoint&lt;/div&gt;
@@ -489,10 +530,14 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
                         <a
                             href="utilities-visible.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -514,7 +559,7 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 &lt;div class=&quot;visible--xs&quot;&gt;Visible until xs breakpoint&lt;/div&gt;
 &lt;div class=&quot;visible--sm&quot;&gt;Visible until sm breakpoint&lt;/div&gt;
 &lt;div class=&quot;visible--md&quot;&gt;Visible until md breakpoint&lt;/div&gt;
-&lt;div class=&quot;visible--lg&quot;&gt;Visible until lg breakpoint&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;div class=&quot;visible--lg&quot;&gt;Visible until lg breakpoint&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;visible&quot;&gt;Always visible&lt;/div&gt;
 &lt;div class=&quot;visible--xs&quot;&gt;Visible until xs breakpoint&lt;/div&gt;
 &lt;div class=&quot;visible--sm&quot;&gt;Visible until sm breakpoint&lt;/div&gt;
@@ -525,15 +570,19 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$margin-size:                     30px !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$margin-size:                     30px !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$margin-size:                     30px !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="variables" class="i-library">
-	<h1 class="display-4">Variables</h1>
-	<div>
+						<div id="variables" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Variables</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\general\variables.md</span>
+	</span>
+	<div class="theme-content-element-description">
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
@@ -591,7 +640,7 @@ $drawer-image:                    &quot;../img/logo.svg&quot; !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
 $border-radius:                   3px !default;
 $login-image:                     &quot;https://picsum.photos/1920/1080/?blur&amp;random&quot; !default;
-$margin-size:                     30px !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$margin-size:                     30px !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-primary:                   #F37748 !default;
 $color-secondary:                 #696969 !default;
 
@@ -652,18 +701,26 @@ $margin-size:                     30px !default;</code></pre>
 </div>
 
 				</div>
-				<div id="category-atoms">
-						<div id="buttons" class="i-library">
-	<h1 class="display-4">Buttons</h1>
-	<div><div class="i-example">
+				<div id="category-atoms" class="theme-content-category">
+						<div id="buttons" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Buttons</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\buttons.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="buttons-buttons.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -683,7 +740,7 @@ $margin-size:                     30px !default;</code></pre>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot;&gt;Button&lt;/button&gt;
 &lt;button class=&quot;button button--alt&quot;&gt;Button alt&lt;/button&gt;
-&lt;button class=&quot;button button--text&quot;&gt;Text&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;button class=&quot;button button--text&quot;&gt;Text&lt;/button&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot;&gt;Button&lt;/button&gt;
 &lt;button class=&quot;button button--alt&quot;&gt;Button alt&lt;/button&gt;
 &lt;button class=&quot;button button--text&quot;&gt;Text&lt;/button&gt;</code></pre>
@@ -693,10 +750,14 @@ $margin-size:                     30px !default;</code></pre>
                         <a
                             href="buttons-iconbuttons.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -716,7 +777,7 @@ $margin-size:                     30px !default;</code></pre>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Button&lt;/button&gt;
 &lt;button class=&quot;button button--alt&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Button alt&lt;/button&gt;
-&lt;button class=&quot;button button--text&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Text&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;button class=&quot;button button--text&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Text&lt;/button&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Button&lt;/button&gt;
 &lt;button class=&quot;button button--alt&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Button alt&lt;/button&gt;
 &lt;button class=&quot;button button--text&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Text&lt;/button&gt;</code></pre>
@@ -726,10 +787,14 @@ $margin-size:                     30px !default;</code></pre>
                         <a
                             href="buttons-compact.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -749,7 +814,7 @@ $margin-size:                     30px !default;</code></pre>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button button--compact&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Button&lt;/button&gt;
 &lt;button class=&quot;button button--compact button--alt&quot;&gt;Button alt&lt;/button&gt;
-&lt;button class=&quot;button button--compact button--text&quot;&gt;Text&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;button class=&quot;button button--compact button--text&quot;&gt;Text&lt;/button&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button button--compact&quot;&gt;&lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;Button&lt;/button&gt;
 &lt;button class=&quot;button button--compact button--alt&quot;&gt;Button alt&lt;/button&gt;
 &lt;button class=&quot;button button--compact button--text&quot;&gt;Text&lt;/button&gt;</code></pre>
@@ -759,10 +824,14 @@ $margin-size:                     30px !default;</code></pre>
                         <a
                             href="buttons-icon.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -782,7 +851,7 @@ $margin-size:                     30px !default;</code></pre>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button button--icon&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/button&gt;
 &lt;button class=&quot;button button--icon button--alt&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;button class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/button&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button button--icon&quot;&gt;&lt;i class=&quot;mdi mdi-eye&quot;&gt;&lt;/i&gt;&lt;/button&gt;
 &lt;button class=&quot;button button--icon button--alt&quot;&gt;&lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;&lt;/button&gt;
 &lt;button class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/button&gt;</code></pre>
@@ -792,24 +861,32 @@ $margin-size:                     30px !default;</code></pre>
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-button:                    $color-primary !default;
-$color-button-text:               $color-base-white !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-button-text:               $color-base-white !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-button:                    $color-primary !default;
 $color-button-text:               $color-base-white !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="checkbox" class="i-library">
-	<h1 class="display-4">Checkbox</h1>
-	<div><div class="i-example">
+						<div id="checkbox" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Checkbox</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\checkbox.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="checkbox-checkbox.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -836,7 +913,7 @@ $color-button-text:               $color-base-white !default;</code></pre>
     &lt;input id=&quot;cb2&quot; type=&quot;checkbox&quot; disabled checked /&gt;
     &lt;label for=&quot;cb2&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
     &lt;label for=&quot;cb2&quot; class=&quot;checkbox__label&quot;&gt;Checkbox&lt;/label&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;checkbox&quot;&gt;
     &lt;input id=&quot;cb&quot; type=&quot;checkbox&quot; /&gt;
     &lt;label for=&quot;cb&quot; class=&quot;checkbox__input&quot;&gt;&lt;/label&gt;
@@ -854,7 +931,7 @@ $color-button-text:               $color-base-white !default;</code></pre>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-checkbox-active:           $color-primary !default;
 $color-checkbox-inactive:         #757575 !default;
-$color-checkbox-check:            $color-base-white !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-checkbox-check:            $color-base-white !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-checkbox-active:           $color-primary !default;
 $color-checkbox-inactive:         #757575 !default;
 $color-checkbox-check:            $color-base-white !default;</code></pre>
@@ -862,17 +939,25 @@ $color-checkbox-check:            $color-base-white !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="chips" class="i-library">
-	<h1 class="display-4">Chips</h1>
-	<div><div class="i-example">
+						<div id="chips" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Chips</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\chips.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="chips-chips.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -898,7 +983,7 @@ $color-checkbox-check:            $color-base-white !default;</code></pre>
 &lt;/div&gt;
 &lt;div class=&quot;chip chip--alt&quot;&gt;
     &lt;span class=&quot;chip__text&quot;&gt;Chip alt&lt;/span&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;chip&quot;&gt;
     &lt;span class=&quot;chip__text&quot;&gt;Chip&lt;/span&gt;
 &lt;/div&gt;
@@ -914,10 +999,14 @@ $color-checkbox-check:            $color-base-white !default;</code></pre>
                         <a
                             href="chips-chips-icon.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -946,7 +1035,7 @@ $color-checkbox-check:            $color-base-white !default;</code></pre>
 &lt;div class=&quot;chip chip--alt&quot;&gt;
     &lt;span class=&quot;chip__icon&quot;&gt;&lt;i class=&quot;mdi mdi-cloud-download&quot;&gt;&lt;/i&gt;&lt;/span&gt;
     &lt;span class=&quot;chip__text&quot;&gt;Chip alt&lt;/span&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;chip&quot;&gt;
     &lt;span class=&quot;chip__icon&quot;&gt;&lt;i class=&quot;mdi mdi-account-circle&quot;&gt;&lt;/i&gt;&lt;/span&gt;
     &lt;span class=&quot;chip__text&quot;&gt;Chip&lt;/span&gt;
@@ -965,10 +1054,14 @@ $color-checkbox-check:            $color-base-white !default;</code></pre>
                         <a
                             href="chips-chips-filter.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -997,7 +1090,7 @@ $color-checkbox-check:            $color-base-white !default;</code></pre>
 &lt;div class=&quot;chip chip--alt&quot;&gt;
     &lt;span class=&quot;chip__text&quot;&gt;Chip alt&lt;/span&gt;
     &lt;a href=&quot;#&quot; class=&quot;chip__filter&quot;&gt;&lt;/a&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;chip&quot;&gt;
     &lt;span class=&quot;chip__text&quot;&gt;Chip&lt;/span&gt;
     &lt;a href=&quot;#&quot; class=&quot;chip__filter&quot;&gt;&lt;/a&gt;
@@ -1017,7 +1110,7 @@ $color-checkbox-check:            $color-base-white !default;</code></pre>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-chip:                      #e0e0e0 !default;
 $color-chip-text:                 rgba($color-base-black, .87) !default;
-$chips-border-radius:             1.6rem !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$chips-border-radius:             1.6rem !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-chip:                      #e0e0e0 !default;
 $color-chip-text:                 rgba($color-base-black, .87) !default;
 $chips-border-radius:             1.6rem !default;</code></pre>
@@ -1025,18 +1118,26 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="headings" class="i-library">
-	<h1 class="display-4">Headings</h1>
-	<div><p>Available headings</p>
+						<div id="headings" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Headings</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\headings.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Available headings</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="headings-headings.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1058,7 +1159,7 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 &lt;h2&gt;Heading 2&lt;/h2&gt;
 &lt;h3&gt;Heading 3&lt;/h3&gt;
 &lt;h4&gt;Heading 4&lt;/h4&gt;
-&lt;h5&gt;Heading 5&lt;/h5&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;h5&gt;Heading 5&lt;/h5&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;h1&gt;Heading 1&lt;/h1&gt;
 &lt;h2&gt;Heading 2&lt;/h2&gt;
 &lt;h3&gt;Heading 3&lt;/h3&gt;
@@ -1069,24 +1170,32 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-text:                      #333 !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-text:                      #333 !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-text:                      #333 !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="icons" class="i-library">
-	<h1 class="display-4">Icons</h1>
-	<div><p>Click <a href="https://materialdesignicons.com/" target="_blank">here</a> to see the full collection</p>
+						<div id="icons" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Icons</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\icons.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Click <a href="https://materialdesignicons.com/" target="_blank">here</a> to see the full collection</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="icons-icons.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1113,7 +1222,7 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 &lt;i class=&quot;mdi mdi-folder&quot;&gt;&lt;/i&gt;
 &lt;i class=&quot;mdi mdi-pencil&quot;&gt;&lt;/i&gt;
 &lt;i class=&quot;mdi mdi-file-multiple&quot;&gt;&lt;/i&gt;
-&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;i class=&quot;mdi mdi-home&quot;&gt;&lt;/i&gt;
 &lt;i class=&quot;mdi mdi-account&quot;&gt;&lt;/i&gt;
 &lt;i class=&quot;mdi mdi-download&quot;&gt;&lt;/i&gt;
@@ -1131,10 +1240,14 @@ $chips-border-radius:             1.6rem !default;</code></pre>
                         <a
                             href="icons-icon-fontsize.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1153,7 +1266,7 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;i class=&quot;mdi mdi-home mdi-24px&quot;&gt;&lt;/i&gt;
-&lt;i class=&quot;mdi mdi-home mdi-36px&quot;&gt;&lt;/i&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;i class=&quot;mdi mdi-home mdi-36px&quot;&gt;&lt;/i&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;i class=&quot;mdi mdi-home mdi-24px&quot;&gt;&lt;/i&gt;
 &lt;i class=&quot;mdi mdi-home mdi-36px&quot;&gt;&lt;/i&gt;</code></pre>
 	</div>
@@ -1163,10 +1276,14 @@ $chips-border-radius:             1.6rem !default;</code></pre>
                         <a
                             href="icons-icon-colors.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1187,7 +1304,7 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;i class=&quot;mdi mdi-home mdi-light&quot;&gt;&lt;/i&gt; 
 &lt;i class=&quot;mdi mdi-home mdi-dark&quot;&gt;&lt;/i&gt; 
 &lt;i class=&quot;mdi mdi-home mdi-light mdi-inactive&quot;&gt;&lt;/i&gt; 
-&lt;i class=&quot;mdi mdi-home mdi-dark mdi-inactive&quot;&gt;&lt;/i&gt; " data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;i class=&quot;mdi mdi-home mdi-dark mdi-inactive&quot;&gt;&lt;/i&gt; ">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;i class=&quot;mdi mdi-home mdi-light&quot;&gt;&lt;/i&gt; 
 &lt;i class=&quot;mdi mdi-home mdi-dark&quot;&gt;&lt;/i&gt; 
 &lt;i class=&quot;mdi mdi-home mdi-light mdi-inactive&quot;&gt;&lt;/i&gt; 
@@ -1199,10 +1316,14 @@ $chips-border-radius:             1.6rem !default;</code></pre>
                         <a
                             href="icons-icon-flip.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1221,7 +1342,7 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;i class=&quot;mdi mdi-home mdi-flip-h&quot;&gt;&lt;/i&gt; 
-&lt;i class=&quot;mdi mdi-home mdi-flip-v&quot;&gt;&lt;/i&gt; " data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;i class=&quot;mdi mdi-home mdi-flip-v&quot;&gt;&lt;/i&gt; ">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;i class=&quot;mdi mdi-home mdi-flip-h&quot;&gt;&lt;/i&gt; 
 &lt;i class=&quot;mdi mdi-home mdi-flip-v&quot;&gt;&lt;/i&gt; </code></pre>
 	</div>
@@ -1231,10 +1352,14 @@ $chips-border-radius:             1.6rem !default;</code></pre>
                         <a
                             href="icons-icon-rotate.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1253,7 +1378,7 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;i class=&quot;mdi mdi-home mdi-rotate-45&quot;&gt;&lt;/i&gt; 
-&lt;i class=&quot;mdi mdi-home mdi-rotate-180&quot;&gt;&lt;/i&gt; " data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;i class=&quot;mdi mdi-home mdi-rotate-180&quot;&gt;&lt;/i&gt; ">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;i class=&quot;mdi mdi-home mdi-rotate-45&quot;&gt;&lt;/i&gt; 
 &lt;i class=&quot;mdi mdi-home mdi-rotate-180&quot;&gt;&lt;/i&gt; </code></pre>
 	</div>
@@ -1262,10 +1387,14 @@ $chips-border-radius:             1.6rem !default;</code></pre>
                         <a
                             href="icons-icon-iconsets.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1289,7 +1418,7 @@ $chips-border-radius:             1.6rem !default;</code></pre>
   &lt;i class=&quot;mdi-star&quot;&gt;&lt;/i&gt;
   &lt;i class=&quot;mdi-star&quot;&gt;&lt;/i&gt;
   &lt;i class=&quot;mdi-star&quot;&gt;&lt;/i&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;mdi-set&quot;&gt;
   &lt;i class=&quot;mdi-star&quot;&gt;&lt;/i&gt;
   &lt;i class=&quot;mdi-star&quot;&gt;&lt;/i&gt;
@@ -1302,23 +1431,31 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-icon:                      #6d6d6d !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-icon:                      #6d6d6d !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-icon:                      #6d6d6d !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="pagination" class="i-library">
-	<h1 class="display-4">Pagination</h1>
-	<div><div class="i-example">
+						<div id="pagination" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Pagination</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\pagination.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="pagination-pagination.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1344,7 +1481,7 @@ $chips-border-radius:             1.6rem !default;</code></pre>
     &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;4&lt;/a&gt;&lt;/li&gt;
     &lt;li class=&quot;pagination-list__item&quot;&gt;&lt;a href=&quot;#&quot;&gt;5&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;a href=&quot;#&quot; class=&quot;pagination-list__nav&quot;&gt;Next&lt;/a&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;a href=&quot;#&quot; class=&quot;pagination-list__nav&quot;&gt;Next&lt;/a&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;a href=&quot;#&quot; class=&quot;pagination-list__nav pagination-list__nav--disabled&quot;&gt;Previous&lt;/a&gt;
 &lt;ul class=&quot;pagination-list&quot;&gt;
     &lt;li class=&quot;pagination-list__item pagination-list__item--active&quot;&gt;&lt;a href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt;
@@ -1360,24 +1497,32 @@ $chips-border-radius:             1.6rem !default;</code></pre>
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-pagination:                $color-primary !default;
-$color-pagination-text:           $color-base-white !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-pagination-text:           $color-base-white !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-pagination:                $color-primary !default;
 $color-pagination-text:           $color-base-white !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="radio-button" class="i-library">
-	<h1 class="display-4">Radio button</h1>
-	<div><div class="i-example">
+						<div id="radio-button" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Radio button</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\radio.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="radio-button-radio.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1409,7 +1554,7 @@ $color-pagination-text:           $color-base-white !default;</code></pre>
     &lt;input id=&quot;rb3&quot; type=&quot;radio&quot; name=&quot;radio&quot; disabled checked /&gt;
     &lt;label for=&quot;rb3&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
     &lt;label for=&quot;rb3&quot; class=&quot;radio__label&quot;&gt;Radio button &lt;/label&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;radio&quot;&gt;
     &lt;input id=&quot;rb&quot; type=&quot;radio&quot; name=&quot;radio&quot; /&gt;
     &lt;label for=&quot;rb&quot; class=&quot;radio__input&quot;&gt;&lt;/label&gt;
@@ -1431,24 +1576,32 @@ $color-pagination-text:           $color-base-white !default;</code></pre>
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-radio-active:              $color-primary !default;
-$color-radio-inactive:            #757575 !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-radio-inactive:            #757575 !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-radio-active:              $color-primary !default;
 $color-radio-inactive:            #757575 !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="select-field" class="i-library">
-	<h1 class="display-4">Select field</h1>
-	<div><div class="i-example">
+						<div id="select-field" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Select field</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\select-field.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="select-field-select-field.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1475,7 +1628,7 @@ $color-radio-inactive:            #757575 !default;</code></pre>
     &lt;/select&gt;
     &lt;label for=&quot;select&quot; class=&quot;select-field__label&quot;&gt;Select label&lt;/label&gt;
     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;select-field&quot;&gt;
     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
         &lt;option&gt;Nothing selected&lt;/option&gt;
@@ -1493,10 +1646,14 @@ $color-radio-inactive:            #757575 !default;</code></pre>
                         <a
                             href="select-field-select-field-customizable.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1537,7 +1694,7 @@ $color-radio-inactive:            #757575 !default;</code></pre>
     &lt;/select&gt;
     &lt;label for=&quot;select2&quot; class=&quot;select-field__label&quot;&gt;Select Multiple&lt;/label&gt;
     &lt;span class=&quot;field__helper&quot;&gt;Select multiple options&lt;/span&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;select-field field--outline&quot;&gt;
     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
         &lt;option value=&quot;&quot; placeholder&gt;Nothing selected&lt;/option&gt;
@@ -1571,7 +1728,7 @@ $color-radio-inactive:            #757575 !default;</code></pre>
 const choicesMultiple = new Choices(&#39;#select2&#39;, {
     removeItemButton: true,
 });
-" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+">Copy</button>
 		<pre class="mb-0"><code class="lang-">const choices = new Choices(&#39;#select&#39;);
 const choicesMultiple = new Choices(&#39;#select2&#39;, {
     removeItemButton: true,
@@ -1584,7 +1741,7 @@ const choicesMultiple = new Choices(&#39;#select2&#39;, {
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-text-field-label:          rgba($color-base-black, 0.54) !default;
 $color-text-field-inactive:       #8a8a8a !default;
-$color-text-field-active:         $color-primary !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-text-field-active:         $color-primary !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-text-field-label:          rgba($color-base-black, 0.54) !default;
 $color-text-field-inactive:       #8a8a8a !default;
 $color-text-field-active:         $color-primary !default;</code></pre>
@@ -1592,15 +1749,19 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="snackbar" class="i-library">
-	<h1 class="display-4">Snackbar</h1>
-	<div><p>Vanilla JS</p>
+						<div id="snackbar" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Snackbar</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\snackbar.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Vanilla JS</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="new Snackbar(&quot;Hey! Im a snackbar&quot;);
-// Snackbar(message, options, callback)" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+// Snackbar(message, options, callback)">Copy</button>
 		<pre class="mb-0"><code class="lang-">new Snackbar(&quot;Hey! Im a snackbar&quot;);
 // Snackbar(message, options, callback)</code></pre>
 	</div>
@@ -1609,7 +1770,7 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;span data-toggle=snackbar data-content=&quot;Hey! Im a snackbar&quot;&gt;Click me&lt;/span&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;span data-toggle=snackbar data-content=&quot;Hey! Im a snackbar&quot;&gt;Click me&lt;/span&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;span data-toggle=snackbar data-content=&quot;Hey! Im a snackbar&quot;&gt;Click me&lt;/span&gt;</code></pre>
 	</div>
 </div><p>or Vuejs</p>
@@ -1617,7 +1778,7 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});">Copy</button>
 		<pre class="mb-0"><code class="lang-">this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});</code></pre>
 	</div>
 </div><p>Click <a href="https://github.com/joostLawerman/SnackbarLightjs">here</a> for the full documentation</p>
@@ -1626,10 +1787,14 @@ $color-text-field-active:         $color-primary !default;</code></pre>
                         <a
                             href="snackbar-snackbar.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1655,7 +1820,7 @@ $color-text-field-active:         $color-primary !default;</code></pre>
     data-link=&quot;Surprise!&quot;
     data-url=&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;
     data-active-class=&quot;active&quot;&gt;
-Click me&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+Click me&lt;/button&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;button 
     class=&quot;button button--text&quot; 
     data-toggle=snackbar 
@@ -1669,17 +1834,25 @@ Click me&lt;/button&gt;</code></pre>
 </div></div>
 </div>
 
-						<div id="text-fields" class="i-library">
-	<h1 class="display-4">Text fields</h1>
-	<div><h3>Field styles</h3><div class="i-example">
+						<div id="text-fields" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Text fields</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\text-fields.md</span>
+	</span>
+	<div class="theme-content-element-description"><h3>Field styles</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="text-fields-field-styles.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1710,7 +1883,7 @@ Click me&lt;/button&gt;</code></pre>
 &lt;div class=&quot;text-field field--outline&quot;&gt;
     &lt;input id=&quot;text3&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text3&quot; class=&quot;text-field__label&quot;&gt;Outline style&lt;/label&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;text-field&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Default style&lt;/label&gt;
@@ -1731,10 +1904,14 @@ Click me&lt;/button&gt;</code></pre>
                         <a
                             href="text-fields-text-field.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1755,7 +1932,7 @@ Click me&lt;/button&gt;</code></pre>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;text-field&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text style&lt;/label&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;text-field&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text style&lt;/label&gt;
@@ -1766,10 +1943,14 @@ Click me&lt;/button&gt;</code></pre>
                         <a
                             href="text-fields-number-field.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1790,7 +1971,7 @@ Click me&lt;/button&gt;</code></pre>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;number-field&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;number&quot; name=&quot;text&quot; class=&quot;number-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;number-field__label&quot;&gt;Number label&lt;/label&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;number-field&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;number&quot; name=&quot;text&quot; class=&quot;number-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;number-field__label&quot;&gt;Number label&lt;/label&gt;
@@ -1801,10 +1982,14 @@ Click me&lt;/button&gt;</code></pre>
                         <a
                             href="text-fields-password-field.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1825,7 +2010,7 @@ Click me&lt;/button&gt;</code></pre>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;password-field&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;password&quot; name=&quot;password&quot; class=&quot;password-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;password-field__label&quot;&gt;Password label&lt;/label&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;password-field&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;password&quot; name=&quot;password&quot; class=&quot;password-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;password-field__label&quot;&gt;Password label&lt;/label&gt;
@@ -1836,10 +2021,14 @@ Click me&lt;/button&gt;</code></pre>
                         <a
                             href="text-fields-textarea-field.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1860,7 +2049,7 @@ Click me&lt;/button&gt;</code></pre>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;textarea-field&quot;&gt;
     &lt;textarea id=&quot;text&quot; name=&quot;textarea&quot; class=&quot;textarea-field__input&quot; placeholder=&quot;Placeholder&quot;&gt;&lt;/textarea&gt;
     &lt;label for=&quot;text&quot; class=&quot;textarea-field__label&quot;&gt;Textarea label&lt;/label&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;textarea-field&quot;&gt;
     &lt;textarea id=&quot;text&quot; name=&quot;textarea&quot; class=&quot;textarea-field__input&quot; placeholder=&quot;Placeholder&quot;&gt;&lt;/textarea&gt;
     &lt;label for=&quot;text&quot; class=&quot;textarea-field__label&quot;&gt;Textarea label&lt;/label&gt;
@@ -1871,10 +2060,14 @@ Click me&lt;/button&gt;</code></pre>
                         <a
                             href="text-fields-prefix-suffix.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1904,7 +2097,7 @@ Click me&lt;/button&gt;</code></pre>
     &lt;input id=&quot;number2&quot; type=&quot;number&quot; name=&quot;number&quot; class=&quot;number-field__input&quot; placeholder=&quot;0&quot; /&gt;
     &lt;label for=&quot;number2&quot; class=&quot;number-field__label&quot;&gt;Weight&lt;/label&gt;
     &lt;span class=&quot;field__helper&quot;&gt;Please enter kilograms&lt;/span&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;number-field&quot;&gt;
     &lt;span class=&quot;field__prefix&quot;&gt;&amp;euro;&lt;/span&gt;
     &lt;input id=&quot;number&quot; type=&quot;number&quot; name=&quot;number&quot; class=&quot;number-field__input&quot; placeholder=&quot;0&quot; /&gt;
@@ -1924,10 +2117,14 @@ Click me&lt;/button&gt;</code></pre>
                         <a
                             href="text-fields-field-helper.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1949,7 +2146,7 @@ Click me&lt;/button&gt;</code></pre>
     &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text field&lt;/label&gt;
     &lt;span class=&quot;field__helper&quot;&gt;Helper text&lt;/span&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;text-field field--fill&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text field&lt;/label&gt;
@@ -1961,10 +2158,14 @@ Click me&lt;/button&gt;</code></pre>
                         <a
                             href="text-fields-field-error.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -1986,7 +2187,7 @@ Click me&lt;/button&gt;</code></pre>
     &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; value=&quot;Wrong&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text field&lt;/label&gt;
     &lt;span class=&quot;field__error-text&quot;&gt;Error!&lt;/span&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;text-field field--outline field--error&quot;&gt;
     &lt;input id=&quot;text&quot; type=&quot;text&quot; name=&quot;text&quot; class=&quot;text-field__input&quot; placeholder=&quot;Placeholder&quot; value=&quot;Wrong&quot; /&gt;
     &lt;label for=&quot;text&quot; class=&quot;text-field__label&quot;&gt;Text field&lt;/label&gt;
@@ -1999,7 +2200,7 @@ Click me&lt;/button&gt;</code></pre>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-text-field-label:          rgba($color-base-black, 0.54) !default;
 $color-text-field-inactive:       #8a8a8a !default;
-$color-text-field-active:         $color-primary !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-text-field-active:         $color-primary !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-text-field-label:          rgba($color-base-black, 0.54) !default;
 $color-text-field-inactive:       #8a8a8a !default;
 $color-text-field-active:         $color-primary !default;</code></pre>
@@ -2007,19 +2208,27 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="tooltip" class="i-library">
-	<h1 class="display-4">Tooltip</h1>
-	<div><p>Powered by Tippy.js. Click <a href="https://atomiks.github.io/tippyjs/" target="_blank">here</a> for the full documentation</p>
+						<div id="tooltip" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Tooltip</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\tooltip.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Powered by Tippy.js. Click <a href="https://atomiks.github.io/tippyjs/" target="_blank">here</a> for the full documentation</p>
 <p>By default, you can add a title attribute to create a tooltip.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="tooltip-tooltip.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2037,26 +2246,34 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;</code></pre>
 	</div>
 </div></div>
 </div>
 
 				</div>
-				<div id="category-molecules">
-						<div id="cards" class="i-library">
-	<h1 class="display-4">Cards</h1>
-	<div><p>Add a <a href="#grid">grid column</a> class like <code>.col__sm--6</code> to the card to change size. Image is optional.</p>
+				<div id="category-molecules" class="theme-content-category">
+						<div id="cards" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Cards</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\cards.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Add a <a href="#grid">grid column</a> class like <code>.col__sm--6</code> to the card to change size. Image is optional.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="cards-card.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2106,7 +2323,7 @@ $color-text-field-active:         $color-primary !default;</code></pre>
             &lt;/div&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;grid&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
         &lt;div class=&quot;card&quot;&gt;
@@ -2147,7 +2364,7 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-card:                      $color-base-white !default;
 $color-card-title:                $color-base-black !default;
-$color-card-text:                 rgba($color-base-black,.54) !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-card-text:                 rgba($color-base-black,.54) !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-card:                      $color-base-white !default;
 $color-card-title:                $color-base-black !default;
 $color-card-text:                 rgba($color-base-black,.54) !default;</code></pre>
@@ -2155,18 +2372,26 @@ $color-card-text:                 rgba($color-base-black,.54) !default;</code></
 </div></div>
 </div>
 
-						<div id="container" class="i-library">
-	<h1 class="display-4">Container</h1>
-	<div><p>Give your content a fixed width with a <code>container</code> component.</p>
+						<div id="container" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Container</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\container.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Give your content a fixed width with a <code>container</code> component.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="container-container.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2188,7 +2413,7 @@ $color-card-text:                 rgba($color-base-black,.54) !default;</code></
      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla, orci quis congue porttitor, lorem nunc fermentum leo, a vestibulum mi urna ut nibh. Nulla fringilla odio non tellus aliquet, ac malesuada eros viverra. Vivamus ut nunc turpis. Phasellus ut ultricies nisi. Aenean at dictum est. Curabitur dui tortor, euismod vitae interdum et, consequat eu nisi. Maecenas condimentum ultrices enim, vitae condimentum risus mollis et. Suspendisse eget sapien quis lorem mattis lacinia. Vivamus ipsum quam, hendrerit in egestas in, imperdiet vitae augue. Sed eu interdum massa. Phasellus pharetra erat non suscipit tempor. Phasellus cursus scelerisque sem vitae imperdiet. Donec fringilla tellus ipsum, ut semper leo volutpat vitae.
 
     Nam faucibus ultrices feugiat. Nulla ornare, turpis vitae gravida commodo, felis metus pretium mauris, in malesuada arcu diam a ante. Maecenas aliquet lacinia ligula ut tincidunt. Nullam ac augue aliquet, tristique lacus nec, tincidunt quam. Sed faucibus mi sit amet leo cursus faucibus. Sed nec interdum libero. Nam et urna vitae lacus venenatis molestie eu non purus. Suspendisse potenti. Curabitur placerat pellentesque mauris, nec fringilla est. Aenean malesuada facilisis ipsum vel imperdiet. Quisque odio ligula, commodo ut lacinia et, eleifend eu sem. 
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;container&quot;&gt;
      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla, orci quis congue porttitor, lorem nunc fermentum leo, a vestibulum mi urna ut nibh. Nulla fringilla odio non tellus aliquet, ac malesuada eros viverra. Vivamus ut nunc turpis. Phasellus ut ultricies nisi. Aenean at dictum est. Curabitur dui tortor, euismod vitae interdum et, consequat eu nisi. Maecenas condimentum ultrices enim, vitae condimentum risus mollis et. Suspendisse eget sapien quis lorem mattis lacinia. Vivamus ipsum quam, hendrerit in egestas in, imperdiet vitae augue. Sed eu interdum massa. Phasellus pharetra erat non suscipit tempor. Phasellus cursus scelerisque sem vitae imperdiet. Donec fringilla tellus ipsum, ut semper leo volutpat vitae.
 
@@ -2198,18 +2423,26 @@ $color-card-text:                 rgba($color-base-black,.54) !default;</code></
 </div></div>
 </div>
 
-						<div id="dialog" class="i-library">
-	<h1 class="display-4">Dialog</h1>
-	<div><p>Powered by tingle.js. Click <a href="https://robinparisi.github.io/tingle/" target="_blank">here</a> for the full documentation.</p>
+						<div id="dialog" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Dialog</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\dialog.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Powered by tingle.js. Click <a href="https://robinparisi.github.io/tingle/" target="_blank">here</a> for the full documentation.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="dialog-dialog.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2227,7 +2460,7 @@ $color-card-text:                 rgba($color-base-black,.54) !default;</code></
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot;&gt;Open dialog&lt;/button&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot;&gt;Open dialog&lt;/button&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot;&gt;Open dialog&lt;/button&gt;</code></pre>
 	</div>
 </div>
@@ -2246,7 +2479,7 @@ modal.setContent(&#39;&lt;h1&gt;Dialog&lt;/h1&gt;&lt;p&gt;Dialog content&lt;/p&g
 document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, function () {
      modal.open();
  });
-" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+">Copy</button>
 		<pre class="mb-0"><code class="lang-">// instanciate new modal
 var modal = new tingle.modal({
     closeMethods: [&#39;overlay&#39;, &#39;button&#39;, &#39;escape&#39;],
@@ -2264,17 +2497,25 @@ document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, func
 </div></div>
 </div>
 
-						<div id="expansion-panel" class="i-library">
-	<h1 class="display-4">Expansion panel</h1>
-	<div><div class="i-example">
+						<div id="expansion-panel" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Expansion panel</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\expansion-panel.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="expansion-panel-expansion-panel.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2311,7 +2552,7 @@ document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, func
             Panel content 2
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;expansion-panel&quot;&gt;
     &lt;div class=&quot;expansion-panel__item&quot;&gt;
         &lt;input type=&quot;checkbox&quot; class=&quot;expansion-panel__input&quot;&gt;
@@ -2338,24 +2579,32 @@ document.querySelector(&#39;.button&#39;).addEventListener(&#39;click&#39;, func
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-expansion-panel:           $color-base-white !default;
-$color-expansion-panel-text:      rgba($color-base-black,.54) !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-expansion-panel-text:      rgba($color-base-black,.54) !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-expansion-panel:           $color-base-white !default;
 $color-expansion-panel-text:      rgba($color-base-black,.54) !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="floating-action-button-fab" class="i-library">
-	<h1 class="display-4">Floating Action Button (FAB)</h1>
-	<div><div id="default" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#default" class="icon-link i-section__link -heading"></a>Default</h2></div><div class="i-example">
+						<div id="floating-action-button-fab" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Floating Action Button (FAB)</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\floating-action-button.md</span>
+	</span>
+	<div class="theme-content-element-description"><div id="default" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#default" class="icon-link i-section__link -heading"></a>Default</h2></div><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="floating-action-button-fab-fab.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2375,7 +2624,7 @@ $color-expansion-panel-text:      rgba($color-base-black,.54) !default;</code></
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;fab&quot;&gt;
     &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;fab&quot;&gt;
     &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;/div&gt;</code></pre>
@@ -2385,10 +2634,14 @@ $color-expansion-panel-text:      rgba($color-base-black,.54) !default;</code></
                         <a
                             href="floating-action-button-fab-fab-center.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2408,7 +2661,7 @@ $color-expansion-panel-text:      rgba($color-base-black,.54) !default;</code></
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;fab fab--center&quot;&gt;
     &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;fab fab--center&quot;&gt;
     &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;/div&gt;</code></pre>
@@ -2418,10 +2671,14 @@ $color-expansion-panel-text:      rgba($color-base-black,.54) !default;</code></
                         <a
                             href="floating-action-button-fab-fab-menu.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2452,7 +2709,7 @@ $color-expansion-panel-text:      rgba($color-base-black,.54) !default;</code></
             &lt;a href=&quot;#&quot;&gt;&lt;span class=&quot;fab__text&quot;&gt;Action 3&lt;/span&gt;&lt;i class=&quot;fab__icon mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;
         &lt;/li&gt;
     &lt;/ul&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;fab fab--menu&quot; title=&quot;Add&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot; tabindex=&quot;1&quot;&gt;
     &lt;a href=&quot;#&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
     &lt;ul class=&quot;fab__list&quot;&gt;
@@ -2473,16 +2730,20 @@ $color-expansion-panel-text:      rgba($color-base-black,.54) !default;</code></
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-fab:                       $color-primary !default;
-$color-fab-text:                  $color-base-white !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-fab-text:                  $color-base-white !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-fab:                       $color-primary !default;
 $color-fab-text:                  $color-base-white !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="forms" class="i-library">
-	<h1 class="display-4">Forms</h1>
-	<div><p>Available form sizes: 
+						<div id="forms" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Forms</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\forms.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Available form sizes: 
 <code>.form--s</code> 400px,
 <code>.form--m</code> 800px,
 <code>.form--l</code> 1200px</p>
@@ -2493,10 +2754,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                         <a
                             href="forms-forms.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2641,7 +2906,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
         &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Submit&lt;/button&gt;
         &lt;a href=&quot;#&quot; class=&quot;button button--text&quot;&gt;Cancel&lt;/a&gt;
     &lt;/form&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;h1&gt;Example form&lt;/h1&gt;
 &lt;div class=&quot;form form--m&quot;&gt;
     &lt;form&gt;
@@ -2774,9 +3039,13 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="grid" class="i-library">
-	<h1 class="display-4">Grid</h1>
-	<div><p>Can be used to override the default sizes of molecules.</p>
+						<div id="grid" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Grid</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\grid.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>Can be used to override the default sizes of molecules.</p>
 <p>Available breakpoints: <strong>xs, sm, md, lg</strong></p>
 <h3>Grid columns</h3><p>Creates a grid column of requested size.</p>
 <div class="i-example">
@@ -2784,10 +3053,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                         <a
                             href="grid-grid.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2836,7 +3109,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
         &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
         &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;grid grid--visual&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
         &lt;div class=&quot;col__lg--12&quot;&gt;col__lg--12&lt;/div&gt;
@@ -2876,10 +3149,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                         <a
                             href="grid-grid-push.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2914,7 +3191,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
         &lt;div class=&quot;col__xs--1&quot;&gt;col__xs--1&lt;/div&gt;
         &lt;div class=&quot;push__xs--1 col__xs--1&quot;&gt;push__xs--1 col__xs--1&lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;grid grid--visual&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
         &lt;div class=&quot;push__lg--6 col__lg--6&quot;&gt;push__lg--6 col__lg--6&lt;/div&gt;
@@ -2940,10 +3217,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                         <a
                             href="grid-grid-shift.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -2968,7 +3249,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
         &lt;div class=&quot;shift__sm--4 col__sm--8&quot;&gt;shift__sm--4 col__sm--8&lt;/div&gt;
         &lt;div class=&quot;shift__xs--2 col__xs--10&quot;&gt;shift__xs--2 col__xs--10&lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;grid grid--visual&quot;&gt;
     &lt;div class=&quot;row&quot;&gt;
         &lt;div class=&quot;shift__lg--8 col__lg--4&quot;&gt;shift__lg--8 col__lg--4&lt;/div&gt;
@@ -2981,17 +3262,25 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="list" class="i-library">
-	<h1 class="display-4">List</h1>
-	<div><h3>Single-Line</h3><div class="i-example">
+						<div id="list" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">List</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\list.md</span>
+	</span>
+	<div class="theme-content-element-description"><h3>Single-Line</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="list-list-single.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -3022,7 +3311,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
     &lt;li class=&quot;list__item&quot;&gt;
         &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;List item 4&lt;/a&gt;
     &lt;/li&gt;
-&lt;/ul&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/ul&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;ul class=&quot;list list--demo&quot;&gt;
     &lt;li class=&quot;list__item&quot;&gt;
         &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;List item 1&lt;/a&gt;
@@ -3043,10 +3332,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                         <a
                             href="list-list-two.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -3089,7 +3382,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
             &lt;span class=&quot;list__item-secondary-text&quot;&gt;Secondary text&lt;/span&gt;
         &lt;/a&gt;
     &lt;/li&gt;
-&lt;/ul&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/ul&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;ul class=&quot;list list--demo&quot;&gt;
     &lt;li class=&quot;list__item&quot;&gt;
         &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
@@ -3122,10 +3415,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                         <a
                             href="list-list-leading-icon.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -3164,7 +3461,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
             &lt;i class=&quot;list__item-graphic mdi mdi-cloud-download&quot;&gt;&lt;/i&gt;List item 4
         &lt;/a&gt;
     &lt;/li&gt;
-&lt;/ul&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/ul&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;ul class=&quot;list list--demo&quot;&gt;
     &lt;li class=&quot;list__item&quot;&gt;
         &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
@@ -3193,10 +3490,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                         <a
                             href="list-list-traling-icon.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -3239,7 +3540,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
             &lt;i class=&quot;list__item-meta mdi mdi-information&quot;&gt;&lt;/i&gt;
         &lt;/a&gt;
     &lt;/li&gt;
-&lt;/ul&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/ul&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;ul class=&quot;list list--demo&quot;&gt;
     &lt;li class=&quot;list__item&quot;&gt;
         &lt;a href=&quot;#&quot; class=&quot;list__item-text&quot;&gt;
@@ -3270,17 +3571,25 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="menu" class="i-library">
-	<h1 class="display-4">Menu</h1>
-	<div><div class="i-example">
+						<div id="menu" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Menu</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\menu.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="menu-menu.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -3308,7 +3617,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
         &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 4&lt;/a&gt;&lt;/li&gt;
         &lt;li class=&quot;menu__list-item&quot;&gt;&lt;a href=&quot;#&quot;&gt;Menu option 5&lt;/a&gt;&lt;/li&gt;
     &lt;/ul&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;menu&quot;&gt;
     &lt;button class=&quot;button button--alt menu__toggle&quot; data-menu=&quot;#menu&quot;&gt;Open menu&lt;/button&gt;
     &lt;ul id=&quot;menu&quot; class=&quot;menu__list&quot;&gt;
@@ -3324,17 +3633,25 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="tables" class="i-library">
-	<h1 class="display-4">Tables</h1>
-	<div><h3>Simple</h3><div class="i-example">
+						<div id="tables" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Tables</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\tables.md</span>
+	</span>
+	<div class="theme-content-element-description"><h3>Simple</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="tables-tables.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -3405,7 +3722,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                 &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tbody&gt;
-&lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/table&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;table style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
@@ -3466,10 +3783,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                         <a
                             href="tables-tables-compact.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -3540,7 +3861,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
                 &lt;a href=&quot;#&quot; class=&quot;button button--icon button--text&quot;&gt;&lt;i class=&quot;mdi mdi-delete&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tbody&gt;
-&lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/table&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;table--compact&quot; style=&quot;--cols:4&quot;&gt;
     &lt;thead&gt;
         &lt;tr&gt;
@@ -3603,10 +3924,14 @@ Also usable with table--compact</p>
                         <a
                             href="tables-data-tables.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -3749,7 +4074,7 @@ Also usable with table--compact</p>
             &lt;/td&gt;
         &lt;/tr&gt;
     &lt;/tfoot&gt;
-&lt;/table&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/table&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;table class=&quot;data-table&quot; style=&quot;--cols:5&quot;&gt;
     &lt;thead&gt;
         &lt;tr class=&quot;data-table__head&quot;&gt;
@@ -3940,7 +4265,7 @@ function allCheckboxes() {
     else {
         document.querySelector(&#39;.data-table&#39;).classList.remove(&#39;data-table--checked&#39;);
     }
-}" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+}">Copy</button>
 		<pre class="mb-0"><code class="lang-">var tableCheckboxes = document.querySelectorAll(&#39;.data-table td input[type=&quot;checkbox&quot;]&#39;);
 var headCheckbox = document.querySelector(&#39;.data-table th input[type=&quot;checkbox&quot;]&#39;);
 
@@ -4010,7 +4335,7 @@ function allCheckboxes() {
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-table:                     $color-base-white !default;
 $color-table-border:              #e0e0e0 !default;
 $color-table-text:                $color-base-black !default;
-$color-table-selection:           rgba($color-primary, 0.22) !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-table-selection:           rgba($color-primary, 0.22) !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-table:                     $color-base-white !default;
 $color-table-border:              #e0e0e0 !default;
 $color-table-text:                $color-base-black !default;
@@ -4020,18 +4345,26 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
 </div>
 
 				</div>
-				<div id="category-organisms">
-						<div id="app-bar" class="i-library">
-	<h1 class="display-4">App Bar</h1>
-	<div><h3>Default</h3><div class="i-example">
+				<div id="category-organisms" class="theme-content-category">
+						<div id="app-bar" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">App Bar</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\organisms\app-bar.md</span>
+	</span>
+	<div class="theme-content-element-description"><h3>Default</h3><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="app-bar-app-bar.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4067,7 +4400,7 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
         &lt;/div&gt;
 
     &lt;/div&gt;
-&lt;/header&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/header&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;header class=&quot;app-bar&quot;&gt;
     &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;span class=&quot;app-bar__title&quot;&gt;App Bar title&lt;/span&gt;
@@ -4093,10 +4426,14 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
                         <a
                             href="app-bar-app-bar-prominent.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4131,7 +4468,7 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
             &lt;/ul&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/header&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/header&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;header class=&quot;app-bar app-bar--prominent&quot;&gt;
     &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;span class=&quot;app-bar__title&quot;&gt;App Bar title&lt;/span&gt;
@@ -4156,10 +4493,14 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
                         <a
                             href="app-bar-app-bar-dense.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4194,7 +4535,7 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
             &lt;/ul&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/header&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/header&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;header class=&quot;app-bar app-bar--dense&quot;&gt;
     &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;span class=&quot;app-bar__title&quot;&gt;App Bar title&lt;/span&gt;
@@ -4219,10 +4560,14 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
                         <a
                             href="app-bar-app-bar-fixed.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4257,7 +4602,7 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
             &lt;/ul&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/header&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/header&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;header class=&quot;app-bar app-bar--fixed&quot;&gt;
     &lt;button class=app-bar__nav-toggle&gt;&lt;i class=&quot;mdi mdi-menu&quot;&gt;&lt;/i&gt;&lt;/button&gt;
     &lt;span class=&quot;app-bar__title&quot;&gt;App Bar title&lt;/span&gt;
@@ -4282,25 +4627,33 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-app-bar:                   $color-primary !default;
-$color-app-bar-text:              $color-base-white !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-app-bar-text:              $color-base-white !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="drawer" class="i-library">
-	<h1 class="display-4">Drawer</h1>
-	<div><p>The header image can be changed with the SASS variable: <code>$drawer-image</code>. If you want a dark drawer add the class <code>drawer--dark</code> to the <code>drawer__drawer</code> element.</p>
+						<div id="drawer" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Drawer</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\organisms\drawer.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>The header image can be changed with the SASS variable: <code>$drawer-image</code>. If you want a dark drawer add the class <code>drawer--dark</code> to the <code>drawer__drawer</code> element.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="drawer-drawer.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4369,7 +4722,7 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
             &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
-&lt;/aside&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/aside&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -4428,10 +4781,14 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         <a
                             href="drawer-drawer-compact.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4500,7 +4857,7 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
             &lt;/ul&gt;
         &lt;/nav&gt;
     &lt;/div&gt;
-&lt;/aside&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/aside&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--compact&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -4559,10 +4916,14 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         <a
                             href="drawer-drawer-temporary.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4641,7 +5002,7 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-&lt;/main&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/main&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--temporary&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -4711,10 +5072,14 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         <a
                             href="drawer-drawer-persistent.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4793,7 +5158,7 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-&lt;/main&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/main&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--persistent&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -4863,10 +5228,14 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
                         <a
                             href="drawer-drawer-permanent.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -4945,7 +5314,7 @@ $color-app-bar-text:              $color-base-white !default;</code></pre>
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.&lt;/p&gt;
-&lt;/main&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/main&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -5020,7 +5389,7 @@ $color-drawer:                    $color-base-white !default;
 $color-drawer-text:               rgba($color-base-black, .87) !default;
 $color-drawer-header:             $color-primary !default;
 $color-drawer-header-text:        $color-base-white !default;
-$color-drawer-border:             #e0e0e0 !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+$color-drawer-border:             #e0e0e0 !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$drawer-image:                    &quot;../img/logo.svg&quot; !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
 
@@ -5033,17 +5402,25 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="login" class="i-library">
-	<h1 class="display-4">Login</h1>
-	<div><div class="i-example">
+						<div id="login" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Login</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\organisms\login.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="login-login.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -5087,7 +5464,7 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
                 &lt;button type=&quot;submit&quot; class=&quot;button&quot;&gt;Login&lt;/button&gt;
             &lt;/form&gt;
         &lt;/div&gt;
-    &lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+    &lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;login&quot;&gt;
         &lt;div class=&quot;form form--s&quot;&gt;
             &lt;h1&gt;Login&lt;/h1&gt;
@@ -5120,24 +5497,32 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$login-image:                     &quot;https://picsum.photos/1920/1080/?blur&amp;random&quot; !default;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$login-image:                     &quot;https://picsum.photos/1920/1080/?blur&amp;random&quot; !default;">Copy</button>
 		<pre class="mb-0"><code class="lang-">$login-image:                     &quot;https://picsum.photos/1920/1080/?blur&amp;random&quot; !default;</code></pre>
 	</div>
 </div></div>
 </div>
 
-						<div id="main" class="i-library">
-	<h1 class="display-4">Main</h1>
-	<div><p>To give your content the right spacing, use the <code>main</code> component.</p>
+						<div id="main" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Main</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\organisms\main.md</span>
+	</span>
+	<div class="theme-content-element-description"><p>To give your content the right spacing, use the <code>main</code> component.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="main-main.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -5159,7 +5544,7 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla, orci quis congue porttitor, lorem nunc fermentum leo, a vestibulum mi urna ut nibh. Nulla fringilla odio non tellus aliquet, ac malesuada eros viverra. Vivamus ut nunc turpis. Phasellus ut ultricies nisi. Aenean at dictum est. Curabitur dui tortor, euismod vitae interdum et, consequat eu nisi. Maecenas condimentum ultrices enim, vitae condimentum risus mollis et. Suspendisse eget sapien quis lorem mattis lacinia. Vivamus ipsum quam, hendrerit in egestas in, imperdiet vitae augue. Sed eu interdum massa. Phasellus pharetra erat non suscipit tempor. Phasellus cursus scelerisque sem vitae imperdiet. Donec fringilla tellus ipsum, ut semper leo volutpat vitae.
 
     Nam faucibus ultrices feugiat. Nulla ornare, turpis vitae gravida commodo, felis metus pretium mauris, in malesuada arcu diam a ante. Maecenas aliquet lacinia ligula ut tincidunt. Nullam ac augue aliquet, tristique lacus nec, tincidunt quam. Sed faucibus mi sit amet leo cursus faucibus. Sed nec interdum libero. Nam et urna vitae lacus venenatis molestie eu non purus. Suspendisse potenti. Curabitur placerat pellentesque mauris, nec fringilla est. Aenean malesuada facilisis ipsum vel imperdiet. Quisque odio ligula, commodo ut lacinia et, eleifend eu sem. 
-&lt;/main&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/main&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;main class=&quot;main&quot;&gt;
      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce fringilla, orci quis congue porttitor, lorem nunc fermentum leo, a vestibulum mi urna ut nibh. Nulla fringilla odio non tellus aliquet, ac malesuada eros viverra. Vivamus ut nunc turpis. Phasellus ut ultricies nisi. Aenean at dictum est. Curabitur dui tortor, euismod vitae interdum et, consequat eu nisi. Maecenas condimentum ultrices enim, vitae condimentum risus mollis et. Suspendisse eget sapien quis lorem mattis lacinia. Vivamus ipsum quam, hendrerit in egestas in, imperdiet vitae augue. Sed eu interdum massa. Phasellus pharetra erat non suscipit tempor. Phasellus cursus scelerisque sem vitae imperdiet. Donec fringilla tellus ipsum, ut semper leo volutpat vitae.
 
@@ -5170,18 +5555,26 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
 </div>
 
 				</div>
-				<div id="category-templates">
-						<div id="dashboard" class="i-library">
-	<h1 class="display-4">Dashboard</h1>
-	<div><div class="i-example">
+				<div id="category-templates" class="theme-content-category">
+						<div id="dashboard" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Dashboard</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\templates\dashboard.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="dashboard-dashboard.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -5418,7 +5811,7 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
       var materialChart = new google.charts.Bar(document.getElementById(&#39;chart_div&#39;));
       materialChart.draw(data, materialOptions);
     }
-&lt;/script&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/script&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
     &lt;div class=&quot;drawer__drawer drawer--dark&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -5643,17 +6036,25 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
 </div></div>
 </div>
 
-						<div id="overview" class="i-library">
-	<h1 class="display-4">Overview</h1>
-	<div><div class="i-example">
+						<div id="overview" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Overview</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\templates\overview.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="overview-overview.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -6359,7 +6760,7 @@ $color-drawer-border:             #e0e0e0 !default;</code></pre>
 &lt;/main&gt;
 &lt;div class=&quot;fab&quot; title=&quot;Add customer&quot; data-tippy-placement=&quot;left&quot; data-tippy-theme=&quot;light&quot; tabindex=&quot;1&quot;&gt;
     &lt;a href=&quot;single-add.html&quot; class=&quot;fab__button&quot;&gt;&lt;i class=&quot;mdi mdi-plus&quot;&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;/div&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
     &lt;div class=&quot;drawer__drawer drawer--dark&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -7126,7 +7527,7 @@ modal.setContent(document.getElementById(&#39;tableFilter&#39;).innerHTML);
 
 document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;click&#39;, function () {
      modal.open();
- });" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+ });">Copy</button>
 		<pre class="mb-0"><code class="lang-">var tableCheckboxes = document.querySelectorAll(&#39;.data-table td input[type=&quot;checkbox&quot;]&#39;);
 var headCheckbox = document.querySelector(&#39;.data-table th input[type=&quot;checkbox&quot;]&#39;);
 
@@ -7204,17 +7605,25 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 </div></div>
 </div>
 
-						<div id="single" class="i-library">
-	<h1 class="display-4">Single</h1>
-	<div><div class="i-example">
+						<div id="single" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Single</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\templates\single.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="single-add.html"
                             target="_blank"
-                            class="fa fa-external-link-square fa-fw plain-link"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
                             title="Open in a new window"
-                        ></a>
-                        Example
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
                     </h5>
                     <div class="i-example__body">
                         <div
@@ -7432,7 +7841,7 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
             &lt;/form&gt;
         &lt;/div&gt;
     &lt;/div&gt;
-&lt;/main&gt;" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Copy</button>
+&lt;/main&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
     &lt;div class=&quot;drawer__drawer drawer--dark&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
@@ -7641,18 +8050,15 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 				</div>
 		</div>
 		<div
-			class="i-page__sidebar"
-			style="
-				background: #F37748;
-				color: #fff;
-			"
+			class="i-page__sidebar theme-sidebar"
+			style="background: #F37748;color: #fff;"
 		>
-			<h1 class="i-sidebar-title h4 mt-4">
-				<img class="i-sidebar-logo mr-2" src="assets/img/logo.svg" height="40" alt="">
-				Project FAST
+			<h1 class="i-sidebar-title h4 mt-4 theme-sidebar-header">
+					<img class="i-sidebar-logo mr-2 theme-sidebar-header-logo" src="src/assets/img/logo.svg" height="40" alt="">
+				<span class="theme-sidebar-header-title">Project FAST</span>
 			</h1>
 			
-			<div class="relative mt-3 mb-2 px-0">
+			<div class="relative mt-3 mb-2 px-0 theme-sidebar-search">
 				<div class="i-search-input">
 					<input id="search-filter" name="filter" type="search" placeholder="Search" class="form-control i-sidebar-item-filter">
 					<label for="search-filter" class="search-input-icon icon-search"></label>
@@ -7662,329 +8068,330 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 				</div>
 			</div>
 			
-				<div class="i-sidebar-list-group">
+			<div class="theme-sidebar-categories">
+					<div class="i-sidebar-list-group theme-sidebar-category">
 			
-					<h5
-						class="pt-4 mb-1"
-						data-filter-value=" Getting Started "
-					>
-						<a href="#category-getting started" class="i-sidebar-list-item">
-							<b>Getting Started</b>
-						</a>
-					</h5>
-			
-					<div>
-							<a
-								href="#getting-started"
-								class="i-sidebar-list-item"
-								data-filter-value="Getting Started"
-							>
-								<span>Getting Started</span>
+						<h5
+							class="pt-4 mb-1 theme-sidebar-category-title"
+							data-filter-value=" Getting Started "
+						>
+							<a href="#category-getting started" class="i-sidebar-list-item">
+								<b>Getting Started</b>
 							</a>
+						</h5>
+			
+						<div>
+								<a
+									href="#getting-started"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Getting Started"
+								>
+									<span>Getting Started</span>
+								</a>
+						</div>
+			
 					</div>
+					<div class="i-sidebar-list-group theme-sidebar-category">
 			
-				</div>
-				<div class="i-sidebar-list-group">
+						<h5
+							class="pt-4 mb-1 theme-sidebar-category-title"
+							data-filter-value=" Typography  Utilities  Variables "
+						>
+							<a href="#category-general" class="i-sidebar-list-item">
+								<b>General</b>
+							</a>
+						</h5>
 			
-					<h5
-						class="pt-4 mb-1"
-						data-filter-value=" Typography  Utilities  Variables "
-					>
-						<a href="#category-general" class="i-sidebar-list-item">
-							<b>General</b>
-						</a>
-					</h5>
+						<div>
+								<a
+									href="#typography"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Typography"
+								>
+									<span>Typography</span>
+								</a>
+								<a
+									href="#utilities"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Utilities"
+								>
+									<span>Utilities</span>
+								</a>
+								<a
+									href="#variables"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Variables"
+								>
+									<span>Variables</span>
+								</a>
+						</div>
 			
-					<div>
-							<a
-								href="#typography"
-								class="i-sidebar-list-item"
-								data-filter-value="Typography"
-							>
-								<span>Typography</span>
-							</a>
-							<a
-								href="#utilities"
-								class="i-sidebar-list-item"
-								data-filter-value="Utilities"
-							>
-								<span>Utilities</span>
-							</a>
-							<a
-								href="#variables"
-								class="i-sidebar-list-item"
-								data-filter-value="Variables"
-							>
-								<span>Variables</span>
-							</a>
 					</div>
+					<div class="i-sidebar-list-group theme-sidebar-category">
 			
-				</div>
-				<div class="i-sidebar-list-group">
+						<h5
+							class="pt-4 mb-1 theme-sidebar-category-title"
+							data-filter-value=" Buttons  Checkbox  Chips  Headings  Icons  Pagination  Radio button  Select field  Snackbar  Text fields  Tooltip "
+						>
+							<a href="#category-atoms" class="i-sidebar-list-item">
+								<b>Atoms</b>
+							</a>
+						</h5>
 			
-					<h5
-						class="pt-4 mb-1"
-						data-filter-value=" Buttons  Checkbox  Chips  Headings  Icons  Pagination  Radio button  Select field  Snackbar  Text fields  Tooltip "
-					>
-						<a href="#category-atoms" class="i-sidebar-list-item">
-							<b>Atoms</b>
-						</a>
-					</h5>
+						<div>
+								<a
+									href="#buttons"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Buttons"
+								>
+									<span>Buttons</span>
+								</a>
+								<a
+									href="#checkbox"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Checkbox"
+								>
+									<span>Checkbox</span>
+								</a>
+								<a
+									href="#chips"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Chips"
+								>
+									<span>Chips</span>
+								</a>
+								<a
+									href="#headings"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Headings"
+								>
+									<span>Headings</span>
+								</a>
+								<a
+									href="#icons"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Icons"
+								>
+									<span>Icons</span>
+								</a>
+								<a
+									href="#pagination"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Pagination"
+								>
+									<span>Pagination</span>
+								</a>
+								<a
+									href="#radio-button"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Radio button"
+								>
+									<span>Radio button</span>
+								</a>
+								<a
+									href="#select-field"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Select field"
+								>
+									<span>Select field</span>
+								</a>
+								<a
+									href="#snackbar"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Snackbar"
+								>
+									<span>Snackbar</span>
+								</a>
+								<a
+									href="#text-fields"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Text fields"
+								>
+									<span>Text fields</span>
+								</a>
+								<a
+									href="#tooltip"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Tooltip"
+								>
+									<span>Tooltip</span>
+								</a>
+						</div>
 			
-					<div>
-							<a
-								href="#buttons"
-								class="i-sidebar-list-item"
-								data-filter-value="Buttons"
-							>
-								<span>Buttons</span>
-							</a>
-							<a
-								href="#checkbox"
-								class="i-sidebar-list-item"
-								data-filter-value="Checkbox"
-							>
-								<span>Checkbox</span>
-							</a>
-							<a
-								href="#chips"
-								class="i-sidebar-list-item"
-								data-filter-value="Chips"
-							>
-								<span>Chips</span>
-							</a>
-							<a
-								href="#headings"
-								class="i-sidebar-list-item"
-								data-filter-value="Headings"
-							>
-								<span>Headings</span>
-							</a>
-							<a
-								href="#icons"
-								class="i-sidebar-list-item"
-								data-filter-value="Icons"
-							>
-								<span>Icons</span>
-							</a>
-							<a
-								href="#pagination"
-								class="i-sidebar-list-item"
-								data-filter-value="Pagination"
-							>
-								<span>Pagination</span>
-							</a>
-							<a
-								href="#radio-button"
-								class="i-sidebar-list-item"
-								data-filter-value="Radio button"
-							>
-								<span>Radio button</span>
-							</a>
-							<a
-								href="#select-field"
-								class="i-sidebar-list-item"
-								data-filter-value="Select field"
-							>
-								<span>Select field</span>
-							</a>
-							<a
-								href="#snackbar"
-								class="i-sidebar-list-item"
-								data-filter-value="Snackbar"
-							>
-								<span>Snackbar</span>
-							</a>
-							<a
-								href="#text-fields"
-								class="i-sidebar-list-item"
-								data-filter-value="Text fields"
-							>
-								<span>Text fields</span>
-							</a>
-							<a
-								href="#tooltip"
-								class="i-sidebar-list-item"
-								data-filter-value="Tooltip"
-							>
-								<span>Tooltip</span>
-							</a>
 					</div>
+					<div class="i-sidebar-list-group theme-sidebar-category">
 			
-				</div>
-				<div class="i-sidebar-list-group">
+						<h5
+							class="pt-4 mb-1 theme-sidebar-category-title"
+							data-filter-value=" Cards  Container  Dialog  Expansion panel  Floating Action Button (FAB)  Forms  Grid  List  Menu  Tables "
+						>
+							<a href="#category-molecules" class="i-sidebar-list-item">
+								<b>Molecules</b>
+							</a>
+						</h5>
 			
-					<h5
-						class="pt-4 mb-1"
-						data-filter-value=" Cards  Container  Dialog  Expansion panel  Floating Action Button (FAB)  Forms  Grid  List  Menu  Tables "
-					>
-						<a href="#category-molecules" class="i-sidebar-list-item">
-							<b>Molecules</b>
-						</a>
-					</h5>
+						<div>
+								<a
+									href="#cards"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Cards"
+								>
+									<span>Cards</span>
+								</a>
+								<a
+									href="#container"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Container"
+								>
+									<span>Container</span>
+								</a>
+								<a
+									href="#dialog"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Dialog"
+								>
+									<span>Dialog</span>
+								</a>
+								<a
+									href="#expansion-panel"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Expansion panel"
+								>
+									<span>Expansion panel</span>
+								</a>
+								<a
+									href="#floating-action-button-fab"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Floating Action Button (FAB)"
+								>
+									<span>Floating Action Button (FAB)</span>
+								</a>
+								<a
+									href="#forms"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Forms"
+								>
+									<span>Forms</span>
+								</a>
+								<a
+									href="#grid"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Grid"
+								>
+									<span>Grid</span>
+								</a>
+								<a
+									href="#list"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="List"
+								>
+									<span>List</span>
+								</a>
+								<a
+									href="#menu"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Menu"
+								>
+									<span>Menu</span>
+								</a>
+								<a
+									href="#tables"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Tables"
+								>
+									<span>Tables</span>
+								</a>
+						</div>
 			
-					<div>
-							<a
-								href="#cards"
-								class="i-sidebar-list-item"
-								data-filter-value="Cards"
-							>
-								<span>Cards</span>
-							</a>
-							<a
-								href="#container"
-								class="i-sidebar-list-item"
-								data-filter-value="Container"
-							>
-								<span>Container</span>
-							</a>
-							<a
-								href="#dialog"
-								class="i-sidebar-list-item"
-								data-filter-value="Dialog"
-							>
-								<span>Dialog</span>
-							</a>
-							<a
-								href="#expansion-panel"
-								class="i-sidebar-list-item"
-								data-filter-value="Expansion panel"
-							>
-								<span>Expansion panel</span>
-							</a>
-							<a
-								href="#floating-action-button-fab"
-								class="i-sidebar-list-item"
-								data-filter-value="Floating Action Button (FAB)"
-							>
-								<span>Floating Action Button (FAB)</span>
-							</a>
-							<a
-								href="#forms"
-								class="i-sidebar-list-item"
-								data-filter-value="Forms"
-							>
-								<span>Forms</span>
-							</a>
-							<a
-								href="#grid"
-								class="i-sidebar-list-item"
-								data-filter-value="Grid"
-							>
-								<span>Grid</span>
-							</a>
-							<a
-								href="#list"
-								class="i-sidebar-list-item"
-								data-filter-value="List"
-							>
-								<span>List</span>
-							</a>
-							<a
-								href="#menu"
-								class="i-sidebar-list-item"
-								data-filter-value="Menu"
-							>
-								<span>Menu</span>
-							</a>
-							<a
-								href="#tables"
-								class="i-sidebar-list-item"
-								data-filter-value="Tables"
-							>
-								<span>Tables</span>
-							</a>
 					</div>
+					<div class="i-sidebar-list-group theme-sidebar-category">
 			
-				</div>
-				<div class="i-sidebar-list-group">
+						<h5
+							class="pt-4 mb-1 theme-sidebar-category-title"
+							data-filter-value=" App Bar  Drawer  Login  Main "
+						>
+							<a href="#category-organisms" class="i-sidebar-list-item">
+								<b>Organisms</b>
+							</a>
+						</h5>
 			
-					<h5
-						class="pt-4 mb-1"
-						data-filter-value=" App Bar  Drawer  Login  Main "
-					>
-						<a href="#category-organisms" class="i-sidebar-list-item">
-							<b>Organisms</b>
-						</a>
-					</h5>
+						<div>
+								<a
+									href="#app-bar"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="App Bar"
+								>
+									<span>App Bar</span>
+								</a>
+								<a
+									href="#drawer"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Drawer"
+								>
+									<span>Drawer</span>
+								</a>
+								<a
+									href="#login"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Login"
+								>
+									<span>Login</span>
+								</a>
+								<a
+									href="#main"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Main"
+								>
+									<span>Main</span>
+								</a>
+						</div>
 			
-					<div>
-							<a
-								href="#app-bar"
-								class="i-sidebar-list-item"
-								data-filter-value="App Bar"
-							>
-								<span>App Bar</span>
-							</a>
-							<a
-								href="#drawer"
-								class="i-sidebar-list-item"
-								data-filter-value="Drawer"
-							>
-								<span>Drawer</span>
-							</a>
-							<a
-								href="#login"
-								class="i-sidebar-list-item"
-								data-filter-value="Login"
-							>
-								<span>Login</span>
-							</a>
-							<a
-								href="#main"
-								class="i-sidebar-list-item"
-								data-filter-value="Main"
-							>
-								<span>Main</span>
-							</a>
 					</div>
+					<div class="i-sidebar-list-group theme-sidebar-category">
 			
-				</div>
-				<div class="i-sidebar-list-group">
+						<h5
+							class="pt-4 mb-1 theme-sidebar-category-title"
+							data-filter-value=" Dashboard  Overview  Single "
+						>
+							<a href="#category-templates" class="i-sidebar-list-item">
+								<b>Templates</b>
+							</a>
+						</h5>
 			
-					<h5
-						class="pt-4 mb-1"
-						data-filter-value=" Dashboard  Overview  Single "
-					>
-						<a href="#category-templates" class="i-sidebar-list-item">
-							<b>Templates</b>
-						</a>
-					</h5>
+						<div>
+								<a
+									href="#dashboard"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Dashboard"
+								>
+									<span>Dashboard</span>
+								</a>
+								<a
+									href="#overview"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Overview"
+								>
+									<span>Overview</span>
+								</a>
+								<a
+									href="#single"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Single"
+								>
+									<span>Single</span>
+								</a>
+						</div>
 			
-					<div>
-							<a
-								href="#dashboard"
-								class="i-sidebar-list-item"
-								data-filter-value="Dashboard"
-							>
-								<span>Dashboard</span>
-							</a>
-							<a
-								href="#overview"
-								class="i-sidebar-list-item"
-								data-filter-value="Overview"
-							>
-								<span>Overview</span>
-							</a>
-							<a
-								href="#single"
-								class="i-sidebar-list-item"
-								data-filter-value="Single"
-							>
-								<span>Single</span>
-							</a>
 					</div>
+			</div>
 			
-				</div>
-			
-			<div class="i-sidebar-filter-no-results i-muted i-pad-horiz-2">
+			<div class="i-sidebar-filter-no-results i-muted i-pad-horiz-2 theme-sidebar-search-no-results">
 				No matches.
 			</div>
 			
-			<div class="row no-gutters mt-auto py-4">
+			<div class="row no-gutters mt-auto py-4 theme-sidebar-footer">
 				<span class="col">
-					<span class="i-muted">Generated by</span>
-					<a class="i-muted -hover" href="https://github.com/nextbigsoundinc/stylemark">Stylemark</a>
+					Generated by <a href="https://github.com/nextbigsoundinc/stylemark">Stylemark</a>
 				</span>
 			</div>
 		</div>
@@ -7997,6 +8404,8 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 		<script src="_stylemark/js/vendor/lazyframe.min.js"></script>
 		<script src="_stylemark/js/vendor/highlight.min.js"></script>
 		<script src="_stylemark/js/vendor/clipboard.min.js"></script>
+		<script src="_stylemark/js/vendor/in-view.min.js"></script>
 		<script src="_stylemark/js/app.js"></script>
+
 	</body>
 </html>

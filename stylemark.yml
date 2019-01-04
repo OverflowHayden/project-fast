@@ -1,29 +1,32 @@
 name: Project FAST
-logo: assets/img/logo.svg
 
 excludeDir:
   - dist
-  - assets/scss
+  - src
+  - src/assets/scss
 
 assets:
-  - assets
-  - materials
+  - src/assets
 
-sidebar:
-  background: "#F37748"
-  textColor: "#fff"
+theme:
+  logo: src/assets/img/logo.svg
+  sidebar:
+    background: "#F37748"
+    textColor: "#fff"
 
-headHtml: |
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700&subset=latin-ext" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-  body { padding: 10px; }
-  </style>
+examples:
+  headHtml: |
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,700&subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" href="src/assets/css/style.css">
+    <style>
+    body { padding: 10px; }
+    </style>
 
-bodyHtml: |
-  <script src="assets/js/bundle.js"></script>
-  <script src="assets/js/app.min.js"></script>
+  bodyHtml: |
+    {html}
+    <script src="src/assets/js/bundle.js"></script>
+    <script src="src/assets/js/app.min.js"></script>
 
 order:
   - +Getting Started
