@@ -41,6 +41,7 @@
 									<option value="snackbar">Snackbar</option>
 									<option value="text-fields">Text fields</option>
 									<option value="tooltip">Tooltip</option>
+									<option value="upload-field">Upload field</option>
 							</optgroup>
 							<optgroup label="Molecules">
 									<option value="cards">Cards</option>
@@ -2248,6 +2249,72 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
+						<div id="upload-field" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Upload field</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\atoms\upload-field.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="upload-field-upload-field.html"
+                            target="_blank"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Open in a new window"
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="upload-field-upload-field.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;upload-field&quot;&gt;
+    &lt;input id=&quot;upload&quot; type=&quot;file&quot; name=&quot;upload&quot; class=&quot;upload-field__input&quot; /&gt;
+    &lt;label for=&quot;upload&quot; class=&quot;upload-field__label&quot;&gt;Upload a file&lt;/label&gt;
+    &lt;span class=&quot;upload-field__value&quot;&gt;No file selected&lt;/span&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Only images&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;upload-field&quot;&gt;
+    &lt;input id=&quot;upload2&quot; type=&quot;file&quot; name=&quot;upload2&quot; class=&quot;upload-field__input&quot; multiple /&gt;
+    &lt;label for=&quot;upload2&quot; class=&quot;upload-field__label&quot;&gt;Upload a file&lt;/label&gt;
+    &lt;span class=&quot;upload-field__value&quot;&gt;No file selected&lt;/span&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Only images&lt;/span&gt;
+&lt;/div&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;upload-field&quot;&gt;
+    &lt;input id=&quot;upload&quot; type=&quot;file&quot; name=&quot;upload&quot; class=&quot;upload-field__input&quot; /&gt;
+    &lt;label for=&quot;upload&quot; class=&quot;upload-field__label&quot;&gt;Upload a file&lt;/label&gt;
+    &lt;span class=&quot;upload-field__value&quot;&gt;No file selected&lt;/span&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Only images&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;upload-field&quot;&gt;
+    &lt;input id=&quot;upload2&quot; type=&quot;file&quot; name=&quot;upload2&quot; class=&quot;upload-field__input&quot; multiple /&gt;
+    &lt;label for=&quot;upload2&quot; class=&quot;upload-field__label&quot;&gt;Upload a file&lt;/label&gt;
+    &lt;span class=&quot;upload-field__value&quot;&gt;No file selected&lt;/span&gt;
+    &lt;span class=&quot;field__helper&quot;&gt;Only images&lt;/span&gt;
+&lt;/div&gt;</code></pre>
 	</div>
 </div></div>
 </div>
@@ -8131,7 +8198,7 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 			
 						<h5
 							class="pt-4 mb-1 theme-sidebar-category-title"
-							data-filter-value=" Buttons  Checkbox  Chips  Headings  Icons  Pagination  Radio button  Select field  Snackbar  Text fields  Tooltip "
+							data-filter-value=" Buttons  Checkbox  Chips  Headings  Icons  Pagination  Radio button  Select field  Snackbar  Text fields  Tooltip  Upload field "
 						>
 							<a href="#category-atoms" class="i-sidebar-list-item">
 								<b>Atoms</b>
@@ -8215,6 +8282,13 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 									data-filter-value="Tooltip"
 								>
 									<span>Tooltip</span>
+								</a>
+								<a
+									href="#upload-field"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Upload field"
+								>
+									<span>Upload field</span>
 								</a>
 						</div>
 			

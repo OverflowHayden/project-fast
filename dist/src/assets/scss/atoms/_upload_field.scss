@@ -1,0 +1,33 @@
+.upload-field {
+    @include clearfix;
+
+    margin-bottom: 15px;
+
+    &__input {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &__label {
+        @include button;
+        margin-right: 12px;
+        display: inline-block;
+        vertical-align: middle;
+
+        &:before {
+            font: normal normal normal 2.4rem/1.6rem "Material Design Icons";
+            content: mdi('cloud-upload');
+            display: inline-block;
+            margin-right: 14px;
+            vertical-align: middle;
+            position: relative;
+            top: -.05em;
+        }
+    }
+
+    .field__helper {
+        display: block;
+        margin-top: 0;
+    }
+}
