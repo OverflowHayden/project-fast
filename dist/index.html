@@ -54,6 +54,7 @@
 									<option value="list">List</option>
 									<option value="menu">Menu</option>
 									<option value="tables">Tables</option>
+									<option value="tabs">Tabs</option>
 							</optgroup>
 							<optgroup label="Organisms">
 									<option value="app-bar">App Bar</option>
@@ -4411,6 +4412,78 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
 </div></div>
 </div>
 
+						<div id="tabs" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Tabs</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials\molecules\tabs.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="tabs-tabs.html"
+                            target="_blank"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Open in a new window"
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="tabs-tabs.html"
+                            data-initinview="true"
+                            data-title="Loading…"
+
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;section class=&quot;tab&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; class=&quot;tab__input&quot; id=&quot;tab1&quot; checked&gt;
+    &lt;label for=&quot;tab1&quot; class=&quot;tab__label&quot;&gt;
+        Tab 1
+        &lt;div class=&quot;chip&quot;&gt;
+            &lt;span class=&quot;chip__text&quot;&gt;123&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;div class=&quot;tab__panel&quot;&gt;Tab 1 content&lt;/div&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; class=&quot;tab__input&quot; id=&quot;tab2&quot;&gt;
+    &lt;label for=&quot;tab2&quot; class=&quot;tab__label&quot;&gt;Tab 2&lt;/label&gt;
+    &lt;div class=&quot;tab__panel&quot;&gt;Tab 2 content&lt;/div&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; class=&quot;tab__input&quot; id=&quot;tab3&quot;&gt;
+    &lt;label for=&quot;tab3&quot; class=&quot;tab__label&quot;&gt;Tab 3&lt;/label&gt;
+    &lt;div class=&quot;tab__panel&quot;&gt;Tab 3 content&lt;/div&gt;
+&lt;/section&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;section class=&quot;tab&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; class=&quot;tab__input&quot; id=&quot;tab1&quot; checked&gt;
+    &lt;label for=&quot;tab1&quot; class=&quot;tab__label&quot;&gt;
+        Tab 1
+        &lt;div class=&quot;chip&quot;&gt;
+            &lt;span class=&quot;chip__text&quot;&gt;123&lt;/span&gt;
+        &lt;/div&gt;
+    &lt;/label&gt;
+    &lt;div class=&quot;tab__panel&quot;&gt;Tab 1 content&lt;/div&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; class=&quot;tab__input&quot; id=&quot;tab2&quot;&gt;
+    &lt;label for=&quot;tab2&quot; class=&quot;tab__label&quot;&gt;Tab 2&lt;/label&gt;
+    &lt;div class=&quot;tab__panel&quot;&gt;Tab 2 content&lt;/div&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;tabs&quot; class=&quot;tab__input&quot; id=&quot;tab3&quot;&gt;
+    &lt;label for=&quot;tab3&quot; class=&quot;tab__label&quot;&gt;Tab 3&lt;/label&gt;
+    &lt;div class=&quot;tab__panel&quot;&gt;Tab 3 content&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+	</div>
+</div></div>
+</div>
+
 				</div>
 				<div id="category-organisms" class="theme-content-category">
 						<div id="app-bar" class="i-library theme-content-element">
@@ -8297,7 +8370,7 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 			
 						<h5
 							class="pt-4 mb-1 theme-sidebar-category-title"
-							data-filter-value=" Cards  Container  Dialog  Expansion panel  Floating Action Button (FAB)  Forms  Grid  List  Menu  Tables "
+							data-filter-value=" Cards  Container  Dialog  Expansion panel  Floating Action Button (FAB)  Forms  Grid  List  Menu  Tables  Tabs "
 						>
 							<a href="#category-molecules" class="i-sidebar-list-item">
 								<b>Molecules</b>
@@ -8374,6 +8447,13 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 									data-filter-value="Tables"
 								>
 									<span>Tables</span>
+								</a>
+								<a
+									href="#tabs"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Tabs"
+								>
+									<span>Tabs</span>
 								</a>
 						</div>
 			
