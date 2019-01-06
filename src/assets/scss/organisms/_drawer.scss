@@ -19,6 +19,7 @@
         height: 100%;
         opacity: .0001;
         transform: translateX(-100%);
+        will-change: transform;
         z-index: 21;
 
         #{$self}__drawer {
@@ -57,6 +58,7 @@
             opacity: 1;
             transform: translateX(0);
             transition: transform .25s ease;
+            will-change: transform;
         }
     }
 

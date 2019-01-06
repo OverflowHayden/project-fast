@@ -85,10 +85,10 @@ function appBarScroll(scrollDirection) {
     var appBarHeight = parseInt(window.getComputedStyle(appBar).height, 10);
     var position = parseInt(window.getComputedStyle(appBar).top, 10);
 
-    if(position - scrollDirection < -appBarHeight || (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+    if((position - scrollDirection < -appBarHeight || (window.innerHeight + window.scrollY) >= document.body.offsetHeight) && window.scrollY >= appBarHeight) {
         appBar.style.top = '-' + appBarHeight + 'px';
     }
-    else if(position - scrollDirection > 0 || window.pageYOffset <= 0) {
+    else if(position - scrollDirection > 0 || window.pageYOffset <= 0 || window.scrollY == 0) {
         appBar.style.top = '0px';
     }
     else {
@@ -665,7 +665,7 @@ if(document.querySelectorAll('.upload-field').length > 0) {
 
             field.querySelector('.upload-field__input').addEventListener('change', function() {
                 var values = [];
-                
+
                 for (let i = 0, files = this.files.length; i < files; i++) {
                     const file = this.files[i];
                     values.push(file.name);
