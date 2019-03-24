@@ -104,7 +104,8 @@ if(document.querySelectorAll('.menu__toggle').length > 0) {
 
     for (var i = 0, menu; menu = menus[i]; i++) {
         if (menu !== null) {
-            menu.addEventListener('click', function () {
+            menu.addEventListener('click', function (e) {
+                e.preventDefault();
                 var menuList = document.querySelector(this.dataset.menu);
 
                 if(menuList.classList.contains('menu--open')) {
@@ -185,7 +186,9 @@ if(document.querySelector('.app-bar__nav-toggle') && document.querySelector('.dr
     var toggle = document.querySelector('.app-bar__nav-toggle');
     var drawer = document.querySelector('.drawer--persistent');
 
-    toggle.addEventListener('click', function(){
+    toggle.addEventListener('click', function(e){
+        e.preventDefault();
+
         if(drawer.classList.contains('drawer--open')) {
             drawer.classList.remove('drawer--open');
             document.body.classList.remove('persistent--open');
