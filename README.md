@@ -19,7 +19,19 @@
 
 
 
-### [Click here to open the toolkit](https://overflowhayden.github.io/project-fast/dist/)
+### [Click here for documentation](https://overflowhayden.github.io/project-fast/dist/)
+
+### Quick start
+Add the following stylesheet `<link>` to your `<head>` before all other stylesheets.
+```
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/css/style.css">
+```
+
+Add the following `script` before the the closing `</body>` tag. No jQuery required!
+```
+<script src="https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/js/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/js/app.min.js"></script>
+```
 
 ### How to install
 **NPM**

@@ -16,6 +16,7 @@ or HTML
 
 or Vuejs
 ```
+Vue.use(Snackbar);
 this.$snackbar.create("Vuejs is awesome!", {}, function(){});
 ```
 

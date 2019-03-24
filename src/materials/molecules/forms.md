@@ -3,13 +3,17 @@ name: Forms
 category: Molecules
 ---
 
-Available form sizes: 
-`.form--s` 400px,
-`.form--m` 800px,
-`.form--l` 1200px
+### Form classes
+Fixed form sizes: 
+`form--s` 400px,
+`form--m` 800px,
+`form--l` 1200px
 
 To remove card:
-`.form--no-card`
+`form--no-card`
+
+Inline:
+`form--inline`
 
 ```forms.html
 <h1>Example form</h1>

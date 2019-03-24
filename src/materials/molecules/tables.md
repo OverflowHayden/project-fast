@@ -120,7 +120,6 @@ category: Molecules
 ```
 
 ### Data table
-To use with vue.js.
 Also usable with table--compact
 
 ```data-tables.html

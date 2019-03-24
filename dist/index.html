@@ -1780,8 +1780,10 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});">Copy</button>
-		<pre class="mb-0"><code class="lang-">this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="Vue.use(Snackbar);
+this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});">Copy</button>
+		<pre class="mb-0"><code class="lang-">Vue.use(Snackbar);
+this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});</code></pre>
 	</div>
 </div><p>Click <a href="https://github.com/joostLawerman/SnackbarLightjs">here</a> for the full documentation</p>
 <div class="i-example">
@@ -2812,12 +2814,14 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
 		<span class="theme-content-element-source-label">Source:</span>
 		<span class="theme-content-element-source-path">materials\molecules\forms.md</span>
 	</span>
-	<div class="theme-content-element-description"><p>Available form sizes: 
-<code>.form--s</code> 400px,
-<code>.form--m</code> 800px,
-<code>.form--l</code> 1200px</p>
+	<div class="theme-content-element-description"><h3>Form classes</h3><p>Fixed form sizes: 
+<code>form--s</code> 400px,
+<code>form--m</code> 800px,
+<code>form--l</code> 1200px</p>
 <p>To remove card:
-<code>.form--no-card</code></p>
+<code>form--no-card</code></p>
+<p>Inline:
+<code>form--inline</code></p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
@@ -3986,8 +3990,7 @@ $color-fab-text:                  $color-base-white !default;</code></pre>
     &lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
 	</div>
-</div><h3>Data table</h3><p>To use with vue.js.
-Also usable with table--compact</p>
+</div><h3>Data table</h3><p>Also usable with table--compact</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
