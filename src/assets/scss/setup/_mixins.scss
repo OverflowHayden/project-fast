@@ -213,3 +213,24 @@
         margin: 0;
     }
 }
+
+@mixin scrollbar($color) {
+    scrollbar-width: thin;
+    scrollbar-color: $color $color;
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $color;
+    }
+
+    &:hover {
+        scrollbar-color: darken($color, 20%) $color;
+
+        &::-webkit-scrollbar-thumb {
+            background: darken($color, 20%);
+        }
+    }
+}

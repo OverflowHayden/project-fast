@@ -126,6 +126,10 @@
             .list__item, .list__item-graphic, .list__item-meta, .list__item-header, .list__item-secondary-text {
                 color: $color-base-white;
             }
+
+            #{$self}__content {
+                @include scrollbar($color-secondary);
+            }
         }
     }
 
@@ -155,6 +159,24 @@
         flex-wrap: wrap;
         align-items: flex-start;
         justify-content: flex-start;
+        scrollbar-width: thin;
+        scrollbar-color: $color-drawer $color-drawer;
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: $color-drawer;
+        }
+
+        &:hover {
+            scrollbar-color: darken($color-drawer, 20%) $color-drawer;
+
+            &::-webkit-scrollbar-thumb {
+                background: darken($color-drawer, 20%);
+            }
+        }
 
         .drawer--compact & {
             max-height: calc(100vh - 62px);
