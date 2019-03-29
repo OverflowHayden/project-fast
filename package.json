@@ -9,6 +9,7 @@
     "toolkit": "stylemark -i src -o dist -c stylemark.yml -b",
     "test": "npm run toolkit && npm run build"
   },
+  "main": "dist/src/assets/js/app.js",
   "author": "Hayden Lin",
   "license": "LGPL-3.0",
   "devDependencies": {

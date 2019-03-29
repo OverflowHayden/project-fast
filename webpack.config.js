@@ -10,6 +10,12 @@ const publicJS = [
     './node_modules/choices.js/public/assets/scripts/choices.js',
 ];
 
+const files = [
+    './src/assets/js/components/appbar.js',
+    './src/assets/js/app.js',
+    './src/assets/scss/includes.scss'
+];
+
 module.exports = [
     {
         mode: 'production',
@@ -35,7 +41,7 @@ module.exports = [
     },
     {
         mode: 'development',
-        entry: ['./src/assets/js/app.js', './src/assets/scss/includes.scss'],
+        entry: files,
         output: {
             filename: 'src/assets/js/app.min.js',
             path: __dirname,
