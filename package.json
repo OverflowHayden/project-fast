@@ -1,6 +1,6 @@
 {
   "name": "project-fast",
-  "version": "0.9.6",
+  "version": "0.9.7",
   "description": "Project \"Full Application Stack Toolkit\" is a modern frontend framework inspired by Google's Material Design.",
   "homepage": "https://github.com/OverflowHayden/project-fast.git#readme",
   "scripts": {
@@ -42,7 +42,7 @@
     "sag-bourbon-neat": "^2.1.1",
     "sass-loader": "^7.0.3",
     "snackbarlightjs": "^1.1.2",
-    "stylemark": "3.1.2",
+    "stylemark": "^3.1.3",
     "tingle.js": "^0.13.2",
     "tippy.js": "^2.5.4",
     "uglifyjs-webpack-plugin": "^1.3.0",

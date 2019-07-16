@@ -106,7 +106,13 @@
             user-select: none;
         }
 
-        &::-ms-input-placeholder {
+        &:-ms-input-placeholder {
+            color: transparent;
+            transition: color 0.2s ease;
+            user-select: none;
+        }
+
+        &::-webkit-input-placeholder {
             color: transparent;
             transition: color 0.2s ease;
             user-select: none;
@@ -126,7 +132,11 @@
                 color: $color-text-field-inactive;
             }
 
-            &::-ms-input-placeholder {
+            &:-ms-input-placeholder {
+                color: $color-text-field-inactive;
+            }
+
+            &::-webkit-input-placeholder {
                 color: $color-text-field-inactive;
             }
 
