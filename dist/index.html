@@ -94,50 +94,57 @@
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn add project-fast">Copy</button>
 		<pre class="mb-0"><code class="lang-">yarn add project-fast</code></pre>
 	</div>
-</div><h3>Usage (with Yarn):</h3><p>Go to the project-fast folder (node_modules/project-fast)</p>
-<p>Generate the toolkit with:</p>
+</div><h3>Quick start</h3><p>Add the following stylesheet <code>&lt;link&gt;</code> to your <code>&lt;head&gt;</code> before all other stylesheets.</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn run toolkit">Copy</button>
-		<pre class="mb-0"><code class="lang-">yarn run toolkit</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/css/style.css&quot;&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/css/style.css&quot;&gt;</code></pre>
 	</div>
-</div><p>Compile the assets with:</p>
+</div><p>Add the following <code>script</code> before the the closing <code>&lt;/body&gt;</code> tag. No jQuery required!</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn run build">Copy</button>
-		<pre class="mb-0"><code class="lang-">yarn run build</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 	</div>
-</div><div id="for-the-laravel-nerds" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#for-the-laravel-nerds" class="icon-link i-section__link -heading"></a>For the Laravel nerds</h2></div><p>Add the following code to <code>webpack.mix.js</code>:</p>
+</div><h3>How to install</h3><p><strong>NPM</strong></p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="npm install project-fast">Copy</button>
+		<pre class="mb-0"><code class="lang-">npm install project-fast</code></pre>
+	</div>
+</div><p><strong>Yarn</strong></p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn add project-fast">Copy</button>
+		<pre class="mb-0"><code class="lang-">yarn add project-fast</code></pre>
+	</div>
+</div><div id="usage-with-laravel-mix" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#usage-with-laravel-mix" class="icon-link i-section__link -heading"></a>Usage with Laravel Mix</h2></div><p>Add the following code to <code>webpack.mix.js</code>:</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="mix.js(&#39;resources/assets/js/app.js&#39;, &#39;public/js&#39;)
     .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;)
-    .options({
-        postCss: [
-            require(&#39;pixrem&#39;)()
-        ]
-    })
     .scripts([
         &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
         &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/backend/js/bundle.js&#39;);">Copy</button>
+    ], &#39;public/js/bundle.js&#39;);">Copy</button>
 		<pre class="mb-0"><code class="lang-">mix.js(&#39;resources/assets/js/app.js&#39;, &#39;public/js&#39;)
     .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;)
-    .options({
-        postCss: [
-            require(&#39;pixrem&#39;)()
-        ]
-    })
     .scripts([
         &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
         &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/backend/js/bundle.js&#39;);</code></pre>
+    ], &#39;public/js/bundle.js&#39;);</code></pre>
 	</div>
 </div><p>Change the code in <code>resources/assets/sass/app.scss</code> to:</p>
 
@@ -163,26 +170,16 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="mix.js(&#39;resources/js/app.js&#39;, &#39;public/js&#39;)
     .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;)
-    .options({
-        postCss: [
-            require(&#39;pixrem&#39;)()
-        ]
-    })
     .scripts([
         &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
         &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/backend/js/bundle.js&#39;);">Copy</button>
+    ], &#39;public/js/bundle.js&#39;);">Copy</button>
 		<pre class="mb-0"><code class="lang-">mix.js(&#39;resources/js/app.js&#39;, &#39;public/js&#39;)
     .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;)
-    .options({
-        postCss: [
-            require(&#39;pixrem&#39;)()
-        ]
-    })
     .scripts([
         &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
         &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/backend/js/bundle.js&#39;);</code></pre>
+    ], &#39;public/js/bundle.js&#39;);</code></pre>
 	</div>
 </div><p>And <code>resources/sass/app.scss</code>:</p>
 
@@ -200,7 +197,8 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 // Project FAST
 @import &#39;~project-fast/src/assets/scss/includes.scss&#39;;</code></pre>
 	</div>
-</div></div>
+</div><p><code>`</code></p>
+</div>
 </div>
 
 				</div>

@@ -43,20 +43,7 @@ npm install project-fast
 yarn add project-fast
 ```
 
-### Usage (with Yarn): 
-Go to the project-fast folder (node_modules/project-fast)
-
-Generate the toolkit with:
-```
-yarn run toolkit
-```
-
-Compile the assets with:
-```
-yarn run build
-```
-
-## For the Laravel nerds
+## Usage with Laravel Mix
 Add the following code to `webpack.mix.js`:
 ```
 mix.js('resources/assets/js/app.js', 'public/js')

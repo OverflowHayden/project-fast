@@ -13,33 +13,37 @@ npm install project-fast
 yarn add project-fast
 ```
 
-### Usage (with Yarn): 
-Go to the project-fast folder (node_modules/project-fast)
-
-Generate the toolkit with:
+### Quick start
+Add the following stylesheet `<link>` to your `<head>` before all other stylesheets.
 ```
-yarn run toolkit
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/css/style.css">
 ```
 
-Compile the assets with:
+Add the following `script` before the the closing `</body>` tag. No jQuery required!
 ```
-yarn run build
+<script src="https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/js/bundle.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/project-fast@0.9.5/dist/src/assets/js/app.min.js"></script>
 ```
 
-## For the Laravel nerds
+### How to install
+**NPM**
+```
+npm install project-fast
+```
+**Yarn**
+```
+yarn add project-fast
+```
+
+## Usage with Laravel Mix
 Add the following code to `webpack.mix.js`:
 ```
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
-    .options({
-        postCss: [
-            require('pixrem')()
-        ]
-    })
     .scripts([
         'node_modules/project-fast/src/assets/js/bundle.js',
         'node_modules/project-fast/src/assets/js/app.min.js'
-    ], 'public/backend/js/bundle.js');
+    ], 'public/js/bundle.js');
 ```
 
 Change the code in `resources/assets/sass/app.scss` to:
@@ -57,15 +61,10 @@ The code should now look like this in `webpack.mix.js`:
 ```
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
-    .options({
-        postCss: [
-            require('pixrem')()
-        ]
-    })
     .scripts([
         'node_modules/project-fast/src/assets/js/bundle.js',
         'node_modules/project-fast/src/assets/js/app.min.js'
-    ], 'public/backend/js/bundle.js');
+    ], 'public/js/bundle.js');
 ```
 
 And `resources/sass/app.scss`:
@@ -75,4 +74,5 @@ And `resources/sass/app.scss`:
 
 // Project FAST
 @import '~project-fast/src/assets/scss/includes.scss';
+```
 ```
