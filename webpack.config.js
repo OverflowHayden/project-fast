@@ -74,7 +74,6 @@ module.exports = [
                         {
                             loader: 'css-loader', options: {
                                 import: false,
-                                minimize: true,
                                 sourceMap: true,
                                 importLoaders: 2
                             }
@@ -169,7 +168,7 @@ module.exports = [
                 parallel: true
             }),
             new CompressionPlugin({
-                asset: "[path].gz[query]",
+                filename: "[path].gz[query]",
                 algorithm: "gzip",
                 test: /\.js$|\.css$/,
                 threshold: 10240,

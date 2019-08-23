@@ -13,13 +13,11 @@ document.documentElement.className += (window.self == window.top ? " top" : "fra
 // IE & Edge placeholder-shown fix
 //----------------------------------------------------------------------------------
 function placeholderPolyfill() {
-    console.log(this.value);
     this.classList[this.value ? 'add' : 'remove']('placeholder-hidden');
 }
 
 if ((!(document.documentMode) && window.StyleMedia) || ((/*@cc_on!@*/false) || (document.documentMode))) {
     document.querySelectorAll('[placeholder]').forEach(el => {
-        console.log(el.value);
         el.classList[el.value ? 'add' : 'remove']('placeholder-hidden');
         el.addEventListener('change', placeholderPolyfill);
         el.addEventListener('keyup', placeholderPolyfill);
