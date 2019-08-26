@@ -1,11 +1,22 @@
 import tippy from 'tippy.js';
+import fastAppbar from './components/appbar.js';
+import fastMenu from './components/menu.js';
+import fastDrawer from './components/drawer.js';
+import fastFab from './components/fab.js';
+import fastUpload from './components/upload-field.js';
+
 var Snackbar = require("snackbarlightjs");
-var foreach = require('./components/foreach.polyfill.js');
-var fastAppbar = require('./components/appbar.js');
-var fastMenu = require('./components/menu.js');
-var fastDrawer = require('./components/drawer.js');
-var fastFab = require('./components/fab.js');
-var fastUpload = require('./components/upload-field.js');
+// var fastAppbar = require('./components/appbar.js');
+//var fastMenu = require('./components/menu.js');
+//var fastDrawer = require('./components/drawer.js');
+//var fastFab = require('./components/fab.js');
+//var fastUpload = require('./components/upload-field.js');
+
+fastAppbar();
+fastMenu();
+fastDrawer();
+fastFab();
+fastUpload();
 
 document.documentElement.className += (window.self == window.top ? " top" : "framed");
 
@@ -29,7 +40,6 @@ if ((!(document.documentMode) && window.StyleMedia) || ((/*@cc_on!@*/false) || (
 // Tippy tooltips
 //----------------------------------------------------------------------------------
 tippy('[title]', {
-    size: 'large',
-    performance: false
+    size: 'large'
 })
 

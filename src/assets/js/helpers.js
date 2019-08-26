@@ -1,3 +1,13 @@
+function hasClass(element, className) {
+    do {
+        if (element.classList && element.classList.contains(className)) {
+            return true;
+        }
+        element = element.parentNode;
+    } while (element);
+    return false;
+}
+
 if (!Array.prototype.forEach) {
     Array.prototype.forEach = function (callback, thisArg) {
         thisArg = thisArg || window;
