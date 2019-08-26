@@ -14,13 +14,11 @@ or HTML
 <span data-toggle=snackbar data-content="Hey! Im a snackbar">Click me</span>
 ```
 
-or Vuejs
+or Vue.js
 ```
-Vue.use(Snackbar);
+Vue.use(fastSnackbar);
 this.$snackbar.create("Vuejs is awesome!", {}, function(){});
 ```
-
-Click [here](https://github.com/joostLawerman/SnackbarLightjs) for the full documentation
 
 ```snackbar.html
 <button 
@@ -32,4 +30,8 @@ Click [here](https://github.com/joostLawerman/SnackbarLightjs) for the full docu
 	data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 	data-active-class="active">
 Click me</button>
+```
+
+```snackbar.js
+new Snackbar("Hey! Im a snackbar", { timeout: 0 });
 ```

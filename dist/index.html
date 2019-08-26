@@ -1746,18 +1746,17 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;span data-toggle=snackbar data-content=&quot;Hey! Im a snackbar&quot;&gt;Click me&lt;/span&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;span data-toggle=snackbar data-content=&quot;Hey! Im a snackbar&quot;&gt;Click me&lt;/span&gt;</code></pre>
 	</div>
-</div><p>or Vuejs</p>
+</div><p>or Vue.js</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="Vue.use(Snackbar);
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="Vue.use(fastSnackbar);
 this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});">Copy</button>
-		<pre class="mb-0"><code class="lang-">Vue.use(Snackbar);
+		<pre class="mb-0"><code class="lang-">Vue.use(fastSnackbar);
 this.$snackbar.create(&quot;Vuejs is awesome!&quot;, {}, function(){});</code></pre>
 	</div>
-</div><p>Click <a href="https://github.com/joostLawerman/SnackbarLightjs">here</a> for the full documentation</p>
-<div class="i-example">
+</div><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="snackbar-snackbar.html"
@@ -1804,6 +1803,13 @@ Click me&lt;/button&gt;">Copy</button>
     data-url=&quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot;
     data-active-class=&quot;active&quot;&gt;
 Click me&lt;/button&gt;</code></pre>
+	</div>
+</div>
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> js</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="new Snackbar(&quot;Hey! Im a snackbar&quot;, { timeout: 0 });">Copy</button>
+		<pre class="mb-0"><code class="lang-">new Snackbar(&quot;Hey! Im a snackbar&quot;, { timeout: 0 });</code></pre>
 	</div>
 </div></div>
 </div>
@@ -2181,7 +2187,7 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 		<span class="theme-content-element-source-path">materials\atoms\tooltip.md</span>
 	</span>
 	<div class="theme-content-element-description"><p>Powered by Tippy.js. Click <a href="https://atomiks.github.io/tippyjs/" target="_blank">here</a> for the full documentation</p>
-<p>By default, you can add a title attribute to create a tooltip.</p>
+<p>By default, you can add a <code>data-tippy</code> attribute to create a tooltip.</p>
 <div class="i-example">
                     <h5 class="i-example__heading">
                         <a
@@ -2211,8 +2217,8 @@ $color-text-field-active:         $color-primary !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot; title=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;button class=&quot;button&quot; data-tippy=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;button class=&quot;button&quot; data-tippy=&quot;I&#39;m a tooltip!&quot;&gt;Show tooltip&lt;/button&gt;</code></pre>
 	</div>
 </div></div>
 </div>

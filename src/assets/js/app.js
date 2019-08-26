@@ -4,19 +4,14 @@ import fastMenu from './components/menu.js';
 import fastDrawer from './components/drawer.js';
 import fastFab from './components/fab.js';
 import fastUpload from './components/upload-field.js';
-
-var Snackbar = require("snackbarlightjs");
-// var fastAppbar = require('./components/appbar.js');
-//var fastMenu = require('./components/menu.js');
-//var fastDrawer = require('./components/drawer.js');
-//var fastFab = require('./components/fab.js');
-//var fastUpload = require('./components/upload-field.js');
+import fastSnackbar from './components/snackbar.js';
 
 fastAppbar();
 fastMenu();
 fastDrawer();
 fastFab();
 fastUpload();
+fastSnackbar();
 
 document.documentElement.className += (window.self == window.top ? " top" : "framed");
 
@@ -35,11 +30,4 @@ if ((!(document.documentMode) && window.StyleMedia) || ((/*@cc_on!@*/false) || (
     });
 }
 
-
-//----------------------------------------------------------------------------------
-// Tippy tooltips
-//----------------------------------------------------------------------------------
-tippy('[title]', {
-    size: 'large'
-})
-
+export default { fastAppbar, fastMenu, fastDrawer, fastFab, fastUpload, fastSnackbar };
