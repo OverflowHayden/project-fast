@@ -19,7 +19,7 @@ category: Molecules
 
 ### FAB menu
 ```fab-menu.html
-<div class="fab fab--menu" title="Add" data-tippy-placement="left" data-tippy-theme="light" tabindex="1">
+<div class="fab fab--menu" data-tippy-content="Add" tabindex="1">
     <a href="#" class="fab__button"><i class="mdi mdi-plus"></i></a>
     <ul class="fab__list">
         <li class="fab__list-item">

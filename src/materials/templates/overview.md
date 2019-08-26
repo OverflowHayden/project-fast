@@ -690,7 +690,7 @@ category: Templates
         </div>
     </div>
 </main>
-<div class="fab" title="Add customer" data-tippy-placement="left" data-tippy-theme="light" tabindex="1">
+<div class="fab" data-tippy-content="Add customer" tabindex="1">
     <a href="single-add.html" class="fab__button"><i class="mdi mdi-plus"></i></a>
 </div>
 ```

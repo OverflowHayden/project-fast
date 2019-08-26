@@ -181,7 +181,7 @@ category: Templates
         </div>
     </div>
 </main>
-<div class="fab fab--menu" title="Add customer" data-tippy-placement="left" data-tippy-theme="light" tabindex="1">
+<div class="fab fab--menu" data-tippy-content="Add customer" tabindex="1">
     <a href="single-add.html" class="fab__button"><i class="mdi mdi-plus"></i></a>
     <ul class="fab__list">
         <li class="fab__list-item">
