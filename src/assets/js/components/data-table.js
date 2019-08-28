@@ -1,5 +1,7 @@
 export default function fastDataTable () {
-    if(document.querySelector('.data-table')) {
+    if(document.querySelector('.data-table') &&
+        document.querySelectorAll('.data-table td input[type="checkbox"]').length > 0 &&
+        document.querySelector('.data-table th input[type="checkbox"]')) {
         const tableCheckboxes = document.querySelectorAll('.data-table td input[type="checkbox"]');
         const headCheckbox = document.querySelector('.data-table th input[type="checkbox"]');
 
