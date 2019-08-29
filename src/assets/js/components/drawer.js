@@ -14,43 +14,41 @@ export default function fastDrawer () {
         var drawer,
             drawerElem,
             iconElem;
-        window.addEventListener("load", function (e) {
-            drawerElem = document.querySelector('.drawer');
-            iconElem = document.querySelector('.app-bar__nav-toggle');
-            drawer = new Drawer(drawerElem);
-            drawer.setDrawerIcon(new DrawerIcon(iconElem));
+        drawerElem = document.querySelector('.drawer');
+        iconElem = document.querySelector('.app-bar__nav-toggle');
+        drawer = new Drawer(drawerElem);
+        drawer.setDrawerIcon(new DrawerIcon(iconElem));
 
-            //Use methods
-            drawer.onOpenListener(function () {
-                document.body.classList.add('drawer-scroll-lock');
+        //Use methods
+        drawer.onOpenListener(function () {
+            document.body.classList.add('drawer-scroll-lock');
 
-                if(document.querySelector('.drawer--persistent')) {
-                    document.body.classList.add('persistent--open');
-                }
-            });
-            drawer.onCloseListener(function () {
-                document.body.classList.remove('drawer-scroll-lock');
-
-                if(document.querySelector('.drawer--persistent')) {
-                    document.body.classList.remove('persistent--open');
-                }
-            });
-
-            document.querySelectorAll('.drawer a').forEach(function (item) {
-                item.addEventListener('click', function () {
-                    drawer.closeDrawer();
-                })
-            });
-
-            /*drawer.onMoveListener(function (x, percent, animation, duration) {
-                console.log(x + " " + percent + " " + animation + " " + duration);
-            });
-            drawer.openDrawer();
-            drawer.closeDrawer();
-            drawer.toggleDrawer();
-            drawer.isOpen();
-            drawer.resetIconOnClick();*/
+            if(document.querySelector('.drawer--persistent')) {
+                document.body.classList.add('persistent--open');
+            }
         });
+        drawer.onCloseListener(function () {
+            document.body.classList.remove('drawer-scroll-lock');
+
+            if(document.querySelector('.drawer--persistent')) {
+                document.body.classList.remove('persistent--open');
+            }
+        });
+
+        document.querySelectorAll('.drawer a').forEach(function (item) {
+            item.addEventListener('click', function () {
+                drawer.closeDrawer();
+            })
+        });
+
+        /*drawer.onMoveListener(function (x, percent, animation, duration) {
+            console.log(x + " " + percent + " " + animation + " " + duration);
+        });
+        drawer.openDrawer();
+        drawer.closeDrawer();
+        drawer.toggleDrawer();
+        drawer.isOpen();
+        drawer.resetIconOnClick();*/
     }
 
     /* Drawer persistent */
