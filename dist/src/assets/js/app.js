@@ -18,12 +18,12 @@ fastDataTable();
 fastSnackbar();
 
 export default {
-    LegacySupport: fastLegacySupport(),
-    Appbar: fastAppbar(),
-    Menu: fastMenu(),
-    Drawer: fastDrawer(),
-    Fab: fastFab(),
-    Upload: fastUpload(),
-    DataTable: fastDataTable(),
-    Snackbar: fastSnackbar(),
+    LegacySupport: fastLegacySupport,
+    Appbar: fastAppbar,
+    Menu: fastMenu,
+    Drawer: fastDrawer,
+    Fab: fastFab,
+    Upload: fastUpload,
+    DataTable: fastDataTable,
+    Snackbar: fastSnackbar,
 };

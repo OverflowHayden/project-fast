@@ -1,4 +1,8 @@
 .main {
     padding: 30px;
     min-height: calc(100vh - 62px);
+
+    .with-app-bar--prominent & {
+        min-height: calc(100vh - 128px);
+    }
 }

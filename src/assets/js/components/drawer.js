@@ -36,6 +36,12 @@ export default function fastDrawer () {
                 }
             });
 
+            document.querySelectorAll('.drawer a').forEach(function (item) {
+                item.addEventListener('click', function () {
+                    drawer.closeDrawer();
+                })
+            });
+
             /*drawer.onMoveListener(function (x, percent, animation, duration) {
                 console.log(x + " " + percent + " " + animation + " " + duration);
             });
@@ -100,9 +106,9 @@ export default function fastDrawer () {
             isMobile = checkMobile(navigator.userAgent || navigator.vendor || window.opera),
             isIE = window.navigator.msPointerEnabled,
             isIE11 = window.navigator.pointerEnabled,
-            typeStart = isIE ? "MSPointerDown" : (isMobile ? "touchstart" : "mousedown"),
-            typeMove = isIE ? "MSPointerMove" : (isMobile ? "touchmove" : "mousemove"),
-            typeEnd = isIE ? "MSPointerUp" : (isMobile ? "touchend" : "mouseup"),
+            typeStart = "touchstart",
+            typeMove = "touchmove",
+            typeEnd = "touchend",
             trZ = "translateZ(0)",
             stateMoved = false,
             transformProp = "transform",
