@@ -338,10 +338,15 @@ export default function fastDrawer () {
         };
 
         (function () {
-            drawerBg = document.createElement("DIV");
-            drawerBg.className = "drawer__bg";
-            drawerBg.id = "drawer__bg";
-            drawerElem.parentElement.insertBefore(drawerBg, drawerElem);
+            if (document.querySelector('.drawer__bg')) {
+                drawerBg = document.querySelector('.drawer__bg');
+            }
+            else {
+                drawerBg = document.createElement("DIV");
+                drawerBg.className = "drawer__bg";
+                drawerBg.id = "drawer__bg";
+                drawerElem.parentElement.insertBefore(drawerBg, drawerElem);
+            }
             drawerBg.onclick = function () {
                 if (opened) {
                     closeDrawer(0.225);
