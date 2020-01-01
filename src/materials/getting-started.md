@@ -3,16 +3,6 @@ name: Getting Started
 category: Getting Started
 ---
 
-### How to install
-**NPM**
-```
-npm install project-fast
-```
-**Yarn**
-```
-yarn add project-fast
-```
-
 ### Quick start
 Add the following stylesheet `<link>` to your `<head>` before all other stylesheets.
 ```
@@ -39,11 +29,7 @@ yarn add project-fast
 Add the following code to `webpack.mix.js`:
 ```
 mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css')
-    .scripts([
-        'node_modules/project-fast/src/assets/js/bundle.js',
-        'node_modules/project-fast/src/assets/js/app.min.js'
-    ], 'public/js/bundle.js');
+    .sass('resources/assets/sass/app.scss', 'public/css');
 ```
 
 Change the code in `resources/assets/sass/app.scss` to:
@@ -55,16 +41,17 @@ Change the code in `resources/assets/sass/app.scss` to:
 @import '~project-fast/src/assets/scss/includes.scss';
 ```
 
+Add the following code to `resources/assets/js/app.js`:
+```
+import Fast from 'project-fast';
+```
+
 ### Laravel 5.7+
-Starting from Laravel 5.7, the scripts and styles has been flattened in the `resource` folder.
+Starting from Laravel 5.7, the scripts and styles has been flattened in the `resources` folder.
 The code should now look like this in `webpack.mix.js`:
 ```
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
-    .scripts([
-        'node_modules/project-fast/src/assets/js/bundle.js',
-        'node_modules/project-fast/src/assets/js/app.min.js'
-    ], 'public/js/bundle.js');
+    .sass('resources/sass/app.scss', 'public/css');
 ```
 
 And `resources/sass/app.scss`:
@@ -75,4 +62,8 @@ And `resources/sass/app.scss`:
 // Project FAST
 @import '~project-fast/src/assets/scss/includes.scss';
 ```
+
+Add the following code to `resources/js/app.js`:
+```
+import Fast from 'project-fast';
 ```

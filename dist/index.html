@@ -78,23 +78,7 @@
 		<span class="theme-content-element-source-label">Source:</span>
 		<span class="theme-content-element-source-path">materials/getting-started.md</span>
 	</span>
-	<div class="theme-content-element-description"><h3>How to install</h3><p><strong>NPM</strong></p>
-
-<div class="i-code-block">
-	<button type="button" class="i-code-block__lang "> </button>
-	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="npm install project-fast">Copy</button>
-		<pre class="mb-0"><code class="lang-">npm install project-fast</code></pre>
-	</div>
-</div><p><strong>Yarn</strong></p>
-
-<div class="i-code-block">
-	<button type="button" class="i-code-block__lang "> </button>
-	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="yarn add project-fast">Copy</button>
-		<pre class="mb-0"><code class="lang-">yarn add project-fast</code></pre>
-	</div>
-</div><h3>Quick start</h3><p>Add the following stylesheet <code>&lt;link&gt;</code> to your <code>&lt;head&gt;</code> before all other stylesheets.</p>
+	<div class="theme-content-element-description"><h3>Quick start</h3><p>Add the following stylesheet <code>&lt;link&gt;</code> to your <code>&lt;head&gt;</code> before all other stylesheets.</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
@@ -134,17 +118,9 @@
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="mix.js(&#39;resources/assets/js/app.js&#39;, &#39;public/js&#39;)
-    .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;)
-    .scripts([
-        &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
-        &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/js/bundle.js&#39;);">Copy</button>
+    .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;);">Copy</button>
 		<pre class="mb-0"><code class="lang-">mix.js(&#39;resources/assets/js/app.js&#39;, &#39;public/js&#39;)
-    .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;)
-    .scripts([
-        &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
-        &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/js/bundle.js&#39;);</code></pre>
+    .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;);</code></pre>
 	</div>
 </div><p>Change the code in <code>resources/assets/sass/app.scss</code> to:</p>
 
@@ -162,24 +138,24 @@
 // Project FAST
 @import &#39;~project-fast/src/assets/scss/includes.scss&#39;;</code></pre>
 	</div>
-</div><h3>Laravel 5.7+</h3><p>Starting from Laravel 5.7, the scripts and styles has been flattened in the <code>resource</code> folder.
+</div><p>Add the following code to <code>resources/assets/js/app.js</code>:</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="import Fast from &#39;project-fast&#39;;">Copy</button>
+		<pre class="mb-0"><code class="lang-">import Fast from &#39;project-fast&#39;;</code></pre>
+	</div>
+</div><h3>Laravel 5.7+</h3><p>Starting from Laravel 5.7, the scripts and styles has been flattened in the <code>resources</code> folder.
 The code should now look like this in <code>webpack.mix.js</code>:</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="mix.js(&#39;resources/js/app.js&#39;, &#39;public/js&#39;)
-    .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;)
-    .scripts([
-        &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
-        &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/js/bundle.js&#39;);">Copy</button>
+    .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;);">Copy</button>
 		<pre class="mb-0"><code class="lang-">mix.js(&#39;resources/js/app.js&#39;, &#39;public/js&#39;)
-    .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;)
-    .scripts([
-        &#39;node_modules/project-fast/src/assets/js/bundle.js&#39;,
-        &#39;node_modules/project-fast/src/assets/js/app.min.js&#39;
-    ], &#39;public/js/bundle.js&#39;);</code></pre>
+    .sass(&#39;resources/sass/app.scss&#39;, &#39;public/css&#39;);</code></pre>
 	</div>
 </div><p>And <code>resources/sass/app.scss</code>:</p>
 
@@ -197,8 +173,15 @@ The code should now look like this in <code>webpack.mix.js</code>:</p>
 // Project FAST
 @import &#39;~project-fast/src/assets/scss/includes.scss&#39;;</code></pre>
 	</div>
-</div><p><code>`</code></p>
-</div>
+</div><p>Add the following code to <code>resources/js/app.js</code>:</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="import Fast from &#39;project-fast&#39;;">Copy</button>
+		<pre class="mb-0"><code class="lang-">import Fast from &#39;project-fast&#39;;</code></pre>
+	</div>
+</div></div>
 </div>
 
 				</div>
