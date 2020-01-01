@@ -5,29 +5,19 @@ export default function fastAppbar () {
         var scrollDirection = 0;
         var ticking = false;
 
+        document.body.classList.remove('with-app-bar--prominent');
+        document.body.classList.remove('with-app-bar--dense');
+        document.body.classList.remove('with-app-bar--fixed');
+        document.body.classList.add('with-app-bar');
+
         if(appBar.classList.contains('app-bar--prominent')) {
-            document.body.classList.remove('with-app-bar--dense');
-            document.body.classList.remove('with-app-bar--fixed');
-            document.body.classList.remove('with-app-bar');
             document.body.classList.add('with-app-bar--prominent');
         }
-        else if(appBar.classList.contains('app-bar--dense')) {
-            document.body.classList.remove('with-app-bar--prominent');
-            document.body.classList.remove('with-app-bar--fixed');
-            document.body.classList.remove('with-app-bar');
+        if(appBar.classList.contains('app-bar--dense')) {
             document.body.classList.add('with-app-bar--dense');
         }
-        else if(appBar.classList.contains('app-bar--fixed')) {
-            document.body.classList.remove('with-app-bar--prominent');
-            document.body.classList.remove('with-app-bar--dense');
-            document.body.classList.remove('with-app-bar');
+        if(appBar.classList.contains('app-bar--fixed')) {
             document.body.classList.add('with-app-bar--fixed');
-        }
-        else {
-            document.body.classList.remove('with-app-bar--prominent');
-            document.body.classList.remove('with-app-bar--dense');
-            document.body.classList.remove('with-app-bar--fixed');
-            document.body.classList.add('with-app-bar');
         }
 
         if(!document.body.classList.contains('with-app-bar--fixed')) {
