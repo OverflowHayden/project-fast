@@ -21,6 +21,42 @@ category: Molecules
 </ul>
 ```
 
+### Striped
+```list-striped.html
+<ul class="list list--demo list--striped">
+    <li class="list__item">
+        <a href="#" class="list__item-text">List item 1</a>
+    </li>
+    <li class="list__item">
+        <a href="#" class="list__item-text">List item 2</a>
+    </li>
+    <li class="list__item">
+        <a href="#" class="list__item-text">List item 3</a>
+    </li>
+    <li class="list__item">
+        <a href="#" class="list__item-text">List item 4</a>
+    </li>
+</ul>
+```
+
+### Compact
+```list-compact.html
+<ul class="list list--demo list--compact">
+    <li class="list__item">
+        <a href="#" class="list__item-text">List item 1</a>
+    </li>
+    <li class="list__item">
+        <a href="#" class="list__item-text">List item 2</a>
+    </li>
+    <li class="list__item">
+        <a href="#" class="list__item-text">List item 3</a>
+    </li>
+    <li class="list__item">
+        <a href="#" class="list__item-text">List item 4</a>
+    </li>
+</ul>
+```
+
 ### Two-Line
 ```list-two.html
 <ul class="list list--demo">

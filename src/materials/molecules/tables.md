@@ -119,6 +119,64 @@ category: Molecules
 </table>
 ```
 
+### Striped
+```tables-striped.html
+<table class="table--striped" style="--cols:4">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Jon Stott</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Virginia Robbins</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Elise Heath</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Tahmina Marriott</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Sommer Gibbons</td>
+            <td>Maecenas pharetra porta leo, quis fermentum nibh efficitur nec</td>
+            <td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
+                <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+        </tr>
+    </tbody>
+</table>
+```
+
 ### Data table
 Also usable with table--compact
 

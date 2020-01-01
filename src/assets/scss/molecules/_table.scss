@@ -11,7 +11,12 @@ table {
     }
 
     tr {
-        height: 56px;
+        height: 5.6rem;
+        transition: background .25s ease;
+
+        &:hover {
+            background: darken($color-table, 3%);
+        }
     }
 
     th, td {
@@ -60,6 +65,20 @@ table {
         position: relative;
     }
 
+    .text-field, .number-field, .select-field {
+        padding: .5rem 0;
+        margin: 0;
+
+        &__input {
+            font-size: 1.3rem;
+        }
+    }
+
+    .select-field:after {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
     &.table--compact {
         tr {
             height: 44px;
@@ -102,6 +121,20 @@ table {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+        }
+    }
+
+    &.table--striped {
+        tr th {
+            background: darken($color-table, 3%);
+        }
+
+        tr:nth-child(even) {
+            background: darken($color-table, 2%);
+
+            &:hover {
+                background: darken($color-table, 3%);
+            }
         }
     }
 }
