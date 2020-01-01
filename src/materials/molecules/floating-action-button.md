@@ -3,6 +3,12 @@ name: Floating Action Button (FAB)
 category: Molecules
 ---
 
+### Required
+```fab.js
+import Fast from 'project-fast';
+Fast.Fab();
+```
+
 ## Default
 ```fab.html
 <div class="fab">

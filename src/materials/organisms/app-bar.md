@@ -3,6 +3,12 @@ name: App Bar
 category: Organisms
 ---
 
+### Required
+```app-bar.js
+import Fast from 'project-fast';
+Fast.AppBar();
+```
+
 ### Default
 ```app-bar.html
 <header class="app-bar">

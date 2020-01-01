@@ -3,6 +3,12 @@ name: Upload field
 category: Atoms
 ---
 
+### Required
+```upload-field.js
+import Fast from 'project-fast';
+Fast.Upload();
+```
+
 The `upload-field__value` element will be automatically updated.
 ```upload-field.html
 <div class="upload-field">

@@ -3,6 +3,12 @@ name: Snackbar
 category: Atoms
 ---
 
+### Required
+```snackbar.js
+import Fast from 'project-fast';
+Fast.Snachbar();
+```
+
 Vanilla JS
 ```
 new Snackbar("Hey! Im a snackbar");

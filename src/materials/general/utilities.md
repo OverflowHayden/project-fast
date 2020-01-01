@@ -34,6 +34,7 @@ category: General
 
 ### Margin
 ```margin.html
+<div class="no-margin">No Margin</div>
 <div class="margin-top">Margin top</div>
 <div class="margin-top--2x">Margin top 2x</div>
 <div class="margin-bottom">Margin bottom</div>

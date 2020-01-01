@@ -3,6 +3,12 @@ name: Drawer
 category: Organisms
 ---
 
+### Required
+```drawer.js
+import Fast from 'project-fast';
+Fast.Drawer();
+```
+
 The header image can be changed with the SASS variable: `$drawer-image`. If you want a dark drawer add the class `drawer--dark` to the `drawer__drawer` element.
 ```drawer.html
 <aside class="drawer">

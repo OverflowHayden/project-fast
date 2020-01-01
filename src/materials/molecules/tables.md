@@ -308,6 +308,10 @@ Also usable with table--compact
     </tfoot>
 </table>
 ```
+```data-tables.js
+import Fast from 'project-fast';
+Fast.DataTable();
+```
 
 ### Helper classes
 The following classes can be added to the `<table>`:  

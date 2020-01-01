@@ -3,6 +3,11 @@ name: Menu
 category: Molecules
 ---
 
+### Required
+```menu.js
+import Fast from 'project-fast';
+Fast.Menu();
+```
 
 ```menu.html
 <div class="menu">
