@@ -92,22 +92,22 @@ category: Molecules
 <ul class="list list--demo">
     <li class="list__item">
         <a href="#" class="list__item-text">
-            <i class="list__item-graphic mdi mdi-calendar"></i>List item 1
+            <iconify-icon class="list__item-graphic" data-icon="mdi:calendar"></iconify-icon>List item 1
         </a>
     </li>
     <li class="list__item">
         <a href="#" class="list__item-text">
-            <i class="list__item-graphic mdi mdi-cards"></i>List item 2
+            <iconify-icon class="list__item-graphic" data-icon="mdi:cards"></iconify-icon>List item 2
         </a>
     </li>
     <li class="list__item">
         <a href="#" class="list__item-text">
-            <i class="list__item-graphic mdi mdi-chart-bar"></i>List item 3
+            <iconify-icon class="list__item-graphic" data-icon="mdi:chart-bar"></iconify-icon>List item 3
         </a>
     </li>
     <li class="list__item">
         <a href="#" class="list__item-text">
-            <i class="list__item-graphic mdi mdi-cloud-download"></i>List item 4
+            <iconify-icon class="list__item-graphic" data-icon="mdi:cloud-download"></iconify-icon>List item 4
         </a>
     </li>
 </ul>
@@ -119,25 +119,25 @@ category: Molecules
     <li class="list__item">
         <a href="#" class="list__item-text">
             List item 1
-            <i class="list__item-meta mdi mdi-information"></i>
+            <iconify-icon class="list__item-meta" data-icon="mdi:information"></iconify-icon>
         </a>
     </li>
     <li class="list__item">
         <a href="#" class="list__item-text">
             List item 2
-            <i class="list__item-meta mdi mdi-information"></i>
+            <iconify-icon class="list__item-meta" data-icon="mdi:information"></iconify-icon>
         </a>
     </li>
     <li class="list__item">
         <a href="#" class="list__item-text">
             List item 3
-            <i class="list__item-meta mdi mdi-information"></i>
+            <iconify-icon class="list__item-meta" data-icon="mdi:information"></iconify-icon>
         </a>
     </li>
     <li class="list__item">
         <a href="#" class="list__item-text">
             List item 4
-            <i class="list__item-meta mdi mdi-information"></i>
+            <iconify-icon class="list__item-meta" data-icon="mdi:information"></iconify-icon>
         </a>
     </li>
 </ul>

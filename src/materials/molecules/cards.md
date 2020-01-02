@@ -30,8 +30,8 @@ Add a [grid column](#grid) class like `.col__sm--6` to the card to change size. 
                         <a href="#" class="button button--text">Cancel</a>
                     </div>
                     <div class="card__icons">
-                        <a href="#" class="button button--icon button--text"><i class="mdi mdi-share"></i></a>
-                        <a href="#" class="button button--icon button--text"><i class="mdi mdi-dots-vertical"></i></a>
+                        <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:share"></iconify-icon></a>
+                        <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:dots-vertical"></iconify-icon></a>
                     </div>
                 </div>
             </div>

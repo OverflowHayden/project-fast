@@ -18,15 +18,15 @@ category: Atoms
 ### Leading icon
 ```chips-icon.html
 <div class="chip">
-    <span class="chip__icon"><i class="mdi mdi-account-circle"></i></span>
+    <span class="chip__icon"><iconify-icon data-icon="mdi:account-circle"></iconify-icon></span>
     <span class="chip__text">Chip</span>
 </div>
 <div class="chip chip--primary">
-    <span class="chip__icon"><i class="mdi mdi-calendar"></i></span>
+    <span class="chip__icon"><iconify-icon data-icon="mdi:calendar"></iconify-icon></span>
     <span class="chip__text">Chip primary</span>
 </div>
 <div class="chip chip--alt">
-    <span class="chip__icon"><i class="mdi mdi-cloud-download"></i></span>
+    <span class="chip__icon"><iconify-icon data-icon="mdi:cloud-download"></iconify-icon></span>
     <span class="chip__text">Chip alt</span>
 </div>
 ```

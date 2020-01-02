@@ -13,58 +13,56 @@ category: Templates
             <ul class="list">
                 <li class="list__item">
                     <a href="dashboard-dashboard.html" class="list__item-text">
-                        <i class="list__item-graphic mdi mdi-home"></i>Dashboard
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:home"></iconify-icon>Dashboard
                     </a>
                 </li>
                 <li class="list__item">
                     <a href="overview-overview.html" class="list__item-text">
-                        <i class="list__item-graphic mdi mdi-account-multiple"></i>Customers
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:account-multiple"></iconify-icon>Customers
                     </a>
                 </li>
                 <li class="list__item">
                     <a href="#" class="list__item-text">
-                        <i class="list__item-graphic mdi mdi-package"></i>Products
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:package"></iconify-icon>Products
                     </a>
                 </li>
                 <li class="list__item">
                     <a href="#" class="list__item-text">
-                        <i class="list__item-graphic mdi mdi-cart"></i>Orders
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:cart"></iconify-icon>Orders
                     </a>
                 </li>
                 <li class="list__divider"></li>
-                    <li class="list__item list__item--header">
-                        <span class="list__item-secondary-text">Help</span>
-                    </li>
-                    <li class="list__item">
-                        <a href="#" class="list__item-text">
-                            <i class="list__item-graphic mdi mdi-help-circle"></i>Help & Feedback
-                        </a>
-                    </li>
-                    <li class="list__item">
-                        <a href="#" class="list__item-text">
-                            <i class="list__item-graphic mdi mdi-information"></i>About
-                        </a>
-                    </li>
-                </ul>
-                <ul class="list list--bottom">
-                    <li class="list__item">
-                        <a href="#" class="list__item-text">
-                            <i class="list__item-graphic mdi mdi-settings"></i>Settings
-                        </a>
-                    </li>
-                </ul>
+                <li class="list__item list__item--header">
+                    <span class="list__item-secondary-text">Help</span>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:help-circle"></iconify-icon>Help & Feedback
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:information"></iconify-icon>About
+                    </a>
+                </li>
+            </ul>
+            <ul class="list list--bottom">
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:settings"></iconify-icon>Settings
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
 </aside>
 <main class="main">
     <header class="app-bar">
-        <button class=app-bar__nav-toggle><i class="mdi mdi-menu"></i></button>
+        <button class=app-bar__nav-toggle><iconify-icon data-icon="mdi:menu"></iconify-icon></button>
         <span class="app-bar__title">New Customer</span>
         <div class="app-bar__actions">
-            <a href="overview-overview.html" class="button button--text"><i class="mdi mdi-check"></i>Submit</a>
-            <a href="overview-overview.html" class="button button--text"><i class="mdi mdi-close"></i>Cancel</a>
             <div class="menu">
-                <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><i class="mdi mdi-dots-vertical"></i></a>
+                <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><iconify-icon data-icon="mdi:dots-vertical"></iconify-icon></a>
                 <ul id="menu" class="menu__list">
                     <li class="menu__list-item"><a href="#">Help</a></li>
                     <li class="menu__list-item"><a href="#">About</a></li>
@@ -76,7 +74,7 @@ category: Templates
         </div>
     </header>
     <div class="main__content">
-        <div class="form form--m">
+        <div class="form form--m form--no-card">
             <form>
                 <div class="form__row">
                     <div class="text-field">

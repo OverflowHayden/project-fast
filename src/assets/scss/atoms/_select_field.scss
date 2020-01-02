@@ -2,11 +2,17 @@
     @include text-field;
 
     &:after {
-        font: normal normal normal 2.4rem/1 "Material Design Icons";
-        content: mdi('menu-down');
+        border-top: 5px solid $color-text;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-bottom: none;
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
         position: absolute;
-        top: 18px;
-        right: 4px;
+        top: 28px;
+        right: 9px;
         pointer-events: none;
         z-index: 0;
     }

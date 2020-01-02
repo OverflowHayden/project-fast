@@ -1,4 +1,5 @@
 import tippy from 'tippy.js';
+import Iconify from '@iconify/iconify';
 import fastLegacySupport from './components/legacy-support.js';
 import fastAppbar from './components/appbar.js';
 import fastMenu from './components/menu.js';

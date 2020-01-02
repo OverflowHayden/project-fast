@@ -20,7 +20,7 @@
     text-transform: uppercase;
     vertical-align: middle;
 
-    .fa, .mdi {
+    .fa, .mdi, .iconify {
         margin-left: -4px;
         margin-right: 14px;
     }
@@ -62,7 +62,7 @@
     &--icon {
         padding: 8px;
 
-        .fa, .mdi {
+        .fa, .mdi, .iconify {
             margin: 0;
         }
     }

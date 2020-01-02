@@ -230,7 +230,11 @@ table {
         border-radius: 50%;
         font-size: 2.4rem;
         color: $color-icon;
-        padding: 10px 6px;
+        padding: 10px;
+
+        .iconify {
+            margin: 0;
+        }
     }
 
     &__footer {

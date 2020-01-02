@@ -13,70 +13,71 @@ category: Templates
             <ul class="list">
                 <li class="list__item">
                     <a href="dashboard-dashboard.html" class="list__item-text">
-                        <i class="list__item-graphic mdi mdi-home"></i>Dashboard
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:home"></iconify-icon>Dashboard
                     </a>
                 </li>
                 <li class="list__item">
                     <a href="overview-overview.html" class="list__item-text">
-                        <i class="list__item-graphic mdi mdi-account-multiple"></i>Customers
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:account-multiple"></iconify-icon>Customers
                     </a>
                 </li>
                 <li class="list__item">
                     <a href="#" class="list__item-text">
-                        <i class="list__item-graphic mdi mdi-package"></i>Products
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:package"></iconify-icon>Products
                     </a>
                 </li>
                 <li class="list__item">
                     <a href="#" class="list__item-text">
-                        <i class="list__item-graphic mdi mdi-cart"></i>Orders
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:cart"></iconify-icon>Orders
                     </a>
                 </li>
                 <li class="list__divider"></li>
-                    <li class="list__item list__item--header">
-                        <span class="list__item-secondary-text">Help</span>
-                    </li>
-                    <li class="list__item">
-                        <a href="#" class="list__item-text">
-                            <i class="list__item-graphic mdi mdi-help-circle"></i>Help & Feedback
-                        </a>
-                    </li>
-                    <li class="list__item">
-                        <a href="#" class="list__item-text">
-                            <i class="list__item-graphic mdi mdi-information"></i>About
-                        </a>
-                    </li>
-                </ul>
-                <ul class="list list--bottom">
-                    <li class="list__item">
-                        <a href="#" class="list__item-text">
-                            <i class="list__item-graphic mdi mdi-settings"></i>Settings
-                        </a>
-                    </li>
-                </ul>
+                <li class="list__item list__item--header">
+                    <span class="list__item-secondary-text">Help</span>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:help-circle"></iconify-icon>Help & Feedback
+                    </a>
+                </li>
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:information"></iconify-icon>About
+                    </a>
+                </li>
+            </ul>
+            <ul class="list list--bottom">
+                <li class="list__item">
+                    <a href="#" class="list__item-text">
+                        <iconify-icon class="list__item-graphic" data-icon="mdi:settings"></iconify-icon>Settings
+                    </a>
+                </li>
+            </ul>
         </nav>
     </div>
 </aside>
 <main class="main">
     <header class="app-bar">
-        <button class=app-bar__nav-toggle><i class="mdi mdi-menu"></i></button>
-        <span class="app-bar__title">Customers</span>
-        <div class="app-bar__actions">
-            <a href="#" class="button button--icon button--text"><i class="mdi mdi-printer"></i></a>
-            <div class="menu">
-                <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><i class="mdi mdi-dots-vertical"></i></a>
-                <ul id="menu" class="menu__list">
-                    <li class="menu__list-item"><a href="#">Help</a></li>
-                    <li class="menu__list-item"><a href="#">About</a></li>
-                    <li class="menu__list-item"><a href="#">Settings</a></li>
-                    <li class="menu__list-divider"></li>
-                    <li class="menu__list-item"><a href="#">Logout</a></li>
-                </ul>
-            </div>
-        </div>
+        <button class=app-bar__nav-toggle><iconify-icon data-icon="mdi:menu"></iconify-icon></button>
+                <span class="app-bar__title">Customers</span>
+                <div class="app-bar__actions">
+                    <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:printer"></iconify-icon></a>
+                    <div class="menu">
+                        <a href="#" class="button button--icon button--text menu__toggle" data-menu="#menu"><iconify-icon data-icon="mdi:dots-vertical"></iconify-icon></a>
+                        <ul id="menu" class="menu__list">
+                            <li class="menu__list-item"><a href="#">Menu option 1</a></li>
+                            <li class="menu__list-item"><a href="#">Menu option 2</a></li>
+                            <li class="menu__list-item"><a href="#">Menu option 3</a></li>
+                            <li class="menu__list-divider"></li>
+                            <li class="menu__list-item"><a href="#">Menu option 4</a></li>
+                            <li class="menu__list-item"><a href="#">Menu option 5</a></li>
+                        </ul>
+                    </div>
+                </div>
     </header>
     <div class="main__content">
         <div class="grid margin-bottom--2x">
-            <table class="data-table" style="--cols:9">
+            <table class="data-table table--fullwidth" style="--cols:9">
                 <thead>
                     <tr class="data-table__head">
                         <th colspan="9">
@@ -85,7 +86,7 @@ category: Templates
                             <div class="data-table__selection">
                                 <span class="data-table__selected"><span class="data-table__selected-count"></span> selected</span>
                                 <div class="data-table__buttons">
-                                    <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a>
+                                    <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a>
                                 </div>
                             </div>
                         </th>
@@ -97,7 +98,7 @@ category: Templates
                                 <label for="cb_0" class="checkbox__input"></label>
                             </div>
                         </th>
-                        <th width="8%"><a href="#"><i class="mdi mdi-arrow-down"></i>ID</a></th>
+                        <th width="8%"><a href="#"><iconify-icon data-icon="mdi:arrow-down"></iconify-icon>ID</a></th>
                         <th><a href="#">Name</a></th>
                         <th><a href="#">Address</a></th>
                         <th><a href="#">Zipcode</a></th>
@@ -122,8 +123,8 @@ category: Templates
                     	<td>Aalst</td>
                     	<td>auctor.ullamcorper@loremloremluctus.ca</td>
                     	<td>(01794) 049314</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -139,8 +140,8 @@ category: Templates
                     	<td>Hannut</td>
                     	<td>eu.odio@Integer.com</td>
                     	<td>055 3958 0478</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -156,8 +157,8 @@ category: Templates
                     	<td>Stalhille</td>
                     	<td>urna.Nullam.lobortis@quispede.edu</td>
                     	<td>076 8926 4202</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -173,8 +174,8 @@ category: Templates
                     	<td>Vielsalm</td>
                     	<td>Integer.sem@maurisa.edu</td>
                     	<td>(01729) 005592</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -190,8 +191,8 @@ category: Templates
                     	<td>Sant'Angelo Limosano</td>
                     	<td>eget.metus@aliquet.ca</td>
                     	<td>076 2778 9444</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -207,8 +208,8 @@ category: Templates
                     	<td>Mjölby</td>
                     	<td>non@dolorQuisque.co.uk</td>
                     	<td>07105 825031</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -224,8 +225,8 @@ category: Templates
                     	<td>Morro Reatino</td>
                     	<td>non.egestas.a@eterosProin.edu</td>
                     	<td>076 3796 8358</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -241,8 +242,8 @@ category: Templates
                     	<td>Marchihue</td>
                     	<td>malesuada.Integer.id@sitametrisus.org</td>
                     	<td>(0111) 449 0387</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -258,8 +259,8 @@ category: Templates
                     	<td>Nives</td>
                     	<td>In.nec@placeratCrasdictum.com</td>
                     	<td>0800 1111</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -275,8 +276,8 @@ category: Templates
                     	<td>Bruckneudorf</td>
                     	<td>sagittis@apurus.co.uk</td>
                     	<td>(0131) 504 1652</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -292,8 +293,8 @@ category: Templates
                     	<td>Frankfort</td>
                     	<td>tellus.eu.augue@natoque.com</td>
                     	<td>07553 358259</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -309,8 +310,8 @@ category: Templates
                     	<td>Wörgl</td>
                     	<td>dui.nec@loremloremluctus.edu</td>
                     	<td>(016977) 9735</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -326,8 +327,8 @@ category: Templates
                     	<td>Nieuwenrode</td>
                     	<td>arcu.imperdiet.ullamcorper@dapibus.com</td>
                     	<td>(011086) 56554</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -343,8 +344,8 @@ category: Templates
                     	<td>Hengelo</td>
                     	<td>pede@sem.co.uk</td>
                     	<td>056 3240 8137</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -360,8 +361,8 @@ category: Templates
                     	<td>Pulderbos</td>
                     	<td>nascetur@facilisislorem.net</td>
                     	<td>0821 957 4703</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -377,8 +378,8 @@ category: Templates
                     	<td>Lo Barnechea</td>
                     	<td>risus.odio.auctor@ornareegestasligula.edu</td>
                     	<td>07623 926912</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -394,8 +395,8 @@ category: Templates
                     	<td>Haldia</td>
                     	<td>aliquam@tinciduntaliquam.co.uk</td>
                     	<td>07624 541197</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -411,8 +412,8 @@ category: Templates
                     	<td>La Roche-sur-Yon</td>
                     	<td>nonummy@pharetraNam.co.uk</td>
                     	<td>0903 136 8883</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -428,8 +429,8 @@ category: Templates
                     	<td>Bhilwara</td>
                     	<td>hendrerit@dolor.ca</td>
                     	<td>0970 510 3302</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -445,8 +446,8 @@ category: Templates
                     	<td>Castiglione Messer Raimondo</td>
                     	<td>ante.ipsum@liberomauris.com</td>
                     	<td>0800 1111</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -462,8 +463,8 @@ category: Templates
                     	<td>Antuco</td>
                     	<td>ipsum.Suspendisse@massaVestibulumaccumsan.org</td>
                     	<td>0500 472683</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -479,8 +480,8 @@ category: Templates
                     	<td>Lisciano Niccone</td>
                     	<td>ac@egestas.com</td>
                     	<td>(016977) 0379</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -496,8 +497,8 @@ category: Templates
                     	<td>San Cristóbal de la Laguna</td>
                     	<td>pede.nec.ante@parturient.com</td>
                     	<td>0800 639355</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -513,8 +514,8 @@ category: Templates
                     	<td>Ferlach</td>
                     	<td>nisl@neque.edu</td>
                     	<td>07900 610106</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -530,8 +531,8 @@ category: Templates
                     	<td>Wanzele</td>
                     	<td>in.hendrerit@Praesenteunulla.com</td>
                     	<td>(0171) 571 4950</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -547,8 +548,8 @@ category: Templates
                     	<td>Angers</td>
                     	<td>hendrerit.a@seddictum.co.uk</td>
                     	<td>076 6162 1346</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -564,8 +565,8 @@ category: Templates
                     	<td>Freiberg</td>
                     	<td>Nunc@Integer.ca</td>
                     	<td>0800 1111</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -581,8 +582,8 @@ category: Templates
                     	<td>Kielce</td>
                     	<td>tincidunt.congue@semperNam.com</td>
                     	<td>(029) 8777 8334</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -598,8 +599,8 @@ category: Templates
                     	<td>Neerheylissem</td>
                     	<td>nunc.sit@massaVestibulumaccumsan.org</td>
                     	<td>0398 154 5512</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                     <tr>
                         <td>
@@ -615,8 +616,8 @@ category: Templates
                     	<td>Aizwal</td>
                     	<td>ridiculus@natoquepenatibuset.co.uk</td>
                     	<td>076 2897 0536</td>
-                    	<td><a href="#" class="button button--icon button--text"><i class="mdi mdi-pencil"></i></a>
-                            <a href="#" class="button button--icon button--text"><i class="mdi mdi-delete"></i></a></td>
+                    	<td><a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:pencil"></iconify-icon></a>
+                            <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></a></td>
                     </tr>
                 </tbody>
                 <tfoot>
@@ -691,7 +692,7 @@ category: Templates
     </div>
 </main>
 <div class="fab" data-tippy-content="Add customer" tabindex="1">
-    <a href="single-add.html" class="fab__button"><i class="mdi mdi-plus"></i></a>
+    <a href="single-add.html" class="fab__button"><iconify-icon data-icon="mdi:plus"></iconify-icon></a>
 </div>
 ```
 

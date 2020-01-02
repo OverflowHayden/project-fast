@@ -11,23 +11,23 @@ category: Atoms
 
 ### Icon buttons
 ```iconbuttons.html
-<button class="button"><i class="mdi mdi-download"></i>Button</button>
-<button class="button button--alt"><i class="mdi mdi-download"></i>Button alt</button>
-<button class="button button--text"><i class="mdi mdi-download"></i>Text</button>
+<button class="button"><iconify-icon data-icon="mdi:cloud-download"></iconify-icon>Button</button>
+<button class="button button--alt"><iconify-icon data-icon="mdi:cloud-download"></iconify-icon>Button alt</button>
+<button class="button button--text"><iconify-icon data-icon="mdi:cloud-download"></iconify-icon>Text</button>
 ```
 
 ### Compact buttons
 ```compact.html
-<button class="button button--compact"><i class="mdi mdi-download"></i>Button</button>
+<button class="button button--compact"><iconify-icon data-icon="mdi:cloud-download"></iconify-icon>Button</button>
 <button class="button button--compact button--alt">Button alt</button>
 <button class="button button--compact button--text">Text</button>
 ```
 
 ### Icon
 ```icon.html
-<button class="button button--icon"><i class="mdi mdi-eye"></i></button>
-<button class="button button--icon button--alt"><i class="mdi mdi-pencil"></i></button>
-<button class="button button--icon button--text"><i class="mdi mdi-delete"></i></button>
+<button class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></button>
+<button class="button button--icon button--alt"><iconify-icon data-icon="mdi:pencil"></iconify-icon></button>
+<button class="button button--icon button--text"><iconify-icon data-icon="mdi:delete"></iconify-icon></button>
 ```
 
 #### Variables
