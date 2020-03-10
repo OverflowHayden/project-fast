@@ -1,6 +1,6 @@
 const ConcatPlugin = require('webpack-concat-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionPlugin = require('compression-webpack-plugin');
@@ -26,6 +26,22 @@ module.exports = [
             hotUpdateChunkFilename: 'hot/hot-update.js',
             hotUpdateMainFilename: 'hot/hot-update.json'
         },
+
+        optimization: {
+            minimize: true,
+            minimizer: [
+                new TerserPlugin({
+                    terserOptions: {
+                        output: {
+                            comments: false,
+                        },
+                    },
+                    test: /\.js(\?.*)?$/i,
+                    extractComments: false,
+                    sourceMap: false,
+                }),
+            ],
+        },
         
         plugins: [
             //new UglifyJSPlugin(),
@@ -50,8 +66,19 @@ module.exports = [
         },
         devtool: "source-map",
         optimization: {
+            minimize: true,
             minimizer: [
-                new OptimizeCSSAssetsPlugin({})
+                new OptimizeCSSAssetsPlugin({}),
+                new TerserPlugin({
+                    terserOptions: {
+                        output: {
+                            comments: false,
+                        },
+                    },
+                    test: /\.js(\?.*)?$/i,
+                    extractComments: false,
+                    sourceMap: false,
+                }),
             ],
         },
         module: {
@@ -164,10 +191,6 @@ module.exports = [
             new MiniCssExtractPlugin({// define where to save the file
                 filename: 'src/assets/css/style.css',
                 allChunks: true,
-            }),
-            new UglifyJSPlugin({
-                test: /\.js($|\?)/i,
-                parallel: true
             }),
             new CompressionPlugin({
                 filename: "[path].gz[query]",

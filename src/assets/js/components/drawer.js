@@ -83,18 +83,21 @@ export default function fastDrawer () {
         document.querySelectorAll('.drawer__content .list__item').forEach((item) => {
             if(item.querySelector('.list') !== null) {
                 const listToggle = document.createElement('i');
+
                 listToggle.setAttribute('class', 'iconify list__item-meta');
                 listToggle.setAttribute('data-icon', 'mdi:chevron-down');
                 item.querySelector('.list__item-text').appendChild(listToggle);
-                console.log(item.querySelector('.list__item-text .list__item-meta'));
+
                 item.querySelector('.list__item-text').addEventListener('click', function(e) {
                     e.preventDefault();
-                    console.log(item);
-                    if(this.classList.contains('list--open')) {
-                        this.classList.remove('list--open');
+
+                    const listItem = this.parentNode;
+
+                    if(listItem.classList.contains('list--open')) {
+                        listItem.classList.remove('list--open');
                     }
                     else {
-                        this.classList.add('list--open');
+                        listItem.classList.add('list--open');
                     }
                 });
             }

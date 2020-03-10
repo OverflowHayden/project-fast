@@ -58,6 +58,7 @@
 
             .drawer & {
                 display: none;
+                overflow: hidden;
             }
 
             .drawer & #{$self}__item-text {
@@ -65,8 +66,17 @@
             }
         }
 
-        .drawer & #{$self}--open + #{$self} {
-            display: block;
+        .drawer &#{$self}--open {
+            border-top: 1px solid $color-drawer-border;
+            border-bottom: 1px solid $color-drawer-border;
+
+            #{$self}__item-meta path {
+                transform: rotate(180deg);
+            }
+
+            #{$self} {
+                display: block;
+            }
         }
 
         & a#{$self}__item-text {
@@ -137,6 +147,11 @@
             color: rgba($color-base-black, .38);
             font-size: 2.4rem;
             cursor: pointer;
+
+            path {
+                transition: transform .4s ease;
+                transform-origin: center;
+            }
         }
     }
 
