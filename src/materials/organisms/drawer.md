@@ -32,6 +32,23 @@ The header image can be changed with the SASS variable: `$drawer-image`. If you 
                     <a href="#" class="list__item-text">
                         <iconify-icon class="list__item-graphic" data-icon="mdi:package"></iconify-icon>Products
                     </a>
+                    <ul class="list">
+                        <li class="list__item">
+                            <a href="#" class="list__item-text">
+                                Product 1
+                            </a>
+                        </li>
+                        <li class="list__item">
+                            <a href="#" class="list__item-text">
+                                Product 2
+                            </a>
+                        </li>
+                        <li class="list__item">
+                            <a href="#" class="list__item-text">
+                                Product 3
+                            </a>
+                        </li>
+                    </ul>
                 </li>
                 <li class="list__item">
                     <a href="#" class="list__item-text">

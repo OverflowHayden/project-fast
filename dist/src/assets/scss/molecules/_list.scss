@@ -55,11 +55,25 @@
             #{$self}__item-text {
                 padding-left: 32px;
             }
+
+            .drawer & {
+                display: none;
+            }
+
+            .drawer & #{$self}__item-text {
+                padding-left: 72px;
+            }
+        }
+
+        .drawer & #{$self}--open + #{$self} {
+            display: block;
+        }
+
+        & a#{$self}__item-text {
+            @include ripple;
         }
 
         &-text {
-            @include ripple;
-
             display: inline-flex;
             color: inherit;
             flex-wrap: wrap;
