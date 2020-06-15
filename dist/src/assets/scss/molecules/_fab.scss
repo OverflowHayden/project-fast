@@ -32,7 +32,7 @@ $fab-size: 56px !default;
             background: $color-fab;
             border-radius: 50%;
             cursor: pointer;
-            content: url(/src/assets/img/dots-vertical.svg);
+            content: url($fab-menu-icon);
             color: $color-fab-text;
             display: flex;
             justify-content: center;

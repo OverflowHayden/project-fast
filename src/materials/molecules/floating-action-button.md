@@ -45,4 +45,5 @@ Fast.Fab();
 ```
 $color-fab:                       $color-primary !default;
 $color-fab-text:                  $color-base-white !default;
+$fab-menu-icon:                   '../img/dots-vertical.svg' !default;
 ```
