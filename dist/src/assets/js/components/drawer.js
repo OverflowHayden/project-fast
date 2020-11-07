@@ -81,7 +81,7 @@ export default function fastDrawer () {
     /* Drawer submenu */
     if(document.querySelector('.drawer__content > .list')) {
         document.querySelectorAll('.drawer__content .list__item').forEach((item) => {
-            if(item.querySelector('.list') !== null) {
+            if(item.querySelector('.list') !== null && !item.querySelector('.list__item-text > .list__item-meta')) {
                 const listToggle = document.createElement('i');
 
                 listToggle.setAttribute('class', 'iconify list__item-meta');
