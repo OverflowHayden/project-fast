@@ -2,16 +2,16 @@
     @include ripple;
 
     background: $color-button;
-    border: 2px solid transparent;
+    border: .2rem solid transparent;
     border-radius: $border-radius;
-    box-shadow: 0 2px 5px 0 rgba($color-base-black, .26);
+    box-shadow: 0 .2rem .5rem 0 rgba($color-base-black, .26);
     color: $color-button-text;
     display: inline-block;
     font-size: 1.6rem;
     font-weight: 500;
-    line-height: 1.6rem;
-    letter-spacing: .125rem;
-    padding: 12px 22px 11px;
+    line-height: 1;
+    letter-spacing: .075em;
+    padding: 1.2rem 2.2rem 1.1rem;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -21,8 +21,8 @@
     vertical-align: middle;
 
     .fa, .mdi, .iconify {
-        margin-left: -4px;
-        margin-right: 14px;
+        margin-left: -.4rem;
+        margin-right: 1.4rem;
     }
 
     &:hover {
@@ -32,7 +32,7 @@
 
     &--alt {
         background: none;
-        border: 2px solid $color-button;
+        border: .2rem solid $color-button;
         box-shadow: none;
         color: $color-button;
 
@@ -44,7 +44,7 @@
 
     &--text {
         background: none;
-        border: 2px solid transparent;
+        border: .2rem solid transparent;
         box-shadow: none;
         color: $color-button;
 
@@ -55,12 +55,12 @@
     }
 
     &--compact {
-        padding: 8px 16px 7px;
+        padding: .8rem 1.6rem .7rem;
         font-size: 80%;
     }
 
     &--icon {
-        padding: 8px;
+        padding: .8rem;
 
         .fa, .mdi, .iconify {
             margin: 0;
