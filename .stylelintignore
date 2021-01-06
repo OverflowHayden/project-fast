@@ -1,2 +1,4 @@
 src/assets/scss/vendor/_reboot.scss
+src/assets/css/style.css
 dist/assets/scss/vendor/_reboot.scss
+dist/**/*.css

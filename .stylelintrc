@@ -20,7 +20,7 @@
 		  "except": ["first-nested"],
 		  "ignore": ["after-comment", "inside-block"]
 		} ],
-		"unit-whitelist": ["em", "rem", "%", "px", "s", "vh", "vw", "deg"],
+		"unit-allowed-list": ["em", "rem", "%", "px", "s", "vh", "vw", "deg"],
 		"plugin/selector-bem-pattern": {
 			"componentName": "[A-Z]+",
 			"componentSelectors": {

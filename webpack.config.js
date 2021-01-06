@@ -152,7 +152,7 @@ module.exports = [
                 filename: 'src/assets/css/style.css',
             }),
             new CompressionPlugin({
-                filename: "[path].gz[query]",
+                filename: "[path][base].gz[query]",
                 algorithm: "gzip",
                 test: /\.js$|\.css$/,
                 threshold: 10240,
