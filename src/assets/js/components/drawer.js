@@ -35,7 +35,7 @@ export default function fastDrawer () {
             }
         });
 
-        document.querySelectorAll('.drawer a').forEach(function (item) {
+        document.querySelectorAll('.drawer a:not([href="#"])').forEach(function (item) {
             item.addEventListener('click', function () {
                 drawer.closeDrawer();
             })

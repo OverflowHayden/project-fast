@@ -38,7 +38,7 @@ export default function fastMenu() {
 
     function closeMenus(menuLists) {
         for (let i = 0, menuList; menuList = menuLists[i]; i++) {
-            if (menu !== null) {
+            if (menuList !== null) {
                 if (menuList.classList.contains('menu--open')) {
                     menuList.classList.remove('menu--open');
                 }

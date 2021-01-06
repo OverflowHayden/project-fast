@@ -6,7 +6,7 @@ category: Organisms
 ### Required
 ```app-bar.js
 import Fast from 'project-fast';
-Fast.AppBar();
+Fast.Appbar();
 ```
 
 ### Default

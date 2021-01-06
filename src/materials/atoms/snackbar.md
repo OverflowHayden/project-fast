@@ -6,7 +6,7 @@ category: Atoms
 ### Required
 ```snackbar.js
 import Fast from 'project-fast';
-Fast.Snachbar();
+Fast.Snackbar();
 ```
 
 Vanilla JS
