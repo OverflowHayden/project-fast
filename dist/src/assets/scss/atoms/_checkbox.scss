@@ -1,26 +1,62 @@
 .checkbox {
     $self: &;
-    margin: 0 0 15px;
+    margin: 0 0 1.5rem;
 
     &::selection {
         background: transparent;
     }
 
+    &__label {
+        cursor: pointer;
+        margin-left: 1.2rem;
+        margin-bottom: 0;
+
+        &::selection {
+            background: transparent;
+        }
+    }
+
     &__input {
+        appearance: none;
         cursor: pointer;
         display: inline-block;
         vertical-align: top;
         margin: 0;
-        width: 20px;
-        height: 20px;
+        width: 1.25em;
+        height: 1.25em;
         border: 2px solid $color-checkbox-inactive;
-        border-radius: 2px;
+        border-radius: .2rem;
         text-indent: -999em;
         position: relative;
-        transition: border 0.2s ease, background 0.2s ease;
+        transition: border .2s ease, background .2s ease;
+
+        &:checked {
+            background: $color-checkbox-active;
+            border-color: $color-checkbox-active;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 6px;
+                left: 1px;
+                border-right: 2px solid transparent;
+                border-bottom: 2px solid transparent;
+                transform: rotate(45deg);
+                transform-origin: 0 100%;
+                animation: checkbox-check 0.125s 0.25s cubic-bezier(.4,.0,.23,1) forwards;
+            }
+
+            &:after {
+                background-image: radial-gradient(circle, $color-checkbox-active 20%, transparent 20.01%);
+            }
+
+            &:hover {
+                background: darken($color-checkbox-active, 4%);
+            }
+        }
 
         &:hover {
-            background: rgba($color-base-black, 0.06);
+            background: rgba($color-base-black, .06);
         }
 
         &:after {
@@ -50,44 +86,8 @@
         &::selection {
             background: transparent;
         }
-    }
 
-    &__label {
-        cursor: pointer;
-        margin-left: 12px;
-        margin-bottom: 0;
-
-        &::selection {
-            background: transparent;
-        }
-    }
-
-    input[type="checkbox"] {
-        visibility: hidden;
-        position: absolute;
-
-        &:checked + #{$self}__input {
-            background: $color-checkbox-active;
-            border-color: $color-checkbox-active;
-
-            &:before {
-                content: "";
-                position: absolute;
-                top: 6px;
-                left: 1px;
-                border-right: 2px solid transparent;
-                border-bottom: 2px solid transparent;
-                transform: rotate(45deg);
-                transform-origin: 0 100%;
-                animation: checkbox-check 0.125s 0.25s cubic-bezier(.4,.0,.23,1) forwards;
-            }
-
-            &:after {
-                background-image: radial-gradient(circle, $color-checkbox-active 20%, transparent 20.01%);
-            }
-        }
-
-        &:indeterminate + #{$self}__input {
+        &:indeterminate {
             background: $color-checkbox-active;
             border-color: $color-checkbox-active;
 
@@ -105,7 +105,7 @@
             }
         }
 
-        &:disabled + #{$self}__input {
+        &:disabled {
             border-color: $color-checkbox-inactive;
             opacity: 0.7;
 
@@ -114,7 +114,7 @@
             }
         }
 
-        &:disabled:checked + #{$self}__input {
+        &:disabled:checked {
             background: $color-checkbox-inactive;
         }
     }

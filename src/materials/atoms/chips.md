@@ -35,15 +35,15 @@ category: Atoms
 ```chips-filter.html
 <div class="chip">
     <span class="chip__text">Chip</span>
-    <a href="#" class="chip__filter"></a>
+    <a href="#" class="chip__filter"><iconify-icon data-icon="mdi:close-circle"></iconify-icon></a>
 </div>
 <div class="chip chip--primary">
     <span class="chip__text">Chip primary</span>
-    <a href="#" class="chip__filter"></a>
+    <a href="#" class="chip__filter"><iconify-icon data-icon="mdi:close-circle"></iconify-icon></a>
 </div>
 <div class="chip chip--alt">
     <span class="chip__text">Chip alt</span>
-    <a href="#" class="chip__filter"></a>
+    <a href="#" class="chip__filter"><iconify-icon data-icon="mdi:close-circle"></iconify-icon></a>
 </div>
 ```
 
@@ -51,5 +51,5 @@ category: Atoms
 ```
 $color-chip:                      #e0e0e0 !default;
 $color-chip-text:                 rgba($color-base-black, .87) !default;
-$chips-border-radius:             1.6rem !default;
+$chips-border-radius:             1.2em !default;
 ```
