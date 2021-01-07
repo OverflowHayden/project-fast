@@ -1,25 +1,25 @@
 .pagination-list {
-    display: inline-block;
+    display: inline-flex;
     list-style: none;
     margin: 0;
     padding: 0;
     vertical-align: middle;
-    font-size: 0;
+    font-size: 1.4rem;
 
     &__item {
         display: inline-block;
-        margin: 0 5px;
+        margin: 0 .5rem;
         vertical-align: middle;
 
         a {
-            border-radius: 3px;
+            border-radius: .225em;
             color: inherit;
             display: block;
-            font-size: 1.4rem;
+            font-size: inherit;
             font-weight: 600;
-            line-height: 3.6rem;
-            min-width: 50px;
-            height: 36px;
+            line-height: 2.575em;
+            min-width: 5rem;
+            height: 3.6rem;
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -59,7 +59,7 @@
         &--active a {
             background: $color-pagination;
             color: $color-pagination-text;
-            box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .2), 0 .2rem .2rem 0 rgba(0, 0, 0, .14), 0 .3rem .1rem -.2rem rgba(0, 0, 0, .12);
 
             &:hover {
                 background: $color-pagination;
@@ -76,18 +76,18 @@
 
         display: inline-block;
         font-size: 1.4rem;
-        color: rgba($color-table-text, 0.54);
+        color: rgba($color-pagination-nav-text, .54);
         vertical-align: middle;
         box-shadow: unset;
 
         &--disabled {
             background: none;
-            color: rgba($color-table-text, 0.32);
+            color: rgba($color-pagination-nav-text, .32);
             cursor: not-allowed;
 
             &:hover {
                 background: none;
-                color: rgba($color-table-text, 0.32);
+                color: rgba($color-pagination-nav-text, .32);
                 text-decoration: none;
             }
         }

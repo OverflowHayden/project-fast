@@ -19,4 +19,5 @@ category: Atoms
 ```
 $color-pagination:                $color-primary !default;
 $color-pagination-text:           $color-base-white !default;
+$color-pagination-nav-text:       $color-base-black !default;
 ```

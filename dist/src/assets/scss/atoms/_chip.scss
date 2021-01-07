@@ -7,10 +7,11 @@
     border-radius: $chips-border-radius;
     cursor: pointer;
     display: inline-flex;
-    margin: 4px;
-    padding: .7rem 1.2rem;
-    will-change: transform,opacity;
-    min-height: 32px;
+    font-size: 1.4rem;
+    line-height: 1.4;
+    margin: .4rem;
+    padding: .44em .75em;
+    min-height: 2em;
     text-decoration: none;
     transition: background .25s ease;
 
@@ -44,21 +45,18 @@
 
     &__text {
         color: $color-chip-text;
-        font-size: 1.4rem;
-        line-height: 1.4em;
         font-weight: 400;
-        letter-spacing: .025rem;
+        letter-spacing: .0015em;
     }
 
     &__icon {
         color: $color-chip-text;
         display: inline-block;
         vertical-align: middle;
-        margin-right: .4rem;
-        line-height: 1.1;
+        margin-right: .25em;
 
         .mdi, .iconify {
-            line-height: 1.4rem;
+            line-height: 1;
         }
     }
 
@@ -66,7 +64,7 @@
         color: $color-chip-text;
         display: inline-block;
         vertical-align: middle;
-        margin-left: .4rem;
+        margin-left: .25em;
         line-height: 1.25;
         opacity: .44;
         transition: opacity .25s ease;
@@ -74,11 +72,6 @@
         &:hover {
             color: $color-chip-text;
             opacity: 1;
-        }
-
-        &:before {
-            font: normal normal normal 1.6rem/1 "Material Design Icons";
-            content: mdi('close-circle');
         }
     }
 }
