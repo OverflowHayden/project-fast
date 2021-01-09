@@ -5,19 +5,16 @@ category: Atoms
 
 ```radio.html
 <div class="radio">
-    <input id="rb" type="radio" name="radio" />
-    <label for="rb" class="radio__input"></label>
+    <input id="rb" type="radio" name="radio" class="radio__input" />
     <label for="rb" class="radio__label">Radio button</label>
 </div>
 <div class="radio">
-    <input id="rb2" type="radio" name="radio" />
-    <label for="rb2" class="radio__input"></label>
+    <input id="rb2" type="radio" name="radio" class="radio__input" />
     <label for="rb2" class="radio__label">Radio button</label>
 </div>
 <div class="radio">
-    <input id="rb3" type="radio" name="radio" disabled checked />
-    <label for="rb3" class="radio__input"></label>
-    <label for="rb3" class="radio__label">Radio button </label>
+    <input id="rb3" type="radio" name="radio" class="radio__input" disabled checked />
+    <label for="rb3" class="radio__label">Radio button</label>
 </div>
 ```
 
