@@ -1,3 +1,8 @@
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
+@use 'button';
+
 .pagination-list {
     display: inline-flex;
     list-style: none;
@@ -26,8 +31,8 @@
             transition: background 0.2s ease;
 
             &:hover {
-                background: darken($color-base-white, 4%);
-                color: $color-button;
+                background: darken(variables.$color-base-white, 4%);
+                color: map.get($fast-button, "background");
                 text-decoration: none;
             }
 
@@ -40,13 +45,13 @@
                 top: 0;
                 left: 0;
                 pointer-events: none;
-                background-image: radial-gradient(circle, $color-base-black 10%, transparent 10.01%);
+                background-image: radial-gradient(circle, variables.$color-base-black 10%, transparent 10.01%);
                 background-repeat: no-repeat;
                 background-position: 50%;
                 transform: scale(10, 10);
                 opacity: 0;
                 transition: transform .5s, opacity 1s;
-                background-color: $color-base-white;
+                background-color: variables.$color-base-white;
             }
 
             &:active:after {
@@ -57,13 +62,13 @@
         }
 
         &--active a {
-            background: $color-pagination;
-            color: $color-pagination-text;
+            background: variables.$color-pagination;
+            color: variables.$color-pagination-text;
             box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .2), 0 .2rem .2rem 0 rgba(0, 0, 0, .14), 0 .3rem .1rem -.2rem rgba(0, 0, 0, .12);
 
             &:hover {
-                background: $color-pagination;
-                color: $color-pagination-text;
+                background: variables.$color-pagination;
+                color: variables.$color-pagination-text;
                 box-shadow: none;
             }
         }
@@ -76,18 +81,18 @@
 
         display: inline-block;
         font-size: 1.4rem;
-        color: rgba($color-pagination-nav-text, .54);
+        color: rgba(variables.$color-pagination-nav-text, .54);
         vertical-align: middle;
         box-shadow: unset;
 
         &--disabled {
             background: none;
-            color: rgba($color-pagination-nav-text, .32);
+            color: rgba(variables.$color-pagination-nav-text, .32);
             cursor: not-allowed;
 
             &:hover {
                 background: none;
-                color: rgba($color-pagination-nav-text, .32);
+                color: rgba(variables.$color-pagination-nav-text, .32);
                 text-decoration: none;
             }
         }
