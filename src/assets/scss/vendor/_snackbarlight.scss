@@ -25,29 +25,15 @@
     opacity: 1;
 }
 
-@media (max-width: 767px) {
+@media (max-width: $screen-sm-max) {
     #snackbar-container {
-        left: 0;
-        right: 0;
-        width: 100%;
+        left: 1.6rem;
+        right: 1.6rem;
+        width: auto;
+        transform: none;
     }
     #snackbar-container .snackbar {
         min-width: 100%;
-    }
-}
-
-@media (max-width: 767px) {
-    #snackbar-container {
-        left: 0;
-        right: 0;
-        width: 100%;
-    }
-    #snackbar-container .snackbar {
-        min-width: 100%;
-    }
-    #snackbar-container [class="snackbar active"] {
-        border-radius: 0;
-        margin-bottom: 0;
     }
 }
 
