@@ -1,3 +1,6 @@
+@use '../setup/variables' as *;
+@use 'grid' as *;
+
 .card {
     @extend .col__md--4;
     $self: &;

@@ -1,3 +1,5 @@
+@use '../setup/variables' as *;
+
 .tippy-tooltip.light-theme {
     background: $color-base-white;
     border: none;

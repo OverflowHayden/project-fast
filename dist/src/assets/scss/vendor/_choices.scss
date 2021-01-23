@@ -1,4 +1,5 @@
-@import '~choices.js/src/styles/choices';
+@use '~choices.js/src/styles/choices';
+@use '../setup/variables' as *;
 
 .choices {
     $self: &;

@@ -1,3 +1,6 @@
+@use '../setup/variables' as *;
+@use '../setup/mixins' as *;
+
 .field {
     $self: &;
     $fields: (".text-field", ".password-field", ".select-field", ".textarea-field", ".number-field");

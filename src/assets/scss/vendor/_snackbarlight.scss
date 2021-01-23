@@ -1,3 +1,5 @@
+@use '../setup/variables' as *;
+
 #snackbar-container {
     position: fixed;
     margin: 0 auto;

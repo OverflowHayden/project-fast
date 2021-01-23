@@ -1,3 +1,5 @@
+@use '../setup/variables' as *;
+
 .login {
     background: url($login-image) no-repeat center center / cover;
     display: flex;

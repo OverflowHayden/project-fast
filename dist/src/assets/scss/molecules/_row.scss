@@ -1,4 +1,8 @@
+@use '../setup/variables';
+@use '../vendor/bourbon' as *;
+@use '../vendor/neat' as *;
+
 .row {
     @include clearfix;
-    @include grid-collapse($neat-grid);
+    @include grid-collapse(variables.$neat-grid);
 }

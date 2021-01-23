@@ -1,3 +1,8 @@
+@use '../setup/variables';
+@use '../setup/mixins' as *;
+@use '../vendor/bourbon' as *;
+@use '../vendor/neat' as *;
+
 .grid {
     @include grid-container;
     //@include grid-collapse;
@@ -12,46 +17,46 @@
 
     .col {
         &__lg {
-            @include twelve-columns($neat-grid, $screen-lg-min);
+            @include twelve-columns(variables.$neat-grid, variables.$screen-lg-min);
         }
         &__md {
-            @include twelve-columns($neat-grid, $screen-md-min);
+            @include twelve-columns(variables.$neat-grid, variables.$screen-md-min);
         }
         &__sm {
-            @include twelve-columns($neat-grid, $screen-sm-min);
+            @include twelve-columns(variables.$neat-grid, variables.$screen-sm-min);
         }
         &__xs {
-            @include twelve-columns($neat-grid, $screen-xs);
+            @include twelve-columns(variables.$neat-grid, variables.$screen-xs);
         }
     }
 
     .push {
         &__lg {
-            @include twelve-push($neat-grid, $screen-lg-min);
+            @include twelve-push(variables.$neat-grid, variables.$screen-lg-min);
         }
         &__md {
-            @include twelve-push($neat-grid, $screen-md-min);
+            @include twelve-push(variables.$neat-grid, variables.$screen-md-min);
         }
         &__sm {
-            @include twelve-push($neat-grid, $screen-sm-min);
+            @include twelve-push(variables.$neat-grid, variables.$screen-sm-min);
         }
         &__xs {
-            @include twelve-push($neat-grid, $screen-xs);
+            @include twelve-push(variables.$neat-grid, variables.$screen-xs);
         }
     }
 
     .shift {
         &__lg {
-            @include twelve-shift($neat-grid, $screen-lg-min);
+            @include twelve-shift(variables.$neat-grid, variables.$screen-lg-min);
         }
         &__md {
-            @include twelve-shift($neat-grid, $screen-md-min);
+            @include twelve-shift(variables.$neat-grid, variables.$screen-md-min);
         }
         &__sm {
-            @include twelve-shift($neat-grid, $screen-sm-min);
+            @include twelve-shift(variables.$neat-grid, variables.$screen-sm-min);
         }
         &__xs {
-            @include twelve-shift($neat-grid, $screen-xs);
+            @include twelve-shift(variables.$neat-grid, variables.$screen-xs);
         }
     }
 }

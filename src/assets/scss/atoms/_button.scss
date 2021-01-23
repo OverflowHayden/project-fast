@@ -1,17 +1,5 @@
-@use '../setup/variables';
-@import '../setup/mixins';
-
-$fast-button: (
-    "background": variables.$color-primary,
-    "border-radius": .1875em,
-    "color": variables.$color-base-white,
-    "font-size": 1.6rem,
-    "padding": .75em 1.375em .6875em,
-    "compact": (
-        "font-size": 80%,
-        "padding": .5em 1em .4375em,
-    )
-) !default;
+@use '../setup/variables' as *;
+@use '../setup/mixins' as *;
 
 .button {
     @include ripple;

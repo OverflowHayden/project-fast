@@ -1,3 +1,6 @@
+@use '../setup/variables' as *;
+@use '../setup/mixins' as *;
+
 .app-bar {
     $self: &;
     background: $color-app-bar;

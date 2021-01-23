@@ -1,3 +1,7 @@
+@use '../setup/variables' as *;
+@use '../setup/mixins' as *;
+@use '../vendor/bourbon' as *;
+
 .upload-field {
     @include clearfix;
 

@@ -1,3 +1,7 @@
+@use '../setup/variables' as *;
+@use '../vendor/bourbon' as *;
+@use '../vendor/neat' as *;
+
 .container {
     @include grid-container;
     max-width: $screen-xl;
