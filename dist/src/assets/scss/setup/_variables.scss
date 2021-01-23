@@ -64,7 +64,7 @@ $login-image:                     "https://picsum.photos/1920/1080/?blur&random"
 $margin-size:                     30px !default;
 $fab-menu-icon:                   '../img/dots-vertical.svg' !default;
 
-$fast-button: (
+$button: (
         "background": $color-primary,
         "border-radius": .1875em,
         "color": $color-base-white,

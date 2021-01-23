@@ -1,23 +1,22 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use '../setup/mixins';
 
 .button {
-    @include ripple;
-    @include button;
+    @include mixins.ripple;
+    @include mixins.button;
 
     &--alt {
-        @include button--alt;
+        @include mixins.button--alt;
     }
 
     &--text {
-        @include button--text
+        @include mixins.button--text
     }
 
     &--compact {
-        @include button--compact;
+        @include mixins.button--compact;
     }
 
     &--icon {
-        @include button--icon;
+        @include mixins.button--icon;
     }
 }

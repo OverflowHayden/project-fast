@@ -32,6 +32,17 @@ category: Atoms
 
 #### Variables
 ```
-$color-button:                    $color-primary !default;
-$color-button-text:               $color-base-white !default;
+@use "setup/variables" with (
+    $button: (
+        "background": red,
+        "border-radius": .1875em,
+        "color": white,
+        "font-size": 1.6rem,
+        "padding": .75em 1.375em .6875em,
+        "compact": (
+            "font-size": 80%,
+            "padding": .5em 1em .4375em,
+        )
+    )
+);
 ```

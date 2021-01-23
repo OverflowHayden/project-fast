@@ -1,6 +1,6 @@
 @use 'sass:map';
 @use 'sass:meta';
-@use 'variables' as *;
+@use 'variables';
 @use '../vendor/bourbon' as *;
 @use '../vendor/neat' as *;
 
@@ -54,13 +54,13 @@
         top: 0;
         left: 0;
         pointer-events: none;
-        background-image: radial-gradient(circle, $color-base-black 10%, transparent 10.01%);
+        background-image: radial-gradient(circle, variables.$color-base-black 10%, transparent 10.01%);
         background-repeat: no-repeat;
         background-position: 50%;
         transform: scale(10, 10);
         opacity: 0;
         transition: transform .5s, opacity 1s;
-        background-color: $color-base-white;
+        background-color: variables.$color-base-white;
     }
 
     &:active:after {
@@ -81,7 +81,7 @@
     margin-bottom: 1.5rem;
 
     &__label {
-        color: $color-text-field-label;
+        color: variables.$color-text-field-label;
         line-height: 1;
         margin: 0;
         cursor: text;
@@ -97,7 +97,7 @@
         display: block;
         background: transparent;
         border: none;
-        border-bottom: 1px solid $color-text-field-inactive;
+        border-bottom: 1px solid variables.$color-text-field-inactive;
         border-radius: 0;
         width: 100%;
         height: 2em;
@@ -124,25 +124,25 @@
         }
 
         &:hover {
-            border-bottom: .1rem solid $color-text-field-inactive;
-            box-shadow: inset 0 -.1rem 0 0 $color-text-field-inactive;
+            border-bottom: .1rem solid variables.$color-text-field-inactive;
+            box-shadow: inset 0 -.1rem 0 0 variables.$color-text-field-inactive;
         }
 
         &:focus {
-            border-bottom: .1rem solid $color-text-field-active;
-            box-shadow: inset 0 -.1rem 0 0 $color-text-field-active;
+            border-bottom: .1rem solid variables.$color-text-field-active;
+            box-shadow: inset 0 -.1rem 0 0 variables.$color-text-field-active;
             outline: none;
 
             &::placeholder {
-                color: $color-text-field-inactive;
+                color: variables.$color-text-field-inactive;
             }
 
             &:-ms-input-placeholder {
-                color: $color-text-field-inactive;
+                color: variables.$color-text-field-inactive;
             }
 
             &::-webkit-input-placeholder {
-                color: $color-text-field-inactive;
+                color: variables.$color-text-field-inactive;
             }
 
             + #{$self}__label {
@@ -163,17 +163,17 @@
 @mixin button() {
     @include ripple;
 
-    background: map.get($fast-button, "background");
+    background: map.get(variables.$button, "background");
     border: .2rem solid transparent;
-    border-radius: map.get($fast-button, "border-radius");
-    box-shadow: 0 .2rem .5rem 0 rgba($color-base-black, .26);
-    color: map.get($fast-button, "color");
+    border-radius: map.get(variables.$button, "border-radius");
+    box-shadow: 0 .2rem .5rem 0 rgba(variables.$color-base-black, .26);
+    color: map.get(variables.$button, "color");
     display: inline-block;
-    font-size: map.get($fast-button, "font-size");
+    font-size: map.get(variables.$button, "font-size");
     font-weight: 500;
     line-height: 1;
     letter-spacing: .075em;
-    padding: map.get($fast-button, "padding");
+    padding: map.get(variables.$button, "padding");
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -188,20 +188,20 @@
     }
 
     &:hover {
-        background: darken(map.get($fast-button, "background"), 4%);
-        color: map.get($fast-button, "color");
+        background: darken(map.get(variables.$button, "background"), 4%);
+        color: map.get(variables.$button, "color");
     }
 }
 
 @mixin button--alt() {
     background: none;
-    border: .2rem solid map.get($fast-button, "background");
+    border: .2rem solid map.get(variables.$button, "background");
     box-shadow: none;
-    color: map.get($fast-button, "background");
+    color: map.get(variables.$button, "background");
 
     &:hover {
-        background: darken($color-base-white, 4%);
-        color: map.get($fast-button, "background");
+        background: darken(variables.$color-base-white, 4%);
+        color: map.get(variables.$button, "background");
     }
 }
 
@@ -209,17 +209,17 @@
     background: none;
     border: .2rem solid transparent;
     box-shadow: none;
-    color: map.get($fast-button, "background");
+    color: map.get(variables.$button, "background");
 
     &:hover {
-        background: darken($color-base-white, 4%);
-        color: map.get($fast-button, "background");
+        background: darken(variables.$color-base-white, 4%);
+        color: map.get(variables.$button, "background");
     }
 }
 
 @mixin button--compact() {
-    padding: map.get($fast-button, "compact", "padding");
-    font-size: map.get($fast-button, "compact", "font-size");
+    padding: map.get(variables.$button, "compact", "padding");
+    font-size: map.get(variables.$button, "compact", "font-size");
 }
 
 @mixin button--icon() {
