@@ -1,11 +1,9 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
-@use '../vendor/bourbon' as *;
+@use '../setup/mixins';
+@use '../vendor/bourbon';
 
 .upload-field {
-    @include clearfix;
-
-    margin-bottom: 15px;
+    @include bourbon.clearfix;
+    margin-bottom: 1.5rem;
 
     &__input {
         opacity: 0;
@@ -14,20 +12,10 @@
     }
 
     &__label {
-        @include button;
-        margin-right: 12px;
+        @include mixins.button;
+        margin-right: .75em;
         display: inline-block;
         vertical-align: middle;
-
-        &:before {
-            font: normal normal normal 2.4rem/1.6rem "Material Design Icons";
-            content: mdi('cloud-upload');
-            display: inline-block;
-            margin-right: 14px;
-            vertical-align: middle;
-            position: relative;
-            top: -.05em;
-        }
     }
 
     .field__helper {

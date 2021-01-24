@@ -14,12 +14,6 @@ $color-table:                     $color-base-white !default;
 $color-table-border:              #e0e0e0 !default;
 $color-table-text:                $color-base-black !default;
 $color-table-selection:           rgba($color-primary, 0.22) !default;
-$color-text-field-label:          rgba($color-base-black, 0.54) !default;
-$color-text-field-inactive:       #8a8a8a !default;
-$color-text-field-active:         $color-primary !default;
-$color-fill-field:                darken($color-base-white, 6%) !default;
-$color-field-helper:              rgba($color-base-black, 0.54) !default;
-$color-field-error:               #f44336 !default;
 $color-form:                      $color-base-white !default;
 $color-fab:                       $color-primary !default;
 $color-fab-text:                  $color-base-white !default;
@@ -111,6 +105,16 @@ $radio: (
         "size": 1.6rem,
         "active": $color-primary,
         "inactive": #757575,
+) !default;
+
+$input-field: (
+        "font-size": 1.6rem,
+        "label": rgba($color-base-black, .54),
+        "inactive": #8a8a8a,
+        "active": $color-primary,
+        "fill": darken($color-base-white, 6%),
+        "helper": rgba($color-base-black, 0.54),
+        "error": #f44336,
 ) !default;
 
 /* ---------------------------------------------- //

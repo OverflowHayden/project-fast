@@ -1,6 +1,5 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use '../setup/mixins';
 
 .text-field {
-    @include text-field;
+    @include mixins.input-field;
 }

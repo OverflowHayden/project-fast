@@ -1,14 +1,13 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use '../setup/mixins';
 
 .textarea-field {
-    @include text-field;
+    @include mixins.input-field;
 
     &__input {
-        min-height: 133px;
+        min-height: 8.3125em;
     }
 
     &.field--fill &__input {
-        padding-top: 28px;
+        padding-top: 1.75em;
     }
 }

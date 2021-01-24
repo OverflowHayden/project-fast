@@ -1,5 +1,6 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
 
 .field {
     $self: &;
@@ -15,7 +16,7 @@
             }
 
             #{$field}__input {
-                background: $color-fill-field;
+                background: map.get(variables.$input-field, "fill");
                 border-top-left-radius: .4rem;
                 border-top-right-radius: .4rem;
                 padding: 1em .75em 0;
@@ -94,28 +95,28 @@
             }
 
             #{$field}__input {
-                border: 1px solid $color-text-field-inactive;
+                border: 1px solid map.get(variables.$input-field, "inactive");
                 border-radius: 4px;
                 padding: .75em .75em .375em;
                 height: 3.7em;
 
                 &:hover {
-                    box-shadow: inset 0 0 0 .1rem $color-text-field-inactive;
+                    box-shadow: inset 0 0 0 .1rem map.get(variables.$input-field, "inactive");
                 }
 
                 &:focus {
-                    border: 1px solid $color-text-field-active;
-                    box-shadow: inset 0 0 0 .1rem $color-text-field-active;
+                    border: 1px solid map.get(variables.$input-field, "active");
+                    box-shadow: inset 0 0 0 .1rem map.get(variables.$input-field, "active");
                 }
 
                 &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
-                    background: $color-base-white;
-                    padding: 0 6px;
+                    background: variables.$color-base-white;
+                    padding: 0 .375em;
                     transform: translate(.375em, -.3125em) scale(.75);
                 }
 
                 &:not(:placeholder-shown) + #{$field}__label, &:-webkit-autofill + #{$field}__label {
-                    background: $color-base-white;
+                    background: variables.$color-base-white;
                     padding: 0 .375em;
                     transform: translate(.375em, -.3125em) scale(.75);
                 }
@@ -234,21 +235,21 @@
             margin-top: .5em;
             font-size: 1.2rem;
             line-height: 1.4;
-            color: $color-field-helper;
+            color: map.get(variables.$input-field, "helper");
         }
 
         &--error {
 
             #{$field}__input {
-                border-color: $color-field-error;
+                border-color: map.get(variables.$input-field, "error");
 
                 &:hover {
-                    box-shadow: inset 0 0 0 .1rem $color-field-error;
+                    box-shadow: inset 0 0 0 .1rem map.get(variables.$input-field, "error");
                 }
             }
 
             #{$field}__label {
-                color: $color-field-error;
+                color: map.get(variables.$input-field, "error");
             }
         }
 
@@ -257,7 +258,7 @@
             margin-top: .5em;
             font-size: 1.2rem;
             line-height: 1.4;
-            color: $color-field-error;
+            color: map.get(variables.$input-field, "error");
         }
     }
 }

@@ -118,7 +118,15 @@ category: Atoms
 
 #### Variables
 ```
-$color-text-field-label:          rgba($color-base-black, 0.54) !default;
-$color-text-field-inactive:       #8a8a8a !default;
-$color-text-field-active:         $color-primary !default;
+@use "setup/variables" with (
+    $input-field: (
+        "font-size": 1.6rem,
+        "label": rgba($color-base-black, .54),
+        "inactive": #8a8a8a,
+        "active": $color-primary,
+        "fill": darken($color-base-white, 6%),
+        "helper": rgba($color-base-black, 0.54),
+        "error": #f44336,
+    )
+);
 ```

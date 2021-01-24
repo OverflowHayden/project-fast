@@ -1,4 +1,4 @@
-@use '../setup/variables' as *;
+@use '../setup/variables';
 
 html.framed {
     max-height: 2000px;
@@ -8,7 +8,7 @@ html.framed {
 .animating-open {
     display: inline-block;
     transform: scale(.8);
-    transition: opacity .03s linear,transform .12s cubic-bezier(0,0,.2,1);
+    transition: opacity .03s linear, transform .12s cubic-bezier(0, 0, .2, 1);
     opacity: 0;
     overflow-y: hidden;
 }
@@ -35,37 +35,37 @@ html.framed {
 
 .bg {
     &--primary {
-        background: $color-primary;
+        background: variables.$color-primary;
     }
 
     &--secondary {
-        background: $color-secondary;
+        background: variables.$color-secondary;
     }
 
     &--success {
-        background: lighten($color-success, 10%);
+        background: lighten(variables.$color-success, 10%);
     }
 
     &--error {
-        background: lighten($color-error, 10%);
+        background: lighten(variables.$color-error, 10%);
     }
 }
 
 .color {
     &--primary {
-        color: $color-primary;
+        color: variables.$color-primary;
     }
 
     &--secondary {
-        color: $color-secondary;
+        color: variables.$color-secondary;
     }
 
     &--success {
-        color: $color-success;
+        color: variables.$color-success;
     }
 
     &--error {
-        color: $color-error;
+        color: variables.$color-error;
     }
 }
 
@@ -74,113 +74,113 @@ html.framed {
 }
 
 .margin-top {
-    margin-top: $margin-size;
+    margin-top: variables.$margin-size;
 
     &--xs {
-        @media (min-width: $screen-xs) {
-            margin-top: $margin-size;
+        @media (min-width: variables.$screen-xs) {
+            margin-top: variables.$margin-size;
         }
     }
 
     &--sm {
-        @media (min-width: $screen-sm-min) {
-            margin-top: $margin-size;
+        @media (min-width: variables.$screen-sm-min) {
+            margin-top: variables.$margin-size;
         }
     }
 
     &--md {
-        @media (min-width: $screen-md-min) {
-            margin-top: $margin-size;
+        @media (min-width: variables.$screen-md-min) {
+            margin-top: variables.$margin-size;
         }
     }
 
     &--lg {
-        @media (min-width: $screen-lg-min) {
-            margin-top: $margin-size;
+        @media (min-width: variables.$screen-lg-min) {
+            margin-top: variables.$margin-size;
         }
     }
 }
 
 .margin-top--2x {
-    margin-top: $margin-size * 2;
+    margin-top: variables.$margin-size * 2;
 
     &--xs {
-        @media (min-width: $screen-xs) {
-            margin-top: $margin-size * 2;
+        @media (min-width: variables.$screen-xs) {
+            margin-top: variables.$margin-size * 2;
         }
     }
 
     &--sm {
-        @media (min-width: $screen-sm-min) {
-            margin-top: $margin-size * 2;
+        @media (min-width: variables.$screen-sm-min) {
+            margin-top: variables.$margin-size * 2;
         }
     }
 
     &--md {
-        @media (min-width: $screen-md-min) {
-            margin-top: $margin-size * 2;
+        @media (min-width: variables.$screen-md-min) {
+            margin-top: variables.$margin-size * 2;
         }
     }
 
     &--lg {
-        @media (min-width: $screen-lg-min) {
-            margin-top: $margin-size * 2;
+        @media (min-width: variables.$screen-lg-min) {
+            margin-top: variables.$margin-size * 2;
         }
     }
 }
 
 .margin-bottom {
-    margin-bottom: $margin-size;
+    margin-bottom: variables.$margin-size;
 
     &--xs {
-        @media (min-width: $screen-xs) {
-            margin-bottom: $margin-size;
+        @media (min-width: variables.$screen-xs) {
+            margin-bottom: variables.$margin-size;
         }
     }
 
     &--sm {
-        @media (min-width: $screen-sm-min) {
-            margin-bottom: $margin-size;
+        @media (min-width: variables.$screen-sm-min) {
+            margin-bottom: variables.$margin-size;
         }
     }
 
     &--md {
-        @media (min-width: $screen-md-min) {
-            margin-bottom: $margin-size;
+        @media (min-width: variables.$screen-md-min) {
+            margin-bottom: variables.$margin-size;
         }
     }
 
     &--lg {
-        @media (min-width: $screen-lg-min) {
-            margin-bottom: $margin-size;
+        @media (min-width: variables.$screen-lg-min) {
+            margin-bottom: variables.$margin-size;
         }
     }
 }
 
 .margin-bottom--2x {
-    margin-bottom: $margin-size * 2;
+    margin-bottom: variables.$margin-size * 2;
 
     &--xs {
-        @media (min-width: $screen-xs) {
-            margin-bottom: $margin-size * 2;
+        @media (min-width: variables.$screen-xs) {
+            margin-bottom: variables.$margin-size * 2;
         }
     }
 
     &--sm {
-        @media (min-width: $screen-sm-min) {
-            margin-bottom: $margin-size * 2;
+        @media (min-width: variables.$screen-sm-min) {
+            margin-bottom: variables.$margin-size * 2;
         }
     }
 
     &--md {
-        @media (min-width: $screen-md-min) {
-            margin-bottom: $margin-size * 2;
+        @media (min-width: variables.$screen-md-min) {
+            margin-bottom: variables.$margin-size * 2;
         }
     }
 
     &--lg {
-        @media (min-width: $screen-lg-min) {
-            margin-bottom: $margin-size * 2;
+        @media (min-width: variables.$screen-lg-min) {
+            margin-bottom: variables.$margin-size * 2;
         }
     }
 }
@@ -189,25 +189,25 @@ html.framed {
     display: none;
 
     &--xs {
-        @media (max-width: $screen-xs) {
+        @media (max-width: variables.$screen-xs) {
             display: none;
         }
     }
 
     &--sm {
-        @media (max-width: $screen-sm-max) {
+        @media (max-width: variables.$screen-sm-max) {
             display: none;
         }
     }
 
     &--md {
-        @media (max-width: $screen-md-max) {
+        @media (max-width: variables.$screen-md-max) {
             display: none;
         }
     }
 
     &--lg {
-        @media (max-width: $screen-lg-max) {
+        @media (max-width: variables.$screen-lg-max) {
             display: none;
         }
     }
@@ -219,7 +219,7 @@ html.framed {
     &--xs {
         display: none;
 
-        @media (max-width: $screen-xs) {
+        @media (max-width: variables.$screen-xs) {
             display: block;
         }
     }
@@ -227,7 +227,7 @@ html.framed {
     &--sm {
         display: none;
 
-        @media (max-width: $screen-sm-max) {
+        @media (max-width: variables.$screen-sm-max) {
             display: block;
         }
     }
@@ -235,7 +235,7 @@ html.framed {
     &--md {
         display: none;
 
-        @media (max-width: $screen-md-max) {
+        @media (max-width: variables.$screen-md-max) {
             display: block;
         }
     }
@@ -243,7 +243,7 @@ html.framed {
     &--lg {
         display: none;
 
-        @media (max-width: $screen-lg-max) {
+        @media (max-width: variables.$screen-lg-max) {
             display: block;
         }
     }
