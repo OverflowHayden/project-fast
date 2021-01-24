@@ -17,9 +17,6 @@ $color-table:                     $color-base-white !default;
 $color-table-border:              #e0e0e0 !default;
 $color-table-text:                $color-base-black !default;
 $color-table-selection:           rgba($color-primary, 0.22) !default;
-$color-checkbox-active:           $color-primary !default;
-$color-checkbox-inactive:         #757575 !default;
-$color-checkbox-check:            $color-base-white !default;
 $color-radio-active:              $color-primary !default;
 $color-radio-inactive:            #757575 !default;
 $color-text-field-label:          rgba($color-base-black, 0.54) !default;
@@ -74,6 +71,13 @@ $button: (
                 "font-size": 80%,
                 "padding": .625em 1.25em .5468em,
         )
+) !default;
+
+$checkbox: (
+        "size": 1.6rem,
+        "active": $color-primary,
+        "inactive": #757575,
+        "check": $color-base-white,
 ) !default;
 
 

@@ -1,7 +1,11 @@
-@use '../setup/variables' as *;
+@use 'sass:map';
+@use '../setup/variables';
 
 .checkbox {
     $self: &;
+    font-size: map.get(variables.$checkbox, "size");
+    display: flex;
+    align-items: center;
     margin: 0 0 1.5rem;
 
     &::selection {
@@ -10,7 +14,7 @@
 
     &__label {
         cursor: pointer;
-        margin-left: 1.2rem;
+        margin-left: .75em;
         margin-bottom: 0;
 
         &::selection {
@@ -26,39 +30,39 @@
         margin: 0;
         width: 1.25em;
         height: 1.25em;
-        border: 2px solid $color-checkbox-inactive;
-        border-radius: .2rem;
+        border: .125em solid map.get(variables.$checkbox, "inactive");
+        border-radius: .125em;
         text-indent: -999em;
         position: relative;
         transition: border .2s ease, background .2s ease;
 
         &:checked {
-            background: $color-checkbox-active;
-            border-color: $color-checkbox-active;
+            background: map.get(variables.$checkbox, "active");
+            border-color: map.get(variables.$checkbox, "active");
 
             &:before {
                 content: "";
                 position: absolute;
-                top: 6px;
-                left: 1px;
-                border-right: 2px solid transparent;
-                border-bottom: 2px solid transparent;
+                top: .375em;
+                left: .0625em;
+                border-right: .125em solid transparent;
+                border-bottom: .125em solid transparent;
                 transform: rotate(45deg);
                 transform-origin: 0 100%;
-                animation: checkbox-check 0.125s 0.25s cubic-bezier(.4,.0,.23,1) forwards;
+                animation: checkbox-check .125s .25s cubic-bezier(.4,.0,.23,1) forwards;
             }
 
             &:after {
-                background-image: radial-gradient(circle, $color-checkbox-active 20%, transparent 20.01%);
+                background-image: radial-gradient(circle, map.get(variables.$checkbox, "active") 20%, transparent 20.01%);
             }
 
             &:hover {
-                background: darken($color-checkbox-active, 4%);
+                background: darken(map.get(variables.$checkbox, "active"), 4%);
             }
         }
 
         &:hover {
-            background: rgba($color-base-black, .06);
+            background: rgba(variables.$color-base-black, .06);
         }
 
         &:after {
@@ -70,13 +74,13 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            background-image: radial-gradient(circle, $color-checkbox-inactive 20%, transparent 20.01%);
+            background-image: radial-gradient(circle, map.get(variables.$checkbox, "inactive") 20%, transparent 20.01%);
             background-repeat: no-repeat;
             background-position: 50%;
             transform: scale(10, 10);
             opacity: 0;
             transition: transform .5s, opacity 1s;
-            background-color: $color-base-white;
+            background-color: variables.$color-base-white;
         }
 
         &:active:after {
@@ -90,34 +94,34 @@
         }
 
         &:indeterminate {
-            background: $color-checkbox-active;
-            border-color: $color-checkbox-active;
+            background: map.get(variables.$checkbox, "active");
+            border-color: map.get(variables.$checkbox, "active");
 
             &:before {
                 content: "";
                 position: absolute;
-                top: 7px;
-                left: 2px;
-                border-bottom: 2px solid transparent;
-                animation: checkbox-indeterminate 0.125s 0.25s cubic-bezier(.4,.0,.23,1) forwards;
+                top: .4375em;
+                left: .125em;
+                border-bottom: .125em solid transparent;
+                animation: checkbox-indeterminate .125s .25s cubic-bezier(.4,.0,.23,1) forwards;
             }
 
             &:after {
-                background-image: radial-gradient(circle, $color-checkbox-active 20%, transparent 20.01%);
+                background-image: radial-gradient(circle, map.get(variables.$checkbox, "active") 20%, transparent 20.01%);
             }
         }
 
         &:disabled {
-            border-color: $color-checkbox-inactive;
-            opacity: 0.7;
+            border-color: map.get(variables.$checkbox, "inactive");
+            opacity: .7;
 
             + #{$self}__label {
-                opacity: 0.7;
+                opacity: .7;
             }
         }
 
         &:disabled:checked {
-            background: $color-checkbox-inactive;
+            background: map.get(variables.$checkbox, "inactive");
         }
     }
 }
@@ -126,7 +130,7 @@
     0% {
         width: 0;
         height: 0;
-        border-color: $color-checkbox-check;
+        border-color: map.get(variables.$checkbox, "check");
         transform: translate3d(0,0,0) rotate(45deg);
     }
     33% {
@@ -135,10 +139,10 @@
         transform: translate3d(0,0,0) rotate(45deg);
     }
     100% {
-        width: 7px;
-        height: 12px;
-        border-color: $color-checkbox-check;
-        transform: translate3d(0,-10px,0) rotate(45deg);
+        width: .4375em;
+        height: .75em;
+        border-color: map.get(variables.$checkbox, "check");
+        transform: translate3d(0,-.625em,0) rotate(45deg);
     }
 }
 
@@ -150,6 +154,6 @@
     100% {
         width: 12px;
         transform: translate3d(0, 0, 0);
-        border-color: $color-checkbox-check;
+        border-color: map.get(variables.$checkbox, "check");
     }
 }
