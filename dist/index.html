@@ -1280,8 +1280,16 @@ $margin-size:                     30px !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-icon:                      #6d6d6d !default;">Copy</button>
-		<pre class="mb-0"><code class="lang-">$color-icon:                      #6d6d6d !default;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $icon: (
+        &quot;color&quot;: #6d6d6d,
+    )
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $icon: (
+        &quot;color&quot;: #6d6d6d,
+    )
+);</code></pre>
 	</div>
 </div></div>
 </div>
@@ -1344,12 +1352,28 @@ $margin-size:                     30px !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-pagination:                $color-primary !default;
-$color-pagination-text:           $color-base-white !default;
-$color-pagination-nav-text:       $color-base-black !default;">Copy</button>
-		<pre class="mb-0"><code class="lang-">$color-pagination:                $color-primary !default;
-$color-pagination-text:           $color-base-white !default;
-$color-pagination-nav-text:       $color-base-black !default;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $pagination: (
+        &quot;background&quot;: $color-primary,
+        &quot;border-radius&quot;: .225em,
+        &quot;color&quot;: $color-base-white,
+        &quot;color-nav&quot;: $color-base-black,
+        &quot;font-size&quot;: 1.4rem,
+        &quot;width&quot;: 3.571em,
+        &quot;height&quot;: 2.575em,
+    )
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $pagination: (
+        &quot;background&quot;: $color-primary,
+        &quot;border-radius&quot;: .225em,
+        &quot;color&quot;: $color-base-white,
+        &quot;color-nav&quot;: $color-base-black,
+        &quot;font-size&quot;: 1.4rem,
+        &quot;width&quot;: 3.571em,
+        &quot;height&quot;: 2.575em,
+    )
+);</code></pre>
 	</div>
 </div></div>
 </div>
@@ -1418,10 +1442,20 @@ $color-pagination-nav-text:       $color-base-black !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-radio-active:              $color-primary !default;
-$color-radio-inactive:            #757575 !default;">Copy</button>
-		<pre class="mb-0"><code class="lang-">$color-radio-active:              $color-primary !default;
-$color-radio-inactive:            #757575 !default;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $radio: (
+        &quot;size&quot;: 1.6rem,
+        &quot;active&quot;: $color-primary,
+        &quot;inactive&quot;: #757575,
+    )
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $radio: (
+        &quot;size&quot;: 1.6rem,
+        &quot;active&quot;: $color-primary,
+        &quot;inactive&quot;: #757575,
+    )
+);</code></pre>
 	</div>
 </div></div>
 </div>

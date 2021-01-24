@@ -23,5 +23,9 @@ import Iconify from '@iconify/iconify';
 
 #### Variables
 ```
-$color-icon:                      #6d6d6d !default;
+@use "setup/variables" with (
+    $icon: (
+        "color": #6d6d6d,
+    )
+);
 ```

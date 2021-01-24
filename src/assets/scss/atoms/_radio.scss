@@ -1,7 +1,11 @@
-@use '../setup/variables' as *;
+@use 'sass:map';
+@use '../setup/variables';
 
 .radio {
     $self: &;
+    font-size: map.get(variables.$radio, "size");
+    display: flex;
+    align-items: center;
     margin: 0 0 1.5rem;
 
     &::selection {
@@ -10,7 +14,7 @@
 
     &__label {
         cursor: pointer;
-        margin-left: 1.2rem;
+        margin-left: .75em;
         margin-bottom: 0;
 
         &::selection {
@@ -24,16 +28,16 @@
         display: inline-block;
         vertical-align: top;
         margin: 0;
-        width: 2rem;
-        height: 2rem;
-        border: .2rem solid $color-radio-inactive;
+        width: 1.25em;
+        height: 1.25em;
+        border: .125em solid map.get(variables.$radio, "inactive");
         border-radius: 50%;
         text-indent: -999em;
         position: relative;
         transition: border .2s ease, background .2s ease;
 
         &:hover {
-            background: rgba($color-base-black, .06);
+            background: rgba(variables.$color-base-black, .06);
         }
 
         &:before {
@@ -45,7 +49,7 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            background: $color-radio-active;
+            background: map.get(variables.$radio, "active");
             border-radius: 50%;
             transform: scale(0);
             transition: transform .25s;
@@ -60,13 +64,13 @@
             top: 0;
             left: 0;
             pointer-events: none;
-            background-image: radial-gradient(circle, $color-radio-active 20%, transparent 20.01%);
+            background-image: radial-gradient(circle, map.get(variables.$radio, "active") 20%, transparent 20.01%);
             background-repeat: no-repeat;
             background-position: 50%;
             transform: scale(10, 10);
             opacity: 0;
             transition: transform .5s, opacity 1s;
-            background-color: $color-base-white;
+            background-color: variables.$color-base-white;
         }
 
         &:active:after {
@@ -80,7 +84,7 @@
         }
 
         &:checked {
-            border-color: $color-radio-active;
+            border-color: map.get(variables.$radio, "active");
 
             &:before {
                 transform: scale(.7);
@@ -88,11 +92,11 @@
         }
 
         &:disabled {
-            border-color: $color-radio-inactive;
+            border-color: map.get(variables.$radio, "inactive");
             opacity: .7;
 
             &:before {
-                background: $color-radio-inactive;
+                background: map.get(variables.$radio, "inactive");
             }
 
             + #{$self}__label {

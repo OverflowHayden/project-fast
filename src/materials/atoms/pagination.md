@@ -17,7 +17,15 @@ category: Atoms
 
 #### Variables
 ```
-$color-pagination:                $color-primary !default;
-$color-pagination-text:           $color-base-white !default;
-$color-pagination-nav-text:       $color-base-black !default;
+@use "setup/variables" with (
+    $pagination: (
+        "background": $color-primary,
+        "border-radius": .225em,
+        "color": $color-base-white,
+        "color-nav": $color-base-black,
+        "font-size": 1.4rem,
+        "width": 3.571em,
+        "height": 2.575em,
+    )
+);
 ```

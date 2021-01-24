@@ -8,22 +8,22 @@
     margin: 0;
     padding: 0;
     vertical-align: middle;
-    font-size: 1.4rem;
+    font-size: map.get(variables.$pagination, "font-size");
 
     &__item {
         display: inline-block;
         margin: 0 .5rem;
         vertical-align: middle;
 
-        a {
-            border-radius: .225em;
+        a, span {
+            border-radius: map.get(variables.$pagination, "border-radius");
             color: inherit;
             display: block;
             font-size: inherit;
             font-weight: 600;
-            line-height: 2.575em;
-            min-width: 5rem;
-            height: 3.6rem;
+            line-height: map.get(variables.$pagination, "height");
+            min-width: map.get(variables.$pagination, "width");
+            height: map.get(variables.$pagination, "height");
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -61,13 +61,13 @@
         }
 
         &--active a {
-            background: variables.$color-pagination;
-            color: variables.$color-pagination-text;
+            background: map.get(variables.$pagination, "background");
+            color: map.get(variables.$pagination, "color");
             box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .2), 0 .2rem .2rem 0 rgba(0, 0, 0, .14), 0 .3rem .1rem -.2rem rgba(0, 0, 0, .12);
 
             &:hover {
-                background: variables.$color-pagination;
-                color: variables.$color-pagination-text;
+                background: map.get(variables.$pagination, "background");
+                color: map.get(variables.$pagination, "color");
                 box-shadow: none;
             }
         }
@@ -79,19 +79,21 @@
         @include mixins.button--compact;
 
         display: inline-block;
-        font-size: 1.4rem;
-        color: rgba(variables.$color-pagination-nav-text, .54);
+        color: rgba(map.get(variables.$pagination, "color-nav"), .54);
         vertical-align: middle;
         box-shadow: unset;
+        font-size: map.get(variables.$pagination, "font-size");
+        font-weight: 700;
+        letter-spacing: .03571em;
 
         &--disabled {
             background: none;
-            color: rgba(variables.$color-pagination-nav-text, .32);
+            color: rgba(map.get(variables.$pagination, "color-nav"), .32);
             cursor: not-allowed;
 
             &:hover {
                 background: none;
-                color: rgba(variables.$color-pagination-nav-text, .32);
+                color: rgba(map.get(variables.$pagination, "color-nav"), .32);
                 text-decoration: none;
             }
         }

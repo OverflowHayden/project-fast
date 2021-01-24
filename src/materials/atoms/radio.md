@@ -20,6 +20,11 @@ category: Atoms
 
 #### Variables
 ```
-$color-radio-active:              $color-primary !default;
-$color-radio-inactive:            #757575 !default;
+@use "setup/variables" with (
+    $radio: (
+        "size": 1.6rem,
+        "active": $color-primary,
+        "inactive": #757575,
+    )
+);
 ```

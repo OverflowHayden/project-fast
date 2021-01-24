@@ -1,15 +1,16 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
 
 table {
     $self: &;
-    background: $color-table;
+    background: variables.$color-table;
     border-spacing: 0;
     border-collapse: collapse;
-    border: 1px solid $color-table-border;
-    box-shadow: 0 1px 5px 0 rgba($color-base-black, 0.2), 0 2px 2px 0 rgba($color-base-black, 0.14), 0 3px 1px -2px rgba($color-base-black, 0.12);
+    border: 1px solid variables.$color-table-border;
+    box-shadow: 0 1px 5px 0 rgba(variables.$color-base-black, 0.2), 0 2px 2px 0 rgba(variables.$color-base-black, 0.14), 0 3px 1px -2px rgba(variables.$color-base-black, 0.12);
 
-    @media (max-width: $screen-md-max) {
+    @media (max-width: variables.$screen-md-max) {
         display: block;
     }
 
@@ -18,13 +19,13 @@ table {
         transition: background .25s ease;
 
         &:hover {
-            background: darken($color-table, 3%);
+            background: darken(variables.$color-table, 3%);
         }
     }
 
     th, td {
         padding: 4px 56px 4px 24px;
-        border-bottom: 1px solid $color-table-border;
+        border-bottom: 1px solid variables.$color-table-border;
 
         .button {
             vertical-align: middle;
@@ -36,7 +37,7 @@ table {
     }
 
     th {
-        color: rgba($color-table-text, 0.54);
+        color: rgba(variables.$color-table-text, 0.54);
         font-size: 1.2rem;
         font-weight: 500;
 
@@ -51,20 +52,20 @@ table {
         &[align="right"] {
             text-align: right;
 
-            @media (max-width: $screen-sm-max) {
+            @media (max-width: variables.$screen-sm-max) {
                 text-align: left;
             }
         }
     }
 
     td {
-        color: $color-table-text;
+        color: variables.$color-table-text;
         font-size: 1.3rem;
         font-weight: 400;
     }
 
     tfoot {
-        background: $color-table;
+        background: variables.$color-table;
         position: relative;
     }
 
@@ -129,14 +130,14 @@ table {
 
     &.table--striped {
         tr th {
-            background: darken($color-table, 3%);
+            background: darken(variables.$color-table, 3%);
         }
 
         tr:nth-child(even) {
-            background: darken($color-table, 2%);
+            background: darken(variables.$color-table, 2%);
 
             &:hover {
-                background: darken($color-table, 3%);
+                background: darken(variables.$color-table, 3%);
             }
         }
     }
@@ -148,7 +149,7 @@ table {
     &__head {
         text-align: right;
 
-        @media (max-width: $screen-sm-max) {
+        @media (max-width: variables.$screen-sm-max) {
             display: block;
             position: absolute;
             left: 0;
@@ -159,15 +160,15 @@ table {
         th {
             position: relative;
 
-            @media (max-width: $screen-sm-max) {
+            @media (max-width: variables.$screen-sm-max) {
                 text-align: unset;
             }
         }
     }
 
     &__selection {
-        background: $color-table;
-        color: $color-primary;
+        background: variables.$color-table;
+        color: variables.$color-primary;
         font-size: 1.6rem;
         display: flex;
         flex-wrap: wrap;
@@ -184,7 +185,7 @@ table {
         transition: opacity 0.15s ease, z-index 0s ease 0.15s;
 
         &:before {
-            background: $color-table-selection;
+            background: variables.$color-table-selection;
             content: "";
             position: absolute;
             top: 0;
@@ -202,7 +203,7 @@ table {
     }
 
     &__action {
-        color: $color-primary;
+        color: variables.$color-primary;
         display: inline-block;
         float: left;
         font-size: 1.6rem;
@@ -212,7 +213,7 @@ table {
         margin-top: 10px;
 
         &:hover {
-            color: darken($color-primary, 8%);
+            color: darken(variables.$color-primary, 8%);
         }
     }
 
@@ -220,19 +221,19 @@ table {
         .button--icon.button--text {
             border-radius: 50%;
             font-size: 2.4rem;
-            color: $color-icon;
+            color: map.get(variables.$icon, "color");
             padding: 10px 6px;
         }
     }
 
     &__filter {
-        @include button;
-        @include button--icon;
-        @include button--text;
+        @include mixins.button;
+        @include mixins.button--icon;
+        @include mixins.button--text;
 
         border-radius: 50%;
         font-size: 2.4rem;
-        color: $color-icon;
+        color: map.get(variables.$icon, "color");
         padding: 10px;
 
         .iconify {
@@ -244,7 +245,7 @@ table {
         text-align: right;
 
         td {
-            color: rgba($color-table-text, 0.54);
+            color: rgba(variables.$color-table-text, 0.54);
             font-size: 1.2rem;
             font-weight: 500;
             vertical-align: middle;
@@ -259,7 +260,7 @@ table {
     &__pagination {
         display: inline-block;
 
-        @media (max-width: $screen-sm-max) {
+        @media (max-width: variables.$screen-sm-max) {
             .pagination-list {
                 display: none;
             }
@@ -267,7 +268,7 @@ table {
     }
 }
 
-@media (max-width: $screen-sm-max) {
+@media (max-width: variables.$screen-sm-max) {
     tr, tbody td, th, tfoot, thead, tbody, table {
         display: block;
         text-align: left;
@@ -348,7 +349,7 @@ table {
             width: 100%;
             right: 100%;
             bottom: -1px;
-            border-bottom: 1px solid $color-table-border;
+            border-bottom: 1px solid variables.$color-table-border;
         }
     }
 
