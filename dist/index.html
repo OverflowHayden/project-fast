@@ -919,12 +919,22 @@ $margin-size:                     30px !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-checkbox-active:           $color-primary !default;
-$color-checkbox-inactive:         #757575 !default;
-$color-checkbox-check:            $color-base-white !default;">Copy</button>
-		<pre class="mb-0"><code class="lang-">$color-checkbox-active:           $color-primary !default;
-$color-checkbox-inactive:         #757575 !default;
-$color-checkbox-check:            $color-base-white !default;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $checkbox: (
+        &quot;size&quot;: 1.6rem,
+        &quot;active&quot;: $color-primary,
+        &quot;inactive&quot;: #757575,
+        &quot;check&quot;: $color-base-white,
+    )
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $checkbox: (
+        &quot;size&quot;: 1.6rem,
+        &quot;active&quot;: $color-primary,
+        &quot;inactive&quot;: #757575,
+        &quot;check&quot;: $color-base-white,
+    )
+);</code></pre>
 	</div>
 </div></div>
 </div>
@@ -1095,12 +1105,32 @@ $color-checkbox-check:            $color-base-white !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-chip:                      #e0e0e0 !default;
-$color-chip-text:                 rgba($color-base-black, .87) !default;
-$chips-border-radius:             1.2em !default;">Copy</button>
-		<pre class="mb-0"><code class="lang-">$color-chip:                      #e0e0e0 !default;
-$color-chip-text:                 rgba($color-base-black, .87) !default;
-$chips-border-radius:             1.2em !default;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $chip: (
+        &quot;background&quot;: #e0e0e0,
+        &quot;background-primary&quot;: $color-primary,
+        &quot;border-radius&quot;: 1.2em,
+        &quot;color&quot;: rgba($color-base-black, .87),
+        &quot;color-primary&quot;: $color-base-white,
+        &quot;font-size&quot;: 1.4rem,
+        &quot;padding&quot;: .5em .857em,
+        &quot;height&quot;: 2em,
+        &quot;icon-font-size&quot;: 1.6rem,
+    )
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $chip: (
+        &quot;background&quot;: #e0e0e0,
+        &quot;background-primary&quot;: $color-primary,
+        &quot;border-radius&quot;: 1.2em,
+        &quot;color&quot;: rgba($color-base-black, .87),
+        &quot;color-primary&quot;: $color-base-white,
+        &quot;font-size&quot;: 1.4rem,
+        &quot;padding&quot;: .5em .857em,
+        &quot;height&quot;: 2em,
+        &quot;icon-font-size&quot;: 1.6rem,
+    )
+);</code></pre>
 	</div>
 </div></div>
 </div>

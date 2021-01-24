@@ -16,7 +16,12 @@ category: Atoms
 
 #### Variables
 ```
-$color-checkbox-active:           $color-primary !default;
-$color-checkbox-inactive:         #757575 !default;
-$color-checkbox-check:            $color-base-white !default;
+@use "setup/variables" with (
+    $checkbox: (
+        "size": 1.6rem,
+        "active": $color-primary,
+        "inactive": #757575,
+        "check": $color-base-white,
+    )
+);
 ```

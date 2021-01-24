@@ -11,8 +11,6 @@ $color-base-black:                #000 !default;
 $color-text:                      #333 !default;
 $color-link:                      #007bff !default;
 $color-icon:                      #6d6d6d !default;
-$color-chip:                      #e0e0e0 !default;
-$color-chip-text:                 rgba($color-base-black, .87) !default;
 $color-table:                     $color-base-white !default;
 $color-table-border:              #e0e0e0 !default;
 $color-table-text:                $color-base-black !default;
@@ -56,7 +54,6 @@ $color-error:                     #f44336 !default;
 $drawer-image:                    "/src/assets/img/logo.svg" !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
 $border-radius:                   3px !default;
-$chips-border-radius:             1.2em !default;
 $login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
 $margin-size:                     30px !default;
 $fab-menu-icon:                   '../img/dots-vertical.svg' !default;
@@ -78,6 +75,18 @@ $checkbox: (
         "active": $color-primary,
         "inactive": #757575,
         "check": $color-base-white,
+) !default;
+
+$chip: (
+        "background": #e0e0e0,
+        "background-primary": $color-primary,
+        "border-radius": 1.2em,
+        "color": rgba($color-base-black, .87),
+        "color-primary": $color-base-white,
+        "font-size": 1.4rem,
+        "padding": .5em .857em,
+        "height": 2em,
+        "icon-font-size": 1.6rem,
 ) !default;
 
 

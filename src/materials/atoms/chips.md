@@ -49,7 +49,17 @@ category: Atoms
 
 #### Variables
 ```
-$color-chip:                      #e0e0e0 !default;
-$color-chip-text:                 rgba($color-base-black, .87) !default;
-$chips-border-radius:             1.2em !default;
+@use "setup/variables" with (
+    $chip: (
+        "background": #e0e0e0,
+        "background-primary": $color-primary,
+        "border-radius": 1.2em,
+        "color": rgba($color-base-black, .87),
+        "color-primary": $color-base-white,
+        "font-size": 1.4rem,
+        "padding": .5em .857em,
+        "height": 2em,
+        "icon-font-size": 1.6rem,
+    )
+);
 ```

@@ -1,60 +1,63 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
 
 .chip {
-    @include ripple;
+    @include mixins.ripple;
     $self: &;
 
     appearance: none;
-    background: $color-chip;
-    border-radius: $chips-border-radius;
+    background: map.get(variables.$chip, "background");
+    border-radius: map.get(variables.$chip, "border-radius");
     cursor: pointer;
     display: inline-flex;
-    font-size: 1.4rem;
+    font-size: map.get(variables.$chip, "font-size");
     line-height: 1.4;
-    margin: .4rem;
-    padding: .44em .75em;
-    min-height: 2em;
+    margin: .2857em;
+    padding: map.get(variables.$chip, "padding");
+    min-height: map.get(variables.$chip, "height");
     text-decoration: none;
     transition: background .25s ease;
 
     &:hover {
-        background: darken($color-chip, 8%);
+        background: darken(map.get(variables.$chip, "background"), 8%);
     }
 
     &--primary {
-        background: $color-primary;
+        background: map.get(variables.$chip, "background-primary");
 
         &:hover {
-            background: darken($color-primary, 8%);
+            background: darken(map.get(variables.$chip, "background-primary"), 8%);
         }
 
         #{$self}__text, #{$self}__icon {
-            color: $color-base-white;
+            color: map.get(variables.$chip, "color-primary");
         }
     }
 
     &--alt {
-        background: rgba($color-primary, .21);
+        background: rgba(map.get(variables.$chip, "background-primary"), .21);
 
         &:hover {
-            background: rgba($color-primary, .32);
+            background: rgba(map.get(variables.$chip, "background-primary"), .32);
         }
 
         #{$self}__text, #{$self}__icon {
-            color: $color-primary;
+            color: map.get(variables.$chip, "background-primary");
         }
     }
 
     &__text {
-        color: $color-chip-text;
+        color: map.get(variables.$chip, "color");
         font-weight: 400;
-        letter-spacing: .0015em;
+        letter-spacing: .01785em;
     }
 
     &__icon {
-        color: $color-chip-text;
+        color: map.get(variables.$chip, "color");
         display: inline-block;
+        font-size: map.get(variables.$chip, "icon-font-size");
+        line-height: 1;
         vertical-align: middle;
         margin-right: .25em;
 
@@ -64,7 +67,7 @@
     }
 
     &__filter {
-        color: $color-chip-text;
+        color: map.get(variables.$chip, "color");
         display: inline-block;
         vertical-align: middle;
         margin-left: .25em;
@@ -73,7 +76,7 @@
         transition: opacity .25s ease;
 
         &:hover {
-            color: $color-chip-text;
+            color: map.get(variables.$chip, "color");
             opacity: 1;
         }
     }
