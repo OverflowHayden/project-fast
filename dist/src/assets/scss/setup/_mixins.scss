@@ -220,6 +220,7 @@
 @mixin button--compact() {
     padding: map.get(variables.$button, "compact", "padding");
     font-size: map.get(variables.$button, "compact", "font-size");
+    line-height: 1.4;
 }
 
 @mixin button--icon() {
