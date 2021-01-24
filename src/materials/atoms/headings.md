@@ -15,5 +15,15 @@ Available headings
 
 #### Variables
 ```
-$color-text:                      #333 !default;
+@use "setup/variables" with (
+    $headings: (
+        "color": #212529,
+        "h1": 4.2rem,
+        "h2": 3.4rem,
+        "h3": 2.8rem,
+        "h4": 2.2rem,
+        "h5": 1.8rem,
+        "h6": 1.6rem,
+    )
+);
 ```

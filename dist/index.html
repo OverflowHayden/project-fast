@@ -1186,8 +1186,28 @@ $margin-size:                     30px !default;</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$color-text:                      #333 !default;">Copy</button>
-		<pre class="mb-0"><code class="lang-">$color-text:                      #333 !default;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $headings: (
+        &quot;color&quot;: #212529,
+        &quot;h1&quot;: 4.2rem,
+        &quot;h2&quot;: 3.4rem,
+        &quot;h3&quot;: 2.8rem,
+        &quot;h4&quot;: 2.2rem,
+        &quot;h5&quot;: 1.8rem,
+        &quot;h6&quot;: 1.6rem,
+    )
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $headings: (
+        &quot;color&quot;: #212529,
+        &quot;h1&quot;: 4.2rem,
+        &quot;h2&quot;: 3.4rem,
+        &quot;h3&quot;: 2.8rem,
+        &quot;h4&quot;: 2.2rem,
+        &quot;h5&quot;: 1.8rem,
+        &quot;h6&quot;: 1.6rem,
+    )
+);</code></pre>
 	</div>
 </div></div>
 </div>
