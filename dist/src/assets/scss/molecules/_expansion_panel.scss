@@ -1,22 +1,23 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use 'sass:map';
+@use '../setup/variables';
 
 .expansion-panel {
     $self: &;
+    --content-height: 50rem;
 
     &__item {
-        border-radius: 2px;
-        box-shadow: 0 1px 5px 0 rgba($color-base-black, 0.2), 0 2px 2px 0 rgba($color-base-black, 0.14), 0 3px 1px -2px rgba($color-base-black, 0.12);
-        background: $color-expansion-panel;
-        color: $color-expansion-panel-text;
+        border-radius: .2rem;
+        box-shadow: 0 .1rem .5rem 0 rgba(variables.$color-base-black, .2), 0 .2rem .2rem 0 rgba(variables.$color-base-black, .14), 0 .3rem .1rem -.2rem rgba(variables.$color-base-black, .12);
+        background: map.get(variables.$expansion-panel, "background");
+        color: map.get(variables.$expansion-panel, "color");
         position: relative;
         transition: background .2s ease;
 
         &:hover {
-            background: darken($color-expansion-panel, 4%);
+            background: darken(map.get(variables.$expansion-panel, "background"), 4%);
 
             .list {
-                background: darken($color-expansion-panel, 4%);
+                background: darken(map.get(variables.$expansion-panel, "background"), 4%);
             }
         }
 
@@ -29,14 +30,14 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 13px 24px;
+        padding: 1.3rem 2.4rem;
         position: relative;
         transition: padding .25s ease, margin .25s ease;
 
         &:after {
-            border-top: 5px solid $color-expansion-panel-text;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
+            border-top: .5rem solid map.get(variables.$expansion-panel, "color");
+            border-left: .5rem solid transparent;
+            border-right: .5rem solid transparent;
             border-bottom: none;
             content: "";
             display: inline-block;
@@ -55,15 +56,11 @@
             width: auto;
             position: relative;
             z-index: 2;
-
-            &__input {
-                height: 27px;
-            }
         }
     }
 
     &__content {
-        padding: 0 24px;
+        padding: 0 2.4rem;
         overflow: hidden;
         max-height: 0;
         transition: max-height .25s ease, padding .25s ease, margin .25s ease;
@@ -78,16 +75,16 @@
         left: 0;
         right: 0;
         width: 100%;
-        height: 48px;
+        height: 4.8rem;
         opacity: 0;
         z-index: 1;
 
         &:checked {
-            height: 64px;
+            height: 6.4rem;
 
             + #{$self}__header {
-                padding: 19px 24px;
-                margin-top: 20px;
+                padding: 1.9rem 2.4rem;
+                margin-top: 2rem;
 
                 &:after {
                     transform: rotate(180deg);
@@ -95,9 +92,9 @@
             }
 
             + #{$self}__header + #{$self}__content {
-                padding: 0 24px 16px;
-                margin-bottom: 20px;
-                max-height: 500px;
+                padding: 0 2.4rem 1.6rem;
+                margin-bottom: 2rem;
+                max-height: var(--content-height);
                 overflow-y: auto;
             }
         }
@@ -105,14 +102,14 @@
 
     &__button {
         font-size: 125%;
-        color: $color-primary;
-        margin-left: 5px;
+        color: variables.$color-primary;
+        margin-left: .5rem;
         position: relative;
         z-index: 2;
     }
 
     .grid {
-        width: calc(100% - 30px);
+        width: calc(100% - 3rem);
     }
 
     label {
@@ -126,11 +123,11 @@
             font-size: 1.4rem;
 
             &-text {
-                padding: 8px 16px;
+                padding: .8rem 1.6rem;
             }
 
             .number-field, .text-field, .select-field, .input-label {
-                margin-right: 15px;
+                margin-right: 1.5rem;
             }
         }
     }

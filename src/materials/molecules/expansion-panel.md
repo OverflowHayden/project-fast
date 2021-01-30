@@ -28,6 +28,10 @@ category: Molecules
 
 #### Variables
 ```
-$color-expansion-panel:           $color-base-white !default;
-$color-expansion-panel-text:      rgba($color-base-black,.54) !default;
+@use "setup/variables" with (
+    $expansion-panel: (
+        "background": $color-base-white,
+        "color": rgba($color-base-black,.54),
+    )
+);
 ```

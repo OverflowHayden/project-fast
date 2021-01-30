@@ -17,8 +17,6 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;
 $color-form:                      $color-base-white !default;
 $color-fab:                       $color-primary !default;
 $color-fab-text:                  $color-base-white !default;
-$color-expansion-panel:           $color-base-white !default;
-$color-expansion-panel-text:      rgba($color-base-black,.54) !default;
 $color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;
 $color-drawer:                    $color-base-white !default;
@@ -136,6 +134,11 @@ $card: (
         "color": rgba($color-base-black, .65),
         "font-size": 1.4rem,
     ),
+) !default;
+
+$expansion-panel: (
+    "background": $color-base-white,
+    "color": rgba($color-base-black,.54),
 ) !default;
 
 /* ---------------------------------------------- //
