@@ -17,9 +17,6 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;
 $color-form:                      $color-base-white !default;
 $color-fab:                       $color-primary !default;
 $color-fab-text:                  $color-base-white !default;
-$color-card:                      $color-base-white !default;
-$color-card-title:                $color-base-black !default;
-$color-card-text:                 rgba($color-base-black,.54) !default;
 $color-expansion-panel:           $color-base-white !default;
 $color-expansion-panel-text:      rgba($color-base-black,.54) !default;
 $color-app-bar:                   $color-primary !default;
@@ -47,74 +44,98 @@ $margin-size:                     30px !default;
 $fab-menu-icon:                   '../img/dots-vertical.svg' !default;
 
 $button: (
-        "background": $color-primary,
-        "border-radius": .1875em,
-        "color": $color-base-white,
-        "font-size": 1.6rem,
-        "padding": .75em 1.375em .6875em,
-        "compact": (
-                "font-size": 80%,
-                "padding": .625em 1.25em .5468em,
-        )
+    "background": $color-primary,
+    "border-radius": .1875em,
+    "color": $color-base-white,
+    "font-size": 1.6rem,
+    "padding": .75em 1.375em .6875em,
+    "compact": (
+        "font-size": 80%,
+        "padding": .625em 1.25em .5468em,
+    )
 ) !default;
 
 $checkbox: (
-        "size": 1.6rem,
-        "active": $color-primary,
-        "inactive": #757575,
-        "check": $color-base-white,
+    "size": 1.6rem,
+    "active": $color-primary,
+    "inactive": #757575,
+    "check": $color-base-white,
 ) !default;
 
 $chip: (
-        "background": #e0e0e0,
-        "background-primary": $color-primary,
-        "border-radius": 1.2em,
-        "color": rgba($color-base-black, .87),
-        "color-primary": $color-base-white,
-        "font-size": 1.4rem,
-        "padding": .5em .857em,
-        "height": 2em,
-        "icon-font-size": 1.6rem,
+    "background": #e0e0e0,
+    "background-primary": $color-primary,
+    "border-radius": 1.2em,
+    "color": rgba($color-base-black, .87),
+    "color-primary": $color-base-white,
+    "font-size": 1.4rem,
+    "padding": .5em .857em,
+    "height": 2em,
+    "icon-font-size": 1.6rem,
 ) !default;
 
 $headings: (
-        "color": #212529,
-        "h1": 4.2rem,
-        "h2": 3.4rem,
-        "h3": 2.8rem,
-        "h4": 2.2rem,
-        "h5": 1.8rem,
-        "h6": 1.6rem,
+    "color": #212529,
+    "h1": 4.2rem,
+    "h2": 3.4rem,
+    "h3": 2.8rem,
+    "h4": 2.2rem,
+    "h5": 1.8rem,
+    "h6": 1.6rem,
 ) !default;
 
 $icon: (
-        "color": #6d6d6d,
+    "color": #6d6d6d,
 ) !default;
 
 $pagination: (
-        "background": $color-primary,
-        "border-radius": .225em,
-        "color": $color-base-white,
-        "color-nav": $color-base-black,
-        "font-size": 1.4rem,
-        "width": 3.571em,
-        "height": 2.575em,
+    "background": $color-primary,
+    "border-radius": .225em,
+    "color": $color-base-white,
+    "color-nav": $color-base-black,
+    "font-size": 1.4rem,
+    "width": 3.571em,
+    "height": 2.575em,
 ) !default;
 
 $radio: (
-        "size": 1.6rem,
-        "active": $color-primary,
-        "inactive": #757575,
+    "size": 1.6rem,
+    "active": $color-primary,
+    "inactive": #757575,
 ) !default;
 
 $input-field: (
-        "font-size": 1.6rem,
-        "label": rgba($color-base-black, .54),
-        "inactive": #8a8a8a,
-        "active": $color-primary,
-        "fill": darken($color-base-white, 6%),
-        "helper": rgba($color-base-black, 0.54),
-        "error": #f44336,
+    "color": $color-text,
+    "font-size": 1.6rem,
+    "label": rgba($color-base-black, .54),
+    "inactive": #8a8a8a,
+    "active": $color-primary,
+    "fill": darken($color-base-white, 6%),
+    "helper": rgba($color-base-black, 0.54),
+    "error": #f44336,
+    "disabled": (
+        "background": #f9f9f9,
+        "color": lighten($color-text, 30%),
+    ),
+) !default;
+
+$card: (
+    "background": $color-base-white,
+    "color": rgba($color-base-black,.54),
+    "font-size": 1.4rem,
+    "padding": 1.6rem,
+    "title": (
+        "color": $color-base-black,
+        "font-size": 2rem,
+    ),
+    "subtitle": (
+        "color": rgba($color-base-black, .65),
+        "font-size": 1.4rem,
+    ),
+    "button": (
+        "color": rgba($color-base-black, .65),
+        "font-size": 1.4rem,
+    ),
 ) !default;
 
 /* ---------------------------------------------- //
