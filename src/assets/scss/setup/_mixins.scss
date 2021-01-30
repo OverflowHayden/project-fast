@@ -72,6 +72,7 @@
 
 @mixin input-field() {
     $self: &;
+    color: map.get(variables.$input-field, "color");
     font-size: map.get(variables.$input-field, "font-size");
     line-height: 1.4;
     position: relative;
@@ -123,7 +124,7 @@
             user-select: none;
         }
 
-        &:hover {
+        &:hover:not(:disabled) {
             border-bottom: .1rem solid map.get(variables.$input-field, "inactive");
             box-shadow: inset 0 -.1rem 0 0 map.get(variables.$input-field, "inactive");
         }
@@ -147,6 +148,24 @@
 
             + #{$self}__label {
                 transform: translate(0, 0) scale(.75);
+            }
+        }
+
+        &:disabled {
+            background: map.get(variables.$input-field, "disabled", "background");
+            cursor: not-allowed;
+
+            + #{$self}__label {
+                color: lighten(map.get(variables.$input-field, "color"), 50%);
+                cursor: not-allowed;
+            }
+        }
+
+        &:read-only {
+            cursor: default;
+
+            + #{$self}__label {
+                cursor: default;
             }
         }
 

@@ -127,6 +127,10 @@ category: Atoms
         "fill": darken($color-base-white, 6%),
         "helper": rgba($color-base-black, 0.54),
         "error": #f44336,
+        "disabled": (
+            "background": #f9f9f9,
+            "color": lighten($color-text, 30%),
+        ),
     )
 );
 ```
