@@ -42,7 +42,24 @@ Add a [grid column](#grid) class like `.col__sm--6` to the card to change size. 
 
 #### Variables
 ```
-$color-card:                      $color-base-white !default;
-$color-card-title:                $color-base-black !default;
-$color-card-text:                 rgba($color-base-black,.54) !default;
+@use "setup/variables" with (
+    $card: (
+        "background": $color-base-white,
+        "color": rgba($color-base-black,.54),
+        "font-size": 1.4rem,
+        "padding": 1.6rem,
+        "title": (
+            "color": $color-base-black,
+            "font-size": 2rem,
+        ),
+        "subtitle": (
+            "color": rgba($color-base-black, .65),
+            "font-size": 1.4rem,
+        ),
+        "button": (
+            "color": rgba($color-base-black, .65),
+            "font-size": 1.8rem,
+        ),
+    ),
+);
 ```

@@ -1,4 +1,5 @@
-@use '../setup/variables' as *;
+@use 'sass:map';
+@use '../setup/variables';
 @use 'grid' as *;
 
 .card {
@@ -6,15 +7,15 @@
     $self: &;
 
     border: none;
-    border-radius: 2px;
-    box-shadow: 0 1px 5px 0 rgba($color-base-black, 0.2), 0 2px 2px 0 rgba($color-base-black, 0.14), 0 3px 1px -2px rgba($color-base-black, 0.12);
-    background: $color-card;
-    color: $color-card-text;
-    margin-bottom: 30px;
+    border-radius: .2rem;
+    box-shadow: 0 .1rem .5rem 0 rgba(variables.$color-base-black, .2), 0 .2rem .2rem 0 rgba(variables.$color-base-black, .14), 0 .3rem .1rem -.2rem rgba(variables.$color-base-black, .12);
+    background: map.get(variables.$card, "background");
+    color: map.get(variables.$card, "color");
+    margin-bottom: 3rem;
 
     &__image {
-        border-top-left-radius: 2px;
-        border-top-right-radius: 2px;
+        border-top-left-radius: .2rem;
+        border-top-right-radius: .2rem;
         display: block;
         margin: 0;
         padding: 0;
@@ -28,22 +29,22 @@
     }
 
     &__content {
-        font-size: 1.4rem;
-        padding: 16px;
+        font-size: map.get(variables.$card, "font-size");
+        padding: map.get(variables.$card, "padding");
     }
 
     &__title {
-        color: $color-card-title;
-        font-size: 2rem;
-        letter-spacing: .025rem;
+        color: map.get(variables.$card, "title", "color");
+        font-size: map.get(variables.$card, "title", "font-size");
+        letter-spacing: .0125em;
     }
 
     &__subtitle {
-        color: rgba($color-card-title, .65);
-        font-size: 1.4rem;
+        color: map.get(variables.$card, "subtitle", "color");
+        font-size: map.get(variables.$card, "subtitle", "font-size");
         font-weight: 500;
-        letter-spacing: .01rem;
-        margin-bottom: 12px;
+        letter-spacing: .00714em;
+        margin-bottom: .8em;
     }
 
     &__actions {
@@ -51,13 +52,9 @@
         align-items: center;
     }
 
-    &__buttons {
-
-    }
-
     .button {
-        font-size: 1.4rem;
-        padding: 8px 8px 7px;
+        font-size: map.get(variables.$card, "button", "font-size");
+        padding: .444em .444em .388em;
     }
 
     &__icons {
@@ -65,9 +62,9 @@
 
         .button {
             border-radius: 50%;
-            color: rgba($color-card-title, .65);
-            font-size: 1.8rem;
-            padding: 8px 6px 7px;
+            color: map.get(variables.$card, "button", "color");
+            font-size: 128%;
+            padding: .444em;
         }
     }
 }
