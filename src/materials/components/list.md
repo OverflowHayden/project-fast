@@ -142,3 +142,35 @@ category: Components
     </li>
 </ul>
 ```
+
+#### Variables
+```
+@use "setup/variables" with (
+    $list: (
+        "background": $color-base-white,
+        "border": #e0e0e0,
+        "color": rgba($color-base-black, .87),
+        "font-size": 1.6rem,
+        "height": 4.8rem,
+        "padding": 1.5rem 1.6rem,
+        "compact": (
+            "font-size": 1.4rem,
+            "height": 3.6rem,
+        ),
+        "secondary": (
+            "color": rgba($color-base-black, .54),
+            "font-size": 1.4rem,
+        ),
+        "graphic": (
+            "color": rgba($color-base-black, .38),
+            "font-size": 2.4rem,
+            "size": 2.4rem,
+        ),
+        "meta": (
+            "color": rgba($color-base-black, .38),
+            "font-size": 2.4rem,
+        ),
+        "divider": rgba($color-base-black, .12),
+    )
+);
+```

@@ -34,12 +34,12 @@
             background: map.get(variables.$fab, "background");
             border-radius: 50%;
             cursor: pointer;
-            content: url('#{map.get(variables.$fab, "icon")}');
+            content: url('#{map.get(variables.$fab, "menu-icon")}');
             color: map.get(variables.$fab, "color");
             display: flex;
             justify-content: center;
             align-items: center;
-            height: $fab-size;
+            height: map.get(variables.$fab, "size");
             position: absolute;
             top: 0;
             left: 0;
@@ -55,7 +55,7 @@
     }
 
     &__button {
-        @include ripple;
+        @include mixins.ripple;
 
         appearance: none;
         -webkit-appearance: none;
@@ -133,7 +133,7 @@
         @include mixins.ripple;
 
         background: map.get(variables.$fab, "icon", "background");
-        box-shadow: 0 1px 6px rgba($color-base-black, .16), 0 3px 10px rgba($color-base-black, .16);
+        box-shadow: 0 .1rem .6rem rgba(variables.$color-base-black, .16), 0 .3rem 1rem rgba(variables.$color-base-black, .16);
         border: none;
         border-radius: 50%;
         color: map.get(variables.$fab, "icon", "color");
