@@ -43,7 +43,22 @@ Fast.Fab();
 
 #### Variables
 ```
-$color-fab:                       $color-primary !default;
-$color-fab-text:                  $color-base-white !default;
-$fab-menu-icon:                   '../img/dots-vertical.svg' !default;
+@use "setup/variables" with (
+    $fab: (
+        "background": $color-primary,
+        "color": $color-base-white,
+        "icon": "../img/dots-vertical.svg",
+        "size": 5.6rem,
+        "text": (
+            "background": $color-base-white,
+            "color": $color-text,
+            "padding": .4rem .6rem .3rem,
+        ),
+        "icon": (
+            "background": $color-primary,
+            "color": $color-base-white,
+            "size": 4rem,
+        ),
+    ),
+);
 ```

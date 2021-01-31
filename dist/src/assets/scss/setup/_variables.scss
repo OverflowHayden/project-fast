@@ -15,8 +15,6 @@ $color-table-border:              #e0e0e0 !default;
 $color-table-text:                $color-base-black !default;
 $color-table-selection:           rgba($color-primary, 0.22) !default;
 $color-form:                      $color-base-white !default;
-$color-fab:                       $color-primary !default;
-$color-fab-text:                  $color-base-white !default;
 $color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;
 $color-drawer:                    $color-base-white !default;
@@ -39,7 +37,6 @@ $drawer-background:               url($drawer-image) no-repeat center bottom 50p
 $border-radius:                   3px !default;
 $login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
 $margin-size:                     30px !default;
-$fab-menu-icon:                   '../img/dots-vertical.svg' !default;
 
 $button: (
     "background": $color-primary,
@@ -139,6 +136,23 @@ $card: (
 $expansion-panel: (
     "background": $color-base-white,
     "color": rgba($color-base-black,.54),
+) !default;
+
+$fab: (
+    "background": $color-primary,
+    "color": $color-base-white,
+    "icon": "../img/dots-vertical.svg",
+    "size": 5.6rem,
+    "text": (
+        "background": $color-base-white,
+        "color": $color-text,
+        "padding": .4rem .6rem .3rem,
+    ),
+    "icon": (
+        "background": $color-primary,
+        "color": $color-base-white,
+        "size": 4rem,
+    ),
 ) !default;
 
 /* ---------------------------------------------- //

@@ -1,42 +1,41 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
-
-$fab-size: 56px !default;
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
 
 .fab {
     $self: &;
 
     position: fixed;
-    right: 30px;
-    bottom: 30px;
+    right: 3rem;
+    bottom: 3rem;
     transform: translate3d(0, 0, 0);
-    will-change: transform,opacity;
+    will-change: transform, opacity;
     z-index: 9;
 
-    @media(max-width: $screen-sm-max) {
-        right: 20px;
-        bottom: 20px;
+    @media(max-width: variables.$screen-sm-max) {
+        right: 2rem;
+        bottom: 2rem;
     }
 
     .framed & {
         display: inline-block;
         float: right;
         position: relative;
-        margin-top: 180px;
+        margin-top: 18rem;
     }
 
     &--center {
         right: 50%;
-        margin-right: -28px;
+        transform: translateX(50%);
     }
 
     &--menu {
         &:before {
-            background: $color-fab;
+            background: map.get(variables.$fab, "background");
             border-radius: 50%;
             cursor: pointer;
-            content: url($fab-menu-icon);
-            color: $color-fab-text;
+            content: url('#{map.get(variables.$fab, "icon")}');
+            color: map.get(variables.$fab, "color");
             display: flex;
             justify-content: center;
             align-items: center;
@@ -61,16 +60,16 @@ $fab-size: 56px !default;
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
-        background: $color-fab;
+        background: map.get(variables.$fab, "background");
         border: none;
         border-radius: 50%;
-        box-shadow: 0 5px 5px -3px rgba($color-base-black,.2), 0 8px 10px 1px rgba($color-base-black,.14), 0 3px 14px 2px rgba($color-base-black,.12);
+        box-shadow: 0 .5rem .5rem -.3rem rgba(variables.$color-base-black, .2), 0 .8rem 1rem .1rem rgba(variables.$color-base-black, .14), 0 .3rem 1.4rem .2rem rgba(variables.$color-base-black, .12);
         cursor: pointer;
-        color: $color-fab-text;
+        color: map.get(variables.$fab, "color");
         display: inline-flex;
         font-size: 2.4rem;
-        width: $fab-size;
-        height: $fab-size;
+        width: map.get(variables.$fab, "size");
+        height: map.get(variables.$fab, "size");
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -78,8 +77,8 @@ $fab-size: 56px !default;
         transition: background 0.2s ease;
 
         &:hover {
-            background: lighten($color-fab, 8%);
-            color: $color-fab-text;
+            background: lighten(map.get(variables.$fab, "background"), 8%);
+            color: map.get(variables.$fab, "color");
         }
     }
 
@@ -89,65 +88,65 @@ $fab-size: 56px !default;
         padding: 0;
         max-height: 0;
         position: absolute;
-        bottom: $fab-size;
-        right: 8px;
-        min-width: 200px;
+        bottom: map.get(variables.$fab, "size");
+        right: .8rem;
+        min-width: 20rem;
         text-align: right;
         opacity: 0;
         overflow: hidden;
-        transform: translateY(40px);
-        transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), max-height 0s linear 0.3s;
+        transform: translateY(4rem);
+        transition: transform .3s cubic-bezier(.4, 0, .2, 1), opacity .3s cubic-bezier(.4, 0, .2, 1), max-height 0s linear .3s;
 
         &-item {
             display: inline-block;
-            margin-top: 8px;
+            margin-top: .8rem;
         }
     }
 
     &:hover &__list, &:focus &__list {
-        padding: 0 0 10px 0;
-        max-height: 999px;
+        padding: 0 0 1rem 0;
+        max-height: 100rem;
         display: block;
         opacity: 1;
         transform: translateY(0);
-        transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        transition: transform .3s cubic-bezier(.4, 0, .2, 1), opacity .3s cubic-bezier(.4, 0, .2, 1);
     }
 
     &__text {
-        background: $color-base-white;
+        background: map.get(variables.$fab, "text", "background");
         border: none;
-        border-radius: 2px;
-        box-shadow: 0 2px 5px 0 rgba($color-base-black, .26);
+        border-radius: .2rem;
+        box-shadow: 0 .2rem .5rem 0 rgba(variables.$color-base-black, .26);
         font-size: 1.4rem;
-        line-height: 1.4rem;
-        color: $color-text;
-        padding: 4px 6px 3px;
+        line-height: 1;
+        color: map.get(variables.$fab, "text", "color");
+        padding: map.get(variables.$fab, "text", "padding");
         display: inline-block;
         vertical-align: middle;
 
         + #{$self}__icon {
-            margin-left: 18px;
+            margin-left: 1.8rem;
         }
     }
 
     &__icon {
-        @include ripple;
+        @include mixins.ripple;
 
-        background: $color-fab;
-        box-shadow: 0 1px 6px rgba($color-base-black,.16), 0 3px 10px rgba($color-base-black,.16);
+        background: map.get(variables.$fab, "icon", "background");
+        box-shadow: 0 1px 6px rgba($color-base-black, .16), 0 3px 10px rgba($color-base-black, .16);
         border: none;
         border-radius: 50%;
-        color: $color-fab-text;
+        color: map.get(variables.$fab, "icon", "color");
         display: inline-flex;
-        width: 40px;
-        height: 40px;
+        width: map.get(variables.$fab, "icon", "size");
+        height: map.get(variables.$fab, "icon", "size");
         position: relative;
         justify-content: center;
         align-items: center;
-        transition: background 0.2s ease;
+        transition: background .2s ease;
 
         &:hover {
-            background: lighten($color-fab, 8%);
+            background: lighten(map.get(variables.$fab, "icon", "background"), 8%);
         }
     }
 }
