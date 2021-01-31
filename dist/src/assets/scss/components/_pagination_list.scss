@@ -1,0 +1,101 @@
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
+
+.pagination-list {
+    display: inline-flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    font-size: map.get(variables.$pagination, "font-size");
+
+    &__item {
+        display: inline-block;
+        margin: 0 .5rem;
+        vertical-align: middle;
+
+        a, span {
+            border-radius: map.get(variables.$pagination, "border-radius");
+            color: inherit;
+            display: block;
+            font-size: inherit;
+            font-weight: 600;
+            line-height: map.get(variables.$pagination, "height");
+            min-width: map.get(variables.$pagination, "width");
+            height: map.get(variables.$pagination, "height");
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.2s ease;
+
+            &:hover {
+                background: darken(variables.$color-base-white, 4%);
+                color: map.get(variables.$button, "background");
+                text-decoration: none;
+            }
+
+            &:after {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                pointer-events: none;
+                background-image: radial-gradient(circle, variables.$color-base-black 10%, transparent 10.01%);
+                background-repeat: no-repeat;
+                background-position: 50%;
+                transform: scale(10, 10);
+                opacity: 0;
+                transition: transform .5s, opacity 1s;
+                background-color: variables.$color-base-white;
+            }
+
+            &:active:after {
+                transform: scale(0, 0);
+                opacity: .2;
+                transition: 0s;
+            }
+        }
+
+        &--active a {
+            background: map.get(variables.$pagination, "background");
+            color: map.get(variables.$pagination, "color");
+            box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .2), 0 .2rem .2rem 0 rgba(0, 0, 0, .14), 0 .3rem .1rem -.2rem rgba(0, 0, 0, .12);
+
+            &:hover {
+                background: map.get(variables.$pagination, "background");
+                color: map.get(variables.$pagination, "color");
+                box-shadow: none;
+            }
+        }
+    }
+
+    &__nav {
+        @include mixins.button;
+        @include mixins.button--text;
+        @include mixins.button--compact;
+
+        display: inline-block;
+        color: rgba(map.get(variables.$pagination, "color-nav"), .54);
+        vertical-align: middle;
+        box-shadow: unset;
+        font-size: map.get(variables.$pagination, "font-size");
+        font-weight: 700;
+        letter-spacing: .03571em;
+
+        &--disabled {
+            background: none;
+            color: rgba(map.get(variables.$pagination, "color-nav"), .32);
+            cursor: not-allowed;
+
+            &:hover {
+                background: none;
+                color: rgba(map.get(variables.$pagination, "color-nav"), .32);
+                text-decoration: none;
+            }
+        }
+    }
+}

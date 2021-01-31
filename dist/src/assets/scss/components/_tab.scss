@@ -1,0 +1,59 @@
+@use '../setup/variables' as *;
+@use '../setup/mixins' as *;
+
+.tab {
+    $self: &;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 2rem;
+
+    &__input {
+        position: absolute;
+        opacity: 0;
+        z-index: -1;
+
+        &:checked + #{$self}__label {
+            border-bottom: 2px solid $color-primary;
+
+            + #{$self}__panel {
+                display: block;
+            }
+
+            .chip {
+                background: $color-primary;
+
+                &__text {
+                    color: $color-base-white;
+                }
+            }
+        }
+    }
+
+    &__label {
+        @include ripple;
+
+        border-bottom: 1px solid $color-table-border;
+        cursor: pointer;
+        padding: 1rem 2rem;
+        transition: border .25s ease, background .25s ease;
+
+        &:hover {
+            background: rgba($color-table-border, .3);
+        }
+    }
+
+    &__panel {
+        display: none;
+        width: 100%;
+        order: 99;
+        margin-top: 20px;
+    }
+
+    .chip {
+        font-size: 1.2rem;
+        margin: 0 4px;
+        min-height: 22px;
+        padding: .2rem .8rem;
+    }
+}

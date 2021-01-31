@@ -1,0 +1,153 @@
+@use '../setup/variables' as *;
+@use '../setup/mixins' as *;
+
+$fab-size: 56px !default;
+
+.fab {
+    $self: &;
+
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    transform: translate3d(0, 0, 0);
+    will-change: transform,opacity;
+    z-index: 9;
+
+    @media(max-width: $screen-sm-max) {
+        right: 20px;
+        bottom: 20px;
+    }
+
+    .framed & {
+        display: inline-block;
+        float: right;
+        position: relative;
+        margin-top: 180px;
+    }
+
+    &--center {
+        right: 50%;
+        margin-right: -28px;
+    }
+
+    &--menu {
+        &:before {
+            background: $color-fab;
+            border-radius: 50%;
+            cursor: pointer;
+            content: url($fab-menu-icon);
+            color: $color-fab-text;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: $fab-size;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 11;
+        }
+
+        &:hover:before, &:focus:before {
+            opacity: 0;
+            z-index: 9;
+        }
+    }
+
+    &__button {
+        @include ripple;
+
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background: $color-fab;
+        border: none;
+        border-radius: 50%;
+        box-shadow: 0 5px 5px -3px rgba($color-base-black,.2), 0 8px 10px 1px rgba($color-base-black,.14), 0 3px 14px 2px rgba($color-base-black,.12);
+        cursor: pointer;
+        color: $color-fab-text;
+        display: inline-flex;
+        font-size: 2.4rem;
+        width: $fab-size;
+        height: $fab-size;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: lighten($color-fab, 8%);
+            color: $color-fab-text;
+        }
+    }
+
+    &__list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        max-height: 0;
+        position: absolute;
+        bottom: $fab-size;
+        right: 8px;
+        min-width: 200px;
+        text-align: right;
+        opacity: 0;
+        overflow: hidden;
+        transform: translateY(40px);
+        transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), max-height 0s linear 0.3s;
+
+        &-item {
+            display: inline-block;
+            margin-top: 8px;
+        }
+    }
+
+    &:hover &__list, &:focus &__list {
+        padding: 0 0 10px 0;
+        max-height: 999px;
+        display: block;
+        opacity: 1;
+        transform: translateY(0);
+        transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+    }
+
+    &__text {
+        background: $color-base-white;
+        border: none;
+        border-radius: 2px;
+        box-shadow: 0 2px 5px 0 rgba($color-base-black, .26);
+        font-size: 1.4rem;
+        line-height: 1.4rem;
+        color: $color-text;
+        padding: 4px 6px 3px;
+        display: inline-block;
+        vertical-align: middle;
+
+        + #{$self}__icon {
+            margin-left: 18px;
+        }
+    }
+
+    &__icon {
+        @include ripple;
+
+        background: $color-fab;
+        box-shadow: 0 1px 6px rgba($color-base-black,.16), 0 3px 10px rgba($color-base-black,.16);
+        border: none;
+        border-radius: 50%;
+        color: $color-fab-text;
+        display: inline-flex;
+        width: 40px;
+        height: 40px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        transition: background 0.2s ease;
+
+        &:hover {
+            background: lighten($color-fab, 8%);
+        }
+    }
+}

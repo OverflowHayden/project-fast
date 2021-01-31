@@ -1,0 +1,371 @@
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
+
+table {
+    $self: &;
+    background: variables.$color-table;
+    border-spacing: 0;
+    border-collapse: collapse;
+    border: 1px solid variables.$color-table-border;
+    box-shadow: 0 1px 5px 0 rgba(variables.$color-base-black, 0.2), 0 2px 2px 0 rgba(variables.$color-base-black, 0.14), 0 3px 1px -2px rgba(variables.$color-base-black, 0.12);
+
+    @media (max-width: variables.$screen-md-max) {
+        display: block;
+    }
+
+    tr {
+        height: 5.6rem;
+        transition: background .25s ease;
+
+        &:hover {
+            background: darken(variables.$color-table, 3%);
+        }
+    }
+
+    th, td {
+        padding: 4px 56px 4px 24px;
+        border-bottom: 1px solid variables.$color-table-border;
+
+        .button {
+            vertical-align: middle;
+        }
+
+        &:last-of-type {
+            padding-right: 24px;
+        }
+    }
+
+    th {
+        color: rgba(variables.$color-table-text, 0.54);
+        font-size: 1.2rem;
+        font-weight: 500;
+
+        a {
+            color: inherit;
+        }
+
+        i {
+            margin-right: 8px;
+        }
+
+        &[align="right"] {
+            text-align: right;
+
+            @media (max-width: variables.$screen-sm-max) {
+                text-align: left;
+            }
+        }
+    }
+
+    td {
+        color: variables.$color-table-text;
+        font-size: 1.3rem;
+        font-weight: 400;
+    }
+
+    tfoot {
+        background: variables.$color-table;
+        position: relative;
+    }
+
+    .text-field, .number-field, .select-field {
+        padding: .5rem 0;
+        margin: 0;
+
+        &__input {
+            font-size: 1.3rem;
+        }
+    }
+
+    .select-field:after {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    &.table--compact {
+        tr {
+            height: 44px;
+        }
+
+        th, td {
+            padding: 4px 0 4px 24px;
+
+            .button {
+                padding: 4px 6px;
+            }
+
+            &:last-of-type {
+                padding-right: 24px;
+            }
+        }
+    }
+
+    .checkbox {
+        margin-bottom: 0;
+    }
+
+    &.table--layout-fixed {
+        table-layout: fixed;
+    }
+
+    &.table--fullwidth {
+        width: 100%;
+    }
+
+    &.table--scroll-horizontal {
+        white-space: nowrap;
+        overflow-x: auto;
+    }
+
+    &.table--fit {
+        max-width: 100%;
+
+        td, th {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &.table--striped {
+        tr th {
+            background: darken(variables.$color-table, 3%);
+        }
+
+        tr:nth-child(even) {
+            background: darken(variables.$color-table, 2%);
+
+            &:hover {
+                background: darken(variables.$color-table, 3%);
+            }
+        }
+    }
+}
+
+.data-table {
+    $self: &;
+
+    &__head {
+        text-align: right;
+
+        @media (max-width: variables.$screen-sm-max) {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+        }
+
+        th {
+            position: relative;
+
+            @media (max-width: variables.$screen-sm-max) {
+                text-align: unset;
+            }
+        }
+    }
+
+    &__selection {
+        background: variables.$color-table;
+        color: variables.$color-primary;
+        font-size: 1.6rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 4px 24px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.15s ease, z-index 0s ease 0.15s;
+
+        &:before {
+            background: variables.$color-table-selection;
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #{$self}--checked & {
+            opacity: 1;
+            z-index: 3;
+            transition: opacity 0.15s ease;
+        }
+    }
+
+    &__action {
+        color: variables.$color-primary;
+        display: inline-block;
+        float: left;
+        font-size: 1.6rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        vertical-align: middle;
+        margin-top: 10px;
+
+        &:hover {
+            color: darken(variables.$color-primary, 8%);
+        }
+    }
+
+    &__buttons {
+        .button--icon.button--text {
+            border-radius: 50%;
+            font-size: 2.4rem;
+            color: map.get(variables.$icon, "color");
+            padding: 10px 6px;
+        }
+    }
+
+    &__filter {
+        @include mixins.button;
+        @include mixins.button--icon;
+        @include mixins.button--text;
+
+        border-radius: 50%;
+        font-size: 2.4rem;
+        color: map.get(variables.$icon, "color");
+        padding: 10px;
+
+        .iconify {
+            margin: 0;
+        }
+    }
+
+    &__footer {
+        text-align: right;
+
+        td {
+            color: rgba(variables.$color-table-text, 0.54);
+            font-size: 1.2rem;
+            font-weight: 500;
+            vertical-align: middle;
+        }
+    }
+
+    &__results {
+        float: left;
+        margin-top: 6px;
+    }
+
+    &__pagination {
+        display: inline-block;
+
+        @media (max-width: variables.$screen-sm-max) {
+            .pagination-list {
+                display: none;
+            }
+        }
+    }
+}
+
+@media (max-width: variables.$screen-sm-max) {
+    tr, tbody td, th, tfoot, thead, tbody, table {
+        display: block;
+        text-align: left;
+    }
+
+    .data-table {
+        padding-top: 42px;
+    }
+
+    table, table.table--compact {
+        --cols: 2;
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        position: relative;
+
+        thead {
+            width: 30%;
+        }
+
+        tbody {
+            width: 70%;
+        }
+
+        tr {
+            height: auto;
+        }
+
+        thead tr:not(.data-table__head) {
+            --height: calc((39px + (15px / var(--cols))) * var(--cols));
+            text-shadow: 0 var(--height),
+            0 calc(var(--height) * 2),
+            0 calc(var(--height) * 3),
+            0 calc(var(--height) * 4),
+            0 calc(var(--height) * 5),
+            0 calc(var(--height) * 6),
+            0 calc(var(--height) * 7),
+            0 calc(var(--height) * 8),
+            0 calc(var(--height) * 9),
+            0 calc(var(--height) * 10),
+            0 calc(var(--height) * 11),
+            0 calc(var(--height) * 12),
+            0 calc(var(--height) * 13),
+            0 calc(var(--height) * 14),
+            0 calc(var(--height) * 15),
+            0 calc(var(--height) * 16),
+            0 calc(var(--height) * 17),
+            0 calc(var(--height) * 18),
+            0 calc(var(--height) * 19),
+            0 calc(var(--height) * 20),
+            0 calc(var(--height) * 21),
+            0 calc(var(--height) * 22),
+            0 calc(var(--height) * 23),
+            0 calc(var(--height) * 24),
+            0 calc(var(--height) * 25),
+            0 calc(var(--height) * 26),
+            0 calc(var(--height) * 27),
+            0 calc(var(--height) * 28),
+            0 calc(var(--height) * 29),
+            0 calc(var(--height) * 30);
+        }
+
+        th, td {
+            padding: 8px 18px;
+            min-height: 39px;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        th {
+            text-align: left;
+            border-bottom: none;
+        }
+
+        td:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            right: 100%;
+            bottom: -1px;
+            border-bottom: 1px solid variables.$color-table-border;
+        }
+    }
+
+    table.table--compact thead tr:not(.data-table__head) {
+        --height: calc((37.5px + (15px / var(--cols))) * var(--cols));
+    }
+
+    table.table--compact th .button, table.table--compact td .button {
+        padding: 0 6px;
+    }
+
+    table thead, table.table--compact thead {
+        width: 35%;
+    }
+
+    table tbody, table.table--compact tbody {
+        width: 65%;
+    }
+}

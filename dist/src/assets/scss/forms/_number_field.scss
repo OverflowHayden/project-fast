@@ -1,0 +1,5 @@
+@use '../setup/mixins';
+
+.number-field {
+    @include mixins.input-field;
+}

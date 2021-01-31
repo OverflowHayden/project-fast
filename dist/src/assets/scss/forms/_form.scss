@@ -1,0 +1,67 @@
+@use '../setup/variables' as *;
+@use '../setup/mixins' as *;
+@use '../vendor/bourbon' as *;
+@use '../vendor/neat' as *;
+
+.form {
+    background: $color-form;
+    border-spacing: 0;
+    border-collapse: collapse;
+    box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12);
+    padding: 30px;
+    max-width: 100%;
+
+    &--no-card {
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    &--s {
+        width: 400px;
+    }
+
+    &--m {
+        width: 800px;
+    }
+
+    &--l {
+        width: 1200px;
+    }
+
+    &--inline {
+        display: inline-block;
+    }
+
+    &__row {
+        @include clearfix;
+
+        &.grid {
+            @include grid-collapse($form-grid);
+        }
+
+        .col__lg {
+            @include twelve-columns($form-grid, $screen-lg-min);
+        }
+
+        .col__md {
+            @include twelve-columns($form-grid, $screen-md-min);
+        }
+
+        .col__sm {
+            @include twelve-columns($form-grid, $screen-sm-min);
+        }
+
+        .col__xs {
+            @include twelve-columns($form-grid, $screen-xs);
+        }
+
+        .field--outline {
+            margin-top: 4px;
+        }
+    }
+
+    .text-field, .password-field, .select-field, .textarea-field, .number-field {
+        width: 100%;
+    }
+}

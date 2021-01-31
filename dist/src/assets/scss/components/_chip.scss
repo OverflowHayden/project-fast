@@ -1,0 +1,83 @@
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
+
+.chip {
+    @include mixins.ripple;
+    $self: &;
+
+    appearance: none;
+    background: map.get(variables.$chip, "background");
+    border-radius: map.get(variables.$chip, "border-radius");
+    cursor: pointer;
+    display: inline-flex;
+    font-size: map.get(variables.$chip, "font-size");
+    line-height: 1.4;
+    margin: .2857em;
+    padding: map.get(variables.$chip, "padding");
+    min-height: map.get(variables.$chip, "height");
+    text-decoration: none;
+    transition: background .25s ease;
+
+    &:hover {
+        background: darken(map.get(variables.$chip, "background"), 8%);
+    }
+
+    &--primary {
+        background: map.get(variables.$chip, "background-primary");
+
+        &:hover {
+            background: darken(map.get(variables.$chip, "background-primary"), 8%);
+        }
+
+        #{$self}__text, #{$self}__icon {
+            color: map.get(variables.$chip, "color-primary");
+        }
+    }
+
+    &--alt {
+        background: rgba(map.get(variables.$chip, "background-primary"), .21);
+
+        &:hover {
+            background: rgba(map.get(variables.$chip, "background-primary"), .32);
+        }
+
+        #{$self}__text, #{$self}__icon {
+            color: map.get(variables.$chip, "background-primary");
+        }
+    }
+
+    &__text {
+        color: map.get(variables.$chip, "color");
+        font-weight: 400;
+        letter-spacing: .01785em;
+    }
+
+    &__icon {
+        color: map.get(variables.$chip, "color");
+        display: inline-block;
+        font-size: map.get(variables.$chip, "icon-font-size");
+        line-height: 1;
+        vertical-align: middle;
+        margin-right: .25em;
+
+        .mdi, .iconify {
+            line-height: 1;
+        }
+    }
+
+    &__filter {
+        color: map.get(variables.$chip, "color");
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: .25em;
+        line-height: 1.25;
+        opacity: .44;
+        transition: opacity .25s ease;
+
+        &:hover {
+            color: map.get(variables.$chip, "color");
+            opacity: 1;
+        }
+    }
+}

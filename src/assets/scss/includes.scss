@@ -6,9 +6,11 @@
 	1.		Setup
 	2. 		Vendors
 	3.		Fonts
-	4.		Atoms
-	5.		Molecules
-	6.		Organisms
+	4.		Utilities
+	5.		Elements
+	6.		Forms
+	7.      Components
+	8.      Layout
 
 */
 
@@ -17,7 +19,6 @@
 ---------------------------------------------------------------------------- */
 //@import 'setup/variables';
 //@import 'setup/mixins';
-
 
 /* ----------------------------------------------------------------------------
 //	2. Vendors
@@ -29,52 +30,56 @@
 @use 'vendor/tippy';
 @use 'vendor/choices';
 
-
 /* ----------------------------------------------------------------------------
 //	3. Fonts
 //---------------------------------------------------------------------------- */
 @use 'setup/fonts';
 
-
-///* ----------------------------------------------------------------------------
-//	4. Atoms
+/* ----------------------------------------------------------------------------
+//	4. Utilities
 //---------------------------------------------------------------------------- */
-@use 'atoms/typography';
-@use 'atoms/utilities';
-@use 'atoms/button';
-@use 'atoms/checkbox';
-@use 'atoms/chip';
-@use 'atoms/radio';
-@use 'atoms/text_field';
-@use 'atoms/password_field';
-@use 'atoms/textarea_field';
-@use 'atoms/number_field';
-@use 'atoms/select_field';
-@use 'atoms/upload_field';
-@use 'atoms/field';
-@use 'atoms/pagination_list';
-
+@use 'utilities/utilities';
 
 /* ----------------------------------------------------------------------------
-//	5. Molecules
+//	5. Elements
 //---------------------------------------------------------------------------- */
-@use 'molecules/container';
-@use 'molecules/row';
-@use 'molecules/grid';
-@use 'molecules/card';
-@use 'molecules/form';
-@use 'molecules/table';
-@use 'molecules/fab';
-@use 'molecules/menu';
-@use 'molecules/list';
-@use 'molecules/expansion_panel';
-@use 'molecules/tab';
+@use 'elements/typography';
+@use 'elements/button';
 
-
-///* ----------------------------------------------------------------------------
-//	6. Organisms
+/* ----------------------------------------------------------------------------
+//	6. Forms
 //---------------------------------------------------------------------------- */
-@use 'organisms/app_bar';
-@use 'organisms/drawer';
-@use 'organisms/main';
-@use 'organisms/login';
+@use 'forms/form';
+@use 'forms/checkbox';
+@use 'forms/radio';
+@use 'forms/text_field';
+@use 'forms/password_field';
+@use 'forms/textarea_field';
+@use 'forms/number_field';
+@use 'forms/select_field';
+@use 'forms/upload_field';
+@use 'forms/field';
+
+/* ----------------------------------------------------------------------------
+//	7. Components
+//---------------------------------------------------------------------------- */
+@use 'components/card';
+@use 'components/chip';
+@use 'components/fab';
+@use 'components/menu';
+@use 'components/list';
+@use 'components/expansion_panel';
+@use 'components/tab';
+@use 'components/table';
+@use 'components/pagination_list';
+@use 'components/app_bar';
+@use 'components/drawer';
+@use 'components/login';
+
+/* ----------------------------------------------------------------------------
+//	8. Layout
+//---------------------------------------------------------------------------- */
+@use 'layout/main';
+@use 'layout/container';
+@use 'layout/row';
+@use 'layout/grid';

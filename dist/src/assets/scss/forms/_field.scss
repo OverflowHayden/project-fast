@@ -1,0 +1,268 @@
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
+
+.field {
+    $self: &;
+    $fields: (".text-field", ".password-field", ".select-field", ".textarea-field", ".number-field");
+
+    @each $field in $fields {
+        &--fill {
+            padding-top: 0;
+
+            #{$field}__label {
+                transform: translate(.75em, 1.375em) scale(1);
+                transition: transform .2s cubic-bezier(0, 0, .2, 1), padding .2s cubic-bezier(0, 0, .2, 1), background .2s cubic-bezier(0, 0, .2, 1);
+            }
+
+            #{$field}__input {
+                background: map.get(variables.$input-field, "fill");
+                border-top-left-radius: .4rem;
+                border-top-right-radius: .4rem;
+                padding: 1em .75em 0;
+                height: 3.7em;
+
+                &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
+                    transform: translate(.75em, .75em) scale(.75);
+                }
+
+                &:disabled {
+                    background: darken(map.get(variables.$input-field, "fill"), 5%);
+                }
+
+                &:not(:placeholder-shown) + #{$field}__label, &:checked + #{$field}__label {
+                    transform: translate(.75em, .75em) scale(.75);
+                }
+            }
+
+            .textarea-field__input {
+                padding-top: .75em;
+            }
+
+            #{$self}__helper {
+                margin-left: .75em;
+            }
+
+            #{$self}__prefix {
+                position: absolute;
+                left: .75em;
+                top: 1.3em;
+
+                + #{$field}__input {
+                    padding-left: 2em;
+                    width: 100%;
+                }
+
+                + #{$field}__input + #{$field}__label {
+                    transform: translate(2em, 1.5em) scale(1);
+                }
+
+                + #{$field}__input:focus + #{$field}__label, + #{$field}__input.placeholder-hidden + #{$field}__label {
+                    transform: translate(2em, .75em) scale(.75);
+                }
+
+                + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+                    transform: translate(2em, .75em) scale(.75);
+                }
+            }
+
+            #{$self}__suffix {
+                position: absolute;
+                right: .75em;
+                top: 1.3em;
+                margin-top: 0;
+
+                + #{$field}__input {
+                    width: 100%;
+                    padding-right: 2em;
+                }
+
+                + #{$field}__input + #{$field}__label {
+                    transform: translate(.75em, 1.5em) scale(1);
+                }
+
+                + #{$field}__input:focus + #{$field}__label, + #{$field}__input.placeholder-hidden + #{$field}__label {
+                    transform: translate(.75em, .75em) scale(.75);
+                }
+
+                + #{$field}__input:not(:placeholder-shown) + #{$field}__label {
+                    transform: translate(.75em, .75em) scale(.75);
+                }
+            }
+        }
+
+        &--outline {
+            padding-top: 0;
+
+            #{$field}__label {
+                transform: translate(.75em, 1.375em) scale(1);
+            }
+
+            #{$field}__input {
+                border: 1px solid map.get(variables.$input-field, "inactive");
+                border-radius: 4px;
+                padding: .75em .75em .375em;
+                height: 3.7em;
+
+                &:hover:not(:disabled) {
+                    box-shadow: inset 0 0 0 .1rem map.get(variables.$input-field, "inactive");
+                }
+
+                &:focus {
+                    border: 1px solid map.get(variables.$input-field, "active");
+                    box-shadow: inset 0 0 0 .1rem map.get(variables.$input-field, "active");
+                }
+
+                &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
+                    background: variables.$color-base-white;
+                    padding: 0 .375em;
+                    transform: translate(.375em, -.3125em) scale(.75);
+                }
+
+                &:not(:placeholder-shown) + #{$field}__label, &:-webkit-autofill + #{$field}__label {
+                    background: variables.$color-base-white;
+                    padding: 0 .375em;
+                    transform: translate(.375em, -.3125em) scale(.75);
+                }
+            }
+
+            #{$self}__helper {
+                margin-left: .75em;
+            }
+
+            #{$self}__prefix {
+                position: absolute;
+                left: .75em;
+                top: 1.25em;
+
+                + #{$field}__input {
+                    padding-left: 2em;
+                    width: 100%;
+                }
+
+                + #{$field}__input + #{$field}__label {
+                    transform: translate(2em, 1.5em) scale(1);
+                }
+
+                + #{$field}__input:focus + #{$field}__label, + #{$field}__input.placeholder-hidden + #{$field}__label {
+                    transform: translate(.75em, -.375em) scale(.75);
+                }
+
+                + #{$field}__input:not(:placeholder-shown) + #{$field}__label, + #{$field}__input:-webkit-autofill + #{$field}__label {
+                    transform: translate(.75em, -.375em) scale(0.75);
+                }
+            }
+
+            #{$self}__suffix {
+                position: absolute;
+                right: .75em;
+                top: 1.25em;
+                margin-top: 0;
+
+                + #{$field}__input {
+                    padding-right: 2em;
+                    width: 100%;
+                }
+
+                + #{$field}__input + #{$field}__label {
+                    transform: translate(.75em, 1.5em) scale(1);
+                }
+
+                + #{$field}__input:focus + #{$field}__label, + #{$field}__input.placeholder-hidden + #{$field}__label {
+                    transform: translate(.375em, -.3125em) scale(0.75);
+                }
+
+                + #{$field}__input:not(:placeholder-shown) + #{$field}__label, + #{$field}__input:-webkit-autofill + #{$field}__label {
+                    transform: translate(.375em, -.3125em) scale(0.75);
+                }
+            }
+        }
+
+        &__prefix {
+            display: inline-block;
+            flex: 1 0 auto;
+            float: left;
+            width: 1.9rem;
+            vertical-align: middle;
+            position: relative;
+            top: .3em;
+
+            + #{$field}__input {
+                display: inline-block;
+                flex: 1 1 auto;
+                width: calc(100% - 1.25em);
+                vertical-align: middle;
+
+                + #{$field}__label {
+                    transform: translate(1.25em, 1.5em) scale(1);
+                }
+
+                &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
+                    transform: translate(0,0) scale(.75);
+                }
+
+                &:not(:placeholder-shown) + #{$field}__label, &:-webkit-autofill + #{$field}__label {
+                    transform: translate(0,0) scale(.75);
+                }
+            }
+        }
+
+        &__suffix {
+            display: inline-block;
+            float: right;
+            width: 1.25em;
+            margin-top: .3125em;
+            vertical-align: middle;
+            text-align: right;
+
+            + #{$field}__input {
+                display: inline-block;
+                width: calc(100% - 1.25em);
+                vertical-align: middle;
+
+                + #{$field}__label {
+                    transform: translate(0, 1.5em) scale(1);
+                }
+
+                &:focus + #{$field}__label, &.placeholder-hidden + #{$field}__label {
+                    transform: translate(0,0) scale(.75);
+                }
+
+                &:not(:placeholder-shown) + #{$field}__label, &:-webkit-autofill + #{$field}__label {
+                    transform: translate(0,0) scale(.75);
+                }
+            }
+        }
+
+        &__helper {
+            display: inline-block;
+            margin-top: .5em;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            color: map.get(variables.$input-field, "helper");
+        }
+
+        &--error {
+
+            #{$field}__input {
+                border-color: map.get(variables.$input-field, "error");
+
+                &:hover {
+                    box-shadow: inset 0 0 0 .1rem map.get(variables.$input-field, "error");
+                }
+            }
+
+            #{$field}__label {
+                color: map.get(variables.$input-field, "error");
+            }
+        }
+
+        &__error-text {
+            display: inline-block;
+            margin-top: .5em;
+            font-size: 1.2rem;
+            line-height: 1.4;
+            color: map.get(variables.$input-field, "error");
+        }
+    }
+}

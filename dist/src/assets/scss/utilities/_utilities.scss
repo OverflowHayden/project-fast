@@ -1,0 +1,255 @@
+@use '../setup/variables';
+
+html.framed {
+    max-height: 2000px;
+    overflow: hidden;
+}
+
+.animating-open {
+    display: inline-block;
+    transform: scale(.8);
+    transition: opacity .03s linear, transform .12s cubic-bezier(0, 0, .2, 1);
+    opacity: 0;
+    overflow-y: hidden;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.align-center {
+    text-align: center;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.bg {
+    &--primary {
+        background: variables.$color-primary;
+    }
+
+    &--secondary {
+        background: variables.$color-secondary;
+    }
+
+    &--success {
+        background: lighten(variables.$color-success, 10%);
+    }
+
+    &--error {
+        background: lighten(variables.$color-error, 10%);
+    }
+}
+
+.color {
+    &--primary {
+        color: variables.$color-primary;
+    }
+
+    &--secondary {
+        color: variables.$color-secondary;
+    }
+
+    &--success {
+        color: variables.$color-success;
+    }
+
+    &--error {
+        color: variables.$color-error;
+    }
+}
+
+.no-margin {
+    margin: 0;
+}
+
+.margin-top {
+    margin-top: variables.$margin-size;
+
+    &--xs {
+        @media (min-width: variables.$screen-xs) {
+            margin-top: variables.$margin-size;
+        }
+    }
+
+    &--sm {
+        @media (min-width: variables.$screen-sm-min) {
+            margin-top: variables.$margin-size;
+        }
+    }
+
+    &--md {
+        @media (min-width: variables.$screen-md-min) {
+            margin-top: variables.$margin-size;
+        }
+    }
+
+    &--lg {
+        @media (min-width: variables.$screen-lg-min) {
+            margin-top: variables.$margin-size;
+        }
+    }
+}
+
+.margin-top--2x {
+    margin-top: variables.$margin-size * 2;
+
+    &--xs {
+        @media (min-width: variables.$screen-xs) {
+            margin-top: variables.$margin-size * 2;
+        }
+    }
+
+    &--sm {
+        @media (min-width: variables.$screen-sm-min) {
+            margin-top: variables.$margin-size * 2;
+        }
+    }
+
+    &--md {
+        @media (min-width: variables.$screen-md-min) {
+            margin-top: variables.$margin-size * 2;
+        }
+    }
+
+    &--lg {
+        @media (min-width: variables.$screen-lg-min) {
+            margin-top: variables.$margin-size * 2;
+        }
+    }
+}
+
+.margin-bottom {
+    margin-bottom: variables.$margin-size;
+
+    &--xs {
+        @media (min-width: variables.$screen-xs) {
+            margin-bottom: variables.$margin-size;
+        }
+    }
+
+    &--sm {
+        @media (min-width: variables.$screen-sm-min) {
+            margin-bottom: variables.$margin-size;
+        }
+    }
+
+    &--md {
+        @media (min-width: variables.$screen-md-min) {
+            margin-bottom: variables.$margin-size;
+        }
+    }
+
+    &--lg {
+        @media (min-width: variables.$screen-lg-min) {
+            margin-bottom: variables.$margin-size;
+        }
+    }
+}
+
+.margin-bottom--2x {
+    margin-bottom: variables.$margin-size * 2;
+
+    &--xs {
+        @media (min-width: variables.$screen-xs) {
+            margin-bottom: variables.$margin-size * 2;
+        }
+    }
+
+    &--sm {
+        @media (min-width: variables.$screen-sm-min) {
+            margin-bottom: variables.$margin-size * 2;
+        }
+    }
+
+    &--md {
+        @media (min-width: variables.$screen-md-min) {
+            margin-bottom: variables.$margin-size * 2;
+        }
+    }
+
+    &--lg {
+        @media (min-width: variables.$screen-lg-min) {
+            margin-bottom: variables.$margin-size * 2;
+        }
+    }
+}
+
+.hidden {
+    display: none;
+
+    &--xs {
+        @media (max-width: variables.$screen-xs) {
+            display: none;
+        }
+    }
+
+    &--sm {
+        @media (max-width: variables.$screen-sm-max) {
+            display: none;
+        }
+    }
+
+    &--md {
+        @media (max-width: variables.$screen-md-max) {
+            display: none;
+        }
+    }
+
+    &--lg {
+        @media (max-width: variables.$screen-lg-max) {
+            display: none;
+        }
+    }
+}
+
+.visible {
+    display: block;
+
+    &--xs {
+        display: none;
+
+        @media (max-width: variables.$screen-xs) {
+            display: block;
+        }
+    }
+
+    &--sm {
+        display: none;
+
+        @media (max-width: variables.$screen-sm-max) {
+            display: block;
+        }
+    }
+
+    &--md {
+        display: none;
+
+        @media (max-width: variables.$screen-md-max) {
+            display: block;
+        }
+    }
+
+    &--lg {
+        display: none;
+
+        @media (max-width: variables.$screen-lg-max) {
+            display: block;
+        }
+    }
+}
+
+iframe {
+    border: none;
+    width: 100%;
+}

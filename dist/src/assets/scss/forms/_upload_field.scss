@@ -1,0 +1,25 @@
+@use '../setup/mixins';
+@use '../vendor/bourbon';
+
+.upload-field {
+    @include bourbon.clearfix;
+    margin-bottom: 1.5rem;
+
+    &__input {
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &__label {
+        @include mixins.button;
+        margin-right: .75em;
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .field__helper {
+        display: block;
+        margin-top: 0;
+    }
+}

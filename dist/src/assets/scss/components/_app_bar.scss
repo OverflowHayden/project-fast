@@ -1,0 +1,102 @@
+@use '../setup/variables' as *;
+@use '../setup/mixins' as *;
+
+.app-bar {
+    $self: &;
+    background: $color-app-bar;
+    color: $color-app-bar-text;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 8px 12px;
+    height: 62px;
+    will-change: top;
+    z-index: 19;
+
+    &--prominent {
+        height: 128px;
+        align-items: flex-start;
+
+        #{$self}__title {
+            align-self: flex-end;
+        }
+    }
+
+    &--dense {
+        height: 54px;
+        padding: 2px 4px;
+    }
+
+    &__nav-toggle {
+        @include button;
+        @include button--text;
+        @include button--icon;
+
+        border-radius: 50%;
+        font-size: 2.4rem;
+        color: $color-app-bar-text;
+        padding: 9px;
+
+        &:hover {
+            background: darken($color-app-bar, 4%);
+            color: $color-app-bar-text;
+        }
+    }
+
+    &__title {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 3.2rem;
+        letter-spacing: 0.025rem;
+        margin-left: 20px;
+    }
+
+    &__actions {
+        margin-left: auto;
+
+        form {
+            display: inline-block;
+        }
+    }
+
+    .button {
+        color: $color-app-bar-text;
+        padding: 9px;
+
+        &.button--icon {
+            border-radius: 50%;
+        }
+
+        .mdi, .iconify {
+            font-size: 2.4rem;
+            line-height: 1.6rem;
+        }
+
+        &:hover {
+            background: darken($color-app-bar, 4%);
+            color: $color-app-bar-text;
+        }
+    }
+
+    .menu__list {
+        left: auto;
+        right: 0;
+        transform-origin: top right;
+    }
+}
+
+.with-app-bar {
+    padding-top: 62px;
+
+    &--prominent {
+        padding-top: 128px;
+    }
+
+    &--dense {
+        padding-top: 54px;
+    }
+}
