@@ -21,3 +21,21 @@ category: Components
     <div class="tab__panel">Tab 3 content</div>
 </section>
 ```
+
+#### Variables
+```
+@use "setup/variables" with (
+    $tab: (
+        "label": (
+            "border": #e0e0e0,
+            "border-active": $color-primary,
+        ),
+        "border": $color-primary,
+        "chip": (
+            "background": $color-primary,
+            "color": $color-base-white,
+            "font-size": 1.4rem,
+        ),
+    ),
+);
+```

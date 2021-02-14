@@ -197,6 +197,19 @@ $form: (
     ),
 ) !default;
 
+$tab: (
+    "label": (
+        "border": #e0e0e0,
+        "border-active": $color-primary,
+    ),
+    "border": $color-primary,
+    "chip": (
+        "background": $color-primary,
+        "color": $color-base-white,
+        "font-size": 1.4rem,
+    ),
+) !default;
+
 /* ---------------------------------------------- //
  * Font
 // ---------------------------------------------- */
