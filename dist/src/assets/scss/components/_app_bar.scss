@@ -1,10 +1,11 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
 
 .app-bar {
     $self: &;
-    background: $color-app-bar;
-    color: $color-app-bar-text;
+    background: map.get(variables.$app-bar, "background");
+    color: map.get(variables.$app-bar, "color");
     position: fixed;
     top: 0;
     left: 0;
@@ -12,13 +13,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 8px 12px;
-    height: 62px;
+    padding: map.get(variables.$app-bar, "padding");
+    height: map.get(variables.$app-bar, "height");
     will-change: top;
     z-index: 19;
 
     &--prominent {
-        height: 128px;
+        height: map.get(variables.$app-bar, "prominent", "height");
         align-items: flex-start;
 
         #{$self}__title {
@@ -27,32 +28,32 @@
     }
 
     &--dense {
-        height: 54px;
-        padding: 2px 4px;
+        height: map.get(variables.$app-bar, "dense", "height");
+        padding: map.get(variables.$app-bar, "dense", "padding");
     }
 
     &__nav-toggle {
-        @include button;
-        @include button--text;
-        @include button--icon;
+        @include mixins.button;
+        @include mixins.button--text;
+        @include mixins.button--icon;
 
         border-radius: 50%;
         font-size: 2.4rem;
-        color: $color-app-bar-text;
+        color: map.get(variables.$app-bar, "color");
         padding: 9px;
 
         &:hover {
-            background: darken($color-app-bar, 4%);
-            color: $color-app-bar-text;
+            background: darken(map.get(variables.$app-bar, "background"), 4%);
+            color: map.get(variables.$app-bar, "color");
         }
     }
 
     &__title {
-        font-size: 2rem;
+        font-size: map.get(variables.$app-bar, "title", "font-size");
         font-weight: 500;
-        line-height: 3.2rem;
+        line-height: 1.6;
         letter-spacing: 0.025rem;
-        margin-left: 20px;
+        margin-left: 1em;
     }
 
     &__actions {
@@ -64,21 +65,21 @@
     }
 
     .button {
-        color: $color-app-bar-text;
-        padding: 9px;
+        color: map.get(variables.$app-bar, "color");
+        padding: .9rem;
 
         &.button--icon {
             border-radius: 50%;
         }
 
         .mdi, .iconify {
-            font-size: 2.4rem;
-            line-height: 1.6rem;
+            font-size: map.get(variables.$app-bar, "icon", "font-size");
+            line-height: 1;
         }
 
         &:hover {
-            background: darken($color-app-bar, 4%);
-            color: $color-app-bar-text;
+            background: darken(map.get(variables.$app-bar, "background"), 4%);
+            color: map.get(variables.$app-bar, "color");
         }
     }
 
@@ -90,13 +91,13 @@
 }
 
 .with-app-bar {
-    padding-top: 62px;
+    padding-top: map.get(variables.$app-bar, "height");
 
     &--prominent {
-        padding-top: 128px;
+        padding-top: map.get(variables.$app-bar, "prominent", "height");
     }
 
     &--dense {
-        padding-top: 54px;
+        padding-top: map.get(variables.$app-bar, "dense", "height");
     }
 }

@@ -10,8 +10,6 @@ $color-base-black:                #000 !default;
 
 $color-text:                      #333 !default;
 $color-link:                      #007bff !default;
-$color-app-bar:                   $color-primary !default;
-$color-app-bar-text:              $color-base-white !default;
 $color-drawer:                    $color-base-white !default;
 $color-drawer-text:               rgba($color-base-black, .87) !default;
 $color-drawer-header:             $color-primary !default;
@@ -32,6 +30,26 @@ $drawer-background:               url($drawer-image) no-repeat center bottom 50p
 $border-radius:                   3px !default;
 $login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
 $margin-size:                     30px !default;
+
+$app-bar: (
+    "background": $color-primary,
+    "color": $color-base-white,
+    "padding": .8rem 1.2rem,
+    "height": 6.2rem,
+    "title": (
+        "font-size": 2rem,
+    ),
+    "prominent": (
+        "height": 12.8rem,
+    ),
+    "dense": (
+        "height": 5.4rem,
+        "padding": .2rem .4rem,
+    ),
+    "icon": (
+        "font-size": 2.4rem,
+    ),
+) !default;
 
 $button: (
     "background": $color-primary,

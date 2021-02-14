@@ -99,6 +99,25 @@ Fast.Appbar();
 
 #### Variables
 ```
-$color-app-bar:                   $color-primary !default;
-$color-app-bar-text:              $color-base-white !default;
+@use "setup/variables" with (
+    $app-bar: (
+        "background": $color-primary,
+        "color": $color-base-white,
+        "padding": .8rem 1.2rem,
+        "height": 6.2rem,
+        "title": (
+            "font-size": 2rem,
+        ),
+        "prominent": (
+            "height": 12.8rem,
+        ),
+        "dense": (
+            "height": 5.4rem,
+            "padding": .2rem .4rem,
+        ),
+        "icon": (
+            "font-size": 2.4rem,
+        ),
+    ),
+);
 ```
