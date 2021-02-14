@@ -9,8 +9,8 @@ Fixed form sizes:
 `form--m` 800px,
 `form--l` 1200px
 
-To remove card:
-`form--no-card`
+To wrap it around a card:
+`form--card`
 
 Inline:
 `form--inline`
@@ -144,4 +144,18 @@ Inline:
         <a href="#" class="button button--text">Cancel</a>
     </form>
 </div>
+```
+
+#### Variables
+```
+@use "setup/variables" with (
+    $form: (
+        "background": $color-base-white,
+        "sizes": (
+            "s": 40rem,
+            "m": 80rem,
+            "l": 120rem,
+        ),
+    )
+);
 ```

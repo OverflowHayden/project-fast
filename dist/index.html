@@ -4361,8 +4361,8 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
 <code>form--s</code> 400px,
 <code>form--m</code> 800px,
 <code>form--l</code> 1200px</p>
-<p>To remove card:
-<code>form--no-card</code></p>
+<p>To wrap it around a card:
+<code>form--card</code></p>
 <p>Inline:
 <code>form--inline</code></p>
 <div class="i-example">
@@ -4650,6 +4650,31 @@ $color-table-selection:           rgba($color-primary, 0.22) !default;</code></p
         &lt;a href=&quot;#&quot; class=&quot;button button--text&quot;&gt;Cancel&lt;/a&gt;
     &lt;/form&gt;
 &lt;/div&gt;</code></pre>
+	</div>
+</div><h4>Variables</h4>
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $form: (
+        &quot;background&quot;: $color-base-white,
+        &quot;sizes&quot;: (
+            &quot;s&quot;: 40rem,
+            &quot;m&quot;: 80rem,
+            &quot;l&quot;: 120rem,
+        ),
+    )
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $form: (
+        &quot;background&quot;: $color-base-white,
+        &quot;sizes&quot;: (
+            &quot;s&quot;: 40rem,
+            &quot;m&quot;: 80rem,
+            &quot;l&quot;: 120rem,
+        ),
+    )
+);</code></pre>
 	</div>
 </div></div>
 </div>

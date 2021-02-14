@@ -8,8 +8,8 @@
 	3.		Fonts
 	4.		Utilities
 	5.		Elements
-	6.		Forms
-	7.      Components
+	6.      Components
+	7.		Forms
 	8.      Layout
 
 */
@@ -47,21 +47,7 @@
 @use 'elements/button';
 
 /* ----------------------------------------------------------------------------
-//	6. Forms
-//---------------------------------------------------------------------------- */
-@use 'forms/form';
-@use 'forms/checkbox';
-@use 'forms/radio';
-@use 'forms/text_field';
-@use 'forms/password_field';
-@use 'forms/textarea_field';
-@use 'forms/number_field';
-@use 'forms/select_field';
-@use 'forms/upload_field';
-@use 'forms/field';
-
-/* ----------------------------------------------------------------------------
-//	7. Components
+//	6. Components
 //---------------------------------------------------------------------------- */
 @use 'components/card';
 @use 'components/chip';
@@ -75,6 +61,20 @@
 @use 'components/app_bar';
 @use 'components/drawer';
 @use 'components/login';
+
+/* ----------------------------------------------------------------------------
+//	7. Forms
+//---------------------------------------------------------------------------- */
+@use 'forms/form';
+@use 'forms/checkbox';
+@use 'forms/radio';
+@use 'forms/text_field';
+@use 'forms/password_field';
+@use 'forms/textarea_field';
+@use 'forms/number_field';
+@use 'forms/select_field';
+@use 'forms/upload_field';
+@use 'forms/field';
 
 /* ----------------------------------------------------------------------------
 //	8. Layout

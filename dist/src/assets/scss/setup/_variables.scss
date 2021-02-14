@@ -14,7 +14,6 @@ $color-table:                     $color-base-white !default;
 $color-table-border:              #e0e0e0 !default;
 $color-table-text:                $color-base-black !default;
 $color-table-selection:           rgba($color-primary, 0.22) !default;
-$color-form:                      $color-base-white !default;
 $color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;
 $color-drawer:                    $color-base-white !default;
@@ -187,6 +186,15 @@ $menu: (
     "font-size": 1.6rem,
     "border-radius": .2rem,
     "color": $color-base-black,
+) !default;
+
+$form: (
+    "background": $color-base-white,
+    "sizes": (
+        "s": 40rem,
+        "m": 80rem,
+        "l": 120rem,
+    ),
 ) !default;
 
 /* ---------------------------------------------- //
