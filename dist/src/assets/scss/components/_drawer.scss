@@ -1,12 +1,12 @@
-@use '../setup/variables' as *;
-@use '../setup/mixins' as *;
+@use 'sass:map';
+@use '../setup/variables';
+@use '../setup/mixins';
 
 .drawer {
     $self: &;
-    background: $color-drawer;
-    color: $color-drawer-text;
-    width: 240px;
-    //overflow: hidden;
+    background: map.get(variables.$drawer, "background");
+    color: map.get(variables.$drawer, "color");
+    width: map.get(variables.$drawer, "compact", "width");
 
     &-scroll-lock {
         overflow: hidden;
@@ -17,8 +17,8 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: calc(100% - 64px);
-        max-width: 320px;
+        width: calc(100% - 6.4rem);
+        max-width: map.get(variables.$drawer, "width");
         height: 100%;
         opacity: .0001;
         transform: translateX(-100%);
@@ -27,15 +27,15 @@
 
         #{$self}__drawer {
             width: 100%;
-            box-shadow: 0 8px 10px -5px rgba($color-base-black, .2),0 16px 24px 2px rgba($color-base-black, .14),0 6px 30px 5px rgba($color-base-black, .12);
+            box-shadow: 0 .8rem 1rem -.5rem rgba(variables.$color-base-black, .2), 0 1.6rem 2.4rem .2rem rgba(variables.$color-base-black, .14), 0 .6rem 3rem .5rem rgba(variables.$color-base-black, .12);
         }
 
         #{$self}__label {
             position: absolute;
             top: 0;
             bottom: 0;
-            width: 16px;
-            right: -16px;
+            width: 1.6rem;
+            right: -1.6rem;
         }
 
         #{$self}__antiSelect {
@@ -54,7 +54,7 @@
 
         #{$self}__drawer {
             box-shadow: none;
-            border-right: 1px solid $color-drawer-border;
+            border-right: .1rem solid map.get(variables.$drawer, "border");
         }
 
         &#{$self}--open {
@@ -70,8 +70,8 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: calc(100% - 64px);
-        max-width: 320px;
+        width: calc(100% - 6.4rem);
+        max-width: map.get(variables.$drawer, "width");
         height: 100%;
         opacity: 1;
         transform: translateX(0);
@@ -79,25 +79,25 @@
 
         #{$self}__drawer {
             width: 100%;
-            border-right: 1px solid $color-drawer-border;
+            border-right: .1rem solid map.get(variables.$drawer, "border");
         }
 
         + .main {
-            margin-left: 320px;
+            margin-left: map.get(variables.$drawer, "width");
 
             .app-bar {
-                left: 320px;
+                left: map.get(variables.$drawer, "width");
             }
         }
     }
 
     &--compact {
-        max-width: 240px;
+        max-width: map.get(variables.$drawer, "compact", "width");
     }
 
     &__bg {
         position: fixed;
-        background: rgba(0, 0, 0, 0.5);
+        background: rgba(variables.$color-base-black, .5);
         top: 0;
         left: 0;
         right: 0;
@@ -113,49 +113,47 @@
     &__noselect {
         -webkit-touch-callout: none;
         -webkit-user-select: none;
-        -moz-user-select: none;
         -ms-user-select: none;
         user-select: none;
     }
 
     &__drawer {
-        background: $color-drawer;
+        background: map.get(variables.$drawer, "background");
         height: 100%;
 
         &#{$self}--dark {
-            background: $color-secondary;
-            color: $color-base-white;
+            background: map.get(variables.$drawer, "dark", "background");
+            color: map.get(variables.$drawer, "dark", "color");
 
             .list__item, .list__item-graphic, .list__item-meta, .list__item-header, .list__item-secondary-text {
-                color: $color-base-white;
+                color: map.get(variables.$drawer, "dark", "color");
             }
 
             #{$self}__content {
-                @include scrollbar($color-secondary);
+                @include mixins.scrollbar(map.get(variables.$drawer, "dark", "background"));
             }
         }
     }
 
     &__header {
-        background: $drawer-background;
-        background-color: $color-drawer-header;
-        color: $color-drawer-header-text;
+        background: #{map.get(variables.$drawer, "header", "background")} map.get(variables.$drawer, "header", "image");
+        color: map.get(variables.$drawer, "header", "color");
         display: flex;
         align-items: flex-end;
-        min-height: 135px;
-        padding: 16px;
+        min-height: map.get(variables.$drawer, "header", "height");
+        padding: map.get(variables.$drawer, "header", "padding");
 
         #{$self}--compact & {
             background-position: 95%;
             background-size: auto 65%;
-            min-height: 62px;
-            padding: 8px 16px;
+            min-height: map.get(variables.$drawer, "compact", "header", "height");
+            padding: map.get(variables.$drawer, "compact", "header", "padding");
             align-items: center;
         }
     }
 
     &__content {
-        max-height: calc(100vh - 135px);
+        max-height: calc(100vh - #{map.get(variables.$drawer, "header", "height")});
         height: 100%;
         overflow-y: auto;
         display: flex;
@@ -163,26 +161,26 @@
         align-items: flex-start;
         justify-content: flex-start;
         scrollbar-width: thin;
-        scrollbar-color: $color-drawer $color-drawer;
+        scrollbar-color: map.get(variables.$drawer, "background") map.get(variables.$drawer, "background");
 
         &::-webkit-scrollbar {
-            width: 10px;
+            width: 1rem;
         }
 
         &::-webkit-scrollbar-track {
-            background: $color-drawer;
+            background: map.get(variables.$drawer, "background");
         }
 
         &:hover {
-            scrollbar-color: darken($color-drawer, 20%) $color-drawer;
+            scrollbar-color: darken(map.get(variables.$drawer, "background"), 20%) map.get(variables.$drawer, "background");
 
             &::-webkit-scrollbar-thumb {
-                background: darken($color-drawer, 20%);
+                background: darken(map.get(variables.$drawer, "background"), 20%);
             }
         }
 
         .drawer--compact & {
-            max-height: calc(100vh - 62px);
+            max-height: calc(100vh - #{map.get(variables.$drawer, "compact", "header", "height")});
         }
     }
 
@@ -196,7 +194,7 @@
         }
 
         &__item {
-            font-size: 1.4rem;
+            font-size: map.get(variables.$drawer, "list", "font-size");
             font-weight: 500;
         }
     }
@@ -206,18 +204,18 @@
     overflow-x: hidden;
 
     .main {
-        margin-left: 320px;
+        margin-left: map.get(variables.$drawer, "width");
 
         .app-bar {
-            left: 320px;
+            left: map.get(variables.$drawer, "width");
         }
     }
 
     .drawer--compact + .main {
-        margin-left: 240px;
+        margin-left: map.get(variables.$drawer, "compact", "width");
 
         .app-bar {
-            left: 240px;
+            left: map.get(variables.$drawer, "compact", "width");
         }
     }
 }

@@ -66,13 +66,13 @@
             }
 
             .drawer & #{$self}__item-text {
-                padding-left: 4.5em;
+                padding-left: 5.1em;
             }
         }
 
         .drawer &#{$self}--open {
-            border-top: .1rem solid variables.$color-drawer-border;
-            border-bottom: .1rem solid variables.$color-drawer-border;
+            border-top: .1rem solid map.get(variables.$drawer, "border");
+            border-bottom: .1rem solid map.get(variables.$drawer, "border");
 
             #{$self}__item-meta path {
                 transform: rotate(180deg);

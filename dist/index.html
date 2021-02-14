@@ -1657,22 +1657,66 @@ Fast.Drawer();</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="$drawer-image:                    &quot;../img/logo.svg&quot; !default;
-$drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
-
-$color-drawer:                    $color-base-white !default;
-$color-drawer-text:               rgba($color-base-black, .87) !default;
-$color-drawer-header:             $color-primary !default;
-$color-drawer-header-text:        $color-base-white !default;
-$color-drawer-border:             #e0e0e0 !default;">Copy</button>
-		<pre class="mb-0"><code class="lang-">$drawer-image:                    &quot;../img/logo.svg&quot; !default;
-$drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
-
-$color-drawer:                    $color-base-white !default;
-$color-drawer-text:               rgba($color-base-black, .87) !default;
-$color-drawer-header:             $color-primary !default;
-$color-drawer-header-text:        $color-base-white !default;
-$color-drawer-border:             #e0e0e0 !default;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $drawer: (
+        &quot;background&quot;: $color-base-white,
+        &quot;color&quot;: rgba($color-base-black, .87),
+        &quot;border&quot;: #e0e0e0,
+        &quot;width&quot;: 32rem,
+        &quot;image&quot;: &quot;/src/assets/img/logo.svg&quot;,
+        &quot;header&quot;: (
+            &quot;background&quot;: $color-primary,
+            &quot;color&quot;: $color-base-white,
+            &quot;height&quot;: 13.5rem,
+            &quot;image&quot;: url(&quot;/src/assets/img/logo.svg&quot;) no-repeat center bottom 5rem / auto calc(100% - 6.5rem),
+            &quot;padding&quot;: 1.6rem,
+        ),
+        &quot;compact&quot;: (
+            &quot;width&quot;: 24rem,
+            &quot;header&quot;: (
+                &quot;height&quot;: 6.2rem,
+                &quot;padding&quot;: .8rem 1.6rem,
+            ),
+        ),
+        &quot;dark&quot;: (
+            &quot;background&quot;: $color-secondary,
+            &quot;color&quot;: $color-base-white,
+        ),
+        &quot;list&quot;: (
+            &quot;font-size&quot;: 1.4rem,
+        ),
+    ),
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $drawer: (
+        &quot;background&quot;: $color-base-white,
+        &quot;color&quot;: rgba($color-base-black, .87),
+        &quot;border&quot;: #e0e0e0,
+        &quot;width&quot;: 32rem,
+        &quot;image&quot;: &quot;/src/assets/img/logo.svg&quot;,
+        &quot;header&quot;: (
+            &quot;background&quot;: $color-primary,
+            &quot;color&quot;: $color-base-white,
+            &quot;height&quot;: 13.5rem,
+            &quot;image&quot;: url(&quot;/src/assets/img/logo.svg&quot;) no-repeat center bottom 5rem / auto calc(100% - 6.5rem),
+            &quot;padding&quot;: 1.6rem,
+        ),
+        &quot;compact&quot;: (
+            &quot;width&quot;: 24rem,
+            &quot;header&quot;: (
+                &quot;height&quot;: 6.2rem,
+                &quot;padding&quot;: .8rem 1.6rem,
+            ),
+        ),
+        &quot;dark&quot;: (
+            &quot;background&quot;: $color-secondary,
+            &quot;color&quot;: $color-base-white,
+        ),
+        &quot;list&quot;: (
+            &quot;font-size&quot;: 1.4rem,
+        ),
+    ),
+);</code></pre>
 	</div>
 </div></div>
 </div>

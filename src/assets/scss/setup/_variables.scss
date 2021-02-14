@@ -10,14 +10,6 @@ $color-base-black:                #000 !default;
 
 $color-text:                      #333 !default;
 $color-link:                      #007bff !default;
-$color-drawer:                    $color-base-white !default;
-$color-drawer-text:               rgba($color-base-black, .87) !default;
-$color-drawer-header:             $color-primary !default;
-$color-drawer-header-text:        $color-base-white !default;
-$color-drawer-border:             #e0e0e0 !default;
-$color-facebook: 				  #3b5998 !default;
-$color-youtube: 				  #e52d27 !default;
-$color-twitter: 				  #55acee !default;
 $color-success:                   #28a745 !default;
 $color-error:                     #f44336 !default;
 
@@ -25,8 +17,6 @@ $color-error:                     #f44336 !default;
 /* ---------------------------------------------- //
  * Style settings
 // ---------------------------------------------- */
-$drawer-image:                    "/src/assets/img/logo.svg" !default;
-$drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
 $border-radius:                   3px !default;
 $login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
 $margin-size:                     30px !default;
@@ -80,6 +70,35 @@ $chip: (
     "padding": .5em .857em,
     "height": 2em,
     "icon-font-size": 1.6rem,
+) !default;
+
+$drawer: (
+    "background": $color-base-white,
+    "color": rgba($color-base-black, .87),
+    "border": #e0e0e0,
+    "width": 32rem,
+    "image": "/src/assets/img/logo.svg",
+    "header": (
+        "background": $color-primary,
+        "color": $color-base-white,
+        "height": 13.5rem,
+        "image": url("/src/assets/img/logo.svg") no-repeat center bottom 5rem / auto calc(100% - 6.5rem),
+        "padding": 1.6rem,
+    ),
+    "compact": (
+        "width": 24rem,
+        "header": (
+            "height": 6.2rem,
+            "padding": .8rem 1.6rem,
+        ),
+    ),
+    "dark": (
+        "background": $color-secondary,
+        "color": $color-base-white,
+    ),
+    "list": (
+        "font-size": 1.4rem,
+    ),
 ) !default;
 
 $headings: (

@@ -340,12 +340,34 @@ The drawer will change to temporary on mobile
 
 #### Variables
 ```
-$drawer-image:                    "../img/logo.svg" !default;
-$drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
-
-$color-drawer:                    $color-base-white !default;
-$color-drawer-text:               rgba($color-base-black, .87) !default;
-$color-drawer-header:             $color-primary !default;
-$color-drawer-header-text:        $color-base-white !default;
-$color-drawer-border:             #e0e0e0 !default;
+@use "setup/variables" with (
+    $drawer: (
+        "background": $color-base-white,
+        "color": rgba($color-base-black, .87),
+        "border": #e0e0e0,
+        "width": 32rem,
+        "image": "/src/assets/img/logo.svg",
+        "header": (
+            "background": $color-primary,
+            "color": $color-base-white,
+            "height": 13.5rem,
+            "image": url("/src/assets/img/logo.svg") no-repeat center bottom 5rem / auto calc(100% - 6.5rem),
+            "padding": 1.6rem,
+        ),
+        "compact": (
+            "width": 24rem,
+            "header": (
+                "height": 6.2rem,
+                "padding": .8rem 1.6rem,
+            ),
+        ),
+        "dark": (
+            "background": $color-secondary,
+            "color": $color-base-white,
+        ),
+        "list": (
+            "font-size": 1.4rem,
+        ),
+    ),
+);
 ```
