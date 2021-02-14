@@ -198,8 +198,7 @@ Also usable with table--compact
         <tr>
             <th>
                 <div class="checkbox">
-                    <input id="cb_0" type="checkbox" />
-                    <label for="cb_0" class="checkbox__input"></label>
+                    <input id="cb_0" type="checkbox" class="checkbox__input" />
                 </div>
             </th>
             <th><a href="#"><iconify-icon data-icon="mdi:arrow-down"></iconify-icon>ID</a></th>
@@ -212,8 +211,7 @@ Also usable with table--compact
         <tr>
             <td>
                 <div class="checkbox">
-                    <input id="cb_1" type="checkbox" />
-                    <label for="cb_1" class="checkbox__input"></label>
+                    <input id="cb_1" type="checkbox" class="checkbox__input" />
                 </div>
             </td>
             <td>1</td>
@@ -225,8 +223,7 @@ Also usable with table--compact
         <tr>
             <td>
                 <div class="checkbox">
-                    <input id="cb_2" type="checkbox" />
-                    <label for="cb_2" class="checkbox__input"></label>
+                    <input id="cb_2" type="checkbox" class="checkbox__input" />
                 </div>
             </td>
             <td>2</td>
@@ -238,8 +235,7 @@ Also usable with table--compact
         <tr>
             <td>
                 <div class="checkbox">
-                    <input id="cb_3" type="checkbox" />
-                    <label for="cb_3" class="checkbox__input"></label>
+                    <input id="cb_3" type="checkbox" class="checkbox__input" />
                 </div>
             </td>
             <td>3</td>
@@ -251,8 +247,7 @@ Also usable with table--compact
         <tr>
             <td>
                 <div class="checkbox">
-                    <input id="cb_4" type="checkbox" />
-                    <label for="cb_4" class="checkbox__input"></label>
+                    <input id="cb_4" type="checkbox" class="checkbox__input" />
                 </div>
             </td>
             <td>4</td>
@@ -264,8 +259,7 @@ Also usable with table--compact
         <tr>
             <td>
                 <div class="checkbox">
-                    <input id="cb_5" type="checkbox" />
-                    <label for="cb_5" class="checkbox__input"></label>
+                    <input id="cb_5" type="checkbox" class="checkbox__input" />
                 </div>
             </td>
             <td>5</td>
@@ -277,8 +271,7 @@ Also usable with table--compact
         <tr>
             <td>
                 <div class="checkbox">
-                    <input id="cb_6" type="checkbox" />
-                    <label for="cb_6" class="checkbox__input"></label>
+                    <input id="cb_6" type="checkbox" class="checkbox__input" />
                 </div>
             </td>
             <td>6</td>
@@ -319,11 +312,39 @@ The following classes can be added to the `<table>`:
 `.table--fullwidth` for 100% width.  
 `.table--scroll-horizontal` for horizontal scrolling if the table is too big.  
 `.table--fit` for making the content fit on one line. (If you have set widths to columns)
+`.table--responsive` for change the table to a vertical view on mobile.
 
 #### Variables
 ```
-$color-table:                     $color-base-white !default;
-$color-table-border:              #e0e0e0 !default;
-$color-table-text:                $color-base-black !default;
-$color-table-selection:           rgba($color-primary, 0.22) !default;
+@use "setup/variables" with (
+    $table: (
+        "background": $color-base-white,
+        "border": #e0e0e0,
+        "color": $color-base-black,
+        "font-size": 1.3rem,
+        "padding": .4rem 5.6rem .4rem 2.4rem,
+        "height": 5.6rem,
+        "head": (
+            "font-size": 1.2rem,
+            "color": rgba($color-base-black, .54),
+        ),
+        "foot": (
+            "font-size": 1.2rem,
+        ),
+        "compact": (
+            "height": 4.4rem,
+            "padding": .4rem 0 .4rem 2.4rem,
+        ),
+        "data-table": (
+            "selection": $color-primary,
+            "action": $color-primary,
+        ),
+        "responsive": (
+            "head-width": 35%,
+            "body-width": 65%,
+            "height": 3.9rem,
+            "padding": .8rem 1.8rem,
+        ),
+    ),
+);
 ```

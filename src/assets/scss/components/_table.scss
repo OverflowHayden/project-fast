@@ -4,41 +4,37 @@
 
 table {
     $self: &;
-    background: variables.$color-table;
+    background: map.get(variables.$table, "background");
     border-spacing: 0;
     border-collapse: collapse;
-    border: 1px solid variables.$color-table-border;
-    box-shadow: 0 1px 5px 0 rgba(variables.$color-base-black, 0.2), 0 2px 2px 0 rgba(variables.$color-base-black, 0.14), 0 3px 1px -2px rgba(variables.$color-base-black, 0.12);
-
-    @media (max-width: variables.$screen-md-max) {
-        display: block;
-    }
+    border: .1rem solid map.get(variables.$table, "border");
+    box-shadow: 0 .1rem .5rem 0 rgba(variables.$color-base-black, .2), 0 .2rem .2rem 0 rgba(variables.$color-base-black, .14), 0 .3rem .1rem -.2rem rgba(variables.$color-base-black, .12);
 
     tr {
-        height: 5.6rem;
+        height: map.get(variables.$table, "height");
         transition: background .25s ease;
 
         &:hover {
-            background: darken(variables.$color-table, 3%);
+            background: darken(map.get(variables.$table, "background"), 3%);
         }
     }
 
     th, td {
-        padding: 4px 56px 4px 24px;
-        border-bottom: 1px solid variables.$color-table-border;
+        padding: map.get(variables.$table, "padding");
+        border-bottom: 1px solid map.get(variables.$table, "border");
 
         .button {
             vertical-align: middle;
         }
 
         &:last-of-type {
-            padding-right: 24px;
+            padding-right: 2.4rem;
         }
     }
 
     th {
-        color: rgba(variables.$color-table-text, 0.54);
-        font-size: 1.2rem;
+        color: map.get(variables.$table, "head", "color");
+        font-size: map.get(variables.$table, "head", "font-size");
         font-weight: 500;
 
         a {
@@ -46,7 +42,7 @@ table {
         }
 
         i {
-            margin-right: 8px;
+            margin-right: .666em;
         }
 
         &[align="right"] {
@@ -59,23 +55,19 @@ table {
     }
 
     td {
-        color: variables.$color-table-text;
-        font-size: 1.3rem;
+        color: map.get(variables.$table, "color");
+        font-size: map.get(variables.$table, "font-size");
         font-weight: 400;
     }
 
     tfoot {
-        background: variables.$color-table;
+        background: map.get(variables.$table, "background") e;
         position: relative;
     }
 
     .text-field, .number-field, .select-field {
-        padding: .5rem 0;
+        font-size: map.get(variables.$table, "font-size");
         margin: 0;
-
-        &__input {
-            font-size: 1.3rem;
-        }
     }
 
     .select-field:after {
@@ -85,18 +77,18 @@ table {
 
     &.table--compact {
         tr {
-            height: 44px;
+            height: map.get(variables.$table, "compact", "height");
         }
 
         th, td {
-            padding: 4px 0 4px 24px;
+            padding: map.get(variables.$table, "compact", "padding") x;
 
             .button {
-                padding: 4px 6px;
+                padding: .4rem .6rem;
             }
 
             &:last-of-type {
-                padding-right: 24px;
+                padding-right: 2.4rem;
             }
         }
     }
@@ -114,6 +106,7 @@ table {
     }
 
     &.table--scroll-horizontal {
+        display: block;
         white-space: nowrap;
         overflow-x: auto;
     }
@@ -130,14 +123,14 @@ table {
 
     &.table--striped {
         tr th {
-            background: darken(variables.$color-table, 3%);
+            background: darken(map.get(variables.$table, "background"), 3%);
         }
 
         tr:nth-child(even) {
-            background: darken(variables.$color-table, 2%);
+            background: darken(map.get(variables.$table, "background"), 2%);
 
             &:hover {
-                background: darken(variables.$color-table, 3%);
+                background: darken(map.get(variables.$table, "background"), 3%);
             }
         }
     }
@@ -150,31 +143,35 @@ table {
         text-align: right;
 
         @media (max-width: variables.$screen-sm-max) {
-            display: block;
-            position: absolute;
-            left: 0;
-            top: 0;
-            right: 0;
+            .table--responsive & {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+            }
         }
 
         th {
             position: relative;
 
             @media (max-width: variables.$screen-sm-max) {
-                text-align: unset;
+                .table--responsive & {
+                    text-align: unset;
+                }
             }
         }
     }
 
     &__selection {
-        background: variables.$color-table;
-        color: variables.$color-primary;
+        background: map.get(variables.$table, "background");
+        color: map.get(variables.$table, "data-table", "selection");
         font-size: 1.6rem;
         display: flex;
         flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
-        padding: 4px 24px;
+        padding: .4rem 2.4rem;
         position: absolute;
         top: 0;
         right: 0;
@@ -182,10 +179,10 @@ table {
         left: 0;
         opacity: 0;
         z-index: -1;
-        transition: opacity 0.15s ease, z-index 0s ease 0.15s;
+        transition: opacity .15s ease, z-index 0s ease .15s;
 
         &:before {
-            background: variables.$color-table-selection;
+            background: rgba(map.get(variables.$table, "data-table", "selection"), .22);
             content: "";
             position: absolute;
             top: 0;
@@ -198,22 +195,22 @@ table {
         #{$self}--checked & {
             opacity: 1;
             z-index: 3;
-            transition: opacity 0.15s ease;
+            transition: opacity .15s ease;
         }
     }
 
     &__action {
-        color: variables.$color-primary;
+        color: map.get(variables.$table, "data-table", "action");
         display: inline-block;
         float: left;
         font-size: 1.6rem;
         font-weight: 600;
         text-transform: uppercase;
         vertical-align: middle;
-        margin-top: 10px;
+        margin-top: 1em;
 
         &:hover {
-            color: darken(variables.$color-primary, 8%);
+            color: darken(map.get(variables.$table, "data-table", "action"), 8%);
         }
     }
 
@@ -222,7 +219,6 @@ table {
             border-radius: 50%;
             font-size: 2.4rem;
             color: map.get(variables.$icon, "color");
-            padding: 10px 6px;
         }
     }
 
@@ -234,7 +230,7 @@ table {
         border-radius: 50%;
         font-size: 2.4rem;
         color: map.get(variables.$icon, "color");
-        padding: 10px;
+        padding: 1rem;
 
         .iconify {
             margin: 0;
@@ -245,8 +241,8 @@ table {
         text-align: right;
 
         td {
-            color: rgba(variables.$color-table-text, 0.54);
-            font-size: 1.2rem;
+            color: rgba(map.get(variables.$table, "color"), .54);
+            font-size: map.get(variables.$table, "foot", "font-size");
             font-weight: 500;
             vertical-align: middle;
         }
@@ -254,7 +250,7 @@ table {
 
     &__results {
         float: left;
-        margin-top: 6px;
+        margin-top: .8em;
     }
 
     &__pagination {
@@ -268,17 +264,8 @@ table {
     }
 }
 
-@media (max-width: variables.$screen-sm-max) {
-    tr, tbody td, th, tfoot, thead, tbody, table {
-        display: block;
-        text-align: left;
-    }
-
-    .data-table {
-        padding-top: 42px;
-    }
-
-    table, table.table--compact {
+.table--responsive {
+    @media (max-width: variables.$screen-sm-max) {
         --cols: 2;
         display: flex;
         flex-wrap: wrap;
@@ -286,19 +273,53 @@ table {
         position: relative;
 
         thead {
-            width: 30%;
+            width: map.get(variables.$table, "responsive", "head-width");
         }
 
         tbody {
-            width: 70%;
+            width: map.get(variables.$table, "responsive", "body-width");
         }
 
         tr {
             height: auto;
         }
 
+        th, td {
+            padding: map.get(variables.$table, "responsive", "padding");
+            min-height: map.get(variables.$table, "responsive", "height");
+            white-space: nowrap;
+            position: relative;
+
+            .button {
+                padding: 0 .6rem;
+            }
+        }
+
+        th {
+            text-align: left;
+            border-bottom: none;
+        }
+
+        td:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            right: 100%;
+            bottom: -.1rem;
+            border-bottom: .1rem solid map.get(variables.$table, "border");
+        }
+
+        tr, tbody td, th, tfoot, thead, tbody {
+            display: block;
+            text-align: left;
+        }
+
+        &.data-table {
+            padding-top: 4.2rem;
+        }
+
         thead tr:not(.data-table__head) {
-            --height: calc((39px + (15px / var(--cols))) * var(--cols));
+            --height: calc(#{map.get(variables.$table, "responsive", "height")} * var(--cols));
             text-shadow: 0 var(--height),
             0 calc(var(--height) * 2),
             0 calc(var(--height) * 3),
@@ -330,42 +351,5 @@ table {
             0 calc(var(--height) * 29),
             0 calc(var(--height) * 30);
         }
-
-        th, td {
-            padding: 8px 18px;
-            min-height: 39px;
-            white-space: nowrap;
-            position: relative;
-        }
-
-        th {
-            text-align: left;
-            border-bottom: none;
-        }
-
-        td:before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            right: 100%;
-            bottom: -1px;
-            border-bottom: 1px solid variables.$color-table-border;
-        }
-    }
-
-    table.table--compact thead tr:not(.data-table__head) {
-        --height: calc((37.5px + (15px / var(--cols))) * var(--cols));
-    }
-
-    table.table--compact th .button, table.table--compact td .button {
-        padding: 0 6px;
-    }
-
-    table thead, table.table--compact thead {
-        width: 35%;
-    }
-
-    table tbody, table.table--compact tbody {
-        width: 65%;
     }
 }

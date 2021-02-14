@@ -10,10 +10,6 @@ $color-base-black:                #000 !default;
 
 $color-text:                      #333 !default;
 $color-link:                      #007bff !default;
-$color-table:                     $color-base-white !default;
-$color-table-border:              #e0e0e0 !default;
-$color-table-text:                $color-base-black !default;
-$color-table-selection:           rgba($color-primary, 0.22) !default;
 $color-app-bar:                   $color-primary !default;
 $color-app-bar-text:              $color-base-white !default;
 $color-drawer:                    $color-base-white !default;
@@ -207,6 +203,36 @@ $tab: (
         "background": $color-primary,
         "color": $color-base-white,
         "font-size": 1.4rem,
+    ),
+) !default;
+
+$table: (
+    "background": $color-base-white,
+    "border": #e0e0e0,
+    "color": $color-base-black,
+    "font-size": 1.3rem,
+    "padding": .4rem 5.6rem .4rem 2.4rem,
+    "height": 5.6rem,
+    "head": (
+        "font-size": 1.2rem,
+        "color": rgba($color-base-black, .54),
+    ),
+    "foot": (
+        "font-size": 1.2rem,
+    ),
+    "compact": (
+        "height": 4.4rem,
+        "padding": .4rem 0 .4rem 2.4rem,
+    ),
+    "data-table": (
+        "selection": $color-primary,
+        "action": $color-primary,
+    ),
+    "responsive": (
+        "head-width": 35%,
+        "body-width": 65%,
+        "height": 3.9rem,
+        "padding": .8rem 1.8rem,
     ),
 ) !default;
 
