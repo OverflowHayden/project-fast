@@ -34,3 +34,15 @@ Fast.Menu();
     </ul>
 </div>
 ```
+
+#### Variables
+```
+@use "setup/variables" with (
+    $menu: (
+        "background": $color-base-white,
+        "font-size": 1.6rem,
+        "border-radius": .2rem,
+        "color": $color-base-black,
+    )
+);
+```

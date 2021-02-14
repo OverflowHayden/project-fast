@@ -1,7 +1,7 @@
-@use '../setup/variables' as *;
+@use '../setup/variables';
 
 .login {
-    background: url($login-image) no-repeat center center / cover;
+    background: url('#{variables.$login-image}') no-repeat center center / cover;
     display: flex;
     width: 100%;
     height: 100vh;
