@@ -1,14 +1,14 @@
-export default function fastUpload () {
+export default function fastUpload() {
     //----------------------------------------------------------------------------------
     // Upload field value
     //----------------------------------------------------------------------------------
-    if(document.querySelectorAll('.upload-field').length > 0) {
+    if (document.querySelectorAll('.upload-field').length > 0) {
         var uploadFields = document.querySelectorAll('.upload-field');
 
-        uploadFields.forEach(function(field) {
+        uploadFields.forEach(function (field) {
             if (field !== null) {
 
-                field.querySelector('.upload-field__input').addEventListener('change', function() {
+                field.querySelector('.upload-field__input').addEventListener('change', function () {
                     var values = [];
 
                     for (let i = 0, files = this.files.length; i < files; i++) {

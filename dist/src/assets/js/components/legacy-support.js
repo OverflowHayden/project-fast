@@ -1,4 +1,4 @@
-export default function legacySupport () {
+export default function legacySupport() {
     function hasClass(element, className) {
         do {
             if (element.classList && element.classList.contains(className)) {

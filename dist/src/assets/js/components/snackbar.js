@@ -1,3 +1,3 @@
-export default function fastSnackbar () {
+export default function fastSnackbar() {
     return require("snackbarlightjs");
 }

@@ -1,6 +1,6 @@
 import tippy from 'tippy.js';
 
-export default function fastFab () {
+export default function fastFab() {
     const fabTooltip = document.querySelector('.fab--menu');
     tippy(fabTooltip, {
         placement: 'left',
@@ -10,11 +10,11 @@ export default function fastFab () {
     //----------------------------------------------------------------------------------
     // FAB toggle on mobile
     //----------------------------------------------------------------------------------
-    if(document.querySelector('.fab--menu')) {
-        var fab = document.querySelector('.fab');
+    if (document.querySelector('.fab--menu')) {
+        const fab = document.querySelector('.fab');
 
-        fab.addEventListener('touchstart', function(e){
-            if(document.activeElement != this) {
+        fab.addEventListener('touchstart', function (e) {
+            if (document.activeElement != this) {
                 e.preventDefault();
             }
 

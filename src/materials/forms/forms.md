@@ -15,6 +15,9 @@ To wrap it around a card:
 Inline:
 `form--inline`
 
+To limit a form submit trigger, add:
+`form--submit-limit`
+
 ```forms.html
 <h1>Example form</h1>
 <div class="form form--m">

@@ -5,7 +5,7 @@ category: Components
 
 ```login.html
 <div class="login">
-        <div class="form form--s">
+        <div class="form form--s form--card">
             <h1>Login</h1>
             <form method="POST">
                 <div class="form__row">
@@ -22,8 +22,7 @@ category: Components
                 </div>
                 <div class="form__row">
                     <div class="checkbox">
-                        <input id="cb" type="checkbox" />
-                        <label for="cb" class="checkbox__input"></label>
+                        <input id="cb" type="checkbox" class="checkbox__input" />
                         <label for="cb" class="checkbox__label">Remember me</label>
                     </div>
                 </div>

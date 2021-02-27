@@ -1,5 +1,5 @@
-export default function fastDataTable () {
-    if(document.querySelector('.data-table') &&
+export default function fastDataTable() {
+    if (document.querySelector('.data-table') &&
         document.querySelectorAll('.data-table td input[type="checkbox"]').length > 0 &&
         document.querySelector('.data-table th input[type="checkbox"]')) {
         const tableCheckboxes = document.querySelectorAll('.data-table td input[type="checkbox"]');
@@ -20,20 +20,18 @@ export default function fastDataTable () {
                 }
             }
 
-            if(count > 0) {
+            if (count > 0) {
                 document.querySelector('.data-table').classList.add('data-table--checked');
                 document.querySelector('.data-table__selected-count').innerText = count;
 
-                if(count == tableCheckboxes.length) {
+                if (count == tableCheckboxes.length) {
                     headCheckbox.indeterminate = false;
                     headCheckbox.checked = true;
-                }
-                else {
+                } else {
                     headCheckbox.indeterminate = true;
                     headCheckbox.checked = false;
                 }
-            }
-            else {
+            } else {
                 document.querySelector('.data-table').classList.remove('data-table--checked');
                 headCheckbox.indeterminate = false;
                 headCheckbox.checked = false;
@@ -45,20 +43,18 @@ export default function fastDataTable () {
         function allCheckboxes() {
             for (let i = 0, element; element = tableCheckboxes[i]; i++) {
                 if (element !== null) {
-                    if(headCheckbox.checked == true) {
+                    if (headCheckbox.checked == true) {
                         element.checked = true;
-                    }
-                    else {
+                    } else {
                         element.checked = false;
                     }
                 }
             }
 
-            if(headCheckbox.checked == true) {
+            if (headCheckbox.checked == true) {
                 document.querySelector('.data-table').classList.add('data-table--checked');
                 document.querySelector('.data-table__selected-count').innerText = tableCheckboxes.length;
-            }
-            else {
+            } else {
                 document.querySelector('.data-table').classList.remove('data-table--checked');
             }
         }

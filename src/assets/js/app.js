@@ -17,6 +17,7 @@ fastFab();
 fastUpload();
 fastDataTable();
 fastSnackbar();
+fastForm();
 
 export default {
     LegacySupport: fastLegacySupport,
@@ -27,4 +28,5 @@ export default {
     Upload: fastUpload,
     DataTable: fastDataTable,
     Snackbar: fastSnackbar,
+    Form: fastForm,
 };
