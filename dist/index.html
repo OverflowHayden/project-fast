@@ -4519,9 +4519,18 @@ Fast.DataTable();</code></pre>
 <code>form--card</code></p>
 <p>Inline:
 <code>form--inline</code></p>
-<p>To limit a form submit trigger, add:
-<code>form--submit-limit</code></p>
-<div class="i-example">
+<p>To limit a form submit trigger, add: <code>form--submit-limit</code>
+and</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> js</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="import Fast from &#39;project-fast&#39;;
+Fast.Form();">Copy</button>
+		<pre class="mb-0"><code class="lang-">import Fast from &#39;project-fast&#39;;
+Fast.Form();</code></pre>
+	</div>
+</div><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="forms-forms.html"
@@ -4551,7 +4560,7 @@ Fast.DataTable();</code></pre>
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;h1&gt;Example form&lt;/h1&gt;
-&lt;div class=&quot;form form--m&quot;&gt;
+&lt;div class=&quot;form form--m form--submit-limit&quot;&gt;
     &lt;form&gt;
         &lt;div class=&quot;form__row&quot;&gt;
             &lt;div class=&quot;text-field&quot;&gt;
@@ -4679,7 +4688,7 @@ Fast.DataTable();</code></pre>
     &lt;/form&gt;
 &lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;h1&gt;Example form&lt;/h1&gt;
-&lt;div class=&quot;form form--m&quot;&gt;
+&lt;div class=&quot;form form--m form--submit-limit&quot;&gt;
     &lt;form&gt;
         &lt;div class=&quot;form__row&quot;&gt;
             &lt;div class=&quot;text-field&quot;&gt;
