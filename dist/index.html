@@ -83,18 +83,18 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/css/style.css&quot;&gt;">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/css/style.css&quot;&gt;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.7/dist/src/assets/css/style.css&quot;&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.7/dist/src/assets/css/style.css&quot;&gt;</code></pre>
 	</div>
 </div><p>Add the following <code>script</code> before the the closing <code>&lt;/body&gt;</code> tag. No jQuery required!</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.7/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.7/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.7/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.7/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 	</div>
 </div><h3>How to install</h3><p><strong>NPM</strong></p>
 
@@ -2614,7 +2614,18 @@ $fab-menu-icon:                   &#39;../img/dots-vertical.svg&#39; !default;</
 <code>form--no-card</code></p>
 <p>Inline:
 <code>form--inline</code></p>
-<div class="i-example">
+<p>To limit a form submit trigger, add: <code>form--submit-limit</code>
+and</p>
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> js</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="import Fast from &#39;project-fast&#39;;
+Fast.Form();">Copy</button>
+		<pre class="mb-0"><code class="lang-">import Fast from &#39;project-fast&#39;;
+Fast.Form();</code></pre>
+	</div>
+</div><div class="i-example">
                     <h5 class="i-example__heading">
                         <a
                             href="forms-forms.html"
@@ -2644,7 +2655,7 @@ $fab-menu-icon:                   &#39;../img/dots-vertical.svg&#39; !default;</
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;h1&gt;Example form&lt;/h1&gt;
-&lt;div class=&quot;form form--m&quot;&gt;
+&lt;div class=&quot;form form--m form--submit-limit&quot;&gt;
     &lt;form&gt;
         &lt;div class=&quot;form__row&quot;&gt;
             &lt;div class=&quot;text-field&quot;&gt;
@@ -2772,7 +2783,7 @@ $fab-menu-icon:                   &#39;../img/dots-vertical.svg&#39; !default;</
     &lt;/form&gt;
 &lt;/div&gt;">Copy</button>
 		<pre class="mb-0"><code class="lang-">&lt;h1&gt;Example form&lt;/h1&gt;
-&lt;div class=&quot;form form--m&quot;&gt;
+&lt;div class=&quot;form form--m form--submit-limit&quot;&gt;
     &lt;form&gt;
         &lt;div class=&quot;form__row&quot;&gt;
             &lt;div class=&quot;text-field&quot;&gt;

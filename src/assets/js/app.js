@@ -8,6 +8,7 @@ import fastFab from './components/fab.js';
 import fastUpload from './components/upload-field.js';
 import fastDataTable from './components/data-table.js';
 import fastSnackbar from './components/snackbar.js';
+import fastForm from './components/form.js';
 
 fastLegacySupport();
 fastAppbar();
@@ -17,6 +18,7 @@ fastFab();
 fastUpload();
 fastDataTable();
 fastSnackbar();
+fastForm();
 
 export default {
     LegacySupport: fastLegacySupport,
@@ -27,4 +29,5 @@ export default {
     Upload: fastUpload,
     DataTable: fastDataTable,
     Snackbar: fastSnackbar,
+    Form: fastForm,
 };

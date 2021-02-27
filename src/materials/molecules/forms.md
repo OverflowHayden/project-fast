@@ -15,9 +15,16 @@ To remove card:
 Inline:
 `form--inline`
 
+To limit a form submit trigger, add: `form--submit-limit`
+and
+```form.js
+import Fast from 'project-fast';
+Fast.Form();
+```
+
 ```forms.html
 <h1>Example form</h1>
-<div class="form form--m">
+<div class="form form--m form--submit-limit">
     <form>
         <div class="form__row">
             <div class="text-field">

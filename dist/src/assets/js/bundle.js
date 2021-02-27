@@ -1,1 +1,6047 @@
-!function(e,t){"function"==typeof define&&define.amd?define(t):"object"==typeof exports?module.exports=t():e.tingle=t()}(this,function(){var e=!1;function t(e){this.opts=function(){for(var e=1;e<arguments.length;e++)for(var t in arguments[e])arguments[e].hasOwnProperty(t)&&(arguments[0][t]=arguments[e][t]);return arguments[0]}({},{onClose:null,onOpen:null,beforeOpen:null,beforeClose:null,stickyFooter:!1,footer:!1,cssClass:[],closeLabel:"Close",closeMethods:["overlay","button","escape"]},e),this.init()}function i(){this.modalBoxFooter&&(this.modalBoxFooter.style.width=this.modalBox.clientWidth+"px",this.modalBoxFooter.style.left=this.modalBox.offsetLeft+"px")}return t.prototype.init=function(){if(!this.modal)return function(){this.modal=document.createElement("div"),this.modal.classList.add("tingle-modal"),(0===this.opts.closeMethods.length||-1===this.opts.closeMethods.indexOf("overlay"))&&this.modal.classList.add("tingle-modal--noOverlayClose");this.modal.style.display="none",this.opts.cssClass.forEach(function(e){"string"==typeof e&&this.modal.classList.add(e)},this),-1!==this.opts.closeMethods.indexOf("button")&&(this.modalCloseBtn=document.createElement("button"),this.modalCloseBtn.type="button",this.modalCloseBtn.classList.add("tingle-modal__close"),this.modalCloseBtnIcon=document.createElement("span"),this.modalCloseBtnIcon.classList.add("tingle-modal__closeIcon"),this.modalCloseBtnIcon.innerHTML='<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M.3 9.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3L5 6.4l3.3 3.3c.2.2.5.3.7.3.2 0 .5-.1.7-.3.4-.4.4-1 0-1.4L6.4 5l3.3-3.3c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L5 3.6 1.7.3C1.3-.1.7-.1.3.3c-.4.4-.4 1 0 1.4L3.6 5 .3 8.3c-.4.4-.4 1 0 1.4z" fill="#000" fill-rule="nonzero"/></svg>',this.modalCloseBtnLabel=document.createElement("span"),this.modalCloseBtnLabel.classList.add("tingle-modal__closeLabel"),this.modalCloseBtnLabel.innerHTML=this.opts.closeLabel,this.modalCloseBtn.appendChild(this.modalCloseBtnIcon),this.modalCloseBtn.appendChild(this.modalCloseBtnLabel));this.modalBox=document.createElement("div"),this.modalBox.classList.add("tingle-modal-box"),this.modalBoxContent=document.createElement("div"),this.modalBoxContent.classList.add("tingle-modal-box__content"),this.modalBox.appendChild(this.modalBoxContent),-1!==this.opts.closeMethods.indexOf("button")&&this.modal.appendChild(this.modalCloseBtn);this.modal.appendChild(this.modalBox)}.call(this),function(){this._events={clickCloseBtn:this.close.bind(this),clickOverlay:function(e){-1!==this.opts.closeMethods.indexOf("overlay")&&!function(e,t){for(;(e=e.parentElement)&&!e.classList.contains(t););return e}(e.target,"tingle-modal")&&e.clientX<this.modal.clientWidth&&this.close()}.bind(this),resize:this.checkOverflow.bind(this),keyboardNav:function(e){-1!==this.opts.closeMethods.indexOf("escape")&&27===e.which&&this.isOpen()&&this.close()}.bind(this)},-1!==this.opts.closeMethods.indexOf("button")&&this.modalCloseBtn.addEventListener("click",this._events.clickCloseBtn);this.modal.addEventListener("mousedown",this._events.clickOverlay),window.addEventListener("resize",this._events.resize),document.addEventListener("keydown",this._events.keyboardNav)}.call(this),document.body.insertBefore(this.modal,document.body.firstChild),this.opts.footer&&this.addFooter(),this},t.prototype._busy=function(t){e=t},t.prototype._isBusy=function(){return e},t.prototype.destroy=function(){null!==this.modal&&(this.isOpen()&&this.close(!0),function(){-1!==this.opts.closeMethods.indexOf("button")&&this.modalCloseBtn.removeEventListener("click",this._events.clickCloseBtn);this.modal.removeEventListener("mousedown",this._events.clickOverlay),window.removeEventListener("resize",this._events.resize),document.removeEventListener("keydown",this._events.keyboardNav)}.call(this),this.modal.parentNode.removeChild(this.modal),this.modal=null)},t.prototype.isOpen=function(){return!!this.modal.classList.contains("tingle-modal--visible")},t.prototype.open=function(){if(!this._isBusy()){this._busy(!0);return"function"==typeof this.opts.beforeOpen&&this.opts.beforeOpen(),this.modal.style.removeProperty?this.modal.style.removeProperty("display"):this.modal.style.removeAttribute("display"),this._scrollPosition=window.pageYOffset,document.body.classList.add("tingle-enabled"),document.body.style.top=-this._scrollPosition+"px",this.setStickyFooter(this.opts.stickyFooter),this.modal.classList.add("tingle-modal--visible"),"function"==typeof this.opts.onOpen&&this.opts.onOpen.call(this),this._busy(!1),this.checkOverflow(),this}},t.prototype.close=function(e){if(!this._isBusy()){if(this._busy(!0),e=e||!1,"function"==typeof this.opts.beforeClose)if(!this.opts.beforeClose.call(this))return void this._busy(!1);document.body.classList.remove("tingle-enabled"),window.scrollTo({top:this._scrollPosition,behavior:"instant"}),document.body.style.top=null,this.modal.classList.remove("tingle-modal--visible");this.modal.style.display="none","function"==typeof this.opts.onClose&&this.opts.onClose.call(this),this._busy(!1)}},t.prototype.setContent=function(e){return"string"==typeof e?this.modalBoxContent.innerHTML=e:(this.modalBoxContent.innerHTML="",this.modalBoxContent.appendChild(e)),this.isOpen()&&this.checkOverflow(),this},t.prototype.getContent=function(){return this.modalBoxContent},t.prototype.addFooter=function(){return function(){this.modalBoxFooter=document.createElement("div"),this.modalBoxFooter.classList.add("tingle-modal-box__footer"),this.modalBox.appendChild(this.modalBoxFooter)}.call(this),this},t.prototype.setFooterContent=function(e){return this.modalBoxFooter.innerHTML=e,this},t.prototype.getFooterContent=function(){return this.modalBoxFooter},t.prototype.setStickyFooter=function(e){return this.isOverflow()||(e=!1),e?this.modalBox.contains(this.modalBoxFooter)&&(this.modalBox.removeChild(this.modalBoxFooter),this.modal.appendChild(this.modalBoxFooter),this.modalBoxFooter.classList.add("tingle-modal-box__footer--sticky"),i.call(this),this.modalBoxContent.style["padding-bottom"]=this.modalBoxFooter.clientHeight+20+"px"):this.modalBoxFooter&&(this.modalBox.contains(this.modalBoxFooter)||(this.modal.removeChild(this.modalBoxFooter),this.modalBox.appendChild(this.modalBoxFooter),this.modalBoxFooter.style.width="auto",this.modalBoxFooter.style.left="",this.modalBoxContent.style["padding-bottom"]="",this.modalBoxFooter.classList.remove("tingle-modal-box__footer--sticky"))),this},t.prototype.addFooterBtn=function(e,t,i){var n=document.createElement("button");return n.innerHTML=e,n.addEventListener("click",i),"string"==typeof t&&t.length&&t.split(" ").forEach(function(e){n.classList.add(e)}),this.modalBoxFooter.appendChild(n),n},t.prototype.resize=function(){console.warn("Resize is deprecated and will be removed in version 1.0")},t.prototype.isOverflow=function(){var e=window.innerHeight;return this.modalBox.clientHeight>=e},t.prototype.checkOverflow=function(){this.modal.classList.contains("tingle-modal--visible")&&(this.isOverflow()?this.modal.classList.add("tingle-modal--overflow"):this.modal.classList.remove("tingle-modal--overflow"),!this.isOverflow()&&this.opts.stickyFooter?this.setStickyFooter(!1):this.isOverflow()&&this.opts.stickyFooter&&(i.call(this),this.setStickyFooter(!0)))},{modal:t}}),function(e,t){"object"==typeof exports&&"object"==typeof module?module.exports=t():"function"==typeof define&&define.amd?define([],t):"object"==typeof exports?exports.Choices=t():e.Choices=t()}(window,function(){return function(e){var t={};function i(n){if(t[n])return t[n].exports;var s=t[n]={i:n,l:!1,exports:{}};return e[n].call(s.exports,s,s.exports,i),s.l=!0,s.exports}return i.m=e,i.c=t,i.d=function(e,t,n){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(i.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var s in e)i.d(n,s,function(t){return e[t]}.bind(null,s));return n},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="/public/assets/scripts/",i(i.s=5)}([function(e,t,i){var n;!function(){"use strict";var i={}.hasOwnProperty;function s(){for(var e=[],t=0;t<arguments.length;t++){var n=arguments[t];if(n){var o=typeof n;if("string"===o||"number"===o)e.push(n);else if(Array.isArray(n)&&n.length){var r=s.apply(null,n);r&&e.push(r)}else if("object"===o)for(var a in n)i.call(n,a)&&n[a]&&e.push(a)}}return e.join(" ")}e.exports?(s.default=s,e.exports=s):void 0===(n=function(){return s}.apply(t,[]))||(e.exports=n)}()},function(e,t,i){"use strict";var n=function(e){return function(e){return!!e&&"object"==typeof e}(e)&&!function(e){var t=Object.prototype.toString.call(e);return"[object RegExp]"===t||"[object Date]"===t||function(e){return e.$$typeof===s}(e)}(e)};var s="function"==typeof Symbol&&Symbol.for?Symbol.for("react.element"):60103;function o(e,t){return!1!==t.clone&&t.isMergeableObject(e)?c((i=e,Array.isArray(i)?[]:{}),e,t):e;var i}function r(e,t,i){return e.concat(t).map(function(e){return o(e,i)})}function a(e){return Object.keys(e).concat(function(e){return Object.getOwnPropertySymbols?Object.getOwnPropertySymbols(e).filter(function(t){return e.propertyIsEnumerable(t)}):[]}(e))}function l(e,t,i){var n={};return i.isMergeableObject(e)&&a(e).forEach(function(t){n[t]=o(e[t],i)}),a(t).forEach(function(s){(function(e,t){try{return t in e&&!(Object.hasOwnProperty.call(e,t)&&Object.propertyIsEnumerable.call(e,t))}catch(e){return!1}})(e,s)||(i.isMergeableObject(t[s])&&e[s]?n[s]=function(e,t){if(!t.customMerge)return c;var i=t.customMerge(e);return"function"==typeof i?i:c}(s,i)(e[s],t[s],i):n[s]=o(t[s],i))}),n}function c(e,t,i){(i=i||{}).arrayMerge=i.arrayMerge||r,i.isMergeableObject=i.isMergeableObject||n,i.cloneUnlessOtherwiseSpecified=o;var s=Array.isArray(t);return s===Array.isArray(e)?s?i.arrayMerge(e,t,i):l(e,t,i):o(t,i)}c.all=function(e,t){if(!Array.isArray(e))throw new Error("first argument should be an array");return e.reduce(function(e,i){return c(e,i,t)},{})};var h=c;e.exports=h},function(e,t,i){"use strict";(function(e,n){var s,o=i(4);s="undefined"!=typeof self?self:"undefined"!=typeof window?window:void 0!==e?e:n;var r=Object(o.a)(s);t.a=r}).call(this,i(7),i(8)(e))},function(e,t,i){var n;n=function(){return function(e){var t={};function i(n){if(t[n])return t[n].exports;var s=t[n]={i:n,l:!1,exports:{}};return e[n].call(s.exports,s,s.exports,i),s.l=!0,s.exports}return i.m=e,i.c=t,i.d=function(e,t,n){i.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:n})},i.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},i.t=function(e,t){if(1&t&&(e=i(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(i.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var s in e)i.d(n,s,function(t){return e[t]}.bind(null,s));return n},i.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return i.d(t,"a",t),t},i.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},i.p="",i(i.s="./src/index.js")}({"./src/bitap/bitap_matched_indices.js":function(e,t){e.exports=function(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1,i=[],n=-1,s=-1,o=0,r=e.length;o<r;o+=1){var a=e[o];a&&-1===n?n=o:a||-1===n||((s=o-1)-n+1>=t&&i.push([n,s]),n=-1)}return e[o-1]&&o-n>=t&&i.push([n,o-1]),i}},"./src/bitap/bitap_pattern_alphabet.js":function(e,t){e.exports=function(e){for(var t={},i=e.length,n=0;n<i;n+=1)t[e.charAt(n)]=0;for(var s=0;s<i;s+=1)t[e.charAt(s)]|=1<<i-s-1;return t}},"./src/bitap/bitap_regex_search.js":function(e,t){var i=/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;e.exports=function(e,t){var n=arguments.length>2&&void 0!==arguments[2]?arguments[2]:/ +/g,s=new RegExp(t.replace(i,"\\$&").replace(n,"|")),o=e.match(s),r=!!o,a=[];if(r)for(var l=0,c=o.length;l<c;l+=1){var h=o[l];a.push([e.indexOf(h),h.length-1])}return{score:r?.5:1,isMatch:r,matchedIndices:a}}},"./src/bitap/bitap_score.js":function(e,t){e.exports=function(e,t){var i=t.errors,n=void 0===i?0:i,s=t.currentLocation,o=void 0===s?0:s,r=t.expectedLocation,a=void 0===r?0:r,l=t.distance,c=void 0===l?100:l,h=n/e.length,d=Math.abs(a-o);return c?h+d/c:d?1:h}},"./src/bitap/bitap_search.js":function(e,t,i){var n=i("./src/bitap/bitap_score.js"),s=i("./src/bitap/bitap_matched_indices.js");e.exports=function(e,t,i,o){for(var r=o.location,a=void 0===r?0:r,l=o.distance,c=void 0===l?100:l,h=o.threshold,d=void 0===h?.6:h,u=o.findAllMatches,p=void 0!==u&&u,m=o.minMatchCharLength,f=void 0===m?1:m,v=a,g=e.length,_=d,b=e.indexOf(t,v),y=t.length,E=[],S=0;S<g;S+=1)E[S]=0;if(-1!==b){var w=n(t,{errors:0,currentLocation:b,expectedLocation:v,distance:c});if(_=Math.min(w,_),-1!==(b=e.lastIndexOf(t,v+y))){var I=n(t,{errors:0,currentLocation:b,expectedLocation:v,distance:c});_=Math.min(I,_)}}b=-1;for(var C=[],O=1,x=y+g,L=1<<y-1,A=0;A<y;A+=1){for(var T=0,k=x;T<k;){n(t,{errors:A,currentLocation:v+k,expectedLocation:v,distance:c})<=_?T=k:x=k,k=Math.floor((x-T)/2+T)}x=k;var F=Math.max(1,v-k+1),D=p?g:Math.min(v+k,g)+y,P=Array(D+2);P[D+1]=(1<<A)-1;for(var M=D;M>=F;M-=1){var B=M-1,j=i[e.charAt(B)];if(j&&(E[B]=1),P[M]=(P[M+1]<<1|1)&j,0!==A&&(P[M]|=(C[M+1]|C[M])<<1|1|C[M+1]),P[M]&L&&(O=n(t,{errors:A,currentLocation:B,expectedLocation:v,distance:c}))<=_){if(_=O,(b=B)<=v)break;F=Math.max(1,2*v-b)}}if(n(t,{errors:A+1,currentLocation:v,expectedLocation:v,distance:c})>_)break;C=P}return{isMatch:b>=0,score:0===O?.001:O,matchedIndices:s(E,f)}}},"./src/bitap/index.js":function(e,t,i){function n(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var s=i("./src/bitap/bitap_regex_search.js"),o=i("./src/bitap/bitap_search.js"),r=i("./src/bitap/bitap_pattern_alphabet.js"),a=function(){function e(t,i){var n=i.location,s=void 0===n?0:n,o=i.distance,a=void 0===o?100:o,l=i.threshold,c=void 0===l?.6:l,h=i.maxPatternLength,d=void 0===h?32:h,u=i.isCaseSensitive,p=void 0!==u&&u,m=i.tokenSeparator,f=void 0===m?/ +/g:m,v=i.findAllMatches,g=void 0!==v&&v,_=i.minMatchCharLength,b=void 0===_?1:_;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:s,distance:a,threshold:c,maxPatternLength:d,isCaseSensitive:p,tokenSeparator:f,findAllMatches:g,minMatchCharLength:b},this.pattern=this.options.isCaseSensitive?t:t.toLowerCase(),this.pattern.length<=d&&(this.patternAlphabet=r(this.pattern))}var t,i,a;return t=e,(i=[{key:"search",value:function(e){if(this.options.isCaseSensitive||(e=e.toLowerCase()),this.pattern===e)return{isMatch:!0,score:0,matchedIndices:[[0,e.length-1]]};var t=this.options,i=t.maxPatternLength,n=t.tokenSeparator;if(this.pattern.length>i)return s(e,this.pattern,n);var r=this.options,a=r.location,l=r.distance,c=r.threshold,h=r.findAllMatches,d=r.minMatchCharLength;return o(e,this.pattern,this.patternAlphabet,{location:a,distance:l,threshold:c,findAllMatches:h,minMatchCharLength:d})}}])&&n(t.prototype,i),a&&n(t,a),e}();e.exports=a},"./src/helpers/deep_value.js":function(e,t,i){var n=i("./src/helpers/is_array.js");e.exports=function(e,t){return function e(t,i,s){if(i){var o=i.indexOf("."),r=i,a=null;-1!==o&&(r=i.slice(0,o),a=i.slice(o+1));var l=t[r];if(null!==l&&void 0!==l)if(a||"string"!=typeof l&&"number"!=typeof l)if(n(l))for(var c=0,h=l.length;c<h;c+=1)e(l[c],a,s);else a&&e(l,a,s);else s.push(l.toString())}else s.push(t);return s}(e,t,[])}},"./src/helpers/is_array.js":function(e,t){e.exports=function(e){return Array.isArray?Array.isArray(e):"[object Array]"===Object.prototype.toString.call(e)}},"./src/index.js":function(e,t,i){function n(e){return(n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function s(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var o=i("./src/bitap/index.js"),r=i("./src/helpers/deep_value.js"),a=i("./src/helpers/is_array.js"),l=function(){function e(t,i){var n=i.location,s=void 0===n?0:n,o=i.distance,a=void 0===o?100:o,l=i.threshold,c=void 0===l?.6:l,h=i.maxPatternLength,d=void 0===h?32:h,u=i.caseSensitive,p=void 0!==u&&u,m=i.tokenSeparator,f=void 0===m?/ +/g:m,v=i.findAllMatches,g=void 0!==v&&v,_=i.minMatchCharLength,b=void 0===_?1:_,y=i.id,E=void 0===y?null:y,S=i.keys,w=void 0===S?[]:S,I=i.shouldSort,C=void 0===I||I,O=i.getFn,x=void 0===O?r:O,L=i.sortFn,A=void 0===L?function(e,t){return e.score-t.score}:L,T=i.tokenize,k=void 0!==T&&T,F=i.matchAllTokens,D=void 0!==F&&F,P=i.includeMatches,M=void 0!==P&&P,B=i.includeScore,j=void 0!==B&&B,N=i.verbose,K=void 0!==N&&N;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:s,distance:a,threshold:c,maxPatternLength:d,isCaseSensitive:p,tokenSeparator:f,findAllMatches:g,minMatchCharLength:b,id:E,keys:w,includeMatches:M,includeScore:j,shouldSort:C,getFn:x,sortFn:A,verbose:K,tokenize:k,matchAllTokens:D},this.setCollection(t)}var t,i,l;return t=e,(i=[{key:"setCollection",value:function(e){return this.list=e,e}},{key:"search",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{limit:!1};this._log('---------\nSearch pattern: "'.concat(e,'"'));var i=this._prepareSearchers(e),n=i.tokenSearchers,s=i.fullSearcher,o=this._search(n,s),r=o.weights,a=o.results;return this._computeScore(r,a),this.options.shouldSort&&this._sort(a),t.limit&&"number"==typeof t.limit&&(a=a.slice(0,t.limit)),this._format(a)}},{key:"_prepareSearchers",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=[];if(this.options.tokenize)for(var i=e.split(this.options.tokenSeparator),n=0,s=i.length;n<s;n+=1)t.push(new o(i[n],this.options));return{tokenSearchers:t,fullSearcher:new o(e,this.options)}}},{key:"_search",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1?arguments[1]:void 0,i=this.list,n={},s=[];if("string"==typeof i[0]){for(var o=0,r=i.length;o<r;o+=1)this._analyze({key:"",value:i[o],record:o,index:o},{resultMap:n,results:s,tokenSearchers:e,fullSearcher:t});return{weights:null,results:s}}for(var a={},l=0,c=i.length;l<c;l+=1)for(var h=i[l],d=0,u=this.options.keys.length;d<u;d+=1){var p=this.options.keys[d];if("string"!=typeof p){if(a[p.name]={weight:1-p.weight||1},p.weight<=0||p.weight>1)throw new Error("Key weight has to be > 0 and <= 1");p=p.name}else a[p]={weight:1};this._analyze({key:p,value:this.options.getFn(h,p),record:h,index:l},{resultMap:n,results:s,tokenSearchers:e,fullSearcher:t})}return{weights:a,results:s}}},{key:"_analyze",value:function(e,t){var i=e.key,n=e.arrayIndex,s=void 0===n?-1:n,o=e.value,r=e.record,l=e.index,c=t.tokenSearchers,h=void 0===c?[]:c,d=t.fullSearcher,u=void 0===d?[]:d,p=t.resultMap,m=void 0===p?{}:p,f=t.results,v=void 0===f?[]:f;if(void 0!==o&&null!==o){var g=!1,_=-1,b=0;if("string"==typeof o){this._log("\nKey: ".concat(""===i?"-":i));var y=u.search(o);if(this._log('Full text: "'.concat(o,'", score: ').concat(y.score)),this.options.tokenize){for(var E=o.split(this.options.tokenSeparator),S=[],w=0;w<h.length;w+=1){var I=h[w];this._log('\nPattern: "'.concat(I.pattern,'"'));for(var C=!1,O=0;O<E.length;O+=1){var x=E[O],L=I.search(x),A={};L.isMatch?(A[x]=L.score,g=!0,C=!0,S.push(L.score)):(A[x]=1,this.options.matchAllTokens||S.push(1)),this._log('Token: "'.concat(x,'", score: ').concat(A[x]))}C&&(b+=1)}_=S[0];for(var T=S.length,k=1;k<T;k+=1)_+=S[k];_/=T,this._log("Token score average:",_)}var F=y.score;_>-1&&(F=(F+_)/2),this._log("Score average:",F);var D=!this.options.tokenize||!this.options.matchAllTokens||b>=h.length;if(this._log("\nCheck Matches: ".concat(D)),(g||y.isMatch)&&D){var P=m[l];P?P.output.push({key:i,arrayIndex:s,value:o,score:F,matchedIndices:y.matchedIndices}):(m[l]={item:r,output:[{key:i,arrayIndex:s,value:o,score:F,matchedIndices:y.matchedIndices}]},v.push(m[l]))}}else if(a(o))for(var M=0,B=o.length;M<B;M+=1)this._analyze({key:i,arrayIndex:M,value:o[M],record:r,index:l},{resultMap:m,results:v,tokenSearchers:h,fullSearcher:u})}}},{key:"_computeScore",value:function(e,t){this._log("\n\nComputing score:\n");for(var i=0,n=t.length;i<n;i+=1){for(var s=t[i].output,o=s.length,r=1,a=1,l=0;l<o;l+=1){var c=e?e[s[l].key].weight:1,h=(1===c?s[l].score:s[l].score||.001)*c;1!==c?a=Math.min(a,h):(s[l].nScore=h,r*=h)}t[i].score=1===a?r:a,this._log(t[i])}}},{key:"_sort",value:function(e){this._log("\n\nSorting...."),e.sort(this.options.sortFn)}},{key:"_format",value:function(e){var t=[];if(this.options.verbose){var i=[];this._log("\n\nOutput:\n\n",JSON.stringify(e,function(e,t){if("object"===n(t)&&null!==t){if(-1!==i.indexOf(t))return;i.push(t)}return t})),i=null}var s=[];this.options.includeMatches&&s.push(function(e,t){var i=e.output;t.matches=[];for(var n=0,s=i.length;n<s;n+=1){var o=i[n];if(0!==o.matchedIndices.length){var r={indices:o.matchedIndices,value:o.value};o.key&&(r.key=o.key),o.hasOwnProperty("arrayIndex")&&o.arrayIndex>-1&&(r.arrayIndex=o.arrayIndex),t.matches.push(r)}}}),this.options.includeScore&&s.push(function(e,t){t.score=e.score});for(var o=0,r=e.length;o<r;o+=1){var a=e[o];if(this.options.id&&(a.item=this.options.getFn(a.item,this.options.id)[0]),s.length){for(var l={item:a.item},c=0,h=s.length;c<h;c+=1)s[c](a,l);t.push(l)}else t.push(a.item)}return t}},{key:"_log",value:function(){var e;this.options.verbose&&(e=console).log.apply(e,arguments)}}])&&s(t.prototype,i),l&&s(t,l),e}();e.exports=l}})},e.exports=n()},function(e,t,i){"use strict";function n(e){var t,i=e.Symbol;return"function"==typeof i?i.observable?t=i.observable:(t=i("observable"),i.observable=t):t="@@observable",t}i.d(t,"a",function(){return n})},function(e,t,i){e.exports=i(9)},function(e,t){window.delegateEvent=function(){var e,t;function i(t){var i=e.get(t.type);i&&i.forEach(function(e){return e(t)})}return void 0===e&&(e=new Map),void 0===t&&(t=[]),{add:function(n,s){e.has(n)?e.get(n).push(s):e.set(n,[s]),-1===t.indexOf(n)&&(document.documentElement.addEventListener(n,i,!0),t.push(n))},remove:function(i,n){e.get(i)&&(e.set(i,e.get(i).filter(function(e){return e!==n})),e.get(i).length||t.splice(t.indexOf(i),1))}}}()},function(e,t){var i;i=function(){return this}();try{i=i||new Function("return this")()}catch(e){"object"==typeof window&&(i=window)}e.exports=i},function(e,t){e.exports=function(e){if(!e.webpackPolyfill){var t=Object.create(e);t.children||(t.children=[]),Object.defineProperty(t,"loaded",{enumerable:!0,get:function(){return t.l}}),Object.defineProperty(t,"id",{enumerable:!0,get:function(){return t.i}}),Object.defineProperty(t,"exports",{enumerable:!0}),t.webpackPolyfill=1}return t}},function(e,t,i){"use strict";i.r(t);var n=i(3),s=i.n(n),o=i(1),r=i.n(o),a=(i(6),i(2)),l=function(){return Math.random().toString(36).substring(7).split("").join(".")},c={INIT:"@@redux/INIT"+l(),REPLACE:"@@redux/REPLACE"+l(),PROBE_UNKNOWN_ACTION:function(){return"@@redux/PROBE_UNKNOWN_ACTION"+l()}};function h(e){if("object"!=typeof e||null===e)return!1;for(var t=e;null!==Object.getPrototypeOf(t);)t=Object.getPrototypeOf(t);return Object.getPrototypeOf(e)===t}function d(e,t,i){var n;if("function"==typeof t&&"function"==typeof i||"function"==typeof i&&"function"==typeof arguments[3])throw new Error("It looks like you are passing several store enhancers to createStore(). This is not supported. Instead, compose them together to a single function.");if("function"==typeof t&&void 0===i&&(i=t,t=void 0),void 0!==i){if("function"!=typeof i)throw new Error("Expected the enhancer to be a function.");return i(d)(e,t)}if("function"!=typeof e)throw new Error("Expected the reducer to be a function.");var s=e,o=t,r=[],l=r,u=!1;function p(){l===r&&(l=r.slice())}function m(){if(u)throw new Error("You may not call store.getState() while the reducer is executing. The reducer has already received the state as an argument. Pass it down from the top reducer instead of reading it from the store.");return o}function f(e){if("function"!=typeof e)throw new Error("Expected the listener to be a function.");if(u)throw new Error("You may not call store.subscribe() while the reducer is executing. If you would like to be notified after the store has been updated, subscribe from a component and invoke store.getState() in the callback to access the latest state. See https://redux.js.org/api-reference/store#subscribe(listener) for more details.");var t=!0;return p(),l.push(e),function(){if(t){if(u)throw new Error("You may not unsubscribe from a store listener while the reducer is executing. See https://redux.js.org/api-reference/store#subscribe(listener) for more details.");t=!1,p();var i=l.indexOf(e);l.splice(i,1)}}}function v(e){if(!h(e))throw new Error("Actions must be plain objects. Use custom middleware for async actions.");if(void 0===e.type)throw new Error('Actions may not have an undefined "type" property. Have you misspelled a constant?');if(u)throw new Error("Reducers may not dispatch actions.");try{u=!0,o=s(o,e)}finally{u=!1}for(var t=r=l,i=0;i<t.length;i++){(0,t[i])()}return e}return v({type:c.INIT}),(n={dispatch:v,subscribe:f,getState:m,replaceReducer:function(e){if("function"!=typeof e)throw new Error("Expected the nextReducer to be a function.");s=e,v({type:c.REPLACE})}})[a.a]=function(){var e,t=f;return(e={subscribe:function(e){if("object"!=typeof e||null===e)throw new TypeError("Expected the observer to be an object.");function i(){e.next&&e.next(m())}return i(),{unsubscribe:t(i)}}})[a.a]=function(){return this},e},n}function u(e,t){var i=t&&t.type;return"Given "+(i&&'action "'+String(i)+'"'||"an action")+', reducer "'+e+'" returned undefined. To ignore an action, you must explicitly return the previous state. If you want this reducer to hold no value, you can return null instead of undefined.'}var p=[];var m=[];var f=[];var v,g={loading:!1},_=function(e,t){switch(void 0===e&&(e=g),t.type){case"SET_IS_LOADING":return{loading:t.isLoading};default:return e}},b=function(e){for(var t,i,n="",s=0;s<e;s++){n+=(t=0,i=36,Math.floor(Math.random()*(i-t)+t)).toString(36)}return n},y=function(e,t){var i=e.id||e.name&&e.name+"-"+b(2)||b(4);return i=t+"-"+(i=i.replace(/(:|\.|\[|\]|,)/g,""))},E=function(e){return Object.prototype.toString.call(e).slice(8,-1)},S=function(e,t){return void 0!==t&&null!==t&&E(t)===e},w=function(e){return e instanceof Element},I=function(e,t){for(var i=e;i;){if(i.hasAttribute(t))return i;i=i.parentElement}return null},C=function(e){return S("String",e)?e.replace(/&/g,"&amp;").replace(/>/g,"&rt;").replace(/</g,"&lt;").replace(/"/g,"&quot;"):e},O=(v=document.createElement("div"),function(e){var t=e.trim();v.innerHTML=t;for(var i=v.children[0];v.firstChild;)v.removeChild(v.firstChild);return i}),x=function(e,t){return e.score-t.score},L=function e(t,i){var n=i.indexOf(".");return n>-1?e(t[i.substring(0,n)],i.substr(n+1)):t[i]},A=function(e){return JSON.parse(JSON.stringify(e))},T=function(e,t){var i=Object.keys(e).sort(),n=Object.keys(t).sort();return i.filter(function(e){return n.indexOf(e)<0})},k=function(e){for(var t=Object.keys(e),i={},n=0;n<t.length;n++){var s=t[n];"function"==typeof e[s]&&(i[s]=e[s])}var o,r=Object.keys(i);try{!function(e){Object.keys(e).forEach(function(t){var i=e[t];if(void 0===i(void 0,{type:c.INIT}))throw new Error('Reducer "'+t+"\" returned undefined during initialization. If the state passed to the reducer is undefined, you must explicitly return the initial state. The initial state may not be undefined. If you don't want to set a value for this reducer, you can use null instead of undefined.");if(void 0===i(void 0,{type:c.PROBE_UNKNOWN_ACTION()}))throw new Error('Reducer "'+t+"\" returned undefined when probed with a random type. Don't try to handle "+c.INIT+' or other actions in "redux/*" namespace. They are considered private. Instead, you must return the current state for any unknown actions, unless it is undefined, in which case you must return the initial state, regardless of the action type. The initial state may not be undefined, but can be null.')})}(i)}catch(e){o=e}return function(e,t){if(void 0===e&&(e={}),o)throw o;for(var n=!1,s={},a=0;a<r.length;a++){var l=r[a],c=i[l],h=e[l],d=c(h,t);if(void 0===d){var p=u(l,t);throw new Error(p)}s[l]=d,n=n||d!==h}return n?s:e}}({items:function(e,t){switch(void 0===e&&(e=p),t.type){case"ADD_ITEM":return[].concat(e,[{id:t.id,choiceId:t.choiceId,groupId:t.groupId,value:t.value,label:t.label,active:!0,highlighted:!1,customProperties:t.customProperties,placeholder:t.placeholder||!1,keyCode:null}]).map(function(e){var t=e;return t.highlighted=!1,t});case"REMOVE_ITEM":return e.map(function(e){var i=e;return i.id===t.id&&(i.active=!1),i});case"HIGHLIGHT_ITEM":return e.map(function(e){var i=e;return i.id===t.id&&(i.highlighted=t.highlighted),i});default:return e}},groups:function(e,t){switch(void 0===e&&(e=m),t.type){case"ADD_GROUP":return[].concat(e,[{id:t.id,value:t.value,active:t.active,disabled:t.disabled}]);case"CLEAR_CHOICES":return[];default:return e}},choices:function(e,t){switch(void 0===e&&(e=f),t.type){case"ADD_CHOICE":return[].concat(e,[{id:t.id,elementId:t.elementId,groupId:t.groupId,value:t.value,label:t.label||t.value,disabled:t.disabled||!1,selected:!1,active:!0,score:9999,customProperties:t.customProperties,placeholder:t.placeholder||!1,keyCode:null}]);case"ADD_ITEM":return t.activateOptions?e.map(function(e){var i=e;return i.active=t.active,i}):t.choiceId>-1?e.map(function(e){var i=e;return i.id===parseInt(t.choiceId,10)&&(i.selected=!0),i}):e;case"REMOVE_ITEM":return t.choiceId>-1?e.map(function(e){var i=e;return i.id===parseInt(t.choiceId,10)&&(i.selected=!1),i}):e;case"FILTER_CHOICES":return e.map(function(e){var i=e;return i.active=t.results.some(function(e){var t=e.item,n=e.score;return t.id===i.id&&(i.score=n,!0)}),i});case"ACTIVATE_CHOICES":return e.map(function(e){var i=e;return i.active=t.active,i});case"CLEAR_CHOICES":return f;default:return e}},general:_}),F=function(e,t){var i=e;if("CLEAR_ALL"===t.type)i=void 0;else if("RESET_TO"===t.type)return A(t.state);return k(i,t)};function D(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var P=function(){function e(){this._store=d(F,window.__REDUX_DEVTOOLS_EXTENSION__&&window.__REDUX_DEVTOOLS_EXTENSION__())}var t,i,n,s=e.prototype;return s.subscribe=function(e){this._store.subscribe(e)},s.dispatch=function(e){this._store.dispatch(e)},s.isLoading=function(){return this.state.general.loading},s.getChoiceById=function(e){return!!e&&this.activeChoices.find(function(t){return t.id===parseInt(e,10)})},s.getGroupById=function(e){return this.groups.find(function(t){return t.id===parseInt(e,10)})},t=e,(i=[{key:"state",get:function(){return this._store.getState()}},{key:"items",get:function(){return this.state.items}},{key:"activeItems",get:function(){return this.items.filter(function(e){return!0===e.active})}},{key:"highlightedActiveItems",get:function(){return this.items.filter(function(e){return e.active&&e.highlighted})}},{key:"choices",get:function(){return this.state.choices}},{key:"activeChoices",get:function(){return this.choices.filter(function(e){return!0===e.active})}},{key:"selectableChoices",get:function(){return this.choices.filter(function(e){return!0!==e.disabled})}},{key:"searchableChoices",get:function(){return this.selectableChoices.filter(function(e){return!0!==e.placeholder})}},{key:"placeholderChoice",get:function(){return[].concat(this.choices).reverse().find(function(e){return!0===e.placeholder})}},{key:"groups",get:function(){return this.state.groups}},{key:"activeGroups",get:function(){var e=this.groups,t=this.choices;return e.filter(function(e){var i=!0===e.active&&!1===e.disabled,n=t.some(function(e){return!0===e.active&&!1===e.disabled});return i&&n},[])}}])&&D(t.prototype,i),n&&D(t,n),e}(),M=function(){function e(e){var t=e.element,i=e.type,n=e.classNames;Object.assign(this,{element:t,type:i,classNames:n}),this.isActive=!1}var t=e.prototype;return t.distanceFromTopWindow=function(){return this.dimensions=this.element.getBoundingClientRect(),this.position=Math.ceil(this.dimensions.top+window.pageYOffset+this.element.offsetHeight),this.position},t.getChild=function(e){return this.element.querySelector(e)},t.show=function(){return this.element.classList.add(this.classNames.activeState),this.element.setAttribute("aria-expanded","true"),this.isActive=!0,this},t.hide=function(){return this.element.classList.remove(this.classNames.activeState),this.element.setAttribute("aria-expanded","false"),this.isActive=!1,this},e}(),B=function(){function e(e){var t=e.element,i=e.type,n=e.classNames,s=e.position;Object.assign(this,{element:t,classNames:n,type:i,position:s}),this.isOpen=!1,this.isFlipped=!1,this.isFocussed=!1,this.isDisabled=!1,this.isLoading=!1,this._onFocus=this._onFocus.bind(this),this._onBlur=this._onBlur.bind(this)}var t=e.prototype;return t.addEventListeners=function(){this.element.addEventListener("focus",this._onFocus),this.element.addEventListener("blur",this._onBlur)},t.removeEventListeners=function(){this.element.removeEventListener("focus",this._onFocus),this.element.removeEventListener("blur",this._onBlur)},t.shouldFlip=function(e,t){var i,n;if(void 0===t&&(i=document.body,n=document.documentElement,t=Math.max(i.scrollHeight,i.offsetHeight,n.clientHeight,n.scrollHeight,n.offsetHeight)),void 0===e)return!1;var s=!1;return"auto"===this.position?s=e>=t:"top"===this.position&&(s=!0),s},t.setActiveDescendant=function(e){this.element.setAttribute("aria-activedescendant",e)},t.removeActiveDescendant=function(){this.element.removeAttribute("aria-activedescendant")},t.open=function(e){this.element.classList.add(this.classNames.openState),this.element.setAttribute("aria-expanded","true"),this.isOpen=!0,this.shouldFlip(e)&&(this.element.classList.add(this.classNames.flippedState),this.isFlipped=!0)},t.close=function(){this.element.classList.remove(this.classNames.openState),this.element.setAttribute("aria-expanded","false"),this.removeActiveDescendant(),this.isOpen=!1,this.isFlipped&&(this.element.classList.remove(this.classNames.flippedState),this.isFlipped=!1)},t.focus=function(){this.isFocussed||this.element.focus()},t.addFocusState=function(){this.element.classList.add(this.classNames.focusState)},t.removeFocusState=function(){this.element.classList.remove(this.classNames.focusState)},t.enable=function(){this.element.classList.remove(this.classNames.disabledState),this.element.removeAttribute("aria-disabled"),"select-one"===this.type&&this.element.setAttribute("tabindex","0"),this.isDisabled=!1},t.disable=function(){this.element.classList.add(this.classNames.disabledState),this.element.setAttribute("aria-disabled","true"),"select-one"===this.type&&this.element.setAttribute("tabindex","-1"),this.isDisabled=!0},t.wrap=function(e){!function(e,t){void 0===t&&(t=document.createElement("div")),e.nextSibling?e.parentNode.insertBefore(t,e.nextSibling):e.parentNode.appendChild(t),t.appendChild(e)}(e,this.element)},t.unwrap=function(e){this.element.parentNode.insertBefore(e,this.element),this.element.parentNode.removeChild(this.element)},t.addLoadingState=function(){this.element.classList.add(this.classNames.loadingState),this.element.setAttribute("aria-busy","true"),this.isLoading=!0},t.removeLoadingState=function(){this.element.classList.remove(this.classNames.loadingState),this.element.removeAttribute("aria-busy"),this.isLoading=!1},t._onFocus=function(){this.isFocussed=!0},t._onBlur=function(){this.isFocussed=!1},e}();function j(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var N=function(){function e(e){var t=e.element,i=e.type,n=e.classNames,s=e.placeholderValue;Object.assign(this,{element:t,type:i,classNames:n,placeholderValue:s}),this.element=t,this.classNames=n,this.isFocussed=this.element===document.activeElement,this.isDisabled=!1,this._onPaste=this._onPaste.bind(this),this._onInput=this._onInput.bind(this),this._onFocus=this._onFocus.bind(this),this._onBlur=this._onBlur.bind(this)}var t,i,n,s=e.prototype;return s.addEventListeners=function(){this.element.addEventListener("input",this._onInput),this.element.addEventListener("paste",this._onPaste),this.element.addEventListener("focus",this._onFocus),this.element.addEventListener("blur",this._onBlur),this.element.form&&this.element.form.addEventListener("reset",this._onFormReset)},s.removeEventListeners=function(){this.element.removeEventListener("input",this._onInput),this.element.removeEventListener("paste",this._onPaste),this.element.removeEventListener("focus",this._onFocus),this.element.removeEventListener("blur",this._onBlur),this.element.form&&this.element.form.removeEventListener("reset",this._onFormReset)},s.enable=function(){this.element.removeAttribute("disabled"),this.isDisabled=!1},s.disable=function(){this.element.setAttribute("disabled",""),this.isDisabled=!0},s.focus=function(){this.isFocussed||this.element.focus()},s.blur=function(){this.isFocussed&&this.element.blur()},s.clear=function(e){return void 0===e&&(e=!0),this.element.value&&(this.element.value=""),e&&this.setWidth(),this},s.setWidth=function(e){var t=this,i=function(e){t.element.style.width=e};if(this._placeholderValue){var n=this.element.value.length>=this._placeholderValue.length/1.25;(this.element.value&&n||e)&&this.calcWidth(i)}else this.calcWidth(i)},s.calcWidth=function(e){return function(e,t){var i=e.value||e.placeholder,n=e.offsetWidth;if(i){var s=O("<span>"+C(i)+"</span>");if(s.style.position="absolute",s.style.padding="0",s.style.top="-9999px",s.style.left="-9999px",s.style.width="auto",s.style.whiteSpace="pre",document.body.contains(e)&&window.getComputedStyle){var o=window.getComputedStyle(e);o&&(s.style.fontSize=o.fontSize,s.style.fontFamily=o.fontFamily,s.style.fontWeight=o.fontWeight,s.style.fontStyle=o.fontStyle,s.style.letterSpacing=o.letterSpacing,s.style.textTransform=o.textTransform,s.style.paddingLeft=o.paddingLeft,s.style.paddingRight=o.paddingRight)}document.body.appendChild(s),requestAnimationFrame(function(){i&&s.offsetWidth!==e.offsetWidth&&(n=s.offsetWidth+4),document.body.removeChild(s),t.call(void 0,n+"px")})}else t.call(void 0,n+"px")}(this.element,e)},s.setActiveDescendant=function(e){this.element.setAttribute("aria-activedescendant",e)},s.removeActiveDescendant=function(){this.element.removeAttribute("aria-activedescendant")},s._onInput=function(){"select-one"!==this.type&&this.setWidth()},s._onPaste=function(e){e.target===this.element&&this.preventPaste&&e.preventDefault()},s._onFocus=function(){this.isFocussed=!0},s._onBlur=function(){this.isFocussed=!1},t=e,(i=[{key:"placeholder",set:function(e){this.element.placeholder=e}},{key:"value",set:function(e){this.element.value=e},get:function(){return C(this.element.value)}}])&&j(t.prototype,i),n&&j(t,n),e}(),K={items:[],choices:[],silent:!1,renderChoiceLimit:-1,maxItemCount:-1,addItems:!0,addItemFilterFn:null,removeItems:!0,removeItemButton:!1,editItems:!1,duplicateItemsAllowed:!0,delimiter:",",paste:!0,searchEnabled:!0,searchChoices:!0,searchFloor:1,searchResultLimit:4,searchFields:["label","value"],position:"auto",resetScrollPosition:!0,shouldSort:!0,shouldSortItems:!1,sortFn:function(e,t){var i=(""+(e.label||e.value)).toLowerCase(),n=(""+(t.label||t.value)).toLowerCase();return i<n?-1:i>n?1:0},placeholder:!0,placeholderValue:null,searchPlaceholderValue:null,prependValue:null,appendValue:null,renderSelectedChoices:"auto",loadingText:"Loading...",noResultsText:"No results found",noChoicesText:"No choices to choose from",itemSelectText:"Press to select",uniqueItemText:"Only unique values can be added",customAddItemText:"Only values matching specific conditions can be added",addItemText:function(e){return'Press Enter to add <b>"'+C(e)+'"</b>'},maxItemText:function(e){return"Only "+e+" values can be added"},itemComparer:function(e,t){return e===t},fuseOptions:{includeScore:!0},callbackOnInit:null,callbackOnCreateTemplates:null,classNames:{containerOuter:"choices",containerInner:"choices__inner",input:"choices__input",inputCloned:"choices__input--cloned",list:"choices__list",listItems:"choices__list--multiple",listSingle:"choices__list--single",listDropdown:"choices__list--dropdown",item:"choices__item",itemSelectable:"choices__item--selectable",itemDisabled:"choices__item--disabled",itemChoice:"choices__item--choice",placeholder:"choices__placeholder",group:"choices__group",groupHeading:"choices__heading",button:"choices__button",activeState:"is-active",focusState:"is-focused",openState:"is-open",disabledState:"is-disabled",highlightedState:"is-highlighted",hiddenState:"is-hidden",flippedState:"is-flipped",loadingState:"is-loading",noResults:"has-no-results",noChoices:"has-no-choices"}},R="showDropdown",H="hideDropdown",V="change",G="choice",q="search",z="addItem",W="removeItem",U="highlightItem",X="highlightChoice",Y="ADD_CHOICE",$="FILTER_CHOICES",J="ACTIVATE_CHOICES",Z="CLEAR_CHOICES",Q="ADD_GROUP",ee="ADD_ITEM",te="REMOVE_ITEM",ie="HIGHLIGHT_ITEM",ne=46,se=8,oe=13,re=65,ae=27,le=38,ce=40,he=33,de=34,ue=function(){function e(e){var t=e.element;Object.assign(this,{element:t}),this.scrollPos=this.element.scrollTop,this.height=this.element.offsetHeight,this.hasChildren=!!this.element.children}var t=e.prototype;return t.clear=function(){this.element.innerHTML=""},t.append=function(e){this.element.appendChild(e)},t.getChild=function(e){return this.element.querySelector(e)},t.scrollToTop=function(){this.element.scrollTop=0},t.scrollToChoice=function(e,t){var i=this;if(e){var n=this.element.offsetHeight,s=e.offsetHeight,o=e.offsetTop+s,r=this.element.scrollTop+n,a=t>0?this.element.scrollTop+o-r:e.offsetTop;requestAnimationFrame(function(e){i._animateScroll(e,a,t)})}},t._scrollDown=function(e,t,i){var n=(i-e)/t,s=n>1?n:1;this.element.scrollTop=e+s},t._scrollUp=function(e,t,i){var n=(e-i)/t,s=n>1?n:1;this.element.scrollTop=e-s},t._animateScroll=function(e,t,i){var n=this,s=this.element.scrollTop,o=!1;i>0?(this._scrollDown(s,4,t),s<t&&(o=!0)):(this._scrollUp(s,4,t),s>t&&(o=!0)),o&&requestAnimationFrame(function(){n._animateScroll(e,t,i)})},e}();function pe(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var me=function(){function e(e){var t=e.element,i=e.classNames;if(Object.assign(this,{element:t,classNames:i}),!w(t))throw new TypeError("Invalid element passed");this.isDisabled=!1}var t,i,n,s=e.prototype;return s.conceal=function(){this.element.classList.add(this.classNames.input),this.element.classList.add(this.classNames.hiddenState),this.element.tabIndex="-1";var e=this.element.getAttribute("style");e&&this.element.setAttribute("data-choice-orig-style",e),this.element.setAttribute("aria-hidden","true"),this.element.setAttribute("data-choice","active")},s.reveal=function(){this.element.classList.remove(this.classNames.input),this.element.classList.remove(this.classNames.hiddenState),this.element.removeAttribute("tabindex");var e=this.element.getAttribute("data-choice-orig-style");e?(this.element.removeAttribute("data-choice-orig-style"),this.element.setAttribute("style",e)):this.element.removeAttribute("style"),this.element.removeAttribute("aria-hidden"),this.element.removeAttribute("data-choice"),this.element.value=this.element.value},s.enable=function(){this.element.removeAttribute("disabled"),this.element.disabled=!1,this.isDisabled=!1},s.disable=function(){this.element.setAttribute("disabled",""),this.element.disabled=!0,this.isDisabled=!0},s.triggerEvent=function(e,t){!function(e,t,i){void 0===i&&(i=null);var n=new CustomEvent(t,{detail:i,bubbles:!0,cancelable:!0});e.dispatchEvent(n)}(this.element,e,t)},t=e,(i=[{key:"value",get:function(){return this.element.value},set:function(e){this.element.value=e}}])&&pe(t.prototype,i),n&&pe(t,n),e}();function fe(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var ve=function(e){var t,i,n,s,o;function r(t){var i,n=t.element,s=t.classNames,o=t.delimiter;return(i=e.call(this,{element:n,classNames:s})||this).delimiter=o,i}return i=e,(t=r).prototype=Object.create(i.prototype),t.prototype.constructor=t,t.__proto__=i,n=r,(s=[{key:"value",set:function(e){var t=e.map(function(e){return e.value}).join(this.delimiter);this.element.setAttribute("value",t),this.element.value=t},get:function(){return this.element.value}}])&&fe(n.prototype,s),o&&fe(n,o),r}(me);function ge(e,t){for(var i=0;i<t.length;i++){var n=t[i];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}var _e=function(e){var t,i,n,s,o;function r(t){var i,n=t.element,s=t.classNames,o=t.template;return(i=e.call(this,{element:n,classNames:s})||this).template=o,i}return i=e,(t=r).prototype=Object.create(i.prototype),t.prototype.constructor=t,t.__proto__=i,r.prototype.appendDocFragment=function(e){this.element.innerHTML="",this.element.appendChild(e)},n=r,(s=[{key:"placeholderOption",get:function(){return this.element.querySelector('option[value=""]')||this.element.querySelector("option[placeholder]")}},{key:"optionGroups",get:function(){return Array.from(this.element.getElementsByTagName("OPTGROUP"))}},{key:"options",get:function(){return Array.from(this.element.options)},set:function(e){var t=this,i=document.createDocumentFragment();e.forEach(function(e){return n=e,s=t.template(n),void i.appendChild(s);var n,s}),this.appendDocFragment(i)}}])&&ge(n.prototype,s),o&&ge(n,o),r}(me),be=i(0),ye=i.n(be),Ee={containerOuter:function(e,t,i,n,s,o){var r=n?'tabindex="0"':"",a=i?'role="listbox"':"",l="";return i&&s&&(a='role="combobox"',l='aria-autocomplete="list"'),O('\n      <div\n        class="'+e.containerOuter+'"\n        data-type="'+o+'"\n        '+a+"\n        "+r+"\n        "+l+'\n        aria-haspopup="true"\n        aria-expanded="false"\n        dir="'+t+'"\n        >\n      </div>\n    ')},containerInner:function(e){return O('\n      <div class="'+e.containerInner+'"></div>\n    ')},itemList:function(e,t){var i,n=ye()(e.list,((i={})[e.listSingle]=t,i[e.listItems]=!t,i));return O('\n      <div class="'+n+'"></div>\n    ')},placeholder:function(e,t){return O('\n      <div class="'+e.placeholder+'">\n        '+t+"\n      </div>\n    ")},item:function(e,t,i){var n,s,o=t.active?'aria-selected="true"':"",r=t.disabled?'aria-disabled="true"':"",a=ye()(e.item,((n={})[e.highlightedState]=t.highlighted,n[e.itemSelectable]=!t.highlighted,n[e.placeholder]=t.placeholder,n));return i?(a=ye()(e.item,((s={})[e.highlightedState]=t.highlighted,s[e.itemSelectable]=!t.disabled,s[e.placeholder]=t.placeholder,s)),O('\n        <div\n          class="'+a+'"\n          data-item\n          data-id="'+t.id+'"\n          data-value="'+t.value+"\"\n          data-custom-properties='"+t.customProperties+"'\n          data-deletable\n          "+o+"\n          "+r+"\n          >\n          "+t.label+'\x3c!--\n       --\x3e<button\n            type="button"\n            class="'+e.button+'"\n            data-button\n            aria-label="Remove item: \''+t.value+"'\"\n            >\n            Remove item\n          </button>\n        </div>\n      ")):O('\n      <div\n        class="'+a+'"\n        data-item\n        data-id="'+t.id+'"\n        data-value="'+t.value+'"\n        '+o+"\n        "+r+"\n        >\n        "+t.label+"\n      </div>\n    ")},choiceList:function(e,t){var i=t?"":'aria-multiselectable="true"';return O('\n      <div\n        class="'+e.list+'"\n        dir="ltr"\n        role="listbox"\n        '+i+"\n        >\n      </div>\n    ")},choiceGroup:function(e,t){var i,n=t.disabled?'aria-disabled="true"':"",s=ye()(e.group,((i={})[e.itemDisabled]=t.disabled,i));return O('\n      <div\n        class="'+s+'"\n        data-group\n        data-id="'+t.id+'"\n        data-value="'+t.value+'"\n        role="group"\n        '+n+'\n        >\n        <div class="'+e.groupHeading+'">'+t.value+"</div>\n      </div>\n    ")},choice:function(e,t,i){var n,s=t.groupId>0?'role="treeitem"':'role="option"',o=ye()(e.item,e.itemChoice,((n={})[e.itemDisabled]=t.disabled,n[e.itemSelectable]=!t.disabled,n[e.placeholder]=t.placeholder,n));return O('\n      <div\n        class="'+o+'"\n        data-select-text="'+i+'"\n        data-choice\n        data-id="'+t.id+'"\n        data-value="'+t.value+'"\n        '+(t.disabled?'data-choice-disabled aria-disabled="true"':"data-choice-selectable")+'\n        id="'+t.elementId+'"\n        '+s+"\n        >\n        "+t.label+"\n      </div>\n    ")},input:function(e,t){var i=ye()(e.input,e.inputCloned);return O('\n      <input\n        type="text"\n        class="'+i+'"\n        autocomplete="off"\n        autocapitalize="off"\n        spellcheck="false"\n        role="textbox"\n        aria-autocomplete="list"\n        aria-label="'+t+'"\n        >\n    ')},dropdown:function(e){var t=ye()(e.list,e.listDropdown);return O('\n      <div\n        class="'+t+'"\n        aria-expanded="false"\n        >\n      </div>\n    ')},notice:function(e,t,i){var n;void 0===i&&(i="");var s=ye()(e.item,e.itemChoice,((n={})[e.noResults]="no-results"===i,n[e.noChoices]="no-choices"===i,n));return O('\n      <div class="'+s+'">\n        '+t+"\n      </div>\n    ")},option:function(e){return O('\n      <option value="'+e.value+'" '+(e.active?"selected":"")+" "+(e.disabled?"disabled":"")+" "+(e.customProperties?"data-custom-properties="+e.customProperties:"")+">"+e.label+"</option>\n    ")}},Se=function(e){return void 0===e&&(e=!0),{type:J,active:e}},we=function(e,t){return{type:ie,id:e,highlighted:t}},Ie=function(e,t,i,n){return{type:Q,value:e,id:t,active:i,disabled:n}},Ce=function(){function e(t,i){var n=this;if(void 0===t&&(t="[data-choice]"),void 0===i&&(i={}),S("String",t)){var s=Array.from(document.querySelectorAll(t));if(s.length>1)return this._generateInstances(s,i)}this.config=r.a.all([K,e.userDefaults,i],{arrayMerge:function(e,t){return[].concat(t)}});var o=T(this.config,K);o.length&&console.warn("Unknown config option(s) passed",o.join(", ")),["auto","always"].includes(this.config.renderSelectedChoices)||(this.config.renderSelectedChoices="auto");var a=S("String",t)?document.querySelector(t):t;if(a){if(this._isTextElement="text"===a.type,this._isSelectOneElement="select-one"===a.type,this._isSelectMultipleElement="select-multiple"===a.type,this._isSelectElement=this._isSelectOneElement||this._isSelectMultipleElement,this._isTextElement?this.passedElement=new ve({element:a,classNames:this.config.classNames,delimiter:this.config.delimiter}):this._isSelectElement&&(this.passedElement=new _e({element:a,classNames:this.config.classNames,template:function(e){return n.config.templates.option(e)}})),!this.passedElement)return console.error("Passed element was of an invalid type");this.initialised=!1,this._store=new P(this.render),this._initialState={},this._currentState={},this._prevState={},this._currentValue="",this._canSearch=this.config.searchEnabled,this._isScrollingOnIe=!1,this._highlightPosition=0,this._wasTap=!0,this._placeholderValue=this._generatePlaceholderValue(),this._baseId=y(this.passedElement.element,"choices-"),this._direction=this.passedElement.element.getAttribute("dir")||"ltr",this._idNames={itemChoice:"item-choice"},this._presetChoices=this.config.choices,this._presetItems=this.config.items,this.passedElement.value&&(this._presetItems=this._presetItems.concat(this.passedElement.value.split(this.config.delimiter))),this._render=this._render.bind(this),this._onFocus=this._onFocus.bind(this),this._onBlur=this._onBlur.bind(this),this._onKeyUp=this._onKeyUp.bind(this),this._onKeyDown=this._onKeyDown.bind(this),this._onClick=this._onClick.bind(this),this._onTouchMove=this._onTouchMove.bind(this),this._onTouchEnd=this._onTouchEnd.bind(this),this._onMouseDown=this._onMouseDown.bind(this),this._onMouseOver=this._onMouseOver.bind(this),this._onFormReset=this._onFormReset.bind(this),this._onAKey=this._onAKey.bind(this),this._onEnterKey=this._onEnterKey.bind(this),this._onEscapeKey=this._onEscapeKey.bind(this),this._onDirectionKey=this._onDirectionKey.bind(this),this._onDeleteKey=this._onDeleteKey.bind(this),this.config.silent||(!0===this.config.shouldSortItems&&this._isSelectOneElement&&console.warn("shouldSortElements: Type of passed element is 'select-one', falling back to false."),"active"===this.passedElement.element.getAttribute("data-choice")&&console.warn("Trying to initialise Choices on element already initialised")),this.init()}else this.config.silent||console.error("Could not find passed element or passed element was of an invalid type")}var t=e.prototype;return t.init=function(){if(!this.initialised){this._createTemplates(),this._createElements(),this._createStructure(),this._initialState=A(this._store.state),this._store.subscribe(this._render),this._render(),this._addEventListeners(),(!this.config.addItems||this.passedElement.element.hasAttribute("disabled"))&&this.disable(),this.initialised=!0;var e=this.config.callbackOnInit;e&&S("Function",e)&&e.call(this)}},t.destroy=function(){this.initialised&&(this._removeEventListeners(),this.passedElement.reveal(),this.containerOuter.unwrap(this.passedElement.element),this._isSelectElement&&(this.passedElement.options=this._presetChoices),this.clearStore(),this.config.templates=null,this.initialised=!1)},t.enable=function(){return this.passedElement.isDisabled&&this.passedElement.enable(),this.containerOuter.isDisabled&&(this._addEventListeners(),this.input.enable(),this.containerOuter.enable()),this},t.disable=function(){return this.passedElement.isDisabled||this.passedElement.disable(),this.containerOuter.isDisabled||(this._removeEventListeners(),this.input.disable(),this.containerOuter.disable()),this},t.highlightItem=function(e,t){if(void 0===t&&(t=!0),!e)return this;var i=e.id,n=e.groupId,s=void 0===n?-1:n,o=e.value,r=void 0===o?"":o,a=e.label,l=void 0===a?"":a,c=s>=0?this._store.getGroupById(s):null;return this._store.dispatch(we(i,!0)),t&&this.passedElement.triggerEvent(U,{id:i,value:r,label:l,groupValue:c&&c.value?c.value:null}),this},t.unhighlightItem=function(e){if(!e)return this;var t=e.id,i=e.groupId,n=void 0===i?-1:i,s=e.value,o=void 0===s?"":s,r=e.label,a=void 0===r?"":r,l=n>=0?this._store.getGroupById(n):null;return this._store.dispatch(we(t,!1)),this.passedElement.triggerEvent(U,{id:t,value:o,label:a,groupValue:l&&l.value?l.value:null}),this},t.highlightAll=function(){var e=this;return this._store.items.forEach(function(t){return e.highlightItem(t)}),this},t.unhighlightAll=function(){var e=this;return this._store.items.forEach(function(t){return e.unhighlightItem(t)}),this},t.removeActiveItemsByValue=function(e){var t=this;return this._store.activeItems.filter(function(t){return t.value===e}).forEach(function(e){return t._removeItem(e)}),this},t.removeActiveItems=function(e){var t=this;return this._store.activeItems.filter(function(t){return t.id!==e}).forEach(function(e){return t._removeItem(e)}),this},t.removeHighlightedItems=function(e){var t=this;return void 0===e&&(e=!1),this._store.highlightedActiveItems.forEach(function(i){t._removeItem(i),e&&t._triggerChange(i.value)}),this},t.showDropdown=function(e){var t=this;return this.dropdown.isActive?this:(requestAnimationFrame(function(){t.dropdown.show(),t.containerOuter.open(t.dropdown.distanceFromTopWindow()),!e&&t._canSearch&&t.input.focus(),t.passedElement.triggerEvent(R,{})}),this)},t.hideDropdown=function(e){var t=this;return this.dropdown.isActive?(requestAnimationFrame(function(){t.dropdown.hide(),t.containerOuter.close(),!e&&t._canSearch&&(t.input.removeActiveDescendant(),t.input.blur()),t.passedElement.triggerEvent(H,{})}),this):this},t.getValue=function(e){void 0===e&&(e=!1);var t=this._store.activeItems.reduce(function(t,i){var n=e?i.value:i;return t.push(n),t},[]);return this._isSelectOneElement?t[0]:t},t.setValue=function(e){var t=this;return this.initialised?([].concat(e).forEach(function(e){return t._setChoiceOrItem(e)}),this):this},t.setChoiceByValue=function(e){var t=this;return!this.initialised||this._isTextElement?this:((S("Array",e)?e:[e]).forEach(function(e){return t._findAndSelectChoiceByValue(e)}),this)},t.setChoices=function(e,t,i,n){var s=this;if(void 0===e&&(e=[]),void 0===t&&(t=""),void 0===i&&(i=""),void 0===n&&(n=!1),!this._isSelectElement||!t)return this;n&&this.clearChoices(),this.containerOuter.removeLoadingState();return this._setLoading(!0),e.forEach(function(e){e.choices?s._addGroup({group:e,id:e.id||null,valueKey:t,labelKey:i}):s._addChoice({value:e[t],label:e[i],isSelected:e.selected,isDisabled:e.disabled,customProperties:e.customProperties,placeholder:e.placeholder})}),this._setLoading(!1),this},t.clearChoices=function(){this._store.dispatch({type:Z})},t.clearStore=function(){return this._store.dispatch({type:"CLEAR_ALL"}),this},t.clearInput=function(){var e=!this._isSelectOneElement;return this.input.clear(e),!this._isTextElement&&this._canSearch&&(this._isSearching=!1,this._store.dispatch(Se(!0))),this},t.ajax=function(e){var t=this;return this.initialised&&this._isSelectElement&&e?(requestAnimationFrame(function(){return t._handleLoadingState(!0)}),e(this._ajaxCallback()),this):this},t._render=function(){if(!this._store.isLoading()){this._currentState=this._store.state;var e=this._currentState.choices!==this._prevState.choices||this._currentState.groups!==this._prevState.groups||this._currentState.items!==this._prevState.items,t=this._isSelectElement,i=this._currentState.items!==this._prevState.items;e&&(t&&this._renderChoices(),i&&this._renderItems(),this._prevState=this._currentState)}},t._renderChoices=function(){var e=this,t=this._store,i=t.activeGroups,n=t.activeChoices,s=document.createDocumentFragment();if(this.choiceList.clear(),this.config.resetScrollPosition&&requestAnimationFrame(function(){return e.choiceList.scrollToTop()}),i.length>=1&&!this._isSearching){var o=n.filter(function(e){return!0===e.placeholder&&-1===e.groupId});o.length>=1&&(s=this._createChoicesFragment(o,s)),s=this._createGroupsFragment(i,n,s)}else n.length>=1&&(s=this._createChoicesFragment(n,s));if(s.childNodes&&s.childNodes.length>0){var r=this._store.activeItems,a=this._canAddItem(r,this.input.value);a.response?(this.choiceList.append(s),this._highlightChoice()):this.choiceList.append(this._getTemplate("notice",a.notice))}else{var l,c;this._isSearching?(c=S("Function",this.config.noResultsText)?this.config.noResultsText():this.config.noResultsText,l=this._getTemplate("notice",c,"no-results")):(c=S("Function",this.config.noChoicesText)?this.config.noChoicesText():this.config.noChoicesText,l=this._getTemplate("notice",c,"no-choices")),this.choiceList.append(l)}},t._renderItems=function(){var e=this._store.activeItems||[];this.itemList.clear();var t=this._createItemsFragment(e);t.childNodes&&this.itemList.append(t)},t._createGroupsFragment=function(e,t,i){var n=this,s=i||document.createDocumentFragment();return this.config.shouldSort&&e.sort(this.config.sortFn),e.forEach(function(e){var i=function(e){return t.filter(function(t){return n._isSelectOneElement?t.groupId===e.id:t.groupId===e.id&&("always"===n.config.renderSelectedChoices||!t.selected)})}(e);if(i.length>=1){var o=n._getTemplate("choiceGroup",e);s.appendChild(o),n._createChoicesFragment(i,s,!0)}}),s},t._createChoicesFragment=function(e,t,i){var n=this;void 0===i&&(i=!1);var s=t||document.createDocumentFragment(),o=this.config,r=o.renderSelectedChoices,a=o.searchResultLimit,l=o.renderChoiceLimit,c=this._isSearching?x:this.config.sortFn,h=function(e){if("auto"!==r||(n._isSelectOneElement||!e.selected)){var t=n._getTemplate("choice",e,n.config.itemSelectText);s.appendChild(t)}},d=e;"auto"!==r||this._isSelectOneElement||(d=e.filter(function(e){return!e.selected}));var u=d.reduce(function(e,t){return t.placeholder?e.placeholderChoices.push(t):e.normalChoices.push(t),e},{placeholderChoices:[],normalChoices:[]}),p=u.placeholderChoices,m=u.normalChoices;(this.config.shouldSort||this._isSearching)&&m.sort(c);var f=d.length,v=[].concat(p,m);this._isSearching?f=a:l>0&&!i&&(f=l);for(var g=0;g<f;g+=1)v[g]&&h(v[g]);return s},t._createItemsFragment=function(e,t){var i=this;void 0===t&&(t=null);var n=this.config,s=n.shouldSortItems,o=n.sortFn,r=n.removeItemButton,a=t||document.createDocumentFragment();s&&!this._isSelectOneElement&&e.sort(o),this._isTextElement?this.passedElement.value=e:this.passedElement.options=e;return e.forEach(function(e){return function(e){var t=i._getTemplate("item",e,r);a.appendChild(t)}(e)}),a},t._triggerChange=function(e){void 0!==e&&null!==e&&this.passedElement.triggerEvent(V,{value:e})},t._selectPlaceholderChoice=function(){var e=this._store.placeholderChoice;e&&(this._addItem({value:e.value,label:e.label,choiceId:e.id,groupId:e.groupId,placeholder:e.placeholder}),this._triggerChange(e.value))},t._handleButtonAction=function(e,t){if(e&&t&&this.config.removeItems&&this.config.removeItemButton){var i=t.parentNode.getAttribute("data-id"),n=e.find(function(e){return e.id===parseInt(i,10)});this._removeItem(n),this._triggerChange(n.value),this._isSelectOneElement&&this._selectPlaceholderChoice()}},t._handleItemAction=function(e,t,i){var n=this;if(void 0===i&&(i=!1),e&&t&&this.config.removeItems&&!this._isSelectOneElement){var s=t.getAttribute("data-id");e.forEach(function(e){e.id!==parseInt(s,10)||e.highlighted?!i&&e.highlighted&&n.unhighlightItem(e):n.highlightItem(e)}),this.input.focus()}},t._handleChoiceAction=function(e,t){if(e&&t){var i=t.getAttribute("data-id"),n=this._store.getChoiceById(i),s=e[0]&&e[0].keyCode?e[0].keyCode:null,o=this.dropdown.isActive;if(n.keyCode=s,this.passedElement.triggerEvent(G,{choice:n}),n&&!n.selected&&!n.disabled)this._canAddItem(e,n.value).response&&(this._addItem({value:n.value,label:n.label,choiceId:n.id,groupId:n.groupId,customProperties:n.customProperties,placeholder:n.placeholder,keyCode:n.keyCode}),this._triggerChange(n.value));this.clearInput(),o&&this._isSelectOneElement&&(this.hideDropdown(!0),this.containerOuter.focus())}},t._handleBackspace=function(e){if(this.config.removeItems&&e){var t=e[e.length-1],i=e.some(function(e){return e.highlighted});this.config.editItems&&!i&&t?(this.input.value=t.value,this.input.setWidth(),this._removeItem(t),this._triggerChange(t.value)):(i||this.highlightItem(t,!1),this.removeHighlightedItems(!0))}},t._setLoading=function(e){this._store.dispatch(function(e){return{type:"SET_IS_LOADING",isLoading:e}}(e))},t._handleLoadingState=function(e){void 0===e&&(e=!0);var t=this.itemList.getChild("."+this.config.classNames.placeholder);e?(this.disable(),this.containerOuter.addLoadingState(),this._isSelectOneElement?t?t.innerHTML=this.config.loadingText:(t=this._getTemplate("placeholder",this.config.loadingText),this.itemList.append(t)):this.input.placeholder=this.config.loadingText):(this.enable(),this.containerOuter.removeLoadingState(),this._isSelectOneElement?t.innerHTML=this._placeholderValue||"":this.input.placeholder=this._placeholderValue||"")},t._handleSearch=function(e){if(e&&this.input.isFocussed){var t=this._store.choices,i=this.config,n=i.searchFloor,s=i.searchChoices,o=t.some(function(e){return!e.active});if(e&&e.length>=n){var r=s?this._searchChoices(e):0;this.passedElement.triggerEvent(q,{value:e,resultCount:r})}else o&&(this._isSearching=!1,this._store.dispatch(Se(!0)))}},t._canAddItem=function(e,t){var i=!0,n=S("Function",this.config.addItemText)?this.config.addItemText(t):this.config.addItemText;if(!this._isSelectOneElement){var s=function(e,t,i){return void 0===i&&(i="value"),e.some(function(e){return S("String",t)?e[i]===t.trim():e[i]===t})}(e,t);this.config.maxItemCount>0&&this.config.maxItemCount<=e.length&&(i=!1,n=S("Function",this.config.maxItemText)?this.config.maxItemText(this.config.maxItemCount):this.config.maxItemText),!this.config.duplicateItemsAllowed&&s&&i&&(i=!1,n=S("Function",this.config.uniqueItemText)?this.config.uniqueItemText(t):this.config.uniqueItemText),this._isTextElement&&this.config.addItems&&i&&S("Function",this.config.addItemFilterFn)&&!this.config.addItemFilterFn(t)&&(i=!1,n=S("Function",this.config.customAddItemText)?this.config.customAddItemText(t):this.config.customAddItemText)}return{response:i,notice:n}},t._ajaxCallback=function(){var e=this;return function(t,i,n){if(t&&i){var s=S("Object",t)?[t]:t;s&&S("Array",s)&&s.length?(e._handleLoadingState(!1),e._setLoading(!0),s.forEach(function(t){t.choices?e._addGroup({group:t,id:t.id||null,valueKey:i,labelKey:n}):e._addChoice({value:L(t,i),label:L(t,n),isSelected:t.selected,isDisabled:t.disabled,customProperties:t.customProperties,placeholder:t.placeholder})}),e._setLoading(!1),e._isSelectOneElement&&e._selectPlaceholderChoice()):e._handleLoadingState(!1)}}},t._searchChoices=function(e){var t=S("String",e)?e.trim():e,i=S("String",this._currentValue)?this._currentValue.trim():this._currentValue;if(t.length<1&&t===i+" ")return 0;var n=this._store.searchableChoices,o=t,r=[].concat(this.config.searchFields),a=Object.assign(this.config.fuseOptions,{keys:r}),l=new s.a(n,a).search(o);return this._currentValue=t,this._highlightPosition=0,this._isSearching=!0,this._store.dispatch(function(e){return{type:$,results:e}}(l)),l.length},t._addEventListeners=function(){window.delegateEvent.add("keyup",this._onKeyUp),window.delegateEvent.add("keydown",this._onKeyDown),window.delegateEvent.add("click",this._onClick),window.delegateEvent.add("touchmove",this._onTouchMove),window.delegateEvent.add("touchend",this._onTouchEnd),window.delegateEvent.add("mousedown",this._onMouseDown),window.delegateEvent.add("mouseover",this._onMouseOver),this._isSelectOneElement&&(this.containerOuter.element.addEventListener("focus",this._onFocus),this.containerOuter.element.addEventListener("blur",this._onBlur)),this.input.element.addEventListener("focus",this._onFocus),this.input.element.addEventListener("blur",this._onBlur),this.input.element.form&&this.input.element.form.addEventListener("reset",this._onFormReset),this.input.addEventListeners()},t._removeEventListeners=function(){window.delegateEvent.remove("keyup",this._onKeyUp),window.delegateEvent.remove("keydown",this._onKeyDown),window.delegateEvent.remove("click",this._onClick),window.delegateEvent.remove("touchmove",this._onTouchMove),window.delegateEvent.remove("touchend",this._onTouchEnd),window.delegateEvent.remove("mousedown",this._onMouseDown),window.delegateEvent.remove("mouseover",this._onMouseOver),this._isSelectOneElement&&(this.containerOuter.element.removeEventListener("focus",this._onFocus),this.containerOuter.element.removeEventListener("blur",this._onBlur)),this.input.element.removeEventListener("focus",this._onFocus),this.input.element.removeEventListener("blur",this._onBlur),this.input.element.form&&this.input.element.form.removeEventListener("reset",this._onFormReset),this.input.removeEventListeners()},t._onKeyDown=function(e){var t,i=e.target,n=e.keyCode,s=e.ctrlKey,o=e.metaKey;if(i===this.input.element||this.containerOuter.element.contains(i)){var r=this._store.activeItems,a=this.input.isFocussed,l=this.dropdown.isActive,c=this.itemList.hasChildren,h=String.fromCharCode(n),d=ne,u=se,p=oe,m=re,f=ae,v=le,g=ce,_=he,b=de,y=s||o;!this._isTextElement&&/[a-zA-Z0-9-_ ]/.test(h)&&this.showDropdown();var E=((t={})[m]=this._onAKey,t[p]=this._onEnterKey,t[f]=this._onEscapeKey,t[v]=this._onDirectionKey,t[_]=this._onDirectionKey,t[g]=this._onDirectionKey,t[b]=this._onDirectionKey,t[u]=this._onDeleteKey,t[d]=this._onDeleteKey,t);E[n]&&E[n]({event:e,target:i,keyCode:n,metaKey:o,activeItems:r,hasFocusedInput:a,hasActiveDropdown:l,hasItems:c,hasCtrlDownKeyPressed:y})}},t._onKeyUp=function(e){var t=e.target,i=e.keyCode;if(t===this.input.element){var n=this.input.value,s=this._store.activeItems,o=this._canAddItem(s,n),r=ne,a=se;if(this._isTextElement){if(o.notice&&n){var l=this._getTemplate("notice",o.notice);this.dropdown.element.innerHTML=l.outerHTML,this.showDropdown(!0)}else this.hideDropdown(!0)}else{var c=(i===r||i===a)&&!t.value,h=!this._isTextElement&&this._isSearching,d=this._canSearch&&o.response;c&&h?(this._isSearching=!1,this._store.dispatch(Se(!0))):d&&this._handleSearch(this.input.value)}this._canSearch=this.config.searchEnabled}},t._onAKey=function(e){var t=e.hasItems;e.hasCtrlDownKeyPressed&&t&&(this._canSearch=!1,this.config.removeItems&&!this.input.value&&this.input.element===document.activeElement&&this.highlightAll())},t._onEnterKey=function(e){var t=e.event,i=e.target,n=e.activeItems,s=e.hasActiveDropdown,o=oe,r=i.hasAttribute("data-button");if(this._isTextElement&&i.value){var a=this.input.value;this._canAddItem(n,a).response&&(this.hideDropdown(!0),this._addItem({value:a}),this._triggerChange(a),this.clearInput())}if(r&&(this._handleButtonAction(n,i),t.preventDefault()),s){var l=this.dropdown.getChild("."+this.config.classNames.highlightedState);l&&(n[0]&&(n[0].keyCode=o),this._handleChoiceAction(n,l)),t.preventDefault()}else this._isSelectOneElement&&(this.showDropdown(),t.preventDefault())},t._onEscapeKey=function(e){e.hasActiveDropdown&&(this.hideDropdown(!0),this.containerOuter.focus())},t._onDirectionKey=function(e){var t=e.event,i=e.hasActiveDropdown,n=e.keyCode,s=e.metaKey,o=ce,r=he,a=de;if(i||this._isSelectOneElement){this.showDropdown(),this._canSearch=!1;var l,c=n===o||n===a?1:-1;if(s||n===a||n===r)l=c>0?Array.from(this.dropdown.element.querySelectorAll("[data-choice-selectable]")).pop():this.dropdown.element.querySelector("[data-choice-selectable]");else{var h=this.dropdown.element.querySelector("."+this.config.classNames.highlightedState);l=h?function(e,t,i){if(void 0===i&&(i=1),e&&t){var n=e.parentNode.parentNode,s=Array.from(n.querySelectorAll(t));return s[s.indexOf(e)+(i>0?1:-1)]}}(h,"[data-choice-selectable]",c):this.dropdown.element.querySelector("[data-choice-selectable]")}l&&(function(e,t,i){if(void 0===i&&(i=1),e)return i>0?t.scrollTop+t.offsetHeight>=e.offsetTop+e.offsetHeight:e.offsetTop>=t.scrollTop}(l,this.choiceList.element,c)||this.choiceList.scrollToChoice(l,c),this._highlightChoice(l)),t.preventDefault()}},t._onDeleteKey=function(e){var t=e.event,i=e.target,n=e.hasFocusedInput,s=e.activeItems;!n||i.value||this._isSelectOneElement||(this._handleBackspace(s),t.preventDefault())},t._onTouchMove=function(){this._wasTap&&(this._wasTap=!1)},t._onTouchEnd=function(e){var t=(e||e.touches[0]).target;this._wasTap&&this.containerOuter.element.contains(t)&&((t===this.containerOuter.element||t===this.containerInner.element)&&(this._isTextElement?this.input.focus():this._isSelectMultipleElement&&this.showDropdown()),e.stopPropagation());this._wasTap=!0},t._onMouseDown=function(e){var t=e.target,i=e.shiftKey;if(this.choiceList.element.contains(t)&&navigator.userAgent.match(/Trident/)&&navigator.userAgent.match(/rv[ :]11/)&&(this._isScrollingOnIe=!0),this.containerOuter.element.contains(t)&&t!==this.input.element){var n=this._store.activeItems,s=i,o=I(t,"data-button"),r=I(t,"data-item"),a=I(t,"data-choice");o?this._handleButtonAction(n,o):r?this._handleItemAction(n,r,s):a&&this._handleChoiceAction(n,a),e.preventDefault()}},t._onMouseOver=function(e){var t=e.target;(t===this.dropdown||this.dropdown.element.contains(t))&&t.hasAttribute("data-choice")&&this._highlightChoice(t)},t._onClick=function(e){var t=e.target;this.containerOuter.element.contains(t)?this.dropdown.isActive||this.containerOuter.isDisabled?this._isSelectOneElement&&t!==this.input.element&&!this.dropdown.element.contains(t)&&this.hideDropdown():this._isTextElement?document.activeElement!==this.input.element&&this.input.focus():(this.showDropdown(),this.containerOuter.focus()):(this._store.highlightedActiveItems.length>0&&this.unhighlightAll(),this.containerOuter.removeFocusState(),this.hideDropdown(!0))},t._onFocus=function(e){var t=this,i=e.target;this.containerOuter.element.contains(i)&&{text:function(){i===t.input.element&&t.containerOuter.addFocusState()},"select-one":function(){t.containerOuter.addFocusState(),i===t.input.element&&t.showDropdown(!0)},"select-multiple":function(){i===t.input.element&&(t.showDropdown(!0),t.containerOuter.addFocusState())}}[this.passedElement.element.type]()},t._onBlur=function(e){var t=this,i=e.target;if(this.containerOuter.element.contains(i)&&!this._isScrollingOnIe){var n=this._store.activeItems.some(function(e){return e.highlighted});({text:function(){i===t.input.element&&(t.containerOuter.removeFocusState(),n&&t.unhighlightAll(),t.hideDropdown(!0))},"select-one":function(){t.containerOuter.removeFocusState(),(i===t.input.element||i===t.containerOuter.element&&!t._canSearch)&&t.hideDropdown(!0)},"select-multiple":function(){i===t.input.element&&(t.containerOuter.removeFocusState(),t.hideDropdown(!0),n&&t.unhighlightAll())}})[this.passedElement.element.type]()}else this._isScrollingOnIe=!1,this.input.element.focus()},t._onFormReset=function(){this._store.dispatch({type:"RESET_TO",state:this._initialState})},t._highlightChoice=function(e){var t=this;void 0===e&&(e=null);var i=Array.from(this.dropdown.element.querySelectorAll("[data-choice-selectable]"));if(i.length){var n=e;Array.from(this.dropdown.element.querySelectorAll("."+this.config.classNames.highlightedState)).forEach(function(e){e.classList.remove(t.config.classNames.highlightedState),e.setAttribute("aria-selected","false")}),n?this._highlightPosition=i.indexOf(n):(n=i.length>this._highlightPosition?i[this._highlightPosition]:i[i.length-1])||(n=i[0]),n.classList.add(this.config.classNames.highlightedState),n.setAttribute("aria-selected","true"),this.passedElement.triggerEvent(X,{el:n}),this.dropdown.isActive&&(this.input.setActiveDescendant(n.id),this.containerOuter.setActiveDescendant(n.id))}},t._addItem=function(e){var t=e.value,i=e.label,n=void 0===i?null:i,s=e.choiceId,o=void 0===s?-1:s,r=e.groupId,a=void 0===r?-1:r,l=e.customProperties,c=void 0===l?null:l,h=e.placeholder,d=void 0!==h&&h,u=e.keyCode,p=void 0===u?null:u,m=S("String",t)?t.trim():t,f=p,v=c,g=this._store.items,_=n||m,b=parseInt(o,10)||-1,y=a>=0?this._store.getGroupById(a):null,E=g?g.length+1:1;return this.config.prependValue&&(m=this.config.prependValue+m.toString()),this.config.appendValue&&(m+=this.config.appendValue.toString()),this._store.dispatch(function(e){var t=e.value,i=e.label,n=e.id,s=e.choiceId,o=e.groupId,r=e.customProperties,a=e.placeholder,l=e.keyCode;return{type:ee,value:t,label:i,id:n,choiceId:s,groupId:o,customProperties:r,placeholder:a,keyCode:l}}({value:m,label:_,id:E,choiceId:b,groupId:a,customProperties:c,placeholder:d,keyCode:f})),this._isSelectOneElement&&this.removeActiveItems(E),this.passedElement.triggerEvent(z,{id:E,value:m,label:_,customProperties:v,groupValue:y&&y.value?y.value:void 0,keyCode:f}),this},t._removeItem=function(e){if(!e||!S("Object",e))return this;var t=e.id,i=e.value,n=e.label,s=e.choiceId,o=e.groupId,r=o>=0?this._store.getGroupById(o):null;return this._store.dispatch(function(e,t){return{type:te,id:e,choiceId:t}}(t,s)),r&&r.value?this.passedElement.triggerEvent(W,{id:t,value:i,label:n,groupValue:r.value}):this.passedElement.triggerEvent(W,{id:t,value:i,label:n}),this},t._addChoice=function(e){var t=e.value,i=e.label,n=void 0===i?null:i,s=e.isSelected,o=void 0!==s&&s,r=e.isDisabled,a=void 0!==r&&r,l=e.groupId,c=void 0===l?-1:l,h=e.customProperties,d=void 0===h?null:h,u=e.placeholder,p=void 0!==u&&u,m=e.keyCode,f=void 0===m?null:m;if(void 0!==t&&null!==t){var v=this._store.choices,g=n||t,_=v?v.length+1:1,b=this._baseId+"-"+this._idNames.itemChoice+"-"+_;this._store.dispatch(function(e){var t=e.value,i=e.label,n=e.id,s=e.groupId,o=e.disabled,r=e.elementId,a=e.customProperties,l=e.placeholder,c=e.keyCode;return{type:Y,value:t,label:i,id:n,groupId:s,disabled:o,elementId:r,customProperties:a,placeholder:l,keyCode:c}}({value:t,label:g,id:_,groupId:c,disabled:a,elementId:b,customProperties:d,placeholder:p,keyCode:f})),o&&this._addItem({value:t,label:g,choiceId:_,customProperties:d,placeholder:p,keyCode:f})}},t._addGroup=function(e){var t=this,i=e.group,n=e.id,s=e.valueKey,o=void 0===s?"value":s,r=e.labelKey,a=void 0===r?"label":r,l=S("Object",i)?i.choices:Array.from(i.getElementsByTagName("OPTION")),c=n||Math.floor((new Date).valueOf()*Math.random()),h=!!i.disabled&&i.disabled;if(l){this._store.dispatch(Ie(i.label,c,!0,h));l.forEach(function(e){var i=e.disabled||e.parentNode&&e.parentNode.disabled;t._addChoice({value:e[o],label:S("Object",e)?e[a]:e.innerHTML,isSelected:e.selected,isDisabled:i,groupId:c,customProperties:e.customProperties,placeholder:e.placeholder})})}else this._store.dispatch(Ie(i.label,i.id,!1,i.disabled))},t._getTemplate=function(e){var t;if(!e)return null;for(var i=this.config,n=i.templates,s=i.classNames,o=arguments.length,r=new Array(o>1?o-1:0),a=1;a<o;a++)r[a-1]=arguments[a];return(t=n[e]).call.apply(t,[this,s].concat(r))},t._createTemplates=function(){var e=this.config.callbackOnCreateTemplates,t={};e&&S("Function",e)&&(t=e.call(this,O)),this.config.templates=r()(Ee,t)},t._createElements=function(){this.containerOuter=new B({element:this._getTemplate("containerOuter",this._direction,this._isSelectElement,this._isSelectOneElement,this.config.searchEnabled,this.passedElement.element.type),classNames:this.config.classNames,type:this.passedElement.element.type,position:this.config.position}),this.containerInner=new B({element:this._getTemplate("containerInner"),classNames:this.config.classNames,type:this.passedElement.element.type,position:this.config.position}),this.input=new N({element:this._getTemplate("input",this._placeholderValue),classNames:this.config.classNames,type:this.passedElement.element.type}),this.choiceList=new ue({element:this._getTemplate("choiceList",this._isSelectOneElement)}),this.itemList=new ue({element:this._getTemplate("itemList",this._isSelectOneElement)}),this.dropdown=new M({element:this._getTemplate("dropdown"),classNames:this.config.classNames,type:this.passedElement.element.type})},t._createStructure=function(){this.passedElement.conceal(),this.containerInner.wrap(this.passedElement.element),this.containerOuter.wrap(this.containerInner.element),this._isSelectOneElement?this.input.placeholder=this.config.searchPlaceholderValue||"":this._placeholderValue&&(this.input.placeholder=this._placeholderValue,this.input.setWidth(!0)),this.containerOuter.element.appendChild(this.containerInner.element),this.containerOuter.element.appendChild(this.dropdown.element),this.containerInner.element.appendChild(this.itemList.element),this._isTextElement||this.dropdown.element.appendChild(this.choiceList.element),this._isSelectOneElement?this.config.searchEnabled&&this.dropdown.element.insertBefore(this.input.element,this.dropdown.element.firstChild):this.containerInner.element.appendChild(this.input.element),this._isSelectElement?this._addPredefinedChoices():this._isTextElement&&this._addPredefinedItems()},t._addPredefinedChoices=function(){var e=this,t=this.passedElement.optionGroups;if(this._highlightPosition=0,this._isSearching=!1,this._setLoading(!0),t&&t.length){var i=this.passedElement.placeholderOption;i&&"SELECT"===i.parentNode.tagName&&this._addChoice({value:i.value,label:i.innerHTML,isSelected:i.selected,isDisabled:i.disabled,placeholder:!0}),t.forEach(function(t){return e._addGroup({group:t,id:t.id||null})})}else{var n=this.passedElement.options,s=this.config.sortFn,o=this._presetChoices;n.forEach(function(e){o.push({value:e.value,label:e.innerHTML,selected:e.selected,disabled:e.disabled||e.parentNode.disabled,placeholder:e.hasAttribute("placeholder"),customProperties:e.getAttribute("data-custom-properties")})}),this.config.shouldSort&&o.sort(s);var r=o.some(function(e){return e.selected});o.forEach(function(t,i){return function(t,i){var n=t.value,s=t.label,o=t.customProperties,a=t.placeholder;if(e._isSelectElement)if(t.choices)e._addGroup({group:t,id:t.id||null});else{var l=e._isSelectOneElement&&!r&&0===i,c=!!l||t.selected,h=!l&&t.disabled;e._addChoice({value:n,label:s,isSelected:c,isDisabled:h,customProperties:o,placeholder:a})}else e._addChoice({value:n,label:s,isSelected:t.selected,isDisabled:t.disabled,customProperties:o,placeholder:a})}(t,i)})}this._setLoading(!1)},t._addPredefinedItems=function(){var e=this;this._presetItems.forEach(function(t){return function(t){var i=E(t);"Object"===i&&t.value?e._addItem({value:t.value,label:t.label,choiceId:t.id,customProperties:t.customProperties,placeholder:t.placeholder}):"String"===i&&e._addItem({value:t})}(t)})},t._setChoiceOrItem=function(e){var t=this;({object:function(){e.value&&(t._isTextElement?t._addItem({value:e.value,label:e.label,choiceId:e.id,customProperties:e.customProperties,placeholder:e.placeholder}):t._addChoice({value:e.value,label:e.label,isSelected:!0,isDisabled:!1,customProperties:e.customProperties,placeholder:e.placeholder}))},string:function(){t._isTextElement?t._addItem({value:e}):t._addChoice({value:e,label:e,isSelected:!0,isDisabled:!1})}})[E(e).toLowerCase()]()},t._findAndSelectChoiceByValue=function(e){var t=this,i=this._store.choices.find(function(i){return t.config.itemComparer(i.value,e)});i&&!i.selected&&this._addItem({value:i.value,label:i.label,choiceId:i.id,groupId:i.groupId,customProperties:i.customProperties,placeholder:i.placeholder,keyCode:i.keyCode})},t._generateInstances=function(t,i){return t.reduce(function(t,n){return t.push(new e(n,i)),t},[this])},t._generatePlaceholderValue=function(){return!this._isSelectOneElement&&(!!this.config.placeholder&&(this.config.placeholderValue||this.passedElement.element.getAttribute("placeholder")))},e}();Ce.userDefaults={};t.default=Ce}]).default});
+/* !
+* tingle.js
+* @author  robin_parisi
+* @version 0.15.2
+* @url
+*/
+
+/* global define,module */
+(function (root, factory) {
+  if (typeof define === 'function' && define.amd) {
+    define(factory)
+  } else if (typeof exports === 'object') {
+    module.exports = factory()
+  } else {
+    root.tingle = factory()
+  }
+}(this, function () {
+  /* ----------------------------------------------------------- */
+  /* == modal */
+  /* ----------------------------------------------------------- */
+
+  var isBusy = false
+
+  function Modal (options) {
+    var defaults = {
+      onClose: null,
+      onOpen: null,
+      beforeOpen: null,
+      beforeClose: null,
+      stickyFooter: false,
+      footer: false,
+      cssClass: [],
+      closeLabel: 'Close',
+      closeMethods: ['overlay', 'button', 'escape']
+    }
+
+    // extends config
+    this.opts = extend({}, defaults, options)
+
+    // init modal
+    this.init()
+  }
+
+  Modal.prototype.init = function () {
+    if (this.modal) {
+      return
+    }
+
+    _build.call(this)
+    _bindEvents.call(this)
+
+    // insert modal in dom
+    document.body.appendChild(this.modal, document.body.firstChild)
+
+    if (this.opts.footer) {
+      this.addFooter()
+    }
+
+    return this
+  }
+
+  Modal.prototype._busy = function (state) {
+    isBusy = state
+  }
+
+  Modal.prototype._isBusy = function () {
+    return isBusy
+  }
+
+  Modal.prototype.destroy = function () {
+    if (this.modal === null) {
+      return
+    }
+
+    // restore scrolling
+    if (this.isOpen()) {
+      this.close(true)
+    }
+
+    // unbind all events
+    _unbindEvents.call(this)
+
+    // remove modal from dom
+    this.modal.parentNode.removeChild(this.modal)
+
+    this.modal = null
+  }
+
+  Modal.prototype.isOpen = function () {
+    return !!this.modal.classList.contains('tingle-modal--visible')
+  }
+
+  Modal.prototype.open = function () {
+    if (this._isBusy()) return
+    this._busy(true)
+
+    var self = this
+
+    // before open callback
+    if (typeof self.opts.beforeOpen === 'function') {
+      self.opts.beforeOpen()
+    }
+
+    if (this.modal.style.removeProperty) {
+      this.modal.style.removeProperty('display')
+    } else {
+      this.modal.style.removeAttribute('display')
+    }
+
+    // prevent double scroll
+    this._scrollPosition = window.pageYOffset
+    document.body.classList.add('tingle-enabled')
+    document.body.style.top = -this._scrollPosition + 'px'
+
+    // sticky footer
+    this.setStickyFooter(this.opts.stickyFooter)
+
+    // show modal
+    this.modal.classList.add('tingle-modal--visible')
+
+    // onOpen callback
+    if (typeof self.opts.onOpen === 'function') {
+      self.opts.onOpen.call(self)
+    }
+
+    self._busy(false)
+
+    // check if modal is bigger than screen height
+    this.checkOverflow()
+
+    return this
+  }
+
+  Modal.prototype.close = function (force) {
+    if (this._isBusy()) return
+    this._busy(true)
+    force = force || false
+
+    //  before close
+    if (typeof this.opts.beforeClose === 'function') {
+      var close = this.opts.beforeClose.call(this)
+      if (!close) {
+        this._busy(false)
+        return
+      }
+    }
+
+    document.body.classList.remove('tingle-enabled')
+    document.body.style.top = null
+    window.scrollTo({
+      top: this._scrollPosition,
+      behavior: 'instant'
+    })
+
+    this.modal.classList.remove('tingle-modal--visible')
+
+    // using similar setup as onOpen
+    var self = this
+
+    self.modal.style.display = 'none'
+
+    // onClose callback
+    if (typeof self.opts.onClose === 'function') {
+      self.opts.onClose.call(this)
+    }
+
+    // release modal
+    self._busy(false)
+  }
+
+  Modal.prototype.setContent = function (content) {
+    // check type of content : String or Node
+    if (typeof content === 'string') {
+      this.modalBoxContent.innerHTML = content
+    } else {
+      this.modalBoxContent.innerHTML = ''
+      this.modalBoxContent.appendChild(content)
+    }
+
+    if (this.isOpen()) {
+      // check if modal is bigger than screen height
+      this.checkOverflow()
+    }
+
+    return this
+  }
+
+  Modal.prototype.getContent = function () {
+    return this.modalBoxContent
+  }
+
+  Modal.prototype.addFooter = function () {
+    // add footer to modal
+    _buildFooter.call(this)
+
+    return this
+  }
+
+  Modal.prototype.setFooterContent = function (content) {
+    // set footer content
+    this.modalBoxFooter.innerHTML = content
+
+    return this
+  }
+
+  Modal.prototype.getFooterContent = function () {
+    return this.modalBoxFooter
+  }
+
+  Modal.prototype.setStickyFooter = function (isSticky) {
+    // if the modal is smaller than the viewport height, we don't need sticky
+    if (!this.isOverflow()) {
+      isSticky = false
+    }
+
+    if (isSticky) {
+      if (this.modalBox.contains(this.modalBoxFooter)) {
+        this.modalBox.removeChild(this.modalBoxFooter)
+        this.modal.appendChild(this.modalBoxFooter)
+        this.modalBoxFooter.classList.add('tingle-modal-box__footer--sticky')
+        _recalculateFooterPosition.call(this)
+        this.modalBoxContent.style['padding-bottom'] = this.modalBoxFooter.clientHeight + 20 + 'px'
+      }
+    } else if (this.modalBoxFooter) {
+      if (!this.modalBox.contains(this.modalBoxFooter)) {
+        this.modal.removeChild(this.modalBoxFooter)
+        this.modalBox.appendChild(this.modalBoxFooter)
+        this.modalBoxFooter.style.width = 'auto'
+        this.modalBoxFooter.style.left = ''
+        this.modalBoxContent.style['padding-bottom'] = ''
+        this.modalBoxFooter.classList.remove('tingle-modal-box__footer--sticky')
+      }
+    }
+
+    return this
+  }
+
+  Modal.prototype.addFooterBtn = function (label, cssClass, callback) {
+    var btn = document.createElement('button')
+
+    // set label
+    btn.innerHTML = label
+
+    // bind callback
+    btn.addEventListener('click', callback)
+
+    if (typeof cssClass === 'string' && cssClass.length) {
+      // add classes to btn
+      cssClass.split(' ').forEach(function (item) {
+        btn.classList.add(item)
+      })
+    }
+
+    this.modalBoxFooter.appendChild(btn)
+
+    return btn
+  }
+
+  Modal.prototype.resize = function () {
+    // eslint-disable-next-line no-console
+    console.warn('Resize is deprecated and will be removed in version 1.0')
+  }
+
+  Modal.prototype.isOverflow = function () {
+    var viewportHeight = window.innerHeight
+    var modalHeight = this.modalBox.clientHeight
+
+    return modalHeight >= viewportHeight
+  }
+
+  Modal.prototype.checkOverflow = function () {
+    // only if the modal is currently shown
+    if (this.modal.classList.contains('tingle-modal--visible')) {
+      if (this.isOverflow()) {
+        this.modal.classList.add('tingle-modal--overflow')
+      } else {
+        this.modal.classList.remove('tingle-modal--overflow')
+      }
+
+      // tODO: remove offset
+      // _offset.call(this);
+      if (!this.isOverflow() && this.opts.stickyFooter) {
+        this.setStickyFooter(false)
+      } else if (this.isOverflow() && this.opts.stickyFooter) {
+        _recalculateFooterPosition.call(this)
+        this.setStickyFooter(true)
+      }
+    }
+  }
+
+  /* ----------------------------------------------------------- */
+  /* == private methods */
+  /* ----------------------------------------------------------- */
+
+  function closeIcon () {
+    return '<svg viewBox="0 0 10 10" xmlns="http://www.w3.org/2000/svg"><path d="M.3 9.7c.2.2.4.3.7.3.3 0 .5-.1.7-.3L5 6.4l3.3 3.3c.2.2.5.3.7.3.2 0 .5-.1.7-.3.4-.4.4-1 0-1.4L6.4 5l3.3-3.3c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L5 3.6 1.7.3C1.3-.1.7-.1.3.3c-.4.4-.4 1 0 1.4L3.6 5 .3 8.3c-.4.4-.4 1 0 1.4z" fill="#000" fill-rule="nonzero"/></svg>'
+  }
+
+  function _recalculateFooterPosition () {
+    if (!this.modalBoxFooter) {
+      return
+    }
+    this.modalBoxFooter.style.width = this.modalBox.clientWidth + 'px'
+    this.modalBoxFooter.style.left = this.modalBox.offsetLeft + 'px'
+  }
+
+  function _build () {
+    // wrapper
+    this.modal = document.createElement('div')
+    this.modal.classList.add('tingle-modal')
+
+    // remove cusor if no overlay close method
+    if (this.opts.closeMethods.length === 0 || this.opts.closeMethods.indexOf('overlay') === -1) {
+      this.modal.classList.add('tingle-modal--noOverlayClose')
+    }
+
+    this.modal.style.display = 'none'
+
+    // custom class
+    this.opts.cssClass.forEach(function (item) {
+      if (typeof item === 'string') {
+        this.modal.classList.add(item)
+      }
+    }, this)
+
+    // close btn
+    if (this.opts.closeMethods.indexOf('button') !== -1) {
+      this.modalCloseBtn = document.createElement('button')
+      this.modalCloseBtn.type = 'button'
+      this.modalCloseBtn.classList.add('tingle-modal__close')
+
+      this.modalCloseBtnIcon = document.createElement('span')
+      this.modalCloseBtnIcon.classList.add('tingle-modal__closeIcon')
+      this.modalCloseBtnIcon.innerHTML = closeIcon()
+
+      this.modalCloseBtnLabel = document.createElement('span')
+      this.modalCloseBtnLabel.classList.add('tingle-modal__closeLabel')
+      this.modalCloseBtnLabel.innerHTML = this.opts.closeLabel
+
+      this.modalCloseBtn.appendChild(this.modalCloseBtnIcon)
+      this.modalCloseBtn.appendChild(this.modalCloseBtnLabel)
+    }
+
+    // modal
+    this.modalBox = document.createElement('div')
+    this.modalBox.classList.add('tingle-modal-box')
+
+    // modal box content
+    this.modalBoxContent = document.createElement('div')
+    this.modalBoxContent.classList.add('tingle-modal-box__content')
+
+    this.modalBox.appendChild(this.modalBoxContent)
+
+    if (this.opts.closeMethods.indexOf('button') !== -1) {
+      this.modal.appendChild(this.modalCloseBtn)
+    }
+
+    this.modal.appendChild(this.modalBox)
+  }
+
+  function _buildFooter () {
+    this.modalBoxFooter = document.createElement('div')
+    this.modalBoxFooter.classList.add('tingle-modal-box__footer')
+    this.modalBox.appendChild(this.modalBoxFooter)
+  }
+
+  function _bindEvents () {
+    this._events = {
+      clickCloseBtn: this.close.bind(this),
+      clickOverlay: _handleClickOutside.bind(this),
+      resize: this.checkOverflow.bind(this),
+      keyboardNav: _handleKeyboardNav.bind(this)
+    }
+
+    if (this.opts.closeMethods.indexOf('button') !== -1) {
+      this.modalCloseBtn.addEventListener('click', this._events.clickCloseBtn)
+    }
+
+    this.modal.addEventListener('mousedown', this._events.clickOverlay)
+    window.addEventListener('resize', this._events.resize)
+    document.addEventListener('keydown', this._events.keyboardNav)
+  }
+
+  function _handleKeyboardNav (event) {
+    // escape key
+    if (this.opts.closeMethods.indexOf('escape') !== -1 && event.which === 27 && this.isOpen()) {
+      this.close()
+    }
+  }
+
+  function _handleClickOutside (event) {
+    // on macOS, click on scrollbar (hidden mode) will trigger close event so we need to bypass this behavior by detecting scrollbar mode
+    var scrollbarWidth = this.modal.offsetWidth - this.modal.clientWidth
+    var clickedOnScrollbar = event.clientX >= this.modal.offsetWidth - 15 // 15px is macOS scrollbar default width
+    var isScrollable = this.modal.scrollHeight !== this.modal.offsetHeight
+    if (navigator.platform === 'MacIntel' && scrollbarWidth === 0 && clickedOnScrollbar && isScrollable) {
+      return
+    }
+
+    // if click is outside the modal
+    if (this.opts.closeMethods.indexOf('overlay') !== -1 && !_findAncestor(event.target, 'tingle-modal') &&
+        event.clientX < this.modal.clientWidth) {
+      this.close()
+    }
+  }
+
+  function _findAncestor (el, cls) {
+    while ((el = el.parentElement) && !el.classList.contains(cls));
+    return el
+  }
+
+  function _unbindEvents () {
+    if (this.opts.closeMethods.indexOf('button') !== -1) {
+      this.modalCloseBtn.removeEventListener('click', this._events.clickCloseBtn)
+    }
+    this.modal.removeEventListener('mousedown', this._events.clickOverlay)
+    window.removeEventListener('resize', this._events.resize)
+    document.removeEventListener('keydown', this._events.keyboardNav)
+  }
+
+  /* ----------------------------------------------------------- */
+  /* == helpers */
+  /* ----------------------------------------------------------- */
+
+  function extend () {
+    for (var i = 1; i < arguments.length; i++) {
+      for (var key in arguments[i]) {
+        if (arguments[i].hasOwnProperty(key)) {
+          arguments[0][key] = arguments[i][key]
+        }
+      }
+    }
+    return arguments[0]
+  }
+
+  /* ----------------------------------------------------------- */
+  /* == return */
+  /* ----------------------------------------------------------- */
+
+  return {
+    modal: Modal
+  }
+}))
+
+/*! choices.js v9.0.1 | © 2019 Josh Johnson | https://github.com/jshjohnson/Choices#readme */
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory();
+	else if(typeof define === 'function' && define.amd)
+		define([], factory);
+	else if(typeof exports === 'object')
+		exports["Choices"] = factory();
+	else
+		root["Choices"] = factory();
+})(window, function() {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "/public/assets/scripts/";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var isMergeableObject = function isMergeableObject(value) {
+	return isNonNullObject(value)
+		&& !isSpecial(value)
+};
+
+function isNonNullObject(value) {
+	return !!value && typeof value === 'object'
+}
+
+function isSpecial(value) {
+	var stringValue = Object.prototype.toString.call(value);
+
+	return stringValue === '[object RegExp]'
+		|| stringValue === '[object Date]'
+		|| isReactElement(value)
+}
+
+// see https://github.com/facebook/react/blob/b5ac963fb791d1298e7f396236383bc955f916c1/src/isomorphic/classic/element/ReactElement.js#L21-L25
+var canUseSymbol = typeof Symbol === 'function' && Symbol.for;
+var REACT_ELEMENT_TYPE = canUseSymbol ? Symbol.for('react.element') : 0xeac7;
+
+function isReactElement(value) {
+	return value.$$typeof === REACT_ELEMENT_TYPE
+}
+
+function emptyTarget(val) {
+	return Array.isArray(val) ? [] : {}
+}
+
+function cloneUnlessOtherwiseSpecified(value, options) {
+	return (options.clone !== false && options.isMergeableObject(value))
+		? deepmerge(emptyTarget(value), value, options)
+		: value
+}
+
+function defaultArrayMerge(target, source, options) {
+	return target.concat(source).map(function(element) {
+		return cloneUnlessOtherwiseSpecified(element, options)
+	})
+}
+
+function getMergeFunction(key, options) {
+	if (!options.customMerge) {
+		return deepmerge
+	}
+	var customMerge = options.customMerge(key);
+	return typeof customMerge === 'function' ? customMerge : deepmerge
+}
+
+function getEnumerableOwnPropertySymbols(target) {
+	return Object.getOwnPropertySymbols
+		? Object.getOwnPropertySymbols(target).filter(function(symbol) {
+			return target.propertyIsEnumerable(symbol)
+		})
+		: []
+}
+
+function getKeys(target) {
+	return Object.keys(target).concat(getEnumerableOwnPropertySymbols(target))
+}
+
+// Protects from prototype poisoning and unexpected merging up the prototype chain.
+function propertyIsUnsafe(target, key) {
+	try {
+		return (key in target) // Properties are safe to merge if they don't exist in the target yet,
+			&& !(Object.hasOwnProperty.call(target, key) // unsafe if they exist up the prototype chain,
+				&& Object.propertyIsEnumerable.call(target, key)) // and also unsafe if they're nonenumerable.
+	} catch (unused) {
+		// Counterintuitively, it's safe to merge any property on a target that causes the `in` operator to throw.
+		// This happens when trying to copy an object in the source over a plain string in the target.
+		return false
+	}
+}
+
+function mergeObject(target, source, options) {
+	var destination = {};
+	if (options.isMergeableObject(target)) {
+		getKeys(target).forEach(function(key) {
+			destination[key] = cloneUnlessOtherwiseSpecified(target[key], options);
+		});
+	}
+	getKeys(source).forEach(function(key) {
+		if (propertyIsUnsafe(target, key)) {
+			return
+		}
+
+		if (!options.isMergeableObject(source[key]) || !target[key]) {
+			destination[key] = cloneUnlessOtherwiseSpecified(source[key], options);
+		} else {
+			destination[key] = getMergeFunction(key, options)(target[key], source[key], options);
+		}
+	});
+	return destination
+}
+
+function deepmerge(target, source, options) {
+	options = options || {};
+	options.arrayMerge = options.arrayMerge || defaultArrayMerge;
+	options.isMergeableObject = options.isMergeableObject || isMergeableObject;
+	// cloneUnlessOtherwiseSpecified is added to `options` so that custom arrayMerge()
+	// implementations can use it. The caller may not replace it.
+	options.cloneUnlessOtherwiseSpecified = cloneUnlessOtherwiseSpecified;
+
+	var sourceIsArray = Array.isArray(source);
+	var targetIsArray = Array.isArray(target);
+	var sourceAndTargetTypesMatch = sourceIsArray === targetIsArray;
+
+	if (!sourceAndTargetTypesMatch) {
+		return cloneUnlessOtherwiseSpecified(source, options)
+	} else if (sourceIsArray) {
+		return options.arrayMerge(target, source, options)
+	} else {
+		return mergeObject(target, source, options)
+	}
+}
+
+deepmerge.all = function deepmergeAll(array, options) {
+	if (!Array.isArray(array)) {
+		throw new Error('first argument should be an array')
+	}
+
+	return array.reduce(function(prev, next) {
+		return deepmerge(prev, next, options)
+	}, {})
+};
+
+var deepmerge_1 = deepmerge;
+
+module.exports = deepmerge_1;
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global, module) {/* harmony import */ var _ponyfill_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* global window */
+
+
+var root;
+
+if (typeof self !== 'undefined') {
+  root = self;
+} else if (typeof window !== 'undefined') {
+  root = window;
+} else if (typeof global !== 'undefined') {
+  root = global;
+} else if (true) {
+  root = module;
+} else {}
+
+var result = Object(_ponyfill_js__WEBPACK_IMPORTED_MODULE_0__[/* default */ "a"])(root);
+/* harmony default export */ __webpack_exports__["a"] = (result);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(5), __webpack_require__(6)(module)))
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+/*!
+ * Fuse.js v3.4.5 - Lightweight fuzzy-search (http://fusejs.io)
+ * 
+ * Copyright (c) 2012-2017 Kirollos Risk (http://kiro.me)
+ * All Rights Reserved. Apache Software License 2.0
+ * 
+ * http://www.apache.org/licenses/LICENSE-2.0
+ */
+!function(e,t){ true?module.exports=t():undefined}(this,function(){return function(e){var t={};function n(r){if(t[r])return t[r].exports;var o=t[r]={i:r,l:!1,exports:{}};return e[r].call(o.exports,o,o.exports,n),o.l=!0,o.exports}return n.m=e,n.c=t,n.d=function(e,t,r){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:r})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var r=Object.create(null);if(n.r(r),Object.defineProperty(r,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var o in e)n.d(r,o,function(t){return e[t]}.bind(null,o));return r},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=1)}([function(e,t){e.exports=function(e){return Array.isArray?Array.isArray(e):"[object Array]"===Object.prototype.toString.call(e)}},function(e,t,n){function r(e){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}function o(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}var i=n(2),a=n(8),s=n(0),c=function(){function e(t,n){var r=n.location,o=void 0===r?0:r,i=n.distance,s=void 0===i?100:i,c=n.threshold,h=void 0===c?.6:c,l=n.maxPatternLength,u=void 0===l?32:l,f=n.caseSensitive,d=void 0!==f&&f,v=n.tokenSeparator,p=void 0===v?/ +/g:v,g=n.findAllMatches,y=void 0!==g&&g,m=n.minMatchCharLength,k=void 0===m?1:m,S=n.id,x=void 0===S?null:S,b=n.keys,M=void 0===b?[]:b,_=n.shouldSort,L=void 0===_||_,w=n.getFn,A=void 0===w?a:w,C=n.sortFn,I=void 0===C?function(e,t){return e.score-t.score}:C,O=n.tokenize,j=void 0!==O&&O,P=n.matchAllTokens,F=void 0!==P&&P,T=n.includeMatches,z=void 0!==T&&T,E=n.includeScore,K=void 0!==E&&E,$=n.verbose,J=void 0!==$&&$;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:o,distance:s,threshold:h,maxPatternLength:u,isCaseSensitive:d,tokenSeparator:p,findAllMatches:y,minMatchCharLength:k,id:x,keys:M,includeMatches:z,includeScore:K,shouldSort:L,getFn:A,sortFn:I,verbose:J,tokenize:j,matchAllTokens:F},this.setCollection(t)}var t,n,c;return t=e,(n=[{key:"setCollection",value:function(e){return this.list=e,e}},{key:"search",value:function(e){var t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:{limit:!1};this._log('---------\nSearch pattern: "'.concat(e,'"'));var n=this._prepareSearchers(e),r=n.tokenSearchers,o=n.fullSearcher,i=this._search(r,o),a=i.weights,s=i.results;return this._computeScore(a,s),this.options.shouldSort&&this._sort(s),t.limit&&"number"==typeof t.limit&&(s=s.slice(0,t.limit)),this._format(s)}},{key:"_prepareSearchers",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"",t=[];if(this.options.tokenize)for(var n=e.split(this.options.tokenSeparator),r=0,o=n.length;r<o;r+=1)t.push(new i(n[r],this.options));return{tokenSearchers:t,fullSearcher:new i(e,this.options)}}},{key:"_search",value:function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1?arguments[1]:void 0,n=this.list,r={},o=[];if("string"==typeof n[0]){for(var i=0,a=n.length;i<a;i+=1)this._analyze({key:"",value:n[i],record:i,index:i},{resultMap:r,results:o,tokenSearchers:e,fullSearcher:t});return{weights:null,results:o}}for(var s={},c=0,h=n.length;c<h;c+=1)for(var l=n[c],u=0,f=this.options.keys.length;u<f;u+=1){var d=this.options.keys[u];if("string"!=typeof d){if(s[d.name]={weight:1-d.weight||1},d.weight<=0||d.weight>1)throw new Error("Key weight has to be > 0 and <= 1");d=d.name}else s[d]={weight:1};this._analyze({key:d,value:this.options.getFn(l,d),record:l,index:c},{resultMap:r,results:o,tokenSearchers:e,fullSearcher:t})}return{weights:s,results:o}}},{key:"_analyze",value:function(e,t){var n=e.key,r=e.arrayIndex,o=void 0===r?-1:r,i=e.value,a=e.record,c=e.index,h=t.tokenSearchers,l=void 0===h?[]:h,u=t.fullSearcher,f=void 0===u?[]:u,d=t.resultMap,v=void 0===d?{}:d,p=t.results,g=void 0===p?[]:p;if(null!=i){var y=!1,m=-1,k=0;if("string"==typeof i){this._log("\nKey: ".concat(""===n?"-":n));var S=f.search(i);if(this._log('Full text: "'.concat(i,'", score: ').concat(S.score)),this.options.tokenize){for(var x=i.split(this.options.tokenSeparator),b=[],M=0;M<l.length;M+=1){var _=l[M];this._log('\nPattern: "'.concat(_.pattern,'"'));for(var L=!1,w=0;w<x.length;w+=1){var A=x[w],C=_.search(A),I={};C.isMatch?(I[A]=C.score,y=!0,L=!0,b.push(C.score)):(I[A]=1,this.options.matchAllTokens||b.push(1)),this._log('Token: "'.concat(A,'", score: ').concat(I[A]))}L&&(k+=1)}m=b[0];for(var O=b.length,j=1;j<O;j+=1)m+=b[j];m/=O,this._log("Token score average:",m)}var P=S.score;m>-1&&(P=(P+m)/2),this._log("Score average:",P);var F=!this.options.tokenize||!this.options.matchAllTokens||k>=l.length;if(this._log("\nCheck Matches: ".concat(F)),(y||S.isMatch)&&F){var T=v[c];T?T.output.push({key:n,arrayIndex:o,value:i,score:P,matchedIndices:S.matchedIndices}):(v[c]={item:a,output:[{key:n,arrayIndex:o,value:i,score:P,matchedIndices:S.matchedIndices}]},g.push(v[c]))}}else if(s(i))for(var z=0,E=i.length;z<E;z+=1)this._analyze({key:n,arrayIndex:z,value:i[z],record:a,index:c},{resultMap:v,results:g,tokenSearchers:l,fullSearcher:f})}}},{key:"_computeScore",value:function(e,t){this._log("\n\nComputing score:\n");for(var n=0,r=t.length;n<r;n+=1){for(var o=t[n].output,i=o.length,a=1,s=1,c=0;c<i;c+=1){var h=e?e[o[c].key].weight:1,l=(1===h?o[c].score:o[c].score||.001)*h;1!==h?s=Math.min(s,l):(o[c].nScore=l,a*=l)}t[n].score=1===s?a:s,this._log(t[n])}}},{key:"_sort",value:function(e){this._log("\n\nSorting...."),e.sort(this.options.sortFn)}},{key:"_format",value:function(e){var t=[];if(this.options.verbose){var n=[];this._log("\n\nOutput:\n\n",JSON.stringify(e,function(e,t){if("object"===r(t)&&null!==t){if(-1!==n.indexOf(t))return;n.push(t)}return t})),n=null}var o=[];this.options.includeMatches&&o.push(function(e,t){var n=e.output;t.matches=[];for(var r=0,o=n.length;r<o;r+=1){var i=n[r];if(0!==i.matchedIndices.length){var a={indices:i.matchedIndices,value:i.value};i.key&&(a.key=i.key),i.hasOwnProperty("arrayIndex")&&i.arrayIndex>-1&&(a.arrayIndex=i.arrayIndex),t.matches.push(a)}}}),this.options.includeScore&&o.push(function(e,t){t.score=e.score});for(var i=0,a=e.length;i<a;i+=1){var s=e[i];if(this.options.id&&(s.item=this.options.getFn(s.item,this.options.id)[0]),o.length){for(var c={item:s.item},h=0,l=o.length;h<l;h+=1)o[h](s,c);t.push(c)}else t.push(s.item)}return t}},{key:"_log",value:function(){var e;this.options.verbose&&(e=console).log.apply(e,arguments)}}])&&o(t.prototype,n),c&&o(t,c),e}();e.exports=c},function(e,t,n){function r(e,t){for(var n=0;n<t.length;n++){var r=t[n];r.enumerable=r.enumerable||!1,r.configurable=!0,"value"in r&&(r.writable=!0),Object.defineProperty(e,r.key,r)}}var o=n(3),i=n(4),a=n(7),s=function(){function e(t,n){var r=n.location,o=void 0===r?0:r,i=n.distance,s=void 0===i?100:i,c=n.threshold,h=void 0===c?.6:c,l=n.maxPatternLength,u=void 0===l?32:l,f=n.isCaseSensitive,d=void 0!==f&&f,v=n.tokenSeparator,p=void 0===v?/ +/g:v,g=n.findAllMatches,y=void 0!==g&&g,m=n.minMatchCharLength,k=void 0===m?1:m;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.options={location:o,distance:s,threshold:h,maxPatternLength:u,isCaseSensitive:d,tokenSeparator:p,findAllMatches:y,minMatchCharLength:k},this.pattern=this.options.isCaseSensitive?t:t.toLowerCase(),this.pattern.length<=u&&(this.patternAlphabet=a(this.pattern))}var t,n,s;return t=e,(n=[{key:"search",value:function(e){if(this.options.isCaseSensitive||(e=e.toLowerCase()),this.pattern===e)return{isMatch:!0,score:0,matchedIndices:[[0,e.length-1]]};var t=this.options,n=t.maxPatternLength,r=t.tokenSeparator;if(this.pattern.length>n)return o(e,this.pattern,r);var a=this.options,s=a.location,c=a.distance,h=a.threshold,l=a.findAllMatches,u=a.minMatchCharLength;return i(e,this.pattern,this.patternAlphabet,{location:s,distance:c,threshold:h,findAllMatches:l,minMatchCharLength:u})}}])&&r(t.prototype,n),s&&r(t,s),e}();e.exports=s},function(e,t){var n=/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g;e.exports=function(e,t){var r=arguments.length>2&&void 0!==arguments[2]?arguments[2]:/ +/g,o=new RegExp(t.replace(n,"\\$&").replace(r,"|")),i=e.match(o),a=!!i,s=[];if(a)for(var c=0,h=i.length;c<h;c+=1){var l=i[c];s.push([e.indexOf(l),l.length-1])}return{score:a?.5:1,isMatch:a,matchedIndices:s}}},function(e,t,n){var r=n(5),o=n(6);e.exports=function(e,t,n,i){for(var a=i.location,s=void 0===a?0:a,c=i.distance,h=void 0===c?100:c,l=i.threshold,u=void 0===l?.6:l,f=i.findAllMatches,d=void 0!==f&&f,v=i.minMatchCharLength,p=void 0===v?1:v,g=s,y=e.length,m=u,k=e.indexOf(t,g),S=t.length,x=[],b=0;b<y;b+=1)x[b]=0;if(-1!==k){var M=r(t,{errors:0,currentLocation:k,expectedLocation:g,distance:h});if(m=Math.min(M,m),-1!==(k=e.lastIndexOf(t,g+S))){var _=r(t,{errors:0,currentLocation:k,expectedLocation:g,distance:h});m=Math.min(_,m)}}k=-1;for(var L=[],w=1,A=S+y,C=1<<S-1,I=0;I<S;I+=1){for(var O=0,j=A;O<j;){r(t,{errors:I,currentLocation:g+j,expectedLocation:g,distance:h})<=m?O=j:A=j,j=Math.floor((A-O)/2+O)}A=j;var P=Math.max(1,g-j+1),F=d?y:Math.min(g+j,y)+S,T=Array(F+2);T[F+1]=(1<<I)-1;for(var z=F;z>=P;z-=1){var E=z-1,K=n[e.charAt(E)];if(K&&(x[E]=1),T[z]=(T[z+1]<<1|1)&K,0!==I&&(T[z]|=(L[z+1]|L[z])<<1|1|L[z+1]),T[z]&C&&(w=r(t,{errors:I,currentLocation:E,expectedLocation:g,distance:h}))<=m){if(m=w,(k=E)<=g)break;P=Math.max(1,2*g-k)}}if(r(t,{errors:I+1,currentLocation:g,expectedLocation:g,distance:h})>m)break;L=T}return{isMatch:k>=0,score:0===w?.001:w,matchedIndices:o(x,p)}}},function(e,t){e.exports=function(e,t){var n=t.errors,r=void 0===n?0:n,o=t.currentLocation,i=void 0===o?0:o,a=t.expectedLocation,s=void 0===a?0:a,c=t.distance,h=void 0===c?100:c,l=r/e.length,u=Math.abs(s-i);return h?l+u/h:u?1:l}},function(e,t){e.exports=function(){for(var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:[],t=arguments.length>1&&void 0!==arguments[1]?arguments[1]:1,n=[],r=-1,o=-1,i=0,a=e.length;i<a;i+=1){var s=e[i];s&&-1===r?r=i:s||-1===r||((o=i-1)-r+1>=t&&n.push([r,o]),r=-1)}return e[i-1]&&i-r>=t&&n.push([r,i-1]),n}},function(e,t){e.exports=function(e){for(var t={},n=e.length,r=0;r<n;r+=1)t[e.charAt(r)]=0;for(var o=0;o<n;o+=1)t[e.charAt(o)]|=1<<n-o-1;return t}},function(e,t,n){var r=n(0);e.exports=function(e,t){return function e(t,n,o){if(n){var i=n.indexOf("."),a=n,s=null;-1!==i&&(a=n.slice(0,i),s=n.slice(i+1));var c=t[a];if(null!=c)if(s||"string"!=typeof c&&"number"!=typeof c)if(r(c))for(var h=0,l=c.length;h<l;h+=1)e(c[h],s,o);else s&&e(c,s,o);else o.push(c.toString())}else o.push(t);return o}(e,t,[])}}])});
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return symbolObservablePonyfill; });
+function symbolObservablePonyfill(root) {
+	var result;
+	var Symbol = root.Symbol;
+
+	if (typeof Symbol === 'function') {
+		if (Symbol.observable) {
+			result = Symbol.observable;
+		} else {
+			result = Symbol('observable');
+			Symbol.observable = result;
+		}
+	} else {
+		result = '@@observable';
+	}
+
+	return result;
+};
+
+
+/***/ }),
+/* 4 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(7);
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 6 */
+/***/ (function(module, exports) {
+
+module.exports = function(originalModule) {
+	if (!originalModule.webpackPolyfill) {
+		var module = Object.create(originalModule);
+		// module.parent = undefined by default
+		if (!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		Object.defineProperty(module, "exports", {
+			enumerable: true
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+
+// EXTERNAL MODULE: ./node_modules/fuse.js/dist/fuse.js
+var dist_fuse = __webpack_require__(2);
+var fuse_default = /*#__PURE__*/__webpack_require__.n(dist_fuse);
+
+// EXTERNAL MODULE: ./node_modules/deepmerge/dist/cjs.js
+var cjs = __webpack_require__(0);
+var cjs_default = /*#__PURE__*/__webpack_require__.n(cjs);
+
+// EXTERNAL MODULE: ./node_modules/symbol-observable/es/index.js
+var es = __webpack_require__(1);
+
+// CONCATENATED MODULE: ./node_modules/redux/es/redux.js
+
+
+/**
+ * These are private action types reserved by Redux.
+ * For any unknown actions, you must return the current state.
+ * If the current state is undefined, you must return the initial state.
+ * Do not reference these action types directly in your code.
+ */
+var randomString = function randomString() {
+  return Math.random().toString(36).substring(7).split('').join('.');
+};
+
+var ActionTypes = {
+  INIT: "@@redux/INIT" + randomString(),
+  REPLACE: "@@redux/REPLACE" + randomString(),
+  PROBE_UNKNOWN_ACTION: function PROBE_UNKNOWN_ACTION() {
+    return "@@redux/PROBE_UNKNOWN_ACTION" + randomString();
+  }
+};
+
+/**
+ * @param {any} obj The object to inspect.
+ * @returns {boolean} True if the argument appears to be a plain object.
+ */
+function isPlainObject(obj) {
+  if (typeof obj !== 'object' || obj === null) return false;
+  var proto = obj;
+
+  while (Object.getPrototypeOf(proto) !== null) {
+    proto = Object.getPrototypeOf(proto);
+  }
+
+  return Object.getPrototypeOf(obj) === proto;
+}
+
+/**
+ * Creates a Redux store that holds the state tree.
+ * The only way to change the data in the store is to call `dispatch()` on it.
+ *
+ * There should only be a single store in your app. To specify how different
+ * parts of the state tree respond to actions, you may combine several reducers
+ * into a single reducer function by using `combineReducers`.
+ *
+ * @param {Function} reducer A function that returns the next state tree, given
+ * the current state tree and the action to handle.
+ *
+ * @param {any} [preloadedState] The initial state. You may optionally specify it
+ * to hydrate the state from the server in universal apps, or to restore a
+ * previously serialized user session.
+ * If you use `combineReducers` to produce the root reducer function, this must be
+ * an object with the same shape as `combineReducers` keys.
+ *
+ * @param {Function} [enhancer] The store enhancer. You may optionally specify it
+ * to enhance the store with third-party capabilities such as middleware,
+ * time travel, persistence, etc. The only store enhancer that ships with Redux
+ * is `applyMiddleware()`.
+ *
+ * @returns {Store} A Redux store that lets you read the state, dispatch actions
+ * and subscribe to changes.
+ */
+
+function createStore(reducer, preloadedState, enhancer) {
+  var _ref2;
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'function' || typeof enhancer === 'function' && typeof arguments[3] === 'function') {
+    throw new Error('It looks like you are passing several store enhancers to ' + 'createStore(). This is not supported. Instead, compose them ' + 'together to a single function.');
+  }
+
+  if (typeof preloadedState === 'function' && typeof enhancer === 'undefined') {
+    enhancer = preloadedState;
+    preloadedState = undefined;
+  }
+
+  if (typeof enhancer !== 'undefined') {
+    if (typeof enhancer !== 'function') {
+      throw new Error('Expected the enhancer to be a function.');
+    }
+
+    return enhancer(createStore)(reducer, preloadedState);
+  }
+
+  if (typeof reducer !== 'function') {
+    throw new Error('Expected the reducer to be a function.');
+  }
+
+  var currentReducer = reducer;
+  var currentState = preloadedState;
+  var currentListeners = [];
+  var nextListeners = currentListeners;
+  var isDispatching = false;
+  /**
+   * This makes a shallow copy of currentListeners so we can use
+   * nextListeners as a temporary list while dispatching.
+   *
+   * This prevents any bugs around consumers calling
+   * subscribe/unsubscribe in the middle of a dispatch.
+   */
+
+  function ensureCanMutateNextListeners() {
+    if (nextListeners === currentListeners) {
+      nextListeners = currentListeners.slice();
+    }
+  }
+  /**
+   * Reads the state tree managed by the store.
+   *
+   * @returns {any} The current state tree of your application.
+   */
+
+
+  function getState() {
+    if (isDispatching) {
+      throw new Error('You may not call store.getState() while the reducer is executing. ' + 'The reducer has already received the state as an argument. ' + 'Pass it down from the top reducer instead of reading it from the store.');
+    }
+
+    return currentState;
+  }
+  /**
+   * Adds a change listener. It will be called any time an action is dispatched,
+   * and some part of the state tree may potentially have changed. You may then
+   * call `getState()` to read the current state tree inside the callback.
+   *
+   * You may call `dispatch()` from a change listener, with the following
+   * caveats:
+   *
+   * 1. The subscriptions are snapshotted just before every `dispatch()` call.
+   * If you subscribe or unsubscribe while the listeners are being invoked, this
+   * will not have any effect on the `dispatch()` that is currently in progress.
+   * However, the next `dispatch()` call, whether nested or not, will use a more
+   * recent snapshot of the subscription list.
+   *
+   * 2. The listener should not expect to see all state changes, as the state
+   * might have been updated multiple times during a nested `dispatch()` before
+   * the listener is called. It is, however, guaranteed that all subscribers
+   * registered before the `dispatch()` started will be called with the latest
+   * state by the time it exits.
+   *
+   * @param {Function} listener A callback to be invoked on every dispatch.
+   * @returns {Function} A function to remove this change listener.
+   */
+
+
+  function subscribe(listener) {
+    if (typeof listener !== 'function') {
+      throw new Error('Expected the listener to be a function.');
+    }
+
+    if (isDispatching) {
+      throw new Error('You may not call store.subscribe() while the reducer is executing. ' + 'If you would like to be notified after the store has been updated, subscribe from a ' + 'component and invoke store.getState() in the callback to access the latest state. ' + 'See https://redux.js.org/api-reference/store#subscribe(listener) for more details.');
+    }
+
+    var isSubscribed = true;
+    ensureCanMutateNextListeners();
+    nextListeners.push(listener);
+    return function unsubscribe() {
+      if (!isSubscribed) {
+        return;
+      }
+
+      if (isDispatching) {
+        throw new Error('You may not unsubscribe from a store listener while the reducer is executing. ' + 'See https://redux.js.org/api-reference/store#subscribe(listener) for more details.');
+      }
+
+      isSubscribed = false;
+      ensureCanMutateNextListeners();
+      var index = nextListeners.indexOf(listener);
+      nextListeners.splice(index, 1);
+    };
+  }
+  /**
+   * Dispatches an action. It is the only way to trigger a state change.
+   *
+   * The `reducer` function, used to create the store, will be called with the
+   * current state tree and the given `action`. Its return value will
+   * be considered the **next** state of the tree, and the change listeners
+   * will be notified.
+   *
+   * The base implementation only supports plain object actions. If you want to
+   * dispatch a Promise, an Observable, a thunk, or something else, you need to
+   * wrap your store creating function into the corresponding middleware. For
+   * example, see the documentation for the `redux-thunk` package. Even the
+   * middleware will eventually dispatch plain object actions using this method.
+   *
+   * @param {Object} action A plain object representing “what changed”. It is
+   * a good idea to keep actions serializable so you can record and replay user
+   * sessions, or use the time travelling `redux-devtools`. An action must have
+   * a `type` property which may not be `undefined`. It is a good idea to use
+   * string constants for action types.
+   *
+   * @returns {Object} For convenience, the same action object you dispatched.
+   *
+   * Note that, if you use a custom middleware, it may wrap `dispatch()` to
+   * return something else (for example, a Promise you can await).
+   */
+
+
+  function dispatch(action) {
+    if (!isPlainObject(action)) {
+      throw new Error('Actions must be plain objects. ' + 'Use custom middleware for async actions.');
+    }
+
+    if (typeof action.type === 'undefined') {
+      throw new Error('Actions may not have an undefined "type" property. ' + 'Have you misspelled a constant?');
+    }
+
+    if (isDispatching) {
+      throw new Error('Reducers may not dispatch actions.');
+    }
+
+    try {
+      isDispatching = true;
+      currentState = currentReducer(currentState, action);
+    } finally {
+      isDispatching = false;
+    }
+
+    var listeners = currentListeners = nextListeners;
+
+    for (var i = 0; i < listeners.length; i++) {
+      var listener = listeners[i];
+      listener();
+    }
+
+    return action;
+  }
+  /**
+   * Replaces the reducer currently used by the store to calculate the state.
+   *
+   * You might need this if your app implements code splitting and you want to
+   * load some of the reducers dynamically. You might also need this if you
+   * implement a hot reloading mechanism for Redux.
+   *
+   * @param {Function} nextReducer The reducer for the store to use instead.
+   * @returns {void}
+   */
+
+
+  function replaceReducer(nextReducer) {
+    if (typeof nextReducer !== 'function') {
+      throw new Error('Expected the nextReducer to be a function.');
+    }
+
+    currentReducer = nextReducer; // This action has a similiar effect to ActionTypes.INIT.
+    // Any reducers that existed in both the new and old rootReducer
+    // will receive the previous state. This effectively populates
+    // the new state tree with any relevant data from the old one.
+
+    dispatch({
+      type: ActionTypes.REPLACE
+    });
+  }
+  /**
+   * Interoperability point for observable/reactive libraries.
+   * @returns {observable} A minimal observable of state changes.
+   * For more information, see the observable proposal:
+   * https://github.com/tc39/proposal-observable
+   */
+
+
+  function observable() {
+    var _ref;
+
+    var outerSubscribe = subscribe;
+    return _ref = {
+      /**
+       * The minimal observable subscription method.
+       * @param {Object} observer Any object that can be used as an observer.
+       * The observer object should have a `next` method.
+       * @returns {subscription} An object with an `unsubscribe` method that can
+       * be used to unsubscribe the observable from the store, and prevent further
+       * emission of values from the observable.
+       */
+      subscribe: function subscribe(observer) {
+        if (typeof observer !== 'object' || observer === null) {
+          throw new TypeError('Expected the observer to be an object.');
+        }
+
+        function observeState() {
+          if (observer.next) {
+            observer.next(getState());
+          }
+        }
+
+        observeState();
+        var unsubscribe = outerSubscribe(observeState);
+        return {
+          unsubscribe: unsubscribe
+        };
+      }
+    }, _ref[es["a" /* default */]] = function () {
+      return this;
+    }, _ref;
+  } // When a store is created, an "INIT" action is dispatched so that every
+  // reducer returns their initial state. This effectively populates
+  // the initial state tree.
+
+
+  dispatch({
+    type: ActionTypes.INIT
+  });
+  return _ref2 = {
+    dispatch: dispatch,
+    subscribe: subscribe,
+    getState: getState,
+    replaceReducer: replaceReducer
+  }, _ref2[es["a" /* default */]] = observable, _ref2;
+}
+
+/**
+ * Prints a warning in the console if it exists.
+ *
+ * @param {String} message The warning message.
+ * @returns {void}
+ */
+function warning(message) {
+  /* eslint-disable no-console */
+  if (typeof console !== 'undefined' && typeof console.error === 'function') {
+    console.error(message);
+  }
+  /* eslint-enable no-console */
+
+
+  try {
+    // This error was thrown as a convenience so that if you enable
+    // "break on all exceptions" in your console,
+    // it would pause the execution at this line.
+    throw new Error(message);
+  } catch (e) {} // eslint-disable-line no-empty
+
+}
+
+function getUndefinedStateErrorMessage(key, action) {
+  var actionType = action && action.type;
+  var actionDescription = actionType && "action \"" + String(actionType) + "\"" || 'an action';
+  return "Given " + actionDescription + ", reducer \"" + key + "\" returned undefined. " + "To ignore an action, you must explicitly return the previous state. " + "If you want this reducer to hold no value, you can return null instead of undefined.";
+}
+
+function getUnexpectedStateShapeWarningMessage(inputState, reducers, action, unexpectedKeyCache) {
+  var reducerKeys = Object.keys(reducers);
+  var argumentName = action && action.type === ActionTypes.INIT ? 'preloadedState argument passed to createStore' : 'previous state received by the reducer';
+
+  if (reducerKeys.length === 0) {
+    return 'Store does not have a valid reducer. Make sure the argument passed ' + 'to combineReducers is an object whose values are reducers.';
+  }
+
+  if (!isPlainObject(inputState)) {
+    return "The " + argumentName + " has unexpected type of \"" + {}.toString.call(inputState).match(/\s([a-z|A-Z]+)/)[1] + "\". Expected argument to be an object with the following " + ("keys: \"" + reducerKeys.join('", "') + "\"");
+  }
+
+  var unexpectedKeys = Object.keys(inputState).filter(function (key) {
+    return !reducers.hasOwnProperty(key) && !unexpectedKeyCache[key];
+  });
+  unexpectedKeys.forEach(function (key) {
+    unexpectedKeyCache[key] = true;
+  });
+  if (action && action.type === ActionTypes.REPLACE) return;
+
+  if (unexpectedKeys.length > 0) {
+    return "Unexpected " + (unexpectedKeys.length > 1 ? 'keys' : 'key') + " " + ("\"" + unexpectedKeys.join('", "') + "\" found in " + argumentName + ". ") + "Expected to find one of the known reducer keys instead: " + ("\"" + reducerKeys.join('", "') + "\". Unexpected keys will be ignored.");
+  }
+}
+
+function assertReducerShape(reducers) {
+  Object.keys(reducers).forEach(function (key) {
+    var reducer = reducers[key];
+    var initialState = reducer(undefined, {
+      type: ActionTypes.INIT
+    });
+
+    if (typeof initialState === 'undefined') {
+      throw new Error("Reducer \"" + key + "\" returned undefined during initialization. " + "If the state passed to the reducer is undefined, you must " + "explicitly return the initial state. The initial state may " + "not be undefined. If you don't want to set a value for this reducer, " + "you can use null instead of undefined.");
+    }
+
+    if (typeof reducer(undefined, {
+      type: ActionTypes.PROBE_UNKNOWN_ACTION()
+    }) === 'undefined') {
+      throw new Error("Reducer \"" + key + "\" returned undefined when probed with a random type. " + ("Don't try to handle " + ActionTypes.INIT + " or other actions in \"redux/*\" ") + "namespace. They are considered private. Instead, you must return the " + "current state for any unknown actions, unless it is undefined, " + "in which case you must return the initial state, regardless of the " + "action type. The initial state may not be undefined, but can be null.");
+    }
+  });
+}
+/**
+ * Turns an object whose values are different reducer functions, into a single
+ * reducer function. It will call every child reducer, and gather their results
+ * into a single state object, whose keys correspond to the keys of the passed
+ * reducer functions.
+ *
+ * @param {Object} reducers An object whose values correspond to different
+ * reducer functions that need to be combined into one. One handy way to obtain
+ * it is to use ES6 `import * as reducers` syntax. The reducers may never return
+ * undefined for any action. Instead, they should return their initial state
+ * if the state passed to them was undefined, and the current state for any
+ * unrecognized action.
+ *
+ * @returns {Function} A reducer function that invokes every reducer inside the
+ * passed object, and builds a state object with the same shape.
+ */
+
+
+function combineReducers(reducers) {
+  var reducerKeys = Object.keys(reducers);
+  var finalReducers = {};
+
+  for (var i = 0; i < reducerKeys.length; i++) {
+    var key = reducerKeys[i];
+
+    if (false) {}
+
+    if (typeof reducers[key] === 'function') {
+      finalReducers[key] = reducers[key];
+    }
+  }
+
+  var finalReducerKeys = Object.keys(finalReducers); // This is used to make sure we don't warn about the same
+  // keys multiple times.
+
+  var unexpectedKeyCache;
+
+  if (false) {}
+
+  var shapeAssertionError;
+
+  try {
+    assertReducerShape(finalReducers);
+  } catch (e) {
+    shapeAssertionError = e;
+  }
+
+  return function combination(state, action) {
+    if (state === void 0) {
+      state = {};
+    }
+
+    if (shapeAssertionError) {
+      throw shapeAssertionError;
+    }
+
+    if (false) { var warningMessage; }
+
+    var hasChanged = false;
+    var nextState = {};
+
+    for (var _i = 0; _i < finalReducerKeys.length; _i++) {
+      var _key = finalReducerKeys[_i];
+      var reducer = finalReducers[_key];
+      var previousStateForKey = state[_key];
+      var nextStateForKey = reducer(previousStateForKey, action);
+
+      if (typeof nextStateForKey === 'undefined') {
+        var errorMessage = getUndefinedStateErrorMessage(_key, action);
+        throw new Error(errorMessage);
+      }
+
+      nextState[_key] = nextStateForKey;
+      hasChanged = hasChanged || nextStateForKey !== previousStateForKey;
+    }
+
+    return hasChanged ? nextState : state;
+  };
+}
+
+function bindActionCreator(actionCreator, dispatch) {
+  return function () {
+    return dispatch(actionCreator.apply(this, arguments));
+  };
+}
+/**
+ * Turns an object whose values are action creators, into an object with the
+ * same keys, but with every function wrapped into a `dispatch` call so they
+ * may be invoked directly. This is just a convenience method, as you can call
+ * `store.dispatch(MyActionCreators.doSomething())` yourself just fine.
+ *
+ * For convenience, you can also pass an action creator as the first argument,
+ * and get a dispatch wrapped function in return.
+ *
+ * @param {Function|Object} actionCreators An object whose values are action
+ * creator functions. One handy way to obtain it is to use ES6 `import * as`
+ * syntax. You may also pass a single function.
+ *
+ * @param {Function} dispatch The `dispatch` function available on your Redux
+ * store.
+ *
+ * @returns {Function|Object} The object mimicking the original object, but with
+ * every action creator wrapped into the `dispatch` call. If you passed a
+ * function as `actionCreators`, the return value will also be a single
+ * function.
+ */
+
+
+function bindActionCreators(actionCreators, dispatch) {
+  if (typeof actionCreators === 'function') {
+    return bindActionCreator(actionCreators, dispatch);
+  }
+
+  if (typeof actionCreators !== 'object' || actionCreators === null) {
+    throw new Error("bindActionCreators expected an object or a function, instead received " + (actionCreators === null ? 'null' : typeof actionCreators) + ". " + "Did you write \"import ActionCreators from\" instead of \"import * as ActionCreators from\"?");
+  }
+
+  var boundActionCreators = {};
+
+  for (var key in actionCreators) {
+    var actionCreator = actionCreators[key];
+
+    if (typeof actionCreator === 'function') {
+      boundActionCreators[key] = bindActionCreator(actionCreator, dispatch);
+    }
+  }
+
+  return boundActionCreators;
+}
+
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
+function ownKeys(object, enumerableOnly) {
+  var keys = Object.keys(object);
+
+  if (Object.getOwnPropertySymbols) {
+    keys.push.apply(keys, Object.getOwnPropertySymbols(object));
+  }
+
+  if (enumerableOnly) keys = keys.filter(function (sym) {
+    return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+  });
+  return keys;
+}
+
+function _objectSpread2(target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i] != null ? arguments[i] : {};
+
+    if (i % 2) {
+      ownKeys(source, true).forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    } else if (Object.getOwnPropertyDescriptors) {
+      Object.defineProperties(target, Object.getOwnPropertyDescriptors(source));
+    } else {
+      ownKeys(source).forEach(function (key) {
+        Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
+      });
+    }
+  }
+
+  return target;
+}
+
+/**
+ * Composes single-argument functions from right to left. The rightmost
+ * function can take multiple arguments as it provides the signature for
+ * the resulting composite function.
+ *
+ * @param {...Function} funcs The functions to compose.
+ * @returns {Function} A function obtained by composing the argument functions
+ * from right to left. For example, compose(f, g, h) is identical to doing
+ * (...args) => f(g(h(...args))).
+ */
+function compose() {
+  for (var _len = arguments.length, funcs = new Array(_len), _key = 0; _key < _len; _key++) {
+    funcs[_key] = arguments[_key];
+  }
+
+  if (funcs.length === 0) {
+    return function (arg) {
+      return arg;
+    };
+  }
+
+  if (funcs.length === 1) {
+    return funcs[0];
+  }
+
+  return funcs.reduce(function (a, b) {
+    return function () {
+      return a(b.apply(void 0, arguments));
+    };
+  });
+}
+
+/**
+ * Creates a store enhancer that applies middleware to the dispatch method
+ * of the Redux store. This is handy for a variety of tasks, such as expressing
+ * asynchronous actions in a concise manner, or logging every action payload.
+ *
+ * See `redux-thunk` package as an example of the Redux middleware.
+ *
+ * Because middleware is potentially asynchronous, this should be the first
+ * store enhancer in the composition chain.
+ *
+ * Note that each middleware will be given the `dispatch` and `getState` functions
+ * as named arguments.
+ *
+ * @param {...Function} middlewares The middleware chain to be applied.
+ * @returns {Function} A store enhancer applying the middleware.
+ */
+
+function applyMiddleware() {
+  for (var _len = arguments.length, middlewares = new Array(_len), _key = 0; _key < _len; _key++) {
+    middlewares[_key] = arguments[_key];
+  }
+
+  return function (createStore) {
+    return function () {
+      var store = createStore.apply(void 0, arguments);
+
+      var _dispatch = function dispatch() {
+        throw new Error('Dispatching while constructing your middleware is not allowed. ' + 'Other middleware would not be applied to this dispatch.');
+      };
+
+      var middlewareAPI = {
+        getState: store.getState,
+        dispatch: function dispatch() {
+          return _dispatch.apply(void 0, arguments);
+        }
+      };
+      var chain = middlewares.map(function (middleware) {
+        return middleware(middlewareAPI);
+      });
+      _dispatch = compose.apply(void 0, chain)(store.dispatch);
+      return _objectSpread2({}, store, {
+        dispatch: _dispatch
+      });
+    };
+  };
+}
+
+/*
+ * This is a dummy function to check if the function name has been altered by minification.
+ * If the function has been minified and NODE_ENV !== 'production', warn the user.
+ */
+
+function isCrushed() {}
+
+if (false) {}
+
+
+
+// CONCATENATED MODULE: ./src/scripts/reducers/items.js
+var defaultState = [];
+function items_items(state, action) {
+  if (state === void 0) {
+    state = defaultState;
+  }
+
+  switch (action.type) {
+    case 'ADD_ITEM':
+      {
+        // Add object to items array
+        var newState = [].concat(state, [{
+          id: action.id,
+          choiceId: action.choiceId,
+          groupId: action.groupId,
+          value: action.value,
+          label: action.label,
+          active: true,
+          highlighted: false,
+          customProperties: action.customProperties,
+          placeholder: action.placeholder || false,
+          keyCode: null
+        }]);
+        return newState.map(function (obj) {
+          var item = obj;
+          item.highlighted = false;
+          return item;
+        });
+      }
+
+    case 'REMOVE_ITEM':
+      {
+        // Set item to inactive
+        return state.map(function (obj) {
+          var item = obj;
+
+          if (item.id === action.id) {
+            item.active = false;
+          }
+
+          return item;
+        });
+      }
+
+    case 'HIGHLIGHT_ITEM':
+      {
+        return state.map(function (obj) {
+          var item = obj;
+
+          if (item.id === action.id) {
+            item.highlighted = action.highlighted;
+          }
+
+          return item;
+        });
+      }
+
+    default:
+      {
+        return state;
+      }
+  }
+}
+// CONCATENATED MODULE: ./src/scripts/reducers/groups.js
+var groups_defaultState = [];
+function groups(state, action) {
+  if (state === void 0) {
+    state = groups_defaultState;
+  }
+
+  switch (action.type) {
+    case 'ADD_GROUP':
+      {
+        return [].concat(state, [{
+          id: action.id,
+          value: action.value,
+          active: action.active,
+          disabled: action.disabled
+        }]);
+      }
+
+    case 'CLEAR_CHOICES':
+      {
+        return [];
+      }
+
+    default:
+      {
+        return state;
+      }
+  }
+}
+// CONCATENATED MODULE: ./src/scripts/reducers/choices.js
+var choices_defaultState = [];
+function choices_choices(state, action) {
+  if (state === void 0) {
+    state = choices_defaultState;
+  }
+
+  switch (action.type) {
+    case 'ADD_CHOICE':
+      {
+        /*
+            A disabled choice appears in the choice dropdown but cannot be selected
+            A selected choice has been added to the passed input's value (added as an item)
+            An active choice appears within the choice dropdown
+         */
+        return [].concat(state, [{
+          id: action.id,
+          elementId: action.elementId,
+          groupId: action.groupId,
+          value: action.value,
+          label: action.label || action.value,
+          disabled: action.disabled || false,
+          selected: false,
+          active: true,
+          score: 9999,
+          customProperties: action.customProperties,
+          placeholder: action.placeholder || false,
+          keyCode: null
+        }]);
+      }
+
+    case 'ADD_ITEM':
+      {
+        // If all choices need to be activated
+        if (action.activateOptions) {
+          return state.map(function (obj) {
+            var choice = obj;
+            choice.active = action.active;
+            return choice;
+          });
+        } // When an item is added and it has an associated choice,
+        // we want to disable it so it can't be chosen again
+
+
+        if (action.choiceId > -1) {
+          return state.map(function (obj) {
+            var choice = obj;
+
+            if (choice.id === parseInt(action.choiceId, 10)) {
+              choice.selected = true;
+            }
+
+            return choice;
+          });
+        }
+
+        return state;
+      }
+
+    case 'REMOVE_ITEM':
+      {
+        // When an item is removed and it has an associated choice,
+        // we want to re-enable it so it can be chosen again
+        if (action.choiceId > -1) {
+          return state.map(function (obj) {
+            var choice = obj;
+
+            if (choice.id === parseInt(action.choiceId, 10)) {
+              choice.selected = false;
+            }
+
+            return choice;
+          });
+        }
+
+        return state;
+      }
+
+    case 'FILTER_CHOICES':
+      {
+        return state.map(function (obj) {
+          var choice = obj; // Set active state based on whether choice is
+          // within filtered results
+
+          choice.active = action.results.some(function (_ref) {
+            var item = _ref.item,
+                score = _ref.score;
+
+            if (item.id === choice.id) {
+              choice.score = score;
+              return true;
+            }
+
+            return false;
+          });
+          return choice;
+        });
+      }
+
+    case 'ACTIVATE_CHOICES':
+      {
+        return state.map(function (obj) {
+          var choice = obj;
+          choice.active = action.active;
+          return choice;
+        });
+      }
+
+    case 'CLEAR_CHOICES':
+      {
+        return choices_defaultState;
+      }
+
+    default:
+      {
+        return state;
+      }
+  }
+}
+// CONCATENATED MODULE: ./src/scripts/reducers/general.js
+var general_defaultState = {
+  loading: false
+};
+
+var general = function general(state, action) {
+  if (state === void 0) {
+    state = general_defaultState;
+  }
+
+  switch (action.type) {
+    case 'SET_IS_LOADING':
+      {
+        return {
+          loading: action.isLoading
+        };
+      }
+
+    default:
+      {
+        return state;
+      }
+  }
+};
+
+/* harmony default export */ var reducers_general = (general);
+// CONCATENATED MODULE: ./src/scripts/lib/utils.js
+/**
+ * @param {number} min
+ * @param {number} max
+ * @returns {number}
+ */
+var getRandomNumber = function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min) + min);
+};
+/**
+ * @param {number} length
+ * @returns {string}
+ */
+
+var generateChars = function generateChars(length) {
+  return Array.from({
+    length: length
+  }, function () {
+    return getRandomNumber(0, 36).toString(36);
+  }).join('');
+};
+/**
+ * @param {HTMLInputElement | HTMLSelectElement} element
+ * @param {string} prefix
+ * @returns {string}
+ */
+
+var generateId = function generateId(element, prefix) {
+  var id = element.id || element.name && element.name + "-" + generateChars(2) || generateChars(4);
+  id = id.replace(/(:|\.|\[|\]|,)/g, '');
+  id = prefix + "-" + id;
+  return id;
+};
+/**
+ * @param {any} obj
+ * @returns {string}
+ */
+
+var getType = function getType(obj) {
+  return Object.prototype.toString.call(obj).slice(8, -1);
+};
+/**
+ * @param {string} type
+ * @param {any} obj
+ * @returns {boolean}
+ */
+
+var isType = function isType(type, obj) {
+  return obj !== undefined && obj !== null && getType(obj) === type;
+};
+/**
+ * @param {HTMLElement} element
+ * @param {HTMLElement} [wrapper={HTMLDivElement}]
+ * @returns {HTMLElement}
+ */
+
+var utils_wrap = function wrap(element, wrapper) {
+  if (wrapper === void 0) {
+    wrapper = document.createElement('div');
+  }
+
+  if (element.nextSibling) {
+    element.parentNode.insertBefore(wrapper, element.nextSibling);
+  } else {
+    element.parentNode.appendChild(wrapper);
+  }
+
+  return wrapper.appendChild(element);
+};
+/**
+ * @param {Element} startEl
+ * @param {string} selector
+ * @param {1 | -1} direction
+ * @returns {Element | undefined}
+ */
+
+var getAdjacentEl = function getAdjacentEl(startEl, selector, direction) {
+  if (direction === void 0) {
+    direction = 1;
+  }
+
+  if (!(startEl instanceof Element) || typeof selector !== 'string') {
+    return undefined;
+  }
+
+  var prop = (direction > 0 ? 'next' : 'previous') + "ElementSibling";
+  var sibling = startEl[prop];
+
+  while (sibling) {
+    if (sibling.matches(selector)) {
+      return sibling;
+    }
+
+    sibling = sibling[prop];
+  }
+
+  return sibling;
+};
+/**
+ * @param {Element} element
+ * @param {Element} parent
+ * @param {-1 | 1} direction
+ * @returns {boolean}
+ */
+
+var isScrolledIntoView = function isScrolledIntoView(element, parent, direction) {
+  if (direction === void 0) {
+    direction = 1;
+  }
+
+  if (!element) {
+    return false;
+  }
+
+  var isVisible;
+
+  if (direction > 0) {
+    // In view from bottom
+    isVisible = parent.scrollTop + parent.offsetHeight >= element.offsetTop + element.offsetHeight;
+  } else {
+    // In view from top
+    isVisible = element.offsetTop >= parent.scrollTop;
+  }
+
+  return isVisible;
+};
+/**
+ * @param {any} value
+ * @returns {any}
+ */
+
+var sanitise = function sanitise(value) {
+  if (typeof value !== 'string') {
+    return value;
+  }
+
+  return value.replace(/&/g, '&amp;').replace(/>/g, '&rt;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+};
+/**
+ * @returns {() => (str: string) => Element}
+ */
+
+var strToEl = function () {
+  var tmpEl = document.createElement('div');
+  return function (str) {
+    var cleanedInput = str.trim();
+    tmpEl.innerHTML = cleanedInput;
+    var firldChild = tmpEl.children[0];
+
+    while (tmpEl.firstChild) {
+      tmpEl.removeChild(tmpEl.firstChild);
+    }
+
+    return firldChild;
+  };
+}();
+/**
+ * @param {{ label?: string, value: string }} a
+ * @param {{ label?: string, value: string }} b
+ * @returns {number}
+ */
+
+var sortByAlpha = function sortByAlpha(_ref, _ref2) {
+  var value = _ref.value,
+      _ref$label = _ref.label,
+      label = _ref$label === void 0 ? value : _ref$label;
+  var value2 = _ref2.value,
+      _ref2$label = _ref2.label,
+      label2 = _ref2$label === void 0 ? value2 : _ref2$label;
+  return label.localeCompare(label2, [], {
+    sensitivity: 'base',
+    ignorePunctuation: true,
+    numeric: true
+  });
+};
+/**
+ * @param {{ score: number }} a
+ * @param {{ score: number }} b
+ */
+
+var sortByScore = function sortByScore(a, b) {
+  return a.score - b.score;
+};
+/**
+ * @param {HTMLElement} element
+ * @param {string} type
+ * @param {object} customArgs
+ */
+
+var dispatchEvent = function dispatchEvent(element, type, customArgs) {
+  if (customArgs === void 0) {
+    customArgs = null;
+  }
+
+  var event = new CustomEvent(type, {
+    detail: customArgs,
+    bubbles: true,
+    cancelable: true
+  });
+  return element.dispatchEvent(event);
+};
+/**
+ * @param {array} array
+ * @param {any} value
+ * @param {string} [key="value"]
+ * @returns {boolean}
+ */
+
+var existsInArray = function existsInArray(array, value, key) {
+  if (key === void 0) {
+    key = 'value';
+  }
+
+  return array.some(function (item) {
+    if (typeof value === 'string') {
+      return item[key] === value.trim();
+    }
+
+    return item[key] === value;
+  });
+};
+/**
+ * @param {any} obj
+ * @returns {any}
+ */
+
+var cloneObject = function cloneObject(obj) {
+  return JSON.parse(JSON.stringify(obj));
+};
+/**
+ * Returns an array of keys present on the first but missing on the second object
+ * @param {object} a
+ * @param {object} b
+ * @returns {string[]}
+ */
+
+var diff = function diff(a, b) {
+  var aKeys = Object.keys(a).sort();
+  var bKeys = Object.keys(b).sort();
+  return aKeys.filter(function (i) {
+    return bKeys.indexOf(i) < 0;
+  });
+};
+// CONCATENATED MODULE: ./src/scripts/reducers/index.js
+
+
+
+
+
+
+var appReducer = combineReducers({
+  items: items_items,
+  groups: groups,
+  choices: choices_choices,
+  general: reducers_general
+});
+
+var reducers_rootReducer = function rootReducer(passedState, action) {
+  var state = passedState; // If we are clearing all items, groups and options we reassign
+  // state and then pass that state to our proper reducer. This isn't
+  // mutating our actual state
+  // See: http://stackoverflow.com/a/35641992
+
+  if (action.type === 'CLEAR_ALL') {
+    state = undefined;
+  } else if (action.type === 'RESET_TO') {
+    return cloneObject(action.state);
+  }
+
+  return appReducer(state, action);
+};
+
+/* harmony default export */ var reducers = (reducers_rootReducer);
+// CONCATENATED MODULE: ./src/scripts/store/store.js
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+/**
+ * @typedef {import('../../../types/index').Choices.Choice} Choice
+ * @typedef {import('../../../types/index').Choices.Group} Group
+ * @typedef {import('../../../types/index').Choices.Item} Item
+ */
+
+var store_Store =
+/*#__PURE__*/
+function () {
+  function Store() {
+    this._store = createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+  }
+  /**
+   * Subscribe store to function call (wrapped Redux method)
+   * @param  {Function} onChange Function to trigger when state changes
+   * @return
+   */
+
+
+  var _proto = Store.prototype;
+
+  _proto.subscribe = function subscribe(onChange) {
+    this._store.subscribe(onChange);
+  }
+  /**
+   * Dispatch event to store (wrapped Redux method)
+   * @param  {{ type: string, [x: string]: any }} action Action to trigger
+   * @return
+   */
+  ;
+
+  _proto.dispatch = function dispatch(action) {
+    this._store.dispatch(action);
+  }
+  /**
+   * Get store object (wrapping Redux method)
+   * @returns {object} State
+   */
+  ;
+
+  /**
+   * Get loading state from store
+   * @returns {boolean} Loading State
+   */
+  _proto.isLoading = function isLoading() {
+    return this.state.general.loading;
+  }
+  /**
+   * Get single choice by it's ID
+   * @param {string} id
+   * @returns {Choice | undefined} Found choice
+   */
+  ;
+
+  _proto.getChoiceById = function getChoiceById(id) {
+    return this.activeChoices.find(function (choice) {
+      return choice.id === parseInt(id, 10);
+    });
+  }
+  /**
+   * Get group by group id
+   * @param  {number} id Group ID
+   * @returns {Group | undefined} Group data
+   */
+  ;
+
+  _proto.getGroupById = function getGroupById(id) {
+    return this.groups.find(function (group) {
+      return group.id === id;
+    });
+  };
+
+  _createClass(Store, [{
+    key: "state",
+    get: function get() {
+      return this._store.getState();
+    }
+    /**
+     * Get items from store
+     * @returns {Item[]} Item objects
+     */
+
+  }, {
+    key: "items",
+    get: function get() {
+      return this.state.items;
+    }
+    /**
+     * Get active items from store
+     * @returns {Item[]} Item objects
+     */
+
+  }, {
+    key: "activeItems",
+    get: function get() {
+      return this.items.filter(function (item) {
+        return item.active === true;
+      });
+    }
+    /**
+     * Get highlighted items from store
+     * @returns {Item[]} Item objects
+     */
+
+  }, {
+    key: "highlightedActiveItems",
+    get: function get() {
+      return this.items.filter(function (item) {
+        return item.active && item.highlighted;
+      });
+    }
+    /**
+     * Get choices from store
+     * @returns {Choice[]} Option objects
+     */
+
+  }, {
+    key: "choices",
+    get: function get() {
+      return this.state.choices;
+    }
+    /**
+     * Get active choices from store
+     * @returns {Choice[]} Option objects
+     */
+
+  }, {
+    key: "activeChoices",
+    get: function get() {
+      return this.choices.filter(function (choice) {
+        return choice.active === true;
+      });
+    }
+    /**
+     * Get selectable choices from store
+     * @returns {Choice[]} Option objects
+     */
+
+  }, {
+    key: "selectableChoices",
+    get: function get() {
+      return this.choices.filter(function (choice) {
+        return choice.disabled !== true;
+      });
+    }
+    /**
+     * Get choices that can be searched (excluding placeholders)
+     * @returns {Choice[]} Option objects
+     */
+
+  }, {
+    key: "searchableChoices",
+    get: function get() {
+      return this.selectableChoices.filter(function (choice) {
+        return choice.placeholder !== true;
+      });
+    }
+    /**
+     * Get placeholder choice from store
+     * @returns {Choice | undefined} Found placeholder
+     */
+
+  }, {
+    key: "placeholderChoice",
+    get: function get() {
+      return [].concat(this.choices).reverse().find(function (choice) {
+        return choice.placeholder === true;
+      });
+    }
+    /**
+     * Get groups from store
+     * @returns {Group[]} Group objects
+     */
+
+  }, {
+    key: "groups",
+    get: function get() {
+      return this.state.groups;
+    }
+    /**
+     * Get active groups from store
+     * @returns {Group[]} Group objects
+     */
+
+  }, {
+    key: "activeGroups",
+    get: function get() {
+      var groups = this.groups,
+          choices = this.choices;
+      return groups.filter(function (group) {
+        var isActive = group.active === true && group.disabled === false;
+        var hasActiveOptions = choices.some(function (choice) {
+          return choice.active === true && choice.disabled === false;
+        });
+        return isActive && hasActiveOptions;
+      }, []);
+    }
+  }]);
+
+  return Store;
+}();
+
+
+// CONCATENATED MODULE: ./src/scripts/components/dropdown.js
+function dropdown_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function dropdown_createClass(Constructor, protoProps, staticProps) { if (protoProps) dropdown_defineProperties(Constructor.prototype, protoProps); if (staticProps) dropdown_defineProperties(Constructor, staticProps); return Constructor; }
+
+/**
+ * @typedef {import('../../../types/index').Choices.passedElement} passedElement
+ * @typedef {import('../../../types/index').Choices.ClassNames} ClassNames
+ */
+var Dropdown =
+/*#__PURE__*/
+function () {
+  /**
+   * @param {{
+   *  element: HTMLElement,
+   *  type: passedElement['type'],
+   *  classNames: ClassNames,
+   * }} args
+   */
+  function Dropdown(_ref) {
+    var element = _ref.element,
+        type = _ref.type,
+        classNames = _ref.classNames;
+    this.element = element;
+    this.classNames = classNames;
+    this.type = type;
+    this.isActive = false;
+  }
+  /**
+   * Bottom position of dropdown in viewport coordinates
+   * @returns {number} Vertical position
+   */
+
+
+  var _proto = Dropdown.prototype;
+
+  /**
+   * Find element that matches passed selector
+   * @param {string} selector
+   * @returns {HTMLElement | null}
+   */
+  _proto.getChild = function getChild(selector) {
+    return this.element.querySelector(selector);
+  }
+  /**
+   * Show dropdown to user by adding active state class
+   * @returns {this}
+   */
+  ;
+
+  _proto.show = function show() {
+    this.element.classList.add(this.classNames.activeState);
+    this.element.setAttribute('aria-expanded', 'true');
+    this.isActive = true;
+    return this;
+  }
+  /**
+   * Hide dropdown from user
+   * @returns {this}
+   */
+  ;
+
+  _proto.hide = function hide() {
+    this.element.classList.remove(this.classNames.activeState);
+    this.element.setAttribute('aria-expanded', 'false');
+    this.isActive = false;
+    return this;
+  };
+
+  dropdown_createClass(Dropdown, [{
+    key: "distanceFromTopWindow",
+    get: function get() {
+      return this.element.getBoundingClientRect().bottom;
+    }
+  }]);
+
+  return Dropdown;
+}();
+
+
+// CONCATENATED MODULE: ./src/scripts/constants.js
+
+/**
+ * @typedef {import('../../types/index').Choices.ClassNames} ClassNames
+ * @typedef {import('../../types/index').Choices.Options} Options
+ */
+
+/** @type {ClassNames} */
+
+var DEFAULT_CLASSNAMES = {
+  containerOuter: 'choices',
+  containerInner: 'choices__inner',
+  input: 'choices__input',
+  inputCloned: 'choices__input--cloned',
+  list: 'choices__list',
+  listItems: 'choices__list--multiple',
+  listSingle: 'choices__list--single',
+  listDropdown: 'choices__list--dropdown',
+  item: 'choices__item',
+  itemSelectable: 'choices__item--selectable',
+  itemDisabled: 'choices__item--disabled',
+  itemChoice: 'choices__item--choice',
+  placeholder: 'choices__placeholder',
+  group: 'choices__group',
+  groupHeading: 'choices__heading',
+  button: 'choices__button',
+  activeState: 'is-active',
+  focusState: 'is-focused',
+  openState: 'is-open',
+  disabledState: 'is-disabled',
+  highlightedState: 'is-highlighted',
+  selectedState: 'is-selected',
+  flippedState: 'is-flipped',
+  loadingState: 'is-loading',
+  noResults: 'has-no-results',
+  noChoices: 'has-no-choices'
+};
+/** @type {Options} */
+
+var DEFAULT_CONFIG = {
+  items: [],
+  choices: [],
+  silent: false,
+  renderChoiceLimit: -1,
+  maxItemCount: -1,
+  addItems: true,
+  addItemFilter: null,
+  removeItems: true,
+  removeItemButton: false,
+  editItems: false,
+  duplicateItemsAllowed: true,
+  delimiter: ',',
+  paste: true,
+  searchEnabled: true,
+  searchChoices: true,
+  searchFloor: 1,
+  searchResultLimit: 4,
+  searchFields: ['label', 'value'],
+  position: 'auto',
+  resetScrollPosition: true,
+  shouldSort: true,
+  shouldSortItems: false,
+  sorter: sortByAlpha,
+  placeholder: true,
+  placeholderValue: null,
+  searchPlaceholderValue: null,
+  prependValue: null,
+  appendValue: null,
+  renderSelectedChoices: 'auto',
+  loadingText: 'Loading...',
+  noResultsText: 'No results found',
+  noChoicesText: 'No choices to choose from',
+  itemSelectText: 'Press to select',
+  uniqueItemText: 'Only unique values can be added',
+  customAddItemText: 'Only values matching specific conditions can be added',
+  addItemText: function addItemText(value) {
+    return "Press Enter to add <b>\"" + sanitise(value) + "\"</b>";
+  },
+  maxItemText: function maxItemText(maxItemCount) {
+    return "Only " + maxItemCount + " values can be added";
+  },
+  valueComparer: function valueComparer(value1, value2) {
+    return value1 === value2;
+  },
+  fuseOptions: {
+    includeScore: true
+  },
+  callbackOnInit: null,
+  callbackOnCreateTemplates: null,
+  classNames: DEFAULT_CLASSNAMES
+};
+var EVENTS = {
+  showDropdown: 'showDropdown',
+  hideDropdown: 'hideDropdown',
+  change: 'change',
+  choice: 'choice',
+  search: 'search',
+  addItem: 'addItem',
+  removeItem: 'removeItem',
+  highlightItem: 'highlightItem',
+  highlightChoice: 'highlightChoice'
+};
+var ACTION_TYPES = {
+  ADD_CHOICE: 'ADD_CHOICE',
+  FILTER_CHOICES: 'FILTER_CHOICES',
+  ACTIVATE_CHOICES: 'ACTIVATE_CHOICES',
+  CLEAR_CHOICES: 'CLEAR_CHOICES',
+  ADD_GROUP: 'ADD_GROUP',
+  ADD_ITEM: 'ADD_ITEM',
+  REMOVE_ITEM: 'REMOVE_ITEM',
+  HIGHLIGHT_ITEM: 'HIGHLIGHT_ITEM',
+  CLEAR_ALL: 'CLEAR_ALL'
+};
+var KEY_CODES = {
+  BACK_KEY: 46,
+  DELETE_KEY: 8,
+  ENTER_KEY: 13,
+  A_KEY: 65,
+  ESC_KEY: 27,
+  UP_KEY: 38,
+  DOWN_KEY: 40,
+  PAGE_UP_KEY: 33,
+  PAGE_DOWN_KEY: 34
+};
+var TEXT_TYPE = 'text';
+var SELECT_ONE_TYPE = 'select-one';
+var SELECT_MULTIPLE_TYPE = 'select-multiple';
+var SCROLLING_SPEED = 4;
+// CONCATENATED MODULE: ./src/scripts/components/container.js
+
+
+/**
+ * @typedef {import('../../../types/index').Choices.passedElement} passedElement
+ * @typedef {import('../../../types/index').Choices.ClassNames} ClassNames
+ */
+
+var container_Container =
+/*#__PURE__*/
+function () {
+  /**
+   * @param {{
+   *  element: HTMLElement,
+   *  type: passedElement['type'],
+   *  classNames: ClassNames,
+   *  position
+   * }} args
+   */
+  function Container(_ref) {
+    var element = _ref.element,
+        type = _ref.type,
+        classNames = _ref.classNames,
+        position = _ref.position;
+    this.element = element;
+    this.classNames = classNames;
+    this.type = type;
+    this.position = position;
+    this.isOpen = false;
+    this.isFlipped = false;
+    this.isFocussed = false;
+    this.isDisabled = false;
+    this.isLoading = false;
+    this._onFocus = this._onFocus.bind(this);
+    this._onBlur = this._onBlur.bind(this);
+  }
+
+  var _proto = Container.prototype;
+
+  _proto.addEventListeners = function addEventListeners() {
+    this.element.addEventListener('focus', this._onFocus);
+    this.element.addEventListener('blur', this._onBlur);
+  };
+
+  _proto.removeEventListeners = function removeEventListeners() {
+    this.element.removeEventListener('focus', this._onFocus);
+    this.element.removeEventListener('blur', this._onBlur);
+  }
+  /**
+   * Determine whether container should be flipped based on passed
+   * dropdown position
+   * @param {number} dropdownPos
+   * @returns {boolean}
+   */
+  ;
+
+  _proto.shouldFlip = function shouldFlip(dropdownPos) {
+    if (typeof dropdownPos !== 'number') {
+      return false;
+    } // If flip is enabled and the dropdown bottom position is
+    // greater than the window height flip the dropdown.
+
+
+    var shouldFlip = false;
+
+    if (this.position === 'auto') {
+      shouldFlip = !window.matchMedia("(min-height: " + (dropdownPos + 1) + "px)").matches;
+    } else if (this.position === 'top') {
+      shouldFlip = true;
+    }
+
+    return shouldFlip;
+  }
+  /**
+   * @param {string} activeDescendantID
+   */
+  ;
+
+  _proto.setActiveDescendant = function setActiveDescendant(activeDescendantID) {
+    this.element.setAttribute('aria-activedescendant', activeDescendantID);
+  };
+
+  _proto.removeActiveDescendant = function removeActiveDescendant() {
+    this.element.removeAttribute('aria-activedescendant');
+  }
+  /**
+   * @param {number} dropdownPos
+   */
+  ;
+
+  _proto.open = function open(dropdownPos) {
+    this.element.classList.add(this.classNames.openState);
+    this.element.setAttribute('aria-expanded', 'true');
+    this.isOpen = true;
+
+    if (this.shouldFlip(dropdownPos)) {
+      this.element.classList.add(this.classNames.flippedState);
+      this.isFlipped = true;
+    }
+  };
+
+  _proto.close = function close() {
+    this.element.classList.remove(this.classNames.openState);
+    this.element.setAttribute('aria-expanded', 'false');
+    this.removeActiveDescendant();
+    this.isOpen = false; // A dropdown flips if it does not have space within the page
+
+    if (this.isFlipped) {
+      this.element.classList.remove(this.classNames.flippedState);
+      this.isFlipped = false;
+    }
+  };
+
+  _proto.focus = function focus() {
+    if (!this.isFocussed) {
+      this.element.focus();
+    }
+  };
+
+  _proto.addFocusState = function addFocusState() {
+    this.element.classList.add(this.classNames.focusState);
+  };
+
+  _proto.removeFocusState = function removeFocusState() {
+    this.element.classList.remove(this.classNames.focusState);
+  };
+
+  _proto.enable = function enable() {
+    this.element.classList.remove(this.classNames.disabledState);
+    this.element.removeAttribute('aria-disabled');
+
+    if (this.type === SELECT_ONE_TYPE) {
+      this.element.setAttribute('tabindex', '0');
+    }
+
+    this.isDisabled = false;
+  };
+
+  _proto.disable = function disable() {
+    this.element.classList.add(this.classNames.disabledState);
+    this.element.setAttribute('aria-disabled', 'true');
+
+    if (this.type === SELECT_ONE_TYPE) {
+      this.element.setAttribute('tabindex', '-1');
+    }
+
+    this.isDisabled = true;
+  }
+  /**
+   * @param {HTMLElement} element
+   */
+  ;
+
+  _proto.wrap = function wrap(element) {
+    utils_wrap(element, this.element);
+  }
+  /**
+   * @param {Element} element
+   */
+  ;
+
+  _proto.unwrap = function unwrap(element) {
+    // Move passed element outside this element
+    this.element.parentNode.insertBefore(element, this.element); // Remove this element
+
+    this.element.parentNode.removeChild(this.element);
+  };
+
+  _proto.addLoadingState = function addLoadingState() {
+    this.element.classList.add(this.classNames.loadingState);
+    this.element.setAttribute('aria-busy', 'true');
+    this.isLoading = true;
+  };
+
+  _proto.removeLoadingState = function removeLoadingState() {
+    this.element.classList.remove(this.classNames.loadingState);
+    this.element.removeAttribute('aria-busy');
+    this.isLoading = false;
+  };
+
+  _proto._onFocus = function _onFocus() {
+    this.isFocussed = true;
+  };
+
+  _proto._onBlur = function _onBlur() {
+    this.isFocussed = false;
+  };
+
+  return Container;
+}();
+
+
+// CONCATENATED MODULE: ./src/scripts/components/input.js
+function input_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function input_createClass(Constructor, protoProps, staticProps) { if (protoProps) input_defineProperties(Constructor.prototype, protoProps); if (staticProps) input_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+/**
+ * @typedef {import('../../../types/index').Choices.passedElement} passedElement
+ * @typedef {import('../../../types/index').Choices.ClassNames} ClassNames
+ */
+
+var input_Input =
+/*#__PURE__*/
+function () {
+  /**
+   * @param {{
+   *  element: HTMLInputElement,
+   *  type: passedElement['type'],
+   *  classNames: ClassNames,
+   *  preventPaste: boolean
+   * }} args
+   */
+  function Input(_ref) {
+    var element = _ref.element,
+        type = _ref.type,
+        classNames = _ref.classNames,
+        preventPaste = _ref.preventPaste;
+    this.element = element;
+    this.type = type;
+    this.classNames = classNames;
+    this.preventPaste = preventPaste;
+    this.isFocussed = this.element === document.activeElement;
+    this.isDisabled = element.disabled;
+    this._onPaste = this._onPaste.bind(this);
+    this._onInput = this._onInput.bind(this);
+    this._onFocus = this._onFocus.bind(this);
+    this._onBlur = this._onBlur.bind(this);
+  }
+  /**
+   * @param {string} placeholder
+   */
+
+
+  var _proto = Input.prototype;
+
+  _proto.addEventListeners = function addEventListeners() {
+    this.element.addEventListener('paste', this._onPaste);
+    this.element.addEventListener('input', this._onInput, {
+      passive: true
+    });
+    this.element.addEventListener('focus', this._onFocus, {
+      passive: true
+    });
+    this.element.addEventListener('blur', this._onBlur, {
+      passive: true
+    });
+  };
+
+  _proto.removeEventListeners = function removeEventListeners() {
+    this.element.removeEventListener('input', this._onInput, {
+      passive: true
+    });
+    this.element.removeEventListener('paste', this._onPaste);
+    this.element.removeEventListener('focus', this._onFocus, {
+      passive: true
+    });
+    this.element.removeEventListener('blur', this._onBlur, {
+      passive: true
+    });
+  };
+
+  _proto.enable = function enable() {
+    this.element.removeAttribute('disabled');
+    this.isDisabled = false;
+  };
+
+  _proto.disable = function disable() {
+    this.element.setAttribute('disabled', '');
+    this.isDisabled = true;
+  };
+
+  _proto.focus = function focus() {
+    if (!this.isFocussed) {
+      this.element.focus();
+    }
+  };
+
+  _proto.blur = function blur() {
+    if (this.isFocussed) {
+      this.element.blur();
+    }
+  }
+  /**
+   * Set value of input to blank
+   * @param {boolean} setWidth
+   * @returns {this}
+   */
+  ;
+
+  _proto.clear = function clear(setWidth) {
+    if (setWidth === void 0) {
+      setWidth = true;
+    }
+
+    if (this.element.value) {
+      this.element.value = '';
+    }
+
+    if (setWidth) {
+      this.setWidth();
+    }
+
+    return this;
+  }
+  /**
+   * Set the correct input width based on placeholder
+   * value or input value
+   */
+  ;
+
+  _proto.setWidth = function setWidth() {
+    // Resize input to contents or placeholder
+    var _this$element = this.element,
+        style = _this$element.style,
+        value = _this$element.value,
+        placeholder = _this$element.placeholder;
+    style.minWidth = placeholder.length + 1 + "ch";
+    style.width = value.length + 1 + "ch";
+  }
+  /**
+   * @param {string} activeDescendantID
+   */
+  ;
+
+  _proto.setActiveDescendant = function setActiveDescendant(activeDescendantID) {
+    this.element.setAttribute('aria-activedescendant', activeDescendantID);
+  };
+
+  _proto.removeActiveDescendant = function removeActiveDescendant() {
+    this.element.removeAttribute('aria-activedescendant');
+  };
+
+  _proto._onInput = function _onInput() {
+    if (this.type !== SELECT_ONE_TYPE) {
+      this.setWidth();
+    }
+  }
+  /**
+   * @param {Event} event
+   */
+  ;
+
+  _proto._onPaste = function _onPaste(event) {
+    if (this.preventPaste) {
+      event.preventDefault();
+    }
+  };
+
+  _proto._onFocus = function _onFocus() {
+    this.isFocussed = true;
+  };
+
+  _proto._onBlur = function _onBlur() {
+    this.isFocussed = false;
+  };
+
+  input_createClass(Input, [{
+    key: "placeholder",
+    set: function set(placeholder) {
+      this.element.placeholder = placeholder;
+    }
+    /**
+     * @returns {string}
+     */
+
+  }, {
+    key: "value",
+    get: function get() {
+      return sanitise(this.element.value);
+    }
+    /**
+     * @param {string} value
+     */
+    ,
+    set: function set(value) {
+      this.element.value = value;
+    }
+  }]);
+
+  return Input;
+}();
+
+
+// CONCATENATED MODULE: ./src/scripts/components/list.js
+
+/**
+ * @typedef {import('../../../types/index').Choices.Choice} Choice
+ */
+
+var list_List =
+/*#__PURE__*/
+function () {
+  /**
+   * @param {{ element: HTMLElement }} args
+   */
+  function List(_ref) {
+    var element = _ref.element;
+    this.element = element;
+    this.scrollPos = this.element.scrollTop;
+    this.height = this.element.offsetHeight;
+  }
+
+  var _proto = List.prototype;
+
+  _proto.clear = function clear() {
+    this.element.innerHTML = '';
+  }
+  /**
+   * @param {Element | DocumentFragment} node
+   */
+  ;
+
+  _proto.append = function append(node) {
+    this.element.appendChild(node);
+  }
+  /**
+   * @param {string} selector
+   * @returns {Element | null}
+   */
+  ;
+
+  _proto.getChild = function getChild(selector) {
+    return this.element.querySelector(selector);
+  }
+  /**
+   * @returns {boolean}
+   */
+  ;
+
+  _proto.hasChildren = function hasChildren() {
+    return this.element.hasChildNodes();
+  };
+
+  _proto.scrollToTop = function scrollToTop() {
+    this.element.scrollTop = 0;
+  }
+  /**
+   * @param {Element} element
+   * @param {1 | -1} direction
+   */
+  ;
+
+  _proto.scrollToChildElement = function scrollToChildElement(element, direction) {
+    var _this = this;
+
+    if (!element) {
+      return;
+    }
+
+    var listHeight = this.element.offsetHeight; // Scroll position of dropdown
+
+    var listScrollPosition = this.element.scrollTop + listHeight;
+    var elementHeight = element.offsetHeight; // Distance from bottom of element to top of parent
+
+    var elementPos = element.offsetTop + elementHeight; // Difference between the element and scroll position
+
+    var destination = direction > 0 ? this.element.scrollTop + elementPos - listScrollPosition : element.offsetTop;
+    requestAnimationFrame(function () {
+      _this._animateScroll(destination, direction);
+    });
+  }
+  /**
+   * @param {number} scrollPos
+   * @param {number} strength
+   * @param {number} destination
+   */
+  ;
+
+  _proto._scrollDown = function _scrollDown(scrollPos, strength, destination) {
+    var easing = (destination - scrollPos) / strength;
+    var distance = easing > 1 ? easing : 1;
+    this.element.scrollTop = scrollPos + distance;
+  }
+  /**
+   * @param {number} scrollPos
+   * @param {number} strength
+   * @param {number} destination
+   */
+  ;
+
+  _proto._scrollUp = function _scrollUp(scrollPos, strength, destination) {
+    var easing = (scrollPos - destination) / strength;
+    var distance = easing > 1 ? easing : 1;
+    this.element.scrollTop = scrollPos - distance;
+  }
+  /**
+   * @param {*} destination
+   * @param {*} direction
+   */
+  ;
+
+  _proto._animateScroll = function _animateScroll(destination, direction) {
+    var _this2 = this;
+
+    var strength = SCROLLING_SPEED;
+    var choiceListScrollTop = this.element.scrollTop;
+    var continueAnimation = false;
+
+    if (direction > 0) {
+      this._scrollDown(choiceListScrollTop, strength, destination);
+
+      if (choiceListScrollTop < destination) {
+        continueAnimation = true;
+      }
+    } else {
+      this._scrollUp(choiceListScrollTop, strength, destination);
+
+      if (choiceListScrollTop > destination) {
+        continueAnimation = true;
+      }
+    }
+
+    if (continueAnimation) {
+      requestAnimationFrame(function () {
+        _this2._animateScroll(destination, direction);
+      });
+    }
+  };
+
+  return List;
+}();
+
+
+// CONCATENATED MODULE: ./src/scripts/components/wrapped-element.js
+function wrapped_element_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function wrapped_element_createClass(Constructor, protoProps, staticProps) { if (protoProps) wrapped_element_defineProperties(Constructor.prototype, protoProps); if (staticProps) wrapped_element_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+/**
+ * @typedef {import('../../../types/index').Choices.passedElement} passedElement
+ * @typedef {import('../../../types/index').Choices.ClassNames} ClassNames
+ */
+
+var wrapped_element_WrappedElement =
+/*#__PURE__*/
+function () {
+  /**
+   * @param {{
+   *  element: HTMLInputElement | HTMLSelectElement,
+   *  classNames: ClassNames,
+   * }} args
+   */
+  function WrappedElement(_ref) {
+    var element = _ref.element,
+        classNames = _ref.classNames;
+    this.element = element;
+    this.classNames = classNames;
+
+    if (!(element instanceof HTMLInputElement) && !(element instanceof HTMLSelectElement)) {
+      throw new TypeError('Invalid element passed');
+    }
+
+    this.isDisabled = false;
+  }
+
+  var _proto = WrappedElement.prototype;
+
+  _proto.conceal = function conceal() {
+    // Hide passed input
+    this.element.classList.add(this.classNames.input);
+    this.element.hidden = true; // Remove element from tab index
+
+    this.element.tabIndex = -1; // Backup original styles if any
+
+    var origStyle = this.element.getAttribute('style');
+
+    if (origStyle) {
+      this.element.setAttribute('data-choice-orig-style', origStyle);
+    }
+
+    this.element.setAttribute('data-choice', 'active');
+  };
+
+  _proto.reveal = function reveal() {
+    // Reinstate passed element
+    this.element.classList.remove(this.classNames.input);
+    this.element.hidden = false;
+    this.element.removeAttribute('tabindex'); // Recover original styles if any
+
+    var origStyle = this.element.getAttribute('data-choice-orig-style');
+
+    if (origStyle) {
+      this.element.removeAttribute('data-choice-orig-style');
+      this.element.setAttribute('style', origStyle);
+    } else {
+      this.element.removeAttribute('style');
+    }
+
+    this.element.removeAttribute('data-choice'); // Re-assign values - this is weird, I know
+    // @todo Figure out why we need to do this
+
+    this.element.value = this.element.value; // eslint-disable-line no-self-assign
+  };
+
+  _proto.enable = function enable() {
+    this.element.removeAttribute('disabled');
+    this.element.disabled = false;
+    this.isDisabled = false;
+  };
+
+  _proto.disable = function disable() {
+    this.element.setAttribute('disabled', '');
+    this.element.disabled = true;
+    this.isDisabled = true;
+  };
+
+  _proto.triggerEvent = function triggerEvent(eventType, data) {
+    dispatchEvent(this.element, eventType, data);
+  };
+
+  wrapped_element_createClass(WrappedElement, [{
+    key: "isActive",
+    get: function get() {
+      return this.element.dataset.choice === 'active';
+    }
+  }, {
+    key: "dir",
+    get: function get() {
+      return this.element.dir;
+    }
+  }, {
+    key: "value",
+    get: function get() {
+      return this.element.value;
+    },
+    set: function set(value) {
+      // you must define setter here otherwise it will be readonly property
+      this.element.value = value;
+    }
+  }]);
+
+  return WrappedElement;
+}();
+
+
+// CONCATENATED MODULE: ./src/scripts/components/wrapped-input.js
+function wrapped_input_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function wrapped_input_createClass(Constructor, protoProps, staticProps) { if (protoProps) wrapped_input_defineProperties(Constructor.prototype, protoProps); if (staticProps) wrapped_input_defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+
+/**
+ * @typedef {import('../../../types/index').Choices.ClassNames} ClassNames
+ * @typedef {import('../../../types/index').Choices.Item} Item
+ */
+
+var WrappedInput =
+/*#__PURE__*/
+function (_WrappedElement) {
+  _inheritsLoose(WrappedInput, _WrappedElement);
+
+  /**
+   * @param {{
+   *  element: HTMLInputElement,
+   *  classNames: ClassNames,
+   *  delimiter: string
+   * }} args
+   */
+  function WrappedInput(_ref) {
+    var _this;
+
+    var element = _ref.element,
+        classNames = _ref.classNames,
+        delimiter = _ref.delimiter;
+    _this = _WrappedElement.call(this, {
+      element: element,
+      classNames: classNames
+    }) || this;
+    _this.delimiter = delimiter;
+    return _this;
+  }
+  /**
+   * @returns {string}
+   */
+
+
+  wrapped_input_createClass(WrappedInput, [{
+    key: "value",
+    get: function get() {
+      return this.element.value;
+    }
+    /**
+     * @param {Item[]} items
+     */
+    ,
+    set: function set(items) {
+      var itemValues = items.map(function (_ref2) {
+        var value = _ref2.value;
+        return value;
+      });
+      var joinedValues = itemValues.join(this.delimiter);
+      this.element.setAttribute('value', joinedValues);
+      this.element.value = joinedValues;
+    }
+  }]);
+
+  return WrappedInput;
+}(wrapped_element_WrappedElement);
+
+
+// CONCATENATED MODULE: ./src/scripts/components/wrapped-select.js
+function wrapped_select_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function wrapped_select_createClass(Constructor, protoProps, staticProps) { if (protoProps) wrapped_select_defineProperties(Constructor.prototype, protoProps); if (staticProps) wrapped_select_defineProperties(Constructor, staticProps); return Constructor; }
+
+function wrapped_select_inheritsLoose(subClass, superClass) { subClass.prototype = Object.create(superClass.prototype); subClass.prototype.constructor = subClass; subClass.__proto__ = superClass; }
+
+
+/**
+ * @typedef {import('../../../types/index').Choices.ClassNames} ClassNames
+ * @typedef {import('../../../types/index').Choices.Item} Item
+ * @typedef {import('../../../types/index').Choices.Choice} Choice
+ */
+
+var WrappedSelect =
+/*#__PURE__*/
+function (_WrappedElement) {
+  wrapped_select_inheritsLoose(WrappedSelect, _WrappedElement);
+
+  /**
+   * @param {{
+   *  element: HTMLSelectElement,
+   *  classNames: ClassNames,
+   *  delimiter: string
+   *  template: function
+   * }} args
+   */
+  function WrappedSelect(_ref) {
+    var _this;
+
+    var element = _ref.element,
+        classNames = _ref.classNames,
+        template = _ref.template;
+    _this = _WrappedElement.call(this, {
+      element: element,
+      classNames: classNames
+    }) || this;
+    _this.template = template;
+    return _this;
+  }
+
+  var _proto = WrappedSelect.prototype;
+
+  /**
+   * @param {DocumentFragment} fragment
+   */
+  _proto.appendDocFragment = function appendDocFragment(fragment) {
+    this.element.innerHTML = '';
+    this.element.appendChild(fragment);
+  };
+
+  wrapped_select_createClass(WrappedSelect, [{
+    key: "placeholderOption",
+    get: function get() {
+      return this.element.querySelector('option[value=""]') || // Backward compatibility layer for the non-standard placeholder attribute supported in older versions.
+      this.element.querySelector('option[placeholder]');
+    }
+    /**
+     * @returns {Element[]}
+     */
+
+  }, {
+    key: "optionGroups",
+    get: function get() {
+      return Array.from(this.element.getElementsByTagName('OPTGROUP'));
+    }
+    /**
+     * @returns {Item[] | Choice[]}
+     */
+
+  }, {
+    key: "options",
+    get: function get() {
+      return Array.from(this.element.options);
+    }
+    /**
+     * @param {Item[] | Choice[]} options
+     */
+    ,
+    set: function set(options) {
+      var _this2 = this;
+
+      var fragment = document.createDocumentFragment();
+
+      var addOptionToFragment = function addOptionToFragment(data) {
+        // Create a standard select option
+        var option = _this2.template(data); // Append it to fragment
+
+
+        fragment.appendChild(option);
+      }; // Add each list item to list
+
+
+      options.forEach(function (optionData) {
+        return addOptionToFragment(optionData);
+      });
+      this.appendDocFragment(fragment);
+    }
+  }]);
+
+  return WrappedSelect;
+}(wrapped_element_WrappedElement);
+
+
+// CONCATENATED MODULE: ./src/scripts/components/index.js
+
+
+
+
+
+
+
+// CONCATENATED MODULE: ./src/scripts/templates.js
+/**
+ * Helpers to create HTML elements used by Choices
+ * Can be overridden by providing `callbackOnCreateTemplates` option
+ * @typedef {import('../../types/index').Choices.Templates} Templates
+ * @typedef {import('../../types/index').Choices.ClassNames} ClassNames
+ * @typedef {import('../../types/index').Choices.Options} Options
+ * @typedef {import('../../types/index').Choices.Item} Item
+ * @typedef {import('../../types/index').Choices.Choice} Choice
+ * @typedef {import('../../types/index').Choices.Group} Group
+ */
+var TEMPLATES =
+/** @type {Templates} */
+{
+  /**
+   * @param {Partial<ClassNames>} classNames
+   * @param {"ltr" | "rtl" | "auto"} dir
+   * @param {boolean} isSelectElement
+   * @param {boolean} isSelectOneElement
+   * @param {boolean} searchEnabled
+   * @param {"select-one" | "select-multiple" | "text"} passedElementType
+   */
+  containerOuter: function containerOuter(_ref, dir, isSelectElement, isSelectOneElement, searchEnabled, passedElementType) {
+    var _containerOuter = _ref.containerOuter;
+    var div = Object.assign(document.createElement('div'), {
+      className: _containerOuter
+    });
+    div.dataset.type = passedElementType;
+
+    if (dir) {
+      div.dir = dir;
+    }
+
+    if (isSelectOneElement) {
+      div.tabIndex = 0;
+    }
+
+    if (isSelectElement) {
+      div.setAttribute('role', searchEnabled ? 'combobox' : 'listbox');
+
+      if (searchEnabled) {
+        div.setAttribute('aria-autocomplete', 'list');
+      }
+    }
+
+    div.setAttribute('aria-haspopup', 'true');
+    div.setAttribute('aria-expanded', 'false');
+    return div;
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   */
+  containerInner: function containerInner(_ref2) {
+    var _containerInner = _ref2.containerInner;
+    return Object.assign(document.createElement('div'), {
+      className: _containerInner
+    });
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   * @param {boolean} isSelectOneElement
+   */
+  itemList: function itemList(_ref3, isSelectOneElement) {
+    var list = _ref3.list,
+        listSingle = _ref3.listSingle,
+        listItems = _ref3.listItems;
+    return Object.assign(document.createElement('div'), {
+      className: list + " " + (isSelectOneElement ? listSingle : listItems)
+    });
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   * @param {string} value
+   */
+  placeholder: function placeholder(_ref4, value) {
+    var _placeholder = _ref4.placeholder;
+    return Object.assign(document.createElement('div'), {
+      className: _placeholder,
+      innerHTML: value
+    });
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   * @param {Item} item
+   * @param {boolean} removeItemButton
+   */
+  item: function item(_ref5, _ref6, removeItemButton) {
+    var _item = _ref5.item,
+        button = _ref5.button,
+        highlightedState = _ref5.highlightedState,
+        itemSelectable = _ref5.itemSelectable,
+        placeholder = _ref5.placeholder;
+    var id = _ref6.id,
+        value = _ref6.value,
+        label = _ref6.label,
+        customProperties = _ref6.customProperties,
+        active = _ref6.active,
+        disabled = _ref6.disabled,
+        highlighted = _ref6.highlighted,
+        isPlaceholder = _ref6.placeholder;
+    var div = Object.assign(document.createElement('div'), {
+      className: _item,
+      innerHTML: label
+    });
+    Object.assign(div.dataset, {
+      item: '',
+      id: id,
+      value: value,
+      customProperties: customProperties
+    });
+
+    if (active) {
+      div.setAttribute('aria-selected', 'true');
+    }
+
+    if (disabled) {
+      div.setAttribute('aria-disabled', 'true');
+    }
+
+    if (isPlaceholder) {
+      div.classList.add(placeholder);
+    }
+
+    div.classList.add(highlighted ? highlightedState : itemSelectable);
+
+    if (removeItemButton) {
+      if (disabled) {
+        div.classList.remove(itemSelectable);
+      }
+
+      div.dataset.deletable = '';
+      /** @todo This MUST be localizable, not hardcoded! */
+
+      var REMOVE_ITEM_TEXT = 'Remove item';
+      var removeButton = Object.assign(document.createElement('button'), {
+        type: 'button',
+        className: button,
+        innerHTML: REMOVE_ITEM_TEXT
+      });
+      removeButton.setAttribute('aria-label', REMOVE_ITEM_TEXT + ": '" + value + "'");
+      removeButton.dataset.button = '';
+      div.appendChild(removeButton);
+    }
+
+    return div;
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   * @param {boolean} isSelectOneElement
+   */
+  choiceList: function choiceList(_ref7, isSelectOneElement) {
+    var list = _ref7.list;
+    var div = Object.assign(document.createElement('div'), {
+      className: list
+    });
+
+    if (!isSelectOneElement) {
+      div.setAttribute('aria-multiselectable', 'true');
+    }
+
+    div.setAttribute('role', 'listbox');
+    return div;
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   * @param {Group} group
+   */
+  choiceGroup: function choiceGroup(_ref8, _ref9) {
+    var group = _ref8.group,
+        groupHeading = _ref8.groupHeading,
+        itemDisabled = _ref8.itemDisabled;
+    var id = _ref9.id,
+        value = _ref9.value,
+        disabled = _ref9.disabled;
+    var div = Object.assign(document.createElement('div'), {
+      className: group + " " + (disabled ? itemDisabled : '')
+    });
+    div.setAttribute('role', 'group');
+    Object.assign(div.dataset, {
+      group: '',
+      id: id,
+      value: value
+    });
+
+    if (disabled) {
+      div.setAttribute('aria-disabled', 'true');
+    }
+
+    div.appendChild(Object.assign(document.createElement('div'), {
+      className: groupHeading,
+      innerHTML: value
+    }));
+    return div;
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   * @param {Choice} choice
+   * @param {Options['itemSelectText']} selectText
+   */
+  choice: function choice(_ref10, _ref11, selectText) {
+    var item = _ref10.item,
+        itemChoice = _ref10.itemChoice,
+        itemSelectable = _ref10.itemSelectable,
+        selectedState = _ref10.selectedState,
+        itemDisabled = _ref10.itemDisabled,
+        placeholder = _ref10.placeholder;
+    var id = _ref11.id,
+        value = _ref11.value,
+        label = _ref11.label,
+        groupId = _ref11.groupId,
+        elementId = _ref11.elementId,
+        isDisabled = _ref11.disabled,
+        isSelected = _ref11.selected,
+        isPlaceholder = _ref11.placeholder;
+    var div = Object.assign(document.createElement('div'), {
+      id: elementId,
+      innerHTML: label,
+      className: item + " " + itemChoice
+    });
+
+    if (isSelected) {
+      div.classList.add(selectedState);
+    }
+
+    if (isPlaceholder) {
+      div.classList.add(placeholder);
+    }
+
+    div.setAttribute('role', groupId > 0 ? 'treeitem' : 'option');
+    Object.assign(div.dataset, {
+      choice: '',
+      id: id,
+      value: value,
+      selectText: selectText
+    });
+
+    if (isDisabled) {
+      div.classList.add(itemDisabled);
+      div.dataset.choiceDisabled = '';
+      div.setAttribute('aria-disabled', 'true');
+    } else {
+      div.classList.add(itemSelectable);
+      div.dataset.choiceSelectable = '';
+    }
+
+    return div;
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   * @param {string} placeholderValue
+   */
+  input: function input(_ref12, placeholderValue) {
+    var _input = _ref12.input,
+        inputCloned = _ref12.inputCloned;
+    var inp = Object.assign(document.createElement('input'), {
+      type: 'text',
+      className: _input + " " + inputCloned,
+      autocomplete: 'off',
+      autocapitalize: 'off',
+      spellcheck: false
+    });
+    inp.setAttribute('role', 'textbox');
+    inp.setAttribute('aria-autocomplete', 'list');
+    inp.setAttribute('aria-label', placeholderValue);
+    return inp;
+  },
+
+  /**
+   * @param {Partial<ClassNames>} classNames
+   */
+  dropdown: function dropdown(_ref13) {
+    var list = _ref13.list,
+        listDropdown = _ref13.listDropdown;
+    var div = document.createElement('div');
+    div.classList.add(list, listDropdown);
+    div.setAttribute('aria-expanded', 'false');
+    return div;
+  },
+
+  /**
+   *
+   * @param {Partial<ClassNames>} classNames
+   * @param {string} innerHTML
+   * @param {"no-choices" | "no-results" | ""} type
+   */
+  notice: function notice(_ref14, innerHTML, type) {
+    var item = _ref14.item,
+        itemChoice = _ref14.itemChoice,
+        noResults = _ref14.noResults,
+        noChoices = _ref14.noChoices;
+
+    if (type === void 0) {
+      type = '';
+    }
+
+    var classes = [item, itemChoice];
+
+    if (type === 'no-choices') {
+      classes.push(noChoices);
+    } else if (type === 'no-results') {
+      classes.push(noResults);
+    }
+
+    return Object.assign(document.createElement('div'), {
+      innerHTML: innerHTML,
+      className: classes.join(' ')
+    });
+  },
+
+  /**
+   * @param {Item} option
+   */
+  option: function option(_ref15) {
+    var label = _ref15.label,
+        value = _ref15.value,
+        customProperties = _ref15.customProperties,
+        active = _ref15.active,
+        disabled = _ref15.disabled;
+    var opt = new Option(label, value, false, active);
+
+    if (customProperties) {
+      opt.dataset.customProperties = customProperties;
+    }
+
+    opt.disabled = disabled;
+    return opt;
+  }
+};
+/* harmony default export */ var templates = (TEMPLATES);
+// CONCATENATED MODULE: ./src/scripts/actions/choices.js
+/**
+ * @typedef {import('redux').Action} Action
+ * @typedef {import('../../../types/index').Choices.Choice} Choice
+ */
+
+/**
+ * @argument {Choice} choice
+ * @returns {Action & Choice}
+ */
+
+var choices_addChoice = function addChoice(_ref) {
+  var value = _ref.value,
+      label = _ref.label,
+      id = _ref.id,
+      groupId = _ref.groupId,
+      disabled = _ref.disabled,
+      elementId = _ref.elementId,
+      customProperties = _ref.customProperties,
+      placeholder = _ref.placeholder,
+      keyCode = _ref.keyCode;
+  return {
+    type: ACTION_TYPES.ADD_CHOICE,
+    value: value,
+    label: label,
+    id: id,
+    groupId: groupId,
+    disabled: disabled,
+    elementId: elementId,
+    customProperties: customProperties,
+    placeholder: placeholder,
+    keyCode: keyCode
+  };
+};
+/**
+ * @argument {Choice[]} results
+ * @returns {Action & { results: Choice[] }}
+ */
+
+var choices_filterChoices = function filterChoices(results) {
+  return {
+    type: ACTION_TYPES.FILTER_CHOICES,
+    results: results
+  };
+};
+/**
+ * @argument {boolean} active
+ * @returns {Action & { active: boolean }}
+ */
+
+var choices_activateChoices = function activateChoices(active) {
+  if (active === void 0) {
+    active = true;
+  }
+
+  return {
+    type: ACTION_TYPES.ACTIVATE_CHOICES,
+    active: active
+  };
+};
+/**
+ * @returns {Action}
+ */
+
+var choices_clearChoices = function clearChoices() {
+  return {
+    type: ACTION_TYPES.CLEAR_CHOICES
+  };
+};
+// CONCATENATED MODULE: ./src/scripts/actions/items.js
+
+/**
+ * @typedef {import('redux').Action} Action
+ * @typedef {import('../../../types/index').Choices.Item} Item
+ */
+
+/**
+ * @param {Item} item
+ * @returns {Action & Item}
+ */
+
+var items_addItem = function addItem(_ref) {
+  var value = _ref.value,
+      label = _ref.label,
+      id = _ref.id,
+      choiceId = _ref.choiceId,
+      groupId = _ref.groupId,
+      customProperties = _ref.customProperties,
+      placeholder = _ref.placeholder,
+      keyCode = _ref.keyCode;
+  return {
+    type: ACTION_TYPES.ADD_ITEM,
+    value: value,
+    label: label,
+    id: id,
+    choiceId: choiceId,
+    groupId: groupId,
+    customProperties: customProperties,
+    placeholder: placeholder,
+    keyCode: keyCode
+  };
+};
+/**
+ * @param {string} id
+ * @param {string} choiceId
+ * @returns {Action & { id: string, choiceId: string }}
+ */
+
+var items_removeItem = function removeItem(id, choiceId) {
+  return {
+    type: ACTION_TYPES.REMOVE_ITEM,
+    id: id,
+    choiceId: choiceId
+  };
+};
+/**
+ * @param {string} id
+ * @param {boolean} highlighted
+ * @returns {Action & { id: string, highlighted: boolean }}
+ */
+
+var items_highlightItem = function highlightItem(id, highlighted) {
+  return {
+    type: ACTION_TYPES.HIGHLIGHT_ITEM,
+    id: id,
+    highlighted: highlighted
+  };
+};
+// CONCATENATED MODULE: ./src/scripts/actions/groups.js
+
+/**
+ * @typedef {import('redux').Action} Action
+ * @typedef {import('../../../types/index').Choices.Group} Group
+ */
+
+/**
+ * @param {Group} group
+ * @returns {Action & Group}
+ */
+
+var groups_addGroup = function addGroup(_ref) {
+  var value = _ref.value,
+      id = _ref.id,
+      active = _ref.active,
+      disabled = _ref.disabled;
+  return {
+    type: ACTION_TYPES.ADD_GROUP,
+    value: value,
+    id: id,
+    active: active,
+    disabled: disabled
+  };
+};
+// CONCATENATED MODULE: ./src/scripts/actions/misc.js
+/**
+ * @typedef {import('redux').Action} Action
+ */
+
+/**
+ * @returns {Action}
+ */
+var clearAll = function clearAll() {
+  return {
+    type: 'CLEAR_ALL'
+  };
+};
+/**
+ * @param {any} state
+ * @returns {Action & { state: object }}
+ */
+
+var resetTo = function resetTo(state) {
+  return {
+    type: 'RESET_TO',
+    state: state
+  };
+};
+/**
+ * @param {boolean} isLoading
+ * @returns {Action & { isLoading: boolean }}
+ */
+
+var setIsLoading = function setIsLoading(isLoading) {
+  return {
+    type: 'SET_IS_LOADING',
+    isLoading: isLoading
+  };
+};
+// CONCATENATED MODULE: ./src/scripts/choices.js
+function choices_defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function choices_createClass(Constructor, protoProps, staticProps) { if (protoProps) choices_defineProperties(Constructor.prototype, protoProps); if (staticProps) choices_defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+
+
+
+
+
+
+
+
+/** @see {@link http://browserhacks.com/#hack-acea075d0ac6954f275a70023906050c} */
+
+var IS_IE11 = '-ms-scroll-limit' in document.documentElement.style && '-ms-ime-align' in document.documentElement.style;
+/**
+ * @typedef {import('../../types/index').Choices.Choice} Choice
+ * @typedef {import('../../types/index').Choices.Item} Item
+ * @typedef {import('../../types/index').Choices.Group} Group
+ * @typedef {import('../../types/index').Choices.Options} Options
+ */
+
+/** @type {Partial<Options>} */
+
+var USER_DEFAULTS = {};
+/**
+ * Choices
+ * @author Josh Johnson<josh@joshuajohnson.co.uk>
+ */
+
+var choices_Choices =
+/*#__PURE__*/
+function () {
+  choices_createClass(Choices, null, [{
+    key: "defaults",
+    get: function get() {
+      return Object.preventExtensions({
+        get options() {
+          return USER_DEFAULTS;
+        },
+
+        get templates() {
+          return TEMPLATES;
+        }
+
+      });
+    }
+    /**
+     * @param {string | HTMLInputElement | HTMLSelectElement} element
+     * @param {Partial<Options>} userConfig
+     */
+
+  }]);
+
+  function Choices(element, userConfig) {
+    var _this = this;
+
+    if (element === void 0) {
+      element = '[data-choice]';
+    }
+
+    if (userConfig === void 0) {
+      userConfig = {};
+    }
+
+    /** @type {Partial<Options>} */
+    this.config = cjs_default.a.all([DEFAULT_CONFIG, Choices.defaults.options, userConfig], // When merging array configs, replace with a copy of the userConfig array,
+    // instead of concatenating with the default array
+    {
+      arrayMerge: function arrayMerge(_, sourceArray) {
+        return [].concat(sourceArray);
+      }
+    });
+    var invalidConfigOptions = diff(this.config, DEFAULT_CONFIG);
+
+    if (invalidConfigOptions.length) {
+      console.warn('Unknown config option(s) passed', invalidConfigOptions.join(', '));
+    }
+
+    var passedElement = typeof element === 'string' ? document.querySelector(element) : element;
+
+    if (!(passedElement instanceof HTMLInputElement || passedElement instanceof HTMLSelectElement)) {
+      throw TypeError('Expected one of the following types text|select-one|select-multiple');
+    }
+
+    this._isTextElement = passedElement.type === TEXT_TYPE;
+    this._isSelectOneElement = passedElement.type === SELECT_ONE_TYPE;
+    this._isSelectMultipleElement = passedElement.type === SELECT_MULTIPLE_TYPE;
+    this._isSelectElement = this._isSelectOneElement || this._isSelectMultipleElement;
+    this.config.searchEnabled = this._isSelectMultipleElement || this.config.searchEnabled;
+
+    if (!['auto', 'always'].includes(this.config.renderSelectedChoices)) {
+      this.config.renderSelectedChoices = 'auto';
+    }
+
+    if (userConfig.addItemFilter && typeof userConfig.addItemFilter !== 'function') {
+      var re = userConfig.addItemFilter instanceof RegExp ? userConfig.addItemFilter : new RegExp(userConfig.addItemFilter);
+      this.config.addItemFilter = re.test.bind(re);
+    }
+
+    if (this._isTextElement) {
+      this.passedElement = new WrappedInput({
+        element: passedElement,
+        classNames: this.config.classNames,
+        delimiter: this.config.delimiter
+      });
+    } else {
+      this.passedElement = new WrappedSelect({
+        element: passedElement,
+        classNames: this.config.classNames,
+        template: function template(data) {
+          return _this._templates.option(data);
+        }
+      });
+    }
+
+    this.initialised = false;
+    this._store = new store_Store();
+    this._initialState = {};
+    this._currentState = {};
+    this._prevState = {};
+    this._currentValue = '';
+    this._canSearch = this.config.searchEnabled;
+    this._isScrollingOnIe = false;
+    this._highlightPosition = 0;
+    this._wasTap = true;
+    this._placeholderValue = this._generatePlaceholderValue();
+    this._baseId = generateId(this.passedElement.element, 'choices-');
+    /**
+     * setting direction in cases where it's explicitly set on passedElement
+     * or when calculated direction is different from the document
+     * @type {HTMLElement['dir']}
+     */
+
+    this._direction = this.passedElement.dir;
+
+    if (!this._direction) {
+      var _window$getComputedSt = window.getComputedStyle(this.passedElement.element),
+          elementDirection = _window$getComputedSt.direction;
+
+      var _window$getComputedSt2 = window.getComputedStyle(document.documentElement),
+          documentDirection = _window$getComputedSt2.direction;
+
+      if (elementDirection !== documentDirection) {
+        this._direction = elementDirection;
+      }
+    }
+
+    this._idNames = {
+      itemChoice: 'item-choice'
+    }; // Assign preset groups from passed element
+
+    this._presetGroups = this.passedElement.optionGroups; // Assign preset options from passed element
+
+    this._presetOptions = this.passedElement.options; // Assign preset choices from passed object
+
+    this._presetChoices = this.config.choices; // Assign preset items from passed object first
+
+    this._presetItems = this.config.items; // Add any values passed from attribute
+
+    if (this.passedElement.value) {
+      this._presetItems = this._presetItems.concat(this.passedElement.value.split(this.config.delimiter));
+    } // Create array of choices from option elements
+
+
+    if (this.passedElement.options) {
+      this.passedElement.options.forEach(function (o) {
+        _this._presetChoices.push({
+          value: o.value,
+          label: o.innerHTML,
+          selected: o.selected,
+          disabled: o.disabled || o.parentNode.disabled,
+          placeholder: o.value === '' || o.hasAttribute('placeholder'),
+          customProperties: o.getAttribute('data-custom-properties')
+        });
+      });
+    }
+
+    this._render = this._render.bind(this);
+    this._onFocus = this._onFocus.bind(this);
+    this._onBlur = this._onBlur.bind(this);
+    this._onKeyUp = this._onKeyUp.bind(this);
+    this._onKeyDown = this._onKeyDown.bind(this);
+    this._onClick = this._onClick.bind(this);
+    this._onTouchMove = this._onTouchMove.bind(this);
+    this._onTouchEnd = this._onTouchEnd.bind(this);
+    this._onMouseDown = this._onMouseDown.bind(this);
+    this._onMouseOver = this._onMouseOver.bind(this);
+    this._onFormReset = this._onFormReset.bind(this);
+    this._onAKey = this._onAKey.bind(this);
+    this._onEnterKey = this._onEnterKey.bind(this);
+    this._onEscapeKey = this._onEscapeKey.bind(this);
+    this._onDirectionKey = this._onDirectionKey.bind(this);
+    this._onDeleteKey = this._onDeleteKey.bind(this); // If element has already been initialised with Choices, fail silently
+
+    if (this.passedElement.isActive) {
+      if (!this.config.silent) {
+        console.warn('Trying to initialise Choices on element already initialised');
+      }
+
+      this.initialised = true;
+      return;
+    } // Let's go
+
+
+    this.init();
+  }
+
+  var _proto = Choices.prototype;
+
+  _proto.init = function init() {
+    if (this.initialised) {
+      return;
+    }
+
+    this._createTemplates();
+
+    this._createElements();
+
+    this._createStructure(); // Set initial state (We need to clone the state because some reducers
+    // modify the inner objects properties in the state) 🤢
+
+
+    this._initialState = cloneObject(this._store.state);
+
+    this._store.subscribe(this._render);
+
+    this._render();
+
+    this._addEventListeners();
+
+    var shouldDisable = !this.config.addItems || this.passedElement.element.hasAttribute('disabled');
+
+    if (shouldDisable) {
+      this.disable();
+    }
+
+    this.initialised = true;
+    var callbackOnInit = this.config.callbackOnInit; // Run callback if it is a function
+
+    if (callbackOnInit && typeof callbackOnInit === 'function') {
+      callbackOnInit.call(this);
+    }
+  };
+
+  _proto.destroy = function destroy() {
+    if (!this.initialised) {
+      return;
+    }
+
+    this._removeEventListeners();
+
+    this.passedElement.reveal();
+    this.containerOuter.unwrap(this.passedElement.element);
+    this.clearStore();
+
+    if (this._isSelectElement) {
+      this.passedElement.options = this._presetOptions;
+    }
+
+    this._templates = null;
+    this.initialised = false;
+  };
+
+  _proto.enable = function enable() {
+    if (this.passedElement.isDisabled) {
+      this.passedElement.enable();
+    }
+
+    if (this.containerOuter.isDisabled) {
+      this._addEventListeners();
+
+      this.input.enable();
+      this.containerOuter.enable();
+    }
+
+    return this;
+  };
+
+  _proto.disable = function disable() {
+    if (!this.passedElement.isDisabled) {
+      this.passedElement.disable();
+    }
+
+    if (!this.containerOuter.isDisabled) {
+      this._removeEventListeners();
+
+      this.input.disable();
+      this.containerOuter.disable();
+    }
+
+    return this;
+  };
+
+  _proto.highlightItem = function highlightItem(item, runEvent) {
+    if (runEvent === void 0) {
+      runEvent = true;
+    }
+
+    if (!item) {
+      return this;
+    }
+
+    var id = item.id,
+        _item$groupId = item.groupId,
+        groupId = _item$groupId === void 0 ? -1 : _item$groupId,
+        _item$value = item.value,
+        value = _item$value === void 0 ? '' : _item$value,
+        _item$label = item.label,
+        label = _item$label === void 0 ? '' : _item$label;
+    var group = groupId >= 0 ? this._store.getGroupById(groupId) : null;
+
+    this._store.dispatch(items_highlightItem(id, true));
+
+    if (runEvent) {
+      this.passedElement.triggerEvent(EVENTS.highlightItem, {
+        id: id,
+        value: value,
+        label: label,
+        groupValue: group && group.value ? group.value : null
+      });
+    }
+
+    return this;
+  };
+
+  _proto.unhighlightItem = function unhighlightItem(item) {
+    if (!item) {
+      return this;
+    }
+
+    var id = item.id,
+        _item$groupId2 = item.groupId,
+        groupId = _item$groupId2 === void 0 ? -1 : _item$groupId2,
+        _item$value2 = item.value,
+        value = _item$value2 === void 0 ? '' : _item$value2,
+        _item$label2 = item.label,
+        label = _item$label2 === void 0 ? '' : _item$label2;
+    var group = groupId >= 0 ? this._store.getGroupById(groupId) : null;
+
+    this._store.dispatch(items_highlightItem(id, false));
+
+    this.passedElement.triggerEvent(EVENTS.highlightItem, {
+      id: id,
+      value: value,
+      label: label,
+      groupValue: group && group.value ? group.value : null
+    });
+    return this;
+  };
+
+  _proto.highlightAll = function highlightAll() {
+    var _this2 = this;
+
+    this._store.items.forEach(function (item) {
+      return _this2.highlightItem(item);
+    });
+
+    return this;
+  };
+
+  _proto.unhighlightAll = function unhighlightAll() {
+    var _this3 = this;
+
+    this._store.items.forEach(function (item) {
+      return _this3.unhighlightItem(item);
+    });
+
+    return this;
+  };
+
+  _proto.removeActiveItemsByValue = function removeActiveItemsByValue(value) {
+    var _this4 = this;
+
+    this._store.activeItems.filter(function (item) {
+      return item.value === value;
+    }).forEach(function (item) {
+      return _this4._removeItem(item);
+    });
+
+    return this;
+  };
+
+  _proto.removeActiveItems = function removeActiveItems(excludedId) {
+    var _this5 = this;
+
+    this._store.activeItems.filter(function (_ref) {
+      var id = _ref.id;
+      return id !== excludedId;
+    }).forEach(function (item) {
+      return _this5._removeItem(item);
+    });
+
+    return this;
+  };
+
+  _proto.removeHighlightedItems = function removeHighlightedItems(runEvent) {
+    var _this6 = this;
+
+    if (runEvent === void 0) {
+      runEvent = false;
+    }
+
+    this._store.highlightedActiveItems.forEach(function (item) {
+      _this6._removeItem(item); // If this action was performed by the user
+      // trigger the event
+
+
+      if (runEvent) {
+        _this6._triggerChange(item.value);
+      }
+    });
+
+    return this;
+  };
+
+  _proto.showDropdown = function showDropdown(preventInputFocus) {
+    var _this7 = this;
+
+    if (this.dropdown.isActive) {
+      return this;
+    }
+
+    requestAnimationFrame(function () {
+      _this7.dropdown.show();
+
+      _this7.containerOuter.open(_this7.dropdown.distanceFromTopWindow);
+
+      if (!preventInputFocus && _this7._canSearch) {
+        _this7.input.focus();
+      }
+
+      _this7.passedElement.triggerEvent(EVENTS.showDropdown, {});
+    });
+    return this;
+  };
+
+  _proto.hideDropdown = function hideDropdown(preventInputBlur) {
+    var _this8 = this;
+
+    if (!this.dropdown.isActive) {
+      return this;
+    }
+
+    requestAnimationFrame(function () {
+      _this8.dropdown.hide();
+
+      _this8.containerOuter.close();
+
+      if (!preventInputBlur && _this8._canSearch) {
+        _this8.input.removeActiveDescendant();
+
+        _this8.input.blur();
+      }
+
+      _this8.passedElement.triggerEvent(EVENTS.hideDropdown, {});
+    });
+    return this;
+  };
+
+  _proto.getValue = function getValue(valueOnly) {
+    if (valueOnly === void 0) {
+      valueOnly = false;
+    }
+
+    var values = this._store.activeItems.reduce(function (selectedItems, item) {
+      var itemValue = valueOnly ? item.value : item;
+      selectedItems.push(itemValue);
+      return selectedItems;
+    }, []);
+
+    return this._isSelectOneElement ? values[0] : values;
+  }
+  /**
+   * @param {string[] | import('../../types/index').Choices.Item[]} items
+   */
+  ;
+
+  _proto.setValue = function setValue(items) {
+    var _this9 = this;
+
+    if (!this.initialised) {
+      return this;
+    }
+
+    items.forEach(function (value) {
+      return _this9._setChoiceOrItem(value);
+    });
+    return this;
+  };
+
+  _proto.setChoiceByValue = function setChoiceByValue(value) {
+    var _this10 = this;
+
+    if (!this.initialised || this._isTextElement) {
+      return this;
+    } // If only one value has been passed, convert to array
+
+
+    var choiceValue = Array.isArray(value) ? value : [value]; // Loop through each value and
+
+    choiceValue.forEach(function (val) {
+      return _this10._findAndSelectChoiceByValue(val);
+    });
+    return this;
+  }
+  /**
+   * Set choices of select input via an array of objects (or function that returns array of object or promise of it),
+   * a value field name and a label field name.
+   * This behaves the same as passing items via the choices option but can be called after initialising Choices.
+   * This can also be used to add groups of choices (see example 2); Optionally pass a true `replaceChoices` value to remove any existing choices.
+   * Optionally pass a `customProperties` object to add additional data to your choices (useful when searching/filtering etc).
+   *
+   * **Input types affected:** select-one, select-multiple
+   *
+   * @template {Choice[] | ((instance: Choices) => object[] | Promise<object[]>)} T
+   * @param {T} [choicesArrayOrFetcher]
+   * @param {string} [value = 'value'] - name of `value` field
+   * @param {string} [label = 'label'] - name of 'label' field
+   * @param {boolean} [replaceChoices = false] - whether to replace of add choices
+   * @returns {this | Promise<this>}
+   *
+   * @example
+   * ```js
+   * const example = new Choices(element);
+   *
+   * example.setChoices([
+   *   {value: 'One', label: 'Label One', disabled: true},
+   *   {value: 'Two', label: 'Label Two', selected: true},
+   *   {value: 'Three', label: 'Label Three'},
+   * ], 'value', 'label', false);
+   * ```
+   *
+   * @example
+   * ```js
+   * const example = new Choices(element);
+   *
+   * example.setChoices(async () => {
+   *   try {
+   *      const items = await fetch('/items');
+   *      return items.json()
+   *   } catch(err) {
+   *      console.error(err)
+   *   }
+   * });
+   * ```
+   *
+   * @example
+   * ```js
+   * const example = new Choices(element);
+   *
+   * example.setChoices([{
+   *   label: 'Group one',
+   *   id: 1,
+   *   disabled: false,
+   *   choices: [
+   *     {value: 'Child One', label: 'Child One', selected: true},
+   *     {value: 'Child Two', label: 'Child Two',  disabled: true},
+   *     {value: 'Child Three', label: 'Child Three'},
+   *   ]
+   * },
+   * {
+   *   label: 'Group two',
+   *   id: 2,
+   *   disabled: false,
+   *   choices: [
+   *     {value: 'Child Four', label: 'Child Four', disabled: true},
+   *     {value: 'Child Five', label: 'Child Five'},
+   *     {value: 'Child Six', label: 'Child Six', customProperties: {
+   *       description: 'Custom description about child six',
+   *       random: 'Another random custom property'
+   *     }},
+   *   ]
+   * }], 'value', 'label', false);
+   * ```
+   */
+  ;
+
+  _proto.setChoices = function setChoices(choicesArrayOrFetcher, value, label, replaceChoices) {
+    var _this11 = this;
+
+    if (choicesArrayOrFetcher === void 0) {
+      choicesArrayOrFetcher = [];
+    }
+
+    if (value === void 0) {
+      value = 'value';
+    }
+
+    if (label === void 0) {
+      label = 'label';
+    }
+
+    if (replaceChoices === void 0) {
+      replaceChoices = false;
+    }
+
+    if (!this.initialised) {
+      throw new ReferenceError("setChoices was called on a non-initialized instance of Choices");
+    }
+
+    if (!this._isSelectElement) {
+      throw new TypeError("setChoices can't be used with INPUT based Choices");
+    }
+
+    if (typeof value !== 'string' || !value) {
+      throw new TypeError("value parameter must be a name of 'value' field in passed objects");
+    } // Clear choices if needed
+
+
+    if (replaceChoices) {
+      this.clearChoices();
+    }
+
+    if (typeof choicesArrayOrFetcher === 'function') {
+      // it's a choices fetcher function
+      var fetcher = choicesArrayOrFetcher(this);
+
+      if (typeof Promise === 'function' && fetcher instanceof Promise) {
+        // that's a promise
+        // eslint-disable-next-line compat/compat
+        return new Promise(function (resolve) {
+          return requestAnimationFrame(resolve);
+        }).then(function () {
+          return _this11._handleLoadingState(true);
+        }).then(function () {
+          return fetcher;
+        }).then(function (data) {
+          return _this11.setChoices(data, value, label, replaceChoices);
+        }).catch(function (err) {
+          if (!_this11.config.silent) {
+            console.error(err);
+          }
+        }).then(function () {
+          return _this11._handleLoadingState(false);
+        }).then(function () {
+          return _this11;
+        });
+      } // function returned something else than promise, let's check if it's an array of choices
+
+
+      if (!Array.isArray(fetcher)) {
+        throw new TypeError(".setChoices first argument function must return either array of choices or Promise, got: " + typeof fetcher);
+      } // recursion with results, it's sync and choices were cleared already
+
+
+      return this.setChoices(fetcher, value, label, false);
+    }
+
+    if (!Array.isArray(choicesArrayOrFetcher)) {
+      throw new TypeError(".setChoices must be called either with array of choices with a function resulting into Promise of array of choices");
+    }
+
+    this.containerOuter.removeLoadingState();
+
+    this._startLoading();
+
+    choicesArrayOrFetcher.forEach(function (groupOrChoice) {
+      if (groupOrChoice.choices) {
+        _this11._addGroup({
+          id: parseInt(groupOrChoice.id, 10) || null,
+          group: groupOrChoice,
+          valueKey: value,
+          labelKey: label
+        });
+      } else {
+        _this11._addChoice({
+          value: groupOrChoice[value],
+          label: groupOrChoice[label],
+          isSelected: groupOrChoice.selected,
+          isDisabled: groupOrChoice.disabled,
+          customProperties: groupOrChoice.customProperties,
+          placeholder: groupOrChoice.placeholder
+        });
+      }
+    });
+
+    this._stopLoading();
+
+    return this;
+  };
+
+  _proto.clearChoices = function clearChoices() {
+    this._store.dispatch(choices_clearChoices());
+
+    return this;
+  };
+
+  _proto.clearStore = function clearStore() {
+    this._store.dispatch(clearAll());
+
+    return this;
+  };
+
+  _proto.clearInput = function clearInput() {
+    var shouldSetInputWidth = !this._isSelectOneElement;
+    this.input.clear(shouldSetInputWidth);
+
+    if (!this._isTextElement && this._canSearch) {
+      this._isSearching = false;
+
+      this._store.dispatch(choices_activateChoices(true));
+    }
+
+    return this;
+  };
+
+  _proto._render = function _render() {
+    if (this._store.isLoading()) {
+      return;
+    }
+
+    this._currentState = this._store.state;
+    var stateChanged = this._currentState.choices !== this._prevState.choices || this._currentState.groups !== this._prevState.groups || this._currentState.items !== this._prevState.items;
+    var shouldRenderChoices = this._isSelectElement;
+    var shouldRenderItems = this._currentState.items !== this._prevState.items;
+
+    if (!stateChanged) {
+      return;
+    }
+
+    if (shouldRenderChoices) {
+      this._renderChoices();
+    }
+
+    if (shouldRenderItems) {
+      this._renderItems();
+    }
+
+    this._prevState = this._currentState;
+  };
+
+  _proto._renderChoices = function _renderChoices() {
+    var _this12 = this;
+
+    var _this$_store = this._store,
+        activeGroups = _this$_store.activeGroups,
+        activeChoices = _this$_store.activeChoices;
+    var choiceListFragment = document.createDocumentFragment();
+    this.choiceList.clear();
+
+    if (this.config.resetScrollPosition) {
+      requestAnimationFrame(function () {
+        return _this12.choiceList.scrollToTop();
+      });
+    } // If we have grouped options
+
+
+    if (activeGroups.length >= 1 && !this._isSearching) {
+      // If we have a placeholder choice along with groups
+      var activePlaceholders = activeChoices.filter(function (activeChoice) {
+        return activeChoice.placeholder === true && activeChoice.groupId === -1;
+      });
+
+      if (activePlaceholders.length >= 1) {
+        choiceListFragment = this._createChoicesFragment(activePlaceholders, choiceListFragment);
+      }
+
+      choiceListFragment = this._createGroupsFragment(activeGroups, activeChoices, choiceListFragment);
+    } else if (activeChoices.length >= 1) {
+      choiceListFragment = this._createChoicesFragment(activeChoices, choiceListFragment);
+    } // If we have choices to show
+
+
+    if (choiceListFragment.childNodes && choiceListFragment.childNodes.length > 0) {
+      var activeItems = this._store.activeItems;
+
+      var canAddItem = this._canAddItem(activeItems, this.input.value); // ...and we can select them
+
+
+      if (canAddItem.response) {
+        // ...append them and highlight the first choice
+        this.choiceList.append(choiceListFragment);
+
+        this._highlightChoice();
+      } else {
+        // ...otherwise show a notice
+        this.choiceList.append(this._getTemplate('notice', canAddItem.notice));
+      }
+    } else {
+      // Otherwise show a notice
+      var dropdownItem;
+      var notice;
+
+      if (this._isSearching) {
+        notice = typeof this.config.noResultsText === 'function' ? this.config.noResultsText() : this.config.noResultsText;
+        dropdownItem = this._getTemplate('notice', notice, 'no-results');
+      } else {
+        notice = typeof this.config.noChoicesText === 'function' ? this.config.noChoicesText() : this.config.noChoicesText;
+        dropdownItem = this._getTemplate('notice', notice, 'no-choices');
+      }
+
+      this.choiceList.append(dropdownItem);
+    }
+  };
+
+  _proto._renderItems = function _renderItems() {
+    var activeItems = this._store.activeItems || [];
+    this.itemList.clear(); // Create a fragment to store our list items
+    // (so we don't have to update the DOM for each item)
+
+    var itemListFragment = this._createItemsFragment(activeItems); // If we have items to add, append them
+
+
+    if (itemListFragment.childNodes) {
+      this.itemList.append(itemListFragment);
+    }
+  };
+
+  _proto._createGroupsFragment = function _createGroupsFragment(groups, choices, fragment) {
+    var _this13 = this;
+
+    if (fragment === void 0) {
+      fragment = document.createDocumentFragment();
+    }
+
+    var getGroupChoices = function getGroupChoices(group) {
+      return choices.filter(function (choice) {
+        if (_this13._isSelectOneElement) {
+          return choice.groupId === group.id;
+        }
+
+        return choice.groupId === group.id && (_this13.config.renderSelectedChoices === 'always' || !choice.selected);
+      });
+    }; // If sorting is enabled, filter groups
+
+
+    if (this.config.shouldSort) {
+      groups.sort(this.config.sorter);
+    }
+
+    groups.forEach(function (group) {
+      var groupChoices = getGroupChoices(group);
+
+      if (groupChoices.length >= 1) {
+        var dropdownGroup = _this13._getTemplate('choiceGroup', group);
+
+        fragment.appendChild(dropdownGroup);
+
+        _this13._createChoicesFragment(groupChoices, fragment, true);
+      }
+    });
+    return fragment;
+  };
+
+  _proto._createChoicesFragment = function _createChoicesFragment(choices, fragment, withinGroup) {
+    var _this14 = this;
+
+    if (fragment === void 0) {
+      fragment = document.createDocumentFragment();
+    }
+
+    if (withinGroup === void 0) {
+      withinGroup = false;
+    }
+
+    // Create a fragment to store our list items (so we don't have to update the DOM for each item)
+    var _this$config = this.config,
+        renderSelectedChoices = _this$config.renderSelectedChoices,
+        searchResultLimit = _this$config.searchResultLimit,
+        renderChoiceLimit = _this$config.renderChoiceLimit;
+    var filter = this._isSearching ? sortByScore : this.config.sorter;
+
+    var appendChoice = function appendChoice(choice) {
+      var shouldRender = renderSelectedChoices === 'auto' ? _this14._isSelectOneElement || !choice.selected : true;
+
+      if (shouldRender) {
+        var dropdownItem = _this14._getTemplate('choice', choice, _this14.config.itemSelectText);
+
+        fragment.appendChild(dropdownItem);
+      }
+    };
+
+    var rendererableChoices = choices;
+
+    if (renderSelectedChoices === 'auto' && !this._isSelectOneElement) {
+      rendererableChoices = choices.filter(function (choice) {
+        return !choice.selected;
+      });
+    } // Split array into placeholders and "normal" choices
+
+
+    var _rendererableChoices$ = rendererableChoices.reduce(function (acc, choice) {
+      if (choice.placeholder) {
+        acc.placeholderChoices.push(choice);
+      } else {
+        acc.normalChoices.push(choice);
+      }
+
+      return acc;
+    }, {
+      placeholderChoices: [],
+      normalChoices: []
+    }),
+        placeholderChoices = _rendererableChoices$.placeholderChoices,
+        normalChoices = _rendererableChoices$.normalChoices; // If sorting is enabled or the user is searching, filter choices
+
+
+    if (this.config.shouldSort || this._isSearching) {
+      normalChoices.sort(filter);
+    }
+
+    var choiceLimit = rendererableChoices.length; // Prepend placeholeder
+
+    var sortedChoices = this._isSelectOneElement ? [].concat(placeholderChoices, normalChoices) : normalChoices;
+
+    if (this._isSearching) {
+      choiceLimit = searchResultLimit;
+    } else if (renderChoiceLimit && renderChoiceLimit > 0 && !withinGroup) {
+      choiceLimit = renderChoiceLimit;
+    } // Add each choice to dropdown within range
+
+
+    for (var i = 0; i < choiceLimit; i += 1) {
+      if (sortedChoices[i]) {
+        appendChoice(sortedChoices[i]);
+      }
+    }
+
+    return fragment;
+  };
+
+  _proto._createItemsFragment = function _createItemsFragment(items, fragment) {
+    var _this15 = this;
+
+    if (fragment === void 0) {
+      fragment = document.createDocumentFragment();
+    }
+
+    // Create fragment to add elements to
+    var _this$config2 = this.config,
+        shouldSortItems = _this$config2.shouldSortItems,
+        sorter = _this$config2.sorter,
+        removeItemButton = _this$config2.removeItemButton; // If sorting is enabled, filter items
+
+    if (shouldSortItems && !this._isSelectOneElement) {
+      items.sort(sorter);
+    }
+
+    if (this._isTextElement) {
+      // Update the value of the hidden input
+      this.passedElement.value = items;
+    } else {
+      // Update the options of the hidden input
+      this.passedElement.options = items;
+    }
+
+    var addItemToFragment = function addItemToFragment(item) {
+      // Create new list element
+      var listItem = _this15._getTemplate('item', item, removeItemButton); // Append it to list
+
+
+      fragment.appendChild(listItem);
+    }; // Add each list item to list
+
+
+    items.forEach(addItemToFragment);
+    return fragment;
+  };
+
+  _proto._triggerChange = function _triggerChange(value) {
+    if (value === undefined || value === null) {
+      return;
+    }
+
+    this.passedElement.triggerEvent(EVENTS.change, {
+      value: value
+    });
+  };
+
+  _proto._selectPlaceholderChoice = function _selectPlaceholderChoice() {
+    var placeholderChoice = this._store.placeholderChoice;
+
+    if (placeholderChoice) {
+      this._addItem({
+        value: placeholderChoice.value,
+        label: placeholderChoice.label,
+        choiceId: placeholderChoice.id,
+        groupId: placeholderChoice.groupId,
+        placeholder: placeholderChoice.placeholder
+      });
+
+      this._triggerChange(placeholderChoice.value);
+    }
+  };
+
+  _proto._handleButtonAction = function _handleButtonAction(activeItems, element) {
+    if (!activeItems || !element || !this.config.removeItems || !this.config.removeItemButton) {
+      return;
+    }
+
+    var itemId = element.parentNode.getAttribute('data-id');
+    var itemToRemove = activeItems.find(function (item) {
+      return item.id === parseInt(itemId, 10);
+    }); // Remove item associated with button
+
+    this._removeItem(itemToRemove);
+
+    this._triggerChange(itemToRemove.value);
+
+    if (this._isSelectOneElement) {
+      this._selectPlaceholderChoice();
+    }
+  };
+
+  _proto._handleItemAction = function _handleItemAction(activeItems, element, hasShiftKey) {
+    var _this16 = this;
+
+    if (hasShiftKey === void 0) {
+      hasShiftKey = false;
+    }
+
+    if (!activeItems || !element || !this.config.removeItems || this._isSelectOneElement) {
+      return;
+    }
+
+    var passedId = element.getAttribute('data-id'); // We only want to select one item with a click
+    // so we deselect any items that aren't the target
+    // unless shift is being pressed
+
+    activeItems.forEach(function (item) {
+      if (item.id === parseInt(passedId, 10) && !item.highlighted) {
+        _this16.highlightItem(item);
+      } else if (!hasShiftKey && item.highlighted) {
+        _this16.unhighlightItem(item);
+      }
+    }); // Focus input as without focus, a user cannot do anything with a
+    // highlighted item
+
+    this.input.focus();
+  };
+
+  _proto._handleChoiceAction = function _handleChoiceAction(activeItems, element) {
+    if (!activeItems || !element) {
+      return;
+    } // If we are clicking on an option
+
+
+    var id = element.dataset.id;
+
+    var choice = this._store.getChoiceById(id);
+
+    if (!choice) {
+      return;
+    }
+
+    var passedKeyCode = activeItems[0] && activeItems[0].keyCode ? activeItems[0].keyCode : null;
+    var hasActiveDropdown = this.dropdown.isActive; // Update choice keyCode
+
+    choice.keyCode = passedKeyCode;
+    this.passedElement.triggerEvent(EVENTS.choice, {
+      choice: choice
+    });
+
+    if (!choice.selected && !choice.disabled) {
+      var canAddItem = this._canAddItem(activeItems, choice.value);
+
+      if (canAddItem.response) {
+        this._addItem({
+          value: choice.value,
+          label: choice.label,
+          choiceId: choice.id,
+          groupId: choice.groupId,
+          customProperties: choice.customProperties,
+          placeholder: choice.placeholder,
+          keyCode: choice.keyCode
+        });
+
+        this._triggerChange(choice.value);
+      }
+    }
+
+    this.clearInput(); // We want to close the dropdown if we are dealing with a single select box
+
+    if (hasActiveDropdown && this._isSelectOneElement) {
+      this.hideDropdown(true);
+      this.containerOuter.focus();
+    }
+  };
+
+  _proto._handleBackspace = function _handleBackspace(activeItems) {
+    if (!this.config.removeItems || !activeItems) {
+      return;
+    }
+
+    var lastItem = activeItems[activeItems.length - 1];
+    var hasHighlightedItems = activeItems.some(function (item) {
+      return item.highlighted;
+    }); // If editing the last item is allowed and there are not other selected items,
+    // we can edit the item value. Otherwise if we can remove items, remove all selected items
+
+    if (this.config.editItems && !hasHighlightedItems && lastItem) {
+      this.input.value = lastItem.value;
+      this.input.setWidth();
+
+      this._removeItem(lastItem);
+
+      this._triggerChange(lastItem.value);
+    } else {
+      if (!hasHighlightedItems) {
+        // Highlight last item if none already highlighted
+        this.highlightItem(lastItem, false);
+      }
+
+      this.removeHighlightedItems(true);
+    }
+  };
+
+  _proto._startLoading = function _startLoading() {
+    this._store.dispatch(setIsLoading(true));
+  };
+
+  _proto._stopLoading = function _stopLoading() {
+    this._store.dispatch(setIsLoading(false));
+  };
+
+  _proto._handleLoadingState = function _handleLoadingState(setLoading) {
+    if (setLoading === void 0) {
+      setLoading = true;
+    }
+
+    var placeholderItem = this.itemList.getChild("." + this.config.classNames.placeholder);
+
+    if (setLoading) {
+      this.disable();
+      this.containerOuter.addLoadingState();
+
+      if (this._isSelectOneElement) {
+        if (!placeholderItem) {
+          placeholderItem = this._getTemplate('placeholder', this.config.loadingText);
+          this.itemList.append(placeholderItem);
+        } else {
+          placeholderItem.innerHTML = this.config.loadingText;
+        }
+      } else {
+        this.input.placeholder = this.config.loadingText;
+      }
+    } else {
+      this.enable();
+      this.containerOuter.removeLoadingState();
+
+      if (this._isSelectOneElement) {
+        placeholderItem.innerHTML = this._placeholderValue || '';
+      } else {
+        this.input.placeholder = this._placeholderValue || '';
+      }
+    }
+  };
+
+  _proto._handleSearch = function _handleSearch(value) {
+    if (!value || !this.input.isFocussed) {
+      return;
+    }
+
+    var choices = this._store.choices;
+    var _this$config3 = this.config,
+        searchFloor = _this$config3.searchFloor,
+        searchChoices = _this$config3.searchChoices;
+    var hasUnactiveChoices = choices.some(function (option) {
+      return !option.active;
+    }); // Check that we have a value to search and the input was an alphanumeric character
+
+    if (value && value.length >= searchFloor) {
+      var resultCount = searchChoices ? this._searchChoices(value) : 0; // Trigger search event
+
+      this.passedElement.triggerEvent(EVENTS.search, {
+        value: value,
+        resultCount: resultCount
+      });
+    } else if (hasUnactiveChoices) {
+      // Otherwise reset choices to active
+      this._isSearching = false;
+
+      this._store.dispatch(choices_activateChoices(true));
+    }
+  };
+
+  _proto._canAddItem = function _canAddItem(activeItems, value) {
+    var canAddItem = true;
+    var notice = typeof this.config.addItemText === 'function' ? this.config.addItemText(value) : this.config.addItemText;
+
+    if (!this._isSelectOneElement) {
+      var isDuplicateValue = existsInArray(activeItems, value);
+
+      if (this.config.maxItemCount > 0 && this.config.maxItemCount <= activeItems.length) {
+        // If there is a max entry limit and we have reached that limit
+        // don't update
+        canAddItem = false;
+        notice = typeof this.config.maxItemText === 'function' ? this.config.maxItemText(this.config.maxItemCount) : this.config.maxItemText;
+      }
+
+      if (!this.config.duplicateItemsAllowed && isDuplicateValue && canAddItem) {
+        canAddItem = false;
+        notice = typeof this.config.uniqueItemText === 'function' ? this.config.uniqueItemText(value) : this.config.uniqueItemText;
+      }
+
+      if (this._isTextElement && this.config.addItems && canAddItem && typeof this.config.addItemFilter === 'function' && !this.config.addItemFilter(value)) {
+        canAddItem = false;
+        notice = typeof this.config.customAddItemText === 'function' ? this.config.customAddItemText(value) : this.config.customAddItemText;
+      }
+    }
+
+    return {
+      response: canAddItem,
+      notice: notice
+    };
+  };
+
+  _proto._searchChoices = function _searchChoices(value) {
+    var newValue = typeof value === 'string' ? value.trim() : value;
+    var currentValue = typeof this._currentValue === 'string' ? this._currentValue.trim() : this._currentValue;
+
+    if (newValue.length < 1 && newValue === currentValue + " ") {
+      return 0;
+    } // If new value matches the desired length and is not the same as the current value with a space
+
+
+    var haystack = this._store.searchableChoices;
+    var needle = newValue;
+    var keys = [].concat(this.config.searchFields);
+    var options = Object.assign(this.config.fuseOptions, {
+      keys: keys
+    });
+    var fuse = new fuse_default.a(haystack, options);
+    var results = fuse.search(needle);
+    this._currentValue = newValue;
+    this._highlightPosition = 0;
+    this._isSearching = true;
+
+    this._store.dispatch(choices_filterChoices(results));
+
+    return results.length;
+  };
+
+  _proto._addEventListeners = function _addEventListeners() {
+    var _document = document,
+        documentElement = _document.documentElement; // capture events - can cancel event processing or propagation
+
+    documentElement.addEventListener('touchend', this._onTouchEnd, true);
+    this.containerOuter.element.addEventListener('keydown', this._onKeyDown, true);
+    this.containerOuter.element.addEventListener('mousedown', this._onMouseDown, true); // passive events - doesn't call `preventDefault` or `stopPropagation`
+
+    documentElement.addEventListener('click', this._onClick, {
+      passive: true
+    });
+    documentElement.addEventListener('touchmove', this._onTouchMove, {
+      passive: true
+    });
+    this.dropdown.element.addEventListener('mouseover', this._onMouseOver, {
+      passive: true
+    });
+
+    if (this._isSelectOneElement) {
+      this.containerOuter.element.addEventListener('focus', this._onFocus, {
+        passive: true
+      });
+      this.containerOuter.element.addEventListener('blur', this._onBlur, {
+        passive: true
+      });
+    }
+
+    this.input.element.addEventListener('keyup', this._onKeyUp, {
+      passive: true
+    });
+    this.input.element.addEventListener('focus', this._onFocus, {
+      passive: true
+    });
+    this.input.element.addEventListener('blur', this._onBlur, {
+      passive: true
+    });
+
+    if (this.input.element.form) {
+      this.input.element.form.addEventListener('reset', this._onFormReset, {
+        passive: true
+      });
+    }
+
+    this.input.addEventListeners();
+  };
+
+  _proto._removeEventListeners = function _removeEventListeners() {
+    var _document2 = document,
+        documentElement = _document2.documentElement;
+    documentElement.removeEventListener('touchend', this._onTouchEnd, true);
+    this.containerOuter.element.removeEventListener('keydown', this._onKeyDown, true);
+    this.containerOuter.element.removeEventListener('mousedown', this._onMouseDown, true);
+    documentElement.removeEventListener('click', this._onClick);
+    documentElement.removeEventListener('touchmove', this._onTouchMove);
+    this.dropdown.element.removeEventListener('mouseover', this._onMouseOver);
+
+    if (this._isSelectOneElement) {
+      this.containerOuter.element.removeEventListener('focus', this._onFocus);
+      this.containerOuter.element.removeEventListener('blur', this._onBlur);
+    }
+
+    this.input.element.removeEventListener('keyup', this._onKeyUp);
+    this.input.element.removeEventListener('focus', this._onFocus);
+    this.input.element.removeEventListener('blur', this._onBlur);
+
+    if (this.input.element.form) {
+      this.input.element.form.removeEventListener('reset', this._onFormReset);
+    }
+
+    this.input.removeEventListeners();
+  }
+  /**
+   * @param {KeyboardEvent} event
+   */
+  ;
+
+  _proto._onKeyDown = function _onKeyDown(event) {
+    var _keyDownActions;
+
+    var target = event.target,
+        keyCode = event.keyCode,
+        ctrlKey = event.ctrlKey,
+        metaKey = event.metaKey;
+    var activeItems = this._store.activeItems;
+    var hasFocusedInput = this.input.isFocussed;
+    var hasActiveDropdown = this.dropdown.isActive;
+    var hasItems = this.itemList.hasChildren();
+    var keyString = String.fromCharCode(keyCode);
+    var BACK_KEY = KEY_CODES.BACK_KEY,
+        DELETE_KEY = KEY_CODES.DELETE_KEY,
+        ENTER_KEY = KEY_CODES.ENTER_KEY,
+        A_KEY = KEY_CODES.A_KEY,
+        ESC_KEY = KEY_CODES.ESC_KEY,
+        UP_KEY = KEY_CODES.UP_KEY,
+        DOWN_KEY = KEY_CODES.DOWN_KEY,
+        PAGE_UP_KEY = KEY_CODES.PAGE_UP_KEY,
+        PAGE_DOWN_KEY = KEY_CODES.PAGE_DOWN_KEY;
+    var hasCtrlDownKeyPressed = ctrlKey || metaKey; // If a user is typing and the dropdown is not active
+
+    if (!this._isTextElement && /[a-zA-Z0-9-_ ]/.test(keyString)) {
+      this.showDropdown();
+    } // Map keys to key actions
+
+
+    var keyDownActions = (_keyDownActions = {}, _keyDownActions[A_KEY] = this._onAKey, _keyDownActions[ENTER_KEY] = this._onEnterKey, _keyDownActions[ESC_KEY] = this._onEscapeKey, _keyDownActions[UP_KEY] = this._onDirectionKey, _keyDownActions[PAGE_UP_KEY] = this._onDirectionKey, _keyDownActions[DOWN_KEY] = this._onDirectionKey, _keyDownActions[PAGE_DOWN_KEY] = this._onDirectionKey, _keyDownActions[DELETE_KEY] = this._onDeleteKey, _keyDownActions[BACK_KEY] = this._onDeleteKey, _keyDownActions); // If keycode has a function, run it
+
+    if (keyDownActions[keyCode]) {
+      keyDownActions[keyCode]({
+        event: event,
+        target: target,
+        keyCode: keyCode,
+        metaKey: metaKey,
+        activeItems: activeItems,
+        hasFocusedInput: hasFocusedInput,
+        hasActiveDropdown: hasActiveDropdown,
+        hasItems: hasItems,
+        hasCtrlDownKeyPressed: hasCtrlDownKeyPressed
+      });
+    }
+  };
+
+  _proto._onKeyUp = function _onKeyUp(_ref2) {
+    var target = _ref2.target,
+        keyCode = _ref2.keyCode;
+    var value = this.input.value;
+    var activeItems = this._store.activeItems;
+
+    var canAddItem = this._canAddItem(activeItems, value);
+
+    var backKey = KEY_CODES.BACK_KEY,
+        deleteKey = KEY_CODES.DELETE_KEY; // We are typing into a text input and have a value, we want to show a dropdown
+    // notice. Otherwise hide the dropdown
+
+    if (this._isTextElement) {
+      var canShowDropdownNotice = canAddItem.notice && value;
+
+      if (canShowDropdownNotice) {
+        var dropdownItem = this._getTemplate('notice', canAddItem.notice);
+
+        this.dropdown.element.innerHTML = dropdownItem.outerHTML;
+        this.showDropdown(true);
+      } else {
+        this.hideDropdown(true);
+      }
+    } else {
+      var userHasRemovedValue = (keyCode === backKey || keyCode === deleteKey) && !target.value;
+      var canReactivateChoices = !this._isTextElement && this._isSearching;
+      var canSearch = this._canSearch && canAddItem.response;
+
+      if (userHasRemovedValue && canReactivateChoices) {
+        this._isSearching = false;
+
+        this._store.dispatch(choices_activateChoices(true));
+      } else if (canSearch) {
+        this._handleSearch(this.input.value);
+      }
+    }
+
+    this._canSearch = this.config.searchEnabled;
+  };
+
+  _proto._onAKey = function _onAKey(_ref3) {
+    var hasItems = _ref3.hasItems,
+        hasCtrlDownKeyPressed = _ref3.hasCtrlDownKeyPressed;
+
+    // If CTRL + A or CMD + A have been pressed and there are items to select
+    if (hasCtrlDownKeyPressed && hasItems) {
+      this._canSearch = false;
+      var shouldHightlightAll = this.config.removeItems && !this.input.value && this.input.element === document.activeElement;
+
+      if (shouldHightlightAll) {
+        this.highlightAll();
+      }
+    }
+  };
+
+  _proto._onEnterKey = function _onEnterKey(_ref4) {
+    var event = _ref4.event,
+        target = _ref4.target,
+        activeItems = _ref4.activeItems,
+        hasActiveDropdown = _ref4.hasActiveDropdown;
+    var enterKey = KEY_CODES.ENTER_KEY;
+    var targetWasButton = target.hasAttribute('data-button');
+
+    if (this._isTextElement && target.value) {
+      var value = this.input.value;
+
+      var canAddItem = this._canAddItem(activeItems, value);
+
+      if (canAddItem.response) {
+        this.hideDropdown(true);
+
+        this._addItem({
+          value: value
+        });
+
+        this._triggerChange(value);
+
+        this.clearInput();
+      }
+    }
+
+    if (targetWasButton) {
+      this._handleButtonAction(activeItems, target);
+
+      event.preventDefault();
+    }
+
+    if (hasActiveDropdown) {
+      var highlightedChoice = this.dropdown.getChild("." + this.config.classNames.highlightedState);
+
+      if (highlightedChoice) {
+        // add enter keyCode value
+        if (activeItems[0]) {
+          activeItems[0].keyCode = enterKey; // eslint-disable-line no-param-reassign
+        }
+
+        this._handleChoiceAction(activeItems, highlightedChoice);
+      }
+
+      event.preventDefault();
+    } else if (this._isSelectOneElement) {
+      this.showDropdown();
+      event.preventDefault();
+    }
+  };
+
+  _proto._onEscapeKey = function _onEscapeKey(_ref5) {
+    var hasActiveDropdown = _ref5.hasActiveDropdown;
+
+    if (hasActiveDropdown) {
+      this.hideDropdown(true);
+      this.containerOuter.focus();
+    }
+  };
+
+  _proto._onDirectionKey = function _onDirectionKey(_ref6) {
+    var event = _ref6.event,
+        hasActiveDropdown = _ref6.hasActiveDropdown,
+        keyCode = _ref6.keyCode,
+        metaKey = _ref6.metaKey;
+    var downKey = KEY_CODES.DOWN_KEY,
+        pageUpKey = KEY_CODES.PAGE_UP_KEY,
+        pageDownKey = KEY_CODES.PAGE_DOWN_KEY; // If up or down key is pressed, traverse through options
+
+    if (hasActiveDropdown || this._isSelectOneElement) {
+      this.showDropdown();
+      this._canSearch = false;
+      var directionInt = keyCode === downKey || keyCode === pageDownKey ? 1 : -1;
+      var skipKey = metaKey || keyCode === pageDownKey || keyCode === pageUpKey;
+      var selectableChoiceIdentifier = '[data-choice-selectable]';
+      var nextEl;
+
+      if (skipKey) {
+        if (directionInt > 0) {
+          nextEl = this.dropdown.element.querySelector(selectableChoiceIdentifier + ":last-of-type");
+        } else {
+          nextEl = this.dropdown.element.querySelector(selectableChoiceIdentifier);
+        }
+      } else {
+        var currentEl = this.dropdown.element.querySelector("." + this.config.classNames.highlightedState);
+
+        if (currentEl) {
+          nextEl = getAdjacentEl(currentEl, selectableChoiceIdentifier, directionInt);
+        } else {
+          nextEl = this.dropdown.element.querySelector(selectableChoiceIdentifier);
+        }
+      }
+
+      if (nextEl) {
+        // We prevent default to stop the cursor moving
+        // when pressing the arrow
+        if (!isScrolledIntoView(nextEl, this.choiceList.element, directionInt)) {
+          this.choiceList.scrollToChildElement(nextEl, directionInt);
+        }
+
+        this._highlightChoice(nextEl);
+      } // Prevent default to maintain cursor position whilst
+      // traversing dropdown options
+
+
+      event.preventDefault();
+    }
+  };
+
+  _proto._onDeleteKey = function _onDeleteKey(_ref7) {
+    var event = _ref7.event,
+        target = _ref7.target,
+        hasFocusedInput = _ref7.hasFocusedInput,
+        activeItems = _ref7.activeItems;
+
+    // If backspace or delete key is pressed and the input has no value
+    if (hasFocusedInput && !target.value && !this._isSelectOneElement) {
+      this._handleBackspace(activeItems);
+
+      event.preventDefault();
+    }
+  };
+
+  _proto._onTouchMove = function _onTouchMove() {
+    if (this._wasTap) {
+      this._wasTap = false;
+    }
+  };
+
+  _proto._onTouchEnd = function _onTouchEnd(event) {
+    var _ref8 = event || event.touches[0],
+        target = _ref8.target;
+
+    var touchWasWithinContainer = this._wasTap && this.containerOuter.element.contains(target);
+
+    if (touchWasWithinContainer) {
+      var containerWasExactTarget = target === this.containerOuter.element || target === this.containerInner.element;
+
+      if (containerWasExactTarget) {
+        if (this._isTextElement) {
+          this.input.focus();
+        } else if (this._isSelectMultipleElement) {
+          this.showDropdown();
+        }
+      } // Prevents focus event firing
+
+
+      event.stopPropagation();
+    }
+
+    this._wasTap = true;
+  }
+  /**
+   * Handles mousedown event in capture mode for containetOuter.element
+   * @param {MouseEvent} event
+   */
+  ;
+
+  _proto._onMouseDown = function _onMouseDown(event) {
+    var target = event.target;
+
+    if (!(target instanceof HTMLElement)) {
+      return;
+    } // If we have our mouse down on the scrollbar and are on IE11...
+
+
+    if (IS_IE11 && this.choiceList.element.contains(target)) {
+      // check if click was on a scrollbar area
+      var firstChoice =
+      /** @type {HTMLElement} */
+      this.choiceList.element.firstElementChild;
+      var isOnScrollbar = this._direction === 'ltr' ? event.offsetX >= firstChoice.offsetWidth : event.offsetX < firstChoice.offsetLeft;
+      this._isScrollingOnIe = isOnScrollbar;
+    }
+
+    if (target === this.input.element) {
+      return;
+    }
+
+    var item = target.closest('[data-button],[data-item],[data-choice]');
+
+    if (item instanceof HTMLElement) {
+      var hasShiftKey = event.shiftKey;
+      var activeItems = this._store.activeItems;
+      var dataset = item.dataset;
+
+      if ('button' in dataset) {
+        this._handleButtonAction(activeItems, item);
+      } else if ('item' in dataset) {
+        this._handleItemAction(activeItems, item, hasShiftKey);
+      } else if ('choice' in dataset) {
+        this._handleChoiceAction(activeItems, item);
+      }
+    }
+
+    event.preventDefault();
+  }
+  /**
+   * Handles mouseover event over this.dropdown
+   * @param {MouseEvent} event
+   */
+  ;
+
+  _proto._onMouseOver = function _onMouseOver(_ref9) {
+    var target = _ref9.target;
+
+    if (target instanceof HTMLElement && 'choice' in target.dataset) {
+      this._highlightChoice(target);
+    }
+  };
+
+  _proto._onClick = function _onClick(_ref10) {
+    var target = _ref10.target;
+    var clickWasWithinContainer = this.containerOuter.element.contains(target);
+
+    if (clickWasWithinContainer) {
+      if (!this.dropdown.isActive && !this.containerOuter.isDisabled) {
+        if (this._isTextElement) {
+          if (document.activeElement !== this.input.element) {
+            this.input.focus();
+          }
+        } else {
+          this.showDropdown();
+          this.containerOuter.focus();
+        }
+      } else if (this._isSelectOneElement && target !== this.input.element && !this.dropdown.element.contains(target)) {
+        this.hideDropdown();
+      }
+    } else {
+      var hasHighlightedItems = this._store.highlightedActiveItems.length > 0;
+
+      if (hasHighlightedItems) {
+        this.unhighlightAll();
+      }
+
+      this.containerOuter.removeFocusState();
+      this.hideDropdown(true);
+    }
+  };
+
+  _proto._onFocus = function _onFocus(_ref11) {
+    var _this17 = this,
+        _focusActions;
+
+    var target = _ref11.target;
+    var focusWasWithinContainer = this.containerOuter.element.contains(target);
+
+    if (!focusWasWithinContainer) {
+      return;
+    }
+
+    var focusActions = (_focusActions = {}, _focusActions[TEXT_TYPE] = function () {
+      if (target === _this17.input.element) {
+        _this17.containerOuter.addFocusState();
+      }
+    }, _focusActions[SELECT_ONE_TYPE] = function () {
+      _this17.containerOuter.addFocusState();
+
+      if (target === _this17.input.element) {
+        _this17.showDropdown(true);
+      }
+    }, _focusActions[SELECT_MULTIPLE_TYPE] = function () {
+      if (target === _this17.input.element) {
+        _this17.showDropdown(true); // If element is a select box, the focused element is the container and the dropdown
+        // isn't already open, focus and show dropdown
+
+
+        _this17.containerOuter.addFocusState();
+      }
+    }, _focusActions);
+    focusActions[this.passedElement.element.type]();
+  };
+
+  _proto._onBlur = function _onBlur(_ref12) {
+    var _this18 = this;
+
+    var target = _ref12.target;
+    var blurWasWithinContainer = this.containerOuter.element.contains(target);
+
+    if (blurWasWithinContainer && !this._isScrollingOnIe) {
+      var _blurActions;
+
+      var activeItems = this._store.activeItems;
+      var hasHighlightedItems = activeItems.some(function (item) {
+        return item.highlighted;
+      });
+      var blurActions = (_blurActions = {}, _blurActions[TEXT_TYPE] = function () {
+        if (target === _this18.input.element) {
+          _this18.containerOuter.removeFocusState();
+
+          if (hasHighlightedItems) {
+            _this18.unhighlightAll();
+          }
+
+          _this18.hideDropdown(true);
+        }
+      }, _blurActions[SELECT_ONE_TYPE] = function () {
+        _this18.containerOuter.removeFocusState();
+
+        if (target === _this18.input.element || target === _this18.containerOuter.element && !_this18._canSearch) {
+          _this18.hideDropdown(true);
+        }
+      }, _blurActions[SELECT_MULTIPLE_TYPE] = function () {
+        if (target === _this18.input.element) {
+          _this18.containerOuter.removeFocusState();
+
+          _this18.hideDropdown(true);
+
+          if (hasHighlightedItems) {
+            _this18.unhighlightAll();
+          }
+        }
+      }, _blurActions);
+      blurActions[this.passedElement.element.type]();
+    } else {
+      // On IE11, clicking the scollbar blurs our input and thus
+      // closes the dropdown. To stop this, we refocus our input
+      // if we know we are on IE *and* are scrolling.
+      this._isScrollingOnIe = false;
+      this.input.element.focus();
+    }
+  };
+
+  _proto._onFormReset = function _onFormReset() {
+    this._store.dispatch(resetTo(this._initialState));
+  };
+
+  _proto._highlightChoice = function _highlightChoice(el) {
+    var _this19 = this;
+
+    if (el === void 0) {
+      el = null;
+    }
+
+    var choices = Array.from(this.dropdown.element.querySelectorAll('[data-choice-selectable]'));
+
+    if (!choices.length) {
+      return;
+    }
+
+    var passedEl = el;
+    var highlightedChoices = Array.from(this.dropdown.element.querySelectorAll("." + this.config.classNames.highlightedState)); // Remove any highlighted choices
+
+    highlightedChoices.forEach(function (choice) {
+      choice.classList.remove(_this19.config.classNames.highlightedState);
+      choice.setAttribute('aria-selected', 'false');
+    });
+
+    if (passedEl) {
+      this._highlightPosition = choices.indexOf(passedEl);
+    } else {
+      // Highlight choice based on last known highlight location
+      if (choices.length > this._highlightPosition) {
+        // If we have an option to highlight
+        passedEl = choices[this._highlightPosition];
+      } else {
+        // Otherwise highlight the option before
+        passedEl = choices[choices.length - 1];
+      }
+
+      if (!passedEl) {
+        passedEl = choices[0];
+      }
+    }
+
+    passedEl.classList.add(this.config.classNames.highlightedState);
+    passedEl.setAttribute('aria-selected', 'true');
+    this.passedElement.triggerEvent(EVENTS.highlightChoice, {
+      el: passedEl
+    });
+
+    if (this.dropdown.isActive) {
+      // IE11 ignores aria-label and blocks virtual keyboard
+      // if aria-activedescendant is set without a dropdown
+      this.input.setActiveDescendant(passedEl.id);
+      this.containerOuter.setActiveDescendant(passedEl.id);
+    }
+  };
+
+  _proto._addItem = function _addItem(_ref13) {
+    var value = _ref13.value,
+        _ref13$label = _ref13.label,
+        label = _ref13$label === void 0 ? null : _ref13$label,
+        _ref13$choiceId = _ref13.choiceId,
+        choiceId = _ref13$choiceId === void 0 ? -1 : _ref13$choiceId,
+        _ref13$groupId = _ref13.groupId,
+        groupId = _ref13$groupId === void 0 ? -1 : _ref13$groupId,
+        _ref13$customProperti = _ref13.customProperties,
+        customProperties = _ref13$customProperti === void 0 ? null : _ref13$customProperti,
+        _ref13$placeholder = _ref13.placeholder,
+        placeholder = _ref13$placeholder === void 0 ? false : _ref13$placeholder,
+        _ref13$keyCode = _ref13.keyCode,
+        keyCode = _ref13$keyCode === void 0 ? null : _ref13$keyCode;
+    var passedValue = typeof value === 'string' ? value.trim() : value;
+    var passedKeyCode = keyCode;
+    var passedCustomProperties = customProperties;
+    var items = this._store.items;
+    var passedLabel = label || passedValue;
+    var passedOptionId = choiceId || -1;
+    var group = groupId >= 0 ? this._store.getGroupById(groupId) : null;
+    var id = items ? items.length + 1 : 1; // If a prepended value has been passed, prepend it
+
+    if (this.config.prependValue) {
+      passedValue = this.config.prependValue + passedValue.toString();
+    } // If an appended value has been passed, append it
+
+
+    if (this.config.appendValue) {
+      passedValue += this.config.appendValue.toString();
+    }
+
+    this._store.dispatch(items_addItem({
+      value: passedValue,
+      label: passedLabel,
+      id: id,
+      choiceId: passedOptionId,
+      groupId: groupId,
+      customProperties: customProperties,
+      placeholder: placeholder,
+      keyCode: passedKeyCode
+    }));
+
+    if (this._isSelectOneElement) {
+      this.removeActiveItems(id);
+    } // Trigger change event
+
+
+    this.passedElement.triggerEvent(EVENTS.addItem, {
+      id: id,
+      value: passedValue,
+      label: passedLabel,
+      customProperties: passedCustomProperties,
+      groupValue: group && group.value ? group.value : undefined,
+      keyCode: passedKeyCode
+    });
+    return this;
+  };
+
+  _proto._removeItem = function _removeItem(item) {
+    if (!item || !isType('Object', item)) {
+      return this;
+    }
+
+    var id = item.id,
+        value = item.value,
+        label = item.label,
+        choiceId = item.choiceId,
+        groupId = item.groupId;
+    var group = groupId >= 0 ? this._store.getGroupById(groupId) : null;
+
+    this._store.dispatch(items_removeItem(id, choiceId));
+
+    if (group && group.value) {
+      this.passedElement.triggerEvent(EVENTS.removeItem, {
+        id: id,
+        value: value,
+        label: label,
+        groupValue: group.value
+      });
+    } else {
+      this.passedElement.triggerEvent(EVENTS.removeItem, {
+        id: id,
+        value: value,
+        label: label
+      });
+    }
+
+    return this;
+  };
+
+  _proto._addChoice = function _addChoice(_ref14) {
+    var value = _ref14.value,
+        _ref14$label = _ref14.label,
+        label = _ref14$label === void 0 ? null : _ref14$label,
+        _ref14$isSelected = _ref14.isSelected,
+        isSelected = _ref14$isSelected === void 0 ? false : _ref14$isSelected,
+        _ref14$isDisabled = _ref14.isDisabled,
+        isDisabled = _ref14$isDisabled === void 0 ? false : _ref14$isDisabled,
+        _ref14$groupId = _ref14.groupId,
+        groupId = _ref14$groupId === void 0 ? -1 : _ref14$groupId,
+        _ref14$customProperti = _ref14.customProperties,
+        customProperties = _ref14$customProperti === void 0 ? null : _ref14$customProperti,
+        _ref14$placeholder = _ref14.placeholder,
+        placeholder = _ref14$placeholder === void 0 ? false : _ref14$placeholder,
+        _ref14$keyCode = _ref14.keyCode,
+        keyCode = _ref14$keyCode === void 0 ? null : _ref14$keyCode;
+
+    if (typeof value === 'undefined' || value === null) {
+      return;
+    } // Generate unique id
+
+
+    var choices = this._store.choices;
+    var choiceLabel = label || value;
+    var choiceId = choices ? choices.length + 1 : 1;
+    var choiceElementId = this._baseId + "-" + this._idNames.itemChoice + "-" + choiceId;
+
+    this._store.dispatch(choices_addChoice({
+      id: choiceId,
+      groupId: groupId,
+      elementId: choiceElementId,
+      value: value,
+      label: choiceLabel,
+      disabled: isDisabled,
+      customProperties: customProperties,
+      placeholder: placeholder,
+      keyCode: keyCode
+    }));
+
+    if (isSelected) {
+      this._addItem({
+        value: value,
+        label: choiceLabel,
+        choiceId: choiceId,
+        customProperties: customProperties,
+        placeholder: placeholder,
+        keyCode: keyCode
+      });
+    }
+  };
+
+  _proto._addGroup = function _addGroup(_ref15) {
+    var _this20 = this;
+
+    var group = _ref15.group,
+        id = _ref15.id,
+        _ref15$valueKey = _ref15.valueKey,
+        valueKey = _ref15$valueKey === void 0 ? 'value' : _ref15$valueKey,
+        _ref15$labelKey = _ref15.labelKey,
+        labelKey = _ref15$labelKey === void 0 ? 'label' : _ref15$labelKey;
+    var groupChoices = isType('Object', group) ? group.choices : Array.from(group.getElementsByTagName('OPTION'));
+    var groupId = id || Math.floor(new Date().valueOf() * Math.random());
+    var isDisabled = group.disabled ? group.disabled : false;
+
+    if (groupChoices) {
+      this._store.dispatch(groups_addGroup({
+        value: group.label,
+        id: groupId,
+        active: true,
+        disabled: isDisabled
+      }));
+
+      var addGroupChoices = function addGroupChoices(choice) {
+        var isOptDisabled = choice.disabled || choice.parentNode && choice.parentNode.disabled;
+
+        _this20._addChoice({
+          value: choice[valueKey],
+          label: isType('Object', choice) ? choice[labelKey] : choice.innerHTML,
+          isSelected: choice.selected,
+          isDisabled: isOptDisabled,
+          groupId: groupId,
+          customProperties: choice.customProperties,
+          placeholder: choice.placeholder
+        });
+      };
+
+      groupChoices.forEach(addGroupChoices);
+    } else {
+      this._store.dispatch(groups_addGroup({
+        value: group.label,
+        id: group.id,
+        active: false,
+        disabled: group.disabled
+      }));
+    }
+  };
+
+  _proto._getTemplate = function _getTemplate(template) {
+    var _this$_templates$temp;
+
+    if (!template) {
+      return null;
+    }
+
+    var classNames = this.config.classNames;
+
+    for (var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+      args[_key - 1] = arguments[_key];
+    }
+
+    return (_this$_templates$temp = this._templates[template]).call.apply(_this$_templates$temp, [this, classNames].concat(args));
+  };
+
+  _proto._createTemplates = function _createTemplates() {
+    var callbackOnCreateTemplates = this.config.callbackOnCreateTemplates;
+    var userTemplates = {};
+
+    if (callbackOnCreateTemplates && typeof callbackOnCreateTemplates === 'function') {
+      userTemplates = callbackOnCreateTemplates.call(this, strToEl);
+    }
+
+    this._templates = cjs_default()(TEMPLATES, userTemplates);
+  };
+
+  _proto._createElements = function _createElements() {
+    this.containerOuter = new container_Container({
+      element: this._getTemplate('containerOuter', this._direction, this._isSelectElement, this._isSelectOneElement, this.config.searchEnabled, this.passedElement.element.type),
+      classNames: this.config.classNames,
+      type: this.passedElement.element.type,
+      position: this.config.position
+    });
+    this.containerInner = new container_Container({
+      element: this._getTemplate('containerInner'),
+      classNames: this.config.classNames,
+      type: this.passedElement.element.type,
+      position: this.config.position
+    });
+    this.input = new input_Input({
+      element: this._getTemplate('input', this._placeholderValue),
+      classNames: this.config.classNames,
+      type: this.passedElement.element.type,
+      preventPaste: !this.config.paste
+    });
+    this.choiceList = new list_List({
+      element: this._getTemplate('choiceList', this._isSelectOneElement)
+    });
+    this.itemList = new list_List({
+      element: this._getTemplate('itemList', this._isSelectOneElement)
+    });
+    this.dropdown = new Dropdown({
+      element: this._getTemplate('dropdown'),
+      classNames: this.config.classNames,
+      type: this.passedElement.element.type
+    });
+  };
+
+  _proto._createStructure = function _createStructure() {
+    // Hide original element
+    this.passedElement.conceal(); // Wrap input in container preserving DOM ordering
+
+    this.containerInner.wrap(this.passedElement.element); // Wrapper inner container with outer container
+
+    this.containerOuter.wrap(this.containerInner.element);
+
+    if (this._isSelectOneElement) {
+      this.input.placeholder = this.config.searchPlaceholderValue || '';
+    } else if (this._placeholderValue) {
+      this.input.placeholder = this._placeholderValue;
+      this.input.setWidth();
+    }
+
+    this.containerOuter.element.appendChild(this.containerInner.element);
+    this.containerOuter.element.appendChild(this.dropdown.element);
+    this.containerInner.element.appendChild(this.itemList.element);
+
+    if (!this._isTextElement) {
+      this.dropdown.element.appendChild(this.choiceList.element);
+    }
+
+    if (!this._isSelectOneElement) {
+      this.containerInner.element.appendChild(this.input.element);
+    } else if (this.config.searchEnabled) {
+      this.dropdown.element.insertBefore(this.input.element, this.dropdown.element.firstChild);
+    }
+
+    if (this._isSelectElement) {
+      this._highlightPosition = 0;
+      this._isSearching = false;
+
+      this._startLoading();
+
+      if (this._presetGroups.length) {
+        this._addPredefinedGroups(this._presetGroups);
+      } else {
+        this._addPredefinedChoices(this._presetChoices);
+      }
+
+      this._stopLoading();
+    }
+
+    if (this._isTextElement) {
+      this._addPredefinedItems(this._presetItems);
+    }
+  };
+
+  _proto._addPredefinedGroups = function _addPredefinedGroups(groups) {
+    var _this21 = this;
+
+    // If we have a placeholder option
+    var placeholderChoice = this.passedElement.placeholderOption;
+
+    if (placeholderChoice && placeholderChoice.parentNode.tagName === 'SELECT') {
+      this._addChoice({
+        value: placeholderChoice.value,
+        label: placeholderChoice.innerHTML,
+        isSelected: placeholderChoice.selected,
+        isDisabled: placeholderChoice.disabled,
+        placeholder: true
+      });
+    }
+
+    groups.forEach(function (group) {
+      return _this21._addGroup({
+        group: group,
+        id: group.id || null
+      });
+    });
+  };
+
+  _proto._addPredefinedChoices = function _addPredefinedChoices(choices) {
+    var _this22 = this;
+
+    // If sorting is enabled or the user is searching, filter choices
+    if (this.config.shouldSort) {
+      choices.sort(this.config.sorter);
+    }
+
+    var hasSelectedChoice = choices.some(function (choice) {
+      return choice.selected;
+    });
+    var firstEnabledChoiceIndex = choices.findIndex(function (choice) {
+      return choice.disabled === undefined || !choice.disabled;
+    });
+    choices.forEach(function (choice, index) {
+      var value = choice.value,
+          label = choice.label,
+          customProperties = choice.customProperties,
+          placeholder = choice.placeholder;
+
+      if (_this22._isSelectElement) {
+        // If the choice is actually a group
+        if (choice.choices) {
+          _this22._addGroup({
+            group: choice,
+            id: choice.id || null
+          });
+        } else {
+          /**
+           * If there is a selected choice already or the choice is not the first in
+           * the array, add each choice normally.
+           *
+           * Otherwise we pre-select the first enabled choice in the array ("select-one" only)
+           */
+          var shouldPreselect = _this22._isSelectOneElement && !hasSelectedChoice && index === firstEnabledChoiceIndex;
+          var isSelected = shouldPreselect ? true : choice.selected;
+          var isDisabled = choice.disabled;
+
+          _this22._addChoice({
+            value: value,
+            label: label,
+            isSelected: isSelected,
+            isDisabled: isDisabled,
+            customProperties: customProperties,
+            placeholder: placeholder
+          });
+        }
+      } else {
+        _this22._addChoice({
+          value: value,
+          label: label,
+          isSelected: choice.selected,
+          isDisabled: choice.disabled,
+          customProperties: customProperties,
+          placeholder: placeholder
+        });
+      }
+    });
+  }
+  /**
+   * @param {Item[]} items
+   */
+  ;
+
+  _proto._addPredefinedItems = function _addPredefinedItems(items) {
+    var _this23 = this;
+
+    items.forEach(function (item) {
+      if (typeof item === 'object' && item.value) {
+        _this23._addItem({
+          value: item.value,
+          label: item.label,
+          choiceId: item.id,
+          customProperties: item.customProperties,
+          placeholder: item.placeholder
+        });
+      }
+
+      if (typeof item === 'string') {
+        _this23._addItem({
+          value: item
+        });
+      }
+    });
+  };
+
+  _proto._setChoiceOrItem = function _setChoiceOrItem(item) {
+    var _this24 = this;
+
+    var itemType = getType(item).toLowerCase();
+    var handleType = {
+      object: function object() {
+        if (!item.value) {
+          return;
+        } // If we are dealing with a select input, we need to create an option first
+        // that is then selected. For text inputs we can just add items normally.
+
+
+        if (!_this24._isTextElement) {
+          _this24._addChoice({
+            value: item.value,
+            label: item.label,
+            isSelected: true,
+            isDisabled: false,
+            customProperties: item.customProperties,
+            placeholder: item.placeholder
+          });
+        } else {
+          _this24._addItem({
+            value: item.value,
+            label: item.label,
+            choiceId: item.id,
+            customProperties: item.customProperties,
+            placeholder: item.placeholder
+          });
+        }
+      },
+      string: function string() {
+        if (!_this24._isTextElement) {
+          _this24._addChoice({
+            value: item,
+            label: item,
+            isSelected: true,
+            isDisabled: false
+          });
+        } else {
+          _this24._addItem({
+            value: item
+          });
+        }
+      }
+    };
+    handleType[itemType]();
+  };
+
+  _proto._findAndSelectChoiceByValue = function _findAndSelectChoiceByValue(val) {
+    var _this25 = this;
+
+    var choices = this._store.choices; // Check 'value' property exists and the choice isn't already selected
+
+    var foundChoice = choices.find(function (choice) {
+      return _this25.config.valueComparer(choice.value, val);
+    });
+
+    if (foundChoice && !foundChoice.selected) {
+      this._addItem({
+        value: foundChoice.value,
+        label: foundChoice.label,
+        choiceId: foundChoice.id,
+        groupId: foundChoice.groupId,
+        customProperties: foundChoice.customProperties,
+        placeholder: foundChoice.placeholder,
+        keyCode: foundChoice.keyCode
+      });
+    }
+  };
+
+  _proto._generatePlaceholderValue = function _generatePlaceholderValue() {
+    if (this._isSelectElement) {
+      var placeholderOption = this.passedElement.placeholderOption;
+      return placeholderOption ? placeholderOption.text : false;
+    }
+
+    var _this$config4 = this.config,
+        placeholder = _this$config4.placeholder,
+        placeholderValue = _this$config4.placeholderValue;
+    var dataset = this.passedElement.element.dataset;
+
+    if (placeholder) {
+      if (placeholderValue) {
+        return placeholderValue;
+      }
+
+      if (dataset.placeholder) {
+        return dataset.placeholder;
+      }
+    }
+
+    return false;
+  };
+
+  return Choices;
+}();
+
+/* harmony default export */ var scripts_choices = __webpack_exports__["default"] = (choices_Choices);
+
+/***/ })
+/******/ ])["default"];
+});

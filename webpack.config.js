@@ -1,4 +1,4 @@
-const ConcatPlugin = require('webpack-concat-plugin');
+const WebpackConcatPlugin = require('webpack-concat-files-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
@@ -11,50 +11,11 @@ const publicJS = [
 ];
 
 const files = [
-    './src/assets/js/components/appbar.js',
     './src/assets/js/app.js',
     './src/assets/scss/includes.scss'
 ];
 
 module.exports = [
-    {
-        mode: 'production',
-        entry: publicJS,
-        output: {
-          filename: 'src/assets/js/bundle.js',
-            path: __dirname,
-            hotUpdateChunkFilename: 'hot/hot-update.js',
-            hotUpdateMainFilename: 'hot/hot-update.json'
-        },
-
-        optimization: {
-            minimize: true,
-            minimizer: [
-                new TerserPlugin({
-                    terserOptions: {
-                        output: {
-                            comments: false,
-                        },
-                    },
-                    test: /\.js(\?.*)?$/i,
-                    extractComments: false,
-                    sourceMap: false,
-                }),
-            ],
-        },
-        
-        plugins: [
-            //new UglifyJSPlugin(),
-            new ConcatPlugin({
-                uglify: true, // uglify js or set process.env.NODE_ENV = 'production'
-                useHash: false, // md5 file
-                sourceMap: false, // generate sourceMap
-                name: 'flexible', // used in html-webpack-plugin
-                fileName: 'src/assets/js/bundle.js',
-                filesToConcat: publicJS
-            })
-        ],
-    },
     {
         mode: 'development',
         entry: files,
@@ -64,7 +25,6 @@ module.exports = [
             hotUpdateChunkFilename: 'hot/hot-update.js',
             hotUpdateMainFilename: 'hot/hot-update.json'
         },
-        devtool: "source-map",
         optimization: {
             minimize: true,
             minimizer: [
@@ -77,7 +37,7 @@ module.exports = [
                     },
                     test: /\.js(\?.*)?$/i,
                     extractComments: false,
-                    sourceMap: false,
+                    parallel: true,
                 }),
             ],
         },
@@ -134,7 +94,7 @@ module.exports = [
                 },
                 {// image loader
                     test: /\.(gif|png|jpe?g|svg)$/i,
-                    loaders: [
+                    use: [
                         {
                             loader: 'file-loader',
                             options: {
@@ -146,7 +106,7 @@ module.exports = [
                         },
                         {
                             loader: 'image-webpack-loader',
-                            query: {
+                            options: {
                                 mozjpeg: {
                                     progressive: true,
                                 },
@@ -160,7 +120,7 @@ module.exports = [
                                     quality: '65-90',
                                     speed: 4
                                 },
-                                svgo:{
+                                svgo: {
                                     removeViewBox: false,
                                     removeEmptyAttrs: false,
                                 }
@@ -170,7 +130,7 @@ module.exports = [
                 },
                 {// fonts
                     test: /\.(eot|ttf|woff|woff2)$/,
-                    loaders: [
+                    use: [
                         {
                             loader: 'file-loader',
                             options: {
@@ -190,15 +150,22 @@ module.exports = [
             }),
             new MiniCssExtractPlugin({// define where to save the file
                 filename: 'src/assets/css/style.css',
-                allChunks: true,
             }),
             new CompressionPlugin({
-                filename: "[path].gz[query]",
+                filename: "[path][base].gz[query]",
                 algorithm: "gzip",
                 test: /\.js$|\.css$/,
                 threshold: 10240,
                 minRatio: 0.8
-            })
+            }),
+            new WebpackConcatPlugin({
+                bundles: [
+                    {
+                        destination: 'src/assets/js/bundle.js',
+                        source: publicJS,
+                    },
+                ],
+            }),
         ]
     },
 ]
