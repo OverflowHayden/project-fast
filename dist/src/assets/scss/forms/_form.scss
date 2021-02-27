@@ -62,5 +62,11 @@
         width: 100%;
     }
 
-    input[type="submit"], button[type="submit"]
+    &--submitted {
+        input[type="submit"], button[type="submit"] {
+            opacity: .7;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    }
 }
