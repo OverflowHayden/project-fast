@@ -3,7 +3,9 @@
 @use '../layout/grid' as *;
 
 .card {
-    @extend .col__md--4;
+    @extend .col-desk-4;
+    @extend .col-tab-6;
+    @extend .col-mob-4;
     $self: &;
 
     border: none;

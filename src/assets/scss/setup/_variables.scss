@@ -309,3 +309,21 @@ $form-grid: (
     columns: 12,
     gutter: 20px,
 );
+
+// desktop grid
+$grid-desktop-columns: 12;
+$grid-desktop-sideMargin: 40px;
+$grid-desktop-gutter: 20px;
+$grid-desktop-breakpoint: $screen-xl;
+
+// tablet grid
+$grid-tablet-columns: 12;
+$grid-tablet-sideMargin: 40px;
+$grid-tablet-gutter: 20px;
+$grid-tablet-breakpoint: $screen-lg-max;
+
+// mobile grid
+$grid-mobile-columns: 4;
+$grid-mobile-sideMargin: 32px;
+$grid-mobile-gutter: 20px;
+$grid-mobile-breakpoint: $screen-sm-max;
