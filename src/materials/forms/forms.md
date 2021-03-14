@@ -26,20 +26,16 @@ Fast.Form();
 <h1>Example form</h1>
 <div class="form form--m form--submit-limit">
     <form>
-        <div class="form__row">
-            <div class="text-field">
-                <input id="firstname" type="text" name="firstname" class="text-field__input" placeholder="Enter your firstname" />
-                <label for="firstname" class="text-field__label">Firstname *</label>
-            </div>
+        <div class="text-field">
+            <input id="firstname" type="text" name="firstname" class="text-field__input" placeholder="Enter your firstname" />
+            <label for="firstname" class="text-field__label">Firstname *</label>
         </div>
-        <div class="form__row">
-            <div class="text-field">
-                <input id="lastname" type="text" name="lastname" class="text-field__input" placeholder="Enter your lastname" />
-                <label for="lastname" class="text-field__label">Lastname *</label>
-            </div>
+        <div class="text-field">
+            <input id="lastname" type="text" name="lastname" class="text-field__input" placeholder="Enter your lastname" />
+            <label for="lastname" class="text-field__label">Lastname *</label>
         </div>
-        <div class="form__row grid">
-            <div class="col__sm--4">
+        <div class="grid">
+            <div class="col-tab-4">
                 <div class="select-field field--outline">
                     <select id="select" name="select" class="select-field__input">
                         <option value="1">1</option>
@@ -78,7 +74,7 @@ Fast.Form();
                     <span class="field__helper">Select an option</span>
                 </div>
             </div>
-            <div class="col__sm--4">
+            <div class="col-tab-4">
                 <div class="select-field field--outline">
                     <select id="select" name="select" class="select-field__input">
                         <option value="1">1</option>
@@ -98,7 +94,7 @@ Fast.Form();
                     <span class="field__helper">Select an option</span>
                 </div>
             </div>
-            <div class="col__sm--4">
+            <div class="col-tab-4">
                 <div class="select-field field--outline">
                     <select id="select" name="select" class="select-field__input">
                         <option value="2018">2018</option>
@@ -118,29 +114,25 @@ Fast.Form();
                     <span class="field__helper">Select an option</span>
                 </div>
             </div>
-        </div>
-        <div class="form__row grid">
-            <div class="col__sm--9">
+            <div class="col-tab-9">
                 <div class="text-field field--fill">
                     <input id="street" type="text" name="street" class="text-field__input" placeholder="Enter your street" />
                     <label for="street" class="text-field__label">Street</label>
                 </div>
             </div>
-            <div class="col__sm--3">
+            <div class="col-tab-3">
                 <div class="text-field field--fill">
                     <input id="housenr" type="housenr" name="housenr" class="text-field__input" placeholder="Enter your house number" />
                     <label for="housenr" class="text-field__label">House number</label>
                 </div>
             </div>
-        </div>
-        <div class="form__row grid">
-            <div class="col__sm--4">
+            <div class="col-tab-4">
                 <div class="text-field field--fill">
                     <input id="zipcode" type="text" name="zipcode" class="text-field__input" placeholder="Enter your zipcode" />
                     <label for="zipcode" class="text-field__label">Zipcode</label>
                 </div>
             </div>
-            <div class="col__sm--8">
+            <div class="col-tab-8">
                 <div class="text-field field--fill">
                     <input id="city" type="text" name="city" class="text-field__input" placeholder="Enter your city" />
                     <label for="city" class="text-field__label">City</label>

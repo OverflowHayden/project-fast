@@ -4,5 +4,4 @@
 
 .row {
     @include clearfix;
-    @include grid-collapse(variables.$neat-grid);
 }

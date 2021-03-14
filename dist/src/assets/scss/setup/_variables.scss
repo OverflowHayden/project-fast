@@ -283,11 +283,8 @@ $mdi-full:                        false !default;
 
 
 /* ---------------------------------------------- //
- * Neat
+ * Responsive
 /* ---------------------------------------------- */
-// grid setup
-$max-width:                       1200px;
-$grid-columns:                    12;
 
 // breakpoints
 $screen-xs:                       480px;
@@ -298,17 +295,6 @@ $screen-md-max:                   1023px;
 $screen-lg-min:                   $screen-md-max + 1;
 $screen-lg-max:                   1170px;
 $screen-xl:                       1171px;
-
-//neat grid override
-$neat-grid: (
-    columns: 12,
-    gutter: 30px,
-);
-
-$form-grid: (
-    columns: 12,
-    gutter: 20px,
-);
 
 // desktop grid
 $grid-desktop-columns: 12;

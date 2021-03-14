@@ -51,9 +51,16 @@ $mob-gutter: (
     box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 0 -#{$desk-gutter / 2};
     //max-width: variables.$grid-desktop-breakpoint;
     //width: $width;
+
+    @media screen and (max-width: variables.$grid-tablet-breakpoint) {
+        margin: 0 -#{$tab-gutter / 2};
+    }
+    @media screen and (max-width: variables.$grid-mobile-breakpoint) {
+        margin: 0 -#{$mob-gutter / 2};
+    }
 }
 
 .grid {

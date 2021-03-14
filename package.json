@@ -1,7 +1,7 @@
 {
   "name": "project-fast",
   "version": "2.0.0-alpha",
-  "description": "Project \"Full Application Stack Toolkit\" is a modern frontend framework inspired by Google's Material Design.",
+  "description": "Project \"Frontend Application Stack Toolkit\" is a modern frontend framework designed for Laravel.",
   "homepage": "https://github.com/OverflowHayden/project-fast.git#readme",
   "scripts": {
     "build": "webpack --progress && stylemark -i src -o dist -c stylemark.yml",

@@ -87,18 +87,18 @@
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/css/style.css&quot;&gt;">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/css/style.css&quot;&gt;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@2.0.0/dist/src/assets/css/style.css&quot;&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/project-fast@2.0.0/dist/src/assets/css/style.css&quot;&gt;</code></pre>
 	</div>
 </div><p>Add the following <code>script</code> before the the closing <code>&lt;/body&gt;</code> tag. No jQuery required!</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
 	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@1.0.3/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@2.0.0/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@2.0.0/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@2.0.0/dist/src/assets/js/bundle.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;https://cdn.jsdelivr.net/npm/project-fast@2.0.0/dist/src/assets/js/app.min.js&quot;&gt;&lt;/script&gt;</code></pre>
 	</div>
 </div><h3>How to install</h3><p><strong>NPM</strong></p>
 
@@ -117,41 +117,6 @@
 		<pre class="mb-0"><code class="lang-">yarn add project-fast</code></pre>
 	</div>
 </div><div id="usage-with-laravel-mix" class="i-pad-top-5 i-section"><h2 class="i-pad-top-3 i-position-container"><a href="#usage-with-laravel-mix" class="icon-link i-section__link -heading"></a>Usage with Laravel Mix</h2></div><p>Add the following code to <code>webpack.mix.js</code>:</p>
-
-<div class="i-code-block">
-	<button type="button" class="i-code-block__lang "> </button>
-	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="mix.js(&#39;resources/assets/js/app.js&#39;, &#39;public/js&#39;)
-    .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;);">Copy</button>
-		<pre class="mb-0"><code class="lang-">mix.js(&#39;resources/assets/js/app.js&#39;, &#39;public/js&#39;)
-    .sass(&#39;resources/assets/sass/app.scss&#39;, &#39;public/css&#39;);</code></pre>
-	</div>
-</div><p>Change the code in <code>resources/assets/sass/app.scss</code> to:</p>
-
-<div class="i-code-block">
-	<button type="button" class="i-code-block__lang "> </button>
-	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="// Variables
-@import &quot;variables&quot;;
-
-// Project FAST
-@import &#39;~project-fast/src/assets/scss/includes.scss&#39;;">Copy</button>
-		<pre class="mb-0"><code class="lang-">// Variables
-@import &quot;variables&quot;;
-
-// Project FAST
-@import &#39;~project-fast/src/assets/scss/includes.scss&#39;;</code></pre>
-	</div>
-</div><p>Add the following code to <code>resources/assets/js/app.js</code>:</p>
-
-<div class="i-code-block">
-	<button type="button" class="i-code-block__lang "> </button>
-	<div class="i-code-block__content ">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="import Fast from &#39;project-fast&#39;;">Copy</button>
-		<pre class="mb-0"><code class="lang-">import Fast from &#39;project-fast&#39;;</code></pre>
-	</div>
-</div><h3>Laravel 5.7+</h3><p>Starting from Laravel 5.7, the scripts and styles has been flattened in the <code>resources</code> folder.
-The code should now look like this in <code>webpack.mix.js</code>:</p>
 
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang "> </button>
@@ -4558,20 +4523,16 @@ Fast.Form();</code></pre>
 		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;h1&gt;Example form&lt;/h1&gt;
 &lt;div class=&quot;form form--m form--submit-limit&quot;&gt;
     &lt;form&gt;
-        &lt;div class=&quot;form__row&quot;&gt;
-            &lt;div class=&quot;text-field&quot;&gt;
-                &lt;input id=&quot;firstname&quot; type=&quot;text&quot; name=&quot;firstname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your firstname&quot; /&gt;
-                &lt;label for=&quot;firstname&quot; class=&quot;text-field__label&quot;&gt;Firstname *&lt;/label&gt;
-            &lt;/div&gt;
+        &lt;div class=&quot;text-field&quot;&gt;
+            &lt;input id=&quot;firstname&quot; type=&quot;text&quot; name=&quot;firstname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your firstname&quot; /&gt;
+            &lt;label for=&quot;firstname&quot; class=&quot;text-field__label&quot;&gt;Firstname *&lt;/label&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;form__row&quot;&gt;
-            &lt;div class=&quot;text-field&quot;&gt;
-                &lt;input id=&quot;lastname&quot; type=&quot;text&quot; name=&quot;lastname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your lastname&quot; /&gt;
-                &lt;label for=&quot;lastname&quot; class=&quot;text-field__label&quot;&gt;Lastname *&lt;/label&gt;
-            &lt;/div&gt;
+        &lt;div class=&quot;text-field&quot;&gt;
+            &lt;input id=&quot;lastname&quot; type=&quot;text&quot; name=&quot;lastname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your lastname&quot; /&gt;
+            &lt;label for=&quot;lastname&quot; class=&quot;text-field__label&quot;&gt;Lastname *&lt;/label&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;form__row grid&quot;&gt;
-            &lt;div class=&quot;col__sm--4&quot;&gt;
+        &lt;div class=&quot;grid&quot;&gt;
+            &lt;div class=&quot;col-tab-4&quot;&gt;
                 &lt;div class=&quot;select-field field--outline&quot;&gt;
                     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
                         &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
@@ -4610,7 +4571,7 @@ Fast.Form();</code></pre>
                     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;col__sm--4&quot;&gt;
+            &lt;div class=&quot;col-tab-4&quot;&gt;
                 &lt;div class=&quot;select-field field--outline&quot;&gt;
                     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
                         &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
@@ -4630,7 +4591,7 @@ Fast.Form();</code></pre>
                     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;col__sm--4&quot;&gt;
+            &lt;div class=&quot;col-tab-4&quot;&gt;
                 &lt;div class=&quot;select-field field--outline&quot;&gt;
                     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
                         &lt;option value=&quot;2018&quot;&gt;2018&lt;/option&gt;
@@ -4650,29 +4611,25 @@ Fast.Form();</code></pre>
                     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form__row grid&quot;&gt;
-            &lt;div class=&quot;col__sm--9&quot;&gt;
+            &lt;div class=&quot;col-tab-9&quot;&gt;
                 &lt;div class=&quot;text-field field--fill&quot;&gt;
                     &lt;input id=&quot;street&quot; type=&quot;text&quot; name=&quot;street&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your street&quot; /&gt;
                     &lt;label for=&quot;street&quot; class=&quot;text-field__label&quot;&gt;Street&lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;col__sm--3&quot;&gt;
+            &lt;div class=&quot;col-tab-3&quot;&gt;
                 &lt;div class=&quot;text-field field--fill&quot;&gt;
                     &lt;input id=&quot;housenr&quot; type=&quot;housenr&quot; name=&quot;housenr&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your house number&quot; /&gt;
                     &lt;label for=&quot;housenr&quot; class=&quot;text-field__label&quot;&gt;House number&lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form__row grid&quot;&gt;
-            &lt;div class=&quot;col__sm--4&quot;&gt;
+            &lt;div class=&quot;col-tab-4&quot;&gt;
                 &lt;div class=&quot;text-field field--fill&quot;&gt;
                     &lt;input id=&quot;zipcode&quot; type=&quot;text&quot; name=&quot;zipcode&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your zipcode&quot; /&gt;
                     &lt;label for=&quot;zipcode&quot; class=&quot;text-field__label&quot;&gt;Zipcode&lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;col__sm--8&quot;&gt;
+            &lt;div class=&quot;col-tab-8&quot;&gt;
                 &lt;div class=&quot;text-field field--fill&quot;&gt;
                     &lt;input id=&quot;city&quot; type=&quot;text&quot; name=&quot;city&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your city&quot; /&gt;
                     &lt;label for=&quot;city&quot; class=&quot;text-field__label&quot;&gt;City&lt;/label&gt;
@@ -4686,20 +4643,16 @@ Fast.Form();</code></pre>
 		<pre class="mb-0"><code class="lang-">&lt;h1&gt;Example form&lt;/h1&gt;
 &lt;div class=&quot;form form--m form--submit-limit&quot;&gt;
     &lt;form&gt;
-        &lt;div class=&quot;form__row&quot;&gt;
-            &lt;div class=&quot;text-field&quot;&gt;
-                &lt;input id=&quot;firstname&quot; type=&quot;text&quot; name=&quot;firstname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your firstname&quot; /&gt;
-                &lt;label for=&quot;firstname&quot; class=&quot;text-field__label&quot;&gt;Firstname *&lt;/label&gt;
-            &lt;/div&gt;
+        &lt;div class=&quot;text-field&quot;&gt;
+            &lt;input id=&quot;firstname&quot; type=&quot;text&quot; name=&quot;firstname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your firstname&quot; /&gt;
+            &lt;label for=&quot;firstname&quot; class=&quot;text-field__label&quot;&gt;Firstname *&lt;/label&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;form__row&quot;&gt;
-            &lt;div class=&quot;text-field&quot;&gt;
-                &lt;input id=&quot;lastname&quot; type=&quot;text&quot; name=&quot;lastname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your lastname&quot; /&gt;
-                &lt;label for=&quot;lastname&quot; class=&quot;text-field__label&quot;&gt;Lastname *&lt;/label&gt;
-            &lt;/div&gt;
+        &lt;div class=&quot;text-field&quot;&gt;
+            &lt;input id=&quot;lastname&quot; type=&quot;text&quot; name=&quot;lastname&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your lastname&quot; /&gt;
+            &lt;label for=&quot;lastname&quot; class=&quot;text-field__label&quot;&gt;Lastname *&lt;/label&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;form__row grid&quot;&gt;
-            &lt;div class=&quot;col__sm--4&quot;&gt;
+        &lt;div class=&quot;grid&quot;&gt;
+            &lt;div class=&quot;col-tab-4&quot;&gt;
                 &lt;div class=&quot;select-field field--outline&quot;&gt;
                     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
                         &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
@@ -4738,7 +4691,7 @@ Fast.Form();</code></pre>
                     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;col__sm--4&quot;&gt;
+            &lt;div class=&quot;col-tab-4&quot;&gt;
                 &lt;div class=&quot;select-field field--outline&quot;&gt;
                     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
                         &lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;
@@ -4758,7 +4711,7 @@ Fast.Form();</code></pre>
                     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;col__sm--4&quot;&gt;
+            &lt;div class=&quot;col-tab-4&quot;&gt;
                 &lt;div class=&quot;select-field field--outline&quot;&gt;
                     &lt;select id=&quot;select&quot; name=&quot;select&quot; class=&quot;select-field__input&quot;&gt;
                         &lt;option value=&quot;2018&quot;&gt;2018&lt;/option&gt;
@@ -4778,29 +4731,25 @@ Fast.Form();</code></pre>
                     &lt;span class=&quot;field__helper&quot;&gt;Select an option&lt;/span&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form__row grid&quot;&gt;
-            &lt;div class=&quot;col__sm--9&quot;&gt;
+            &lt;div class=&quot;col-tab-9&quot;&gt;
                 &lt;div class=&quot;text-field field--fill&quot;&gt;
                     &lt;input id=&quot;street&quot; type=&quot;text&quot; name=&quot;street&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your street&quot; /&gt;
                     &lt;label for=&quot;street&quot; class=&quot;text-field__label&quot;&gt;Street&lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;col__sm--3&quot;&gt;
+            &lt;div class=&quot;col-tab-3&quot;&gt;
                 &lt;div class=&quot;text-field field--fill&quot;&gt;
                     &lt;input id=&quot;housenr&quot; type=&quot;housenr&quot; name=&quot;housenr&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your house number&quot; /&gt;
                     &lt;label for=&quot;housenr&quot; class=&quot;text-field__label&quot;&gt;House number&lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;form__row grid&quot;&gt;
-            &lt;div class=&quot;col__sm--4&quot;&gt;
+            &lt;div class=&quot;col-tab-4&quot;&gt;
                 &lt;div class=&quot;text-field field--fill&quot;&gt;
                     &lt;input id=&quot;zipcode&quot; type=&quot;text&quot; name=&quot;zipcode&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your zipcode&quot; /&gt;
                     &lt;label for=&quot;zipcode&quot; class=&quot;text-field__label&quot;&gt;Zipcode&lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;col__sm--8&quot;&gt;
+            &lt;div class=&quot;col-tab-8&quot;&gt;
                 &lt;div class=&quot;text-field field--fill&quot;&gt;
                     &lt;input id=&quot;city&quot; type=&quot;text&quot; name=&quot;city&quot; class=&quot;text-field__input&quot; placeholder=&quot;Enter your city&quot; /&gt;
                     &lt;label for=&quot;city&quot; class=&quot;text-field__label&quot;&gt;City&lt;/label&gt;

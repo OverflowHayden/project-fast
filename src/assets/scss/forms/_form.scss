@@ -30,34 +30,6 @@
         display: inline-block;
     }
 
-    &__row {
-        @include bourbon.clearfix;
-
-        &.grid {
-            @include neat.grid-collapse(variables.$form-grid);
-        }
-
-        .col__lg {
-            @include mixins.twelve-columns(variables.$form-grid, variables.$screen-lg-min);
-        }
-
-        .col__md {
-            @include mixins.twelve-columns(variables.$form-grid, variables.$screen-md-min);
-        }
-
-        .col__sm {
-            @include mixins.twelve-columns(variables.$form-grid, variables.$screen-sm-min);
-        }
-
-        .col__xs {
-            @include mixins.twelve-columns(variables.$form-grid, variables.$screen-xs);
-        }
-
-        .field--outline {
-            margin-top: .4rem;
-        }
-    }
-
     .text-field, .password-field, .select-field, .textarea-field, .number-field {
         width: 100%;
     }
