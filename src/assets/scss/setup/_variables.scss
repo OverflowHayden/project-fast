@@ -273,6 +273,12 @@ $table: (
     ),
 ) !default;
 
+$switch: (
+        "size": 1.6rem,
+        "active": $color-primary,
+        "inactive": #fafafa,
+) !default;
+
 /* ---------------------------------------------- //
  * Font
 // ---------------------------------------------- */

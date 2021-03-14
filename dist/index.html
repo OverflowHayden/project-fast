@@ -55,6 +55,7 @@
 									<option value="forms">Forms</option>
 									<option value="radio-button">Radio button</option>
 									<option value="select-field">Select field</option>
+									<option value="switch">Switch</option>
 									<option value="text-fields">Text fields</option>
 									<option value="upload-field">Upload field</option>
 							</optgroup>
@@ -4937,6 +4938,88 @@ Fast.Form();</code></pre>
 </div></div>
 </div>
 
+						<div id="switch" class="i-library theme-content-element">
+	<h1 class="display-4 theme-content-element-title">Switch</h1>
+	<span class="theme-content-element-source">
+		<span class="theme-content-element-source-label">Source:</span>
+		<span class="theme-content-element-source-path">materials/forms/switch.md</span>
+	</span>
+	<div class="theme-content-element-description"><div class="i-example">
+                    <h5 class="i-example__heading">
+                        <a
+                            href="switch-switch.html"
+                            target="_blank"
+                            class="plain-link"
+                            data-toggle="tooltip"
+                            data-placement="top"
+                            title="Open in a new window"
+                        >
+                            <i class="fa fa-external-link-square fa-fw"></i>
+                            Example
+                        </a>
+                    </h5>
+                    <div class="i-example__body">
+                        <div
+                            class="i-example__iframe"
+                            lazyframe
+                            data-src="switch-switch.html"
+                            data-initinview="true"
+                            data-title="Loading..." 
+                        ></div>
+                    </div>
+                </div>
+
+
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
+	<div class="i-code-block__content hidden">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;div class=&quot;switch&quot;&gt;
+    &lt;label class=&quot;switch__label&quot;&gt;Switch&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;switch__input&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;switch&quot;&gt;
+    &lt;label class=&quot;switch__label&quot;&gt;Switch active&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;switch__input&quot; checked /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;switch&quot;&gt;
+    &lt;label class=&quot;switch__label&quot;&gt;Switch disabled&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;switch__input&quot; disabled /&gt;
+&lt;/div&gt;">Copy</button>
+		<pre class="mb-0"><code class="lang-">&lt;div class=&quot;switch&quot;&gt;
+    &lt;label class=&quot;switch__label&quot;&gt;Switch&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;switch__input&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;switch&quot;&gt;
+    &lt;label class=&quot;switch__label&quot;&gt;Switch active&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;switch__input&quot; checked /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;switch&quot;&gt;
+    &lt;label class=&quot;switch__label&quot;&gt;Switch disabled&lt;/label&gt;
+    &lt;input type=&quot;checkbox&quot; class=&quot;switch__input&quot; disabled /&gt;
+&lt;/div&gt;</code></pre>
+	</div>
+</div><h4>Variables</h4>
+<div class="i-code-block">
+	<button type="button" class="i-code-block__lang "> </button>
+	<div class="i-code-block__content ">
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="@use &quot;setup/variables&quot; with (
+    $switch: (
+        &quot;size&quot;: 1.6rem,
+        &quot;active&quot;: $color-primary,
+        &quot;inactive&quot;: #fafafa,
+    )
+);">Copy</button>
+		<pre class="mb-0"><code class="lang-">@use &quot;setup/variables&quot; with (
+    $switch: (
+        &quot;size&quot;: 1.6rem,
+        &quot;active&quot;: $color-primary,
+        &quot;inactive&quot;: #fafafa,
+    )
+);</code></pre>
+	</div>
+</div></div>
+</div>
+
 						<div id="text-fields" class="i-library theme-content-element">
 	<h1 class="display-4 theme-content-element-title">Text fields</h1>
 	<span class="theme-content-element-source">
@@ -8731,7 +8814,7 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 			
 						<h5
 							class="pt-4 mb-1 theme-sidebar-category-title"
-							data-filter-value=" Checkbox  Forms  Radio button  Select field  Text fields  Upload field "
+							data-filter-value=" Checkbox  Forms  Radio button  Select field  Switch  Text fields  Upload field "
 						>
 							<a href="#category-forms" class="i-sidebar-list-item">
 								<b>Forms</b>
@@ -8766,6 +8849,13 @@ document.querySelector(&#39;.data-table__filter&#39;).addEventListener(&#39;clic
 									data-filter-value="Select field"
 								>
 									<span>Select field</span>
+								</a>
+								<a
+									href="#switch"
+									class="i-sidebar-list-item theme-sidebar-element"
+									data-filter-value="Switch"
+								>
+									<span>Switch</span>
 								</a>
 								<a
 									href="#text-fields"

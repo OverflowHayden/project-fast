@@ -37,7 +37,7 @@
 }
 
 
-@mixin ripple() {
+@mixin ripple($color: variables.$color-base-black, $radius: 10%) {
     position: relative;
     overflow: hidden;
 
@@ -54,7 +54,7 @@
         top: 0;
         left: 0;
         pointer-events: none;
-        background-image: radial-gradient(circle, variables.$color-base-black 10%, transparent 10.01%);
+        background-image: radial-gradient(circle, $color $radius, transparent 10.01%);
         background-repeat: no-repeat;
         background-position: 50%;
         transform: scale(10, 10);
