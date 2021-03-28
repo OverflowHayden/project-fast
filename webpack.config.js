@@ -6,8 +6,8 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const publicJS = [
-    './node_modules/tingle.js/src/tingle.js',
-    './node_modules/choices.js/public/assets/scripts/choices.js',
+    './node_modules/tingle.js/dist/tingle.min.js',
+    './node_modules/choices.js/public/assets/scripts/choices.min.js',
 ];
 
 const files = [
