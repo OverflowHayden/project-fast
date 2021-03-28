@@ -56,7 +56,7 @@ $color-error:                     #f44336 !default;
 
 $drawer-image:                    "../img/logo.svg" !default;
 $drawer-background:               url($drawer-image) no-repeat center bottom 50px / auto calc(100% - 65px) !default;
-$border-radius:                   3px !default;
+$border-radius:                   .8rem !default;
 $login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
-$margin-size:                     30px !default;
+$margin-size:                     3rem !default;
 ```

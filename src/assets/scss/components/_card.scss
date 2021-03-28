@@ -9,15 +9,15 @@
     $self: &;
 
     border: none;
-    border-radius: .2rem;
+    border-radius: variables.$border-radius;
     box-shadow: 0 .1rem .5rem 0 rgba(variables.$color-base-black, .2), 0 .2rem .2rem 0 rgba(variables.$color-base-black, .14), 0 .3rem .1rem -.2rem rgba(variables.$color-base-black, .12);
     background: map.get(variables.$card, "background");
     color: map.get(variables.$card, "color");
     margin-bottom: 3rem;
 
     &__image {
-        border-top-left-radius: .2rem;
-        border-top-right-radius: .2rem;
+        border-top-left-radius: variables.$border-radius;
+        border-top-right-radius: variables.$border-radius;
         display: block;
         margin: 0;
         padding: 0;
