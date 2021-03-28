@@ -8,4 +8,9 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+
+    .form--card {
+        backdrop-filter: blur(2rem);
+        background: rgba(variables.$color-base-white, .7);
+    }
 }

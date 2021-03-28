@@ -18,7 +18,7 @@ $color-error:                     #f44336 !default;
  * Style settings
 // ---------------------------------------------- */
 $border-radius:                   .8rem !default;
-$login-image:                     "https://picsum.photos/1920/1080/?blur&random" !default;
+$login-image:                     "https://picsum.photos/1920/1080/?random" !default;
 $margin-size:                     3rem !default;
 
 $app-bar: (
@@ -282,7 +282,7 @@ $switch: (
 /* ---------------------------------------------- //
  * Font
 // ---------------------------------------------- */
-$font-primary:                    'Roboto', sans-serif !default;
+$font-primary:                    'Noto Sans', sans-serif !default;
 $font-size:                       1.6rem !default;
 $line-height:                     1.4em !default;
 $mdi-full:                        false !default;
