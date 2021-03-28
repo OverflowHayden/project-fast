@@ -6,7 +6,7 @@
     $self: &;
     background: map.get(variables.$drawer, "background");
     color: map.get(variables.$drawer, "color");
-    width: map.get(variables.$drawer, "compact", "width");
+    width: map.get(variables.$drawer, "width");
 
     &-scroll-lock {
         overflow: hidden;
@@ -54,7 +54,6 @@
 
         #{$self}__drawer {
             box-shadow: none;
-            border-right: .1rem solid map.get(variables.$drawer, "border");
         }
 
         &#{$self}--open {
@@ -79,7 +78,6 @@
 
         #{$self}__drawer {
             width: 100%;
-            border-right: .1rem solid map.get(variables.$drawer, "border");
         }
 
         + .main {
@@ -139,7 +137,7 @@
         background: #{map.get(variables.$drawer, "header", "background")} map.get(variables.$drawer, "header", "image");
         color: map.get(variables.$drawer, "header", "color");
         display: flex;
-        align-items: flex-end;
+        align-items: center;
         min-height: map.get(variables.$drawer, "header", "height");
         padding: map.get(variables.$drawer, "header", "padding");
 
@@ -194,8 +192,17 @@
         }
 
         &__item {
+            color: inherit;
             font-size: map.get(variables.$drawer, "list", "font-size");
             font-weight: 500;
+        }
+
+        &__item-graphic, &__item-meta {
+            color: darken(map.get(variables.$drawer, "color"), 10%);
+        }
+
+        &__item-secondary-text {
+            color: inherit;
         }
     }
 }

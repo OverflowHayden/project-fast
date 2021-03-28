@@ -5,6 +5,7 @@
 .app-bar {
     $self: &;
     background: map.get(variables.$app-bar, "background");
+    border-bottom: .1rem solid map.get(variables.$app-bar, "border");
     color: map.get(variables.$app-bar, "color");
     position: fixed;
     top: 0;
@@ -48,11 +49,15 @@
         }
     }
 
+    &__icon {
+        font-size: 2.4rem;
+        margin-left: .66em;
+    }
+
     &__title {
         font-size: map.get(variables.$app-bar, "title", "font-size");
-        font-weight: 500;
-        line-height: 1.6;
-        letter-spacing: 0.025rem;
+        font-weight: 700;
+        line-height: 1.4;
         margin-left: 1em;
     }
 
@@ -65,7 +70,7 @@
     }
 
     .button {
-        color: map.get(variables.$app-bar, "color");
+        color: rgba(map.get(variables.$app-bar, "color"), .82);
         padding: .9rem;
 
         &.button--icon {

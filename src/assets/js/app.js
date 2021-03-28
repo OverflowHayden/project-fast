@@ -19,7 +19,6 @@ fastUpload();
 fastDataTable();
 fastSnackbar();
 fastForm();
-tippy('[data-tippy-content]');
 
 export default {
     LegacySupport: fastLegacySupport,

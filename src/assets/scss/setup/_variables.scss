@@ -5,7 +5,7 @@ $color-primary:                   #F37748 !default;
 $color-secondary:                 #696969 !default;
 
 $color-base-white:                #fff !default;
-$color-base-light:                #ededed !default;
+$color-base-light:                #f4f4f4 !default;
 $color-base-black:                #000 !default;
 
 $color-text:                      #333 !default;
@@ -22,8 +22,9 @@ $login-image:                     "https://picsum.photos/1920/1080/?random" !def
 $margin-size:                     3rem !default;
 
 $app-bar: (
-    "background": $color-primary,
-    "color": $color-base-white,
+    "background": $color-base-white,
+    "border": rgba(#e0e0e0, .7),
+    "color": $color-text,
     "padding": .8rem 1.2rem,
     "height": 6.2rem,
     "title": (
@@ -73,20 +74,20 @@ $chip: (
 ) !default;
 
 $drawer: (
-    "background": $color-base-white,
-    "color": rgba($color-base-black, .87),
+    "background": $color-primary,
+    "color": $color-base-white,
     "border": #e0e0e0,
-    "width": 32rem,
+    "width": 26rem,
     "image": "/src/assets/img/logo.svg",
     "header": (
         "background": $color-primary,
         "color": $color-base-white,
-        "height": 13.5rem,
-        "image": url("/src/assets/img/logo.svg") no-repeat center bottom 5rem / auto calc(100% - 6.5rem),
-        "padding": 1.6rem,
+        "height": 6.2rem,
+        "image": url("/src/assets/img/logo.svg") no-repeat 1em / auto 65%,
+        "padding": .8rem 1.6rem .8rem 7.2rem,
     ),
     "compact": (
-        "width": 24rem,
+        "width": 8rem,
         "header": (
             "height": 6.2rem,
             "padding": .8rem 1.6rem,

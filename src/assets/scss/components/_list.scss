@@ -66,7 +66,7 @@
             }
 
             .drawer & #{$self}__item-text {
-                padding-left: 5.1em;
+                padding-left: 4em;
             }
         }
 
@@ -142,7 +142,7 @@
             justify-content: center;
             height: map.get(variables.$list, "graphic", "size");
             width: map.get(variables.$list, "graphic", "size");
-            margin: 0 1.33em 0 0;
+            margin: 0 .66em 0 0;
         }
 
         &-meta {

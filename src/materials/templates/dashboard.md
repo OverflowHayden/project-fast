@@ -5,7 +5,7 @@ category: Templates
 
 ```dashboard.html
 <aside class="drawer drawer--permanent">
-    <div class="drawer__drawer drawer--dark">
+    <div class="drawer__drawer">
         <header class="drawer__header">
             <span class="drawer__header-text">Project FAST</span>
         </header>
@@ -57,8 +57,9 @@ category: Templates
     </div>
 </aside>
 <main class="main">
-    <header class="app-bar">
+    <header class="app-bar app-bar--fixed">
         <button class=app-bar__nav-toggle><iconify-icon data-icon="mdi:menu"></iconify-icon></button>
+        <span class="app-bar__icon"><iconify-icon data-icon="mdi:home"></iconify-icon></span>
         <span class="app-bar__title">Dashboard</span>
         <div class="app-bar__actions">
             <a href="#" class="button button--icon button--text"><iconify-icon data-icon="mdi:printer"></iconify-icon></a>
@@ -186,10 +187,10 @@ category: Templates
     <a href="single-add.html" class="fab__button"><iconify-icon data-icon="mdi:plus"></iconify-icon></a>
     <ul class="fab__list">
         <li class="fab__list-item">
-            <a href="#"><span class="fab__text">Add product</span><iconify-icon class="fab__icon" data-icon="mdi:package"></iconify-icon></a>
+            <a href="#"><span class="fab__text">Add product</span><span class="fab__icon"><iconify-icon data-icon="mdi:package"></iconify-icon></span></a>
         </li>
         <li class="fab__list-item">
-            <a href="#"><span class="fab__text">Add order</span><iconify-icon class="fab__icon" data-icon="mdi:cart"></iconify-icon></a>
+            <a href="#"><span class="fab__text">Add order</span><span class="fab__icon"><iconify-icon data-icon="mdi:cart"></iconify-icon></span></a>
         </li>
     </ul>
 </div>
