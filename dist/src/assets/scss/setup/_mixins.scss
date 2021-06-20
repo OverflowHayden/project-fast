@@ -270,3 +270,7 @@
         }
     }
 }
+
+@mixin box-shadow($color: variables.$color-base-black) {
+    box-shadow: rgba($color, .05) 0 .6rem 2.4rem 0, rgba($color, .08) 0 0 0 .1rem;
+}

@@ -15,8 +15,9 @@
     }
 
     &--demo {
+        @include mixins.box-shadow;
+        border-radius: variables.$border-radius;
         max-width: 60rem;
-        border: .1rem solid rgba(variables.$color-base-black, .1);
     }
 
     &--striped {

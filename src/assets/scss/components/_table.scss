@@ -3,12 +3,40 @@
 @use '../setup/mixins';
 
 table {
+    @include mixins.box-shadow;
     $self: &;
     background: map.get(variables.$table, "background");
     border-spacing: 0;
     border-collapse: collapse;
-    border: .1rem solid map.get(variables.$table, "border");
-    box-shadow: 0 .1rem .5rem 0 rgba(variables.$color-base-black, .2), 0 .2rem .2rem 0 rgba(variables.$color-base-black, .14), 0 .3rem .1rem -.2rem rgba(variables.$color-base-black, .12);
+    border-radius: variables.$border-radius;
+
+    thead tr:first-child th:first-child, thead tr:first-child td:first-child {
+        border-radius: variables.$border-radius 0 0 0;
+    }
+
+    thead tr:first-child th:last-child, thead tr:first-child td:last-child {
+        border-radius: 0 variables.$border-radius 0 0;
+    }
+
+    thead tr:first-child th:first-child:last-child {
+        border-radius: variables.$border-radius variables.$border-radius 0 0;
+    }
+
+    :is(tbody:last-child, tfoot:last-child) tr:last-child td {
+        border-bottom: none;
+    }
+
+    :is(tbody:last-child, tfoot:last-child) tr:last-child td:first-child, :is(tbody:last-child, tfoot:last-child) tr:last-child th:first-child {
+        border-radius: 0 0 0 variables.$border-radius;
+    }
+
+    :is(tbody:last-child, tfoot:last-child) tr:last-child td:last-child, :is(tbody:last-child, tfoot:last-child) tr:last-child th:last-child {
+        border-radius: 0 0 variables.$border-radius 0;
+    }
+
+    :is(tbody:last-child, tfoot:last-child) tr:last-child td:first-child:last-child {
+        border-radius: 0 0 variables.$border-radius variables.$border-radius;
+    }
 
     tr {
         height: map.get(variables.$table, "height");

@@ -1,16 +1,17 @@
 @use 'sass:map';
 @use '../setup/variables';
+@use '../setup/mixins';
 @use '../layout/grid' as *;
 
 .card {
     @extend .col-desk-4;
     @extend .col-tab-6;
     @extend .col-mob-4;
+    @include mixins.box-shadow;
     $self: &;
 
     border: none;
     border-radius: variables.$border-radius;
-    box-shadow: 0 .1rem .5rem 0 rgba(variables.$color-base-black, .2), 0 .2rem .2rem 0 rgba(variables.$color-base-black, .14), 0 .3rem .1rem -.2rem rgba(variables.$color-base-black, .12);
     background: map.get(variables.$card, "background");
     color: map.get(variables.$card, "color");
     margin-bottom: 3rem;
