@@ -10,12 +10,12 @@ export default function fastDrawer() {
         document.querySelector('.drawer').classList.add('drawer--temporary');
     }
 
-    if (document.querySelector('.app-bar__nav-toggle') && document.querySelector('.drawer--temporary')) {
+    if (document.querySelector('.drawer__nav-toggle') && document.querySelector('.drawer--temporary')) {
         let drawer,
             drawerElem,
             iconElem;
         drawerElem = document.querySelector('.drawer');
-        iconElem = document.querySelector('.app-bar__nav-toggle');
+        iconElem = document.querySelector('.drawer__nav-toggle');
         drawer = new Drawer(drawerElem);
         drawer.setDrawerIcon(new DrawerIcon(iconElem));
 
@@ -52,8 +52,8 @@ export default function fastDrawer() {
     }
 
     /* Drawer persistent */
-    if (document.querySelector('.app-bar__nav-toggle') && document.querySelector('.drawer--persistent')) {
-        const toggle = document.querySelector('.app-bar__nav-toggle');
+    if (document.querySelector('.drawer__nav-toggle') && document.querySelector('.drawer--persistent')) {
+        const toggle = document.querySelector('.drawer__nav-toggle');
         const drawer = document.querySelector('.drawer--persistent');
 
         toggle.addEventListener('click', function (e) {
@@ -70,8 +70,8 @@ export default function fastDrawer() {
     }
 
     /* Drawer permanent */
-    if (document.querySelector('.app-bar__nav-toggle') && document.querySelector('.drawer--permanent')) {
-        const toggle = document.querySelector('.app-bar__nav-toggle');
+    if (document.querySelector('.drawer__nav-toggle') && document.querySelector('.drawer--permanent')) {
+        const toggle = document.querySelector('.drawer__nav-toggle');
         const drawer = document.querySelector('.drawer--permanent');
 
         document.body.classList.add('permanent--open');
@@ -204,6 +204,7 @@ export default function fastDrawer() {
             s = s || 0.225;
             opened = true;
             setTransition(s);
+            document.body.classList.add('drawer--open');
             drawerElem.style.opacity = 1;
             drawerBg.style.opacity = 1;
             drawerBg.style.visibility = "visible";
@@ -223,7 +224,8 @@ export default function fastDrawer() {
             s = s || 0.225;
             opened = false;
             setTransition(s);
-            drawerBg.style.opacity = 0.001;
+            document.body.classList.remove('drawer--open');
+            drawerBg.style.opacity = 1;
             transfrom("translateX(-" + width + "px)");
             drawerIcon.setState(0, s);
             onMove(0, 0, true, s);
@@ -232,7 +234,7 @@ export default function fastDrawer() {
                 if (drawerStarted) {
                     return;
                 }
-                drawerElem.style.opacity = 0.001;
+                drawerElem.style.opacity = 1;
                 drawerBg.style.visibility = "hidden";
                 onClosed();
             }, s * 1000);

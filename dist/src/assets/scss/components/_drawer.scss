@@ -21,14 +21,12 @@
         width: calc(100% - 6.4rem);
         max-width: map.get(variables.$drawer, "width");
         height: 100%;
-        opacity: .0001;
         transform: translateX(-100%);
         will-change: transform;
         z-index: 21;
 
         #{$self}__drawer {
             width: 100%;
-            box-shadow: 0 .8rem 1rem -.5rem rgba(variables.$color-base-black, .2), 0 1.6rem 2.4rem .2rem rgba(variables.$color-base-black, .14), 0 .6rem 3rem .5rem rgba(variables.$color-base-black, .12);
         }
 
         #{$self}__label {
@@ -47,6 +45,14 @@
             width: 100%;
             visibility: hidden;
             z-index: 22;
+        }
+
+        #{$self}__nav-toggle {
+            transform: translateX(100%);
+        }
+
+        ~ .main .app-bar {
+            padding-left: calc(1.2rem + #{map.get(variables.$app-bar, "height")});
         }
     }
 
@@ -94,6 +100,25 @@
         max-width: map.get(variables.$drawer, "compact", "width");
     }
 
+    &--open &__nav-toggle {
+        transform: translateX(0);
+        transition: transform .25s ease 0s;
+
+        .iconify {
+            &:first-of-type {
+                display: none;
+            }
+
+            &:last-of-type {
+                display: inline-block;
+            }
+        }
+    }
+
+    &--open .main .app-bar {
+        padding-left: 1.2rem;
+    }
+
     &__bg {
         position: fixed;
         background: rgba(variables.$color-base-black, .5);
@@ -130,6 +155,39 @@
 
             #{$self}__content {
                 @include mixins.scrollbar(map.get(variables.$drawer, "dark", "background"));
+            }
+        }
+    }
+
+    &__nav-toggle {
+        appearance: none;
+        background: #{map.get(variables.$drawer, "header", "background")};
+        border: none;
+        color: map.get(variables.$drawer, "header", "color");
+        cursor: pointer;
+        width: map.get(variables.$app-bar, "height");
+        height: map.get(variables.$app-bar, "height");
+        position: absolute;
+        right: 0;
+        transition: transform .25s ease .4s;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            background: darken(map.get(variables.$drawer, "header", "background"), 5%);
+        }
+
+        .iconify {
+            font-size: 2.8rem;
+
+            &:first-of-type {
+                display: inline-block;
+            }
+
+            &:last-of-type {
+                display: none;
             }
         }
     }
@@ -216,6 +274,7 @@
 
         .app-bar {
             left: map.get(variables.$drawer, "width");
+            padding-left: 1.2rem;
         }
     }
 
@@ -226,8 +285,12 @@
             left: map.get(variables.$drawer, "compact", "width");
         }
     }
+
+    .drawer__nav-toggle {
+        transform: translateX(0);
+    }
 }
 
-.permanent--open .app-bar__nav-toggle {
+.permanent--open .drawer__nav-toggle {
     display: none;
 }

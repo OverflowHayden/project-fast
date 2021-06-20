@@ -144,6 +144,10 @@ The header image can be changed with the SASS variable: `$drawer-image`. If you 
     <div class="drawer__drawer">
         <header class="drawer__header">
             <span class="drawer__header-text">Drawer header</span>
+            <button class="drawer__nav-toggle">
+                <iconify-icon data-icon="mdi:menu"></iconify-icon>
+                <iconify-icon data-icon="mdi:menu-open"></iconify-icon>
+            </button>
         </header>
         <nav class="drawer__content">
             <ul class="list">
@@ -194,7 +198,6 @@ The header image can be changed with the SASS variable: `$drawer-image`. If you 
 </aside>
 <main class="main">
     <header class="app-bar">
-        <button class=app-bar__nav-toggle><iconify-icon data-icon="mdi:menu"></iconify-icon></button>
         <span class="app-bar__title">Temporary drawer</span>
     </header>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -211,6 +214,10 @@ The drawer will change to temporary on mobile
     <div class="drawer__drawer">
         <header class="drawer__header">
             <span class="drawer__header-text">Drawer header</span>
+            <button class="drawer__nav-toggle">
+                <iconify-icon data-icon="mdi:menu"></iconify-icon>
+                <iconify-icon data-icon="mdi:menu-open"></iconify-icon>
+            </button>
         </header>
         <nav class="drawer__content">
             <ul class="list">
@@ -261,7 +268,6 @@ The drawer will change to temporary on mobile
 </aside>
 <main class="main">
     <header class="app-bar">
-        <button class=app-bar__nav-toggle><iconify-icon data-icon="mdi:menu"></iconify-icon></button>
         <span class="app-bar__title">Persistent drawer</span>
     </header>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -328,7 +334,6 @@ The drawer will change to temporary on mobile
 </aside>
 <main class="main">
     <header class="app-bar">
-        <button class=app-bar__nav-toggle><iconify-icon data-icon="mdi:menu"></iconify-icon></button>
         <span class="app-bar__title">Permanent drawer</span>
     </header>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

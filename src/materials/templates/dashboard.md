@@ -78,107 +78,107 @@ category: Templates
     </header>
     <div class="main__content">
         <div class="grid">
-            <div class="row">
-                <div class="col__xs--12">
-                    <h2>Chart</h2>
-                    <div id="chart_div"></div>
+            <div class="col-desk-6 col-tab-12 col-mob-4">
+                <h3>Chart</h2>
+                <div class="card col-desk-12">
+                    <div class="card__content">
+                        <div id="chart_div"></div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col__sm--6">
-                    <h2>Best selling product</h2>
-                    <div class="row">
-                        <div class="card col__xs--12">
-                            <figure class="card__image"><img src="https://baconmockup.com/500/335" alt="Bacon" /></figure>
-                            <div class="card__content">
-                                <h2 class="card__title">Bacon</h2>
-                                <div class="card__actions">
-                                    <a href="#" class="button button--compact">Show all products</a>
-                                </div>
+            <div class="col-desk-6 col-tab-6">
+                <h3>Best selling product</h2>
+                <div class="row">
+                    <div class="card col-desk-8">
+                        <figure class="card__image"><img src="https://baconmockup.com/500/335" alt="Bacon" /></figure>
+                        <div class="card__content">
+                            <h2 class="card__title">Bacon</h2>
+                            <div class="card__actions">
+                                <a href="#" class="button button--compact">Show all products</a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col__sm--6">
-                    <h2>Activity</h2>
-                    <ul class="list list--demo">
-                        <li class="list__item">
-                            <a href="#" class="list__item-text">
-                                Added customer: Sommer Gibbons
-                                <span class="list__item-secondary-text">July 2nd, 2018</span>
-                            </a>
-                        </li>
-                        <li class="list__item">
-                            <a href="#" class="list__item-text">
-                                Added customer: Tahmina Marriott
-                                <span class="list__item-secondary-text">July 2nd, 2018</span>
-                            </a>
-                        </li>
-                        <li class="list__item">
-                            <a href="#" class="list__item-text">
-                                Added customer: Elise Heath
-                                <span class="list__item-secondary-text">July 2nd, 2018</span>
-                            </a>
-                        </li>
-                        <li class="list__item">
-                            <a href="#" class="list__item-text">
-                                Added customer: Virginia Robbins
-                                <span class="list__item-secondary-text">July 2nd, 2018</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col__xs--12">
-                    <h2>Orders</h2>
-                    <table style="--cols:5">
-                        <thead>
-                            <tr>
-                                <th>Order</th>
-                                <th>Date</th>
-                                <th>State</th>
-                                <th align="right">Total</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#3005 John Doe</td>
-                                <td>2 hours ago</td>
-                                <td>Pending</td>
-                                <td align="right">&euro; 78,65</td>
-                                <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
-                            </tr>
-                            <tr>
-                                <td>#3004 Jon Scott</td>
-                                <td>10 hours ago</td>
-                                <td>Shipped</td>
-                                <td align="right">&euro; 34,50</td>
-                                <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
-                            </tr>
-                            <tr>
-                                <td>#3003 Virginia Robbins</td>
-                                <td>1 day ago</td>
-                                <td>Completed</td>
-                                <td align="right">&euro; 120,10</td>
-                                <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
-                            </tr>
-                            <tr>
-                                <td>#3002 Elise Heath</td>
-                                <td>2 days ago</td>
-                                <td>Completed</td>
-                                <td align="right">&euro; 80,90</td>
-                                <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
-                            </tr>
-                            <tr>
-                                <td>#3001 Tahmine Marriott</td>
-                                <td>July 2nd, 2018</td>
-                                <td>Completed</td>
-                                <td align="right">&euro; 15,95</td>
-                                <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            </div>
+            <div class="col-desk-4 col-tab-6 col-mob-4">
+                <h3>Activity</h2>
+                <ul class="list list--demo">
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            Added customer: Sommer Gibbons
+                            <span class="list__item-secondary-text">July 2nd, 2018</span>
+                        </a>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            Added customer: Tahmina Marriott
+                            <span class="list__item-secondary-text">July 2nd, 2018</span>
+                        </a>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            Added customer: Elise Heath
+                            <span class="list__item-secondary-text">July 2nd, 2018</span>
+                        </a>
+                    </li>
+                    <li class="list__item">
+                        <a href="#" class="list__item-text">
+                            Added customer: Virginia Robbins
+                            <span class="list__item-secondary-text">July 2nd, 2018</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-desk-8 col-tab-12 col-mob-4">
+                <h3>Orders</h2>
+                <table class="table--compact" style="--cols:5">
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>Date</th>
+                            <th>State</th>
+                            <th align="right">Total</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#3005 John Doe</td>
+                            <td>2 hours ago</td>
+                            <td>Pending</td>
+                            <td align="right">&euro; 78,65</td>
+                            <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
+                        </tr>
+                        <tr>
+                            <td>#3004 Jon Scott</td>
+                            <td>10 hours ago</td>
+                            <td>Shipped</td>
+                            <td align="right">&euro; 34,50</td>
+                            <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
+                        </tr>
+                        <tr>
+                            <td>#3003 Virginia Robbins</td>
+                            <td>1 day ago</td>
+                            <td>Completed</td>
+                            <td align="right">&euro; 120,10</td>
+                            <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
+                        </tr>
+                        <tr>
+                            <td>#3002 Elise Heath</td>
+                            <td>2 days ago</td>
+                            <td>Completed</td>
+                            <td align="right">&euro; 80,90</td>
+                            <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
+                        </tr>
+                        <tr>
+                            <td>#3001 Tahmine Marriott</td>
+                            <td>July 2nd, 2018</td>
+                            <td>Completed</td>
+                            <td align="right">&euro; 15,95</td>
+                            <td><a href="#" class="button button--icon"><iconify-icon data-icon="mdi:eye"></iconify-icon></a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
