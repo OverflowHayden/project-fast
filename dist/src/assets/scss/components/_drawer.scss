@@ -3,6 +3,7 @@
 @use '../setup/mixins';
 
 .drawer {
+    @include mixins.box-shadow;
     $self: &;
     background: map.get(variables.$drawer, "background");
     color: map.get(variables.$drawer, "color");

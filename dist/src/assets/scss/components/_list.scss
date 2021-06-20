@@ -8,7 +8,7 @@
     display: block;
     list-style: none;
     margin: 0 0 3rem 0;
-    padding: .8rem 0;
+    padding: 0;
 
     .menu a {
         color: variables.$color-text;
@@ -24,6 +24,10 @@
         #{$self}__item {
             border-bottom: 1px solid map.get(variables.$list, "border");
             overflow: visible;
+
+            &:last-child {
+                border-bottom: none;
+            }
         }
 
         #{$self}__item-meta {
@@ -96,18 +100,43 @@
             width: 100%;
             height: 100%;
             padding: map.get(variables.$list, "padding");
+            position: relative;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
             transition: background .25s ease;
+            z-index: 1;
 
             &:hover {
-                background: rgba(variables.$color-base-black, .04);
                 color: inherit;
+
+                &:before {
+                    background: rgba(variables.$color-base-black, .04);
+                    border-radius: #{variables.$border-radius * .66};
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: .4em;
+                    right: .4em;
+                    bottom: .4em;
+                    left: .4em;
+                    z-index: -1;
+                }
             }
 
             &:active, &:focus {
-                background: rgba(variables.$color-base-black, .12);
+                &:before {
+                    background: rgba(variables.$color-base-black, .12);
+                    border-radius: #{variables.$border-radius * .66};
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    top: .4em;
+                    right: .4em;
+                    bottom: .4em;
+                    left: .4em;
+                    z-index: -1;
+                }
             }
         }
 
