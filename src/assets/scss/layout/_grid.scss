@@ -71,10 +71,10 @@ $mob-gutter: (
     }
 
     &--visual [class^="col"] {
-        background: variables.$color-base-light;
+        background: variables.$color-base-white;
         border-radius: .2rem;
         padding: .6rem;
-        margin-bottom: 1rem;
+        margin-bottom: 3rem;
     }
 }
 

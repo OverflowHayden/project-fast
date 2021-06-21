@@ -5852,10 +5852,14 @@ Fast.Upload();</code></pre>
 <div class="i-code-block">
 	<button type="button" class="i-code-block__lang -collapsible"><i class="fa fa-caret-right fa-fw"></i> html</button>
 	<div class="i-code-block__content hidden">
-		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
+		<button type="button" class="btn btn-outline-primary btn-sm i-copy-button" data-clipboard-text="&lt;aside class=&quot;drawer drawer--persistent&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
             &lt;span class=&quot;drawer__header-text&quot;&gt;Project FAST&lt;/span&gt;
+            &lt;button class=&quot;drawer__nav-toggle&quot;&gt;
+                &lt;iconify-icon data-icon=&quot;mdi:menu&quot;&gt;&lt;/iconify-icon&gt;
+                &lt;iconify-icon data-icon=&quot;mdi:menu-open&quot;&gt;&lt;/iconify-icon&gt;
+            &lt;/button&gt;
         &lt;/header&gt;
         &lt;nav class=&quot;drawer__content&quot;&gt;
             &lt;ul class=&quot;list&quot;&gt;
@@ -5906,7 +5910,6 @@ Fast.Upload();</code></pre>
 &lt;/aside&gt;
 &lt;main class=&quot;main&quot;&gt;
     &lt;header class=&quot;app-bar app-bar--fixed&quot;&gt;
-        &lt;button class=app-bar__nav-toggle&gt;&lt;iconify-icon data-icon=&quot;mdi:menu&quot;&gt;&lt;/iconify-icon&gt;&lt;/button&gt;
         &lt;span class=&quot;app-bar__icon&quot;&gt;&lt;iconify-icon data-icon=&quot;mdi:home&quot;&gt;&lt;/iconify-icon&gt;&lt;/span&gt;
         &lt;span class=&quot;app-bar__title&quot;&gt;Dashboard&lt;/span&gt;
         &lt;div class=&quot;app-bar__actions&quot;&gt;
@@ -5928,15 +5931,17 @@ Fast.Upload();</code></pre>
         &lt;div class=&quot;grid&quot;&gt;
             &lt;div class=&quot;col-desk-6 col-tab-12 col-mob-4&quot;&gt;
                 &lt;h3&gt;Chart&lt;/h2&gt;
-                &lt;div class=&quot;card col-desk-12&quot;&gt;
-                    &lt;div class=&quot;card__content&quot;&gt;
-                        &lt;div id=&quot;chart_div&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;grid&quot;&gt;
+                    &lt;div class=&quot;card col-desk-12&quot;&gt;
+                        &lt;div class=&quot;card__content&quot;&gt;
+                            &lt;div id=&quot;chart_div&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;col-desk-6 col-tab-6&quot;&gt;
                 &lt;h3&gt;Best selling product&lt;/h2&gt;
-                &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;grid&quot;&gt;
                     &lt;div class=&quot;card col-desk-8&quot;&gt;
                         &lt;figure class=&quot;card__image&quot;&gt;&lt;img src=&quot;https://baconmockup.com/500/335&quot; alt=&quot;Bacon&quot; /&gt;&lt;/figure&gt;
                         &lt;div class=&quot;card__content&quot;&gt;
@@ -6072,12 +6077,20 @@ Fast.Upload();</code></pre>
       };
       var materialChart = new google.charts.Bar(document.getElementById(&#39;chart_div&#39;));
       materialChart.draw(data, materialOptions);
+
+      window.addEventListener(&#39;resize&#39;, function(){
+        materialChart.draw(data, materialOptions);
+      });
     }
 &lt;/script&gt;">Copy</button>
-		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--permanent&quot;&gt;
+		<pre class="mb-0"><code class="lang-">&lt;aside class=&quot;drawer drawer--persistent&quot;&gt;
     &lt;div class=&quot;drawer__drawer&quot;&gt;
         &lt;header class=&quot;drawer__header&quot;&gt;
             &lt;span class=&quot;drawer__header-text&quot;&gt;Project FAST&lt;/span&gt;
+            &lt;button class=&quot;drawer__nav-toggle&quot;&gt;
+                &lt;iconify-icon data-icon=&quot;mdi:menu&quot;&gt;&lt;/iconify-icon&gt;
+                &lt;iconify-icon data-icon=&quot;mdi:menu-open&quot;&gt;&lt;/iconify-icon&gt;
+            &lt;/button&gt;
         &lt;/header&gt;
         &lt;nav class=&quot;drawer__content&quot;&gt;
             &lt;ul class=&quot;list&quot;&gt;
@@ -6128,7 +6141,6 @@ Fast.Upload();</code></pre>
 &lt;/aside&gt;
 &lt;main class=&quot;main&quot;&gt;
     &lt;header class=&quot;app-bar app-bar--fixed&quot;&gt;
-        &lt;button class=app-bar__nav-toggle&gt;&lt;iconify-icon data-icon=&quot;mdi:menu&quot;&gt;&lt;/iconify-icon&gt;&lt;/button&gt;
         &lt;span class=&quot;app-bar__icon&quot;&gt;&lt;iconify-icon data-icon=&quot;mdi:home&quot;&gt;&lt;/iconify-icon&gt;&lt;/span&gt;
         &lt;span class=&quot;app-bar__title&quot;&gt;Dashboard&lt;/span&gt;
         &lt;div class=&quot;app-bar__actions&quot;&gt;
@@ -6150,15 +6162,17 @@ Fast.Upload();</code></pre>
         &lt;div class=&quot;grid&quot;&gt;
             &lt;div class=&quot;col-desk-6 col-tab-12 col-mob-4&quot;&gt;
                 &lt;h3&gt;Chart&lt;/h2&gt;
-                &lt;div class=&quot;card col-desk-12&quot;&gt;
-                    &lt;div class=&quot;card__content&quot;&gt;
-                        &lt;div id=&quot;chart_div&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;grid&quot;&gt;
+                    &lt;div class=&quot;card col-desk-12&quot;&gt;
+                        &lt;div class=&quot;card__content&quot;&gt;
+                            &lt;div id=&quot;chart_div&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
             &lt;div class=&quot;col-desk-6 col-tab-6&quot;&gt;
                 &lt;h3&gt;Best selling product&lt;/h2&gt;
-                &lt;div class=&quot;row&quot;&gt;
+                &lt;div class=&quot;grid&quot;&gt;
                     &lt;div class=&quot;card col-desk-8&quot;&gt;
                         &lt;figure class=&quot;card__image&quot;&gt;&lt;img src=&quot;https://baconmockup.com/500/335&quot; alt=&quot;Bacon&quot; /&gt;&lt;/figure&gt;
                         &lt;div class=&quot;card__content&quot;&gt;
@@ -6294,6 +6308,10 @@ Fast.Upload();</code></pre>
       };
       var materialChart = new google.charts.Bar(document.getElementById(&#39;chart_div&#39;));
       materialChart.draw(data, materialOptions);
+
+      window.addEventListener(&#39;resize&#39;, function(){
+        materialChart.draw(data, materialOptions);
+      });
     }
 &lt;/script&gt;</code></pre>
 	</div>

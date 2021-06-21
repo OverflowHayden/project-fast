@@ -4,10 +4,14 @@ category: Templates
 ---
 
 ```dashboard.html
-<aside class="drawer drawer--permanent">
+<aside class="drawer drawer--persistent">
     <div class="drawer__drawer">
         <header class="drawer__header">
             <span class="drawer__header-text">Project FAST</span>
+            <button class="drawer__nav-toggle">
+                <iconify-icon data-icon="mdi:menu"></iconify-icon>
+                <iconify-icon data-icon="mdi:menu-open"></iconify-icon>
+            </button>
         </header>
         <nav class="drawer__content">
             <ul class="list">
@@ -58,7 +62,6 @@ category: Templates
 </aside>
 <main class="main">
     <header class="app-bar app-bar--fixed">
-        <button class=app-bar__nav-toggle><iconify-icon data-icon="mdi:menu"></iconify-icon></button>
         <span class="app-bar__icon"><iconify-icon data-icon="mdi:home"></iconify-icon></span>
         <span class="app-bar__title">Dashboard</span>
         <div class="app-bar__actions">
@@ -80,15 +83,17 @@ category: Templates
         <div class="grid">
             <div class="col-desk-6 col-tab-12 col-mob-4">
                 <h3>Chart</h2>
-                <div class="card col-desk-12">
-                    <div class="card__content">
-                        <div id="chart_div"></div>
+                <div class="grid">
+                    <div class="card col-desk-12">
+                        <div class="card__content">
+                            <div id="chart_div"></div>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-desk-6 col-tab-6">
                 <h3>Best selling product</h2>
-                <div class="row">
+                <div class="grid">
                     <div class="card col-desk-8">
                         <figure class="card__image"><img src="https://baconmockup.com/500/335" alt="Bacon" /></figure>
                         <div class="card__content">
@@ -224,6 +229,10 @@ category: Templates
       };
       var materialChart = new google.charts.Bar(document.getElementById('chart_div'));
       materialChart.draw(data, materialOptions);
+      
+      window.addEventListener('resize', function(){
+        materialChart.draw(data, materialOptions);
+      });
     }
 </script>
 ```
