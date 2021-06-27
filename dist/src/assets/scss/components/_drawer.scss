@@ -98,6 +98,20 @@
 
     &--compact {
         max-width: map.get(variables.$drawer, "compact", "width");
+
+        .list__item-text {
+            text-indent: -999em;
+            display: block;
+        }
+
+        .list__item-graphic {
+            float: right;
+            margin: 0 .33em;
+        }
+
+        .list__item--header, .drawer__header-text {
+            display: none;
+        }
     }
 
     &--open &__nav-toggle {
@@ -201,7 +215,7 @@
         padding: map.get(variables.$drawer, "header", "padding");
 
         #{$self}--compact & {
-            background-position: 95%;
+            background-position: center;
             background-size: auto 65%;
             min-height: map.get(variables.$drawer, "compact", "header", "height");
             padding: map.get(variables.$drawer, "compact", "header", "padding");
