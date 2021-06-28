@@ -7,11 +7,22 @@ $color-secondary:                 #696969 !default;
 $color-base-white:                #fff !default;
 $color-base-light:                #f4f4f4 !default;
 $color-base-black:                #000 !default;
+$color-base-dark:                 #1D211D !default;
+
+$color-border-light:              #e0e0e0 !default;
+$color-border-dark:               #333733 !default;
 
 $color-text:                      #333 !default;
 $color-link:                      #007bff !default;
 $color-success:                   #28a745 !default;
 $color-error:                     #f44336 !default;
+
+:root {
+    --color-scheme-1: #{$color-base-white};
+    --color-scheme-2: #{$color-base-light};
+    --color-scheme-3: #{$color-border-light};
+    --color-scheme-4: #{$color-base-black};
+}
 
 
 /* ---------------------------------------------- //
@@ -23,7 +34,7 @@ $margin-size:                     3rem !default;
 
 $app-bar: (
     "background": $color-base-white,
-    "border": rgba(#e0e0e0, .7),
+    "border": rgba($color-border-light, .7),
     "color": $color-text,
     "padding": .8rem 1.2rem,
     "height": 6.2rem,
@@ -62,7 +73,7 @@ $checkbox: (
 ) !default;
 
 $chip: (
-    "background": #e0e0e0,
+    "background": $color-border-light,
     "background-primary": $color-primary,
     "border-radius": 1.2em,
     "color": rgba($color-base-black, .87),
@@ -76,7 +87,7 @@ $chip: (
 $drawer: (
     "background": $color-primary,
     "color": $color-base-white,
-    "border": #e0e0e0,
+    "border": $color-border-light,
     "width": 26rem,
     "image": "/src/assets/img/logo.svg",
     "header": (
@@ -190,7 +201,7 @@ $fab: (
 
 $list: (
     "background": $color-base-white,
-    "border": #e0e0e0,
+    "border": $color-border-light,
     "color": rgba($color-base-black, .87),
     "font-size": 1.6rem,
     "height": 4.8rem,
@@ -233,7 +244,7 @@ $form: (
 
 $tab: (
     "label": (
-        "border": #e0e0e0,
+        "border": $color-border-light,
         "border-active": $color-primary,
     ),
     "border": $color-primary,
@@ -246,7 +257,7 @@ $tab: (
 
 $table: (
     "background": $color-base-white,
-    "border": #e0e0e0,
+    "border": $color-border-light,
     "color": $color-base-black,
     "font-size": 1.3rem,
     "padding": .4rem 5.6rem .4rem 2.4rem,
