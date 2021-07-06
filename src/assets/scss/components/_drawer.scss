@@ -8,6 +8,7 @@
     background: map.get(variables.$drawer, "background");
     color: map.get(variables.$drawer, "color");
     width: map.get(variables.$drawer, "width");
+    transition: max-width .4s ease;
 
     &-scroll-lock {
         overflow: hidden;
@@ -100,21 +101,31 @@
         max-width: map.get(variables.$drawer, "compact", "width");
 
         .list__item-text {
-            text-indent: -999em;
             display: block;
+            color: transparent;
+            text-overflow: clip;
+            transition: color .25s ease 0s;
         }
 
         .list__item-graphic {
-            float: right;
+            color: inherit;
             margin: 0 .33em;
         }
 
-        .list__item--header, .drawer__header-text {
+        .list__item--header {
             display: none;
+        }
+
+        #{$self}__header {
+            transition: background-position .25s ease, padding .25s ease;
+        }
+
+        #{$self}__header-text {
+            opacity: 0;
         }
     }
 
-    &--open &__nav-toggle {
+    &--open &__nav-toggle, &--compact &__nav-toggle {
         transform: translateX(0);
         transition: transform .25s ease 0s;
 
@@ -185,6 +196,10 @@
         right: 0;
         transition: transform .25s ease .4s;
 
+        #{$self}--permanent & {
+            transition: none;
+        }
+
         &:focus {
             outline: none;
         }
@@ -221,6 +236,10 @@
             padding: map.get(variables.$drawer, "compact", "header", "padding");
             align-items: center;
         }
+    }
+
+    &__header-text {
+        transition: opacity .25s ease .4s;
     }
 
     &__content {
@@ -270,6 +289,11 @@
             font-weight: 500;
         }
 
+        &__item-text {
+            flex-wrap: nowrap;
+            transition: color .25s ease .4s;
+        }
+
         &__item-graphic, &__item-meta {
             color: darken(map.get(variables.$drawer, "color"), 10%);
         }
@@ -305,6 +329,8 @@
     }
 }
 
-.permanent--open .drawer__nav-toggle {
-    display: none;
+.drawer--compact .drawer__nav-toggle {
+    right: 50%;
+    transform: translateX(50%);
+    transition: none;
 }

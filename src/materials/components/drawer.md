@@ -284,6 +284,10 @@ The drawer will change to temporary on mobile
     <div class="drawer__drawer">
         <header class="drawer__header">
             <span class="drawer__header-text">Drawer header</span>
+            <button class="drawer__nav-toggle">
+                <iconify-icon data-icon="mdi:menu-open"></iconify-icon>
+                <iconify-icon data-icon="mdi:menu"></iconify-icon>
+            </button>
         </header>
         <nav class="drawer__content">
             <ul class="list">

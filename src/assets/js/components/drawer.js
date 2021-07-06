@@ -74,6 +74,18 @@ export default function fastDrawer() {
         const toggle = document.querySelector('.drawer__nav-toggle');
         const drawer = document.querySelector('.drawer--permanent');
 
+        toggle.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            if (drawer.classList.contains('drawer--compact')) {
+                drawer.classList.remove('drawer--compact');
+                document.body.classList.remove('permanent--open');
+            } else {
+                drawer.classList.add('drawer--compact');
+                document.body.classList.add('permanent--open');
+            }
+        });
+
         document.body.classList.add('permanent--open');
     }
 
