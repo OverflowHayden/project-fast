@@ -11,8 +11,8 @@ const publicJS = [
 ];
 
 const files = [
-    './src/assets/js/app.js',
-    './src/assets/scss/includes.scss'
+    './src/js/app.js',
+    './src/scss/includes.scss'
 ];
 
 module.exports = [
@@ -20,7 +20,7 @@ module.exports = [
         mode: 'development',
         entry: files,
         output: {
-            filename: 'src/assets/js/app.min.js',
+            filename: 'dist/js/app.min.js',
             path: __dirname,
             hotUpdateChunkFilename: 'hot/hot-update.js',
             hotUpdateMainFilename: 'hot/hot-update.json'
@@ -101,7 +101,7 @@ module.exports = [
                                 name: '[name].[ext]',
                                 emitFile: true,
                                 publicPath: '../img/min/',
-                                outputPath: 'src/assets/img/min/',
+                                outputPath: 'dist/img/',
                             },
                         },
                         {
@@ -137,7 +137,7 @@ module.exports = [
                                 name: '[name].[ext]',
                                 emitFile: true,
                                 publicPath: '../fonts/',
-                                outputPath: 'src/assets/fonts/',
+                                outputPath: 'dist/fonts/',
                             }
                         }
                     ]
@@ -149,7 +149,7 @@ module.exports = [
                 configFile: '.stylelintrc',
             }),
             new MiniCssExtractPlugin({// define where to save the file
-                filename: 'src/assets/css/style.css',
+                filename: 'dist/css/style.css',
             }),
             new CompressionPlugin({
                 filename: "[path][base].gz[query]",
@@ -161,7 +161,7 @@ module.exports = [
             new WebpackConcatPlugin({
                 bundles: [
                     {
-                        destination: 'src/assets/js/bundle.js',
+                        destination: 'dist/js/bundle.js',
                         source: publicJS,
                     },
                 ],
