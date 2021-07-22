@@ -89,12 +89,12 @@ $drawer: (
     "color": $color-base-white,
     "border": $color-border-light,
     "width": 26rem,
-    "image": "/src/assets/img/logo.svg",
+    "image": "/src/img/logo.svg",
     "header": (
         "background": $color-primary,
         "color": $color-base-white,
         "height": 6.2rem,
-        "image": url("/src/assets/img/logo.svg") no-repeat 1em / auto 65%,
+        "image": url("/src/img/logo.svg") no-repeat 1em / auto 65%,
         "padding": .8rem 1.6rem .8rem 7.2rem,
     ),
     "compact": (
