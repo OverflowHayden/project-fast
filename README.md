@@ -56,7 +56,7 @@ And `resources/sass/app.scss`:
 @import "variables";
 
 // Project FAST
-@import '~project-fast/src/assets/scss/includes.scss';
+@import '~project-fast/src/scss/includes.scss';
 ```
 
 And the following code to `resources/js/app.js`:
