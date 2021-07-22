@@ -1,6 +1,6 @@
 {
   "name": "project-fast",
-  "version": "2.0.0-beta.1",
+  "version": "2.0.0-beta.2",
   "description": "Project \"Frontend Application Stack Toolkit\" is a modern frontend framework designed for Laravel.",
   "homepage": "https://github.com/OverflowHayden/project-fast.git#readme",
   "scripts": {
