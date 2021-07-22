@@ -100,7 +100,7 @@ module.exports = [
                             options: {
                                 name: '[name].[ext]',
                                 emitFile: true,
-                                publicPath: '../img/min/',
+                                publicPath: '../img/',
                                 outputPath: 'dist/img/',
                             },
                         },
