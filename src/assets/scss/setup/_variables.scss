@@ -190,7 +190,7 @@ $fab: (
     "text": (
         "background": $color-base-white,
         "color": $color-text,
-        "padding": .4rem .6rem .3rem,
+        "padding": .5em .6em,
     ),
     "icon": (
         "background": $color-primary,
@@ -229,7 +229,7 @@ $list: (
 $menu: (
     "background": $color-base-white,
     "font-size": 1.6rem,
-    "border-radius": .2rem,
+    "border-radius": .25em,
     "color": $color-base-black,
 ) !default;
 

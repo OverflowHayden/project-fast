@@ -85,26 +85,31 @@
     &__list {
         list-style: none;
         margin: 0;
-        padding: 0;
+        padding: 0 .8rem 0 0;
         max-height: 0;
         position: absolute;
         bottom: map.get(variables.$fab, "size");
-        right: .8rem;
+        right: 0;
         min-width: 20rem;
         text-align: right;
         opacity: 0;
         overflow: hidden;
         transform: translateY(4rem);
         transition: transform .3s cubic-bezier(.4, 0, .2, 1), opacity .3s cubic-bezier(.4, 0, .2, 1), max-height 0s linear .3s;
+    }
 
-        &-item {
-            display: inline-block;
-            margin-top: .8rem;
+    &__list-item {
+        display: inline-block;
+        margin-top: .8rem;
+
+        a {
+            display: flex;
+            align-items: center;
         }
     }
 
     &:hover &__list, &:focus &__list {
-        padding: 0 0 1rem 0;
+        padding: 0 .8rem 1rem 0;
         max-height: 100rem;
         display: block;
         opacity: 1;
@@ -113,10 +118,10 @@
     }
 
     &__text {
+        @include mixins.box-shadow;
         background: map.get(variables.$fab, "text", "background");
         border: none;
-        border-radius: .2rem;
-        box-shadow: 0 .2rem .5rem 0 rgba(variables.$color-base-black, .26);
+        border-radius: .25em;
         font-size: 1.4rem;
         line-height: 1;
         color: map.get(variables.$fab, "text", "color");
