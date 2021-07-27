@@ -1,5 +1,5 @@
 # Project FAST
-## Project "Frontend Application Stack Toolkit" is a modern frontend framework designed for Laravel.
+## Project "Frontend Application Stack Toolkit" is a modern frontend framework designed for web applications.
 
 
 [![npm](https://img.shields.io/npm/dt/project-fast.svg?style=flat-square)](https://github.com/OverflowHayden/project-fast) 
