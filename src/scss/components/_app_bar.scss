@@ -1,12 +1,33 @@
 @use 'sass:map';
 @use '../setup/variables';
-@use '../setup/mixins';
+@use '../elements/button';
+
+$app-bar: (
+        "background": variables.$color-base-white,
+        "border": rgba(variables.$color-border-light, .7),
+        "color": variables.$color-text,
+        "padding": .8rem 1.2rem,
+        "height": 6.2rem,
+        "title": (
+                "font-size": 2rem,
+        ),
+        "prominent": (
+                "height": 12.8rem,
+        ),
+        "dense": (
+                "height": 5.4rem,
+                "padding": .2rem .4rem,
+        ),
+        "icon": (
+                "font-size": 2.4rem,
+        ),
+) !default;
 
 .app-bar {
     $self: &;
-    background: map.get(variables.$app-bar, "background");
-    border-bottom: .1rem solid map.get(variables.$app-bar, "border");
-    color: map.get(variables.$app-bar, "color");
+    background: map.get($app-bar, "background");
+    border-bottom: .1rem solid map.get($app-bar, "border");
+    color: map.get($app-bar, "color");
     position: fixed;
     top: 0;
     left: 0;
@@ -14,13 +35,13 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: map.get(variables.$app-bar, "padding");
-    height: map.get(variables.$app-bar, "height");
+    padding: map.get($app-bar, "padding");
+    height: map.get($app-bar, "height");
     will-change: top;
     z-index: 19;
 
     &--prominent {
-        height: map.get(variables.$app-bar, "prominent", "height");
+        height: map.get($app-bar, "prominent", "height");
         align-items: flex-start;
 
         #{$self}__title {
@@ -29,23 +50,23 @@
     }
 
     &--dense {
-        height: map.get(variables.$app-bar, "dense", "height");
-        padding: map.get(variables.$app-bar, "dense", "padding");
+        height: map.get($app-bar, "dense", "height");
+        padding: map.get($app-bar, "dense", "padding");
     }
 
     &__nav-toggle {
-        @include mixins.button;
-        @include mixins.button--text;
-        @include mixins.button--icon;
+        @include button.button;
+        @include button.button--text;
+        @include button.button--icon;
 
         border-radius: 50%;
         font-size: 2.4rem;
-        color: map.get(variables.$app-bar, "color");
+        color: map.get($app-bar, "color");
         padding: 9px;
 
         &:hover {
-            background: darken(map.get(variables.$app-bar, "background"), 4%);
-            color: map.get(variables.$app-bar, "color");
+            background: darken(map.get($app-bar, "background"), 4%);
+            color: map.get($app-bar, "color");
         }
     }
 
@@ -55,7 +76,7 @@
     }
 
     &__title {
-        font-size: map.get(variables.$app-bar, "title", "font-size");
+        font-size: map.get($app-bar, "title", "font-size");
         font-weight: 700;
         line-height: 1.4;
         margin-left: 1em;
@@ -70,7 +91,7 @@
     }
 
     .button {
-        color: rgba(map.get(variables.$app-bar, "color"), .82);
+        color: rgba(map.get($app-bar, "color"), .82);
         padding: .9rem;
 
         &.button--icon {
@@ -78,13 +99,13 @@
         }
 
         .mdi, .iconify {
-            font-size: map.get(variables.$app-bar, "icon", "font-size");
+            font-size: map.get($app-bar, "icon", "font-size");
             line-height: 1;
         }
 
         &:hover {
-            background: darken(map.get(variables.$app-bar, "background"), 4%);
-            color: map.get(variables.$app-bar, "color");
+            background: darken(map.get($app-bar, "background"), 4%);
+            color: map.get($app-bar, "color");
         }
     }
 
@@ -96,13 +117,13 @@
 }
 
 .with-app-bar {
-    padding-top: map.get(variables.$app-bar, "height");
+    padding-top: map.get($app-bar, "height");
 
     &--prominent {
-        padding-top: map.get(variables.$app-bar, "prominent", "height");
+        padding-top: map.get($app-bar, "prominent", "height");
     }
 
     &--dense {
-        padding-top: map.get(variables.$app-bar, "dense", "height");
+        padding-top: map.get($app-bar, "dense", "height");
     }
 }

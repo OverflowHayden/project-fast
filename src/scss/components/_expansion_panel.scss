@@ -2,6 +2,11 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
+$expansion-panel: (
+        "background": variables.$color-base-white,
+        "color": rgba(variables.$color-base-black,.54),
+) !default;
+
 .expansion-panel {
     $self: &;
     --content-height: 50rem;
@@ -9,16 +14,16 @@
     &__item {
         @include mixins.box-shadow;
         border-radius: variables.$border-radius;
-        background: map.get(variables.$expansion-panel, "background");
-        color: map.get(variables.$expansion-panel, "color");
+        background: map.get($expansion-panel, "background");
+        color: map.get($expansion-panel, "color");
         position: relative;
         transition: background .2s ease;
 
         &:hover {
-            background: darken(map.get(variables.$expansion-panel, "background"), 4%);
+            background: darken(map.get($expansion-panel, "background"), 4%);
 
             .list {
-                background: darken(map.get(variables.$expansion-panel, "background"), 4%);
+                background: darken(map.get($expansion-panel, "background"), 4%);
             }
         }
 
@@ -36,7 +41,7 @@
         transition: padding .25s ease, margin .25s ease;
 
         &:after {
-            border-top: .5rem solid map.get(variables.$expansion-panel, "color");
+            border-top: .5rem solid map.get($expansion-panel, "color");
             border-left: .5rem solid transparent;
             border-right: .5rem solid transparent;
             border-bottom: none;

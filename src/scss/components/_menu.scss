@@ -2,15 +2,22 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
+$menu: (
+        "background": variables.$color-base-white,
+        "font-size": 1.6rem,
+        "border-radius": .25em,
+        "color": variables.$color-base-black,
+) !default;
+
 .menu {
     $self: &;
     display: inline-block;
-    font-size: map.get(variables.$menu, "font-size");
+    font-size: map.get($menu, "font-size");
     position: relative;
 
     &__list {
-        background: map.get(variables.$menu, "background");
-        border-radius: map.get(variables.$menu, "border-radius");
+        background: map.get($menu, "background");
+        border-radius: map.get($menu, "border-radius");
         box-shadow: 0 .3rem .1rem -.2rem rgba(variables.$color-base-black, .2),0 .2rem .2rem 0 rgba(variables.$color-base-black, .14),0 .1rem .5rem 0 rgba(variables.$color-base-black, .12);
         display: inline-block;
         list-style: none;
@@ -46,7 +53,7 @@
         &-item {
             font-weight: 400;
             display: flex;
-            color: rgba(map.get(variables.$menu, "color"), .87);
+            color: rgba(map.get($menu, "color"), .87);
             height: 3em;
             align-items: center;
             overflow: hidden;
@@ -64,11 +71,11 @@
                 align-items: center;
 
                 &:hover {
-                    background: rgba(map.get(variables.$menu, "color"), .04);
+                    background: rgba(map.get($menu, "color"), .04);
                 }
 
                 &:active, &:focus {
-                    background: rgba(map.get(variables.$menu, "color"), .12);
+                    background: rgba(map.get($menu, "color"), .12);
                 }
             }
 
@@ -93,14 +100,14 @@
                 align-items: center;
 
                 &:hover {
-                    background: rgba(map.get(variables.$menu, "color"), .04);
+                    background: rgba(map.get($menu, "color"), .04);
                 }
             }
         }
 
         &-divider {
             border: none;
-            border-bottom: .1rem solid rgba(map.get(variables.$menu, "color"), .12);
+            border-bottom: .1rem solid rgba(map.get($menu, "color"), .12);
             height: 0;
             margin: 0;
         }

@@ -1,10 +1,38 @@
 @use 'sass:map';
 @use '../setup/variables';
 @use '../setup/mixins';
+@use '../components/drawer';
+
+$list: (
+        "background": variables.$color-base-white,
+        "border": variables.$color-border-light,
+        "color": rgba(variables.$color-base-black, .87),
+        "font-size": 1.6rem,
+        "height": 4.8rem,
+        "padding": 1.5rem 1.6rem,
+        "compact": (
+                "font-size": 1.4rem,
+                "height": 3.6rem,
+        ),
+        "secondary": (
+                "color": rgba(variables.$color-base-black, .54),
+                "font-size": 1.4rem,
+        ),
+        "graphic": (
+                "color": rgba(variables.$color-base-black, .38),
+                "font-size": 2.4rem,
+                "size": 2.4rem,
+        ),
+        "meta": (
+                "color": rgba(variables.$color-base-black, .38),
+                "font-size": 2.4rem,
+        ),
+        "divider": rgba(variables.$color-base-black, .12),
+) !default;
 
 .list {
     $self: &;
-    background: map.get(variables.$list, "background");
+    background: map.get($list, "background");
     display: block;
     list-style: none;
     margin: 0 0 3rem 0;
@@ -22,7 +50,7 @@
 
     &--striped {
         #{$self}__item {
-            border-bottom: 1px solid map.get(variables.$list, "border");
+            border-bottom: 1px solid map.get($list, "border");
             overflow: visible;
 
             &:last-child {
@@ -39,18 +67,18 @@
         margin-bottom: 0;
 
         #{$self}__item {
-            font-size: map.get(variables.$list, "compact", "font-size");
-            min-height: map.get(variables.$list, "compact", "height");
+            font-size: map.get($list, "compact", "font-size");
+            min-height: map.get($list, "compact", "height");
         }
     }
 
     &__item {
-        font-size: map.get(variables.$list, "font-size");
+        font-size: map.get($list, "font-size");
         font-weight: 400;
         display: flex;
         flex-wrap: wrap;
-        color: map.get(variables.$list, "color");
-        min-height: map.get(variables.$list, "height");
+        color: map.get($list, "color");
+        min-height: map.get($list, "height");
         align-items: center;
         overflow: hidden;
         padding: 0;
@@ -76,8 +104,8 @@
         }
 
         .drawer &#{$self}--open {
-            border-top: .1rem solid map.get(variables.$drawer, "border");
-            border-bottom: .1rem solid map.get(variables.$drawer, "border");
+            border-top: .1rem solid map.get(drawer.$drawer, "border");
+            border-bottom: .1rem solid map.get(drawer.$drawer, "border");
 
             #{$self}__item-meta path {
                 transform: rotate(180deg);
@@ -99,7 +127,7 @@
             align-items: center;
             width: 100%;
             height: 100%;
-            padding: map.get(variables.$list, "padding");
+            padding: map.get($list, "padding");
             position: relative;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -151,8 +179,8 @@
         }
 
         &-secondary-text {
-            color: map.get(variables.$list, "secondary", "color");
-            font-size: map.get(variables.$list, "secondary", "font-size");
+            color: map.get($list, "secondary", "color");
+            font-size: map.get($list, "secondary", "font-size");
             font-weight: 400;
             letter-spacing: .01785em;
             line-height: 1.4;
@@ -164,22 +192,22 @@
         }
 
         &-graphic {
-            color: map.get(variables.$list, "graphic", "color");
-            font-size: map.get(variables.$list, "graphic", "font-size");
+            color: map.get($list, "graphic", "color");
+            font-size: map.get($list, "graphic", "font-size");
             display: inline-flex;
             flex-shrink: 0;
             align-items: center;
             justify-content: center;
-            height: map.get(variables.$list, "graphic", "size");
-            width: map.get(variables.$list, "graphic", "size");
+            height: map.get($list, "graphic", "size");
+            width: map.get($list, "graphic", "size");
             margin: 0 .66em 0 0;
         }
 
         &-meta {
             margin-left: auto;
             margin-right: 0;
-            color: map.get(variables.$list, "meta", "color");
-            font-size: map.get(variables.$list, "meta", "font-size");
+            color: map.get($list, "meta", "color");
+            font-size: map.get($list, "meta", "font-size");
             cursor: pointer;
 
             path {
@@ -191,7 +219,7 @@
 
     &__divider {
         border: none;
-        border-bottom: .1rem solid map.get(variables.$list, "divider");
+        border-bottom: .1rem solid map.get($list, "divider");
         height: 0;
         margin: 0;
     }

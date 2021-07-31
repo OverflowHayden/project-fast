@@ -1,5 +1,6 @@
 @use '../setup/mixins';
 @use '../vendor/bourbon';
+@use '../elements/button';
 
 .upload-field {
     @include bourbon.clearfix;
@@ -12,7 +13,7 @@
     }
 
     &__label {
-        @include mixins.button;
+        @include button.button;
         margin-right: .75em;
         display: inline-block;
         vertical-align: middle;

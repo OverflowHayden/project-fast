@@ -2,6 +2,19 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
+$tab: (
+        "label": (
+                "border": variables.$color-border-light,
+                "border-active": variables.$color-primary,
+        ),
+        "border": variables.$color-primary,
+        "chip": (
+                "background": variables.$color-primary,
+                "color": variables.$color-base-white,
+                "font-size": 1.4rem,
+        ),
+) !default;
+
 .tab {
     $self: &;
 
@@ -15,17 +28,17 @@
         z-index: -1;
 
         &:checked + #{$self}__label {
-            border-bottom: .2rem solid map.get(variables.$tab, "label", "border-active");
+            border-bottom: .2rem solid map.get($tab, "label", "border-active");
 
             + #{$self}__panel {
                 display: block;
             }
 
             .chip {
-                background: map.get(variables.$tab, "chip", "background");
+                background: map.get($tab, "chip", "background");
 
                 &__text {
-                    color: map.get(variables.$tab, "chip", "color");
+                    color: map.get($tab, "chip", "color");
                 }
             }
         }
@@ -34,13 +47,13 @@
     &__label {
         @include mixins.ripple;
 
-        border-bottom: .1rem solid map.get(variables.$tab, "label", "border");
+        border-bottom: .1rem solid map.get($tab, "label", "border");
         cursor: pointer;
         padding: 1rem 2rem;
         transition: border .25s ease, background .25s ease;
 
         &:hover {
-            background: rgba(map.get(variables.$tab, "label", "border"), .3);
+            background: rgba(map.get($tab, "label", "border"), .3);
         }
     }
 
@@ -58,7 +71,7 @@
         vertical-align: middle;
 
         &__text {
-            font-size: map.get(variables.$tab, "chip", "font-size");
+            font-size: map.get($tab, "chip", "font-size");
             display: inline-flex;
             line-height: 1;
             align-items: center;

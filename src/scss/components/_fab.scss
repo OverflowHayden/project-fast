@@ -2,6 +2,23 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
+$fab: (
+        "background": variables.$color-primary,
+        "color": variables.$color-base-white,
+        "menu-icon": "../img/dots-vertical.svg",
+        "size": 5.6rem,
+        "text": (
+                "background": variables.$color-base-white,
+                "color": variables.$color-text,
+                "padding": .5em .6em,
+        ),
+        "icon": (
+                "background": variables.$color-primary,
+                "color": variables.$color-base-white,
+                "size": 4rem,
+        ),
+) !default;
+
 .fab {
     $self: &;
 
@@ -31,15 +48,15 @@
 
     &--menu {
         &:before {
-            background: map.get(variables.$fab, "background");
+            background: map.get($fab, "background");
             border-radius: 50%;
             cursor: pointer;
-            content: url('#{map.get(variables.$fab, "menu-icon")}');
-            color: map.get(variables.$fab, "color");
+            content: url('#{map.get($fab, "menu-icon")}');
+            color: map.get($fab, "color");
             display: flex;
             justify-content: center;
             align-items: center;
-            height: map.get(variables.$fab, "size");
+            height: map.get($fab, "size");
             position: absolute;
             top: 0;
             left: 0;
@@ -60,16 +77,16 @@
         appearance: none;
         -webkit-appearance: none;
         -moz-appearance: none;
-        background: map.get(variables.$fab, "background");
+        background: map.get($fab, "background");
         border: none;
         border-radius: 50%;
         box-shadow: 0 .5rem .5rem -.3rem rgba(variables.$color-base-black, .2), 0 .8rem 1rem .1rem rgba(variables.$color-base-black, .14), 0 .3rem 1.4rem .2rem rgba(variables.$color-base-black, .12);
         cursor: pointer;
-        color: map.get(variables.$fab, "color");
+        color: map.get($fab, "color");
         display: inline-flex;
         font-size: 2.4rem;
-        width: map.get(variables.$fab, "size");
-        height: map.get(variables.$fab, "size");
+        width: map.get($fab, "size");
+        height: map.get($fab, "size");
         text-align: center;
         justify-content: center;
         align-items: center;
@@ -77,8 +94,8 @@
         transition: background 0.2s ease;
 
         &:hover {
-            background: lighten(map.get(variables.$fab, "background"), 8%);
-            color: map.get(variables.$fab, "color");
+            background: lighten(map.get($fab, "background"), 8%);
+            color: map.get($fab, "color");
         }
     }
 
@@ -88,7 +105,7 @@
         padding: 0 .8rem 0 0;
         max-height: 0;
         position: absolute;
-        bottom: map.get(variables.$fab, "size");
+        bottom: map.get($fab, "size");
         right: 0;
         min-width: 20rem;
         text-align: right;
@@ -119,13 +136,13 @@
 
     &__text {
         @include mixins.box-shadow;
-        background: map.get(variables.$fab, "text", "background");
+        background: map.get($fab, "text", "background");
         border: none;
         border-radius: .25em;
         font-size: 1.4rem;
         line-height: 1;
-        color: map.get(variables.$fab, "text", "color");
-        padding: map.get(variables.$fab, "text", "padding");
+        color: map.get($fab, "text", "color");
+        padding: map.get($fab, "text", "padding");
         display: inline-block;
         vertical-align: middle;
 
@@ -137,21 +154,21 @@
     &__icon {
         @include mixins.ripple;
 
-        background: map.get(variables.$fab, "icon", "background");
+        background: map.get($fab, "icon", "background");
         box-shadow: 0 .1rem .6rem rgba(variables.$color-base-black, .16), 0 .3rem 1rem rgba(variables.$color-base-black, .16);
         border: none;
         border-radius: 50%;
-        color: map.get(variables.$fab, "icon", "color");
+        color: map.get($fab, "icon", "color");
         display: inline-flex;
-        width: map.get(variables.$fab, "icon", "size");
-        height: map.get(variables.$fab, "icon", "size");
+        width: map.get($fab, "icon", "size");
+        height: map.get($fab, "icon", "size");
         position: relative;
         justify-content: center;
         align-items: center;
         transition: background .2s ease;
 
         &:hover {
-            background: lighten(map.get(variables.$fab, "icon", "background"), 8%);
+            background: lighten(map.get($fab, "icon", "background"), 8%);
         }
     }
 }

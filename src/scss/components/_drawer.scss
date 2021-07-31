@@ -1,13 +1,43 @@
 @use 'sass:map';
 @use '../setup/variables';
 @use '../setup/mixins';
+@use '../components/app_bar';
+
+$drawer: (
+        "background": variables.$color-primary,
+        "color": variables.$color-base-white,
+        "border": variables.$color-border-light,
+        "width": 26rem,
+        "image": "/src/img/logo.svg",
+        "header": (
+                "background": variables.$color-primary,
+                "color": variables.$color-base-white,
+                "height": 6.2rem,
+                "image": url("/src/img/logo.svg") no-repeat 1em / auto 65%,
+                "padding": .8rem 1.6rem .8rem 7.2rem,
+        ),
+        "compact": (
+                "width": 7.2rem,
+                "header": (
+                        "height": 6.2rem,
+                        "padding": .8rem 1.6rem,
+                ),
+        ),
+        "dark": (
+                "background": variables.$color-secondary,
+                "color": variables.$color-base-white,
+        ),
+        "list": (
+                "font-size": 1.4rem,
+        ),
+) !default;
 
 .drawer {
     @include mixins.box-shadow;
     $self: &;
-    background: map.get(variables.$drawer, "background");
-    color: map.get(variables.$drawer, "color");
-    width: map.get(variables.$drawer, "width");
+    background: map.get($drawer, "background");
+    color: map.get($drawer, "color");
+    width: map.get($drawer, "width");
     transition: max-width .4s ease;
 
     &-scroll-lock {
@@ -20,7 +50,7 @@
         top: 0;
         left: 0;
         width: calc(100% - 6.4rem);
-        max-width: map.get(variables.$drawer, "width");
+        max-width: map.get($drawer, "width");
         height: 100%;
         transform: translateX(-100%);
         will-change: transform;
@@ -53,7 +83,7 @@
         }
 
         ~ .main .app-bar {
-            padding-left: calc(1.2rem + #{map.get(variables.$app-bar, "height")});
+            padding-left: calc(1.2rem + #{map.get(app_bar.$app-bar, "height")});
         }
     }
 
@@ -78,7 +108,7 @@
         top: 0;
         left: 0;
         width: calc(100% - 6.4rem);
-        max-width: map.get(variables.$drawer, "width");
+        max-width: map.get($drawer, "width");
         height: 100%;
         opacity: 1;
         transform: translateX(0);
@@ -89,16 +119,16 @@
         }
 
         + .main {
-            margin-left: map.get(variables.$drawer, "width");
+            margin-left: map.get($drawer, "width");
 
             .app-bar {
-                left: map.get(variables.$drawer, "width");
+                left: map.get($drawer, "width");
             }
         }
     }
 
     &--compact {
-        max-width: map.get(variables.$drawer, "compact", "width");
+        max-width: map.get($drawer, "compact", "width");
 
         .list__item-text {
             display: block;
@@ -167,31 +197,31 @@
     }
 
     &__drawer {
-        background: map.get(variables.$drawer, "background");
+        background: map.get($drawer, "background");
         height: 100%;
 
         &#{$self}--dark {
-            background: map.get(variables.$drawer, "dark", "background");
-            color: map.get(variables.$drawer, "dark", "color");
+            background: map.get($drawer, "dark", "background");
+            color: map.get($drawer, "dark", "color");
 
             .list__item, .list__item-graphic, .list__item-meta, .list__item-header, .list__item-secondary-text {
-                color: map.get(variables.$drawer, "dark", "color");
+                color: map.get($drawer, "dark", "color");
             }
 
             #{$self}__content {
-                @include mixins.scrollbar(map.get(variables.$drawer, "dark", "background"));
+                @include mixins.scrollbar(map.get($drawer, "dark", "background"));
             }
         }
     }
 
     &__nav-toggle {
         appearance: none;
-        background: #{map.get(variables.$drawer, "header", "background")};
+        background: #{map.get($drawer, "header", "background")};
         border: none;
-        color: map.get(variables.$drawer, "header", "color");
+        color: map.get($drawer, "header", "color");
         cursor: pointer;
-        width: map.get(variables.$app-bar, "height");
-        height: map.get(variables.$app-bar, "height");
+        width: map.get(app_bar.$app-bar, "height");
+        height: map.get(app_bar.$app-bar, "height");
         position: absolute;
         right: 0;
         transition: transform .25s ease .4s;
@@ -205,7 +235,7 @@
         }
 
         &:hover {
-            background: darken(map.get(variables.$drawer, "header", "background"), 5%);
+            background: darken(map.get($drawer, "header", "background"), 5%);
         }
 
         .iconify {
@@ -222,18 +252,18 @@
     }
 
     &__header {
-        background: #{map.get(variables.$drawer, "header", "background")} map.get(variables.$drawer, "header", "image");
-        color: map.get(variables.$drawer, "header", "color");
+        background: #{map.get($drawer, "header", "background")} map.get($drawer, "header", "image");
+        color: map.get($drawer, "header", "color");
         display: flex;
         align-items: center;
-        min-height: map.get(variables.$drawer, "header", "height");
-        padding: map.get(variables.$drawer, "header", "padding");
+        min-height: map.get($drawer, "header", "height");
+        padding: map.get($drawer, "header", "padding");
 
         #{$self}--compact & {
             background-position: center;
             background-size: auto 65%;
-            min-height: map.get(variables.$drawer, "compact", "header", "height");
-            padding: map.get(variables.$drawer, "compact", "header", "padding");
+            min-height: map.get($drawer, "compact", "header", "height");
+            padding: map.get($drawer, "compact", "header", "padding");
             align-items: center;
         }
     }
@@ -243,7 +273,7 @@
     }
 
     &__content {
-        max-height: calc(100vh - #{map.get(variables.$drawer, "header", "height")});
+        max-height: calc(100vh - #{map.get($drawer, "header", "height")});
         height: 100%;
         overflow-y: auto;
         display: flex;
@@ -251,26 +281,26 @@
         align-items: flex-start;
         justify-content: flex-start;
         scrollbar-width: thin;
-        scrollbar-color: map.get(variables.$drawer, "background") map.get(variables.$drawer, "background");
+        scrollbar-color: map.get($drawer, "background") map.get($drawer, "background");
 
         &::-webkit-scrollbar {
             width: 1rem;
         }
 
         &::-webkit-scrollbar-track {
-            background: map.get(variables.$drawer, "background");
+            background: map.get($drawer, "background");
         }
 
         &:hover {
-            scrollbar-color: darken(map.get(variables.$drawer, "background"), 20%) map.get(variables.$drawer, "background");
+            scrollbar-color: darken(map.get($drawer, "background"), 20%) map.get($drawer, "background");
 
             &::-webkit-scrollbar-thumb {
-                background: darken(map.get(variables.$drawer, "background"), 20%);
+                background: darken(map.get($drawer, "background"), 20%);
             }
         }
 
         .drawer--compact & {
-            max-height: calc(100vh - #{map.get(variables.$drawer, "compact", "header", "height")});
+            max-height: calc(100vh - #{map.get($drawer, "compact", "header", "height")});
         }
     }
 
@@ -285,7 +315,7 @@
 
         &__item {
             color: inherit;
-            font-size: map.get(variables.$drawer, "list", "font-size");
+            font-size: map.get($drawer, "list", "font-size");
             font-weight: 500;
         }
 
@@ -295,7 +325,7 @@
         }
 
         &__item-graphic, &__item-meta {
-            color: darken(map.get(variables.$drawer, "color"), 10%);
+            color: darken(map.get($drawer, "color"), 10%);
         }
 
         &__item-secondary-text {
@@ -308,19 +338,19 @@
     overflow-x: hidden;
 
     .main {
-        margin-left: map.get(variables.$drawer, "width");
+        margin-left: map.get($drawer, "width");
 
         .app-bar {
-            left: map.get(variables.$drawer, "width");
+            left: map.get($drawer, "width");
             padding-left: 1.2rem;
         }
     }
 
     .drawer--compact + .main {
-        margin-left: map.get(variables.$drawer, "compact", "width");
+        margin-left: map.get($drawer, "compact", "width");
 
         .app-bar {
-            left: map.get(variables.$drawer, "compact", "width");
+            left: map.get($drawer, "compact", "width");
         }
     }
 

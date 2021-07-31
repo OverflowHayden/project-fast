@@ -1,11 +1,42 @@
 @use 'sass:map';
 @use '../setup/variables';
 @use '../setup/mixins';
+@use '../elements/button';
+
+$table: (
+        "background": variables.$color-base-white,
+        "border": variables.$color-border-light,
+        "color": variables.$color-base-black,
+        "font-size": 1.3rem,
+        "padding": .4rem 5.6rem .4rem 2.4rem,
+        "height": 5.6rem,
+        "head": (
+                "font-size": 1.2rem,
+                "color": rgba(variables.$color-base-black, .54),
+        ),
+        "foot": (
+                "font-size": 1.2rem,
+        ),
+        "compact": (
+                "height": 4.4rem,
+                "padding": .4rem 0 .4rem 2.4rem,
+        ),
+        "data-table": (
+                "selection": variables.$color-primary,
+                "action": variables.$color-primary,
+        ),
+        "responsive": (
+                "head-width": 35%,
+                "body-width": 65%,
+                "height": 3.9rem,
+                "padding": .8rem 1.8rem,
+        ),
+) !default;
 
 table {
     @include mixins.box-shadow;
     $self: &;
-    background: map.get(variables.$table, "background");
+    background: map.get($table, "background");
     border-spacing: 0;
     border-collapse: collapse;
     border-radius: variables.$border-radius;
@@ -39,17 +70,17 @@ table {
     }
 
     tr {
-        height: map.get(variables.$table, "height");
+        height: map.get($table, "height");
         transition: background .25s ease;
 
         &:hover {
-            background: darken(map.get(variables.$table, "background"), 3%);
+            background: darken(map.get($table, "background"), 3%);
         }
     }
 
     th, td {
-        padding: map.get(variables.$table, "padding");
-        border-bottom: 1px solid map.get(variables.$table, "border");
+        padding: map.get($table, "padding");
+        border-bottom: 1px solid map.get($table, "border");
 
         .button {
             vertical-align: middle;
@@ -61,8 +92,8 @@ table {
     }
 
     th {
-        color: map.get(variables.$table, "head", "color");
-        font-size: map.get(variables.$table, "head", "font-size");
+        color: map.get($table, "head", "color");
+        font-size: map.get($table, "head", "font-size");
         font-weight: 500;
 
         a {
@@ -83,18 +114,18 @@ table {
     }
 
     td {
-        color: map.get(variables.$table, "color");
-        font-size: map.get(variables.$table, "font-size");
+        color: map.get($table, "color");
+        font-size: map.get($table, "font-size");
         font-weight: 400;
     }
 
     tfoot {
-        background: map.get(variables.$table, "background") e;
+        background: map.get($table, "background") e;
         position: relative;
     }
 
     .text-field, .number-field, .select-field {
-        font-size: map.get(variables.$table, "font-size");
+        font-size: map.get($table, "font-size");
         margin: 0;
     }
 
@@ -105,11 +136,11 @@ table {
 
     &.table--compact {
         tr {
-            height: map.get(variables.$table, "compact", "height");
+            height: map.get($table, "compact", "height");
         }
 
         th, td {
-            padding: map.get(variables.$table, "compact", "padding") x;
+            padding: map.get($table, "compact", "padding") x;
 
             .button {
                 padding: .4rem .6rem;
@@ -151,14 +182,14 @@ table {
 
     &.table--striped {
         tr th {
-            background: darken(map.get(variables.$table, "background"), 3%);
+            background: darken(map.get($table, "background"), 3%);
         }
 
         tr:nth-child(even) {
-            background: darken(map.get(variables.$table, "background"), 2%);
+            background: darken(map.get($table, "background"), 2%);
 
             &:hover {
-                background: darken(map.get(variables.$table, "background"), 3%);
+                background: darken(map.get($table, "background"), 3%);
             }
         }
     }
@@ -192,8 +223,8 @@ table {
     }
 
     &__selection {
-        background: map.get(variables.$table, "background");
-        color: map.get(variables.$table, "data-table", "selection");
+        background: map.get($table, "background");
+        color: map.get($table, "data-table", "selection");
         font-size: 1.6rem;
         display: flex;
         flex-wrap: wrap;
@@ -210,7 +241,7 @@ table {
         transition: opacity .15s ease, z-index 0s ease .15s;
 
         &:before {
-            background: rgba(map.get(variables.$table, "data-table", "selection"), .22);
+            background: rgba(map.get($table, "data-table", "selection"), .22);
             content: "";
             position: absolute;
             top: 0;
@@ -228,7 +259,7 @@ table {
     }
 
     &__action {
-        color: map.get(variables.$table, "data-table", "action");
+        color: map.get($table, "data-table", "action");
         display: inline-block;
         float: left;
         font-size: 1.6rem;
@@ -238,7 +269,7 @@ table {
         margin-top: 1em;
 
         &:hover {
-            color: darken(map.get(variables.$table, "data-table", "action"), 8%);
+            color: darken(map.get($table, "data-table", "action"), 8%);
         }
     }
 
@@ -251,9 +282,9 @@ table {
     }
 
     &__filter {
-        @include mixins.button;
-        @include mixins.button--icon;
-        @include mixins.button--text;
+        @include button.button;
+        @include button.button--icon;
+        @include button.button--text;
 
         border-radius: 50%;
         font-size: 2.4rem;
@@ -269,8 +300,8 @@ table {
         text-align: right;
 
         td {
-            color: rgba(map.get(variables.$table, "color"), .54);
-            font-size: map.get(variables.$table, "foot", "font-size");
+            color: rgba(map.get($table, "color"), .54);
+            font-size: map.get($table, "foot", "font-size");
             font-weight: 500;
             vertical-align: middle;
         }
@@ -301,11 +332,11 @@ table {
         position: relative;
 
         thead {
-            width: map.get(variables.$table, "responsive", "head-width");
+            width: map.get($table, "responsive", "head-width");
         }
 
         tbody {
-            width: map.get(variables.$table, "responsive", "body-width");
+            width: map.get($table, "responsive", "body-width");
         }
 
         tr {
@@ -313,8 +344,8 @@ table {
         }
 
         th, td {
-            padding: map.get(variables.$table, "responsive", "padding");
-            min-height: map.get(variables.$table, "responsive", "height");
+            padding: map.get($table, "responsive", "padding");
+            min-height: map.get($table, "responsive", "height");
             white-space: nowrap;
             position: relative;
 
@@ -334,7 +365,7 @@ table {
             width: 100%;
             right: 100%;
             bottom: -.1rem;
-            border-bottom: .1rem solid map.get(variables.$table, "border");
+            border-bottom: .1rem solid map.get($table, "border");
         }
 
         tr, tbody td, th, tfoot, thead, tbody {
@@ -347,7 +378,7 @@ table {
         }
 
         thead tr:not(.data-table__head) {
-            --height: calc(#{map.get(variables.$table, "responsive", "height")} * var(--cols));
+            --height: calc(#{map.get($table, "responsive", "height")} * var(--cols));
             text-shadow: 0 var(--height),
             0 calc(var(--height) * 2),
             0 calc(var(--height) * 3),

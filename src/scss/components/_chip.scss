@@ -2,61 +2,73 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
+$chip: (
+        "background": variables.$color-border-light,
+        "background-primary": variables.$color-primary,
+        "border-radius": 1.2em,
+        "color": rgba(variables.$color-base-black, .87),
+        "color-primary": variables.$color-base-white,
+        "font-size": 1.4rem,
+        "padding": .5em .857em,
+        "height": 2em,
+        "icon-font-size": 1.6rem,
+) !default;
+
 .chip {
     @include mixins.ripple;
     $self: &;
 
     appearance: none;
-    background: map.get(variables.$chip, "background");
-    border-radius: map.get(variables.$chip, "border-radius");
+    background: map.get($chip, "background");
+    border-radius: map.get($chip, "border-radius");
     cursor: pointer;
     display: inline-flex;
-    font-size: map.get(variables.$chip, "font-size");
+    font-size: map.get($chip, "font-size");
     line-height: 1.4;
     margin: .2857em;
-    padding: map.get(variables.$chip, "padding");
-    min-height: map.get(variables.$chip, "height");
+    padding: map.get($chip, "padding");
+    min-height: map.get($chip, "height");
     text-decoration: none;
     transition: background .25s ease;
 
     &:hover {
-        background: darken(map.get(variables.$chip, "background"), 8%);
+        background: darken(map.get($chip, "background"), 8%);
     }
 
     &--primary {
-        background: map.get(variables.$chip, "background-primary");
+        background: map.get($chip, "background-primary");
 
         &:hover {
-            background: darken(map.get(variables.$chip, "background-primary"), 8%);
+            background: darken(map.get($chip, "background-primary"), 8%);
         }
 
         #{$self}__text, #{$self}__icon {
-            color: map.get(variables.$chip, "color-primary");
+            color: map.get($chip, "color-primary");
         }
     }
 
     &--alt {
-        background: rgba(map.get(variables.$chip, "background-primary"), .21);
+        background: rgba(map.get($chip, "background-primary"), .21);
 
         &:hover {
-            background: rgba(map.get(variables.$chip, "background-primary"), .32);
+            background: rgba(map.get($chip, "background-primary"), .32);
         }
 
         #{$self}__text, #{$self}__icon {
-            color: map.get(variables.$chip, "background-primary");
+            color: map.get($chip, "background-primary");
         }
     }
 
     &__text {
-        color: map.get(variables.$chip, "color");
+        color: map.get($chip, "color");
         font-weight: 400;
         letter-spacing: .01785em;
     }
 
     &__icon {
-        color: map.get(variables.$chip, "color");
+        color: map.get($chip, "color");
         display: inline-block;
-        font-size: map.get(variables.$chip, "icon-font-size");
+        font-size: map.get($chip, "icon-font-size");
         line-height: 1;
         vertical-align: middle;
         margin-right: .25em;
@@ -67,7 +79,7 @@
     }
 
     &__filter {
-        color: map.get(variables.$chip, "color");
+        color: map.get($chip, "color");
         display: inline-block;
         vertical-align: middle;
         margin-left: .25em;
@@ -76,7 +88,7 @@
         transition: opacity .25s ease;
 
         &:hover {
-            color: map.get(variables.$chip, "color");
+            color: map.get($chip, "color");
             opacity: 1;
         }
     }

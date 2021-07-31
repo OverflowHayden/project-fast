@@ -4,27 +4,36 @@
 @use '../vendor/bourbon';
 @use '../vendor/neat';
 
+$form: (
+        "background": variables.$color-base-white,
+        "sizes": (
+                "s": 40rem,
+                "m": 80rem,
+                "l": 120rem,
+        ),
+) !default;
+
 .form {
     padding: 0;
     max-width: 100%;
 
     &--card {
         @include mixins.box-shadow;
-        background: map.get(variables.$form, "background");
+        background: map.get($form, "background");
         border-radius: variables.$border-radius;
         padding: 3rem;
     }
 
     &--s {
-        width: map.get(variables.$form, "sizes", "s");
+        width: map.get($form, "sizes", "s");
     }
 
     &--m {
-        width: map.get(variables.$form, "sizes", "m");
+        width: map.get($form, "sizes", "m");
     }
 
     &--l {
-        width: map.get(variables.$form, "sizes", "l");
+        width: map.get($form, "sizes", "l");
     }
 
     &--inline {

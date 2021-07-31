@@ -1,6 +1,17 @@
 @use 'sass:map';
 @use '../setup/variables';
 @use '../setup/mixins';
+@use '../elements/button';
+
+$pagination: (
+        "background": variables.$color-primary,
+        "border-radius": .225em,
+        "color": variables.$color-base-white,
+        "color-nav": variables.$color-base-black,
+        "font-size": 1.4rem,
+        "width": 3.571em,
+        "height": 2.575em,
+) !default;
 
 .pagination-list {
     display: inline-flex;
@@ -8,7 +19,7 @@
     margin: 0;
     padding: 0;
     vertical-align: middle;
-    font-size: map.get(variables.$pagination, "font-size");
+    font-size: map.get($pagination, "font-size");
 
     &__item {
         display: inline-block;
@@ -17,14 +28,14 @@
 
         a, span {
             @include mixins.ripple;
-            border-radius: map.get(variables.$pagination, "border-radius");
+            border-radius: map.get($pagination, "border-radius");
             color: inherit;
             display: block;
             font-size: inherit;
             font-weight: 600;
-            line-height: map.get(variables.$pagination, "height");
-            min-width: map.get(variables.$pagination, "width");
-            height: map.get(variables.$pagination, "height");
+            line-height: map.get($pagination, "height");
+            min-width: map.get($pagination, "width");
+            height: map.get($pagination, "height");
             text-align: center;
             position: relative;
             overflow: hidden;
@@ -32,45 +43,45 @@
 
             &:hover {
                 background: darken(variables.$color-base-white, 4%);
-                color: map.get(variables.$button, "background");
+                color: map.get(button.$button, "background");
                 text-decoration: none;
             }
         }
 
         &--active a {
-            background: map.get(variables.$pagination, "background");
-            color: map.get(variables.$pagination, "color");
+            background: map.get($pagination, "background");
+            color: map.get($pagination, "color");
             box-shadow: 0 .1rem .5rem 0 rgba(0, 0, 0, .2), 0 .2rem .2rem 0 rgba(0, 0, 0, .14), 0 .3rem .1rem -.2rem rgba(0, 0, 0, .12);
 
             &:hover {
-                background: map.get(variables.$pagination, "background");
-                color: map.get(variables.$pagination, "color");
+                background: map.get($pagination, "background");
+                color: map.get($pagination, "color");
                 box-shadow: none;
             }
         }
     }
 
     &__nav {
-        @include mixins.button;
-        @include mixins.button--text;
-        @include mixins.button--compact;
+        @include button.button;
+        @include button.button--text;
+        @include button.button--compact;
 
         display: inline-block;
-        color: rgba(map.get(variables.$pagination, "color-nav"), .54);
+        color: rgba(map.get($pagination, "color-nav"), .54);
         vertical-align: middle;
         box-shadow: unset;
-        font-size: map.get(variables.$pagination, "font-size");
+        font-size: map.get($pagination, "font-size");
         font-weight: 700;
         letter-spacing: .03571em;
 
         &--disabled {
             background: none;
-            color: rgba(map.get(variables.$pagination, "color-nav"), .32);
+            color: rgba(map.get($pagination, "color-nav"), .32);
             cursor: not-allowed;
 
             &:hover {
                 background: none;
-                color: rgba(map.get(variables.$pagination, "color-nav"), .32);
+                color: rgba(map.get($pagination, "color-nav"), .32);
                 text-decoration: none;
             }
         }

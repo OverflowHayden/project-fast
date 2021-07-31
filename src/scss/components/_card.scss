@@ -3,18 +3,42 @@
 @use '../setup/mixins';
 @use '../layout/grid' as *;
 
+$card: (
+        "background": variables.$color-base-white,
+        "color": rgba(variables.$color-base-black,.54),
+        "font-size": 1.4rem,
+        "padding": 1.6rem,
+        "title": (
+                "color": variables.$color-base-black,
+                "font-size": 2rem,
+        ),
+        "subtitle": (
+                "color": rgba(variables.$color-base-black, .65),
+                "font-size": 1.4rem,
+        ),
+        "button": (
+                "color": rgba(variables.$color-base-black, .65),
+                "font-size": 1.4rem,
+        ),
+) !default;
+
 .card {
-    @extend .col-desk-4;
-    @extend .col-tab-6;
-    @extend .col-mob-4;
     @include mixins.box-shadow;
     $self: &;
 
     border: none;
     border-radius: variables.$border-radius;
-    background: map.get(variables.$card, "background");
-    color: map.get(variables.$card, "color");
+    background: map.get($card, "background");
+    color: map.get($card, "color");
+    display: inline-block;
     margin-bottom: 3rem;
+    max-width: 32rem;
+    vertical-align: top;
+
+    .grid & {
+        display: block;
+        max-width: 100%;
+    }
 
     &__image {
         border-top-left-radius: variables.$border-radius;
@@ -32,19 +56,19 @@
     }
 
     &__content {
-        font-size: map.get(variables.$card, "font-size");
-        padding: map.get(variables.$card, "padding");
+        font-size: map.get($card, "font-size");
+        padding: map.get($card, "padding");
     }
 
     &__title {
-        color: map.get(variables.$card, "title", "color");
-        font-size: map.get(variables.$card, "title", "font-size");
+        color: map.get($card, "title", "color");
+        font-size: map.get($card, "title", "font-size");
         letter-spacing: .0125em;
     }
 
     &__subtitle {
-        color: map.get(variables.$card, "subtitle", "color");
-        font-size: map.get(variables.$card, "subtitle", "font-size");
+        color: map.get($card, "subtitle", "color");
+        font-size: map.get($card, "subtitle", "font-size");
         font-weight: 500;
         letter-spacing: .00714em;
         margin-bottom: .8em;
@@ -56,7 +80,7 @@
     }
 
     .button {
-        font-size: map.get(variables.$card, "button", "font-size");
+        font-size: map.get($card, "button", "font-size");
         padding: .444em .444em .388em;
     }
 
@@ -65,7 +89,7 @@
 
         .button {
             border-radius: 50%;
-            color: map.get(variables.$card, "button", "color");
+            color: map.get($card, "button", "color");
             font-size: 128%;
             padding: .444em;
         }

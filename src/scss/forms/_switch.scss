@@ -2,8 +2,14 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
+$switch: (
+        "size": 1.6rem,
+        "active": variables.$color-primary,
+        "inactive": #fafafa,
+) !default;
+
 .switch {
-    font-size: map.get(variables.$switch, "size");
+    font-size: map.get($switch, "size");
     display: flex;
     align-items: center;
     align-content: center;
@@ -31,7 +37,7 @@
         position: relative;
 
         &:before {
-            background: darken(map.get(variables.$switch, "inactive"), 14%);
+            background: darken(map.get($switch, "inactive"), 14%);
             border-radius: .5em;
             content: "";
             position: absolute;
@@ -43,11 +49,11 @@
         }
 
         &:checked:before {
-            background-color: lighten(map.get(variables.$switch, "active"), 18%);
+            background-color: lighten(map.get($switch, "active"), 18%);
         }
 
         &:after {
-            background: map.get(variables.$switch, "inactive");
+            background: map.get($switch, "inactive");
             border-radius: 50%;
             box-shadow: 0 .2rem .1rem -.1rem rgb(variables.$color-base-black, .2), 0 .1rem .1rem 0 rgb(variables.$color-base-black, .14), 0 .1rem .3rem 0 rgb(variables.$color-base-black, .12);
             content: "";
@@ -63,7 +69,7 @@
         }
 
         &:checked:after {
-            background-color: map.get(variables.$switch, "active");
+            background-color: map.get($switch, "active");
             transform: translate(1.2em, -50%);
         }
 

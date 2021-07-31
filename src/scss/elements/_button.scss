@@ -1,22 +1,107 @@
+@use 'sass:map';
+@use '../setup/variables';
 @use '../setup/mixins';
+
+$button: (
+        "background": variables.$color-primary,
+        "border-radius": .5em,
+        "color": variables.$color-base-white,
+        "font-size": 1.6rem,
+        "padding": .75em 1.375em .6875em,
+        "compact": (
+                "font-size": 80%,
+                "padding": .625em 1.25em .5468em,
+        )
+) !default;
+
+@mixin button() {
+    @include mixins.ripple;
+
+    background: map.get($button, "background");
+    border: .2rem solid transparent;
+    border-radius: map.get($button, "border-radius");
+    box-shadow: 0 .2rem .5rem 0 rgba(variables.$color-base-black, .26);
+    color: map.get($button, "color");
+    display: inline-block;
+    font-size: map.get($button, "font-size");
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: .075em;
+    padding: map.get($button, "padding");
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+    transition: background 0.2s ease;
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    .fa, .mdi, .iconify {
+        margin-left: -.4rem;
+        margin-right: 1.4rem;
+    }
+
+    &:hover {
+        background: darken(map.get($button, "background"), 4%);
+        color: map.get($button, "color");
+    }
+}
+
+@mixin button--alt() {
+    background: none;
+    border: .2rem solid map.get($button, "background");
+    box-shadow: none;
+    color: map.get($button, "background");
+
+    &:hover {
+        background: darken(variables.$color-base-white, 4%);
+        color: map.get($button, "background");
+    }
+}
+
+@mixin button--text() {
+    background: none;
+    border: .2rem solid transparent;
+    box-shadow: none;
+    color: map.get($button, "background");
+
+    &:hover {
+        background: darken(variables.$color-base-white, 4%);
+        color: map.get($button, "background");
+    }
+}
+
+@mixin button--compact() {
+    padding: map.get($button, "compact", "padding");
+    font-size: map.get($button, "compact", "font-size");
+    line-height: 1.4;
+}
+
+@mixin button--icon() {
+    padding: .8rem;
+
+    .fa, .mdi, .iconify {
+        margin: 0;
+    }
+}
 
 .button {
     @include mixins.ripple;
-    @include mixins.button;
+    @include button;
 
     &--alt {
-        @include mixins.button--alt;
+        @include button--alt;
     }
 
     &--text {
-        @include mixins.button--text
+        @include button--text
     }
 
     &--compact {
-        @include mixins.button--compact;
+        @include button--compact;
     }
 
     &--icon {
-        @include mixins.button--icon;
+        @include button--icon;
     }
 }
