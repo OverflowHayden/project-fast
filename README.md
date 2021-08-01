@@ -46,7 +46,7 @@ yarn add project-fast
 ## Usage with Laravel Mix
 Add the following code to `webpack.mix.js`:
 ```
-mix.js('resources/js/app.js', 'public/js')
+mix.js('resources/js/app.ts', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 ```
 
@@ -59,7 +59,7 @@ And `resources/sass/app.scss`:
 @import '~project-fast/src/scss/includes.scss';
 ```
 
-And the following code to `resources/js/app.js`:
+And the following code to `resources/js/app.ts`:
 ```
 import Fast from 'project-fast';
 ```

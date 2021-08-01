@@ -35,17 +35,18 @@
     "postcss": "^8.2.2",
     "postcss-csso": "^5.0.0",
     "postcss-loader": "^4.1.0",
-    "sass": "^1.32.0",
-    "sass-loader": "^10.1.0",
+    "sass": "^1.37.0",
+    "sass-loader": "^10.2.0",
     "stylelint": "^13.8.0",
     "stylelint-selector-bem-pattern": "^2.1.0",
     "stylelint-webpack-plugin": "^2.1.1",
+    "ts-loader": "^8.3.0",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.3.1",
     "webpack-concat-files-plugin": "^0.4.1"
   },
   "dependencies": {
-    "@iconify/iconify": "^1.0.7",
+    "@iconify/iconify": "^2.0.3",
     "bootstrap-reboot": "^4.5.4",
     "bourbon": "^7.0.0",
     "bourbon-neat": "^4.0.0",
@@ -53,6 +54,7 @@
     "snackbarlightjs": "^1.1.2",
     "terser-webpack-plugin": "^4.2.3",
     "tingle.js": "^0.15.3",
-    "tippy.js": "^6.2.7"
+    "tippy.js": "^6.2.7",
+    "typescript": "^4.3.5"
   }
 }

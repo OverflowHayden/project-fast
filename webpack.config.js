@@ -11,7 +11,7 @@ const publicJS = [
 ];
 
 const files = [
-    './src/js/app.js',
+    './src/js/app.ts',
     './src/scss/includes.scss'
 ];
 
@@ -40,6 +40,9 @@ module.exports = [
                     parallel: true,
                 }),
             ],
+        },
+        resolve: {
+            extensions: [".ts", ".tsx", ".js"]
         },
         module: {
 
@@ -79,6 +82,10 @@ module.exports = [
                             }
                         }
                     ]
+                },
+                {
+                    test: /\.tsx?$/,
+                    loader: "ts-loader"
                 },
                 {// js es6 / babel loader for webpack
                     test: /\.js$/,
