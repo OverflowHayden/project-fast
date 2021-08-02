@@ -1,5 +1,5 @@
 export default class AppBar {
-    appBar: any;
+    appBar: HTMLElement | null;
     scrollPosition: number;
     scrollDirection: number;
     ticking: boolean;
@@ -48,8 +48,8 @@ export default class AppBar {
     }
 
     appBarScroll(scrollDirection: number) {
-        const appBarHeight = parseInt(window.getComputedStyle(this.appBar).height, 10);
-        let position = parseInt(window.getComputedStyle(this.appBar).top, 10);
+        const appBarHeight:number = parseInt(window.getComputedStyle(this.appBar).height, 10);
+        let position:number = parseInt(window.getComputedStyle(this.appBar).top, 10);
 
         if ((position - scrollDirection < -appBarHeight || (window.innerHeight + window.scrollY) >= document.body.offsetHeight) && window.scrollY >= appBarHeight) {
             this.appBar.style.top = '-' + appBarHeight + 'px';
