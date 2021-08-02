@@ -10,7 +10,6 @@ import fastForm from './components/form.js';
 import AppBar from "./components/appbar";
 
 fastLegacySupport();
-new AppBar();
 fastMenu();
 fastDrawer();
 fastFab();

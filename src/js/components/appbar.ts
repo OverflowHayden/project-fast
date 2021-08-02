@@ -4,8 +4,8 @@ export default class AppBar {
     scrollDirection: number;
     ticking: boolean;
 
-    constructor() {
-        this.appBar = document.querySelector('.app-bar');
+    constructor(element: string = '.app-bar') {
+        this.appBar = document.querySelector(element);
         this.scrollPosition = 0;
         this.scrollDirection = 0;
         this.ticking = false;
