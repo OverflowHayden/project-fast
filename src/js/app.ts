@@ -3,9 +3,9 @@ import fastLegacySupport from './components/legacy-support.js';
 import fastMenu from './components/menu.js';
 import AppBar from "./components/appbar";
 import Drawer from './components/drawer';
+import DataTable from './components/data-table';
 import fastFab from './components/fab.js';
 import fastUpload from './components/upload-field.js';
-import fastDataTable from './components/data-table.js';
 import fastSnackbar from './components/snackbar.js';
 import fastForm from './components/form.js';
 
@@ -13,7 +13,6 @@ fastLegacySupport();
 fastMenu();
 fastFab();
 fastUpload();
-fastDataTable();
 fastSnackbar();
 fastForm();
 
@@ -24,7 +23,7 @@ export default {
     Drawer: new Drawer(),
     Fab: fastFab,
     Upload: fastUpload,
-    DataTable: fastDataTable,
+    DataTable: new DataTable(),
     Snackbar: fastSnackbar,
     Form: fastForm,
     Iconify,
