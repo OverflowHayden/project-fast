@@ -7,7 +7,8 @@ html {
 }
 
 body {
-    background: variables.$color-base-light;
+    background: var(--color-base);
+    color: var(--color-text);
     font-family: variables.$font-primary;
     font-size: variables.$font-size;
     line-height: variables.$line-height;

@@ -12,18 +12,27 @@ $color-base-dark:                 #1D211D !default;
 $color-border-light:              #e0e0e0 !default;
 $color-border-dark:               #333733 !default;
 
-$color-text:                      #333 !default;
+$color-text-light:                #333 !default;
+$color-text-dark:                 #f0f0f0 !default;
 $color-link:                      #007bff !default;
 $color-success:                   #28a745 !default;
 $color-error:                     #f44336 !default;
 
-:root {
-    --color-scheme-1: #{$color-base-white};
-    --color-scheme-2: #{$color-base-light};
-    --color-scheme-3: #{$color-border-light};
-    --color-scheme-4: #{$color-base-black};
+:root:not(.dark-mode) {
+    --color-base: #{$color-base-light};
+    --color-base-white: #{$color-base-white};
+    --color-base-black: #{$color-base-black};
+    --color-border: #{$color-border-light};
+    --color-text: #{$color-text-light};
 }
 
+:root.dark-mode {
+    --color-base: #{$color-base-dark};
+    --color-base-white: #{$color-base-black};
+    --color-base-black: #{$color-base-white};
+    --color-border: #{$color-border-dark};
+    --color-text: #{$color-text-dark};
+}
 
 /* ---------------------------------------------- //
  * Style settings
@@ -47,7 +56,7 @@ $icon: (
 ) !default;
 
 $input-field: (
-    "color": $color-text,
+    "color": $color-text-light,
     "font-size": 1.6rem,
     "label": rgba($color-base-black, .54),
     "inactive": #8a8a8a,
@@ -57,7 +66,7 @@ $input-field: (
     "error": #f44336,
     "disabled": (
         "background": #f9f9f9,
-        "color": lighten($color-text, 30%),
+        "color": lighten($color-text-light, 30%),
     ),
 ) !default;
 

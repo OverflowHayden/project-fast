@@ -8,7 +8,7 @@
     box-shadow: 0 2px 5px 0 rgba(variables.$color-base-black, .26);
     font-size: 1.4rem;
     line-height: 1.4rem;
-    color: variables.$color-text;
+    color: var(--color-text);
     padding: 4px 6px 3px;
 
     .tippy-backdrop {

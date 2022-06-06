@@ -5,7 +5,7 @@
     @include mixins.input-field;
 
     &:after {
-        border-top: .3125em solid variables.$color-text;
+        border-top: .3125em solid var(--color-text);
         border-left: .3125em solid transparent;
         border-right: .3125em solid transparent;
         border-bottom: none;

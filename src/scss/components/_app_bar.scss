@@ -3,9 +3,9 @@
 @use '../elements/button';
 
 $app-bar: (
-        "background": variables.$color-base-white,
+        "background": var(--color-base-white),
         "border": rgba(variables.$color-border-light, .7),
-        "color": variables.$color-text,
+        "color": variables.$color-text-light,
         "padding": .8rem 1.2rem,
         "height": 6.2rem,
         "title": (
@@ -65,8 +65,8 @@ $app-bar: (
         padding: 9px;
 
         &:hover {
-            background: darken(map.get($app-bar, "background"), 4%);
             color: map.get($app-bar, "color");
+            filter: brightness(96%);
         }
     }
 
@@ -104,8 +104,8 @@ $app-bar: (
         }
 
         &:hover {
-            background: darken(map.get($app-bar, "background"), 4%);
             color: map.get($app-bar, "color");
+            filter: brightness(96%);
         }
     }
 

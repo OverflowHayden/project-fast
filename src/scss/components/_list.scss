@@ -39,7 +39,7 @@ $list: (
     padding: 0;
 
     .menu a {
-        color: variables.$color-text;
+        color: var(--color-text);
     }
 
     &--demo {

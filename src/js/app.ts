@@ -8,9 +8,11 @@ import Form from './components/form';
 import Menu from './components/menu';
 import Upload from './components/upload-field';
 import fastSnackbar from './components/snackbar.js';
+import DarkMode from './components/dark-mode';
 
 fastLegacySupport();
 fastSnackbar();
+new DarkMode('#darkToggle');
 
 export default {
     LegacySupport: fastLegacySupport,
@@ -23,4 +25,5 @@ export default {
     Upload: new Upload(),
     Snackbar: fastSnackbar,
     Iconify,
+    DarkMode: new DarkMode('#darkToggle'),
 };
