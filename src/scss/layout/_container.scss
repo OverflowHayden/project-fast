@@ -1,6 +1,10 @@
 @use '../setup/variables' as *;
 
-.container {
+@mixin container {
     max-width: $screen-xl;
     margin: 0 auto;
+}
+
+.container {
+    @include container;
 }

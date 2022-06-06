@@ -15,7 +15,7 @@ $tab: (
         ),
 ) !default;
 
-.tab {
+@mixin tab {
     $self: &;
 
     display: flex;
@@ -77,4 +77,8 @@ $tab: (
             align-items: center;
         }
     }
+}
+
+.tab {
+    @include tab;
 }

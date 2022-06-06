@@ -9,7 +9,7 @@ $checkbox: (
         "check": variables.$color-base-white,
 ) !default;
 
-.checkbox {
+@mixin checkbox {
     $self: &;
     font-size: map.get($checkbox, "size");
     display: flex;
@@ -110,6 +110,10 @@ $checkbox: (
             background: map.get($checkbox, "inactive");
         }
     }
+}
+
+.checkbox {
+    @include checkbox;
 }
 
 @keyframes checkbox-check{

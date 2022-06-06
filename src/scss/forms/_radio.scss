@@ -7,7 +7,7 @@ $radio: (
         "inactive": #757575,
 ) !default;
 
-.radio {
+@mixin radio {
     $self: &;
     font-size: map.get($radio, "size");
     display: flex;
@@ -110,4 +110,8 @@ $radio: (
             }
         }
     }
+}
+
+.radio {
+    @include radio;
 }

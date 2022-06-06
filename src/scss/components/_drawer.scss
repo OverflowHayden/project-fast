@@ -32,7 +32,7 @@ $drawer: (
         ),
 ) !default;
 
-.drawer {
+@mixin drawer {
     @include mixins.box-shadow;
     $self: &;
     background: map.get($drawer, "background");
@@ -332,6 +332,30 @@ $drawer: (
             color: inherit;
         }
     }
+
+    &#{$self}--compact #{$self}__nav-toggle {
+        right: 50%;
+        transform: translateX(50%);
+        transition: none;
+    }
+
+    .persistent--open &, .permanent--open & {
+        #{$self}__nav-toggle {
+            transform: translateX(0);
+        }
+
+        &#{$self}--compact + .main {
+            margin-left: map.get($drawer, "compact", "width");
+
+            .app-bar {
+                left: map.get($drawer, "compact", "width");
+            }
+        }
+    }
+}
+
+.drawer {
+    @include drawer;
 }
 
 .persistent--open, .permanent--open {
@@ -345,22 +369,4 @@ $drawer: (
             padding-left: 1.2rem;
         }
     }
-
-    .drawer--compact + .main {
-        margin-left: map.get($drawer, "compact", "width");
-
-        .app-bar {
-            left: map.get($drawer, "compact", "width");
-        }
-    }
-
-    .drawer__nav-toggle {
-        transform: translateX(0);
-    }
-}
-
-.drawer--compact .drawer__nav-toggle {
-    right: 50%;
-    transform: translateX(50%);
-    transition: none;
 }

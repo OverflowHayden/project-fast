@@ -14,7 +14,7 @@ $chip: (
         "icon-font-size": 1.6rem,
 ) !default;
 
-.chip {
+@mixin chip {
     @include mixins.ripple;
     $self: &;
 
@@ -92,4 +92,8 @@ $chip: (
             opacity: 1;
         }
     }
+}
+
+.chip {
+    @include chip;
 }

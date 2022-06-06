@@ -23,7 +23,7 @@ $app-bar: (
         ),
 ) !default;
 
-.app-bar {
+@mixin app-bar {
     $self: &;
     background: map.get($app-bar, "background");
     border-bottom: .1rem solid map.get($app-bar, "border");
@@ -116,7 +116,11 @@ $app-bar: (
     }
 }
 
-.with-app-bar {
+.app-bar {
+    @include app-bar;
+}
+
+@mixin with-app-bar {
     padding-top: map.get($app-bar, "height");
 
     &--prominent {
@@ -126,4 +130,8 @@ $app-bar: (
     &--dense {
         padding-top: map.get($app-bar, "dense", "height");
     }
+}
+
+.with-app-bar {
+    @include with-app-bar;
 }

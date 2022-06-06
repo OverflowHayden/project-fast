@@ -1,5 +1,9 @@
 @use '../setup/mixins';
 
-.number-field {
+@mixin number-field {
     @include mixins.input-field;
+}
+
+.number-field {
+    @include number-field;
 }

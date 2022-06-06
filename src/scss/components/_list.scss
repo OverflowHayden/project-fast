@@ -30,7 +30,7 @@ $list: (
         "divider": rgba(variables.$color-base-black, .12),
 ) !default;
 
-.list {
+@mixin list {
     $self: &;
     background: map.get($list, "background");
     display: block;
@@ -223,4 +223,8 @@ $list: (
         height: 0;
         margin: 0;
     }
+}
+
+.list {
+    @include list;
 }

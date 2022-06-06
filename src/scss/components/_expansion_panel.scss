@@ -7,7 +7,7 @@ $expansion-panel: (
         "color": rgba(variables.$color-base-black,.54),
 ) !default;
 
-.expansion-panel {
+@mixin expansion-panel {
     $self: &;
     --content-height: 50rem;
 
@@ -137,4 +137,8 @@ $expansion-panel: (
             }
         }
     }
+}
+
+.expansion-panel {
+    @include expansion-panel;
 }

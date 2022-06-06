@@ -2,7 +2,7 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
-.field {
+@mixin field {
     $self: &;
     $fields: (".text-field", ".password-field", ".select-field", ".textarea-field", ".number-field");
 
@@ -265,4 +265,8 @@
             color: map.get(variables.$input-field, "error");
         }
     }
+}
+
+.field {
+    @include field;
 }

@@ -33,7 +33,7 @@ $table: (
         ),
 ) !default;
 
-table {
+@mixin table {
     @include mixins.box-shadow;
     $self: &;
     background: map.get($table, "background");
@@ -195,7 +195,11 @@ table {
     }
 }
 
-.data-table {
+table {
+    @include table;
+}
+
+@mixin data-table {
     $self: &;
 
     &__head {
@@ -323,7 +327,11 @@ table {
     }
 }
 
-.table--responsive {
+.data-table {
+    @include data-table;
+}
+
+@mixin table-responsive {
     @media (max-width: variables.$screen-sm-max) {
         --cols: 2;
         display: flex;
@@ -411,4 +419,8 @@ table {
             0 calc(var(--height) * 30);
         }
     }
+}
+
+.table--responsive {
+    @include table-responsive;
 }

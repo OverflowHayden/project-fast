@@ -13,7 +13,7 @@ $pagination: (
         "height": 2.575em,
 ) !default;
 
-.pagination-list {
+@mixin pagination-list {
     display: inline-flex;
     list-style: none;
     margin: 0;
@@ -86,4 +86,8 @@ $pagination: (
             }
         }
     }
+}
+
+.pagination-list {
+    @include pagination-list;
 }

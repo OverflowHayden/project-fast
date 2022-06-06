@@ -19,7 +19,7 @@ $fab: (
         ),
 ) !default;
 
-.fab {
+@mixin fab {
     $self: &;
 
     position: fixed;
@@ -171,4 +171,8 @@ $fab: (
             background: lighten(map.get($fab, "icon", "background"), 8%);
         }
     }
+}
+
+.fab {
+    @include fab;
 }

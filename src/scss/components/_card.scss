@@ -22,7 +22,7 @@ $card: (
         ),
 ) !default;
 
-.card {
+@mixin card {
     @include mixins.box-shadow;
     $self: &;
 
@@ -94,4 +94,8 @@ $card: (
             padding: .444em;
         }
     }
+}
+
+.card {
+    @include card;
 }

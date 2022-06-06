@@ -1,7 +1,7 @@
 @use '../setup/variables';
 @use '../setup/mixins';
 
-.select-field {
+@mixin select-field {
     @include mixins.input-field;
 
     &:after {
@@ -39,4 +39,8 @@
         padding: 0 .375em;
         transform: translate(.375em, -.3125em) scale(.75);
     }
+}
+
+.select-field {
+    @include select-field;
 }

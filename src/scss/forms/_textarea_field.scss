@@ -1,6 +1,6 @@
 @use '../setup/mixins';
 
-.textarea-field {
+@mixin textarea-field {
     @include mixins.input-field;
 
     &__input {
@@ -10,4 +10,8 @@
     &.field--fill &__input {
         padding-top: 1.75em;
     }
+}
+
+.textarea-field {
+    @include textarea-field;
 }

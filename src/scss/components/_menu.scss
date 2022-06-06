@@ -9,7 +9,7 @@ $menu: (
         "color": variables.$color-base-black,
 ) !default;
 
-.menu {
+@mixin menu {
     $self: &;
     display: inline-block;
     font-size: map.get($menu, "font-size");
@@ -112,4 +112,8 @@ $menu: (
             margin: 0;
         }
     }
+}
+
+.menu {
+    @include menu;
 }

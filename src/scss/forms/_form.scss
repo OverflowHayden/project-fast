@@ -11,7 +11,7 @@ $form: (
         ),
 ) !default;
 
-.form {
+@mixin form {
     padding: 0;
     max-width: 100%;
 
@@ -49,4 +49,8 @@ $form: (
             pointer-events: none;
         }
     }
+}
+
+.form {
+    @include form;
 }

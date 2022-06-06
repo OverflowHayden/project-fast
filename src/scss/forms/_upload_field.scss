@@ -1,7 +1,7 @@
 @use '../setup/mixins';
 @use '../elements/button';
 
-.upload-field {
+@mixin upload-field {
     margin-bottom: 1.5rem;
 
     &__input {
@@ -21,4 +21,8 @@
         display: block;
         margin-top: 0;
     }
+}
+
+.upload-field {
+    @include upload-field;
 }

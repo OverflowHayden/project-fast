@@ -1,6 +1,6 @@
 @use '../setup/variables';
 
-.login {
+@mixin login {
     background: url('#{variables.$login-image}') no-repeat center center / cover;
     display: flex;
     width: 100%;
@@ -13,4 +13,8 @@
         backdrop-filter: blur(2rem);
         background: rgba(variables.$color-base-white, .7);
     }
+}
+
+.login {
+    @include login;
 }
