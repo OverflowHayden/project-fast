@@ -1,8 +1,6 @@
 @use 'sass:map';
 @use 'sass:meta';
 @use 'variables';
-@use '../vendor/bourbon' as *;
-@use '../vendor/neat' as *;
 
 @mixin twelve-columns($grid, $screen) {
     @for $i from 1 through 12 {

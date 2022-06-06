@@ -139,8 +139,6 @@ function DrawerMenu(drawerElem: HTMLElement): any {
         startX: number = 0,
         speedSwipe: any = 0,
         isMobile = checkMobile(navigator.userAgent || navigator.vendor),
-        isIE = window.navigator.msPointerEnabled,
-        isIE11 = window.navigator.pointerEnabled,
         typeStart = "touchstart",
         typeMove = "touchmove",
         typeEnd = "touchend",

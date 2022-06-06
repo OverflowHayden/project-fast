@@ -2,7 +2,7 @@ const WebpackConcatPlugin = require('webpack-concat-files-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const CompressionPlugin = require('compression-webpack-plugin');
 
 const publicJS = [
@@ -28,7 +28,7 @@ module.exports = [
         optimization: {
             minimize: true,
             minimizer: [
-                new OptimizeCSSAssetsPlugin({}),
+                new CssMinimizerPlugin(),
                 new TerserPlugin({
                     terserOptions: {
                         output: {
@@ -100,17 +100,12 @@ module.exports = [
                     },
                 },
                 {// image loader
-                    test: /\.(gif|png|jpe?g|svg)$/i,
-                    use: [
-                        {
-                            loader: 'file-loader',
-                            options: {
-                                name: '[name].[ext]',
-                                emitFile: true,
-                                publicPath: '../img/',
-                                outputPath: 'dist/img/',
-                            },
-                        },
+                    test: /\.(gif|png|jpe?g|svg|webp)$/i,
+                    type: 'asset/resource',
+                    generator: {
+                        filename: 'dist/img/[name][ext]',
+                    },
+                    rules: [
                         {
                             loader: 'image-webpack-loader',
                             options: {
@@ -118,21 +113,20 @@ module.exports = [
                                     progressive: true,
                                 },
                                 optipng: {
-                                    optimizationLevel: 7,
+                                    enabled: false,
+                                },
+                                pngquant: {
+                                    quality: [0.65, 0.90],
+                                    speed: 4,
                                 },
                                 gifsicle: {
                                     interlaced: false,
                                 },
-                                pngquant: {
-                                    quality: '65-90',
-                                    speed: 4
+                                webp: {
+                                    quality: 75,
                                 },
-                                svgo: {
-                                    removeViewBox: false,
-                                    removeEmptyAttrs: false,
-                                }
-                            }
-                        }
+                            },
+                        },
                     ],
                 },
                 {// fonts

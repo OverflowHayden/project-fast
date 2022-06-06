@@ -1,8 +1,6 @@
 @use 'sass:map';
 @use '../setup/variables';
 @use '../setup/mixins';
-@use '../vendor/bourbon';
-@use '../vendor/neat';
 
 $form: (
         "background": variables.$color-base-white,

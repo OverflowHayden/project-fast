@@ -1,9 +1,7 @@
 @use '../setup/mixins';
-@use '../vendor/bourbon';
 @use '../elements/button';
 
 .upload-field {
-    @include bourbon.clearfix;
     margin-bottom: 1.5rem;
 
     &__input {
