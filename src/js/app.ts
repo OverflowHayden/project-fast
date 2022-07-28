@@ -1,6 +1,6 @@
 import Iconify from '@iconify/iconify';
 import fastLegacySupport from './components/legacy-support.js';
-import AppBar from "./components/appbar";
+import AppBar from './components/appbar';
 import Drawer from './components/drawer';
 import DataTable from './components/data-table';
 import Fab from './components/fab';

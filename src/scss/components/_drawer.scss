@@ -340,10 +340,6 @@ $drawer: (
     }
 
     .persistent--open &, .permanent--open & {
-        #{$self}__nav-toggle {
-            transform: translateX(0);
-        }
-
         &#{$self}--compact + .main {
             margin-left: map.get($drawer, "compact", "width");
 
