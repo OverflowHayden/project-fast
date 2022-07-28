@@ -7,8 +7,7 @@
     "build": "webpack --progress",
     "dev": "webpack --watch --hot"
   },
-  "main": "dist/src/assets/js/app.js",
-  "module": "src/assets/js/app.js",
+  "main": "src/js/app.ts",
   "author": "Hayden Lin",
   "license": "MIT",
   "browserslist": [
